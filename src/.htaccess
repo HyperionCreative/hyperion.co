@@ -8,10 +8,9 @@
 # this logic there: http://httpd.apache.org/docs/current/howto/htaccess.html.
 
 # ##############################################################################
-# # Hidh DPI Images                                                            #
+# # High DPI Images                                                            #
 # ##############################################################################
 
-# todo test to see if this works
 <IfModule mod_rewrite.c>
     Options -MultiViews
     RewriteEngine on
