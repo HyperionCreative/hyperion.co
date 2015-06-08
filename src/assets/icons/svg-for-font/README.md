@@ -1,0 +1,1 @@
+These are used by [icomoon](https://icomoon.io/app/) to build the icon's font.
