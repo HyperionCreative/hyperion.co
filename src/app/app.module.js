@@ -20,6 +20,7 @@
       // Common modules //
       ////////////////////
 
-      'common.greeter'
+      'common.greeter',
+      'common.preloader'
     ]);
 })();

@@ -4,3 +4,4 @@ dist
 .sass-cache
 bower_components
 *.~vsdx
+src/common/preloader/files-to-preload.constant.js
