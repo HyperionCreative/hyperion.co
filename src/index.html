@@ -33,8 +33,11 @@
     <!-- endbuild -->
 
     <!-- build:js({.tmp,src}) scripts/scripts.js -->
-    <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/main.js"></script>
+    <script src="app/app.module.js"></script>
+
+    <!-- start of common files -->
+      <script src="common/greeter/greetings.directive.js"></script>
+    <!-- end of common files -->      
     <!-- endbuild -->
 </body>
 </html>
