@@ -7,6 +7,7 @@
       // Official angular modules //
       //////////////////////////////
 
+      'ngAnimate',
       'ngSanitize',
       'ngTouch',
 
