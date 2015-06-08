@@ -1,0 +1,64 @@
+/////////////
+// Imports //
+/////////////
+
+@import "compass";
+@import "compass/reset";
+@import "compass/css3";
+
+///////////
+// Fonts //
+///////////
+
+$normal-line-height: 1.25em;
+$normal-font-size: 13px;
+
+$font-fallback: "Lucida Grande", "Arial", sans-serif;
+
+// Helvetica
+$HelveticaNeue-Light: "HelveticaNeueLTStd-Lt", $font-fallback;
+$HelveticaNeue-Roman: "HelveticaNeueLTStd-Roman", $font-fallback;
+$HelveticaNeue-Medium: "HelveticaNeueLTStd-Md", $font-fallback;
+$HelveticaNeue-Bold: "HelveticaNeueLTStd-Bd", $font-fallback;
+
+// Museo
+$MuseoSans-300: "MuseoSans-300", $font-fallback;
+$MuseoSans-500: "MuseoSans-500", $font-fallback;
+$MuseoSans-700: "MuseoSans-700", $font-fallback;
+
+// PierSans
+$PierSans-Regular: "pier_sansregular", $font-fallback;
+
+// Rosario
+$Rosario-Regular: "rosarioregular", $font-fallback;
+$Rosario-Bold: "rosariobold", $font-fallback;
+
+////////////////
+// Transition //
+////////////////
+
+$x-rapid-transition-timing: 0.05s ease-in-out;
+$rapid-transition-timing: 0.1s ease-in-out;
+$medium-transition-timing: 0.2s ease-in-out;
+$slow-transition-timing: 0.3s ease-in-out;
+
+///////////
+// Forms //
+///////////
+
+$input-focused-color: #202a35;
+$input-unfocused-color: #d2d5d8;
+
+$input-font-family: $PierSans-Regular;
+$input-font-size: 14px;
+
+/////////////
+// Generic //
+/////////////
+
+$container-width: 1000px;
+$homepage-header-height: 60px;
+$subpages-header-height: 85px;
+
+$normal-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.05);
+$slider-description-height: 125px;

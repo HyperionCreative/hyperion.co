@@ -1,2 +1,73 @@
+/////////////
+// Imports //
+/////////////
+
+@import "base";
+
+@import "forms";
+@import "icons";
+@import "webfonts";
+
 // bower:scss
 // endbower
+
+//////////////
+// Generics //
+//////////////
+
+body {
+  font-family: $HelveticaNeue-Roman;
+  font-size: $normal-font-size;
+  -moz-font-feature-settings: "liga", "kern";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  line-height: $normal-line-height;
+}
+
+strong {
+  font-family: $HelveticaNeue-Bold;
+}
+
+///////////////////////////
+// Border box everything //
+///////////////////////////
+
+*, *:after, *:before {
+  @include box-sizing(border-box);
+}
+
+////////////////
+// Containers //
+////////////////
+
+html {
+  // These 2 are required by the sticky footer trick
+  // and the fancy slider.
+  min-height: 100%;
+  position: relative;
+
+  min-width: 1024px;
+}
+
+body {
+  min-height: 500px;
+}
+
+.container {
+  display: block;
+  margin: 0 auto;
+  width: $container-width;
+
+  @media only screen and (max-width : 1024px) {
+    width: 900px;
+  }
+}

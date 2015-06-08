@@ -1,0 +1,37 @@
+form {
+  
+}
+
+input, textarea {
+  @include appearance(none);
+  @include reset-box-model;
+  @include reset-focus;
+
+  background: transparent;
+  border: 1px solid #ccd1d7;
+  color: $input-focused-color;
+  display: block;
+
+  // Needed as textarea has its own font style
+  font-family: $input-font-family;
+  font-size: $input-font-size;
+
+  padding: 18px 25px;
+  width: 100%;
+
+
+  @include input-placeholder {
+    color: $input-unfocused-color;
+  }
+
+  &:focus {
+    // Hide the placeholder on focus
+    @include input-placeholder {
+      opacity: 0;
+    }
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 25px;
+  }
+}
