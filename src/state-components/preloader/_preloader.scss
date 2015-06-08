@@ -1,0 +1,65 @@
+#preloader {
+  $this-hello-height: 35px;
+  $this-hello-margin: 30px;
+  $this-loading-bar-height: 2px;
+  $this-loading-bar-margin: 15px;
+  $this-progress-height: 18px;
+
+  background: #ffffff;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  top: 0;
+  z-index: 1000;
+
+  .preloader-container {
+    // This works as the top half is bigger than the bottom half
+    $this-top-half: $this-hello-height + $this-hello-margin;
+
+    bottom: 0;
+    height: 2 * $this-top-half + $this-loading-bar-height;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60%;
+  }
+
+  .hello {
+    color: #202a35;
+    font-family: $HelveticaNeue-Bold;
+    font-size: $this-hello-height;
+    margin-bottom: $this-hello-margin;
+  }
+
+  .loading-bar-container {
+    background: #e8f2f6;
+    @include border-radius($this-loading-bar-height);
+    height: $this-loading-bar-height;
+    margin-bottom: 15px;
+    position: relative;
+    width: 100%;
+
+    .loading-bar {
+      background: #62caee;
+      @include border-radius($this-loading-bar-height);
+      bottom: 0;
+      height: 100%;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      top: 0;
+      @include transition(width 0.15s ease-in-out);
+      width: 0;
+    }
+  }
+
+  .progress {
+    color: rgba(#202a35, 0.5);
+    font-size: $this-progress-height;
+  }
+}

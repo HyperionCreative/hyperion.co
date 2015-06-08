@@ -21,6 +21,18 @@
       ////////////////////
 
       'common.greeter',
-      'common.preloader'
+      'common.preloader',
+
+      //////////////////////
+      // Specific Modules //
+      //////////////////////
+
+
+
+      //////////////////////
+      // State Components //
+      //////////////////////
+
+      'state.state-components'
     ]);
 })();

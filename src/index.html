@@ -27,8 +27,17 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <style>
+      [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+      }
+    </style>
   </head>
-  <body ng-app="HyperionApp">
+  <body ng-app="HyperionApp" ng-cloak>
+
+    <div ui-view="preloader"></div>
+    <div ui-view="fancy-slider"></div>
+    <div ui-view="page-content"></div>
 
     <!-- build:js(.) scripts/oldieshim.js -->
     <!--[if lt IE 9]>
@@ -55,7 +64,18 @@
       <script src="common/preloader/preloader.module.js"></script>
       <script src="common/preloader/files-to-preload.constant.js"></script>
       <script src="common/preloader/preloader.provider.js"></script>
-    <!-- end of common files -->      
+    <!-- end of common files -->
+
+    <!-- start of state components files -->
+      <script src="state-components/state-components.module.js"></script>
+      <script src="state-components/root.state.js"></script>
+
+      <script src="state-components/index/index.state.js"></script>
+
+      <script src="state-components/preloader/preloader.module.js"></script>
+      <script src="state-components/preloader/preloader.config.js"></script>
+      <script src="state-components/preloader/preloader.controller.js"></script>
+    <!-- end of state components files -->
     <!-- endbuild -->
 </body>
 </html>

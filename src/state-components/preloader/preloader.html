@@ -1,0 +1,9 @@
+<div id="preloader" ng-if="preloaderProgress < 100">
+  <div class="preloader-container">
+    <div class="hello" hyp-greetings></div>
+    <div class="loading-bar-container">
+      <div class="loading-bar" style="width: {{ preloaderProgress | number : 0 }}%;"></div>
+    </div>
+    <div class="progress">Loading {{ preloaderProgress | number : 0 }}%</div>
+  </div>
+</div>
