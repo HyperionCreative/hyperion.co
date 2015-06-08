@@ -63,3 +63,19 @@
     font-size: $this-progress-height;
   }
 }
+
+// AngularJS Animate
+
+#preloader {
+  @include transition(opacity $medium-transition-timing);
+
+  &.ng-enter,
+  &.ng-leave.ng-leave-active {
+    opacity:0;
+  }
+
+  &.ng-leave,
+  &.ng-enter.ng-enter-active {
+    opacity:1;
+  }
+}
