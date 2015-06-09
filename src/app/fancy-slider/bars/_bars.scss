@@ -1,0 +1,146 @@
+//////////////
+// Original //
+//////////////
+
+.depth-bars.original .bar {
+  background-color: #ffffff;
+  position: absolute;
+
+  &.top {
+    // So it perfectly overlaps the header
+    height: $homepage-header-height;
+    left: 0;
+    top: 0;
+    @include transform-origin(50%, 0);
+    width: 100%;
+    z-index: 10;
+  }
+
+  &.left, &.right {
+    height: 100%;
+    top: 0;
+    width: 40px;
+
+    @media only screen and (max-width : 1920px) {
+      width: 30px;
+    }
+
+    @media only screen and (max-width : 1919px) {
+      display: none;
+    }
+  }
+
+  &.left {
+    left: 0;
+    @include transform-origin(0, 0);
+  }
+
+  &.right {
+    right: 0;
+    @include transform-origin(100%, 0);
+    z-index: 100;
+  }
+}
+
+/////////////
+// Blurred //
+/////////////
+
+.depth-bars.blurred {
+  bottom: 0;
+  display: none;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 999;
+
+  .corner {
+    // This is a right corner
+    background: url(../assets/images/blur-sprites/screen/corner.png) no-repeat;
+    background-size: 125px 125px;
+    height: image-height("assets/images/blur-sprites/screen/corner.png");
+    position: absolute;
+    top: 0;
+    width: image-width("assets/images/blur-sprites/screen/corner.png");
+
+    &.left {
+      background-position: left;
+      left: 0;
+      @include transform(rotateY(180deg));
+    }
+
+    &.right {
+      background-position: right;
+      right: 0;
+    }
+  }
+
+  .edge {
+    // This is a right edge
+    background: url(../assets/images/blur-sprites/screen/edge.png) repeat-y;
+    background-size: 125px 100px;
+    bottom: 0;
+    position: absolute;
+    top: image-height("assets/images/blur-sprites/screen/corner.png");
+    width: image-width("assets/images/blur-sprites/screen/edge.png");
+
+    &.right {
+      right: 0;
+    }
+
+    &.left {
+      left: 0;
+      @include transform(rotateY(180deg));
+    }
+  }
+
+  .top.margin {
+    background: url(../assets/images/blur-sprites/screen/top.png) repeat-x;
+    background-size: 100px 125px;
+    height: image-height("assets/images/blur-sprites/screen/top.png");
+    left: image-width("assets/images/blur-sprites/screen/corner.png");
+    position: absolute;
+    right: image-width("assets/images/blur-sprites/screen/corner.png");
+    top: 0;
+  }
+
+  // This is needed since the left and right .bar and 10px smaller
+  @media only screen and (max-width : 1920px) {
+    .corner.left {
+      left: -10px;
+    }
+
+    .corner.right {
+      right: -10px;
+    }
+
+    .edge.left {
+      left: -10px;
+    }
+
+    .edge.right {
+      right: -10px;
+    }
+
+    .top.margin {
+      left: image-width("assets/images/blur-sprites/screen/corner.png") - 10;
+      right: image-width("assets/images/blur-sprites/screen/corner.png") - 10;
+    }
+  }
+
+  @media only screen and (max-width : 1919px) {
+    .corner {
+      display: none;
+    }
+
+    .edge {
+      display: none;
+    }
+
+    .top.margin {
+      left: 0;
+      right: 0;
+    }
+  }
+}
