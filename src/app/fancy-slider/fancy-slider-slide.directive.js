@@ -6,19 +6,19 @@
     .directive('hypFancySliderSlide', function () {
       return {
         link: function (scope, iElement, iAttrs, controller) {
-          var directions = ['bottom', 'center', 'left', 'right'];
+          var DIRECTIONS = ['bottom', 'center', 'left', 'right'];
 
-          controller.registerSlide(new Directions(directions));
+          controller.registerSlide(new Directions(DIRECTIONS));
 
           /////////////
           // Private //
           /////////////
 
-          function Directions(directions) {
+          function Directions() {
             var toReturn = {};
 
-            for (var i = 0; i < directions.length; i++) {
-              toReturn['to' + directions[i][0].toUpperCase() + directions[i].slice(1)] = new HandleDirection(directions[i]);
+            for (var i = 0; i < DIRECTIONS.length; i++) {
+              toReturn['to' + DIRECTIONS[i][0].toUpperCase() + DIRECTIONS[i].slice(1)] = new HandleDirection(DIRECTIONS[i]);
             }
 
             return toReturn;
@@ -43,8 +43,8 @@
           }
 
           function removeAdditionalClasses() {
-            for (var i = 0; i < directions.length; i++) {
-              iElement.removeClass(directions[i]);
+            for (var i = 0; i < DIRECTIONS.length; i++) {
+              iElement.removeClass(DIRECTIONS[i]);
             }
           }
         },
