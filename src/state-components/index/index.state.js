@@ -5,12 +5,7 @@
     .config(['$stateProvider', function ($stateProvider) {
       $stateProvider
         .state('root.index', {
-          url: '/',
-          views: {
-            'page-content@': {
-              template: '<h1>HELLO</h1>'
-            }
-          }
+          url: '/'
         });
     }]);
 })();
