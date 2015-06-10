@@ -1,0 +1,301 @@
+/////////////////////////////////////
+// Custom behaviour for each slide //
+/////////////////////////////////////
+
+@mixin slides-description-custom-opacity($slide, $opacity-list) {
+  $index: 1;
+
+  @each $opacity-value in $opacity-list {
+    // todo fancy slider needs to have the id of the current slide
+    #fancy-slider[data-active-slide="#{$slide}"] .slide-description-container .second-state .mixed-content > li:nth-child(#{$index}):hover {
+      background-color: rgba(#ffffff, $opacity-value);
+    }
+
+    $index: $index + 1;
+  }
+}
+@include slides-description-custom-opacity(1, (0.8, 0.85, 0.85, 0.8));
+@include slides-description-custom-opacity(2, (0.8, 0.85, 0.8, 0.8));
+@include slides-description-custom-opacity(3, (0.85, 0.85, 0.85, 0.8));
+
+#fancy-slider .slide-description-container {
+  $this-background: rgba(#ffffff, 0.92);
+  $this-transition: $rapid-transition-timing;
+
+  $this-clients-to-date-height: 44px;
+  $this-clients-to-date-width: 22%;
+
+  ////////////
+  // Layout //
+  ////////////
+
+  bottom: 75px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: 100;    
+
+  @media only screen and (max-width : 1920px) {
+    bottom: 45px;
+  }
+
+  .slide-description {
+    color: #879198;
+    height: $slider-description-height;
+    position: relative;
+
+    .overflow-container {
+      @include box-shadow($normal-box-shadow);
+      height: 100%;
+      overflow: hidden;
+      width: 100%;
+    }
+  }
+
+  /////////////////
+  // First state //
+  /////////////////
+
+  .first-state {
+    background-color: $this-background;
+    height: 100%;
+    padding: 35px 115px 0 40px;
+    width: 100% - $this-clients-to-date-width;
+
+    .title {
+      font-family: $HelveticaNeue-Medium;
+      font-size: 15px;
+      margin-bottom: 10px;
+
+      .highlight {
+        color: #2c3942;
+        font-family: $PierSans-Regular;
+      }
+    }
+
+    .our-clients-container {
+      bottom: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: $this-clients-to-date-width;
+
+      // Needed to stay on top of clients to date
+      z-index: 10;
+    }
+
+    .our-clients {
+      $this-our-clients-height: 30px;
+
+      border-left: 1px solid rgba(#2d323c, 0.15);
+      color: rgba(#2c3942, 0.5);
+      font-family: $PierSans-Regular;
+      font-size: 14px;
+      line-height: $this-our-clients-height;
+      margin-top: - $this-our-clients-height / 2;
+      padding: 0 0 0 35px;
+      position: absolute;
+      right: 65px;
+      top: 50%;
+    }
+  }
+
+  //////////////////
+  // Second state //
+  //////////////////
+
+  .second-state {
+    height: 100%;
+    width: 100%;
+
+    .mixed-content {
+      display: block;
+      height: 100%;
+      @include legacy-pie-clearfix;
+      width: 100%;
+
+      & > li {
+        @include background-clip(padding-box);
+        background-color: $this-background;
+        border-left: 1px solid $this-background;
+        display: block;
+        float: left;
+        height: 100%;
+        position: relative;
+        @include transition(background-color $this-transition, border-color $this-transition);
+
+        &:first-child {
+          border-left: 0;
+        }
+
+        .fake-border {
+          $this-border-height: 54px;
+
+          background-color: rgba(#2d323c, 0.2);
+          display: block;
+          height: $this-border-height;
+          left: -1px;
+          margin-top: - $this-border-height / 2;
+          position: absolute;
+          top: 50%;
+          @include transition(background-color $this-transition);
+          width: 1px;
+        }
+
+        &:hover {
+          background-color: rgba(#ffffff, 0.8);
+          border-color: transparent;
+
+          .fake-border {
+            background-color: transparent;
+          }
+
+          & + li {
+            border-color: transparent;
+
+            .fake-border {
+              background-color: transparent;
+            }
+          }
+        }
+      }
+    }
+
+    .client {
+      height: 100%;
+      width: (100 - $this-clients-to-date-width ) / 3;
+
+      a {
+        background-position: center;
+        background-repeat: no-repeat;
+        
+        // todo reminder to delete this when actual links are added in the html
+        cursor: pointer;
+
+        display: block;
+        height: 100%;
+        width: 100%;
+
+        &.anyvan {
+          background-image: url(../assets/images/clients/anyvan.svg);
+          background-size: 129px 22px;
+        }
+
+        &.kartist {
+          background-image: url(../assets/images/clients/kartist.svg);
+          background-size: 86px 27px;
+        }
+
+        &.lumispeco {
+          background-image: url(../assets/images/clients/lumispeco.svg);
+          background-size: 125px 26px;
+        }
+      }
+    }
+
+    .clients-to-date-container {
+      cursor: pointer;
+      position: absolute !important;
+      right: 0;
+      text-align: center;
+      top: 0;
+      width: $this-clients-to-date-width;
+
+      .centered-container {
+        height: 44px;
+        margin-top: ceil(($slider-description-height - $this-clients-to-date-height) / 2);
+        opacity: 0.5;
+        width: 120px;
+      }
+    }
+  }
+
+  ///////////////
+  // Animation //
+  ///////////////
+
+  // States switch
+  .translated-container {
+    height: 100%;
+    @include transition(margin-top 0.3s ease-in-out);
+    width: 100%;
+  }
+
+  .slide-description.mouse-entered {
+    .translated-container {
+      margin-top: - $slider-description-height;
+    }
+  }
+
+  // Fade in/out
+  .our-clients, .clients-to-date {
+    @include transition(opacity $this-transition);
+  }
+
+  .our-clients {
+    opacity: 1;
+  }
+
+  .clients-to-date {
+    opacity: 0;
+  }
+
+  .mouse-entered {
+    .our-clients-container {
+      z-index: -10;
+    }
+
+    .our-clients {
+      opacity: 0;
+    }
+
+    .clients-to-date {
+      opacity: 1;
+    }
+  }
+}
+
+//////////////////
+// Blur overlay //
+//////////////////
+
+#slide-description-blur-overlay {
+  bottom: -47px;
+  display: none;
+  left: -47px;
+  position: absolute;
+  right: -47px;
+  top: -47px;
+  z-index: 10;
+  
+  .edge {
+    // This is a right corner
+    background: url(../assets/images/blur-sprites/rectangle/edge@2x.png) no-repeat;
+    @include background-size(contain);
+    height: image-height("assets/images/blur-sprites/rectangle/edge.png");
+    position: absolute;
+    top: 0;
+    width: image-width("assets/images/blur-sprites/rectangle/edge.png");
+
+    &.left {
+      background-position: left;
+      left: 0;
+    }
+
+    &.right {
+      background-position: right;
+      right: 0;
+      @include transform(rotateY(180deg));
+    }
+  }
+
+  .middle {
+    background: url(../assets/images/blur-sprites/rectangle/middle@2x.png) repeat-x;
+    @include background-size(100px 100%);
+    bottom: 0;
+    left: image-width("assets/images/blur-sprites/rectangle/edge.png");
+    position: absolute;
+    right: image-width("assets/images/blur-sprites/rectangle/edge.png");
+    top: 0;
+  }
+}
