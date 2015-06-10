@@ -21,6 +21,7 @@
       // Common modules //
       ////////////////////
 
+      'common.animation-frame',
       'common.greeter',
       'common.preloader',
       'common.simple-hoverable',
