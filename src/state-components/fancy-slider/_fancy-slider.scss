@@ -1,0 +1,456 @@
+// todo format this
+
+//////////////////////////
+// Generic Fancy Slider //
+//////////////////////////
+
+#fancy-slider {
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  .slides-container {
+    @include background-image(radial-gradient(#b6e0eb 0%, #9ad3e4 100%));
+    left: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    @include transform-origin(0, 0);
+    @include user-select(none);
+
+    [class^="slide-"] {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+////////////////////////////////
+// Slider Controls and Cursor //
+////////////////////////////////
+
+#fancy-slider .change-slide-control {
+  bottom: 0;
+  position: absolute;
+  top: 0;
+  width: 50%;
+  z-index: 1000;
+
+  &.left {
+    cursor: url(../assets/images/homepage/arrow-left.ico), auto;
+    cursor: url(../assets/images/homepage/arrow-left.ico) 0 32, auto;
+    left: 0;
+  }
+
+  &.right {
+    cursor: url(../assets/images/homepage/arrow-right.ico), auto;
+    cursor: url(../assets/images/homepage/arrow-right.ico) 64 32, auto;
+    right: 0;
+  }
+}
+
+//////////////////
+// Blur Overlay //
+//////////////////
+
+#blur-overlay {
+  background: rgba(#ffffff, 0.75);
+  bottom: 0;
+  display: none;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+}
+
+
+///////////////
+// Resources //
+///////////////
+
+$fancy-slider-base-image-url: "assets/images/homepage/";
+
+@mixin image-size($image-url, $multiplier : 1) {
+  height: image-height($image-url) * $multiplier;
+  width: image-width($image-url) * $multiplier;
+}
+
+@mixin blurred-image-position($blurred-image-url, $image-url, $multiplier : 1) {
+  left: - ( image-width($blurred-image-url) - image-width($image-url) ) / 2 * $multiplier;
+  top: - ( image-height($blurred-image-url) - image-height($image-url) ) / 2 * $multiplier;
+}
+
+@mixin load-slide-resources($slide, $resources) {
+  @each $resource in $resources {
+    $this-image-url: $fancy-slider-base-image-url + $slide + $resource + ".png";
+    $this-blurred-image-url: $fancy-slider-base-image-url + $slide + $resource + "-blurred.png";
+
+    .#{$resource} {
+      @include image-size($this-image-url);
+
+      .blurred {
+        @include blurred-image-position($this-blurred-image-url, $this-image-url);
+        @include image-size($this-blurred-image-url);
+      }
+    }
+  }
+}
+
+#fancy-slider {
+  .resource {
+    position: absolute;
+
+    .original {
+      height: 100%;
+      width: 100%;
+    }
+
+    .blurred {
+      display: none;
+      position: absolute;
+    }
+  }
+
+  .slide-1 {
+    @include load-slide-resources("slide-1/", (flower-pot, macbook, sketchbook, watch));
+  }
+
+  .slide-2 {
+    @include load-slide-resources("slide-2/", (imac, iphone, sketchpad));
+  }
+
+  .slide-3 {
+    @include load-slide-resources("slide-3/", (imac, iphone));
+  }
+}
+
+/////////////////////////////////
+// Resources special behaviour //
+/////////////////////////////////
+
+#fancy-slider {
+  .slide-1 {
+    .flower-pot {
+      z-index: 25;
+
+      @media only screen and (max-width : 1920px) {
+        margin-left: 200px;
+      }
+
+      .rotation-layer {
+        height: 100%;
+        width: 100%;
+
+        @media only screen and (max-width : 1920px) {
+          @include transform(rotateZ(10deg));
+        }
+      }
+    }
+    
+    .macbook {
+      z-index: 20;
+
+      @media only screen and (max-width : 1920px) {
+        $this-multiplier: 1.27;
+
+        @include image-size($fancy-slider-base-image-url + "slide-1/macbook.png", $this-multiplier);
+        margin-left: -50px;
+
+        .blurred {
+          @include blurred-image-position($fancy-slider-base-image-url + "slide-1/macbook-blurred.png", $fancy-slider-base-image-url + "slide-1/macbook.png", $this-multiplier);
+          @include image-size($fancy-slider-base-image-url + "slide-1/macbook-blurred.png", $this-multiplier);
+        }
+      }
+    }
+
+    .watch {
+      @media only screen and (max-width : 1920px) {
+        display: none;
+      }
+    }
+  }
+
+  .slide-2 {
+    .iphone {
+      z-index: 20;
+
+      @media only screen and (max-width : 1920px) {
+        $this-multiplier: 1.1;
+
+        @include image-size($fancy-slider-base-image-url + "slide-2/iphone.png", $this-multiplier);
+        margin-top: -75px;
+
+        .blurred {
+          @include blurred-image-position($fancy-slider-base-image-url + "slide-2/iphone-blurred.png", $fancy-slider-base-image-url + "slide-2/iphone.png", $this-multiplier);
+          @include image-size($fancy-slider-base-image-url + "slide-2/iphone-blurred.png", $this-multiplier);
+        }
+      }
+    }
+  }
+
+  .slide-3 {
+    .iphone {
+      z-index: 20;
+
+      @media only screen and (max-width : 1920px) {
+        margin-top: -150px;
+      }
+    }
+  }
+}
+
+////////////////////////
+// Resources Position //
+////////////////////////
+
+#fancy-slider {
+  .slide-1 {
+    .flower-pot {
+      left: 1710px;
+      top: 380px;
+    }
+    
+    .macbook {
+      left: 530px;
+      top: 27px;
+    }
+
+    .sketchbook {
+      left: 16px;
+      top: 354px;
+    }
+
+    .watch {
+      left: 1017px;
+      top: 965px;
+    }
+  }
+
+  .slide-2 {
+    .imac {
+      left: 1525px;
+      top: -150px;
+    }
+
+    .iphone {
+      left: 615px;
+      top: 136px;
+    }
+
+    .sketchpad {
+      left: -5px;
+      top: 268px;
+    }
+  }
+
+  .slide-3 {
+    .imac {
+      left: 182px;
+      top: 25px;
+    }
+
+    .iphone {
+      left: 618px;
+      top: 768px;
+    }
+  }
+}
+
+/////////////////////////
+// Resources Animation //
+/////////////////////////
+
+#fancy-slider {
+  // !important the transition duration property must be added on each of the animation.
+  // This is used to determine when all the elements have finished the animation.
+  // If the elements have different transition duration, the max one must be added.
+
+  .slide {
+    // Hide unused slides as they may affect the performance.
+    display: none;
+  }
+
+  .slide, .resource {
+    -webkit-transition-duration: 1s !important;
+    transition-duration: 1s  !important;
+  }
+
+  .resource {
+    -webkit-transform-origin: 50% 50% !important;
+    transform-origin: 50% 50% !important;
+
+    -webkit-transition-property: -webkit-transform !important;
+    transition-property: transform !important;
+
+    -webkit-transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1) !important;
+    transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1) !important;
+  }
+
+  .slide-1 {
+    &.throw-in {
+      &.start {
+        .flower-pot {
+          @include transform(translate3d(0,200%,0) rotateZ(30deg));
+        }
+        
+        .macbook {
+          @include transform(translate3d(0,400%,0) rotateZ(45deg));
+        }
+
+        .sketchbook {
+          @include transform(translate3d(0,500%,0) rotateZ(30deg));
+        }
+
+        .watch {
+          @include transform(translate3d(0,300%,0) rotateZ(-30deg));
+        }
+      }
+
+      &.end {
+        .flower-pot, .macbook, .sketchbook, .watch {
+          @include transform(translate3d(0,0,0) rotateZ(0));
+        }
+      }
+    }
+
+    &.left {
+      &.start {
+        .flower-pot, .macbook, .sketchbook, .watch {
+          @include transform(translate3d(0,0,0) rotateZ(0));
+        }
+      }
+
+      &.end {
+        .flower-pot {
+          @include transform(translate3d(-3000px,0,0) rotateZ(-30deg));
+        }
+        
+        .macbook {
+          @include transform(translate3d(-2560px,0,0) rotateZ(-20deg));
+        }
+
+        .sketchbook {
+          @include transform(translate3d(-720px,0,0) rotateZ(-20deg));
+        }
+
+        .watch {
+          @include transform(translate3d(-1920px,0,0) rotateZ(-20deg));
+        }
+      }
+    }
+
+    &.right {
+      &.start {
+        .flower-pot, .macbook, .sketchbook, .watch {
+          @include transform(translate3d(0,0,0) rotateZ(0));
+        }
+      }
+
+      &.end {
+        .flower-pot {
+          @include transform(translate3d(1440px,0,0) rotateZ(30deg));
+        }
+        
+        .macbook {
+          @include transform(translate3d(2000px,0,0) rotateZ(20deg));
+        }
+
+        .sketchbook {
+          @include transform(translate3d(2560px,0,0) rotateZ(20deg));
+        }
+
+        .watch {
+          @include transform(translate3d(1920px,0,0) rotateZ(20deg));
+        }
+      }
+    }
+  }
+
+  .slide-2 {
+    &.left {
+      &.start {
+        .imac, .iphone, .sketchpad {
+          @include transform(translate3d(0,0,0) rotateZ(0));
+        }
+      }
+
+      &.end {
+        .imac {
+          @include transform(translate3d(-3000px,0,0) rotateZ(-10deg));
+        }
+        
+        .iphone {
+          @include transform(translate3d(-2000px,0,0) rotateZ(-15deg));
+        }
+
+        .sketchpad {
+          @include transform(translate3d(-1000px,0,0) rotateZ(-20deg));
+        }
+      }
+    }
+
+    &.right {
+      &.start {
+        .imac, .iphone, .sketchpad {
+          @include transform(translate3d(0,0,0) rotateZ(0));
+        }
+      }
+
+      &.end {
+        .imac {
+          @include transform(translate3d(1500px,0,0) rotateZ(5deg));
+        }
+        
+        .iphone {
+          @include transform(translate3d(1920px,0,0) rotateZ(15deg));
+        }
+
+        .sketchpad {
+          @include transform(translate3d(2800px,0,0) rotateZ(20deg));
+        }
+      }
+    }
+  }
+
+  .slide-3 {
+    &.left {
+      &.start {
+        .imac, .iphone, .sketchpad {
+          @include transform(translate3d(0,0,0) rotateZ(0));
+        }
+      }
+
+      &.end {
+        .imac {
+          @include transform(translate3d(-2560px,0,0) rotateZ(-5deg));
+        }
+        
+        .iphone {
+          @include transform(translate3d(-1920px,0,0) rotateZ(-15deg));
+        }
+      }
+    }
+
+    &.right {
+      &.start {
+        .imac, .iphone, .sketchpad {
+          @include transform(translate3d(0,0,0) rotateZ(0));
+        }
+      }
+
+      &.end {
+        .imac {
+          @include transform(translate3d(2560px,0,0) rotateZ(5deg));
+        }
+        
+        .iphone {
+          @include transform(translate3d(2200px,0,0) rotateZ(15deg));
+        }
+      }
+    }
+  }
+}
