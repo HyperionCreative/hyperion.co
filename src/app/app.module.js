@@ -23,6 +23,7 @@
 
       'common.greeter',
       'common.preloader',
+      'common.simple-hoverable',
 
       //////////////////////
       // Specific Modules //
