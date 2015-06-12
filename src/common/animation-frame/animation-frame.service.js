@@ -32,7 +32,7 @@
   }());
 
   angular
-    .module('common.animation-frame', [])
+    .module('common.animation-frame')
     .service('AnimationFrame', function () {
       this.cancel = window.requestAnimationFrame;
       this.request = window.cancelAnimationFrame;
