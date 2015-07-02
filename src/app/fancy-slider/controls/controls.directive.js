@@ -19,7 +19,7 @@
             console.log('right');
           }
         },
-        replace: false,
+        replace: true,
         // todo uncomment this
         // require: '^^hypFancySlider',
         restrict: 'E',
