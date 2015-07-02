@@ -5,3 +5,4 @@ dist
 bower_components
 *.~vsdx
 src/common/preloader/files-to-preload.constant.js
+diagrams/~$module-status.xlsx
