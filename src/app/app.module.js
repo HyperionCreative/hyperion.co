@@ -21,14 +21,16 @@
       // Common modules //
       ////////////////////
 
+      'common.animation-frame',
       'common.greeter',
       'common.preloader',
+      'common.simple-hoverable',
 
       //////////////////////
       // Specific Modules //
       //////////////////////
 
-
+      'specific.fancy-slider',
 
       //////////////////////
       // State Components //

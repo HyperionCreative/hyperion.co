@@ -42,11 +42,18 @@ $rapid-transition-timing: 0.1s ease-in-out;
 $medium-transition-timing: 0.2s ease-in-out;
 $slow-transition-timing: 0.3s ease-in-out;
 
+////////////
+// Colors //
+////////////
+
+$bright-blue: #62caee;
+$dark-blue: #202a35;
+
 ///////////
 // Forms //
 ///////////
 
-$input-focused-color: #202a35;
+$input-focused-color: $dark-blue;
 $input-unfocused-color: #d2d5d8;
 
 $input-font-family: $PierSans-Regular;

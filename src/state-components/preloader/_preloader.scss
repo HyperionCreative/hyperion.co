@@ -29,7 +29,7 @@
   }
 
   .hello {
-    color: #202a35;
+    color: $dark-blue;
     font-family: $HelveticaNeue-Bold;
     font-size: $this-hello-height;
     margin-bottom: $this-hello-margin;
@@ -44,7 +44,7 @@
     width: 100%;
 
     .loading-bar {
-      background: #62caee;
+      background: $bright-blue;
       @include border-radius($this-loading-bar-height);
       bottom: 0;
       height: 100%;
@@ -59,7 +59,7 @@
   }
 
   .progress {
-    color: rgba(#202a35, 0.5);
+    color: rgba($dark-blue, 0.5);
     font-size: $this-progress-height;
   }
 }
