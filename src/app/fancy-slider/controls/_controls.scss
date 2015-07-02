@@ -1,0 +1,19 @@
+.fancy-slider-controls .change-slide-control {
+  bottom: 0;
+  position: fixed;
+  top: 0;
+  width: 50%;
+  z-index: 500;
+
+  &.left {
+    cursor: url(../app/fancy-slider/controls/arrow-left.ico), auto;
+    cursor: url(../app/fancy-slider/controls/arrow-left.ico) 0 32, auto;
+    left: 0;
+  }
+
+  &.right {
+    cursor: url(../app/fancy-slider/controls/arrow-right.ico), auto;
+    cursor: url(../app/fancy-slider/controls/arrow-right.ico) 64 32, auto;
+    right: 0;
+  }
+}
