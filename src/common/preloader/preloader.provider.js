@@ -106,6 +106,17 @@
                   next();
                 };
 
+                // Atm we treat the onError fn the same as the onLoad.
+                // todo should we change this?
+                image.onerror = function () {
+                  // Needed as we're outside of angular's scope
+                  $rootScope.$evalAsync(function () {
+                    queue.sizeDownloaded += FILES_TO_PRELOAD[path];
+                  });
+
+                  next();
+                };
+
                 image.src = path;
               }
             })(PathsArray.shift());
