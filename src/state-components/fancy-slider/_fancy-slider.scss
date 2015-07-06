@@ -28,30 +28,6 @@
   }
 }
 
-////////////////////////////////
-// Slider Controls and Cursor //
-////////////////////////////////
-
-#fancy-slider .change-slide-control {
-  bottom: 0;
-  position: absolute;
-  top: 0;
-  width: 50%;
-  z-index: 1000;
-
-  &.left {
-    cursor: url(../assets/images/homepage/arrow-left.ico), auto;
-    cursor: url(../assets/images/homepage/arrow-left.ico) 0 32, auto;
-    left: 0;
-  }
-
-  &.right {
-    cursor: url(../assets/images/homepage/arrow-right.ico), auto;
-    cursor: url(../assets/images/homepage/arrow-right.ico) 64 32, auto;
-    right: 0;
-  }
-}
-
 //////////////////
 // Blur Overlay //
 //////////////////
@@ -67,138 +43,15 @@
   z-index: 1000;
 }
 
-
 ///////////////
 // Resources //
 ///////////////
 
-$fancy-slider-base-image-url: "assets/images/homepage/";
-
-@mixin image-size($image-url, $multiplier : 1) {
-  height: image-height($image-url) * $multiplier;
-  width: image-width($image-url) * $multiplier;
-}
-
-@mixin blurred-image-position($blurred-image-url, $image-url, $multiplier : 1) {
-  left: - ( image-width($blurred-image-url) - image-width($image-url) ) / 2 * $multiplier;
-  top: - ( image-height($blurred-image-url) - image-height($image-url) ) / 2 * $multiplier;
-}
-
-@mixin load-slide-resources($slide, $resources) {
-  @each $resource in $resources {
-    $this-image-url: $fancy-slider-base-image-url + $slide + $resource + ".png";
-    $this-blurred-image-url: $fancy-slider-base-image-url + $slide + $resource + "-blurred.png";
-
-    .#{$resource} {
-      @include image-size($this-image-url);
-
-      .blurred {
-        @include blurred-image-position($this-blurred-image-url, $this-image-url);
-        @include image-size($this-blurred-image-url);
-      }
-    }
-  }
-}
-
 #fancy-slider {
   .resource {
-    position: absolute;
-
-    .original {
-      height: 100%;
-      width: 100%;
-    }
-
     .blurred {
       display: none;
       position: absolute;
-    }
-  }
-
-  .slide-1 {
-    @include load-slide-resources("slide-1/", (flower-pot, macbook, sketchbook, watch));
-  }
-
-  .slide-2 {
-    @include load-slide-resources("slide-2/", (imac, iphone, sketchpad));
-  }
-
-  .slide-3 {
-    @include load-slide-resources("slide-3/", (imac, iphone));
-  }
-}
-
-/////////////////////////////////
-// Resources special behaviour //
-/////////////////////////////////
-
-#fancy-slider {
-  .slide-1 {
-    .flower-pot {
-      z-index: 25;
-
-      @media only screen and (max-width : 1920px) {
-        margin-left: 200px;
-      }
-
-      .rotation-layer {
-        height: 100%;
-        width: 100%;
-
-        @media only screen and (max-width : 1920px) {
-          @include transform(rotateZ(10deg));
-        }
-      }
-    }
-    
-    .macbook {
-      z-index: 20;
-
-      @media only screen and (max-width : 1920px) {
-        $this-multiplier: 1.27;
-
-        @include image-size($fancy-slider-base-image-url + "slide-1/macbook.png", $this-multiplier);
-        margin-left: -50px;
-
-        .blurred {
-          @include blurred-image-position($fancy-slider-base-image-url + "slide-1/macbook-blurred.png", $fancy-slider-base-image-url + "slide-1/macbook.png", $this-multiplier);
-          @include image-size($fancy-slider-base-image-url + "slide-1/macbook-blurred.png", $this-multiplier);
-        }
-      }
-    }
-
-    .watch {
-      @media only screen and (max-width : 1920px) {
-        display: none;
-      }
-    }
-  }
-
-  .slide-2 {
-    .iphone {
-      z-index: 20;
-
-      @media only screen and (max-width : 1920px) {
-        $this-multiplier: 1.1;
-
-        @include image-size($fancy-slider-base-image-url + "slide-2/iphone.png", $this-multiplier);
-        margin-top: -75px;
-
-        .blurred {
-          @include blurred-image-position($fancy-slider-base-image-url + "slide-2/iphone-blurred.png", $fancy-slider-base-image-url + "slide-2/iphone.png", $this-multiplier);
-          @include image-size($fancy-slider-base-image-url + "slide-2/iphone-blurred.png", $this-multiplier);
-        }
-      }
-    }
-  }
-
-  .slide-3 {
-    .iphone {
-      z-index: 20;
-
-      @media only screen and (max-width : 1920px) {
-        margin-top: -150px;
-      }
     }
   }
 }

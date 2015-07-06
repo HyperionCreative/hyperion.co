@@ -11,3 +11,78 @@
     @include load-slide-resources("slide-3/", (imac, iphone));
   }
 }
+
+/////////////////////////////////
+// Resources special behaviour //
+/////////////////////////////////
+
+.fancy-slider {
+  .slide-1 {
+    .flower-pot {
+      z-index: 25;
+
+      @media only screen and (max-width : 1920px) {
+        margin-left: 200px;
+      }
+
+      .rotation-layer {
+        height: 100%;
+        width: 100%;
+
+        @media only screen and (max-width : 1920px) {
+          @include transform(rotateZ(10deg));
+        }
+      }
+    }
+    
+    .macbook {
+      z-index: 20;
+
+      @media only screen and (max-width : 1920px) {
+        $this-multiplier: 1.27;
+
+        @include image-size($fancy-slider-base-image-url + "slide-1/macbook.png", $this-multiplier);
+        margin-left: -50px;
+
+        .blurred {
+          @include blurred-image-position($fancy-slider-base-image-url + "slide-1/macbook-blurred.png", $fancy-slider-base-image-url + "slide-1/macbook.png", $this-multiplier);
+          @include image-size($fancy-slider-base-image-url + "slide-1/macbook-blurred.png", $this-multiplier);
+        }
+      }
+    }
+
+    .watch {
+      @media only screen and (max-width : 1920px) {
+        display: none;
+      }
+    }
+  }
+
+  .slide-2 {
+    .iphone {
+      z-index: 20;
+
+      @media only screen and (max-width : 1920px) {
+        $this-multiplier: 1.1;
+
+        @include image-size($fancy-slider-base-image-url + "slide-2/iphone.png", $this-multiplier);
+        margin-top: -75px;
+
+        .blurred {
+          @include blurred-image-position($fancy-slider-base-image-url + "slide-2/iphone-blurred.png", $fancy-slider-base-image-url + "slide-2/iphone.png", $this-multiplier);
+          @include image-size($fancy-slider-base-image-url + "slide-2/iphone-blurred.png", $this-multiplier);
+        }
+      }
+    }
+  }
+
+  .slide-3 {
+    .iphone {
+      z-index: 20;
+
+      @media only screen and (max-width : 1920px) {
+        margin-top: -150px;
+      }
+    }
+  }
+}
