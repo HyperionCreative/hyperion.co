@@ -13,17 +13,17 @@
   top: 0;
 
   .slides-container {
-    // @include background-image(radial-gradient(#b6e0eb 0%, #9ad3e4 100%));
-    // left: 50%;
-    // overflow: hidden;
-    // position: absolute;
-    // top: 0;
-    // @include transform-origin(0, 0);
-    // @include user-select(none);
+    @include background-image(radial-gradient(#b6e0eb 0%, #9ad3e4 100%));
+    left: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    @include transform-origin(0, 0);
+    @include user-select(none);
 
-    // [class^="slide-"] {
-    //   height: 100%;
-    //   width: 100%;
-    // }
+    [class^="slide-"] {
+      height: 100%;
+      width: 100%;
+    }
   }
 }
