@@ -1,0 +1,13 @@
+.fancy-slider {
+  .slide-1 {
+    @include load-slide-resources("slide-1/", (flower-pot, macbook, sketchbook, watch));
+  }
+
+  .slide-2 {
+    @include load-slide-resources("slide-2/", (imac, iphone, sketchpad));
+  }
+
+  .slide-3 {
+    @include load-slide-resources("slide-3/", (imac, iphone));
+  }
+}

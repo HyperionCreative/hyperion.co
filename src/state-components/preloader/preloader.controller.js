@@ -2,7 +2,7 @@
   'use strict';
   
   angular
-    .module('state.state-components')
+    .module('state.preloader')
     .controller('PreloaderCtrl', ['$scope', 'Preloader', function ($scope, Preloader) {
       $scope.showPreloader = true;
       $scope.preloaderProgress = 0;

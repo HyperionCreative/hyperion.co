@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('specific.fancy-slider.depth-bars', [
+    .module('app.fancy-slider.depth-bars', [
       'common.css-vendor-prefixer'
     ])
     .directive('hypFancySliderDepthBars', ['CssVendorPrefixer', 'FancySliderResizer', function (CssVendorPrefixer, FancySliderResizer) {
