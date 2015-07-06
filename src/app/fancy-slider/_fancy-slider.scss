@@ -3,3 +3,27 @@
 @import "controls/controls";
 @import "resources/resources";
 @import "slides/slides";
+
+.fancy-slider {
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  .slides-container {
+    // @include background-image(radial-gradient(#b6e0eb 0%, #9ad3e4 100%));
+    // left: 50%;
+    // overflow: hidden;
+    // position: absolute;
+    // top: 0;
+    // @include transform-origin(0, 0);
+    // @include user-select(none);
+
+    // [class^="slide-"] {
+    //   height: 100%;
+    //   width: 100%;
+    // }
+  }
+}
