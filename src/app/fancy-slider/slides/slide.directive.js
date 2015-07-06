@@ -5,6 +5,9 @@
     .module('app.fancy-slider.slides', [])
     .directive('hypFancySliderSlide', function () {
       return {
+        link: function () {
+          // todo add functionality?
+        },
         replace: true,
         restrict: 'E',
         templateUrl: function (tElement, tAttrs) {

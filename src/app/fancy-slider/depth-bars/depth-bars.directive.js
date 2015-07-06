@@ -8,7 +8,8 @@
     .directive('hypFancySliderDepthBars', ['CssVendorPrefixer', 'FancySliderResizer', function (CssVendorPrefixer, FancySliderResizer) {
       return {
         link: function (scope, iElement, iAttrs) {
-          // todo shouldn't it add the scaling property to all bars?
+          // todo shouldn't it add the scaling property to both blurred and 
+          // original bars?
           if (angular.isDefined(iAttrs.original)) {
             var target = angular.element(iElement[0].querySelectorAll('.bar'));
 
