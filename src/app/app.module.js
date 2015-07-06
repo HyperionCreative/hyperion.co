@@ -30,7 +30,7 @@
       // Specific Modules //
       //////////////////////
 
-      'specific.fancy-slider',
+      'app.fancy-slider',
 
       //////////////////////
       // State Components //

@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('specific.fancy-slider', [
+    .module('app.fancy-slider', [
       'app.fancy-slider.animations',
       'app.fancy-slider.controls',
       'app.fancy-slider.depth-bars',
