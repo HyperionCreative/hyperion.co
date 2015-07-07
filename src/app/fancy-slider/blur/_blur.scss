@@ -1,11 +1,8 @@
-.fancy-slider {
-  .resource {
-    .blurred {
-      opacity: 0;
-      position: absolute;
-    }
-  }
+//////////////////////
+// The blur overlay //
+//////////////////////
 
+.fancy-slider {
   .blur-overlay {
     background: rgba(#ffffff, 0.75);
     bottom: 0;
