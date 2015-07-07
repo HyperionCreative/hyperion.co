@@ -69,3 +69,13 @@ $homepage-header-height: 60px;
 
 $normal-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.05);
 $slider-description-height: 125px;
+
+///////////////////////
+// Fancy Slider Blur //
+///////////////////////
+
+// Important!!!
+// If you change some of these variables, don't forget to change the value inside blur.service.js
+// to highest variable value!
+
+$blur-resources-animation-duration: 0.125s;
