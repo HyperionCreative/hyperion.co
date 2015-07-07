@@ -1,0 +1,9 @@
+<div 
+  ng-show="
+    blurStatus.isBlurred && type == 'blurred'
+      ||
+    !blurStatus.isBlurred && type == 'unblurred'"
+
+  class="blurable-resource">
+  <ng-transclude></ng-transclude>
+</div>
