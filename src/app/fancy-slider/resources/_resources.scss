@@ -40,3 +40,47 @@ $fancy-slider-base-image-url: "./app/fancy-slider/resources/";
     }
   }
 }
+
+////////////////////
+// Blur Animation //
+////////////////////
+
+@include keyframes(blur-resource-blur-out) {
+  0% {
+    z-index: 1;
+    opacity: 1;
+  }
+
+  // This step is needed otherwise there will be a gap where the element
+  // will look like it's disappearing.
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@include keyframes(blur-resource-blur-in) {
+  0% {
+    opacity: 0;
+    z-index: 2;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fancy-slider .resource .blurable-resource {
+  @include animation-duration($blur-resources-animation-duration);
+}
+
+.fancy-slider .resource .blurable-resource.ng-hide-add.ng-hide-add-active {
+  @include animation-name(blur-resource-blur-out);
+}
+
+.fancy-slider .resource .blurable-resource.ng-hide-remove.ng-hide-remove-active {
+  @include animation-name(blur-resource-blur-in);
+}
