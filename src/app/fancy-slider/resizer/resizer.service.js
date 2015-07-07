@@ -12,7 +12,7 @@
       // Config variables //
       //////////////////////
 
-      var RESIZE_TIMEOUT = 125;
+      var RESIZE_TIMEOUT = 50;
 
       ///////////////
       // Variables //
@@ -40,9 +40,7 @@
       function getProportion() {
         function _getProportion(actual, max, min) {
           // Normalize the 'actual' param
-          if (actual >= max) {
-            actual = max;
-          } else if (actual <= min) {
+          if (actual <= min) {
             actual = min;
           }
 

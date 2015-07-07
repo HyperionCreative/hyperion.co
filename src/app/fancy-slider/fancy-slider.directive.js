@@ -3,30 +3,23 @@
 
   angular
     .module('app.fancy-slider')
-    .directive('hypFancySlider', ['FancySliderResizer', 'MAX_SUPPORTED_WIDTH', 'MAX_SUPPORTED_HEIGHT', function (FancySliderResizer, MAX_SUPPORTED_WIDTH, MAX_SUPPORTED_HEIGHT) {
+    .directive('hypFancySlider', ['CssVendorPrefixer', 'FancySliderResizer', 'MAX_SUPPORTED_WIDTH', 'MAX_SUPPORTED_HEIGHT', function (CssVendorPrefixer, FancySliderResizer, MAX_SUPPORTED_WIDTH, MAX_SUPPORTED_HEIGHT) {
       return {
         link: function (scope, iElement) {
-          var
-            fancySlider = iElement,
-            fancySliderContainer = angular.element(iElement[0].querySelector('.slides-container'));
+          var slidesContainer = angular.element(iElement[0].querySelector('.slides-container'));
 
-          fancySlider.css({
-            'max-height': MAX_SUPPORTED_HEIGHT + 'px',
-            margin: '0 auto',
-            'max-width': MAX_SUPPORTED_WIDTH + 'px'
-          });
-
-          fancySliderContainer.css({
+          // Sets the base resolution
+          slidesContainer.css({
             height: MAX_SUPPORTED_HEIGHT + 'px',
             width: MAX_SUPPORTED_WIDTH + 'px'
           });
 
           FancySliderResizer.onProportionChange(function (proportion) {
-            fancySliderContainer.css({
+            slidesContainer.css({
               'margin-left': -(MAX_SUPPORTED_WIDTH * proportion / 2) + 'px',
-              // todo add vendor prefixes
-              'transform': 'scale(' + proportion + ',' + proportion + ')'
             });
+
+            slidesContainer.css(CssVendorPrefixer.prefixProperty('transform', 'scale(' + proportion + ',' + proportion + ')'));
           });
         },
         replace: true,

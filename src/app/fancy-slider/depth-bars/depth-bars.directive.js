@@ -11,10 +11,15 @@
           // todo shouldn't it add the scaling property to both blurred and 
           // original bars?
           if (angular.isDefined(iAttrs.original)) {
-            var target = angular.element(iElement[0].querySelectorAll('.bar'));
+            var 
+              barTop = angular.element(iElement[0].querySelectorAll('.bar.top')),
+              barLeft = angular.element(iElement[0].querySelectorAll('.bar.left')),
+              barRight = angular.element(iElement[0].querySelectorAll('.bar.right'));
 
             FancySliderResizer.onProportionChange(function (proportion) {
-              target.css(CssVendorPrefixer.prefixProperty('transform', 'scale(' + (1 / proportion) + ',' + (1 / proportion) + ')'));
+              barTop.css(CssVendorPrefixer.prefixProperty('transform', 'scale(1,' + (1 / proportion) + ')'));
+              barLeft.css(CssVendorPrefixer.prefixProperty('transform', 'scale(' + (1 / proportion) + ',1)'));
+              barRight.css(CssVendorPrefixer.prefixProperty('transform', 'scale(' + (1 / proportion) + ',1)'));
             });
           }
         },
