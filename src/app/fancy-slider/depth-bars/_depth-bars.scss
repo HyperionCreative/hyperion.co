@@ -2,7 +2,7 @@
 // Original //
 //////////////
 
-.depth-bars.original .bar {
+.depth-bars.unblurred .bar {
   background-color: #ffffff;
   position: absolute;
 
@@ -48,7 +48,6 @@
 
 .depth-bars.blurred {
   bottom: 0;
-  display: none;
   left: 0;
   position: absolute;
   right: 0;
