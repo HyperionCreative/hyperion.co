@@ -6,7 +6,7 @@
     .directive('hypFancySliderSlide', function () {
       return {
         link: function () {
-          // todo add functionality?
+          // does it have any functionality?
         },
         replace: true,
         restrict: 'E',
