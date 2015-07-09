@@ -5,6 +5,18 @@
     .module('app.fancy-slider')
     .directive('hypFancySlider', ['CssVendorPrefixer', 'FancySliderResizer', 'MAX_SUPPORTED_WIDTH', 'MAX_SUPPORTED_HEIGHT', function (CssVendorPrefixer, FancySliderResizer, MAX_SUPPORTED_WIDTH, MAX_SUPPORTED_HEIGHT) {
       return {
+        controller: function () {
+          this.changeLeft = changeLeft;
+          this.changeRight = changeRight;
+
+          function changeLeft () {
+            console.log('change left');
+          }
+
+          function changeRight () {
+            console.log('change right');
+          }
+        },
         link: function (scope, iElement) {
           var slidesContainer = angular.element(iElement[0].querySelector('.slides-container'));
 

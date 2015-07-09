@@ -5,23 +5,12 @@
     .module('app.fancy-slider.controls', [])
     .directive('hypFancySliderControls', function () {
       return {
-        link: function (scope) {
-          // todo link this
-          
-          scope.changeLeft = changeLeft;
-          scope.changeRight = changeRight;
-
-          function changeLeft() {
-            console.log('left');
-          }
-
-          function changeRight() {
-            console.log('right');
-          }
+        link: function (scope, iElement, iAttrs, fancySliderController) {
+          scope.changeLeft = fancySliderController.changeLeft;
+          scope.changeRight = fancySliderController.changeRight;
         },
         replace: true,
-        // todo uncomment this
-        // require: '^^hypFancySlider',
+        require: '^^hypFancySlider',
         restrict: 'E',
         scope: {},
         templateUrl: 'app/fancy-slider/controls/controls.html'

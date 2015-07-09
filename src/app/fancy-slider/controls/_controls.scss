@@ -1,9 +1,9 @@
 .fancy-slider-controls .change-slide-control {
   bottom: 0;
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 50%;
-  z-index: 500;
+  z-index: $fancy-slider-controls-z-index;
 
   &.left {
     cursor: url(../app/fancy-slider/controls/arrow-left.ico), auto;
