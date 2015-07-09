@@ -3,7 +3,7 @@
 //////////////////////
 
 .fancy-slider {
-  .blur-overlay {
+  #blur-overlay {
     background: rgba(#ffffff, 0.75);
     bottom: 0;
     display: none;
@@ -11,6 +11,11 @@
     position: absolute;
     right: 0;
     top: 0;
-    z-index: 1000;
+    z-index: $fancy-slider-blur-overlay-z-index;
+  }
+
+  // By default, all blurred resources are hidden
+  .blurred {
+    display: none;
   }
 }

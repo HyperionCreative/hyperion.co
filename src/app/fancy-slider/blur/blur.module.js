@@ -2,5 +2,7 @@
   'use strict';
 
   angular
-    .module('app.fancy-slider.blur', []);
+    .module('app.fancy-slider.blur', [
+      'common.velocity'
+    ]);
 })();
