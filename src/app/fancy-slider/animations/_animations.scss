@@ -1,76 +1,19 @@
-////////////////////////
-// Resources Position //
-////////////////////////
-
-.fancy-slider {
-  .slide-1 {
-    .flower-pot {
-      left: 1710px;
-      top: 380px;
-    }
-    
-    .macbook {
-      left: 530px;
-      top: 27px;
-    }
-
-    .sketchbook {
-      left: 16px;
-      top: 354px;
-    }
-
-    .watch {
-      left: 1017px;
-      top: 965px;
-    }
-  }
-
-  .slide-2 {
-    .imac {
-      left: 1525px;
-      top: -150px;
-    }
-
-    .iphone {
-      left: 615px;
-      top: 136px;
-    }
-
-    .sketchpad {
-      left: -5px;
-      top: 268px;
-    }
-  }
-
-  .slide-3 {
-    .imac {
-      left: 182px;
-      top: 25px;
-    }
-
-    .iphone {
-      left: 618px;
-      top: 768px;
-    }
-  }
-}
-
 /////////////////////////
 // Resources Animation //
 /////////////////////////
 
 .fancy-slider {
-  .slide, .resource {
-    // The transition duration is also added on the .slide as it's used
-    // to determine when the transition has finished.
-    @include transition-duration(1s);
-  }
+  // .slide, .resource {
+  //   // The transition duration is also added on the .slide as it's used
+  //   // to determine when the transition has finished.
+  //   @include transition-duration(1s);
+  // }
 
-  .resource {
-    @include transform-origin(50%, 50%);
-    @include transition-property(-webkit-transform);
-    @include transition-timing-function(cubic-bezier(0.22, 0.61, 0.36, 1));
-  }
+  // .resource {
+  //   @include transform-origin(50%, 50%);
+  //   @include transition-property(-webkit-transform);
+  //   @include transition-timing-function(cubic-bezier(0.22, 0.61, 0.36, 1));
+  // }
 
   .slide-1 {
     &.throw-in {
