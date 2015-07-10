@@ -1,12 +1,16 @@
-<div class="fancy-slider">
-  <hyp-fancy-slider-controls></hyp-fancy-slider-controls>
+<div class="fancy-slider" hyp-blur-container>
+  <!-- <hyp-fancy-slider-controls></hyp-fancy-slider-controls> -->
 
   <div class="slides-container">
-    <!-- DepthBars Directive needs to be placed here otherwise the scale transformation will break the z-index property -->
-    <hyp-fancy-slider-depth-bars original></hyp-fancy-slider-depth-bars>
+    <!-- DepthBars Directive needs to be placed inside .slides-container otherwise the scale transformation will break the z-index property -->
+    <div hyp-fancy-slider-depth-bars unblurred></div>
 
     <hyp-fancy-slider-slide index="1"></hyp-fancy-slider-slide>
     <hyp-fancy-slider-slide index="2"></hyp-fancy-slider-slide>
     <hyp-fancy-slider-slide index="3"></hyp-fancy-slider-slide>
   </div>
+
+  <div hyp-fancy-slider-depth-bars blurred></div>
+
+  <div id="blur-overlay"></div>
 </div>
