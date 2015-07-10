@@ -6,8 +6,8 @@
     .directive('hypFancySliderControls', function () {
       return {
         link: function (scope, iElement, iAttrs, fancySliderController) {
-          scope.changeLeft = fancySliderController.changeLeft;
-          scope.changeRight = fancySliderController.changeRight;
+          scope.changeLeft = fancySliderController.controls.changeLeft;
+          scope.changeRight = fancySliderController.controls.changeRight;
         },
         replace: true,
         require: '^^hypFancySlider',

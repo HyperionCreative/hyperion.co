@@ -207,14 +207,11 @@
 
       return {
         link: function (scope, iElement, iAttrs, fancySliderController) {
-          // Binds its controlls to the 'brain'.
-          fancySliderController.animation = {};
-
           angular.forEach(ANIMATIONS, function (slideAnimations, slide) {
-            fancySliderController.animation[slide] = {};
+            fancySliderController.animations[slide] = {};
 
             angular.forEach(slideAnimations, function (data, name) {
-              fancySliderController.animation[slide][name] = function (onSuccess, fast) {
+              fancySliderController.animations[slide][name] = function (onSuccess, fast) {
                 for (var i = 0; i < data.length; i++) {
                   animate(iElement[0].querySelector(slide + ' ' + data[i].selector), data[i].propertyMap, onSuccess, fast);
                 }
@@ -222,7 +219,7 @@
             });
 
             // Binds toCenter
-            fancySliderController.animation[slide].toCenter = function (onSuccess, fast) {
+            fancySliderController.animations[slide].toCenter = function (onSuccess, fast) {
               animate(iElement[0].querySelectorAll(slide + ' ' + '.resource .transformation-layer'), {
                 translateX: 0,
                 translateY: 0,

@@ -6,8 +6,15 @@
     .directive('hypFancySlider', ['CssVendorPrefixer', 'FancySliderResizer', 'MAX_SUPPORTED_WIDTH', 'MAX_SUPPORTED_HEIGHT', function (CssVendorPrefixer, FancySliderResizer, MAX_SUPPORTED_WIDTH, MAX_SUPPORTED_HEIGHT) {
       return {
         controller: function () {
-          this.changeLeft = changeLeft;
-          this.changeRight = changeRight;
+          // Input - these are populated from child directives
+          this.animations = {};
+          this.blur = {};
+
+          // Output - this is used by child directives
+          this.controls = {
+            changeLeft: changeLeft,
+            changeRight: changeRight
+          };
 
           function changeLeft () {
             console.log('change left');

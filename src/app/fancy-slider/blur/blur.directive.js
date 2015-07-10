@@ -52,25 +52,22 @@
 
       return {
         link: function (scope, iElement, iAttrs, fancySliderController) {
-          // Binds its controlls to the 'brain'.
-          fancySliderController.blur = {
-            blur: function (onSuccess) {
-              blurAll(true, onSuccess);
-            },
-            unblur: function (onSuccess) {
-              blurAll(false, onSuccess);
-            },
+          fancySliderController.blur.blur = function (onSuccess) {
+            blurAll(true, onSuccess);
+          };
+          fancySliderController.blur.unblur = function (onSuccess) {
+            blurAll(false, onSuccess);
+          };
 
-            fastBlur: function () {
-              blurAll(true, undefined, true);
-            },
-            fastUnblur: function () {
-              blurAll(false, undefined, true);
-            },
+          fancySliderController.blur.fastBlur = function () {
+            blurAll(true, undefined, true);
+          };
+          fancySliderController.blur.fastUnblur = function () {
+            blurAll(false, undefined, true);
+          };
 
-            isBlurred: function () {
-              return isBlurred;
-            }
+          fancySliderController.blur.isBlurred = function () {
+            return isBlurred;
           };
 
           function blurAll(showBlurredResources, onSuccess, fast) {
