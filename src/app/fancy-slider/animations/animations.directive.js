@@ -6,7 +6,7 @@
       'common.velocity'
     ])
     .directive('hypAnimationsContainer', ['$rootScope', 'Velocity', function ($rootScope, velocity) {
-      var ANIMATION_DURATION = 1000;
+      var ANIMATION_DURATION = 1500;
       var EASING = 'easeOutCubic';
 
       var isAnimating = 0;
@@ -17,28 +17,24 @@
             selector: '.resource.flower-pot .transformation-layer',
             propertyMap: {
               translateY: 2880,
-              translateZ: 0,
               rotateZ: 30
             }
           }, {
             selector: '.resource.macbook .transformation-layer',
             propertyMap: {
               translateY: 5760,
-              translateZ: 0,
               rotateZ: 45
             }
           }, {
             selector: '.resource.sketchbook .transformation-layer',
             propertyMap: {
               translateY: 7200,
-              translateZ: 0,
               rotateZ: 30
             }
           }, {
             selector: '.resource.watch .transformation-layer',
             propertyMap: {
               translateY: 4320,
-              translateZ: 0,
               rotateZ: -30
             }
           }],
@@ -46,28 +42,24 @@
             selector: '.resource.flower-pot .transformation-layer',
             propertyMap: {
               translateX: -3000,
-              translateZ: 0,
               rotateZ: -30
             }
           }, {
             selector: '.resource.macbook .transformation-layer',
             propertyMap: {
               translateX: -2560,
-              translateZ: 0,
               rotateZ: -20
             }
           }, {
             selector: '.resource.sketchbook .transformation-layer',
             propertyMap: {
               translateX: -720,
-              translateZ: 0,
               rotateZ: -20
             }
           }, {
             selector: '.resource.watch .transformation-layer',
             propertyMap: {
               translateX: -1920,
-              translateZ: 0,
               rotateZ: -20
             }
           }],
@@ -75,28 +67,24 @@
             selector: '.resource.flower-pot .transformation-layer',
             propertyMap: {
               translateX: 1440,
-              translateZ: 0,
               rotateZ: 30
             }
           }, {
             selector: '.resource.macbook .transformation-layer',
             propertyMap: {
               translateX: 2000,
-              translateZ: 0,
               rotateZ: 20
             }
           }, {
             selector: '.resource.sketchbook .transformation-layer',
             propertyMap: {
               translateX: 2560,
-              translateZ: 0,
               rotateZ: 20
             }
           }, {
             selector: '.resource.watch .transformation-layer',
             propertyMap: {
               translateX: 1920,
-              translateZ: 0,
               rotateZ: 20
             }
           }]
@@ -106,21 +94,18 @@
             selector: '.resource.imac .transformation-layer',
             propertyMap: {
               translateX: -3000,
-              translateZ: 0,
               rotateZ: -10
             }
           }, {
             selector: '.resource.iphone .transformation-layer',
             propertyMap: {
               translateX: -2000,
-              translateZ: 0,
               rotateZ: -15
             }
           }, {
             selector: '.resource.sketchpad .transformation-layer',
             propertyMap: {
               translateX: -1000,
-              translateZ: 0,
               rotateZ: -20
             }
           }],
@@ -128,21 +113,18 @@
             selector: '.resource.imac .transformation-layer',
             propertyMap: {
               translateX: 1500,
-              translateZ: 0,
               rotateZ: 5
             }
           }, {
             selector: '.resource.iphone .transformation-layer',
             propertyMap: {
               translateX: 1920,
-              translateZ: 0,
               rotateZ: 15
             }
           }, {
             selector: '.resource.sketchpad .transformation-layer',
             propertyMap: {
               translateX: 2800,
-              translateZ: 0,
               rotateZ: 20
             }
           }]
@@ -152,14 +134,12 @@
             selector: '.resource.imac .transformation-layer',
             propertyMap: {
               translateX: -2560,
-              translateZ: 0,
               rotateZ: -5
             }
           }, {
             selector: '.resource.iphone .transformation-layer',
             propertyMap: {
               translateX: -1920,
-              translateZ: 0,
               rotateZ: -15
             }
           }],
@@ -167,14 +147,12 @@
             selector: '.resource.imac .transformation-layer',
             propertyMap: {
               translateX: 2560,
-              translateZ: 0,
               rotateZ: 5
             }
           }, {
             selector: '.resource.iphone .transformation-layer',
             propertyMap: {
               translateX: 2200,
-              translateZ: 0,
               rotateZ: 15
             }
           }]
@@ -182,6 +160,7 @@
       };
 
       function animate(element, propertyMap, onSuccess, fast) {
+        console.log(element, propertyMap, onSuccess, fast);
         // The default options.
         var velocityOptions = {
           duration: fast ? 0 : ANIMATION_DURATION,
@@ -202,7 +181,14 @@
           };
         }
 
-        velocity(element, propertyMap, velocityOptions);
+        // These need to be added in order!
+        // translateX(value1) rotateZ(value2) !== rotateZ(value2) translateX(value1)
+        velocity(element, {
+          translateX: propertyMap.translateX || 0,
+          translateY: propertyMap.translateY || 0,
+          translateZ: propertyMap.translateZ || 0,
+          rotateZ: propertyMap.rotateZ || 0,
+        }, velocityOptions);
       }
 
       return {
@@ -220,12 +206,7 @@
 
             // Binds toCenter
             fancySliderController.animations[slide].toCenter = function (onSuccess, fast) {
-              animate(iElement[0].querySelectorAll(slide + ' ' + '.resource .transformation-layer'), {
-                translateX: 0,
-                translateY: 0,
-                translateZ: 0,
-                rotateZ: 0
-              }, onSuccess, fast);
+              animate(iElement[0].querySelectorAll(slide + ' ' + '.resource .transformation-layer'), {}, onSuccess, fast);
             };
           });
         },
