@@ -12,9 +12,9 @@
           // unblurred bars?
           if (angular.isDefined(iAttrs.unblurred)) {
             var 
-              barTop = angular.element(iElement[0].querySelectorAll('.bar.top')),
-              barLeft = angular.element(iElement[0].querySelectorAll('.bar.left')),
-              barRight = angular.element(iElement[0].querySelectorAll('.bar.right'));
+              barTop = angular.element(iElement[0].querySelectorAll('.depth-bar.top')),
+              barLeft = angular.element(iElement[0].querySelectorAll('.depth-bar.left')),
+              barRight = angular.element(iElement[0].querySelectorAll('.depth-bar.right'));
 
             FancySliderResizer.onProportionChange(function (proportion) {
               barTop.css(CssVendorPrefixer.prefixProperty('transform', 'scale(1,' + (1 / proportion) + ')'));
