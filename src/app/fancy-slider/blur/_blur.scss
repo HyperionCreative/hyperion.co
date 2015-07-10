@@ -18,4 +18,10 @@
   .blurred {
     display: none;
   }
+
+  // Increases the performance
+  .blurred, .unblurred,
+  #blur-overlay {
+    @include transform(translateZ(0));
+  }
 }
