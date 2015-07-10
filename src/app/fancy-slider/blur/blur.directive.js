@@ -27,7 +27,7 @@
           velocityOptions.duration = duration;
         }
 
-        if (angular.isFunction(onSuccess)) {
+        if (angular.isFunction(onSuccess) && fast !== true) {
           velocityOptions.begin = function () {
             isBlurringFlag += 1;
           };
