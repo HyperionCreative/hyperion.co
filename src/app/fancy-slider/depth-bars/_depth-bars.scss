@@ -2,7 +2,7 @@
 // Original //
 //////////////
 
-.depth-bars.unblurred .bar {
+.depth-bar.unblurred {
   background-color: #ffffff;
   position: absolute;
 
@@ -46,15 +46,8 @@
 // Blurred //
 /////////////
 
-.depth-bars.blurred {
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 999;
-
-  .corner {
+.depth-bar.blurred {
+  &.corner {
     // This is a right corner
     background: url(../app/fancy-slider/depth-bars/blur-sprites/corner.png) no-repeat;
     background-size: 125px 125px;
@@ -75,7 +68,7 @@
     }
   }
 
-  .edge {
+  &.edge {
     // This is a right edge
     background: url(../app/fancy-slider/depth-bars/blur-sprites/edge.png) repeat-y;
     background-size: 125px 100px;
@@ -94,7 +87,7 @@
     }
   }
 
-  .top.margin {
+  &.top.margin {
     background: url(../app/fancy-slider/depth-bars/blur-sprites/top.png) repeat-x;
     background-size: 100px 125px;
     height: image-height("app/fancy-slider/depth-bars/blur-sprites/top.png");
@@ -106,38 +99,38 @@
 
   // This is needed since the left and right .bar and 10px smaller
   @media only screen and (max-width : 1920px) {
-    .corner.left {
+    &.corner.left {
       left: -10px;
     }
 
-    .corner.right {
+    &.corner.right {
       right: -10px;
     }
 
-    .edge.left {
+    &.edge.left {
       left: -10px;
     }
 
-    .edge.right {
+    &.edge.right {
       right: -10px;
     }
 
-    .top.margin {
+    &.top.margin {
       left: image-width("app/fancy-slider/depth-bars/blur-sprites/corner.png") - 10;
       right: image-width("app/fancy-slider/depth-bars/blur-sprites/corner.png") - 10;
     }
   }
 
   @media only screen and (max-width : 1919px) {
-    .corner {
+    &.corner {
       display: none;
     }
 
-    .edge {
+    &.edge {
       display: none;
     }
 
-    .top.margin {
+    &.top.margin {
       left: 0;
       right: 0;
     }

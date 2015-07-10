@@ -9,8 +9,8 @@
       return {
         link: function (scope, iElement, iAttrs) {
           // todo shouldn't it add the scaling property to both blurred and 
-          // original bars?
-          if (angular.isDefined(iAttrs.original)) {
+          // unblurred bars?
+          if (angular.isDefined(iAttrs.unblurred)) {
             var 
               barTop = angular.element(iElement[0].querySelectorAll('.bar.top')),
               barLeft = angular.element(iElement[0].querySelectorAll('.bar.left')),
@@ -23,14 +23,14 @@
             });
           }
         },
-        replace: true,
-        restrict: 'E',
+        replace: false,
+        restrict: 'A',
         templateUrl: function (tElement, tAttrs) {
           if (angular.isDefined(tAttrs.blurred)) {
             return 'app/fancy-slider/depth-bars/blurred.html';
           }
 
-          return 'app/fancy-slider/depth-bars/original.html';
+          return 'app/fancy-slider/depth-bars/unblurred.html';
         }
       };
     }]);

@@ -81,8 +81,8 @@
               var blurringMaterial = {
                 overlay: iElement[0].querySelector('#blur-overlay'),
                 bars: {
-                  blurred: iElement[0].querySelector('.depth-bars.blurred'),
-                  unblurred: iElement[0].querySelector('.depth-bars.unblurred')
+                  blurred: iElement[0].querySelectorAll('.depth-bar.blurred'),
+                  unblurred: iElement[0].querySelectorAll('.depth-bar.unblurred')
                 },
                 resources: {
                   blurred: iElement[0].querySelectorAll('.resource .blurred'),
