@@ -16,7 +16,7 @@
 
   // By default, all blurred resources are hidden
   .blurred {
-    display: none;
+    visibility: hidden;
   }
 
   // Increases the performance

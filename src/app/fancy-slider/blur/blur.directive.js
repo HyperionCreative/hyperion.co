@@ -3,51 +3,35 @@
 
   angular
     .module('app.fancy-slider.blur', [])
-    .directive('hypBlurContainer', ['$rootScope', '$timeout', 'Velocity', function ($rootScope, $timeout, velocity) {
-      // The animation duration.
+    .directive('hypBlurContainer', ['$timeout', 'TweenLite', 'TweenLiteEasings', function ($timeout, TweenLite, TweenLiteEasings) {
+      // The animation duration. This is used as the base to calculate the blur of other resources.
       var ANIMATION_DURATION = 250;
+      var EASING = TweenLiteEasings.Power3.easeInOut;
+
       // A flag which tells if the container is blurred or not!
       var isBlurred = false;
-      // If this is different than 0, then the blurring process is running.
-      var isBlurringFlag = 0;
 
-      function fadeMe(elements, fadeType, delay, duration, onSuccess, fast) {
+      function fadeMe(elements, fadeType, delay, duration, fast) {
         // The default options.
-        var velocityOptions = {
-          delay: 0,
-          duration: ANIMATION_DURATION,
-          easing: 'ease-in-out'
-        };
-
-        if (angular.isNumber(delay)) {
-          velocityOptions.delay = delay;
-        }
-
-        if (angular.isNumber(duration)) {
-          velocityOptions.duration = duration;
-        }
-
-        if (angular.isFunction(onSuccess) && fast !== true) {
-          velocityOptions.begin = function () {
-            isBlurringFlag += 1;
-          };
-
-          velocityOptions.complete = function () {
-            isBlurringFlag -= 1;
-
-            if (isBlurringFlag === 0) {
-              $rootScope.$evalAsync(onSuccess);
-            }
-          };
-        }
+        var delay = (angular.isNumber(delay) ? delay : 0) / 1000;
+        var duration = (angular.isNumber(duration) ? duration : ANIMATION_DURATION) / 1000;
 
         // Overwrites the delay and duration if fast is set to true
         if (fast) {
-          velocityOptions.delay = 0;
-          velocityOptions.duration = 0;
+          delay = 0;
+          duration = 0;
         }
 
-        velocity(elements, fadeType, velocityOptions);
+        var tweenLiteArgs = [elements, ANIMATION_DURATION, {
+          delay: delay,
+          ease: EASING
+        }];
+
+        TweenLite.to(elements, duration, {
+          autoAlpha: (fadeType === 'fadeOut') ? 0 : 1,
+          delay: delay,
+          ease: EASING
+        });
       }
 
       return {
@@ -88,17 +72,25 @@
               };
 
               // The overlay
-              fadeMe(blurringMaterial.overlay, (showBlurredResources ? 'fadeIn' : 'fadeOut'), 0, ANIMATION_DURATION * 4 / 3, onSuccess, fast);
+              fadeMe(blurringMaterial.overlay, (showBlurredResources ? 'fadeIn' : 'fadeOut'), 0, ANIMATION_DURATION * 4 / 3, fast);
 
               // The depth bars
-              fadeMe((showBlurredResources ? blurringMaterial.bars.unblurred : blurringMaterial.bars.blurred), 'fadeOut', ANIMATION_DURATION / 2, ANIMATION_DURATION / 2, onSuccess, fast);
-              fadeMe((showBlurredResources ? blurringMaterial.bars.blurred : blurringMaterial.bars.unblurred), 'fadeIn', 0, ANIMATION_DURATION, onSuccess, fast);
+              fadeMe((showBlurredResources ? blurringMaterial.bars.unblurred : blurringMaterial.bars.blurred), 'fadeOut', ANIMATION_DURATION / 2, ANIMATION_DURATION / 2, fast);
+              fadeMe((showBlurredResources ? blurringMaterial.bars.blurred : blurringMaterial.bars.unblurred), 'fadeIn', 0, ANIMATION_DURATION, fast);
 
               // The resources
-              fadeMe((showBlurredResources ? blurringMaterial.resources.unblurred : blurringMaterial.resources.blurred), 'fadeOut', ANIMATION_DURATION / 2, ANIMATION_DURATION / 2, onSuccess, fast);
-              fadeMe((showBlurredResources ? blurringMaterial.resources.blurred : blurringMaterial.resources.unblurred), 'fadeIn', 0, ANIMATION_DURATION, onSuccess, fast);
+              fadeMe((showBlurredResources ? blurringMaterial.resources.unblurred : blurringMaterial.resources.blurred), 'fadeOut', ANIMATION_DURATION / 2, ANIMATION_DURATION / 2, fast);
+              fadeMe((showBlurredResources ? blurringMaterial.resources.blurred : blurringMaterial.resources.unblurred), 'fadeIn', 0, ANIMATION_DURATION, fast);
+
+              if (angular.isFunction(onSuccess)) {
+                // todo the delay is a hardcoded value! If you change the delay or animation duration of the above elements,
+                // this may also require a change.
+                $timeout(onSuccess, ANIMATION_DURATION * 4 / 3);
+              }
             }
           }
+
+          window.gigel = fancySliderController.blur;
         },
         restrict: 'A',
         require: '^hypFancySlider'
