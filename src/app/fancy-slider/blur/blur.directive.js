@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('app.fancy-slider.blur')
+    .module('app.fancy-slider.blur', [])
     .directive('hypBlurContainer', ['$rootScope', '$timeout', 'Velocity', function ($rootScope, $timeout, velocity) {
       // The animation duration.
       var ANIMATION_DURATION = 250;
