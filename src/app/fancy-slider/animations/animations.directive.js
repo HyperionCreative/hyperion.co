@@ -3,17 +3,14 @@
 
   angular
     .module('app.fancy-slider.animations', [
-      'common.velocity'
+      'common.gasp-lite'
     ])
-    .directive('hypAnimationsContainer', ['$rootScope', 'Velocity', function ($rootScope, velocity) {
+    .directive('hypAnimationsContainer', ['$timeout', 'TweenLite', 'TweenLiteEasings', function ($timeout, TweenLite, TweenLiteEasings) {
       var ANIMATION_DURATION = 1500;
-      var EASING = 'easeOutCubic';
-
-      var isAnimating = 0;
-
-      var ANIMATIONS = {
+      var EASING = TweenLiteEasings.Power3.easeInOut;
+      var ANIMATIONS_POSITION = {
         '.slide-1': {
-          toBottom: [{
+          bottom: [{
             selector: '.resource.flower-pot .transformation-layer',
             propertyMap: {
               translateY: 2880,
@@ -38,7 +35,7 @@
               rotateZ: -30
             }
           }],
-          toLeft: [{
+          left: [{
             selector: '.resource.flower-pot .transformation-layer',
             propertyMap: {
               translateX: -3000,
@@ -63,7 +60,7 @@
               rotateZ: -20
             }
           }],
-          toRight: [{
+          right: [{
             selector: '.resource.flower-pot .transformation-layer',
             propertyMap: {
               translateX: 1440,
@@ -90,7 +87,7 @@
           }]
         },
         '.slide-2': {
-          toLeft: [{
+          left: [{
             selector: '.resource.imac .transformation-layer',
             propertyMap: {
               translateX: -3000,
@@ -109,7 +106,7 @@
               rotateZ: -20
             }
           }],
-          toRight: [{
+          right: [{
             selector: '.resource.imac .transformation-layer',
             propertyMap: {
               translateX: 1500,
@@ -130,7 +127,7 @@
           }]
         },
         '.slide-3': {
-          toLeft: [{
+          left: [{
             selector: '.resource.imac .transformation-layer',
             propertyMap: {
               translateX: -2560,
@@ -143,7 +140,7 @@
               rotateZ: -15
             }
           }],
-          toRight: [{
+          right: [{
             selector: '.resource.imac .transformation-layer',
             propertyMap: {
               translateX: 2560,
@@ -159,54 +156,44 @@
         }
       };
 
-      function animate(element, propertyMap, onSuccess, fast) {
-        console.log(element, propertyMap, onSuccess, fast);
-        // The default options.
-        var velocityOptions = {
-          duration: fast ? 0 : ANIMATION_DURATION,
-          easing: EASING
-        };
+      function animate(element, propertyMap, fast) {
+        TweenLite.to(element, fast ? 0 : (ANIMATION_DURATION / 1000), {
+          x: propertyMap.translateX || 0,
+          y: propertyMap.translateY || 0,
+          z: propertyMap.translateZ || 0,
+          rotation: propertyMap.rotateZ || 0,
+          ease: EASING
+        });
+      }
 
-        if (angular.isFunction(onSuccess) && fast !== true) {
-          velocityOptions.begin = function () {
-            isAnimating += 1;
-          };
-
-          velocityOptions.complete = function () {
-            isAnimating -= 1;
-
-            if (isAnimating === 0) {
-              $rootScope.$evalAsync(onSuccess);
-            }
-          };
+      function handleOnSuccess(fn) {
+        if (angular.isFunction(fn)) {
+          $timeout(fn, ANIMATION_DURATION);
         }
-
-        // These need to be added in order!
-        // translateX(value1) rotateZ(value2) !== rotateZ(value2) translateX(value1)
-        velocity(element, {
-          translateX: propertyMap.translateX || 0,
-          translateY: propertyMap.translateY || 0,
-          translateZ: propertyMap.translateZ || 0,
-          rotateZ: propertyMap.rotateZ || 0,
-        }, velocityOptions);
       }
 
       return {
         link: function (scope, iElement, iAttrs, fancySliderController) {
-          angular.forEach(ANIMATIONS, function (slideAnimations, slide) {
+          // Each slide
+          angular.forEach(ANIMATIONS_POSITION, function (slidePositionData, slide) {
             fancySliderController.animations[slide] = {};
 
-            angular.forEach(slideAnimations, function (data, name) {
-              fancySliderController.animations[slide][name] = function (onSuccess, fast) {
-                for (var i = 0; i < data.length; i++) {
-                  animate(iElement[0].querySelector(slide + ' ' + data[i].selector), data[i].propertyMap, onSuccess, fast);
+            // Each slide position
+            angular.forEach(slidePositionData, function (positionData, positionName) {
+              fancySliderController.animations[slide]['to' + positionName.charAt(0).toUpperCase() + positionName.substring(1)] = function (onSuccess, fast) {
+                for (var i = 0; i < positionData.length; i++) {
+                  animate(iElement[0].querySelector(slide + ' ' + positionData[i].selector), positionData[i].propertyMap, fast);
                 }
+
+                handleOnSuccess(onSuccess);
               };
             });
 
             // Binds toCenter
             fancySliderController.animations[slide].toCenter = function (onSuccess, fast) {
-              animate(iElement[0].querySelectorAll(slide + ' ' + '.resource .transformation-layer'), {}, onSuccess, fast);
+              animate(iElement[0].querySelectorAll(slide + ' ' + '.resource .transformation-layer'), {}, fast);
+
+              handleOnSuccess(onSuccess);
             };
           });
         },
