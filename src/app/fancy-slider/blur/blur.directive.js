@@ -63,6 +63,10 @@
                 resources: {
                   blurred: iElement[0].querySelectorAll('.resource .blurred'),
                   unblurred: iElement[0].querySelectorAll('.resource .unblurred')
+                },
+                slideDescription: {
+                  blurred: iElement[0].querySelector('.slide-description-container .blurred'),
+                  unblurred: iElement[0].querySelector('.slide-description-container .unblurred')
                 }
               };
 
@@ -76,6 +80,10 @@
               // The resources
               fadeMe((showBlurredResources ? blurringMaterial.resources.unblurred : blurringMaterial.resources.blurred), 'fadeOut', ANIMATION_DURATION / 2, ANIMATION_DURATION / 2, fast);
               fadeMe((showBlurredResources ? blurringMaterial.resources.blurred : blurringMaterial.resources.unblurred), 'fadeIn', 0, ANIMATION_DURATION, fast);
+
+              // The resources
+              fadeMe((showBlurredResources ? blurringMaterial.slideDescription.unblurred : blurringMaterial.slideDescription.blurred), 'fadeOut', ANIMATION_DURATION / 2, ANIMATION_DURATION / 2, fast);
+              fadeMe((showBlurredResources ? blurringMaterial.slideDescription.blurred : blurringMaterial.slideDescription.unblurred), 'fadeIn', 0, ANIMATION_DURATION, fast);
 
               if (angular.isFunction(onSuccess)) {
                 // todo the delay is a hardcoded value! If you change the delay or animation duration of the above elements,
