@@ -13,7 +13,8 @@
               templateUrl: 'state-components/preloader/preloader.html'
             },
             'fancy-slider': {
-              template: '<hyp-fancy-slider></hyp-fancy-slider>'
+              controller: 'FancySliderCtrl',
+              templateUrl: 'state-components/fancy-slider/fancy-slider.html'
             }
           }
         });

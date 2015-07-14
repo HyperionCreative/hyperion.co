@@ -2,8 +2,7 @@
   'use strict';
 
   angular
-    .module('state.preloader', [
-      'common.greeter',
+    .module('state.fancy-slider', [
       'common.preloader'
     ]);
 })();

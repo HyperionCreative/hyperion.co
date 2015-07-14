@@ -58,8 +58,10 @@
           // Run Block //
           ///////////////
 
+          // Since this controller depends on its children, it needs to wait
+          // for them to load. After everything has been loaded, then we can start.
           var watchForInit = $scope.$watch(function () {
-            return angular.isDefined(animations['.slide-1']) && angular.isDefined(blur.blur);
+            return Object.keys(animations).length > 0 && Object.keys(blur).length > 0;
           }, function (result) {
             if (result === true) {
               watchForInit();

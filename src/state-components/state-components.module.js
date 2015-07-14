@@ -5,6 +5,7 @@
     .module('state.state-components', [
       'ui.router',
 
+      'state.fancy-slider',
       'state.preloader'
     ]);
 })();
