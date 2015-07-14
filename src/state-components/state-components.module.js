@@ -6,6 +6,7 @@
       'ui.router',
 
       'state.fancy-slider',
+      'state.our-processes',
       'state.preloader'
     ]);
 })();

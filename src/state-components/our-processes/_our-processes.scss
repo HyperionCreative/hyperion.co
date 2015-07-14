@@ -1,0 +1,44 @@
+#process-page {
+  .processes-container {
+    @include legacy-pie-clearfix;
+  }
+
+  .process {
+    @include box-shadow($normal-box-shadow);
+    color: #93a2ad;
+    float: left;
+    margin-right: 1.4%;
+    width: 32.4%;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    .illustration {
+      background: rgba(#ffffff, 0.8);
+      color: #505a65;
+      font-size: 40px;
+      margin-bottom: 1px;
+      text-align: center;
+
+      &:before {
+        // This is needed to be placed on the icon
+        // otherwise browsers will mess this up.
+        line-height: 100px;
+      }
+    }
+
+    .description {
+      background: #ffffff;
+      padding: 40px 50px;
+    }
+
+    strong {
+      color: #000000;
+    }
+
+    p:not(:last-child) {
+      margin-bottom: $normal-line-height;
+    }
+  }
+}
