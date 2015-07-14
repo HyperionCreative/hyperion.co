@@ -2,7 +2,9 @@
   'use strict';
 
   angular
-    .module('app.fancy-slider.slide-description', [])
+    .module('app.fancy-slider.slide-description', [
+      'common.simple-hoverable'
+    ])
     .directive('hypFancySliderSlideDescription', function () {
       return {
         link: function () {
