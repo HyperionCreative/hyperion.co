@@ -6,6 +6,7 @@
 
 @import "forms";
 @import "icons";
+@import "responsive";
 @import "webfonts";
 
 @import "app/fancy-slider/fancy-slider";
@@ -77,8 +78,4 @@ body {
   display: block;
   margin: 0 auto;
   width: $container-width;
-
-  @media only screen and (max-width : 1024px) {
-    width: 900px;
-  }
 }
