@@ -10,6 +10,10 @@ $fancy-slider-controls-z-index: 2000;
 .fancy-slider {
   bottom: 0;
   left: 0;
+
+  // The slider is shown from its directive only when everything is ready
+  opacity: 0;
+
   overflow: hidden;
   position: absolute;
   right: 0;

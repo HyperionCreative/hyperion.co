@@ -5,7 +5,7 @@
     .module('app.fancy-slider')
     .directive('hypFancySlider', ['CssVendorPrefixer', 'FancySliderResizer', 'MAX_SUPPORTED_WIDTH', 'MAX_SUPPORTED_HEIGHT', function (CssVendorPrefixer, FancySliderResizer, MAX_SUPPORTED_WIDTH, MAX_SUPPORTED_HEIGHT) {
       return {
-        controller: ['$scope', '$timeout', function ($scope, $timeout) {
+        controller: ['$scope', '$element', '$timeout', function ($scope, $element, $timeout) {
           var activeSlide = 1,
             animations = {}, blur = {}, controls = {};
 
@@ -52,6 +52,13 @@
             animations['.slide-3'].toLeft(undefined, true);
 
             animations['.slide-1'].toCenter();
+
+            // Without this, the slider may have a very short flicker if the resources
+            // are in cache! This ensures that the slider is shown only after the resources
+            // are moved on their initial position!
+            $element.css({
+              opacity: 1
+            });
           }
 
           ///////////////
