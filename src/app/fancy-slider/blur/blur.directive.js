@@ -5,7 +5,7 @@
     .module('app.fancy-slider.blur', [])
     .directive('hypBlurContainer', ['$timeout', 'TweenLite', 'TweenLiteEasings', function ($timeout, TweenLite, TweenLiteEasings) {
       // The animation duration. This is used as the base to calculate the blur of other resources.
-      var ANIMATION_DURATION = 250;
+      var ANIMATION_DURATION = 175;
       var EASING = TweenLiteEasings.Power3.easeInOut;
 
       // A flag which tells if the container is blurred or not!
@@ -13,19 +13,14 @@
 
       function fadeMe(elements, fadeType, delay, duration, fast) {
         // The default options.
-        var delay = (angular.isNumber(delay) ? delay : 0) / 1000;
-        var duration = (angular.isNumber(duration) ? duration : ANIMATION_DURATION) / 1000;
+        delay = (angular.isNumber(delay) ? delay : 0) / 1000;
+        duration = (angular.isNumber(duration) ? duration : ANIMATION_DURATION) / 1000;
 
         // Overwrites the delay and duration if fast is set to true
         if (fast) {
           delay = 0;
           duration = 0;
         }
-
-        var tweenLiteArgs = [elements, ANIMATION_DURATION, {
-          delay: delay,
-          ease: EASING
-        }];
 
         TweenLite.to(elements, duration, {
           autoAlpha: (fadeType === 'fadeOut') ? 0 : 1,
@@ -89,8 +84,6 @@
               }
             }
           }
-
-          window.gigel = fancySliderController.blur;
         },
         restrict: 'A',
         require: '^hypFancySlider'
