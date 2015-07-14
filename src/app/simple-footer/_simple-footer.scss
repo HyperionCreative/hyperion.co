@@ -1,0 +1,29 @@
+.simple-footer {
+  padding: 50px 0 25px 0;
+  text-align: center;
+
+  .text, .social-links {
+    display: block;
+  }
+
+  .text {
+    margin-bottom: 15px;
+
+    p {
+      color: rgba($dark-blue, 0.7);
+      margin-bottom: 3px;
+    }
+
+    small {
+      color: rgba(#a4aeb3, 0.7);
+    }
+  }
+
+  .social-link {
+    color: rgba(#3c3c3b, 0.5);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 17px;
+    margin: 0 8px;
+  }
+}
