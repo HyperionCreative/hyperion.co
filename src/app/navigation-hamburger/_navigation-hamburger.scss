@@ -49,13 +49,13 @@
   // Different style options
   &.left {
     .icon-three-horizontal-bars {
-      left: 0;
+      left: - $this-hamburger-icon-padding;
     }
   }
 
   &.right {
     .icon-three-horizontal-bars {
-      right: 0;
+      right: - $this-hamburger-icon-padding;
     }
   }
 
