@@ -12,7 +12,7 @@
   right: 0;
   text-align: center;
   top: 0;
-  z-index: 1000;
+  z-index: $preloader-z-index;
 
   .preloader-container {
     // This works as the top half is bigger than the bottom half

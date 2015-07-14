@@ -69,3 +69,15 @@ $homepage-header-height: 60px;
 
 $normal-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.05);
 $fancy-slider-description-height: 125px;
+
+///////////////
+// Z-Indexes //
+///////////////
+
+$fancy-slider-controls-z-index: 2000;
+$fancy-slider-description-z-index: 2500;
+$fancy-slider-blur-overlay-z-index: 3000;
+
+$page-content-z-index: 3500;
+
+$preloader-z-index: 10000;
