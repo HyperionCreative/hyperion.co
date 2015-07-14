@@ -5,7 +5,12 @@
     .config(['$stateProvider', function ($stateProvider) {
       $stateProvider
         .state('root.index', {
-          url: '/'
+          url: '/',
+          views: {
+            'page-content@': {
+              templateUrl: 'state-components/index/index.html'
+            }
+          }
         });
     }]);
 })();
