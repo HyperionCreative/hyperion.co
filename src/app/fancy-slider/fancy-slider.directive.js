@@ -5,7 +5,7 @@
     .module('app.fancy-slider')
     .directive('hypFancySlider', ['CssVendorPrefixer', 'FancySliderResizer', 'MAX_SUPPORTED_WIDTH', 'MAX_SUPPORTED_HEIGHT', function (CssVendorPrefixer, FancySliderResizer, MAX_SUPPORTED_WIDTH, MAX_SUPPORTED_HEIGHT) {
       return {
-        controller: ['$scope', '$element', '$timeout', function ($scope, $element, $timeout) {
+        controller: ['$element', '$scope', '$state', '$timeout', function ($element, $scope, $state, $timeout) {
           var activeSlide = 1,
             animations = {}, blur = {}, controls = {};
 
@@ -51,7 +51,15 @@
             animations['.slide-2'].toLeft(undefined, true);
             animations['.slide-3'].toLeft(undefined, true);
 
-            animations['.slide-1'].toCenter();
+            // todo extend this base solution to cover route changes!
+            if ($state.current.name === 'root.index') {
+              // The user is on the main page. Throw in the first slide!
+              animations['.slide-1'].toCenter();
+            } else {
+              // The user is on a secondary page. Blur all the things!
+              animations['.slide-1'].toCenter(undefined, true);
+              blur.fastBlur();
+            }
 
             // Without this, the slider may have a very short flicker if the resources
             // are in cache! This ensures that the slider is shown only after the resources
