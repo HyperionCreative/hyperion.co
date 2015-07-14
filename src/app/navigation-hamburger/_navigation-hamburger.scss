@@ -1,0 +1,125 @@
+.hamburger-navigation {
+  $this-height: $homepage-header-height;
+  $this-hamburger-icon-size: 20px;
+  $this-hamburger-icon-padding: ($this-height - $this-hamburger-icon-size) / 2;
+
+  height: $this-height;
+  // As the hamburger icon is a square!
+  min-width: $this-height;
+
+  .menu-container {
+    display: inline-block;
+    position: relative;
+  }
+
+  // The hamburger icon
+  .icon-three-horizontal-bars {
+    color: #7f7f7f;
+    font-size: 11px;
+    line-height: $this-hamburger-icon-size;
+    padding: $this-hamburger-icon-padding;
+    position: absolute;
+    top: 0;
+  }
+
+  .links {
+    display: inline-block;
+  }
+
+  .link {
+    color: #9ba0a3;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    line-height: $this-height;
+    margin-right: 35px;
+    opacity: 0.5;
+    @include transition(opacity $rapid-transition-timing);
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  // Different style options
+  &.left {
+    .icon-three-horizontal-bars {
+      left: 0;
+    }
+  }
+
+  &.right {
+    .icon-three-horizontal-bars {
+      right: 0;
+    }
+  }
+
+  &.center {
+    .icon-three-horizontal-bars {
+      left: 50%;
+      margin-left: - $this-height / 2;
+    }
+  }
+
+  // The "hover" animation
+  .menu-container {
+    $this-max-transition-duration: 0.3s;
+    $this-min-transition-duration: 0.2s;
+    // todo change this when adding/removing links
+    $this-links-count: 4;
+
+    $this-translate-travel: 30px;
+
+    // This is added so simple-hoverable knows the transition value
+    @include transition-duration($this-max-transition-duration);
+
+    .icon-three-horizontal-bars,
+    .link {
+      @include transition-property(opacity, transform);
+      @include transition-timing-function(ease-in-out);
+    }
+
+    .icon-three-horizontal-bars {
+      @include transition-duration($this-max-transition-duration);
+    }
+
+    .link {
+      @include transition-duration($this-min-transition-duration);
+
+      @for $i from 1 through $this-links-count {
+        &:nth-child(#{$i}) {
+          @include transition-delay(($this-max-transition-duration - $this-min-transition-duration) / ($this-links-count - 1) * ($this-links-count - $i));
+        }
+      }
+    }
+
+    // todo add more animations depending on the style option (left, center, right);
+
+    &.mouse-leaving,
+    &.mouse-left {
+      .link {
+        opacity: 0;
+        @include transform(translate(0, $this-translate-travel));
+      }
+    }
+
+    &.mouse-entered {
+      .icon-three-horizontal-bars {
+        opacity: 0;
+        @include transform(translate($this-translate-travel, 0));
+      }
+    }
+
+    &.mouse-left {
+      .links {
+        height: 0;
+        overflow: hidden;
+        visibility: hidden;
+      }
+    }
+  }
+}
