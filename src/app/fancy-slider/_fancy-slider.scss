@@ -1,10 +1,12 @@
 $fancy-slider-blur-overlay-z-index: 3000;
 $fancy-slider-controls-z-index: 2000;
+$fancy-slider-description-z-index: 2500;
 
 @import "blur/blur";
 @import "depth-bars/depth-bars";
 @import "controls/controls";
 @import "resources/resources";
+@import "slide-description/slide-description";
 @import "slides/slides";
 
 .fancy-slider {
