@@ -48,11 +48,6 @@ strong {
   font-family: $HelveticaNeue-Bold;
 }
 
-[ui-view="page-content"] {
-  position: relative;
-  z-index: $page-content-z-index;
-}
-
 ///////////////////////////
 // Border box everything //
 ///////////////////////////

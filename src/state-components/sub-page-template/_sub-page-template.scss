@@ -1,5 +1,25 @@
 .sub-page-template {
   .hamburger-navigation.center {
+    position: relative;
     text-align: center;
+    z-index: $sub-page-navigation-hamburger-z-index;
+  }
+
+  .sub-page-content-container {
+    bottom: $navigation-hamburger-height;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: $navigation-hamburger-height;
+    z-index: $sub-page-content-container-z-index;
+
+    & > table {
+      height: 100%;
+      width: 100%;
+
+      td.sub-page-content {
+        vertical-align: middle;
+      }
+    }
   }
 }

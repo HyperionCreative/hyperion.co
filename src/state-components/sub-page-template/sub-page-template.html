@@ -1,4 +1,10 @@
 <div class="sub-page-template">
   <hyp-navigation-hamburger class="center"></hyp-navigation-hamburger>
-  <div ui-view="sub-page-content"></div>
+  <div class="sub-page-content-container">
+    <table>
+      <tr>
+        <td ui-view="sub-page-content" class="sub-page-content"></td>
+      </tr>
+    </table>
+  </div>
 </div>
