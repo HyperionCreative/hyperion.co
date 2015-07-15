@@ -1,4 +1,9 @@
-#header-index {
+.header-index {
+  position: relative;
+  z-index: $header-index-z-index;
+}
+
+.header-index-container {
   display: table;
   height: $navigation-hamburger-height;
   width: 100%;
