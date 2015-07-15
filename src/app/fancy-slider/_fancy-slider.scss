@@ -13,7 +13,12 @@
   opacity: 0;
 
   overflow: hidden;
+
+  // todo fix this
+  // This only works if the viewport is wide than 1024. Otherwise the user
+  // won't be able to scroll this.
   position: fixed;
+
   right: 0;
   top: 0;
 
