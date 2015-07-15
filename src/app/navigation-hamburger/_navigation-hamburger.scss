@@ -49,13 +49,23 @@
   // Different style options
   &.left {
     .icon-three-horizontal-bars {
-      left: - $this-hamburger-icon-padding;
+      // todo fix this
+      // This may cause the following bug:
+      // As the element is pulled to the left, if it's right on the left edge of the screen,
+      // then it may cause an unnecessary scroll bar.
+      // left: - $this-hamburger-icon-padding;
+      left: 0;
     }
   }
 
   &.right {
     .icon-three-horizontal-bars {
-      right: - $this-hamburger-icon-padding;
+      // todo fix this
+      // This may cause the following bug:
+      // As the element is pulled to the right, if it's right on the right edge of the screen,
+      // then it may cause an unnecessary scroll bar.
+      // right: - $this-hamburger-icon-padding;
+      right: 0;
     }
   }
 
