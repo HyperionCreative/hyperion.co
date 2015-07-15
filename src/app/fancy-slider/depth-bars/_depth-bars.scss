@@ -8,7 +8,7 @@
 
   &.top {
     // So it perfectly overlaps the header
-    height: $homepage-header-height;
+    height: $navigation-hamburger-height;
     left: 0;
     top: 0;
     @include transform-origin(50%, 0);
