@@ -1,0 +1,19 @@
+.simple-header {
+  color: rgba($dark-blue, 0.7);
+  margin: 0 auto;
+  text-align: center;
+  width: 550px;
+
+  .page-name {
+    font-family: $PierSans-Regular;
+    font-size: 25px;
+    line-height: 45px;
+  }
+
+  .small-line {
+    background: rgba($dark-blue, 0.2);
+    height: 1px;
+    margin: 25px auto 30px auto;
+    width: 50px;
+  }
+}

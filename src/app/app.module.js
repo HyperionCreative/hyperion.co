@@ -32,6 +32,7 @@
       'app.fancy-slider',
       'app.navigation-hamburger',
       'app.simple-footer',
+      'app.simple-header',
 
       //////////////////////
       // State Components //
