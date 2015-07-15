@@ -1,13 +1,15 @@
 (function () {
   'use strict';
   angular
-    .module('state.our-processes', [])
+    .module('state.our-processes', [
+      'state.sub-page-template'
+    ])
     .config(['$stateProvider', function ($stateProvider) {
       $stateProvider
-        .state('root.our-processes', {
+        .state('root.sub-page-template.our-processes', {
           url: '/our-processes',
           views: {
-            'page-content@': {
+            'sub-page-content': {
               templateUrl: 'state-components/our-processes/our-processes.html'
             }
           }
