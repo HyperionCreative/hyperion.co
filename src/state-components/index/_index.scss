@@ -1,5 +1,8 @@
 .header-index {
-  position: relative;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
   z-index: $header-index-z-index;
 }
 
