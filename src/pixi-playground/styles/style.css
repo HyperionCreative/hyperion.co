@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+#pixi-playground {
+  background-image: radial-gradient(#b6e0eb 0,#9ad3e4 100%);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
