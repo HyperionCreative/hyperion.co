@@ -1,3 +1,14 @@
+// Rotatia resurselor se exprima in PI. 2PI este o rotatie completa (360deg)
+(function(){
+  TweenMax.to(resource, 1, {
+    rotation: PIXI.PI_2 // 360deg
+  });
+
+  TweenMax.to(resource, 1, {
+    rotation: PIXI.PI_2 / 4 // 90deg
+  });
+})();
+
 // Asa se deseneaza un shape colorat!
 (function () {
   var graphics = new PIXI.Graphics();
