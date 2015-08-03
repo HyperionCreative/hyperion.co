@@ -9,7 +9,12 @@
   function init() {
     // It seems that with a lower fps it moves smoother!
     // todo this is needed in FF on windows
-    // TweenMax.ticker.fps(30)
+    // TweenMax.ticker.fps(30);
+
+    // Adds an event listener.
+    TweenMax.ticker.addEventListener('tick', function () {
+      renderer.render(stage);
+    });
 
     stage = new PIXI.Stage(0xFFFFFF);
     renderer = new PIXI.autoDetectRenderer(2560, 1440, {
