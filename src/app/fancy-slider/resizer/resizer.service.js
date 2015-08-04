@@ -2,10 +2,12 @@
   'use strict';
 
   angular
-    .module('app.fancy-slider.resizer', [])
+    .module('app.fancy-slider.resizer', [
+      'common.viewport-size'
+    ])
     // This doesn't support deregistering a callback. I haven't added this functionality
     // as we don't need one.
-    .service('FancySliderResizer', ['$window', 'MAX_SUPPORTED_WIDTH', 'MAX_SUPPORTED_HEIGHT', 'MIN_SUPPORTED_WIDTH', 'MIN_SUPPORTED_HEIGHT', function ($window, MAX_SUPPORTED_WIDTH, MAX_SUPPORTED_HEIGHT, MIN_SUPPORTED_WIDTH, MIN_SUPPORTED_HEIGHT) {
+    .service('FancySliderResizer', ['$window', 'MAX_SUPPORTED_WIDTH', 'MAX_SUPPORTED_HEIGHT', 'MIN_SUPPORTED_WIDTH', 'MIN_SUPPORTED_HEIGHT', 'ViewportSize', function ($window, MAX_SUPPORTED_WIDTH, MAX_SUPPORTED_HEIGHT, MIN_SUPPORTED_WIDTH, MIN_SUPPORTED_HEIGHT, ViewportSize) {
       this.onProportionChange = onProportionChange;
 
       //////////////////////
@@ -47,10 +49,10 @@
           return actual / max;
         }
 
-        // Defaults to the viewport's width
-        var width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-        // Defaults to the viewport's height
-        var height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+        var currentResolution = ViewportSize.get();
+
+        var width = currentResolution.width;
+        var height = currentResolution.height;
 
         var
           widthProportion = _getProportion(width, MAX_SUPPORTED_WIDTH, MIN_SUPPORTED_WIDTH),
