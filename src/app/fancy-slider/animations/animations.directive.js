@@ -3,7 +3,7 @@
 
   angular
     .module('app.fancy-slider.animations', [
-      'common.gasp-lite'
+      'common.gsap-lite'
     ])
     .directive('hypAnimationsContainer', ['$timeout', 'TweenLite', 'TweenLiteEasings', function ($timeout, TweenLite, TweenLiteEasings) {
       var ANIMATION_DURATION = 1500;

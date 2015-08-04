@@ -4,7 +4,7 @@
   /* jshint ignore:start */
 
   angular
-    .module('common.gasp-lite', [])
+    .module('common.gsap-lite', [])
     .constant('TweenLite', TweenLite)
     .constant('TweenLiteEasings', {
       Power1: Power1,
