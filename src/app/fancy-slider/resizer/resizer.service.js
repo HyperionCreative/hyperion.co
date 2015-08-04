@@ -7,14 +7,8 @@
     ])
     // This doesn't support deregistering a callback. I haven't added this functionality
     // as we don't need one.
-    .service('FancySliderResizer', ['$window', 'MAX_SUPPORTED_WIDTH', 'MAX_SUPPORTED_HEIGHT', 'MIN_SUPPORTED_WIDTH', 'MIN_SUPPORTED_HEIGHT', 'ViewportSize', function ($window, MAX_SUPPORTED_WIDTH, MAX_SUPPORTED_HEIGHT, MIN_SUPPORTED_WIDTH, MIN_SUPPORTED_HEIGHT, ViewportSize) {
+    .service('FancySliderResizer', ['MAX_SUPPORTED_WIDTH', 'MAX_SUPPORTED_HEIGHT', 'MIN_SUPPORTED_WIDTH', 'MIN_SUPPORTED_HEIGHT', 'ViewportSize', function (MAX_SUPPORTED_WIDTH, MAX_SUPPORTED_HEIGHT, MIN_SUPPORTED_WIDTH, MIN_SUPPORTED_HEIGHT, ViewportSize) {
       this.onProportionChange = onProportionChange;
-
-      //////////////////////
-      // Config variables //
-      //////////////////////
-
-      var RESIZE_TIMEOUT = 50;
 
       ///////////////
       // Variables //
@@ -61,25 +55,15 @@
         return Math.max(widthProportion, heightProportion);
       }
 
-      function listenForResize() {
-        var resizeTimeout;
-        angular.element($window).on('resize', resizeCallback);
+      function onViewportSizeChange() {
+        var possibleProportion = getProportion();
 
-        function resizeCallback() {
-          clearTimeout(resizeTimeout);
-          // No need for $timeout as there's no need to trigger a digest cycle.
-          // All the changes are pure visual.
-          resizeTimeout = setTimeout(function () {
-            var possibleProportion = getProportion();
+        if (possibleProportion !== proportion) {
+          proportion = possibleProportion;
 
-            if (possibleProportion !== proportion) {
-              proportion = possibleProportion;
-
-              for (var i = 0; i < registeredCallbacks.length; i++) {
-                registeredCallbacks[i](proportion);
-              }
-            }
-          }, RESIZE_TIMEOUT);
+          for (var i = 0; i < registeredCallbacks.length; i++) {
+            registeredCallbacks[i](proportion);
+          }
         }
       }
 
@@ -87,6 +71,6 @@
       // Run block //
       ///////////////
 
-      listenForResize();
+      ViewportSize.onChange(onViewportSizeChange);
     }]);
 })();
