@@ -3,8 +3,10 @@
 
   angular
     .module('app.fancy-slider.resources')
-    .service('PixiResourcesInitializer', ['PixiResource', 'PixiResourcesUrl', function (Resource, ResourcesUrl) {
+    .service('PixiResourcesInitializer', ['PixiResource', 'PixiResourcesUrl', function (Resource, PixiResourcesUrl) {
       this.init = init;
+
+      var ResourcesUrl = PixiResourcesUrl.get();
 
       function init() {
         var firstSlide = (function () {
@@ -41,17 +43,17 @@
         })();
 
         var secondSlide = (function () {
-          var imac = new Resource(ResourcesUrl.firstSlide.imac);
+          var imac = new Resource(ResourcesUrl.secondSlide.imac);
           imac.addToAnimation('center', 1525, -150, 0);
           imac.addToAnimation('left', -3000, -150, -10);
           imac.addToAnimation('right', 1500, -150, 5);
 
-          var iphone = new Resource(ResourcesUrl.firstSlide.iphone);
+          var iphone = new Resource(ResourcesUrl.secondSlide.iphone);
           iphone.addToAnimation('center', 615, 136, 0);
           iphone.addToAnimation('left', -2000, 136, -15);
           iphone.addToAnimation('right', 1920, 136, 15);
 
-          var sketchpad = new Resource(ResourcesUrl.firstSlide.sketchpad);
+          var sketchpad = new Resource(ResourcesUrl.secondSlide.sketchpad);
           sketchpad.addToAnimation('center', -5, 268, 0);
           sketchpad.addToAnimation('left', -1000, 268, -20);
           sketchpad.addToAnimation('right', 2800, 268, 20);
@@ -64,12 +66,12 @@
         })();
 
         var thirdSlide = (function () {
-          var imac = new Resource(ResourcesUrl.firstSlide.imac);
+          var imac = new Resource(ResourcesUrl.thirdSlide.imac);
           imac.addToAnimation('center', 182, 25, 0);
           imac.addToAnimation('left', -2560, 25, -5);
           imac.addToAnimation('right', 2560, 25, 5);
 
-          var iphone = new Resource(ResourcesUrl.firstSlide.iphone);
+          var iphone = new Resource(ResourcesUrl.thirdSlide.iphone);
           iphone.addToAnimation('center', 618, 768, 0);
           iphone.addToAnimation('center', -1920, 768, -15);
           iphone.addToAnimation('center', 2200, 768, 15);

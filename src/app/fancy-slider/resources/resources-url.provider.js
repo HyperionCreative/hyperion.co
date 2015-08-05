@@ -39,6 +39,6 @@
         return {
           get: getUrls
         };
-      }
+      };
     }]);
 })();
