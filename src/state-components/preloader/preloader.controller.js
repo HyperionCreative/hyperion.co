@@ -8,7 +8,7 @@
       $scope.preloaderProgress = 0;
 
       var preloaderListener = $scope.$watch(function () {
-        return Preloader.getProgress('fancy-slider');
+        return Preloader.getProgress('fancy-slider-resources');
       }, function (newValue) {
         $scope.preloaderProgress = newValue;
 
@@ -24,6 +24,6 @@
         }
       });
 
-      Preloader.start('fancy-slider');
+      Preloader.start('fancy-slider-resources');
     }]);
 })();

@@ -8,7 +8,7 @@
       $scope.filesHaveLoaded = false;
 
       var preloaderListener = $scope.$watch(function () {
-        return Preloader.getProgress('fancy-slider');
+        return Preloader.getProgress('fancy-slider-resources');
       }, function (newValue) {
         if (newValue === 100) {
           $scope.filesHaveLoaded = true;
