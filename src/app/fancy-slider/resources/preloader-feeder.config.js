@@ -3,8 +3,8 @@
 
   angular
     .module('app.fancy-slider.resources')
-    .config(['PixiResourcesUrlProvider', 'PreloaderProvider', function (PixiResourcesUrlProvider, PreloaderProvider) {
-      var ResourcesUrl = PixiResourcesUrlProvider.get();
+    .config(['FancyResourcesUrlProvider', 'PreloaderProvider', function (ResourcesUrlProvider, PreloaderProvider) {
+      var ResourcesUrl = ResourcesUrlProvider.get();
       var maxPriority = 1;
 
       angular.forEach(ResourcesUrl, function (slide) {

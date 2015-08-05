@@ -3,7 +3,7 @@
 
   angular
     .module('app.fancy-slider.resources')
-    .provider('PixiResourcesUrl', ['IS_RETINA', function (IS_RETINA) {
+    .provider('FancyResourcesUrl', ['IS_RETINA', function (IS_RETINA) {
       var PREFIX = 'app/fancy-slider/resources/';
       var SUFFIX = IS_RETINA ? '@2x.png' : '.png';
 
