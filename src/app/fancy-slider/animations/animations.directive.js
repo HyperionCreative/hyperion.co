@@ -3,202 +3,81 @@
 
   angular
     .module('app.fancy-slider.animations', [
+      'app.fancy-slider.resources',
       'common.gsap-lite'
     ])
-    .directive('hypAnimationsContainer', ['$timeout', 'TweenLite', 'TweenLiteEasings', function ($timeout, TweenLite, TweenLiteEasings) {
-      var ANIMATION_DURATION = 1500;
-      var EASING = TweenLiteEasings.Power3.easeInOut;
-      var ANIMATIONS_POSITION = {
-        '.slide-1': {
-          bottom: [{
-            selector: '.resource.flower-pot .transformation-layer',
-            propertyMap: {
-              translateY: 2880,
-              rotateZ: 30
-            }
-          }, {
-            selector: '.resource.macbook .transformation-layer',
-            propertyMap: {
-              translateY: 5760,
-              rotateZ: 45
-            }
-          }, {
-            selector: '.resource.sketchbook .transformation-layer',
-            propertyMap: {
-              translateY: 7200,
-              rotateZ: 30
-            }
-          }, {
-            selector: '.resource.watch .transformation-layer',
-            propertyMap: {
-              translateY: 4320,
-              rotateZ: -30
-            }
-          }],
-          left: [{
-            selector: '.resource.flower-pot .transformation-layer',
-            propertyMap: {
-              translateX: -3000,
-              rotateZ: -30
-            }
-          }, {
-            selector: '.resource.macbook .transformation-layer',
-            propertyMap: {
-              translateX: -2560,
-              rotateZ: -20
-            }
-          }, {
-            selector: '.resource.sketchbook .transformation-layer',
-            propertyMap: {
-              translateX: -720,
-              rotateZ: -20
-            }
-          }, {
-            selector: '.resource.watch .transformation-layer',
-            propertyMap: {
-              translateX: -1920,
-              rotateZ: -20
-            }
-          }],
-          right: [{
-            selector: '.resource.flower-pot .transformation-layer',
-            propertyMap: {
-              translateX: 1440,
-              rotateZ: 30
-            }
-          }, {
-            selector: '.resource.macbook .transformation-layer',
-            propertyMap: {
-              translateX: 2000,
-              rotateZ: 20
-            }
-          }, {
-            selector: '.resource.sketchbook .transformation-layer',
-            propertyMap: {
-              translateX: 2560,
-              rotateZ: 20
-            }
-          }, {
-            selector: '.resource.watch .transformation-layer',
-            propertyMap: {
-              translateX: 1920,
-              rotateZ: 20
-            }
-          }]
-        },
-        '.slide-2': {
-          left: [{
-            selector: '.resource.imac .transformation-layer',
-            propertyMap: {
-              translateX: -3000,
-              rotateZ: -10
-            }
-          }, {
-            selector: '.resource.iphone .transformation-layer',
-            propertyMap: {
-              translateX: -2000,
-              rotateZ: -15
-            }
-          }, {
-            selector: '.resource.sketchpad .transformation-layer',
-            propertyMap: {
-              translateX: -1000,
-              rotateZ: -20
-            }
-          }],
-          right: [{
-            selector: '.resource.imac .transformation-layer',
-            propertyMap: {
-              translateX: 1500,
-              rotateZ: 5
-            }
-          }, {
-            selector: '.resource.iphone .transformation-layer',
-            propertyMap: {
-              translateX: 1920,
-              rotateZ: 15
-            }
-          }, {
-            selector: '.resource.sketchpad .transformation-layer',
-            propertyMap: {
-              translateX: 2800,
-              rotateZ: 20
-            }
-          }]
-        },
-        '.slide-3': {
-          left: [{
-            selector: '.resource.imac .transformation-layer',
-            propertyMap: {
-              translateX: -2560,
-              rotateZ: -5
-            }
-          }, {
-            selector: '.resource.iphone .transformation-layer',
-            propertyMap: {
-              translateX: -1920,
-              rotateZ: -15
-            }
-          }],
-          right: [{
-            selector: '.resource.imac .transformation-layer',
-            propertyMap: {
-              translateX: 2560,
-              rotateZ: 5
-            }
-          }, {
-            selector: '.resource.iphone .transformation-layer',
-            propertyMap: {
-              translateX: 2200,
-              rotateZ: 15
-            }
-          }]
-        }
-      };
+    .service('FancyAnimations', ['$timeout', 'FancyResources', 'TweenLite', 'TweenLiteEasings', function ($timeout, FancyResources, TweenLite, TweenLiteEasings) {
+      this.get = get;
 
-      function animate(element, propertyMap, fast) {
-        TweenLite.to(element, fast ? 0 : (ANIMATION_DURATION / 1000), {
-          x: propertyMap.translateX || 0,
-          y: propertyMap.translateY || 0,
-          z: propertyMap.translateZ || 0,
-          rotation: propertyMap.rotateZ || 0,
+      ///////////////////
+      // Configuration //
+      ///////////////////
+      var DURATION = 1.5; // 1500ms
+      var EASING = TweenLiteEasings.Power3.easeInOut;
+
+      ///////////////
+      // Variables //
+      ///////////////
+      var animations;
+
+      ////////////
+      // Public //
+      ////////////
+      function get() {
+        // Call init only if needed!
+        if (angular.isUndefined(animations)) {
+          animations = init();
+        }
+
+        return animations;
+      }
+
+      /////////////
+      // Private //
+      /////////////
+      function animate(resource, position, fast) {
+        TweenLite.to(resource.sprite, (fast === true) ? 0 : DURATION, {
+          x: position.x,
+          y: position.y,
+          z: 0,
+          rotation: position.rotation,
           ease: EASING
         });
       }
 
-      function handleOnSuccess(fn) {
-        if (angular.isFunction(fn)) {
-          $timeout(fn, ANIMATION_DURATION);
-        }
+      function animationHandler(resources, positionName) {
+        return function (onSuccess, fast) {
+          angular.forEach(resources, function (resource) {
+            animate(resource, resource.positions[positionName], fast);
+          });
+
+          if (angular.isFunction(onSuccess)) {
+            $timeout(onSuccess, DURATION);
+          }
+        };
       }
 
-      return {
-        link: function (scope, iElement, iAttrs, fancySliderController) {
-          // Each slide
-          angular.forEach(ANIMATIONS_POSITION, function (slidePositionData, slide) {
-            fancySliderController.animations[slide] = {};
+      function init() {
+        var resources = FancyResources.get();
 
-            // Each slide position
-            angular.forEach(slidePositionData, function (positionData, positionName) {
-              fancySliderController.animations[slide]['to' + positionName.charAt(0).toUpperCase() + positionName.substring(1)] = function (onSuccess, fast) {
-                for (var i = 0; i < positionData.length; i++) {
-                  animate(iElement[0].querySelector(slide + ' ' + positionData[i].selector), positionData[i].propertyMap, fast);
-                }
-
-                handleOnSuccess(onSuccess);
-              };
-            });
-
-            // Binds toCenter
-            fancySliderController.animations[slide].toCenter = function (onSuccess, fast) {
-              animate(iElement[0].querySelectorAll(slide + ' ' + '.resource .transformation-layer'), {}, fast);
-
-              handleOnSuccess(onSuccess);
-            };
-          });
-        },
-        require: '^hypFancySlider',
-        restrict: 'A'
-      };
+        return {
+          firstSlide: {
+            toBottom: animationHandler(resources.firstSlide, 'bottom'),
+            toCenter: animationHandler(resources.firstSlide, 'center'),
+            toLeft: animationHandler(resources.firstSlide, 'left'),
+            toRight: animationHandler(resources.firstSlide, 'right')
+          },
+          secondSlide: {
+            toCenter: animationHandler(resources.secondSlide, 'bottom'),
+            toLeft: animationHandler(resources.secondSlide, 'left'),
+            toRight: animationHandler(resources.secondSlide, 'right')
+          },
+          thirdSlide: {
+            toCenter: animationHandler(resources.thirdSlide, 'bottom'),
+            toLeft: animationHandler(resources.thirdSlide, 'left'),
+            toRight: animationHandler(resources.thirdSlide, 'right')
+          }
+        };
+      }
     }]);
 })();
