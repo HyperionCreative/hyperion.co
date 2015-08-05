@@ -3,6 +3,8 @@
 
   angular
     .module('app.fancy-slider', [
-      'app.fancy-slider.animations'
+      'app.fancy-slider.animations',
+      'app.fancy-slider.resources',
+      'common.pixi'
     ]);
 })();
