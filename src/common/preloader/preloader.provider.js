@@ -3,7 +3,7 @@
 
   angular
     .module('common.preloader')
-    .provider('Preloader', ['FILES_TO_PRELOAD', function (FILES_TO_PRELOAD) {
+    .provider('Preloader', ['PRELOADABLE_FILES', function (PRELOADABLE_FILES) {
       var
         defaults = {
           parallelDownloads: 4
@@ -36,7 +36,7 @@
           queues[queueName].files[priority] = [];
         }
 
-        queues[queueName].sizeToDownload += FILES_TO_PRELOAD[path];
+        queues[queueName].sizeToDownload += PRELOADABLE_FILES[path];
         queues[queueName].files[priority].push(path);
       }
 
@@ -100,7 +100,7 @@
                 image.onload = function () {
                   // Needed as we're outside of angular's scope
                   $rootScope.$evalAsync(function () {
-                    queue.sizeDownloaded += FILES_TO_PRELOAD[path];
+                    queue.sizeDownloaded += PRELOADABLE_FILES[path];
                   });
 
                   next();
@@ -111,7 +111,7 @@
                 image.onerror = function () {
                   // Needed as we're outside of angular's scope
                   $rootScope.$evalAsync(function () {
-                    queue.sizeDownloaded += FILES_TO_PRELOAD[path];
+                    queue.sizeDownloaded += PRELOADABLE_FILES[path];
                   });
 
                   next();
