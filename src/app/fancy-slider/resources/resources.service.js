@@ -3,11 +3,31 @@
 
   angular
     .module('app.fancy-slider.resources')
-    .service('FancyResourcesInitializer', ['FancyResource', 'FancyResourcesUrl', function (Resource, FancyResourcesUrl) {
-      this.init = init;
+    .service('FancyResources', ['FancyResource', 'FancyResourcesUrl', function (Resource, FancyResourcesUrl) {
+      this.get = get;
 
+      ///////////////
+      // Variables //
+      ///////////////
       var ResourcesUrl = FancyResourcesUrl.get();
+      // This will be initialized on the first get.
+      var resources;
 
+      ////////////
+      // Public //
+      ////////////
+      function get() {
+        // Call init only if needed!
+        if (angular.isUndefined(resources)) {
+          resources = init();
+        }
+
+        return resources;
+      }
+
+      /////////////
+      // Private //
+      /////////////
       function init() {
         var firstSlide = (function () {
           var flowerPot = new Resource(ResourcesUrl.firstSlide.flowerPot);
