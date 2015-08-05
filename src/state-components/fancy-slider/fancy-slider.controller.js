@@ -3,7 +3,7 @@
 
   angular
     .module('state.fancy-slider')
-    .controller('FancySliderCtrl', ['$scope', 'Preloader', function ($scope, Preloader) {
+    .controller('FancySliderCtrl', ['$scope', 'FancyResources', 'Preloader', function ($scope, FancyResources, Preloader) {
       // When set to true this initializes the slider when everything is ready!
       $scope.filesHaveLoaded = false;
 
@@ -11,10 +11,12 @@
         return Preloader.getProgress('fancy-slider');
       }, function (newValue) {
         if (newValue === 100) {
-          $scope.filesHaveLoaded = true;
+          FancyResources.init(function () {
+            $scope.filesHaveLoaded = true;
 
-          // Unregisters the (night) watch
-          preloaderListener();
+            // Unregisters the (night) watch
+            preloaderListener();
+          });
         }
       });
     }]);
