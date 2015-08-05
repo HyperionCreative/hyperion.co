@@ -41,6 +41,11 @@
             });
           });
 
+          // Hides everything from sight - moves everything to the left.
+          animations.firstSlide.toLeft(undefined, true);
+          animations.secondSlide.toLeft(undefined, true);
+          animations.thirdSlide.toLeft(undefined, true);
+
           // Pixi constantly triggers RAF. We disable it as RAF will be triggered by TweenLite's ticker!
           // 
           // todo in case of performance issues, this may be one of the culprits. I've read through

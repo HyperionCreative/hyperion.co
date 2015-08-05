@@ -68,12 +68,12 @@
             toRight: animationHandler(resources.firstSlide, 'right')
           },
           secondSlide: {
-            toCenter: animationHandler(resources.secondSlide, 'bottom'),
+            toCenter: animationHandler(resources.secondSlide, 'center'),
             toLeft: animationHandler(resources.secondSlide, 'left'),
             toRight: animationHandler(resources.secondSlide, 'right')
           },
           thirdSlide: {
-            toCenter: animationHandler(resources.thirdSlide, 'bottom'),
+            toCenter: animationHandler(resources.thirdSlide, 'center'),
             toLeft: animationHandler(resources.thirdSlide, 'left'),
             toRight: animationHandler(resources.thirdSlide, 'right')
           }
