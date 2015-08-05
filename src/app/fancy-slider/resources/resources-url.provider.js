@@ -25,10 +25,27 @@
         }
       };
 
+      var resourcesUrlArray;
+
       this.get = getUrls;
+      this.getAsArray = getUrlsAsArray;
 
       function getUrls() {
         return resourcesUrl;
+      }
+
+      function getUrlsAsArray() {
+        if (!angular.isArray(resourcesUrlArray)) {
+          resourcesUrlArray = [];
+
+          angular.forEach(resourcesUrl, function (slide) {
+            angular.forEach(slide, function (resourceUrl) {
+              resourcesUrlArray.push(resourceUrl);
+            });
+          });
+        }
+
+        return resourcesUrlArray;
       }
 
       function getResourceUrl(slide, resourceName) {
@@ -37,7 +54,8 @@
 
       this.$get = function () {
         return {
-          get: getUrls
+          get: getUrls,
+          getAsArray: getUrlsAsArray
         };
       };
     }]);
