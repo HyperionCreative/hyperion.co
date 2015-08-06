@@ -7,13 +7,12 @@
     ])
     // This doesn't support deregistering a callback. I haven't added this functionality
     // as we don't need one.
-    .service('FancySliderResizer', ['MAX_SUPPORTED_WIDTH', 'MAX_SUPPORTED_HEIGHT', 'MIN_SUPPORTED_WIDTH', 'MIN_SUPPORTED_HEIGHT', 'ViewportSize', function (MAX_SUPPORTED_WIDTH, MAX_SUPPORTED_HEIGHT, MIN_SUPPORTED_WIDTH, MIN_SUPPORTED_HEIGHT, ViewportSize) {
+    .service('FancySliderResizer', ['FancyConfiguration', 'ViewportSize', function (Configuration, ViewportSize) {
       this.onProportionChange = onProportionChange;
 
       ///////////////
       // Variables //
       ///////////////
-
       var
         proportion = getProportion(),
         registeredCallbacks = [];
@@ -21,7 +20,6 @@
       ////////////
       // Public //
       ////////////
-
       // When the callbacks get called they do not trigger a new digest cycle!
       function onProportionChange(callback) {
         registeredCallbacks.push(callback);
@@ -32,7 +30,6 @@
       /////////////
       // Private //
       /////////////
-
       function getProportion() {
         function _getProportion(actual, max, min) {
           // Normalize the 'actual' param
@@ -49,8 +46,8 @@
         var height = currentResolution.height;
 
         var
-          widthProportion = _getProportion(width, MAX_SUPPORTED_WIDTH, MIN_SUPPORTED_WIDTH),
-          heightProportion = _getProportion(height, MAX_SUPPORTED_HEIGHT, MIN_SUPPORTED_HEIGHT);
+          widthProportion = _getProportion(width, Configuration.MAX_WIDTH, Configuration.MIN_WIDTH),
+          heightProportion = _getProportion(height, Configuration.MAX_HEIGHT, Configuration.MIN_HEIGHT);
 
         return Math.max(widthProportion, heightProportion);
       }
@@ -70,7 +67,6 @@
       ///////////////
       // Run block //
       ///////////////
-
       ViewportSize.onChange(onViewportSizeChange);
     }]);
 })();

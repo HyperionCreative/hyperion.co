@@ -6,14 +6,8 @@
       'app.fancy-slider.resources',
       'common.gsap-lite'
     ])
-    .service('FancyAnimations', ['$timeout', 'FancyResources', 'TweenLite', 'TweenLiteEasings', function ($timeout, FancyResources, TweenLite, TweenLiteEasings) {
+    .service('FancyAnimations', ['$timeout', 'FancyConfiguration', 'FancyResources', 'TweenLite', function ($timeout, Configuration, FancyResources, TweenLite) {
       this.get = get;
-
-      ///////////////////
-      // Configuration //
-      ///////////////////
-      var DURATION = 1.5; // 1500ms
-      var EASING = TweenLiteEasings.Power3.easeInOut;
 
       ///////////////
       // Variables //
@@ -36,12 +30,12 @@
       // Private //
       /////////////
       function animate(resource, position, fast) {
-        TweenLite.to(resource.sprite, (fast === true) ? 0 : DURATION, {
+        TweenLite.to(resource.sprite, (fast === true) ? 0 : Configuration.ANIMATION_DURATION, {
           x: position.x,
           y: position.y,
           z: 0,
           rotation: position.rotation,
-          ease: EASING
+          ease: Configuration.ANIMATION_EASING
         });
       }
 
@@ -52,7 +46,7 @@
           });
 
           if (angular.isFunction(onSuccess)) {
-            $timeout(onSuccess, DURATION);
+            $timeout(onSuccess, Configuration.ANIMATION_DURATION);
           }
         };
       }
