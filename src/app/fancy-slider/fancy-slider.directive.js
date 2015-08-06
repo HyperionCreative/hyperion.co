@@ -80,9 +80,32 @@
           // todo in case of performance issues, this may be one of the culprits.
           TweenLite.ticker.sleep();
 
-          animations.firstSlide.toBottom(undefined, true);
-          animations.firstSlide.toCenter();
+          // The animations
+          var
+            canAnimate = true,
+            currentSlide = 0,
+            slides = ['firstSlide', 'secondSlide', 'thirdSlide'];
 
+          canAnimate = false;
+          animations.firstSlide.toBottom(undefined, true);
+          animations.firstSlide.toCenter(function () {
+            canAnimate = true;
+          });
+
+          iElement.bind('click', function () {
+            if (canAnimate) {
+              animations[slides[currentSlide]].toLeft();
+
+              currentSlide = (currentSlide + 1) % 3;
+
+              animations[slides[currentSlide]].toRight(undefined, true);
+              animations[slides[currentSlide]].toCenter(function(){
+                canAnimate = true;
+              });
+            }
+          });
+
+          // Helpful logs
           console.log('stage', stage);
           console.log('depthBars', depthBars);
           console.log('animations', animations);
