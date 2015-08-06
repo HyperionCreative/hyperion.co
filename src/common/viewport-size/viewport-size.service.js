@@ -59,7 +59,7 @@
         resizeTimeout = setTimeout(function () {
           var partialViewportSize = getViewportSize();
 
-          if (partialViewportSize.width !== viewportSize.width && partialViewportSize.height !== viewportSize.height) {
+          if (partialViewportSize.width !== viewportSize.width || partialViewportSize.height !== viewportSize.height) {
             viewportSize = partialViewportSize;
 
             for (var i = 0; i < registeredEventListeners.length; i++) {
