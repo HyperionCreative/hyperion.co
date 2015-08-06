@@ -3,7 +3,7 @@
 
   angular
     .module('app.fancy-slider')
-    .directive('hypFancySlider', ['PIXI', 'TweenLite', 'CssVendorPrefixer', 'FancyAnimations', 'FancyConfiguration', 'FancyResources', 'FancySliderResizer', function (PIXI, TweenLite, CssVendorPrefixer, FancyAnimations, Configuration, FancyResources, FancySliderResizer) {
+    .directive('hypFancySlider', ['PIXI', 'TweenLite', 'CssVendorPrefixer', 'FancyAnimations', 'FancyConfiguration', 'FancyDepthBars', 'FancyResources', 'FancySliderResizer', function (PIXI, TweenLite, CssVendorPrefixer, Animations, Configuration, DepthBars, Resources, SliderResizer) {
       return {
         link: function (scope, iElement) {
           ///////////////
@@ -17,8 +17,9 @@
             });
 
           var
-            animations = FancyAnimations.get(),
-            slidesAndResources = FancyResources.get();
+            animations = Animations.get(),
+            depthBars = DepthBars.get(),
+            slidesAndResources = Resources.get();
 
           ///////////////
           // Run block //
@@ -29,7 +30,7 @@
 
           // Sets the resizer in place.
           var canvas = angular.element(iElement[0].querySelector('canvas'));
-          FancySliderResizer.onProportionChange(function (proportion) {
+          SliderResizer.onProportionChange(function (proportion) {
             canvas.css({
               'margin-left': -(Configuration.NATIVE_WIDTH * proportion / 2) + 'px',
             });
@@ -43,6 +44,13 @@
               stage.addChild(resource.sprite);
             });
           });
+
+          // Adds the depth bars to the stage.
+          angular.forEach(depthBars, function (depthBar) {
+            stage.addChild(depthBar);
+          });
+
+          console.log(stage, depthBars);
 
           // Hides everything from sight - moves everything to the left.
           animations.firstSlide.toLeft(undefined, true);
