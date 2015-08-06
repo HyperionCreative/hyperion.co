@@ -36,6 +36,7 @@
       function onViewportSizeChange(fn) {
         if (registeredEventListeners.indexOf(fn) === -1) {
           registeredEventListeners.push(fn);
+          fn(viewportSize);
         }
       }
 
