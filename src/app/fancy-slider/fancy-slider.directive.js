@@ -75,6 +75,8 @@
           // todo in case of performance issues, this may be one of the culprits.
           TweenLite.ticker.sleep();
 
+          animations.firstSlide.toBottom(undefined, true);
+          animations.firstSlide.toCenter();
           console.log(animations);
         },
         replace: true,
