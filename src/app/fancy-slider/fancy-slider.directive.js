@@ -3,22 +3,15 @@
 
   angular
     .module('app.fancy-slider')
-    .directive('hypFancySlider', ['PIXI', 'FancyAnimations', 'FancyResources', 'TweenLite', function (PIXI, FancyAnimations, FancyResources, TweenLite) {
+    .directive('hypFancySlider', ['MAX_SUPPORTED_HEIGHT', 'MAX_SUPPORTED_WIDTH', 'PIXI', 'TweenLite', 'CssVendorPrefixer', 'FancyAnimations', 'FancyResources', 'FancySliderResizer', function (MAX_SUPPORTED_HEIGHT, MAX_SUPPORTED_WIDTH, PIXI, TweenLite, CssVendorPrefixer, FancyAnimations, FancyResources, FancySliderResizer) {
       return {
         link: function (scope, iElement) {
-          ///////////////////
-          // Configuration //
-          ///////////////////
-          var
-            FANCY_SLIDER_WIDTH = 2560,
-            FANCY_SLIDER_HEIGHT = 1440;
-
           ///////////////
           // Variables //
           ///////////////
           var
             stage = new PIXI.Container(),
-            renderer = new PIXI.autoDetectRenderer(FANCY_SLIDER_WIDTH, FANCY_SLIDER_HEIGHT, {
+            renderer = new PIXI.autoDetectRenderer(MAX_SUPPORTED_WIDTH, MAX_SUPPORTED_HEIGHT, {
               antialised: false,
               transparent: true
             });
@@ -33,6 +26,16 @@
 
           // Appends the canvas, thus initializing pixi.
           iElement.append(renderer.view);
+
+          // Sets the resizer in place.
+          var canvas = angular.element(iElement[0].querySelector('canvas'));
+          FancySliderResizer.onProportionChange(function (proportion) {
+            canvas.css({
+              'margin-left': -(MAX_SUPPORTED_WIDTH * proportion / 2) + 'px',
+            });
+
+            canvas.css(CssVendorPrefixer.prefixProperty('transform', 'translate3d(0,0,0) scale(' + proportion + ',' + proportion + ')'));
+          });
 
           // Adds the resources to the stage.
           angular.forEach(slidesAndResources, function (resources) {
