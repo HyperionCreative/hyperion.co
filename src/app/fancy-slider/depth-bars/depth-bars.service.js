@@ -42,7 +42,11 @@
         })());
         var leftBar = drawRectangle(COLOR, LATERAL_BAR_WIDTH, Configuration.NATIVE_HEIGHT);
         var rightBar = drawRectangle(COLOR, LATERAL_BAR_WIDTH, Configuration.NATIVE_HEIGHT);
-        rightBar.x = Configuration.NATIVE_WIDTH - rightBar.width;
+
+        // Sets the z-index;
+        topBar.zIndex = 30;
+        leftBar.zIndex = 1;
+        rightBar.zIndex = 100;
 
         // This holds the same bars size as otherwise they would get scaled too.
         SliderResizer.onProportionChange(function (proportion) {

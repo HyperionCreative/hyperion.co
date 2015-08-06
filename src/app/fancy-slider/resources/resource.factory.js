@@ -58,6 +58,10 @@
             rotation: rotation
           };
         };
+
+        Resource.prototype.setZIndex = function (zIndex) {
+          this.sprite.zIndex = zIndex;
+        };
       })();
 
       //////////////

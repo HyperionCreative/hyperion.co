@@ -50,7 +50,12 @@
             stage.addChild(depthBar);
           });
 
-          console.log(stage, depthBars);
+          // Applies zIndex
+          stage.children.sort(function (a, b) {
+            a.zIndex = a.zIndex || 0;
+            b.zIndex = b.zIndex || 0;
+            return a.zIndex - b.zIndex;
+          });
 
           // Hides everything from sight - moves everything to the left.
           animations.firstSlide.toLeft(undefined, true);
@@ -77,7 +82,10 @@
 
           animations.firstSlide.toBottom(undefined, true);
           animations.firstSlide.toCenter();
-          console.log(animations);
+
+          console.log('stage', stage);
+          console.log('depthBars', depthBars);
+          console.log('animations', animations);
         },
         replace: true,
         restrict: 'E',
