@@ -94,6 +94,8 @@
 
           iElement.bind('click', function () {
             if (canAnimate) {
+              canAnimate = false;
+
               animations[slides[currentSlide]].toLeft();
 
               currentSlide = (currentSlide + 1) % 3;

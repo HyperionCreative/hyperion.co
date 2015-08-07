@@ -30,7 +30,7 @@
       // Private //
       /////////////
       function animate(resource, position, fast) {
-        TweenLite.to(resource.sprite, (fast === true) ? 0 : Configuration.ANIMATION_DURATION, {
+        TweenLite.to(resource.sprite, (fast === true) ? 0 : Configuration.ANIMATION_DURATION / 1000, {
           x: position.x,
           y: position.y,
           z: 0,

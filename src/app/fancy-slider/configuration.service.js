@@ -5,7 +5,7 @@
     .module('app.fancy-slider')
     .service('FancyConfiguration', ['TweenLiteEasings', function (TweenLiteEasings) {
       // Animations
-      this.ANIMATION_DURATION = 1.5; // 1500ms
+      this.ANIMATION_DURATION = 1500;
       this.ANIMATION_EASING = TweenLiteEasings.Power3.easeInOut;
 
       // Resolutions interval
