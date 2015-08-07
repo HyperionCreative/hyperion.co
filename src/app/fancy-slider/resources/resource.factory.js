@@ -11,14 +11,19 @@
         var texture = PIXI.Texture.fromImage(url);
 
         this.positions = {};
+        // This is wrapped in 2 layers. The first one is used by the animation engine
+        // and the second one can be used internally to apply needed changes.
         this.sprite = (function () {
-          var sprite = new PIXI.Sprite(texture);
+          var outerLayer = new PIXI.Sprite();
+          var innerLayer = new PIXI.Sprite(texture);
+
+          outerLayer.addChild(innerLayer);
 
           // Transform origin: 50% 50%
-          sprite.anchor.x = 0.5;
-          sprite.anchor.y = 0.5;
+          innerLayer.anchor.x = 0.5;
+          innerLayer.anchor.y = 0.5;
 
-          return sprite;
+          return outerLayer;
         })();
         this.texture = texture;
       }

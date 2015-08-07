@@ -3,7 +3,7 @@
 
   angular
     .module('app.fancy-slider.resources')
-    .service('FancyResources', ['PIXI', 'FancyResource', 'FancyResourcesUrl', function (PIXI, Resource, FancyResourcesUrl) {
+    .service('FancyResources', ['PIXI', 'FancyResource', 'FancyResourcesUrl', 'ViewportSize', function (PIXI, Resource, FancyResourcesUrl, ViewportSize) {
       this.get = get;
       this.init = init;
 
@@ -33,7 +33,7 @@
 
         // When everything is loaded, call the fn. These will happen very fast
         // as the images are already loaded by common.preloader!
-        loader.load(function() {
+        loader.load(function () {
           resources = getResources();
 
           fn();
@@ -94,7 +94,7 @@
           iphone.addPosition('center', 615, 136, 0);
           iphone.addPosition('left', -2000, 0, -15);
           iphone.addPosition('right', 1920, 0, 15);
-          iphone.setZIndex(20);
+          iphone.setZIndex(35);
 
           var sketchpad = new Resource(resourcesUrl.secondSlide.sketchpad);
           sketchpad.addPosition('center', -5, 268, 0);
@@ -128,11 +128,99 @@
           };
         })();
 
-        return {
+        var toReturn = {
           firstSlide: firstSlide,
           secondSlide: secondSlide,
           thirdSlide: thirdSlide
         };
+
+        // Specific resolution behaviour
+        (function () {
+          // Under or equal 1920 transformation
+          var transformations = {
+            firstSlide: {
+              flowerPot: {
+                x: 200,
+                rotation: PIXI.PI_2 / (360 / 10)
+              },
+              macbook: {
+                x: -50,
+                scale: 1.27
+              },
+              watch: {
+                visible: false
+              }
+            },
+            secondSlide: {
+              iphone: {
+                scale: 1.1,
+                y: -75
+              }
+            },
+            thirdSlide: {
+              iphone: {
+                y: -150
+              }
+            }
+          };
+
+          function handleDisplay(isLarge) {
+            angular.forEach(transformations, function (slideResources, slideName) {
+              angular.forEach(slideResources, function (slideResource, resourceName) {
+                angular.forEach(slideResource, function (resourceTransformation, transformationName) {
+                  if (transformationName === 'scale') { 
+                    var scaleFactor = isLarge ? 1 : resourceTransformation;
+
+                    // Since we're in transform origin 50% 50%, we need to add change x and y!
+                    var currentHeight = toReturn[slideName][resourceName].sprite.children[0].height;
+                    var currentWidth = toReturn[slideName][resourceName].sprite.children[0].width;
+
+                    toReturn[slideName][resourceName].sprite.children[0].scale.set(scaleFactor, scaleFactor);
+
+                    var newHeight = toReturn[slideName][resourceName].sprite.children[0].height;
+                    var newWidth = toReturn[slideName][resourceName].sprite.children[0].width; 
+
+                    toReturn[slideName][resourceName].sprite.children[0].x += (newWidth - currentWidth) / 2;
+                    toReturn[slideName][resourceName].sprite.children[0].y += (newHeight - currentHeight) / 2;
+                  } else if (transformationName === 'visible') {
+                    toReturn[slideName][resourceName].sprite.children[0][transformationName] = isLarge ? !resourceTransformation: resourceTransformation;
+                  } else {
+                    toReturn[slideName][resourceName].sprite.children[0][transformationName] += isLarge ? (-resourceTransformation) : resourceTransformation;
+                  }
+                });
+              });
+            });
+          }
+
+          // This is needed so we only apply the changes once
+          // 0 - uninitialized
+          // 1 - small
+          // 2 - large
+          var displayFlag = 0;
+
+          ViewportSize.onChange(function (size) {
+            if (displayFlag === 0) {
+              if (size.width > 1920) {
+                displayFlag = 2;
+              } else {
+                displayFlag = 1;
+
+                handleDisplay(false);
+              }
+            } else if (size.width > 1920 && displayFlag === 1) {
+              displayFlag = 2;
+
+              // The user started with a small display but resized it to above 1920
+              handleDisplay(true);
+            } else if (size.width <= 1920 && displayFlag === 2) {
+              displayFlag = 1;
+
+              handleDisplay(false);
+            }
+          });
+        })();
+
+        return toReturn;
       }
     }]);
 })();
