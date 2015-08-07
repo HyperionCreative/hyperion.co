@@ -73,18 +73,14 @@
 
             var currentLateralOffset = Math.abs((currentScreenSize - currentStageWidth) / 2);
 
-            if (size.width === 1920) {
-              // Makes the lateral bar 30px wide.
-
-              leftBar.scale.x = leftBar.scale.x / (LATERAL_BAR_WIDTH / 30);
-              rightBar.scale.x = rightBar.scale.x / (LATERAL_BAR_WIDTH / 30);
-
-              leftBar.width = Math.round(leftBar.width);
-              rightBar.width = Math.round(rightBar.width);
-            }
-
             leftBar.x = Math.floor(currentLateralOffset * (1 / proportion));
             rightBar.x = Math.ceil((Configuration.NATIVE_WIDTH - rightBar.width) - (currentLateralOffset * (1 / proportion)));
+
+            if (size.width === 1920) {
+              // Substracts 10px to make the bars 30px wide
+              leftBar.x -= 10 * (1 / proportion);
+              rightBar.x += 10 * (1 / proportion);
+            }
           } else {
             leftBar.visible = false;
             rightBar.visible = false;
