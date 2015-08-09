@@ -1,23 +1,26 @@
 (function () {
   'use strict';
 
-  angular
-    .module('state.fancy-slider')
-    .controller('FancySliderCtrl', ['$scope', 'FancyResources', 'Preloader', function ($scope, FancyResources, Preloader) {
-      // When set to true this initializes the slider when everything is ready!
-      $scope.filesHaveLoaded = false;
+  // This is deprecated and will soon be deleted if we don't find him
+  // a new purpose.
 
-      var preloaderListener = $scope.$watch(function () {
-        return Preloader.getProgress('fancy-slider');
-      }, function (newValue) {
-        if (newValue === 100) {
-          FancyResources.init(function () {
-            $scope.filesHaveLoaded = true;
+  // angular
+  //   .module('state.fancy-slider')
+  //   .controller('FancySliderCtrl', ['$scope', 'FancyResources', 'Preloader', function ($scope, FancyResources, Preloader) {
+  //     // When set to true this initializes the slider when everything is ready!
+  //     // $scope.filesHaveLoaded = false;
 
-            // Unregisters the (night) watch
-            preloaderListener();
-          });
-        }
-      });
-    }]);
+  //     // var preloaderListener = $scope.$watch(function () {
+  //     //   return Preloader.getProgress('fancy-slider');
+  //     // }, function (newValue) {
+  //     //   if (newValue === 100) {
+  //     //     FancyResources.init(function () {
+  //     //       $scope.filesHaveLoaded = true;
+
+  //     //       // Unregisters the (night) watch
+  //     //       preloaderListener();
+  //     //     });
+  //     //   }
+  //     // });
+  //   }]);
 })();
