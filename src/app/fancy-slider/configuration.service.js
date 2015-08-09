@@ -3,10 +3,10 @@
 
   angular
     .module('app.fancy-slider')
-    .service('FancyConfiguration', ['TweenLiteEasings', function (TweenLiteEasings) {
+    .service('FancyConfiguration', ['TweenEasings', function (TweenEasings) {
       // Animations
       this.ANIMATION_DURATION = 1500;
-      this.ANIMATION_EASING = TweenLiteEasings.Power3.easeInOut;
+      this.ANIMATION_EASING = TweenEasings.Power3.easeInOut;
 
       // Resolutions interval
       this.MAX_WIDTH = 2560;
