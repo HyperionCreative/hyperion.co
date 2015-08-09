@@ -1,9 +1,12 @@
 (function () {
   'use strict';
 
+  // Since we're rendering the stage only in onUpdate in the timeline, the resize changes won't be visible
+  // until the animation is triggered again. todo fix this
+
   angular
     .module('app.fancy-slider')
-    .directive('hypFancySlider', ['PIXI', 'TweenLite', 'FancyAnimations', 'FancyConfiguration', 'FancyDepthBars', 'FancyResources', function (PIXI, TweenLite, Animations, Configuration, DepthBars, Resources) {
+    .directive('hypFancySlider', ['$timeout', 'PIXI', 'TweenLite', 'FancyAnimations', 'FancyConfiguration', 'FancyDepthBars', 'FancyResources', 'Preloader', function ($timeout, PIXI, TweenLite, Animations, Configuration, DepthBars, Resources, Preloader) {
       return {
         link: function (scope, iElement) {
           ///////////////
@@ -16,10 +19,6 @@
               transparent: true
             });
 
-          var
-            depthBars = DepthBars.get(),
-            slidesAndResources = Resources.get();
-
           ///////////////
           // Run block //
           ///////////////
@@ -27,73 +26,99 @@
           // Appends the canvas, thus initializing pixi.
           angular.element(iElement[0].querySelector('.stage-container')).append(renderer.view);
 
-          // This is how the scene will get rendered! 
-          // Each time a Timeline is playing, trigger a scene render
-          var animations = Animations.get(function () {
-            renderer.render(stage);
-          });
-
-          // Adds the resources to the stage.
-          angular.forEach(slidesAndResources, function (resources) {
-            angular.forEach(resources, function (resource) {
-              stage.addChild(resource.sprite);
-            });
-          });
-
           // Adds the depth bars to the stage.
+          var depthBars = DepthBars.get();
           angular.forEach(depthBars, function (depthBar) {
             stage.addChild(depthBar);
           });
+          // Renders the added depth bars
+          renderer.render(stage);
 
-          // Applies zIndex
-          stage.children.sort(function (a, b) {
-            a.zIndex = a.zIndex || 0;
-            b.zIndex = b.zIndex || 0;
-            return a.zIndex - b.zIndex;
-          });
+          // The resources are added when they're loaded
+          var preloaderListener = scope.$watch(function () {
+            return Preloader.getProgress('fancy-slider');
+          }, function (newValue) {
+            if (newValue === 100) {
+              // Init the resources
+              Resources.init(function () {
+                var
+                  slidesAndResources = Resources.get(),
+                  animations = Animations.get(function () {
+                    // This is how the scene will get rendered! 
+                    // Each time a Timeline is playing, trigger a scene render
+                    renderer.render(stage);
+                  });
 
-          // Hides everything from sight - moves everything to the left.
-          animations.secondToThird.pause().progress(1);
-          animations.thirdToFirst.pause().progress(1);
+                // Adds the resources to the stage.
+                angular.forEach(slidesAndResources, function (resources) {
+                  angular.forEach(resources, function (resource) {
+                    stage.addChild(resource.sprite);
+                  });
+                });
 
-          // Pixi constantly triggers RAF. We disable it as RAF will be triggered by TweenLite's ticker!
-          // 
-          // todo in case of performance issues, this may be one of the culprits. I've read through
-          // PIXI source code that some extra RAFs are needed in order to stabilize things.
-          PIXI.ticker.shared.stop();
+                // Applies zIndex
+                stage.children.sort(function (a, b) {
+                  a.zIndex = a.zIndex || 0;
+                  b.zIndex = b.zIndex || 0;
+                  return a.zIndex - b.zIndex;
+                });
 
-          // The animations
-          var
-            canAnimate = false,
-            currentSlide = 0,
-            animationMoments = ['firstToSecond', 'secondToThird', 'thirdToFirst'];
+                // Renders the newly added and sorted resources
+                renderer.render(stage);
 
-          animations.firstFromTheBottom.play();
+                // Hides everything from sight - moves everything to the left.
+                animations.secondToThird.pause().progress(1);
+                animations.thirdToFirst.pause().progress(1);
 
-          // Waits for fromBottom to finish
-          setTimeout(function(){
-            canAnimate = true;
-          }, Configuration.ANIMATION_DURATION);
+                // Pixi constantly triggers RAF. We disable it as RAF will be triggered by TweenLite's ticker!
+                // 
+                // todo in case of performance issues, this may be one of the culprits. I've read through
+                // PIXI source code that some extra RAFs are needed in order to stabilize things.
+                PIXI.ticker.shared.stop();
 
-          // The controls
-          scope.changeSlides = function(){
-            if (canAnimate) {
-              canAnimate = false;
+                // The animations!
+                // Without this line, the first slide may flicker!
+                animations.firstFromTheBottom.pause().progress(0.01);
+                // It starts after 10 seconds to the slider has time to settle.
+                $timeout(function () {
+                  var
+                    canAnimate = false,
+                    currentSlide = 0,
+                    animationMoments = ['firstToSecond', 'secondToThird', 'thirdToFirst'];
 
-              setTimeout(function(){
-                canAnimate = true;
-              }, Configuration.ANIMATION_DURATION);
+                  animations.firstFromTheBottom.play();
 
-              animations[animationMoments[currentSlide]].restart();
+                  // Waits for fromBottom to finish
+                  setTimeout(function () {
+                    canAnimate = true;
+                  }, Configuration.ANIMATION_DURATION);
 
-              currentSlide = (currentSlide + 1) % 3;
+                  // The controls
+                  scope.changeSlides = function () {
+                    if (canAnimate) {
+                      canAnimate = false;
+
+                      setTimeout(function () {
+                        canAnimate = true;
+                      }, Configuration.ANIMATION_DURATION);
+
+                      animations[animationMoments[currentSlide]].restart();
+
+                      currentSlide = (currentSlide + 1) % 3;
+                    }
+                  };
+                }, 10);
+
+                // Helpful logs
+                console.log('stage', stage);
+                console.log('depthBars', depthBars);
+                console.log('animations', animations);
+
+                // Unregisters the (night) watch
+                preloaderListener();
+              });
             }
-          };
-
-          // Helpful logs
-          console.log('stage', stage);
-          console.log('depthBars', depthBars);
-          console.log('animations', animations);
+          });
         },
         replace: true,
         restrict: 'E',
