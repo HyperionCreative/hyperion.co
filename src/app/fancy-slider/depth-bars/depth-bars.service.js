@@ -7,7 +7,7 @@
       'common.pixi',
       'common.viewport-size'
     ])
-    .service('FancyDepthBars', ['PIXI', 'FancyConfiguration', 'FancySliderResizer', 'ViewportSize', function (PIXI, Configuration, SliderResizer, ViewportSize) {
+    .service('FancyDepthBars', ['PIXI', 'FancyConfiguration', 'FancyResizer', 'ViewportSize', function (PIXI, Configuration, SliderResizer, ViewportSize) {
       this.get = get;
 
       ///////////////////

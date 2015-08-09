@@ -7,7 +7,6 @@
       'app.fancy-slider.depth-bars',
       'app.fancy-slider.resizer',
       'app.fancy-slider.resources',
-      'common.css-vendor-prefixer',
       'common.pixi'
     ]);
 })();

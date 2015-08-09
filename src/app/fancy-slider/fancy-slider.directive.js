@@ -3,7 +3,7 @@
 
   angular
     .module('app.fancy-slider')
-    .directive('hypFancySlider', ['PIXI', 'TweenLite', 'CssVendorPrefixer', 'FancyAnimations', 'FancyConfiguration', 'FancyDepthBars', 'FancyResources', 'FancySliderResizer', function (PIXI, TweenLite, CssVendorPrefixer, Animations, Configuration, DepthBars, Resources, SliderResizer) {
+    .directive('hypFancySlider', ['PIXI', 'TweenLite', 'FancyAnimations', 'FancyConfiguration', 'FancyDepthBars', 'FancyResources', function (PIXI, TweenLite, Animations, Configuration, DepthBars, Resources) {
       return {
         link: function (scope, iElement) {
           ///////////////
@@ -26,17 +26,7 @@
           ///////////////
 
           // Appends the canvas, thus initializing pixi.
-          iElement.append(renderer.view);
-
-          // Sets the resizer in place.
-          var canvas = angular.element(iElement[0].querySelector('canvas'));
-          SliderResizer.onProportionChange(function (proportion) {
-            canvas.css({
-              'margin-left': -(Configuration.NATIVE_WIDTH * proportion / 2) + 'px',
-            });
-
-            canvas.css(CssVendorPrefixer.prefixProperty('transform', 'translate3d(0,0,0) scale(' + proportion + ',' + proportion + ')'));
-          });
+          angular.element(iElement[0].querySelector('.stage-container')).append(renderer.view);
 
           // Adds the resources to the stage.
           angular.forEach(slidesAndResources, function (resources) {

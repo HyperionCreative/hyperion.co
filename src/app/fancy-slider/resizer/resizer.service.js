@@ -2,12 +2,10 @@
   'use strict';
 
   angular
-    .module('app.fancy-slider.resizer', [
-      'common.viewport-size'
-    ])
+    .module('app.fancy-slider.resizer')
     // This doesn't support deregistering a callback. I haven't added this functionality
     // as we don't need one.
-    .service('FancySliderResizer', ['FancyConfiguration', 'ViewportSize', function (Configuration, ViewportSize) {
+    .service('FancyResizer', ['FancyConfiguration', 'ViewportSize', function (Configuration, ViewportSize) {
       this.getProportion = getProportion;
       this.onProportionChange = onProportionChange;
 
