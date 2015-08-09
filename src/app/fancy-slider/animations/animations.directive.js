@@ -6,7 +6,7 @@
       'app.fancy-slider.resources',
       'common.gsap-lite'
     ])
-    .service('FancyAnimations', ['$timeout', 'FancyConfiguration', 'FancyResources', 'TweenLite', function ($timeout, Configuration, FancyResources, TweenLite) {
+    .service('FancyAnimations', ['$timeout', 'FancyConfiguration', 'FancyResources', 'TweenLite', function ($timeout, Configuration, Resources, TweenLite) {
       this.get = get;
 
       ///////////////
@@ -52,7 +52,7 @@
       }
 
       function init() {
-        var resources = FancyResources.get();
+        var resources = Resources.get();
 
         return {
           firstSlide: {

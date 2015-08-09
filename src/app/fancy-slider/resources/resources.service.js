@@ -3,7 +3,7 @@
 
   angular
     .module('app.fancy-slider.resources')
-    .service('FancyResources', ['PIXI', 'FancyResource', 'FancyResourcesUrl', 'ViewportSize', function (PIXI, Resource, FancyResourcesUrl, ViewportSize) {
+    .service('FancyResources', ['PIXI', 'FancyResource', 'FancyResourcesUrl', 'ViewportSize', function (PIXI, Resource, ResourcesUrl, ViewportSize) {
       this.get = get;
       this.init = init;
 
@@ -24,7 +24,7 @@
       // very fast. But this breaks the synchronicity of things,
       // causing texture.width and texture.height to be 0.
       function init(fn) {
-        var resourcesUrlArArray = FancyResourcesUrl.getAsArray();
+        var resourcesUrlArArray = ResourcesUrl.getAsArray();
         var loader = new PIXI.loaders.Loader();
 
         for (var i = 0; i < resourcesUrlArArray.length; i++) {
@@ -44,7 +44,7 @@
       // Private //
       /////////////
       function getResources() {
-        var resourcesUrl = FancyResourcesUrl.get();
+        var resourcesUrl = ResourcesUrl.get();
 
         var firstSlide = (function () {
           var flowerPot = new Resource(resourcesUrl.firstSlide.flowerPot);
