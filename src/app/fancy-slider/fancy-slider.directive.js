@@ -17,7 +17,6 @@
             });
 
           var
-            animations = Animations.get(),
             depthBars = DepthBars.get(),
             slidesAndResources = Resources.get();
 
@@ -27,6 +26,12 @@
 
           // Appends the canvas, thus initializing pixi.
           angular.element(iElement[0].querySelector('.stage-container')).append(renderer.view);
+
+          // This is how the scene will get rendered! 
+          // Each time a Timeline is playing, trigger a scene render
+          var animations = Animations.get(function () {
+            renderer.render(stage);
+          });
 
           // Adds the resources to the stage.
           angular.forEach(slidesAndResources, function (resources) {
@@ -48,9 +53,8 @@
           });
 
           // Hides everything from sight - moves everything to the left.
-          animations.firstSlide.toLeft(undefined, true);
-          animations.secondSlide.toLeft(undefined, true);
-          animations.thirdSlide.toLeft(undefined, true);
+          animations.secondToThird.pause().progress(1);
+          animations.thirdToFirst.pause().progress(1);
 
           // Pixi constantly triggers RAF. We disable it as RAF will be triggered by TweenLite's ticker!
           // 
@@ -58,44 +62,33 @@
           // PIXI source code that some extra RAFs are needed in order to stabilize things.
           PIXI.ticker.shared.stop();
 
-          // This is how the scene will get rendered! 
-          // Each time TweenLite triggers a tick, we draw the scene.
-          TweenLite.ticker.addEventListener('tick', function () {
-            renderer.render(stage);
-          });
-
-          // Only start the ticker when needed otherwise RAF will be triggered endlessly.
-          // I suspect this is a bug on GSAP side.
-          // 
-          // todo in case of performance issues, this may be one of the culprits.
-          TweenLite.ticker.sleep();
-
           // The animations
           var
-            canAnimate = true,
+            canAnimate = false,
             currentSlide = 0,
-            slides = ['firstSlide', 'secondSlide', 'thirdSlide'];
+            animationMoments = ['firstToSecond', 'secondToThird', 'thirdToFirst'];
 
-          canAnimate = false;
-          animations.firstSlide.toBottom(undefined, true);
-          animations.firstSlide.toCenter(function () {
+          animations.firstFromTheBottom.play();
+
+          // Waits for fromBottom to finish
+          setTimeout(function(){
             canAnimate = true;
-          });
+          }, Configuration.ANIMATION_DURATION);
 
-          iElement.bind('click', function () {
+          // The controls
+          scope.changeSlides = function(){
             if (canAnimate) {
               canAnimate = false;
 
-              animations[slides[currentSlide]].toLeft();
+              setTimeout(function(){
+                canAnimate = true;
+              }, Configuration.ANIMATION_DURATION);
+
+              animations[animationMoments[currentSlide]].restart();
 
               currentSlide = (currentSlide + 1) % 3;
-
-              animations[slides[currentSlide]].toRight(undefined, true);
-              animations[slides[currentSlide]].toCenter(function(){
-                canAnimate = true;
-              });
             }
-          });
+          };
 
           // Helpful logs
           console.log('stage', stage);

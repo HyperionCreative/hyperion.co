@@ -6,20 +6,22 @@
       'app.fancy-slider.resources',
       'common.gsap-lite'
     ])
-    .service('FancyAnimations', ['$timeout', 'FancyConfiguration', 'FancyResources', 'TweenLite', function ($timeout, Configuration, Resources, TweenLite) {
+    .service('FancyAnimations', ['FancyConfiguration', 'FancyResources', 'TweenLite', 'TweenTimelineLite', function (Configuration, Resources, TweenLite, TweenTimelineLite) {
       this.get = get;
 
       ///////////////
       // Variables //
       ///////////////
       var animations;
+      var onUpdate;
 
       ////////////
       // Public //
       ////////////
-      function get() {
+      function get(globalOnUpdate) {
         // Call init only if needed!
         if (angular.isUndefined(animations)) {
+          onUpdate = globalOnUpdate;
           animations = init();
         }
 
@@ -29,48 +31,60 @@
       /////////////
       // Private //
       /////////////
-      function animate(resource, position, fast) {
-        TweenLite.to(resource.sprite, (fast === true) ? 0 : Configuration.ANIMATION_DURATION / 1000, {
-          x: position.x,
-          y: position.y,
+      function addToTimeline(timeline, resource, fromPosition, toPosition) {
+        timeline.fromTo(resource, Configuration.ANIMATION_DURATION / 1000, {
+          x: fromPosition.x,
+          y: fromPosition.y,
           z: 0,
-          rotation: position.rotation,
+          rotation: fromPosition.rotation
+        }, {
+          x: toPosition.x,
+          y: toPosition.y,
+          z: 0,
+          rotation: toPosition.rotation,
+
           ease: Configuration.ANIMATION_EASING
-        });
+        }, 0);
       }
 
-      function animationHandler(resources, positionName) {
-        return function (onSuccess, fast) {
-          angular.forEach(resources, function (resource) {
-            animate(resource, resource.positions[positionName], fast);
-          });
+      function createHorizontalTimeline(fromResources, toResources) {
+        var timeline = new TweenTimelineLite({
+          paused: true,
+          onUpdate: onUpdate
+        });
 
-          if (angular.isFunction(onSuccess)) {
-            $timeout(onSuccess, Configuration.ANIMATION_DURATION);
-          }
-        };
+        angular.forEach(fromResources, function (fromResource) {
+          addToTimeline(timeline, fromResource.sprite, fromResource.positions.center, fromResource.positions.left);
+        });
+
+        angular.forEach(toResources, function (toResource) {
+          addToTimeline(timeline, toResource.sprite, toResource.positions.right, toResource.positions.center);
+        });
+
+        return timeline;
+      }
+
+      function createVerticalTimeline(fromResources) {
+        var timeline = new TweenTimelineLite({
+          paused: true,
+          onUpdate: onUpdate
+        });
+
+        angular.forEach(fromResources, function (fromResource) {
+          addToTimeline(timeline, fromResource.sprite, fromResource.positions.bottom, fromResource.positions.center);
+        });
+
+        return timeline;
       }
 
       function init() {
         var resources = Resources.get();
 
         return {
-          firstSlide: {
-            toBottom: animationHandler(resources.firstSlide, 'bottom'),
-            toCenter: animationHandler(resources.firstSlide, 'center'),
-            toLeft: animationHandler(resources.firstSlide, 'left'),
-            toRight: animationHandler(resources.firstSlide, 'right')
-          },
-          secondSlide: {
-            toCenter: animationHandler(resources.secondSlide, 'center'),
-            toLeft: animationHandler(resources.secondSlide, 'left'),
-            toRight: animationHandler(resources.secondSlide, 'right')
-          },
-          thirdSlide: {
-            toCenter: animationHandler(resources.thirdSlide, 'center'),
-            toLeft: animationHandler(resources.thirdSlide, 'left'),
-            toRight: animationHandler(resources.thirdSlide, 'right')
-          }
+          firstFromTheBottom: createVerticalTimeline(resources.firstSlide),
+          firstToSecond: createHorizontalTimeline(resources.firstSlide, resources.secondSlide),
+          secondToThird: createHorizontalTimeline(resources.secondSlide, resources.thirdSlide),
+          thirdToFirst: createHorizontalTimeline(resources.thirdSlide, resources.firstSlide)
         };
       }
     }]);
