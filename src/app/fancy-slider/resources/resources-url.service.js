@@ -3,10 +3,19 @@
 
   angular
     .module('app.fancy-slider.resources')
-    .provider('FancyResourcesUrl', ['IS_RETINA', function (IS_RETINA) {
-      var PREFIX = 'app/fancy-slider/resources/';
+    .service('FancyResourcesUrl', ['IS_RETINA', function (IS_RETINA) {
+      this.get = getUrls;
+      this.getAsArray = getUrlsAsArray;
+
+      ///////////////////
+      // Configuration //
+      ///////////////////
+      var PREFIX = 'assets/images/fancy-slider/resources/';
       var SUFFIX = IS_RETINA ? '@2x.png' : '.png';
 
+      ///////////////
+      // Variables //
+      ///////////////
       var resourcesUrl = {
         firstSlide: {
           flowerPot: getResourceUrl('slide-1', 'flower-pot'),
@@ -24,12 +33,11 @@
           iphone: getResourceUrl('slide-3', 'iphone')
         }
       };
-
       var resourcesUrlArray;
 
-      this.get = getUrls;
-      this.getAsArray = getUrlsAsArray;
-
+      ////////////
+      // Public //
+      ////////////
       function getUrls() {
         return resourcesUrl;
       }
@@ -48,15 +56,11 @@
         return resourcesUrlArray;
       }
 
+      /////////////
+      // Private //
+      /////////////
       function getResourceUrl(slide, resourceName) {
         return PREFIX + slide + '/' + resourceName + SUFFIX;
       }
-
-      this.$get = function () {
-        return {
-          get: getUrls,
-          getAsArray: getUrlsAsArray
-        };
-      };
     }]);
 })();

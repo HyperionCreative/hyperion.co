@@ -3,7 +3,7 @@
 
   angular
     .module('app.fancy-slider.resources')
-    .service('FancyResources', ['PIXI', 'FancyResource', 'FancyResourcesUrl', 'ViewportSize', function (PIXI, Resource, ResourcesUrl, ViewportSize) {
+    .service('FancyResources', ['PIXI', 'FancyAssetsDownloader', 'FancyResource', 'FancyResourcesUrl', 'ViewportSize', function (PIXI, AssetsDownloader, Resource, ResourcesUrl, ViewportSize) {
       this.get = get;
       this.init = init;
 
@@ -16,27 +16,18 @@
       // Public //
       ////////////
       function get() {
+        if (angular.isUndefined(resources)) {
+          throw 'FancyResources module was not initialized correctly!';
+        }
+
         return resources;
       }
 
-      // This solves a weird bug. Without these, when initializing a texture,
-      // it would load the image again. Since the image is in cache, it will load
-      // very fast. But this breaks the synchronicity of things,
-      // causing texture.width and texture.height to be 0.
-      function init(fn) {
-        var resourcesUrlArArray = ResourcesUrl.getAsArray();
-        var loader = new PIXI.loaders.Loader();
-
-        for (var i = 0; i < resourcesUrlArArray.length; i++) {
-          loader.add(resourcesUrlArArray[i], resourcesUrlArArray[i]);
-        }
-
-        // When everything is loaded, call the fn. These will happen very fast
-        // as the images are already loaded by common.preloader!
-        loader.load(function () {
+      function init(onComplete) {
+        AssetsDownloader.download(ResourcesUrl.getAsArray(), function () {
           resources = getResources();
-
-          fn();
+          
+          onComplete();
         });
       }
 
@@ -168,7 +159,7 @@
             angular.forEach(transformations, function (slideResources, slideName) {
               angular.forEach(slideResources, function (slideResource, resourceName) {
                 angular.forEach(slideResource, function (resourceTransformation, transformationName) {
-                  if (transformationName === 'scale') { 
+                  if (transformationName === 'scale') {
                     var scaleFactor = isLarge ? 1 : resourceTransformation;
 
                     // Since we're in transform origin 50% 50%, we need to add change x and y!
@@ -178,12 +169,12 @@
                     toReturn[slideName][resourceName].sprite.children[0].scale.set(scaleFactor, scaleFactor);
 
                     var newHeight = toReturn[slideName][resourceName].sprite.children[0].height;
-                    var newWidth = toReturn[slideName][resourceName].sprite.children[0].width; 
+                    var newWidth = toReturn[slideName][resourceName].sprite.children[0].width;
 
                     toReturn[slideName][resourceName].sprite.children[0].x += (newWidth - currentWidth) / 2;
                     toReturn[slideName][resourceName].sprite.children[0].y += (newHeight - currentHeight) / 2;
                   } else if (transformationName === 'visible') {
-                    toReturn[slideName][resourceName].sprite.children[0][transformationName] = isLarge ? !resourceTransformation: resourceTransformation;
+                    toReturn[slideName][resourceName].sprite.children[0][transformationName] = isLarge ? !resourceTransformation : resourceTransformation;
                   } else {
                     toReturn[slideName][resourceName].sprite.children[0][transformationName] += isLarge ? (-resourceTransformation) : resourceTransformation;
                   }
