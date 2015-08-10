@@ -8,7 +8,7 @@
       'common.pixi',
       'common.viewport-size'
     ])
-    .service('FancyDepthBars', ['PIXI', 'FancyAssetsDownloader', 'FancyConfiguration', 'FancyDepthBarsBlurSpritesUrl', 'FancyResizer', 'ViewportSize', function (PIXI, AssetsDownloader, Configuration, DepthBarsUrl, SliderResizer, ViewportSize) {
+    .service('FancyDepthBars', ['$q', 'PIXI', 'FancyAssetsDownloader', 'FancyConfiguration', 'FancyDepthBarsBlurSpritesUrl', 'FancyResizer', 'ViewportSize', function ($q, PIXI, AssetsDownloader, Configuration, DepthBarsUrl, SliderResizer, ViewportSize) {
       this.get = get;
       this.init = init;
 
@@ -34,12 +34,16 @@
         return depthBars;
       }
 
-      function init(onComplete) {
+      function init() {
+        var deferred = $q.defer();
+
         AssetsDownloader.download(DepthBarsUrl.getAsArray(), function () {
           depthBars = getDepthBars();
-          
-          onComplete();
+
+          deferred.resolve();
         });
+
+        return deferred.promise;
       }
 
       /////////////

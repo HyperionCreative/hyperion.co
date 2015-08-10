@@ -3,7 +3,7 @@
 
   angular
     .module('app.fancy-slider.resources')
-    .service('FancyResources', ['PIXI', 'FancyAssetsDownloader', 'FancyResource', 'FancyResourcesUrl', 'ViewportSize', function (PIXI, AssetsDownloader, Resource, ResourcesUrl, ViewportSize) {
+    .service('FancyResources', ['$q', 'PIXI', 'FancyAssetsDownloader', 'FancyResource', 'FancyResourcesUrl', 'ViewportSize', function ($q, PIXI, AssetsDownloader, Resource, ResourcesUrl, ViewportSize) {
       this.get = get;
       this.init = init;
 
@@ -23,12 +23,16 @@
         return resources;
       }
 
-      function init(onComplete) {
+      function init() {
+        var deferred = $q.defer();
+
         AssetsDownloader.download(ResourcesUrl.getAsArray(), function () {
           resources = getResources();
-          
-          onComplete();
+
+          deferred.resolve();
         });
+
+        return deferred.promise;
       }
 
       /////////////

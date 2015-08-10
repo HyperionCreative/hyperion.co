@@ -6,7 +6,7 @@
       'app.fancy-slider.resources',
       'common.gsap-lite'
     ])
-    .service('FancyAnimations', ['FancyConfiguration', 'TweenLite', 'TweenTimelineLite', function (Configuration, TweenLite, TweenTimelineLite) {
+    .service('FancyAnimations', ['$q', 'FancyConfiguration', 'TweenLite', 'TweenTimelineLite', function ($q, Configuration, TweenLite, TweenTimelineLite) {
       this.get = get;
       this.init = init;
       this.setGlobalOnUpdate = setGlobalOnUpdate;
@@ -29,6 +29,8 @@
       }
 
       function init(resources) {
+        var deferred = $q.defer();
+
         animations = {
           firstFromTheBottom: createVerticalTimeline(resources.firstSlide),
 
@@ -40,6 +42,9 @@
           thirdToSecond: createHorizontalTimeline(resources.thirdSlide, resources.secondSlide),
           secondToFirst: createHorizontalTimeline(resources.secondSlide, resources.firstSlide)
         };
+        deferred.resolve();
+
+        return deferred.promise;
       }
 
       function setGlobalOnUpdate(globalOnUpdate) {
