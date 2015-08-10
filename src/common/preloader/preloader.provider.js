@@ -76,12 +76,32 @@
       this.$get = ['$rootScope', function ($rootScope) {
         return {
           getProgress: getProgress,
+          getTotalProgress: getTotalProgress,
           start: start
         };
 
         function getProgress(queueName) {
+          // So we don't divide by 0
           if (queues[queueName].sizeToDownload > 0) {
             return queues[queueName].sizeDownloaded / queues[queueName].sizeToDownload * 100;
+          }
+
+          return 0;
+        }
+
+        function getTotalProgress() {
+          var
+            totalSizeDownloaded = 0,
+            totalSizeToDownload = 0;
+
+          angular.forEach(queues, function (queue) {
+            totalSizeDownloaded += queue.sizeDownloaded;
+            totalSizeToDownload += queue.sizeToDownload;
+          });
+
+          // So we don't divide by 0
+          if (totalSizeToDownload > 0) {
+            return totalSizeDownloaded / totalSizeToDownload * 100;
           }
 
           return 0;
