@@ -17,6 +17,7 @@
       ///////////////////
       var COLOR = 0xFFFFFF;
       var LATERAL_BAR_WIDTH = 40;
+      var TOP_BAR_HEIGHT = 60;
 
       ///////////////
       // Variables //
@@ -50,63 +51,118 @@
       // Private //
       /////////////
       function getDepthBars() {
-        var blurSpritesUrl = DepthBarsUrl.get();
-
-        var topBar = drawRectangle(COLOR, Configuration.NATIVE_WIDTH, (function () {
-          // Forgive me God for I have sinned!
-          return document.querySelector('.header-index-container').clientHeight;
-        })());
-        var leftBar = drawRectangle(COLOR, LATERAL_BAR_WIDTH, Configuration.NATIVE_HEIGHT);
-        var rightBar = drawRectangle(COLOR, LATERAL_BAR_WIDTH, Configuration.NATIVE_HEIGHT);
+        // The containers - these contain the blur sprite and the white rectangle
+        var
+          topContainer = new PIXI.Container(),
+          leftContainer = new PIXI.Container(),
+          rightContainer = new PIXI.Container();
 
         // Sets the z-index;
-        topBar.zIndex = 30;
-        leftBar.zIndex = 1;
-        rightBar.zIndex = 100;
+        topContainer.zIndex = 30;
+        leftContainer.zIndex = 1;
+        rightContainer.zIndex = 100;
 
-        // This holds the same bars size as otherwise they would get scaled too.
+        // The bars
+        var
+          topBar = drawRectangle(COLOR, Configuration.NATIVE_WIDTH, TOP_BAR_HEIGHT),
+          leftBar = drawRectangle(COLOR, LATERAL_BAR_WIDTH, Configuration.NATIVE_HEIGHT),
+          rightBar = drawRectangle(COLOR, LATERAL_BAR_WIDTH, Configuration.NATIVE_HEIGHT);
+
+        // Adds the bars to their specific container
+        topContainer.addChild(topBar);
+        leftContainer.addChild(leftBar);
+        rightContainer.addChild(rightBar);
+
+        // The right bar is placed "inside" the viewport
+        rightBar.x = -rightBar.width;
+
+        // The blur sprites - EXPERIMENTAL
+        var topBlur, leftCornerBlur, rightCornerBlur, leftEdge, rightEdge;
+        (function () {
+          var blurSpritesUrl = DepthBarsUrl.get();
+
+          var
+            corner = new PIXI.Texture.fromImage(blurSpritesUrl.corner),
+            edge = new PIXI.Texture.fromImage(blurSpritesUrl.edge),
+            top = new PIXI.Texture.fromImage(blurSpritesUrl.top);
+
+          topBlur = new PIXI.extras.TilingSprite(top, Configuration.NATIVE_WIDTH - 2 * corner.width, top.height);
+
+          rightCornerBlur = new PIXI.Sprite(corner);
+          rightCornerBlur.x = -corner.width;
+          leftCornerBlur = new PIXI.Sprite(corner);
+          leftCornerBlur.anchor.x = 1;
+          leftCornerBlur.scale.x = -1;
+
+          rightEdge = new PIXI.extras.TilingSprite(edge, edge.width, Configuration.NATIVE_HEIGHT);
+          rightEdge.y = corner.height;
+          rightEdge.x = -edge.width;
+          leftEdge = new PIXI.extras.TilingSprite(edge, edge.width, Configuration.NATIVE_HEIGHT);
+          leftEdge.y = corner.height;
+          leftEdge.anchor.x = 1;
+          leftEdge.scale.x = -1;
+
+          // Appends the blur sprites
+          topContainer.addChild(topBlur);
+          rightContainer.addChild(rightCornerBlur);
+          rightContainer.addChild(rightEdge);
+          leftContainer.addChild(leftCornerBlur);
+          leftContainer.addChild(leftEdge);
+        })();
+
+        // This prevents the bars from scaling.
         SliderResizer.onProportionChange(function (proportion) {
           // Sets the new scale
-          topBar.scale.y = 1 / proportion;
-          leftBar.scale.x = 1 / proportion;
-          rightBar.scale.x = 1 / proportion;
-
-          // Rounds the position width otherwise the bars may not properly align
-          topBar.width = Math.round(topBar.width);
-          leftBar.width = Math.round(leftBar.width);
-          rightBar.width = Math.round(rightBar.width);
+          topContainer.scale.y = 1 / proportion;
+          leftContainer.scale.x = 1 / proportion;
+          rightContainer.scale.x = 1 / proportion;
         });
 
+        // This recalculates the containers' position on each resize
         ViewportSize.onChange(function (size) {
           if (size.width >= 1920) {
-            leftBar.visible = true;
-            rightBar.visible = true;
+            leftContainer.visible = true;
+            rightContainer.visible = true;
 
             var proportion = SliderResizer.getProportion();
-
             var currentStageWidth = Configuration.NATIVE_WIDTH * proportion;
             var currentScreenSize = size.width < Configuration.GLOBAL_MIN_WIDTH ? Configuration.GLOBAL_MIN_WIDTH : size.width;
-
             var currentLateralOffset = Math.abs((currentScreenSize - currentStageWidth) / 2);
-
-            leftBar.x = Math.floor(currentLateralOffset * (1 / proportion));
-            rightBar.x = Math.ceil((Configuration.NATIVE_WIDTH - rightBar.width) - (currentLateralOffset * (1 / proportion)));
 
             if (size.width === 1920) {
               // Substracts 10px to make the bars 30px wide
-              leftBar.x -= 10 * (1 / proportion);
-              rightBar.x += 10 * (1 / proportion);
+              leftContainer.x -= 10 * (1 / proportion);
+              rightContainer.x += 10 * (1 / proportion);
             }
+
+            leftContainer.x = Math.floor(currentLateralOffset * (1 / proportion));
+            rightContainer.x = Math.ceil(Configuration.NATIVE_WIDTH - (currentLateralOffset * (1 / proportion)));
+
+            // Normalizes the width - I don't know why but the leftContainer width is double
+            // I fix this by / 2!!
+            leftContainer.width = 2 * Math.round(leftContainer.width / 2);
+            rightContainer.width = leftContainer.width / 2;
+
+            // Normalizes the Y scale - this is needed by the corner sprite
+            leftContainer.scale.y = leftContainer.scale.x;
+            rightContainer.scale.y = rightContainer.scale.x;
+
+            // Only the top blur sprite needs to be redrawn
+            topBlur.width = Configuration.NATIVE_WIDTH - 2 * rightContainer.width - 2 * leftContainer.x;
+            topBlur.x = leftContainer.x + (leftContainer.width / 2);
           } else {
-            leftBar.visible = false;
-            rightBar.visible = false;
+            leftContainer.visible = false;
+            rightContainer.visible = false;
+
+            topBlur.width = Configuration.NATIVE_WIDTH;
+            topBlur.x = 0;
           }
         });
 
         return {
-          top: topBar,
-          left: leftBar,
-          right: rightBar
+          top: topContainer,
+          left: leftContainer,
+          right: rightContainer
         };
       }
 
