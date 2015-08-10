@@ -3,7 +3,7 @@
 
   angular
     .module('common.preloader')
-    .service('Preloader', ['PRELOADABLE_FILES', function (PRELOADABLE_FILES) {
+    .service('Preloader', ['$rootScope', 'PRELOADABLE_FILES', function ($rootScope, PRELOADABLE_FILES) {
       this.addToQueue = addToQueue;
       this.getProgress = getProgress;
       this.getTotalProgress = getTotalProgress;
