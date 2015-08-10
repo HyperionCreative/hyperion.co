@@ -2,12 +2,7 @@
   'use strict';
 
   angular
-    .module('app.fancy-slider.depth-bars', [
-      'app.fancy-slider.assets-downloader',
-      'app.fancy-slider.resizer',
-      'common.pixi',
-      'common.viewport-size'
-    ])
+    .module('app.fancy-slider.depth-bars')
     .service('FancyDepthBars', ['$q', 'PIXI', 'FancyAssetsDownloader', 'FancyConfiguration', 'FancyDepthBarsBlurSpritesUrl', 'FancyResizer', 'ViewportSize', function ($q, PIXI, AssetsDownloader, Configuration, DepthBarsUrl, SliderResizer, ViewportSize) {
       this.get = get;
       this.init = init;
