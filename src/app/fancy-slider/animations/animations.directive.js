@@ -6,8 +6,10 @@
       'app.fancy-slider.resources',
       'common.gsap-lite'
     ])
-    .service('FancyAnimations', ['FancyConfiguration', 'FancyResources', 'TweenLite', 'TweenTimelineLite', function (Configuration, Resources, TweenLite, TweenTimelineLite) {
+    .service('FancyAnimations', ['FancyConfiguration', 'TweenLite', 'TweenTimelineLite', function (Configuration, TweenLite, TweenTimelineLite) {
       this.get = get;
+      this.init = init;
+      this.setGlobalOnUpdate = setGlobalOnUpdate;
 
       ///////////////
       // Variables //
@@ -18,14 +20,25 @@
       ////////////
       // Public //
       ////////////
-      function get(globalOnUpdate) {
-        // Call init only if needed!
+      function get() {
         if (angular.isUndefined(animations)) {
-          onUpdate = globalOnUpdate;
-          animations = init();
+          throw 'FancyAnimations module was not initialized correctly!';
         }
 
         return animations;
+      }
+
+      function init(resources) {
+        animations = {
+          firstFromTheBottom: createVerticalTimeline(resources.firstSlide),
+          firstToSecond: createHorizontalTimeline(resources.firstSlide, resources.secondSlide),
+          secondToThird: createHorizontalTimeline(resources.secondSlide, resources.thirdSlide),
+          thirdToFirst: createHorizontalTimeline(resources.thirdSlide, resources.firstSlide)
+        };
+      }
+
+      function setGlobalOnUpdate(globalOnUpdate) {
+        onUpdate = globalOnUpdate;
       }
 
       /////////////
@@ -48,10 +61,7 @@
       }
 
       function createHorizontalTimeline(fromResources, toResources) {
-        var timeline = new TweenTimelineLite({
-          paused: true,
-          onUpdate: onUpdate
-        });
+        var timeline = createTimeline();
 
         angular.forEach(fromResources, function (fromResource) {
           addToTimeline(timeline, fromResource.sprite, fromResource.positions.center, fromResource.positions.left);
@@ -65,10 +75,7 @@
       }
 
       function createVerticalTimeline(fromResources) {
-        var timeline = new TweenTimelineLite({
-          paused: true,
-          onUpdate: onUpdate
-        });
+        var timeline = createTimeline();
 
         angular.forEach(fromResources, function (fromResource) {
           addToTimeline(timeline, fromResource.sprite, fromResource.positions.bottom, fromResource.positions.center);
@@ -77,15 +84,15 @@
         return timeline;
       }
 
-      function init() {
-        var resources = Resources.get();
-
-        return {
-          firstFromTheBottom: createVerticalTimeline(resources.firstSlide),
-          firstToSecond: createHorizontalTimeline(resources.firstSlide, resources.secondSlide),
-          secondToThird: createHorizontalTimeline(resources.secondSlide, resources.thirdSlide),
-          thirdToFirst: createHorizontalTimeline(resources.thirdSlide, resources.firstSlide)
-        };
+      function createTimeline() {
+        return new TweenTimelineLite({
+          paused: true,
+          onUpdate: function () {
+            if (angular.isFunction(onUpdate)) {
+              onUpdate();
+            }
+          }
+        });
       }
     }]);
 })();
