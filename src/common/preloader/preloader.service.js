@@ -72,7 +72,7 @@
         return 0;
       }
 
-      function start(queueName) {
+      function start(queueName, onComplete) {
         var
           queue = queues[queueName],
           PathsArray = new QueueDecomposer(queue.files);
@@ -103,6 +103,10 @@
               };
 
               image.src = path;
+            } else {
+              if (angular.isFunction(onComplete)) {
+                onComplete();
+              }
             }
           })(PathsArray.shift());
         };
