@@ -31,9 +31,14 @@
       function init(resources) {
         animations = {
           firstFromTheBottom: createVerticalTimeline(resources.firstSlide),
+
           firstToSecond: createHorizontalTimeline(resources.firstSlide, resources.secondSlide),
           secondToThird: createHorizontalTimeline(resources.secondSlide, resources.thirdSlide),
-          thirdToFirst: createHorizontalTimeline(resources.thirdSlide, resources.firstSlide)
+          thirdToFirst: createHorizontalTimeline(resources.thirdSlide, resources.firstSlide),
+
+          firstToThird: createHorizontalTimeline(resources.firstSlide, resources.thirdSlide),
+          thirdToSecond: createHorizontalTimeline(resources.thirdSlide, resources.secondSlide),
+          secondToFirst: createHorizontalTimeline(resources.secondSlide, resources.firstSlide)
         };
       }
 
