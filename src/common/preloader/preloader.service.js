@@ -86,6 +86,10 @@
                 // Needed as we're outside of angular's scope
                 $rootScope.$evalAsync(function () {
                   queue.sizeDownloaded += PRELOADABLE_FILES[path];
+
+                  if (angular.isFunction(onComplete) && getProgress(queueName) === 100) {
+                    onComplete();
+                  }
                 });
 
                 next();
@@ -97,16 +101,16 @@
                 // Needed as we're outside of angular's scope
                 $rootScope.$evalAsync(function () {
                   queue.sizeDownloaded += PRELOADABLE_FILES[path];
+
+                  if (angular.isFunction(onComplete) && getProgress(queueName) === 100) {
+                    onComplete();
+                  }
                 });
 
                 next();
               };
 
               image.src = path;
-            } else {
-              if (angular.isFunction(onComplete)) {
-                onComplete();
-              }
             }
           })(PathsArray.shift());
         };
