@@ -8,6 +8,12 @@
     .module('app.fancy-slider')
     .directive('hypFancySlider', ['$timeout', 'PIXI', 'TweenLite', 'FancyAnimations', 'FancyConfiguration', 'FancyDepthBars', 'FancyResources', 'Preloader', function ($timeout, PIXI, TweenLite, Animations, Configuration, DepthBars, Resources, Preloader) {
       return {
+        // This is in charge of initializing the needed resources!
+        controller: function () {
+          Resources.init(function(){
+
+          });
+        },
         link: function (scope, iElement) {
           ///////////////
           // Variables //
