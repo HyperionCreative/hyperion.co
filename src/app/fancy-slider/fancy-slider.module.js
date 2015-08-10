@@ -2,8 +2,8 @@
   'use strict';
 
   // todo
-  // 1. FF pe OSX trebuie fara RAF si fara AA
-  // 2. IE pe Windows trebuie cu RAF si AA disabled si fps 30
+  // 1. FF pe OSX trebuie fara RAF si fara AA 
+  // 2. IE 11 (si lower presupun) pe Windows (asta era 7) trebuie cu RAF si AA disabled si fps 30
 
   angular
     .module('app.fancy-slider', [
