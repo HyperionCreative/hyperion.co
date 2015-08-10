@@ -6,7 +6,7 @@
       'common.preloader',
       'common.pixi'
     ])
-    .service('FancyAssetsDownloader', ['PIXI', 'Preloader', function (PIXI, Preloader) {
+    .service('FancyAssetsDownloader', ['$rootScope', 'PIXI', 'Preloader', function ($rootScope, PIXI, Preloader) {
       this.download = download;
 
       ///////////////
@@ -43,7 +43,9 @@
           // When everything is loaded, call the fn. This will happen very fast
           // as the images are already loaded by the Preloader!
           loader.load(function () {
-            onComplete();
+            $rootScope.$evalAsync(function () {
+              onComplete();
+            });
           });
         });
       }
