@@ -1,9 +1,6 @@
 (function () {
   'use strict';
 
-  // Since we're rendering the stage only in onUpdate in the timeline, the resize changes won't be visible
-  // until the animation is triggered again. todo fix this
-
   angular
     .module('app.fancy-slider')
     .directive('hypFancySlider', ['$timeout', 'PIXI', 'FancyAnimations', 'FancyConfiguration', 'FancyDepthBars', 'FancyResources', 'FancySliderInitializer', 'ViewportSize', function ($timeout, PIXI, Animations, Configuration, DepthBars, Resources, SliderInitializer, ViewportSize) {
