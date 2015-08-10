@@ -3,7 +3,7 @@
 
   angular
     .module('app.fancy-slider')
-    .service('FancySliderInitializer', ['FancyAnimations', 'FancyResources', function (Animations, Resources) {
+    .service('FancySliderInitializer', ['FancyAnimations', 'FancyDepthBars', 'FancyResources', function (Animations, DepthBars, Resources) {
       this.init = init;
 
       ////////////
@@ -11,15 +11,14 @@
       ////////////
       function init(onComplete) {
         Resources.init(function () {
-          var resources = Resources.get();
+          DepthBars.init(function () {
+            Animations.init(Resources.get());
 
-          Animations.init(resources);
+            onComplete();
 
-
-          onComplete();
-
-          // todo delete this
-          console.log(resources, Animations.get());
+            // todo delete this
+            console.log(Resources.get(), Animations.get(), DepthBars.get());
+          });
         });
       }
     }]);

@@ -3,12 +3,14 @@
 
   angular
     .module('app.fancy-slider.depth-bars', [
+      'app.fancy-slider.assets-downloader',
       'app.fancy-slider.resizer',
       'common.pixi',
       'common.viewport-size'
     ])
-    .service('FancyDepthBars', ['PIXI', 'FancyConfiguration', 'FancyResizer', 'ViewportSize', function (PIXI, Configuration, SliderResizer, ViewportSize) {
+    .service('FancyDepthBars', ['PIXI', 'FancyAssetsDownloader', 'FancyConfiguration', 'FancyDepthBarsBlurSpritesUrl', 'FancyResizer', 'ViewportSize', function (PIXI, AssetsDownloader, Configuration, DepthBarsUrl, SliderResizer, ViewportSize) {
       this.get = get;
+      this.init = init;
 
       ///////////////////
       // Configuration //
@@ -19,23 +21,33 @@
       ///////////////
       // Variables //
       ///////////////
-      var bars;
+      var depthBars;
 
       ////////////
       // Public //
       ////////////
       function get() {
-        if (angular.isUndefined(bars)) {
-          bars = init();
+        if (angular.isUndefined(depthBars)) {
+          throw 'FancyDepthBars module was not initialized correctly!';
         }
 
-        return bars;
+        return depthBars;
+      }
+
+      function init(onComplete) {
+        AssetsDownloader.download(DepthBarsUrl.getAsArray(), function () {
+          depthBars = getDepthBars();
+          
+          onComplete();
+        });
       }
 
       /////////////
       // Private //
       /////////////
-      function init() {
+      function getDepthBars() {
+        var blurSpritesUrl = DepthBarsUrl.get();
+
         var topBar = drawRectangle(COLOR, Configuration.NATIVE_WIDTH, (function () {
           // Forgive me God for I have sinned!
           return document.querySelector('.header-index-container').clientHeight;
@@ -99,9 +111,6 @@
 
         graphics.beginFill(color);
         graphics.drawRect(0, 0, width, height);
-
-        // var toReturn = new PIXI.Sprite();
-        // toReturn.addChild(graphics)
 
         return graphics;
       }
