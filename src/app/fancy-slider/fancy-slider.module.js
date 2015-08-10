@@ -11,6 +11,7 @@
       'app.fancy-slider.depth-bars',
       'app.fancy-slider.resizer',
       'app.fancy-slider.resources',
-      'common.pixi'
+      'common.pixi',
+      'common.viewport-size'
     ]);
 })();
