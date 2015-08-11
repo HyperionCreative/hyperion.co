@@ -5,6 +5,7 @@
     .module('app.fancy-slider.depth-bars')
     .service('FancyDepthBars', ['$q', 'PIXI', 'FancyAssetsDownloader', 'FancyConfiguration', 'FancyDepthBarsBlurSpritesUrl', 'FancyResizer', 'ViewportSize', function ($q, PIXI, AssetsDownloader, Configuration, DepthBarsUrl, SliderResizer, ViewportSize) {
       this.get = get;
+      this.getBlurSprites = getBlurSprites;
       this.init = init;
 
       ///////////////////
@@ -17,7 +18,7 @@
       ///////////////
       // Variables //
       ///////////////
-      var depthBars;
+      var depthBars, blurSprites;
 
       ////////////
       // Public //
@@ -30,11 +31,22 @@
         return depthBars;
       }
 
+      function getBlurSprites() {
+        if (angular.isUndefined(blurSprites)) {
+          throw 'FancyDepthBars module was not initialized correctly!';
+        }
+
+        return blurSprites;
+      }
+
       function init() {
         var deferred = $q.defer();
 
         AssetsDownloader.download(DepthBarsUrl.getAsArray(), function () {
-          depthBars = getDepthBars();
+          depthBars = createDepthBars();
+          blurSprites = createBlurSprites();
+
+          onSliderResize(depthBars, blurSprites);
 
           deferred.resolve();
         });
@@ -45,8 +57,8 @@
       /////////////
       // Private //
       /////////////
-      function getDepthBars() {
-        // The containers - these contain the blur sprite and the white rectangle
+      function createDepthBars() {
+        // The containers
         var
           topContainer = new PIXI.Container(),
           leftContainer = new PIXI.Container(),
@@ -71,88 +83,51 @@
         // The right bar is placed "inside" the viewport
         rightBar.x = -rightBar.width;
 
-        // The blur sprites - EXPERIMENTAL
-        var topBlur, leftCornerBlur, rightCornerBlur, leftEdge, rightEdge;
-        (function () {
-          var blurSpritesUrl = DepthBarsUrl.get();
+        return {
+          top: topContainer,
+          left: leftContainer,
+          right: rightContainer
+        };
+      }
 
-          var
-            corner = new PIXI.Texture.fromImage(blurSpritesUrl.corner),
-            edge = new PIXI.Texture.fromImage(blurSpritesUrl.edge),
-            top = new PIXI.Texture.fromImage(blurSpritesUrl.top);
+      function createBlurSprites() {
+        // The containers
+        var
+          topContainer = new PIXI.Container(),
+          leftContainer = new PIXI.Container(),
+          rightContainer = new PIXI.Container();
 
-          topBlur = new PIXI.extras.TilingSprite(top, Configuration.NATIVE_WIDTH - 2 * corner.width, top.height);
+        // The urls
+        var blurSpritesUrl = DepthBarsUrl.get();
 
-          rightCornerBlur = new PIXI.Sprite(corner);
-          rightCornerBlur.x = -corner.width;
-          leftCornerBlur = new PIXI.Sprite(corner);
-          leftCornerBlur.anchor.x = 1;
-          leftCornerBlur.scale.x = -1;
+        // The textures
+        var
+          corner = new PIXI.Texture.fromImage(blurSpritesUrl.corner),
+          edge = new PIXI.Texture.fromImage(blurSpritesUrl.edge),
+          top = new PIXI.Texture.fromImage(blurSpritesUrl.top);
 
-          rightEdge = new PIXI.extras.TilingSprite(edge, edge.width, Configuration.NATIVE_HEIGHT);
-          rightEdge.y = corner.height;
-          rightEdge.x = -edge.width;
-          leftEdge = new PIXI.extras.TilingSprite(edge, edge.width, Configuration.NATIVE_HEIGHT);
-          leftEdge.y = corner.height;
-          leftEdge.anchor.x = 1;
-          leftEdge.scale.x = -1;
+        var topBlur = new PIXI.extras.TilingSprite(top, Configuration.NATIVE_WIDTH - 2 * corner.width, top.height);
 
-          // Appends the blur sprites
-          topContainer.addChild(topBlur);
-          rightContainer.addChild(rightCornerBlur);
-          rightContainer.addChild(rightEdge);
-          leftContainer.addChild(leftCornerBlur);
-          leftContainer.addChild(leftEdge);
-        })();
+        var rightCornerBlur = new PIXI.Sprite(corner);
+        rightCornerBlur.x = -corner.width;
+        var leftCornerBlur = new PIXI.Sprite(corner);
+        leftCornerBlur.anchor.x = 1;
+        leftCornerBlur.scale.x = -1;
 
-        // This prevents the bars from scaling.
-        SliderResizer.onProportionChange(function (proportion) {
-          // Sets the new scale
-          topContainer.scale.y = 1 / proportion;
-          leftContainer.scale.x = 1 / proportion;
-          rightContainer.scale.x = 1 / proportion;
-        });
+        var rightEdge = new PIXI.extras.TilingSprite(edge, edge.width, Configuration.NATIVE_HEIGHT);
+        rightEdge.y = corner.height;
+        rightEdge.x = -edge.width;
+        var leftEdge = new PIXI.extras.TilingSprite(edge, edge.width, Configuration.NATIVE_HEIGHT);
+        leftEdge.y = corner.height;
+        leftEdge.anchor.x = 1;
+        leftEdge.scale.x = -1;
 
-        // This recalculates the containers' position on each resize
-        ViewportSize.onChange(function (size) {
-          if (size.width >= 1920) {
-            leftContainer.visible = true;
-            rightContainer.visible = true;
-
-            var proportion = SliderResizer.getProportion();
-            var currentStageWidth = Configuration.NATIVE_WIDTH * proportion;
-            var currentScreenSize = size.width < Configuration.GLOBAL_MIN_WIDTH ? Configuration.GLOBAL_MIN_WIDTH : size.width;
-            var currentLateralOffset = Math.abs((currentScreenSize - currentStageWidth) / 2);
-
-            if (size.width === 1920) {
-              // Substracts 10px to make the bars 30px wide
-              leftContainer.x -= 10 * (1 / proportion);
-              rightContainer.x += 10 * (1 / proportion);
-            }
-
-            leftContainer.x = Math.floor(currentLateralOffset * (1 / proportion));
-            rightContainer.x = Math.ceil(Configuration.NATIVE_WIDTH - (currentLateralOffset * (1 / proportion)));
-
-            // Normalizes the width - I don't know why but the leftContainer width is double
-            // I fix this by / 2!!
-            leftContainer.width = 2 * Math.round(leftContainer.width / 2);
-            rightContainer.width = leftContainer.width / 2;
-
-            // Normalizes the Y scale - this is needed by the corner sprite
-            leftContainer.scale.y = leftContainer.scale.x;
-            rightContainer.scale.y = rightContainer.scale.x;
-
-            // Only the top blur sprite needs to be redrawn
-            topBlur.width = Configuration.NATIVE_WIDTH - 2 * rightContainer.width - 2 * leftContainer.x;
-            topBlur.x = leftContainer.x + (leftContainer.width / 2);
-          } else {
-            leftContainer.visible = false;
-            rightContainer.visible = false;
-
-            topBlur.width = Configuration.NATIVE_WIDTH;
-            topBlur.x = 0;
-          }
-        });
+        // Appends the blur sprites
+        topContainer.addChild(topBlur);
+        rightContainer.addChild(rightCornerBlur);
+        rightContainer.addChild(rightEdge);
+        leftContainer.addChild(leftCornerBlur);
+        leftContainer.addChild(leftEdge);
 
         return {
           top: topContainer,
@@ -161,11 +136,88 @@
         };
       }
 
+      function onSliderResize(depthBars, blurSprites) {
+        function handleProportionChange(parent, proportion) {
+          parent.top.scale.y = 1 / proportion;
+          parent.left.scale.x = 1 / proportion;
+          parent.right.scale.x = 1 / proportion;
+        }
+
+        function setLateralContainersVisibility(parent, visible) {
+          parent.left.visible = visible;
+          parent.right.visible = visible;
+        }
+
+        function substractLateralOffset(parent, proportion, toSubstract) {
+          parent.left.x -= toSubstract * (1 / proportion);
+          parent.right.x += toSubstract * (1 / proportion);
+        }
+
+        function setLateralOffset(parent, lateralOffset) {
+          parent.left.x = Math.floor(lateralOffset);
+          parent.right.x = Math.ceil(Configuration.NATIVE_WIDTH - lateralOffset);
+
+          // Normalizes the width
+          parent.left.width = Math.ceil(parent.left.width);
+          parent.right.width = Math.floor(parent.right.width);
+        }
+
+        // This prevents the bars from scaling.
+        SliderResizer.onProportionChange(function (proportion) {
+          // Sets the new scale
+          handleProportionChange(depthBars, proportion);
+          handleProportionChange(blurSprites, proportion);
+        });
+
+        // This recalculates the containers' position on each resize
+        ViewportSize.onChange(function (size) {
+          if (size.width >= 1920) {
+            var
+              proportion = SliderResizer.getProportion(),
+              currentStageWidth = Configuration.NATIVE_WIDTH * proportion,
+              currentScreenSize = size.width < Configuration.GLOBAL_MIN_WIDTH ? Configuration.GLOBAL_MIN_WIDTH : size.width,
+              currentLateralOffset = Math.abs((currentScreenSize - currentStageWidth) / 2) * (1 / proportion);
+
+            setLateralContainersVisibility(depthBars, true);
+            setLateralContainersVisibility(blurSprites, true);
+
+            setLateralOffset(depthBars, currentLateralOffset);
+            setLateralOffset(blurSprites, currentLateralOffset);
+
+            if (size.width === 1920) {
+              // Substracts 10px to make the bars 30px wide
+              substractLateralOffset(depthBars, proportion, 10);
+              substractLateralOffset(blurSprites, proportion, 10);
+            }
+
+            // Normalizes the Y scale - this is needed by the corner sprite
+            blurSprites.left.scale.y = 1 / proportion;
+            blurSprites.right.scale.y = 1 / proportion;
+            // This way the lateral edge will always stretch to fit the canvas
+            blurSprites.left.children[1].scale.y = proportion;
+            blurSprites.right.children[1].scale.y = proportion;
+
+            // Only the top blur sprite needs to be redrawn
+            // todo pay special attention here as the container width is hardcoded!
+            var leftContainerWidth = 125 * (1 / proportion);
+            blurSprites.top.width = Configuration.NATIVE_WIDTH - 2 * (blurSprites.right.width  + blurSprites.left.x);
+            blurSprites.top.x = blurSprites.left.x + blurSprites.right.width;
+          } else {
+            setLateralContainersVisibility(depthBars, false);
+            setLateralContainersVisibility(blurSprites, false);
+
+            blurSprites.top.width = Configuration.NATIVE_WIDTH;
+            blurSprites.top.x = 0;
+          }
+        });
+      }
+
       function drawRectangle(color, width, height) {
         var graphics = new PIXI.Graphics();
 
         graphics.beginFill(color);
         graphics.drawRect(0, 0, width, height);
+        graphics.endFill();
 
         return graphics;
       }

@@ -7,5 +7,5 @@
       'app.fancy-slider.resizer',
       'common.pixi',
       'common.viewport-size'
-    ])
+    ]);
 })();

@@ -34,12 +34,6 @@
             ViewportSize.onChange(function () {
               renderer.render(stage);
             });
-            // todo move this to the blur module
-            depthBars.top.children[1].alpha = 0;
-            depthBars.left.children[1].alpha = 0;
-            depthBars.left.children[2].alpha = 0;
-            depthBars.right.children[1].alpha = 0;
-            depthBars.right.children[2].alpha = 0;
 
             // Adds the resources to the stage
             var slidesAndResources = Resources.get();
