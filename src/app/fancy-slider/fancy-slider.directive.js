@@ -3,7 +3,7 @@
 
   angular
     .module('app.fancy-slider')
-    .directive('hypFancySlider', ['$timeout', 'PIXI', 'FancyAnimations', 'FancyConfiguration', 'FancyDepthBars', 'FancyResources', 'FancySliderInitializer', 'ViewportSize', function ($timeout, PIXI, Animations, Configuration, DepthBars, Resources, SliderInitializer, ViewportSize) {
+    .directive('hypFancySlider', ['$timeout', 'PIXI', 'FancyAnimations', 'FancyBlur', 'FancyConfiguration', 'FancyDepthBars', 'FancyResources', 'FancySliderInitializer', 'ViewportSize', function ($timeout, PIXI, Animations, Blur, Configuration, DepthBars, Resources, SliderInitializer, ViewportSize) {
       return {
         link: function (scope, iElement) {
           ///////////////
@@ -109,6 +109,7 @@
             console.log('stage', stage);
             console.log('depthBars', depthBars);
             console.log('animations', animations);
+            console.log('blur', Blur.get());
           });
         },
         replace: true,

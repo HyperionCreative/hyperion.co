@@ -8,6 +8,7 @@
   angular
     .module('app.fancy-slider', [
       'app.fancy-slider.animations',
+      'app.fancy-slider.blur',
       'app.fancy-slider.depth-bars',
       'app.fancy-slider.resizer',
       'app.fancy-slider.resources',
