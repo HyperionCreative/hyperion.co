@@ -11,9 +11,11 @@
       ////////////
       function init(onComplete) {
         // This way we don't chain promises. Thus the init processes happen simultaneously.
-        $q.all([Resources.init(), Blur.init(), DepthBars.init()]).then(function () {
-          Animations.init(Resources.get()).then(function () {
-            onComplete();
+        $q.all([Resources.init(), DepthBars.init()]).then(function () {
+          Blur.init().then(function () {
+            Animations.init(Resources.get()).then(function () {
+              onComplete();
+            });
           });
         });
       }
