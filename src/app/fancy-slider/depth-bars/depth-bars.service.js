@@ -198,8 +198,6 @@
             blurSprites.right.children[1].scale.y = proportion;
 
             // Only the top blur sprite needs to be redrawn
-            // todo pay special attention here as the container width is hardcoded!
-            var leftContainerWidth = 125 * (1 / proportion);
             blurSprites.top.width = Configuration.NATIVE_WIDTH - 2 * (blurSprites.right.width  + blurSprites.left.x);
             blurSprites.top.x = blurSprites.left.x + blurSprites.right.width;
           } else {
