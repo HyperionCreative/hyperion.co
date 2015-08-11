@@ -3,7 +3,7 @@
 
   angular
     .module('app.fancy-slider')
-    .directive('hypFancySlider', ['$timeout', 'PIXI', 'FancyAnimations', 'FancyBlur', 'FancyConfiguration', 'FancyDepthBars', 'FancyResources', 'FancySliderInitializer', 'ViewportSize', function ($timeout, PIXI, Animations, Blur, Configuration, DepthBars, Resources, SliderInitializer, ViewportSize) {
+    .directive('hypFancySlider', ['$window', '$rootScope', '$timeout', 'PIXI', 'FancyAnimations', 'FancyBlur', 'FancyConfiguration', 'FancyDepthBars', 'FancyResources', 'FancySliderInitializer', 'ViewportSize', function ($window, $rootScope, $timeout, PIXI, Animations, Blur, Configuration, DepthBars, Resources, SliderInitializer, ViewportSize) {
       return {
         link: function (scope, iElement) {
           ///////////////
@@ -43,6 +43,10 @@
               });
             });
 
+            // Adds the blur container
+            var blurContainer = Blur.get();
+            stage.addChild(blurContainer);
+
             // Applies zIndex
             stage.children.sort(function (a, b) {
               a.zIndex = a.zIndex || 0;
@@ -70,13 +74,11 @@
 
             // Without this line, the first slide may flicker!
             animations.firstFromTheBottom.pause().progress(0.01);
+            var
+              canAnimate = false,
+              currentSlide = 0
             // It starts after 10 seconds to the slider has time to settle.
             $timeout(function () {
-              var
-                canAnimate = false,
-                currentSlide = 0,
-                animationMoments = ['firstToSecond', 'secondToThird', 'thirdToFirst'];
-
               animations.firstFromTheBottom.play();
 
               // Waits for fromBottom to finish
@@ -85,7 +87,7 @@
               }, Configuration.ANIMATION_DURATION);
 
               // The controls
-              scope.changeSlides = function () {
+              scope.changeSlidesToRight = function () {
                 if (canAnimate) {
                   canAnimate = false;
 
@@ -93,12 +95,73 @@
                     canAnimate = true;
                   }, Configuration.ANIMATION_DURATION);
 
-                  animations[animationMoments[currentSlide]].restart();
+                  animations[['firstToSecond', 'secondToThird', 'thirdToFirst'][currentSlide]].restart();
 
                   currentSlide = (currentSlide + 1) % 3;
                 }
               };
+
+              scope.changeSlidesToLeft = function () {
+                if (canAnimate) {
+                  canAnimate = false;
+
+                  setTimeout(function () {
+                    canAnimate = true;
+                  }, Configuration.ANIMATION_DURATION);
+
+                  console.log(currentSlide);
+
+                  animations[['firstToThird', 'secondToFirst', 'thirdToSecond'][currentSlide]].restart();
+                  // ['firstToThird', 'thirdToSecond', 'secondToFirst']
+                  currentSlide -= 1;
+
+                  if (currentSlide < 0) {
+                    currentSlide = 2;
+                  }
+                }
+              };
+
+              angular.element($window).on('keydown', function (event) {
+                if (event.keyCode === 39) {
+                  scope.changeSlidesToRight();
+                } else if (event.keyCode === 37) {
+                  scope.changeSlidesToLeft();
+                }
+              });
             }, 10);
+
+            // The blur animation
+            $rootScope.$on('$stateChangeStart', function (event, toState) {
+              if (toState.name !== 'root.index') {
+                canAnimate = false;
+
+                blurContainer.children[0].alpha = 0;
+                blurContainer.children[1].alpha = 0;
+                blurContainer.children[2].alpha = 0;
+
+                blurContainer.children[currentSlide].alpha = 1;
+
+                TweenLite.to(blurContainer, 0.5, {
+                  alpha: 1,
+                  onUpdate: function () {
+                    renderer.render(stage);
+                  },
+                  ease: Power3.easeInOut
+                });
+              } else {
+                TweenLite.to(blurContainer, 0.5, {
+                  alpha: 0,
+                  onUpdate: function () {
+                    renderer.render(stage);
+                  },
+                  onComplete: function () {
+                    canAnimate = true;
+                  },
+                  ease: Power3.easeInOut
+                });
+              }
+            });
+
 
             console.log('stage', stage);
             console.log('depthBars', depthBars);

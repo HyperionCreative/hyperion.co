@@ -78,3 +78,55 @@ body {
   margin: 0 auto;
   width: $container-width;
 }
+
+////////////////
+// Animations //
+////////////////
+// todo move this to its own module
+
+html {
+  // hides the scrollbar
+  overflow: hidden;
+}
+
+[ui-view="page-content"] {
+  @include transition-duration(0.5s);
+
+  .sub-page-template {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &.ng-enter.ng-enter-active, &.ng-leave.ng-leave-active {
+    .header-index, .sub-page-template {
+      @include transition(transform 0.5s ease-in-out, opacity 0.5s ease-in-out);
+    }
+  }
+
+  &.ng-enter,
+  &.ng-leave.ng-leave-active {
+    .header-index {
+      @include transform(translate3d(0,-250px,0));
+    }
+
+    .sub-page-template {
+      opacity: 0;
+      @include transform(translate3d(0,750px,0));
+    }
+  }
+
+  &.ng-leave,
+  &.ng-enter.ng-enter-active {
+    .header-index {
+      @include transform(translate3d(0,0,0));
+    }
+
+    .sub-page-template {
+      opacity: 1;
+      @include transform(translate3d(0,0,0));
+    }
+  }
+}
