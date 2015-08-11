@@ -58,7 +58,7 @@
 
           var sketchbook = new Resource(resourcesUrl.firstSlide.sketchbook);
           sketchbook.addPosition('center', 16, 354, 0);
-          sketchbook.addPosition('bottom', 0, 3600, 30);
+          sketchbook.addPosition('bottom', 0, 3600, 60);
           sketchbook.addPosition('left', -720, 0, -20);
           sketchbook.addPosition('right', 2560, 0, 20);
           sketchbook.setZIndex(10);
