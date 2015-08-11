@@ -34,13 +34,13 @@
         animations = {
           firstFromTheBottom: createVerticalTimeline(resources.firstSlide),
 
-          firstToSecond: createHorizontalTimeline(resources.firstSlide, resources.secondSlide),
-          secondToThird: createHorizontalTimeline(resources.secondSlide, resources.thirdSlide),
-          thirdToFirst: createHorizontalTimeline(resources.thirdSlide, resources.firstSlide),
+          firstToSecond: createHorizontalTimeline(resources.firstSlide, resources.secondSlide, true),
+          secondToThird: createHorizontalTimeline(resources.secondSlide, resources.thirdSlide, true),
+          thirdToFirst: createHorizontalTimeline(resources.thirdSlide, resources.firstSlide, true),
 
-          firstToThird: createHorizontalTimeline(resources.firstSlide, resources.thirdSlide),
-          thirdToSecond: createHorizontalTimeline(resources.thirdSlide, resources.secondSlide),
-          secondToFirst: createHorizontalTimeline(resources.secondSlide, resources.firstSlide)
+          firstToThird: createHorizontalTimeline(resources.firstSlide, resources.thirdSlide, false),
+          thirdToSecond: createHorizontalTimeline(resources.thirdSlide, resources.secondSlide, false),
+          secondToFirst: createHorizontalTimeline(resources.secondSlide, resources.firstSlide, false)
         };
         deferred.resolve();
 
@@ -70,15 +70,15 @@
         }, 0);
       }
 
-      function createHorizontalTimeline(fromResources, toResources) {
+      function createHorizontalTimeline(fromResources, toResources, leftToRight) {
         var timeline = createTimeline();
 
         angular.forEach(fromResources, function (fromResource) {
-          addToTimeline(timeline, fromResource.sprite, fromResource.positions.center, fromResource.positions.left);
+          addToTimeline(timeline, fromResource.sprite, fromResource.positions.center, fromResource.positions[leftToRight ? 'left' : 'right']);
         });
 
         angular.forEach(toResources, function (toResource) {
-          addToTimeline(timeline, toResource.sprite, toResource.positions.right, toResource.positions.center);
+          addToTimeline(timeline, toResource.sprite, toResource.positions[leftToRight ? 'right' : 'left'], toResource.positions.center);
         });
 
         return timeline;
