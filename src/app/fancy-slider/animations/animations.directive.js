@@ -6,7 +6,7 @@
       'app.fancy-slider.resources',
       'common.gsap-lite'
     ])
-    .service('FancyAnimations', ['$q', 'FancyConfiguration', 'TweenLite', 'TweenTimelineLite', function ($q, Configuration, TweenLite, TweenTimelineLite) {
+    .service('FancyAnimations', ['$q', 'FancyConfiguration', 'TweenEasings', 'TweenLite', 'TweenTimelineLite', function ($q, Configuration, TweenEasings, TweenLite, TweenTimelineLite) {
       this.get = get;
       this.init = init;
       this.setGlobalOnUpdate = setGlobalOnUpdate;
@@ -54,8 +54,8 @@
       /////////////
       // Private //
       /////////////
-      function addToTimeline(timeline, resource, fromPosition, toPosition) {
-        timeline.fromTo(resource, Configuration.ANIMATION_DURATION / 1000, {
+      function addToTimeline(timeline, resource, fromPosition, toPosition, duration, ease) {
+        timeline.fromTo(resource, duration / 1000, {
           x: fromPosition.x,
           y: fromPosition.y,
           z: 0,
@@ -66,7 +66,7 @@
           z: 0,
           rotation: toPosition.rotation,
 
-          ease: Configuration.ANIMATION_EASING
+          ease: ease
         }, 0);
       }
 
@@ -74,11 +74,11 @@
         var timeline = createTimeline();
 
         angular.forEach(fromResources, function (fromResource) {
-          addToTimeline(timeline, fromResource.sprite, fromResource.positions.center, fromResource.positions[leftToRight ? 'left' : 'right']);
+          addToTimeline(timeline, fromResource.sprite, fromResource.positions.center, fromResource.positions[leftToRight ? 'left' : 'right'], Configuration.ANIMATION_DURATION, Configuration.ANIMATION_EASING);
         });
 
         angular.forEach(toResources, function (toResource) {
-          addToTimeline(timeline, toResource.sprite, toResource.positions[leftToRight ? 'right' : 'left'], toResource.positions.center);
+          addToTimeline(timeline, toResource.sprite, toResource.positions[leftToRight ? 'right' : 'left'], toResource.positions.center, Configuration.ANIMATION_DURATION, Configuration.ANIMATION_EASING);
         });
 
         return timeline;
@@ -88,7 +88,7 @@
         var timeline = createTimeline();
 
         angular.forEach(fromResources, function (fromResource) {
-          addToTimeline(timeline, fromResource.sprite, fromResource.positions.bottom, fromResource.positions.center);
+          addToTimeline(timeline, fromResource.sprite, fromResource.positions.bottom, fromResource.positions.center, 1300, TweenEasings.Power4.easeOut);
         });
 
         return timeline;
