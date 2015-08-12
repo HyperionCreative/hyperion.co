@@ -45,7 +45,7 @@
           var flowerPot = new Resource(resourcesUrl.firstSlide.flowerPot);
           flowerPot.addPosition('center', 1710, 380, 0);
           flowerPot.addPosition('bottom', 0, 1440, 30);
-          flowerPot.addPosition('left', -3500, 0, -10);
+          flowerPot.addPosition('left', -3500, 100, -10);
           flowerPot.addPosition('right', 1440, 0, 30);
           flowerPot.setZIndex(45);
 
@@ -112,7 +112,7 @@
           imac.setZIndex(5);
 
           var iphone = new Resource(resourcesUrl.thirdSlide.iphone);
-          iphone.addPosition('center', 618, 768, 0);
+          iphone.addPosition('center', 643, 693, 0);
           iphone.addPosition('left', -1920, 0, -15);
           iphone.addPosition('right', 2200, 0, 15);
           iphone.setZIndex(10);
@@ -150,11 +150,6 @@
               iphone: {
                 scale: 1.1,
                 y: -75
-              }
-            },
-            thirdSlide: {
-              iphone: {
-                y: -150
               }
             }
           };
