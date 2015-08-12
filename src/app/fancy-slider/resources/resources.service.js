@@ -45,21 +45,21 @@
           var flowerPot = new Resource(resourcesUrl.firstSlide.flowerPot);
           flowerPot.addPosition('center', 1710, 380, 0);
           flowerPot.addPosition('bottom', 0, 1440, 30);
-          flowerPot.addPosition('left', -3000, 0, -30);
+          flowerPot.addPosition('left', -3500, 0, -10);
           flowerPot.addPosition('right', 1440, 0, 30);
           flowerPot.setZIndex(45);
 
           var macbook = new Resource(resourcesUrl.firstSlide.macbook);
           macbook.addPosition('center', 530, 27, 0);
           macbook.addPosition('bottom', 0, 2880, 45);
-          macbook.addPosition('left', -2560, 0, -20);
+          macbook.addPosition('left', -2750, 0, -10);
           macbook.addPosition('right', 2000, 0, 20);
           macbook.setZIndex(40);
 
           var sketchbook = new Resource(resourcesUrl.firstSlide.sketchbook);
           sketchbook.addPosition('center', 16, 354, 0);
           sketchbook.addPosition('bottom', 0, 3600, 60);
-          sketchbook.addPosition('left', -720, 0, -20);
+          sketchbook.addPosition('left', -1000, 0, -20);
           sketchbook.addPosition('right', 2560, 0, 20);
           sketchbook.setZIndex(10);
 
