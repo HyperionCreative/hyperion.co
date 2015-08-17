@@ -39,14 +39,19 @@
         return blurSprites;
       }
 
-      function init() {
+      function init(stage, renderer) {
         var deferred = $q.defer();
 
         AssetsDownloader.download(DepthBarsUrl.getAsArray(), function () {
           depthBars = createDepthBars();
           blurSprites = createBlurSprites();
 
-          onSliderResize(depthBars, blurSprites);
+          onSliderResize(depthBars, blurSprites, stage, renderer);
+
+          // Adds the depth bars to the stage.
+          angular.forEach(depthBars, function (depthBar) {
+            stage.addChild(depthBar);
+          });
 
           deferred.resolve();
         });
@@ -136,7 +141,7 @@
         };
       }
 
-      function onSliderResize(depthBars, blurSprites) {
+      function onSliderResize(depthBars, blurSprites, stage, renderer) {
         function handleProportionChange(parent, proportion) {
           parent.top.scale.y = 1 / proportion;
           parent.left.scale.x = 1 / proportion;
@@ -198,7 +203,7 @@
             blurSprites.right.children[1].scale.y = proportion;
 
             // Only the top blur sprite needs to be redrawn
-            blurSprites.top.width = Configuration.NATIVE_WIDTH - 2 * (blurSprites.right.width  + blurSprites.left.x);
+            blurSprites.top.width = Configuration.NATIVE_WIDTH - 2 * (blurSprites.right.width + blurSprites.left.x);
             blurSprites.top.x = blurSprites.left.x + blurSprites.right.width;
           } else {
             setLateralContainersVisibility(depthBars, false);
@@ -207,6 +212,9 @@
             blurSprites.top.width = Configuration.NATIVE_WIDTH;
             blurSprites.top.x = 0;
           }
+
+          // These is needed in order to render the bar changes if the window gets resized.
+          renderer.render(stage);
         });
       }
 

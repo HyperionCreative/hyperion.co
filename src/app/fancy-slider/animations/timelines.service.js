@@ -6,13 +6,12 @@
     .service('FancyAnimationsTimelines', ['FancyConfiguration', 'TweenEasings', 'TweenTimelineLite', function (Configuration, TweenEasings, TweenTimelineLite) {
       this.get = get;
       this.init = init;
-      this.setGlobalOnUpdate = setGlobalOnUpdate;
 
       ///////////////
       // Variables //
       ///////////////
       var timelines;
-      var onUpdate;
+      var stage, renderer;
 
       ////////////
       // Public //
@@ -25,7 +24,10 @@
         return timelines;
       }
 
-      function init(resources) {
+      function init(_stage, _renderer, resources) {
+        stage = _stage;
+        renderer = _renderer;
+        
         timelines = {
           firstFromTheBottom: createVerticalTimeline(resources.firstSlide),
 
@@ -37,10 +39,6 @@
           thirdToSecond: createHorizontalTimeline(resources.thirdSlide, resources.secondSlide, false),
           secondToFirst: createHorizontalTimeline(resources.secondSlide, resources.firstSlide, false)
         };
-      }
-
-      function setGlobalOnUpdate(globalOnUpdate) {
-        onUpdate = globalOnUpdate;
       }
 
       /////////////
@@ -92,9 +90,7 @@
 
           onStart: function () {},
           onUpdate: function () {
-            if (angular.isFunction(onUpdate)) {
-              onUpdate();
-            }
+            renderer.render(stage);
           },
           onComplete: function () {}
         });

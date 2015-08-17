@@ -3,7 +3,7 @@
 
   angular
     .module('app.fancy-slider')
-    .directive('hypFancySlider', ['$window', '$rootScope', '$timeout', 'PIXI', 'FancyAnimations', 'FancyBlur', 'FancyConfiguration', 'FancyDepthBars', 'FancyResources', 'FancySliderInitializer', 'ViewportSize', function ($window, $rootScope, $timeout, PIXI, Animations, Blur, Configuration, DepthBars, Resources, SliderInitializer, ViewportSize) {
+    .directive('hypFancySlider', ['$window', 'PIXI', 'FancyAnimations', 'FancyBlur', 'FancyConfiguration', 'FancySliderInitializer', function ($window, PIXI, Animations, Blur, Configuration, SliderInitializer) {
       return {
         link: function (scope, iElement) {
           ///////////////
@@ -35,29 +35,7 @@
           angular.element(iElement[0].querySelector('.stage-container')).append(renderer.view);
 
           // Everything is ready!
-          SliderInitializer.init(function () {
-            // Adds the depth bars to the stage.
-            var depthBars = DepthBars.get();
-            angular.forEach(depthBars, function (depthBar) {
-              stage.addChild(depthBar);
-            });
-            // These is needed in order to render the bar changes if the window gets resized.
-            ViewportSize.onChange(function () {
-              renderer.render(stage);
-            });
-
-            // Adds the resources to the stage
-            var slidesAndResources = Resources.get();
-            angular.forEach(slidesAndResources, function (resources) {
-              angular.forEach(resources, function (resource) {
-                stage.addChild(resource.sprite);
-              });
-            });
-
-            // Adds the blur container
-            var blurContainer = Blur.get();
-            stage.addChild(blurContainer);
-
+          SliderInitializer.init(stage, renderer, function () {
             // Applies zIndex
             stage.children.sort(function (a, b) {
               a.zIndex = a.zIndex || 0;
@@ -65,15 +43,11 @@
               return a.zIndex - b.zIndex;
             });
 
-            // Renders the newly added and sorted resources
+            // Renders the newly sorted resources
             renderer.render(stage);
 
             // The animations
             var animationsControllers = Animations.getControllers();
-            // Sets the global renderer
-            Animations.setGlobalOnUpdate(function () {
-              renderer.render(stage);
-            });
             animationsControllers.throwIn(function () {
               scope.$evalAsync(function () {
                 scope.changeSlidesToRight = animationsControllers.toRight;
@@ -88,11 +62,6 @@
                 }
               });
             });
-
-            console.log('stage', stage);
-            console.log('depthBars', depthBars);
-            console.log('animationsControllers', animationsControllers);
-            console.log('blur', Blur.get());
           });
         },
         replace: true,

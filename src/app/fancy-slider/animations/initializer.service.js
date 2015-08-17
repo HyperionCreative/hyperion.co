@@ -6,10 +6,10 @@
     .service('FancyAnimationsInitializer', ['$q', 'FancyAnimationsControllers', 'FancyAnimationsTimelines', function ($q, AnimationsControllers, Timelines) {
       this.init = init;
 
-      function init(resources) {
+      function init(stage, renderer, resources) {
         var deferred = $q.defer();
 
-        Timelines.init(resources);
+        Timelines.init(stage, renderer, resources);
         AnimationsControllers.init(Timelines.get());
 
         deferred.resolve();

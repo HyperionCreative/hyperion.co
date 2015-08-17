@@ -10,24 +10,30 @@
       ///////////////
       // Variables //
       ///////////////
-      var resources;
+      var slidesAndResources;
 
       ////////////
       // Public //
       ////////////
       function get() {
-        if (angular.isUndefined(resources)) {
+        if (angular.isUndefined(slidesAndResources)) {
           throw 'FancyResources module was not initialized correctly!';
         }
 
-        return resources;
+        return slidesAndResources;
       }
 
-      function init() {
+      function init(stage) {
         var deferred = $q.defer();
 
         AssetsDownloader.download(ResourcesUrl.getAsArray(), function () {
-          resources = getResources();
+          slidesAndResources = getResources();
+
+          angular.forEach(slidesAndResources, function (slide) {
+            angular.forEach(slide, function (resource) {
+              stage.addChild(resource.sprite);
+            });
+          });
 
           deferred.resolve();
         });
