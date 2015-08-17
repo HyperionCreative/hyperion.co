@@ -5,8 +5,10 @@
   // If a registered event listener requires a digest cycle it must trigger it itself.
 
   angular
-    .module('common.viewport-size', [])
-    .service('ViewportSize', ['$window', function ($window) {
+    .module('common.viewport-size', [
+      'common.debounce'
+    ])
+    .service('ViewportSize', ['$window', 'Debounce', function ($window, Debounce) {
       this.get = getViewportSize;
 
       this.onChange = onViewportSizeChange;
@@ -51,23 +53,17 @@
       ///////////////
       // Run block //
       ///////////////
-      var resizeTimeout;
-      angular.element($window).on('resize', resizeCallback);
+      var resizeCallback = new Debounce(function () {
+        var partialViewportSize = getViewportSize();
 
-      function resizeCallback() {
-        clearTimeout(resizeTimeout);
-        
-        resizeTimeout = setTimeout(function () {
-          var partialViewportSize = getViewportSize();
+        if (partialViewportSize.width !== viewportSize.width || partialViewportSize.height !== viewportSize.height) {
+          viewportSize = partialViewportSize;
 
-          if (partialViewportSize.width !== viewportSize.width || partialViewportSize.height !== viewportSize.height) {
-            viewportSize = partialViewportSize;
-
-            for (var i = 0; i < registeredEventListeners.length; i++) {
-              registeredEventListeners[i](viewportSize);
-            }
+          for (var i = 0; i < registeredEventListeners.length; i++) {
+            registeredEventListeners[i](viewportSize);
           }
-        }, RESIZE_TIMEOUT);
-      }
+        }
+      }, RESIZE_TIMEOUT);
+      angular.element($window).on('resize', resizeCallback);
     }]);
 })();
