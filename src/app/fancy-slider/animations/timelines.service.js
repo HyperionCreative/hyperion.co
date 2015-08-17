@@ -2,11 +2,8 @@
   'use strict';
 
   angular
-    .module('app.fancy-slider.animations', [
-      'app.fancy-slider.resources',
-      'common.gsap-lite'
-    ])
-    .service('FancyAnimations', ['$q', 'FancyConfiguration', 'TweenEasings', 'TweenLite', 'TweenTimelineLite', function ($q, Configuration, TweenEasings, TweenLite, TweenTimelineLite) {
+    .module('app.fancy-slider.animations')
+    .service('FancyAnimationsTimelines', ['FancyConfiguration', 'TweenEasings', 'TweenTimelineLite', function (Configuration, TweenEasings, TweenTimelineLite) {
       this.get = get;
       this.init = init;
       this.setGlobalOnUpdate = setGlobalOnUpdate;
@@ -14,24 +11,22 @@
       ///////////////
       // Variables //
       ///////////////
-      var animations;
+      var timelines;
       var onUpdate;
 
       ////////////
       // Public //
       ////////////
       function get() {
-        if (angular.isUndefined(animations)) {
-          throw 'FancyAnimations module was not initialized correctly!';
+        if (angular.isUndefined(timelines)) {
+          throw 'FancyAnimationsTimelineCreator service was not initialized correctly!';
         }
 
-        return animations;
+        return timelines;
       }
 
       function init(resources) {
-        var deferred = $q.defer();
-
-        animations = {
+        timelines = {
           firstFromTheBottom: createVerticalTimeline(resources.firstSlide),
 
           firstToSecond: createHorizontalTimeline(resources.firstSlide, resources.secondSlide, true),
@@ -42,9 +37,6 @@
           thirdToSecond: createHorizontalTimeline(resources.thirdSlide, resources.secondSlide, false),
           secondToFirst: createHorizontalTimeline(resources.secondSlide, resources.firstSlide, false)
         };
-        deferred.resolve();
-
-        return deferred.promise;
       }
 
       function setGlobalOnUpdate(globalOnUpdate) {
@@ -88,7 +80,7 @@
         var timeline = createTimeline();
 
         angular.forEach(fromResources, function (fromResource) {
-          addToTimeline(timeline, fromResource.sprite, fromResource.positions.bottom, fromResource.positions.center, 1300, TweenEasings.Power4.easeOut);
+          addToTimeline(timeline, fromResource.sprite, fromResource.positions.bottom, fromResource.positions.center, Configuration.ANIMATION_DURATION, Configuration.ANIMATION_THROW_IN_EASING);
         });
 
         return timeline;
@@ -97,11 +89,14 @@
       function createTimeline() {
         return new TweenTimelineLite({
           paused: true,
+
+          onStart: function () {},
           onUpdate: function () {
             if (angular.isFunction(onUpdate)) {
               onUpdate();
             }
-          }
+          },
+          onComplete: function () {}
         });
       }
     }]);

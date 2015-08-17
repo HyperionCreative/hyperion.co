@@ -7,11 +7,18 @@
   // 2. IE 11 (si lower presupun) pe Windows (asta era 7) trebuie cu RAF si AA disabled si fps 30
   //
   // tasks:
-  // 1. preloaderul sa stea mai mult ca sa apara slideul full incarcat. acum barele clipesc.
-  // 2. daca dai sa schimbi slideul in timp ce se schimba, sa bage viteza
+  // 1. preloaderul sa stea mai mult ca sa apara slideul full incarcat. acum barele clipesc. --- vad ca se rezolva daca schimbam tipul
+  //    de renderer.
+  // 2. daca dai sa schimbi slideul in timp ce se schimba, sa bage viteza --- done
   // 3. blurul o sa si schimbe image on resize. acum e fixa
   // 4. controalele sa suporte cursor custom
   // 5. slider description'ul sa se schimbe si el cu slideul
+  // 6. Easingul Power4 are timp foarte mult pe capetele cu care nu face nimic. As putea sa folosesc Power1 si sa micsorez
+  //    durata animatiei proportional astfel in cat sa nu para ca am schimbat easingul.
+  //    Noile valori:
+  //    this.ANIMATION_DURATION = 780;
+  //    this.ANIMATION_EASING = TweenEasings.Power1.easeOut;
+  //    this.ANIMATION_THROW_IN_EASING = TweenEasings.Power1.easeOut;
 
   // Flow'ul lucrurilor
   // 1. Initializeaza pixi si il append'uieste in templateul HTML
