@@ -29,7 +29,7 @@
       ///////////////
       // Variables //
       ///////////////
-      var controls, timelines;
+      var controllers, timelines;
       // It starts from the beginning
       var currentSlide = FIRST_SLIDE;
       var timelineSpeed;
@@ -39,11 +39,11 @@
       // Public //
       ////////////
       function get() {
-        if (angular.isUndefined(controls)) {
+        if (angular.isUndefined(controllers)) {
           throw 'FancyAnimationsControl service was not initialized correctly!';
         }
 
-        return controls;
+        return controllers;
       }
 
       function init(_timelines) {
@@ -54,7 +54,7 @@
         timelines.secondToThird.pause().progress(1);
         timelines.thirdToFirst.pause().progress(1);
 
-        controls = {
+        controllers = {
           throwIn: throwIn,
           toLeft: toLeft,
           toRight: toRight
