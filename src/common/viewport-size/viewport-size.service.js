@@ -35,10 +35,15 @@
         };
       }
 
-      function onViewportSizeChange(fn) {
+      function onViewportSizeChange(fn, lateExec) {
         if (registeredEventListeners.indexOf(fn) === -1) {
           registeredEventListeners.push(fn);
-          fn(viewportSize);
+
+          if (lateExec === true) {
+            // Don't do anything
+          } else {
+            fn(viewportSize);
+          }
         }
       }
 
