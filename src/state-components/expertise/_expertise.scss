@@ -1,0 +1,90 @@
+#expertise-page {
+  #expertise-tabs {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+
+    .tab {
+      display: table-cell;
+      white-space: nowrap;
+
+      .actual-content {
+        background-color: rgba(#ffffff, 0.8);
+        color: #b7babe;
+        cursor: pointer;
+        display: block;
+        font-size: 30px;
+        margin-right: 1px;
+        padding: 20px 0;
+        text-align: center;
+
+        @include transition(background-color $rapid-transition-timing, color $rapid-transition-timing);
+
+        &.active, &:hover {
+          background-color: rgba(#ffffff, 1);
+          color: #5ac9f0;
+        }
+      }
+
+      span {
+        color: rgba(#202a35, 0.5);
+        display: block;
+        font-size: $normal-font-size;
+        margin-top: 12px;
+      }
+    }
+  }
+
+  .expertise {
+    background: #ffffff;
+    @include box-shadow($normal-box-shadow);
+    color: #93a2ad;
+    @include legacy-pie-clearfix;
+    margin-top: 1px;
+    padding: 50px 0;
+
+    &.consulting {
+      padding-top: 0;
+
+      .description {
+        padding: 50px 90px 0 90px;
+      }
+
+      & > img {
+        width: 100%;
+      }
+    }
+    
+    &.design {
+      .description {
+        float: left;
+        padding: 20px 80px 0 90px;
+        width: 50%;
+      }
+
+      & > img {
+        float: right;
+        width: 50%;
+      }
+    }
+
+    &.development .description {
+      padding: 0 90px;
+    }
+  }
+
+  .title {
+    color: #62caee;
+    font-family: $PierSans-Regular;
+    font-size: 19px;
+    margin-bottom: 15px;
+  }
+
+  p {
+    margin-bottom: $normal-line-height;
+  }
+
+  img {
+    height: auto;
+  }
+}

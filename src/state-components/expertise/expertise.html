@@ -1,0 +1,38 @@
+<section id="expertise-page">
+  <hyp-simple-header
+    name="Expertise"
+    description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+  ></hyp-simple-header>
+
+  <div class="container">
+    <div id="expertise-tabs">
+      <div class="tab">
+        <a 
+          ui-sref="root.sub-page-template.expertise.design" 
+          ng-class="{active: activeTab == 'root.sub-page-template.expertise.design'}"
+          class="actual-content icon-ui-ux">
+          <span>Design</span>
+        </a>
+      </div>
+      <div class="tab">
+        <a 
+          ui-sref="root.sub-page-template.expertise.development" 
+          ng-class="{active: activeTab == 'root.sub-page-template.expertise.development'}"
+          class="actual-content icon-development">
+          <span>Development</span>
+        </a>
+      </div>
+      <div class="tab">
+        <a 
+          ui-sref="root.sub-page-template.expertise.consulting" 
+          ng-class="{active: activeTab == 'root.sub-page-template.expertise.consulting'}"
+          class="actual-content icon-finger-print">
+          <span>Consulting</span>
+        </a>
+      </div>
+    </div>
+    <div ui-view="expertise"></div>
+  </div>
+
+  <hyp-simple-footer></hyp-simple-footer>
+</section>
