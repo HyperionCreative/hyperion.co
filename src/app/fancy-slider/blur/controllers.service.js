@@ -47,8 +47,6 @@
           fastBlurStage: getBlurFunction(0, true),
           fastUnblurStage: getBlurFunction(0, false)
         };
-
-        console.log(controllers);
       }
 
       /////////////
