@@ -9,5 +9,6 @@
       this.getControllers = BlurControllers.get;
       this.init = BlurInitializer.init;
       this.isBlurred = BlurControllers.isBlurred;
+      this.isBlurring = BlurControllers.isBlurring;
     }]);
 })();

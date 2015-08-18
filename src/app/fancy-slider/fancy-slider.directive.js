@@ -3,7 +3,7 @@
 
   angular
     .module('app.fancy-slider')
-    .directive('hypFancySlider', ['$rootScope', '$window', 'PIXI', 'FancyAnimations', 'FancyBlur', 'FancyConfiguration', 'FancySliderInitializer', function ($rootScope, $window, PIXI, Animations, Blur, Configuration, SliderInitializer) {
+    .directive('hypFancySlider', ['$rootScope', '$state', '$window', 'PIXI', 'FancyAnimations', 'FancyBlur', 'FancyConfiguration', 'FancySliderInitializer', function ($rootScope, $state, $window, PIXI, Animations, Blur, Configuration, SliderInitializer) {
       return {
         link: function (scope, iElement) {
           ///////////////
@@ -56,39 +56,60 @@
             renderer.render(stage);
 
             // The animations
+            var animationsControllers = Animations.getControllers();
+
+            function toLeft() {
+              if (!Blur.isBlurring() && !Blur.isBlurred() && animationsControllers.toLeft(currentSlide)) {
+                currentSlide -= 1;
+                currentSlide = (currentSlide < 0) ? SLIDES_COUNT - 1 : currentSlide;
+              }
+            }
+
+            function toRight() {
+              if (!Blur.isBlurring() && !Blur.isBlurred() && animationsControllers.toRight(currentSlide)) {
+                currentSlide += 1;
+                currentSlide = currentSlide % SLIDES_COUNT;
+              }
+            }
+
+            // The blur
+            var blurControllers = Blur.getControllers();
+
+            // State handling
             (function () {
-              var animationsControllers = Animations.getControllers();
-
-              function toLeft() {
-                if (animationsControllers.toLeft(currentSlide)) {
-                  // Only change the current slide if the animationsControllers has actually animated!
-                  currentSlide -= 1;
-                  currentSlide = (currentSlide < 0) ? SLIDES_COUNT - 1 : currentSlide;
-                }
-              }
-
-              function toRight() {
-                if (animationsControllers.toRight(currentSlide)) {
-                  // Only change the current slide if the animationsControllers has actually animated!
-                  currentSlide += 1;
-                  currentSlide = currentSlide % SLIDES_COUNT;
-                }
-              }
-
               animationsControllers.throwIn(function () {
-                scope.$evalAsync(function () {
-                  scope.changeSlidesToRight = toRight;
-                });
+                  scope.$evalAsync(function () {
+                    scope.changeSlidesToRight = toRight;
+                  });
 
-                // todo Shouldn't we debounce this?
-                angular.element($window).on('keydown', function (event) {
-                  if (event.keyCode === 39) {
-                    toRight();
-                  } else if (event.keyCode === 37) {
-                    toLeft();
+                  // todo Shouldn't we debounce this?
+                  angular.element($window).on('keydown', function (event) {
+                    if (event.keyCode === 39) {
+                      toRight();
+                    } else if (event.keyCode === 37) {
+                      toLeft();
+                    }
+                  });
+                },
+                // If we're not on the first page, don't show the animation!
+                $state.current.name !== 'root.index');
+
+              if ($state.current.name !== 'root.index') {
+                blurControllers.fastBlurStage(currentSlide);
+              }
+
+              $rootScope.$on('$stateChangeStart',
+                function (event, toState) {
+                  if (Blur.isBlurring() || Animations.isAnimating()) {
+                    event.preventDefault();
+                  } else {
+                    if (toState.name === 'root.index') {
+                      blurControllers.unblurStage(currentSlide);
+                    } else {
+                      blurControllers.blurStage(currentSlide);
+                    }
                   }
                 });
-              });
             })();
           });
         },
