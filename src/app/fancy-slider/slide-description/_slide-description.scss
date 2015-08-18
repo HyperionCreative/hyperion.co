@@ -277,7 +277,7 @@
     // This is a right corner
     background: url(../assets/images/fancy-slider/blur/slide-description-sprites/edge.png) no-repeat;
     @include background-size(contain);
-    height: image-height("assets/images/fancy-slider/blur/slide-description-sprites/edge.png");
+    height: 100%;
     position: absolute;
     top: 0;
     width: image-width("assets/images/fancy-slider/blur/slide-description-sprites/edge.png");
@@ -288,7 +288,6 @@
     }
 
     &.right {
-      background-position: right;
       right: 0;
       @include transform(rotateY(180deg));
     }
