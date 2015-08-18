@@ -89,7 +89,7 @@
               ease: Configuration.BLUR_ANIMATION_EASING
             });
           }
-        }
+        };
       }
 
       function hideAllBlurredBackgrounds() {
