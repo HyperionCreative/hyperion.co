@@ -67,7 +67,7 @@
 // AngularJS Animate
 
 #preloader {
-  @include transition(opacity $medium-transition-timing);
+  @include transition(opacity 0.5s ease-in-out);
 
   &.ng-enter,
   &.ng-leave.ng-leave-active {
