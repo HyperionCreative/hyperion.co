@@ -18,6 +18,12 @@
               transparent: true
             });
 
+          var
+            FIRST_SLIDE = 0,
+            SLIDES_COUNT = 3,
+            // It starts from the beginning
+            currentSlide = FIRST_SLIDE;
+
           ///////////////////
           // Configuration //
           ///////////////////
@@ -47,21 +53,40 @@
             renderer.render(stage);
 
             // The animations
-            var animationsControllers = Animations.getControllers();
-            animationsControllers.throwIn(function () {
-              scope.$evalAsync(function () {
-                scope.changeSlidesToRight = animationsControllers.toRight;
-              });
+            (function () {
+              var animationsControllers = Animations.getControllers();
 
-              // todo Shouldn't we debounce this?
-              angular.element($window).on('keydown', function (event) {
-                if (event.keyCode === 39) {
-                  animationsControllers.toRight();
-                } else if (event.keyCode === 37) {
-                  animationsControllers.toLeft();
+              function toLeft() {
+                if (animationsControllers.toLeft(currentSlide)) {
+                  // Only change the current slide if the animationsControllers has actually animated!
+                  currentSlide -= 1;
+                  currentSlide = (currentSlide < 0) ? SLIDES_COUNT - 1 : currentSlide;
                 }
+              }
+
+              function toRight() {
+                if (animationsControllers.toRight(currentSlide)) {
+                  // Only change the current slide if the animationsControllers has actually animated!
+                  currentSlide += 1;
+                  currentSlide = currentSlide % SLIDES_COUNT;
+                }
+              }
+
+              animationsControllers.throwIn(function () {
+                scope.$evalAsync(function () {
+                  scope.changeSlidesToRight = toRight;
+                });
+
+                // todo Shouldn't we debounce this?
+                angular.element($window).on('keydown', function (event) {
+                  if (event.keyCode === 39) {
+                    toRight();
+                  } else if (event.keyCode === 37) {
+                    toLeft();
+                  }
+                });
               });
-            });
+            })();
           });
         },
         replace: true,

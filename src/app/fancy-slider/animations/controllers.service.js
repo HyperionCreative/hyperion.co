@@ -7,15 +7,11 @@
       this.get = get;
       this.init = init;
       // Helpers
-      this.getCurrentSlide = getCurrentSlide;
       this.isAnimating = isAnimating;
 
       ///////////////////
       // Configuration //
       ///////////////////
-      var
-        FIRST_SLIDE = 0,
-        SLIDES_COUNT = 3;
       var THROW_IN_SELECTOR = 'firstFromTheBottom';
       var
         RIGHT_ORDER = ['firstToSecond', 'secondToThird', 'thirdToFirst'],
@@ -30,8 +26,6 @@
       // Variables //
       ///////////////
       var controllers, timelines;
-      // It starts from the beginning
-      var currentSlide = FIRST_SLIDE;
       var timelineSpeed;
       var timelineHandlersQueue = [];
 
@@ -61,10 +55,6 @@
         };
       }
 
-      function getCurrentSlide() {
-        return currentSlide;
-      }
-
       function isAnimating() {
         return timelineHandlersQueue.length > 0;
       }
@@ -77,48 +67,47 @@
         // runs when the slider starts. This is also why it has an extra
         // parameter.
         if (timelineHandlersQueue.length >= MAX_QUEUE_LENGTH) {
-          return;
-        }
-
-
-        if (fast) {
-          // This is a special case. We don't need to animate anything as the 
-          // resources are already centered!
-          // We just need to call the onComplete callback if it exists!
-          if (angular.isFunction(onComplete)) {
-            onComplete();
-          }
+          return false;
         } else {
-          var timeline = timelines[THROW_IN_SELECTOR];
+          if (fast) {
+            // This is a special case. We don't need to animate anything as the 
+            // resources are already centered!
+            // We just need to call the onComplete callback if it exists!
+            if (angular.isFunction(onComplete)) {
+              onComplete();
+            }
+          } else {
+            var timeline = timelines[THROW_IN_SELECTOR];
+
+            handleTimeline(timeline, onComplete);
+          }
+
+          return true;
+        }
+      }
+
+      function toLeft(currentSlide, onComplete) {
+        if (timelineHandlersQueue.length >= MAX_QUEUE_LENGTH) {
+          return false;
+        } else {
+          var timeline = timelines[LEFT_ORDER[currentSlide]];
 
           handleTimeline(timeline, onComplete);
+
+          return true;
         }
       }
 
-      function toLeft(onComplete) {
+      function toRight(currentSlide, onComplete) {
         if (timelineHandlersQueue.length >= MAX_QUEUE_LENGTH) {
-          return;
+          return false;
+        } else {
+          var timeline = timelines[RIGHT_ORDER[currentSlide]];
+
+          handleTimeline(timeline, onComplete);
+
+          return true;
         }
-
-        var timeline = timelines[LEFT_ORDER[currentSlide]];
-
-        currentSlide -= 1;
-        currentSlide = (currentSlide < 0) ? SLIDES_COUNT - 1 : currentSlide;
-
-        handleTimeline(timeline, onComplete);
-      }
-
-      function toRight(onComplete) {
-        if (timelineHandlersQueue.length >= MAX_QUEUE_LENGTH) {
-          return;
-        }
-
-        var timeline = timelines[RIGHT_ORDER[currentSlide]];
-
-        currentSlide += 1;
-        currentSlide = currentSlide % SLIDES_COUNT;
-
-        handleTimeline(timeline, onComplete);
       }
 
       /////////////
