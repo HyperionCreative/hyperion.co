@@ -11,7 +11,7 @@
   //    de renderer.
   // 2. daca dai sa schimbi slideul in timp ce se schimba, sa bage viteza --- done
   // 3. blurul o sa si schimbe image on resize. acum e fixa --- done
-  // 3.1 Blurul pt slide description! rapid s-ar face cu css, greu cu sprite (dar poate putin mai performant)
+  // 3.1 Blurul pt slide description! rapid s-ar face cu css, greu cu sprite (dar poate putin mai performant) --- done it the easy way
   // 4. controalele sa suporte cursor custom
   // 5. slider description'ul sa se schimbe si el cu slideul
   // 6. Easingul Power4 are timp foarte mult pe capetele cu care nu face nimic. As putea sa folosesc Power1 si sa micsorez

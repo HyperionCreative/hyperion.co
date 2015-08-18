@@ -1,12 +1,6 @@
 (function () {
   'use strict';
 
-  // Cred ca ii bag si lu asta un init. el va opera pe blurResources.
-  // toate astea de blur se apeleaza cu slide'ul curent. el isi ia singur rezolutia din viewport
-  // si in functie de aia stie sa ascunda sau sa afiseze poza blurata care trebuie
-  // oare sa adaug aici spriteurile slide descriptionului?
-  // si oare acestea, sa fie facute in canvas sau ca sprite png css.hmmmm
-
   angular
     .module('app.fancy-slider.blur')
     .service('FancyBlurControllers', ['FancyConfiguration', 'TweenLite', 'ViewportSize', function (Configuration, TweenLite, ViewportSize) {
@@ -53,6 +47,8 @@
           fastBlurStage: getBlurFunction(0, true),
           fastUnblurStage: getBlurFunction(0, false)
         };
+
+        console.log(controllers);
       }
 
       /////////////
@@ -74,6 +70,7 @@
             // Show only the current slide blurred background
             blurredBackgrounds[context][currentSlide].alpha = 1;
 
+            blurSlideDescription(toBlur, duration, Configuration.BLUR_ANIMATION_EASING);
             TweenLite.fromTo(blurContainer, duration, {
               alpha: !toBlur ? 1 : 0
             }, {
@@ -102,6 +99,38 @@
 
       function getIsBlurred() {
         return isBlurred;
+      }
+
+      function blurSlideDescription(toBlur, duration, ease) {
+        var
+          normal = document.querySelector('.fancy-slider .slide-description-container .slide-description .overflow-container'),
+          blurred = document.querySelector('#slide-description-blur-overlay');
+
+        if (toBlur) {
+          hideOrShow(normal, false);
+          hideOrShow(blurred, true);
+        } else {
+          hideOrShow(normal, true);
+          hideOrShow(blurred, false);
+        }
+
+        function hideOrShow(resource, show) {
+          TweenLite.to(resource, duration, {
+            autoAlpha: show ? 1 : 0,
+
+            ease: ease,
+            onStart: function () {
+              angular.element(resource).css({
+                display: show ? 'block' : 'block'
+              });
+            },
+            onComplete: function () {
+              angular.element(resource).css({
+                display: show ? 'block' : 'none'
+              });
+            }
+          });
+        }
       }
     }]);
 })();
