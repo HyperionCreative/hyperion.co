@@ -7,7 +7,7 @@
 
   z-index: $sub-page-template-z-index;
 
-  .hamburger-navigation.center {
+  .navigation-hamburger.center {
     position: relative;
     text-align: center;
   }
@@ -26,6 +26,62 @@
       td.sub-page-content {
         vertical-align: middle;
       }
+    }
+  }
+}
+
+////////////////
+// Animations //
+////////////////
+
+html {
+  // todo add this dynamically
+  // hides the scrollbar
+  overflow: hidden;
+}
+
+[ui-view="page-content"] {
+  @include transition-duration(0.25s);
+
+  &.ng-enter.ng-enter-active, &.ng-leave.ng-leave-active {
+    .header-index, 
+    .sub-page-template > .navigation-hamburger,
+    .sub-page-template > .sub-page-content-container {
+      @include transition(transform 0.25s ease-in-out, opacity 0.25s ease-in-out);
+    }
+  }
+
+  &.ng-enter,
+  &.ng-leave.ng-leave-active {
+    .header-index {
+      @include transform(translate3d(0,-125px,0));
+    }
+
+    .sub-page-template > .navigation-hamburger {
+      opacity: 0;
+      @include transform(translate3d(0,-125px,0));
+    }
+
+    .sub-page-template > .sub-page-content-container {
+      opacity: 0;
+      @include transform(translate3d(0,250px,0));
+    }
+  }
+
+  &.ng-leave,
+  &.ng-enter.ng-enter-active {
+    .header-index {
+      @include transform(translate3d(0,0,0));
+    }
+
+    .sub-page-template > .navigation-hamburger {
+      opacity: 1;
+      @include transform(translate3d(0,0,0));
+    }
+
+    .sub-page-template > .sub-page-content-container {
+      opacity: 1;
+      @include transform(translate3d(0,0,0));
     }
   }
 }

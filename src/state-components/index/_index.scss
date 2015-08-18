@@ -12,7 +12,7 @@
   width: 100%;
 
   // These ensure everything stays on the same line
-  .logo, .hamburger-navigation {
+  .logo, .navigation-hamburger {
     display: table-cell;
     vertical-align: middle;
     white-space: nowrap;
@@ -22,7 +22,7 @@
     width: 99%;
   }
 
-  .hamburger-navigation {
+  .navigation-hamburger {
     width: 1%;
   }
 
