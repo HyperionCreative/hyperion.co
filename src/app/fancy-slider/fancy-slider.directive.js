@@ -37,14 +37,48 @@
           // Run block //
           ///////////////
 
+          // Needed by slider description in order to change the client's opacity
+          iElement.attr('data-active-slide', currentSlide + 1);
+
           // Appends the canvas, thus initializing pixi.
           angular.element(iElement[0].querySelector('.stage-container')).append(renderer.view);
 
           // Everything is ready!
           SliderInitializer.init(stage, renderer, function () {
-            // The slider is ready, hooray!
-            $rootScope.$emit('fancy-slider.ready');
+            // Variables
+            var
+              animationsControllers = Animations.getControllers(),
+              blurControllers = Blur.getControllers();
 
+            // Functions
+            function changeCurrentSlideVar(modifier) {
+              currentSlide += modifier;
+
+              if (currentSlide >= SLIDES_COUNT) {
+                // Start from the beginning
+                currentSlide = 0;
+              } else if (currentSlide < 0) {
+                // Start from the end
+                currentSlide = SLIDES_COUNT - 1;
+              }
+
+              // Needed by slider description in order to change the client's opacity
+              iElement.attr('data-active-slide', currentSlide + 1);
+            }
+
+            function toLeft() {
+              if (!Blur.isBlurring() && !Blur.isBlurred() && animationsControllers.toLeft(currentSlide)) {
+                changeCurrentSlideVar(-1);
+              }
+            }
+
+            function toRight() {
+              if (!Blur.isBlurring() && !Blur.isBlurred() && animationsControllers.toRight(currentSlide)) {
+                changeCurrentSlideVar(1);
+              }
+            }
+
+            // Run block
             // Applies zIndex
             stage.children.sort(function (a, b) {
               a.zIndex = a.zIndex || 0;
@@ -55,25 +89,8 @@
             // Renders the newly sorted resources
             renderer.render(stage);
 
-            // The animations
-            var animationsControllers = Animations.getControllers();
-
-            function toLeft() {
-              if (!Blur.isBlurring() && !Blur.isBlurred() && animationsControllers.toLeft(currentSlide)) {
-                currentSlide -= 1;
-                currentSlide = (currentSlide < 0) ? SLIDES_COUNT - 1 : currentSlide;
-              }
-            }
-
-            function toRight() {
-              if (!Blur.isBlurring() && !Blur.isBlurred() && animationsControllers.toRight(currentSlide)) {
-                currentSlide += 1;
-                currentSlide = currentSlide % SLIDES_COUNT;
-              }
-            }
-
-            // The blur
-            var blurControllers = Blur.getControllers();
+            // The slider is ready, hooray!
+            $rootScope.$emit('fancy-slider.ready');
 
             // State handling
             (function () {

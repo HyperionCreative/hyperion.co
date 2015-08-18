@@ -8,7 +8,6 @@
   $index: 1;
 
   @each $opacity-value in $opacity-list {
-    // todo fancy slider doesn't add the class. do it!
     .fancy-slider[data-active-slide="#{$slide}"] .slide-description-container .second-state .mixed-content > li:nth-child(#{$index}):hover {
       background-color: rgba(#ffffff, $opacity-value);
     }
