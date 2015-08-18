@@ -1,11 +1,15 @@
 (function () {
   'use strict';
-  
+
   angular
     .module('state.preloader')
-    .controller('PreloaderCtrl', ['$scope', 'Preloader', function ($scope, Preloader) {
+    .controller('PreloaderCtrl', ['$rootScope', '$scope', 'Preloader', function ($rootScope, $scope, Preloader) {
       $scope.showPreloader = true;
       $scope.preloaderProgress = 0;
+
+      $rootScope.$on('fancy-slider.ready', function () {
+        $scope.showPreloader = false;
+      });
 
       var preloaderListener = $scope.$watch(function () {
         return Preloader.getTotalProgress('fancy-slider');
@@ -13,12 +17,6 @@
         $scope.preloaderProgress = newValue;
 
         if (newValue === 100) {
-          // This needs to be called async. 
-          // Without this the preloader wouldn't fade out at 100%.
-          $scope.$evalAsync(function () {
-            $scope.showPreloader = false;
-          });
-
           // Unregisters the (night) watch
           preloaderListener();
         }

@@ -3,7 +3,7 @@
 
   angular
     .module('app.fancy-slider')
-    .directive('hypFancySlider', ['$window', 'PIXI', 'FancyAnimations', 'FancyBlur', 'FancyConfiguration', 'FancySliderInitializer', function ($window, PIXI, Animations, Blur, Configuration, SliderInitializer) {
+    .directive('hypFancySlider', ['$rootScope', '$window', 'PIXI', 'FancyAnimations', 'FancyBlur', 'FancyConfiguration', 'FancySliderInitializer', function ($rootScope, $window, PIXI, Animations, Blur, Configuration, SliderInitializer) {
       return {
         link: function (scope, iElement) {
           ///////////////
@@ -42,6 +42,9 @@
 
           // Everything is ready!
           SliderInitializer.init(stage, renderer, function () {
+            // The slider is ready, hooray!
+            $rootScope.$emit('fancy-slider.ready');
+
             // Applies zIndex
             stage.children.sort(function (a, b) {
               a.zIndex = a.zIndex || 0;
