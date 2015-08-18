@@ -7,6 +7,7 @@
       this.get = get;
       this.init = init;
       this.isBlurred = getIsBlurred;
+      this.isBlurring = getIsBlurring;
 
       ///////////////
       // Variables //
@@ -14,7 +15,7 @@
       var controllers;
       var blurContainer, blurredBackgrounds;
       var stage, renderer;
-      var isBlurred;
+      var isBlurred, isBlurring;
 
       ////////////
       // Public //
@@ -36,6 +37,7 @@
 
         blurContainer.alpha = 0;
         isBlurred = false;
+        isBlurring = false;
 
         blurContainer.zIndex = 999;
 
@@ -47,6 +49,20 @@
           fastBlurStage: getBlurFunction(0, true),
           fastUnblurStage: getBlurFunction(0, false)
         };
+
+        // Without these, the fast blur operation may look strange. I don't understand this silly bug - meh!
+        renderer.render(stage);
+        controllers.fastBlurStage(0);
+        controllers.fastUnblurStage(0);
+        controllers.fastBlurStage(1);
+        controllers.fastUnblurStage(1);
+        controllers.fastBlurStage(2);
+        controllers.fastUnblurStage(2);
+        renderer.render(stage);
+      }
+
+      function getIsBlurring() {
+        return isBlurring;
       }
 
       /////////////
@@ -73,10 +89,15 @@
               alpha: !toBlur ? 1 : 0
             }, {
               alpha: toBlur ? 1 : 0,
+              onStart: function () {
+                isBlurring = true;
+              },
               onUpdate: function () {
                 renderer.render(stage);
               },
               onComplete: function () {
+                isBlurring = false;
+
                 if (angular.isFunction(onComplete)) {
                   onComplete();
                 }
@@ -115,6 +136,7 @@
         function hideOrShow(resource, show) {
           TweenLite.to(resource, duration, {
             autoAlpha: show ? 1 : 0,
+            z: 0,
 
             ease: ease,
             onStart: function () {
