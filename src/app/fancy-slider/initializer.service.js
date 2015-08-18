@@ -17,12 +17,12 @@
       ////////////
       function init(stage, renderer, onComplete) {
         // This way we don't chain promises. Thus the init processes happen simultaneously.
-        $q.all([Resources.init(stage), DepthBars.init(stage, renderer)]).then(function () {
-          // Blur.init().then(function () {
+        $q.all([Resources.init(stage), Blur.downloadAssets(), DepthBars.init(stage, renderer)]).then(function () {
+          Blur.init(stage, renderer).then(function () {
             Animations.init(stage, renderer, Resources.get()).then(function () {
               onComplete();
             });
-          // });
+          });
         });
       }
     }]);

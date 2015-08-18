@@ -9,6 +9,10 @@
       this.ANIMATION_EASING = TweenEasings.Power3.easeOut;
       this.ANIMATION_THROW_IN_EASING = TweenEasings.Power4.easeOut;
 
+      // Blur Animations
+      this.BLUR_ANIMATION_DURATION = 500;
+      this.BLUR_ANIMATION_EASING = TweenEasings.Power3.easeOut;
+
       // Resolutions interval
       this.MAX_WIDTH = 2560;
       this.MAX_HEIGHT = 1440;
