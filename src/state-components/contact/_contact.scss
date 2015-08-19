@@ -1,0 +1,73 @@
+#contact-page {
+  .contact-container {
+    background: #ffffff;
+    @include box-shadow($normal-box-shadow);
+    padding-top: 50px;
+
+    &.container {
+      width: 600px;
+    }
+
+    .call-us {
+      color: #9fa1a5;
+      font-family: $PierSans-Regular;
+      font-size: 15px;
+      margin-bottom: 40px;
+      text-align: center;
+
+      .icon-phone {
+        display: inline-block;
+        opacity: 0.5;
+        padding-right: 5px;
+        @include transform(scale(0.7,0.7));
+        vertical-align: top;
+      }
+    }
+
+    .separator {
+      position: relative;
+      text-align: center;
+
+      .text {
+        background: #ffffff;
+        color: #d2d3d5;
+        display: inline-block;
+        font-size: 15px;
+        position: relative;
+        width: 65px;
+        z-index: 2;
+      }
+
+      .line {
+        background: #d2d4d7;
+        bottom: 0;
+        display: block;
+        height: 1px;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+      }
+    }
+
+    form {
+      @include legacy-pie-clearfix;
+      padding: 43px 50px 40px 50px;
+
+      .submit-button {
+        color: rgba(#93999a, 0.5);
+        cursor: pointer;
+        float: right;
+        font-size: 15px;
+        margin-top: 7px;
+
+        strong {
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
