@@ -21,6 +21,7 @@
       // Common modules //
       ////////////////////
 
+      'common.carousel-slider',
       'common.simple-hoverable',
 
       //////////////////////
