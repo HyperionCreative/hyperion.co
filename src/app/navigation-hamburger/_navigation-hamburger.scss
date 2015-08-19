@@ -3,6 +3,8 @@
   $this-hamburger-icon-size: 20px;
   $this-hamburger-icon-padding: ($this-height - $this-hamburger-icon-size) / 2;
 
+  $this-translate-travel: 30px;
+
   height: $this-height;
   // As the hamburger icon is a square!
   min-width: $this-height;
@@ -25,6 +27,9 @@
 
   .links {
     display: inline-block;
+    // This is needed to stay on top of the hambuger icon (.icon-three-horizontal-bars)
+    // Otherwise the icon may get in the way!
+    position: relative;
   }
 
   .link {
@@ -78,6 +83,8 @@
     .icon-three-horizontal-bars {
       left: 50%;
       margin-left: - $this-height / 2;
+      // Otherwise the hover effect will fell strange
+      padding-bottom: 5px;
     }
   }
 
@@ -87,8 +94,6 @@
     $this-min-transition-duration: 0.2s;
     // todo change this when adding/removing links
     $this-links-count: 4;
-
-    $this-translate-travel: 30px;
 
     // This is added so simple-hoverable knows the transition value
     @include transition-duration($this-max-transition-duration);
@@ -112,29 +117,38 @@
         }
       }
     }
+  }
 
-    // todo add more animations depending on the style option (left, center, right);
+  // todo add more animations depending on the style option (left, center, right);
 
-    &.mouse-leaving,
-    &.mouse-left {
-      .link {
-        opacity: 0;
-        @include transform(translate(0, $this-translate-travel));
-      }
+  // The default animation!
+  .menu-container.mouse-leaving,
+  .menu-container.mouse-left {
+    .link {
+      opacity: 0;
+      @include transform(translate(0, $this-translate-travel));
     }
+  }
 
-    &.mouse-entered {
+  .menu-container.mouse-entered {
+    .icon-three-horizontal-bars {
+      opacity: 0;
+      @include transform(translate($this-translate-travel, 0));
+    }
+  }
+
+  .menu-container.mouse-left {
+    .links {
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+    }
+  }
+
+  &.center {
+    .menu-container.mouse-entered {
       .icon-three-horizontal-bars {
-        opacity: 0;
-        @include transform(translate($this-translate-travel, 0));
-      }
-    }
-
-    &.mouse-left {
-      .links {
-        height: 0;
-        overflow: hidden;
-        visibility: hidden;
+        @include transform(translate(0, 0 - $this-translate-travel));
       }
     }
   }
