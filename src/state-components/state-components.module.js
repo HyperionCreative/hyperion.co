@@ -9,6 +9,7 @@
       'state.expertise',
       'state.fancy-slider',
       'state.our-processes',
+      'state.portfolio',
       'state.preloader'
     ]);
 })();

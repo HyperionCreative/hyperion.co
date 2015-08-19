@@ -1,0 +1,48 @@
+#portfolio-page {
+  // todo remember this: don't change the covers size individually!
+  // they all work together as a group. there's no css to keep them
+  // in place. resizing a cover may break the layout.
+
+  $this-margin: 8px;
+  
+  @media only screen and (min-width : 1920px) {
+    & > .container {
+      width: 1100px;
+    }
+  }
+
+  .covers {
+    @include legacy-pie-clearfix;
+
+    .column {
+      float: left;
+      width: 50%;
+
+      &:first-child {
+        padding-right: $this-margin / 2;
+      }
+
+      &:last-child {
+        padding-left: $this-margin / 2;
+      }
+    }
+
+    .cover {
+      display: block;
+      margin-bottom: $this-margin;
+      opacity: 0.8;
+      @include transition(opacity $rapid-transition-timing);
+
+      &:hover {
+        opacity: 1;
+      }
+
+      img {
+        // This way it will strech to fit its container
+        display: block;
+        height: auto;
+        width: 100%;
+      }
+    }
+  }
+}
