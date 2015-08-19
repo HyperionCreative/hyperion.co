@@ -1,0 +1,49 @@
+.portfolio-header {
+  @include box-shadow($normal-box-shadow);
+  color: rgba($dark-blue, 0.5);
+  height: 95px;
+
+  table {
+    height: 100%;
+    width: 100%;
+
+    td {
+      vertical-align: middle;
+    }
+  }
+
+  .back-arrow, .description, .logo {
+    background-color: rgba(#ffffff, 0.5);
+  }
+
+  // This creates the separation effect
+  .one-pixel-line {
+    width: 1px;
+  }
+
+  .back-arrow {
+    text-align: center;
+    width: 100px;
+
+    a {
+      cursor: pointer;
+      font-size: 15px;
+      opacity: 0.25;
+      padding: 10px;
+      @include transition(opacity $rapid-transition-timing);
+
+      &:hover {
+        opacity: 0.75;
+      }
+    }
+  }
+
+  .description p {
+    max-width: 475px;
+  }
+
+  .logo {
+    text-align: center;
+    width: 210px;
+  }
+}
