@@ -84,7 +84,14 @@
             // Show only the current slide blurred background
             blurredBackgrounds[context][currentSlide].alpha = 1;
 
-            blurSlideDescription(toBlur, duration, Configuration.BLUR_ANIMATION_EASING);
+            // todo fix this - this fails in real world scenarios as all the images are cached 
+            // but the htmls aren't. the description will be downloaded after fancy slider is ready, 
+            // thus causing querySelector to return null. 
+            try {
+              blurSlideDescription(toBlur, duration, Configuration.BLUR_ANIMATION_EASING);
+            } catch (err) {
+              // hope for the best prepare for the worst
+            }
             TweenLite.fromTo(blurContainer, duration, {
               alpha: !toBlur ? 1 : 0
             }, {
