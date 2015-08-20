@@ -12,6 +12,7 @@
 
 $normal-line-height: 1.25em;
 $normal-font-size: 13px;
+$medium-font-size: 14px;
 
 $font-fallback: "Lucida Grande", "Arial", sans-serif;
 
@@ -57,7 +58,7 @@ $input-focused-color: $dark-blue;
 $input-unfocused-color: #d2d5d8;
 
 $input-font-family: $PierSans-Regular;
-$input-font-size: 14px;
+$input-font-size: $medium-font-size;
 
 ////////////////////////////
 // Responsive breakpoints //

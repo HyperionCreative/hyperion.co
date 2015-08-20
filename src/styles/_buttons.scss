@@ -1,0 +1,38 @@
+.button {
+  @include reset-box-model;
+
+  // The color and background (also on :hover) must be set!
+
+  $button-default-background: transparent;
+  $button-default-border: 1px solid transparent;
+  $button-default-border-radius: 5px;
+  $button-default-font-family: $HelveticaNeue-Roman;
+  $button-default-font-size: $medium-font-size;
+  $button-default-padding-value: 15px;
+  $button-default-transition: $rapid-transition-timing;
+
+  background: $button-default-background;
+  border: $button-default-border;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $button-default-font-family;
+  font-size: $button-default-font-size;
+  line-height: 1;
+  overflow: hidden;
+  padding: $button-default-padding-value 3 * $button-default-padding-value;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  width: 160px;
+
+  @include appearance(none);
+  @include border-radius($button-default-border-radius);
+  @include reset-focus;
+  // By default, only the background and color have a hover efect
+  @include transition(background $button-default-transition, color $button-default-transition);
+
+  &:hover {
+    color: #ffffff !important;
+  }
+}
