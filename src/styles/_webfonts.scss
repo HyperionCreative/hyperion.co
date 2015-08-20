@@ -86,6 +86,22 @@
   font-weight: normal;
 }
 
+/////////////////
+// Bender Bold //
+/////////////////
+
+@font-face {
+  font-family: "benderbold";
+  src: url("../assets/webfonts/bender_bold-webfont.eot");
+  src: url("../assets/webfonts/bender_bold-webfont.eot?#iefix") format("embedded-opentype"),
+       url("../assets/webfonts/bender_bold-webfont.woff2") format("woff2"),
+       url("../assets/webfonts/bender_bold-webfont.woff") format("woff"),
+       url("../assets/webfonts/bender_bold-webfont.ttf") format("truetype"),
+       url("../assets/webfonts/bender_bold-webfont.svg#benderbold") format("svg");
+  font-style: normal;
+  font-weight: normal;
+}
+
 /////////////
 // Rosario //
 /////////////
