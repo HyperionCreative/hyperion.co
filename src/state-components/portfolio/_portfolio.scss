@@ -1,8 +1,68 @@
-#portfolio-page {
-  // todo remember this: don't change the covers size individually!
-  // they all work together as a group. there's no css to keep them
-  // in place. resizing a cover may break the layout.
+.portfolio-page {
+  .container {
+    width: 900px;
+  }
 
+  .portfolio-content {
+    background-color: #ffffff;
+    color: #9da2a5;
+    // Separates this from the portfolio header
+    margin-top: 1px;
+  }
+
+  .row {
+    @include legacy-pie-clearfix;
+    display: block;
+
+    // Columns and Offsets
+    $this-columns-count: 20;
+    @for $i from 1 through $this-columns-count {
+      .column-#{$i} {
+        float: left;
+        display: block;
+        width: ($i * 100%) / $this-columns-count;
+      }
+
+      .offset-left-#{$i} {
+        margin-left: ($i * 100%) / $this-columns-count;
+      }
+
+      .offset-right-#{$i} {
+        margin-right: ($i * 100%) / $this-columns-count;
+      }
+    }
+
+    // Layout elements
+    .left {
+      float: left;
+    }
+
+    .right {
+      float: right;
+    }
+
+    // Items
+    .title {
+      font-family: $MuseoSans-300;
+      font-size: 25px;
+      margin-bottom: 1em;
+    }
+
+    p {
+      margin-bottom: 1em;
+    }
+
+    img {
+      display: block;
+      height: auto;
+      width: auto;
+    }
+  }
+}
+
+@import "anyvan/anyvan";
+
+#portfolio-home-page {
   $this-margin: 8px;
   
   @media only screen and (min-width : 1920px) {
@@ -11,6 +71,9 @@
     }
   }
 
+  // todo remember this: don't change the covers size individually!
+  // they all work together as a group. there's no css to keep them
+  // in place. resizing a cover may break the layout.
   .covers {
     @include legacy-pie-clearfix;
 

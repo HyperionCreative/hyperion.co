@@ -1,0 +1,30 @@
+#anyvan-portfolio-page {
+  $this-client-color: #41a5dd;
+
+  .carousel-slider {
+    height: 700px;
+    width: 100%;
+  }
+
+  .row .title, .row .button {
+    color: $this-client-color;
+  }
+
+  .row .button {
+    border-color: $this-client-color;
+    margin-top: 1em;
+  }
+
+  .row .button:hover {
+    background: $this-client-color;
+  }
+
+  .first.row {
+    padding-bottom: 50px;
+    padding-top: 25px;
+
+    .description {
+      margin-top: 10%;
+    }
+  }
+}
