@@ -19,8 +19,8 @@
       var
         NORMAL_SPEED = 1,
         MAX_SPEED = 20,
-        SPEED_STEP = 1;
-      var MAX_QUEUE_LENGTH = 20;
+        SPEED_STEP = 0.3;
+      var MAX_QUEUE_LENGTH = 2;
 
       ///////////////
       // Variables //
@@ -87,7 +87,7 @@
       }
 
       function toLeft(currentSlide, onComplete) {
-        if (timelineHandlersQueue.length >= MAX_QUEUE_LENGTH) {
+        if (timelineHandlersQueue.length >= MAX_QUEUE_LENGTH || (angular.isDefined(timelineHandlersQueue[0]) && timelineHandlersQueue[0].getProgress() < 0.1)) {
           return false;
         } else {
           var timeline = timelines[LEFT_ORDER[currentSlide]];
@@ -99,7 +99,7 @@
       }
 
       function toRight(currentSlide, onComplete) {
-        if (timelineHandlersQueue.length >= MAX_QUEUE_LENGTH) {
+        if (timelineHandlersQueue.length >= MAX_QUEUE_LENGTH || (angular.isDefined(timelineHandlersQueue[0]) && timelineHandlersQueue[0].getProgress() < 0.1)) {
           return false;
         } else {
           var timeline = timelines[RIGHT_ORDER[currentSlide]];
@@ -165,6 +165,10 @@
           this.timeline.vars.onComplete = this.onComplete;
           this.timeline.restart();
         };
+
+        this.getProgress = function () {
+          return this.timeline.progress();
+        }
 
         this.setTimelineSpeed = function (speed) {
           this.timeline.timeScale(speed);
