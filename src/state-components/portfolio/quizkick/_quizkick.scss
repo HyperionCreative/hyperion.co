@@ -1,0 +1,41 @@
+#quizkick-portfolio-page {
+  $this-client-color: #dddddd;
+
+  .row {
+    position: relative;
+  }
+
+  .row .description {
+    color: rgba($this-client-color, 0.85);
+    position: absolute;
+    left: 55px;
+    width: 315px;
+
+    &.first {
+      top: 830px;
+
+      .title {
+        text-transform: uppercase;
+      }
+    }
+
+    &.second {
+      bottom: 75px;
+    }
+  }
+
+  .row .title {
+    font-family: $Bender-Bold;
+    font-size: 28px;
+  }
+
+  .row .button {
+    border-color: #86888d;
+    margin-top: 1em;
+
+    &:hover {
+      background: #86888d;
+      color: #ffffff;
+    }
+  }
+}
