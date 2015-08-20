@@ -32,6 +32,14 @@
 // Generics //
 //////////////
 
+html {
+  // todo add this dynamically
+  // this is a cheap solution.
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+
 body {
   font-family: $HelveticaNeue-Roman;
   font-size: $normal-font-size;

@@ -34,12 +34,6 @@
 // Animations //
 ////////////////
 
-html {
-  // todo add this dynamically
-  // hides the scrollbar
-  overflow: hidden;
-}
-
 [ui-view="page-content"] {
   @include transition-duration(0.25s);
 
