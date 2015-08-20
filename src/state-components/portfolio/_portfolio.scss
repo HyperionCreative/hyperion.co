@@ -58,6 +58,27 @@
       width: auto;
     }
   }
+
+  $this-top-spacing: 25px;
+  .project-navigation {
+    color: rgba($dark-blue, 0.7);
+    float: right;
+    font-size: 14px;
+    margin-top: $this-top-spacing;
+
+    .icon-arrow-right-pointy {
+      display: inline-block;
+      font-size: 12px;
+      line-height: 15px;
+      padding-left: 10px;
+      vertical-align: top;
+    }
+  }
+
+  .simple-footer {
+    padding-top: $this-top-spacing;
+    text-align: left;
+  }
 }
 
 @import "anyvan/anyvan";
