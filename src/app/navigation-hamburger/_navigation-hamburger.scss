@@ -18,6 +18,7 @@
   // The hamburger icon
   .icon-three-horizontal-bars {
     color: #7f7f7f;
+    cursor: pointer;
     font-size: 11px;
     line-height: $this-hamburger-icon-size;
     padding: $this-hamburger-icon-padding;
@@ -47,7 +48,8 @@
 
     a {
       cursor: pointer;
-      opacity: 0.5;
+      opacity: 0.6;
+      padding: 10px 0;
       @include transition(opacity $rapid-transition-timing);
 
       &:hover {
@@ -111,6 +113,11 @@
     .link {
       @include transition-duration($this-min-transition-duration);
 
+      
+      &:first-child {
+        padding-left: 40px;
+      }
+
       @for $i from 1 through $this-links-count {
         &:nth-child(#{$i}) {
           @include transition-delay(($this-max-transition-duration - $this-min-transition-duration) / ($this-links-count - 1) * ($this-links-count - $i));
@@ -132,6 +139,7 @@
 
   .menu-container.mouse-entered {
     .icon-three-horizontal-bars {
+      cursor: default;
       opacity: 0;
       @include transform(translate($this-translate-travel, 0));
     }
