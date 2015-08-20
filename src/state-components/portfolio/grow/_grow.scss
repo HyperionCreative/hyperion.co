@@ -1,6 +1,11 @@
 #grow-portfolio-page {
   $this-client-color: #b1d541;
 
+  .portfolio-header .logo img {
+    height: image-height("assets/images/portfolio/grow/logo.png");
+    width: image-width("assets/images/portfolio/grow/logo.png");
+  }
+
   .carousel-slider {
     height: 600px;
     width: 100%;

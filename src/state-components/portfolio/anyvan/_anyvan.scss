@@ -1,6 +1,11 @@
 #anyvan-portfolio-page {
   $this-client-color: #41a5dd;
 
+  .portfolio-header .logo img {
+    height: image-height("assets/images/portfolio/anyvan/logo.png");
+    width: image-width("assets/images/portfolio/anyvan/logo.png");
+  }
+
   .carousel-slider {
     height: 700px;
     width: 100%;

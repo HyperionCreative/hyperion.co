@@ -1,8 +1,17 @@
 #quizkick-portfolio-page {
   $this-client-color: #dddddd;
 
+  .portfolio-header .logo img {
+    height: image-height("assets/images/portfolio/quizkick/logo.png");
+    width: image-width("assets/images/portfolio/quizkick/logo.png");
+  }
+
   .row {
     position: relative;
+
+    & > img {
+      width: 100%;
+    }
   }
 
   .row .description {

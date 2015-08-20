@@ -2,6 +2,11 @@
   $this-client-color: #5cc6eb;
   $this-custom-margin: 7.5%;
 
+  .portfolio-header .logo img {
+    height: image-height("assets/images/portfolio/kartist/logo.png");
+    width: image-width("assets/images/portfolio/kartist/logo.png");
+  }
+
   .carousel-slider {
     height: 600px;
     width: 100%;
