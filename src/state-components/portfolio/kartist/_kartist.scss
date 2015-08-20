@@ -1,0 +1,56 @@
+#kartist-portfolio-page {
+  $this-client-color: #5cc6eb;
+  $this-custom-margin: 7.5%;
+
+  .carousel-slider {
+    height: 600px;
+    width: 100%;
+  }
+
+  .row .title, .row .button {
+    color: $this-client-color;
+  }
+
+  .row .button {
+    border-color: $this-client-color;
+    margin-top: 1em;
+  }
+
+  .row .button:hover {
+    background: $this-client-color;
+  }
+
+  .row.second {
+    padding: 75px 0 65px 0;
+
+    .description {
+      margin-left: $this-custom-margin;
+    }
+  }
+
+  .row.third {
+    padding: 65px 0 45px 0;
+
+    .description {
+      margin-left: $this-custom-margin;
+    }
+  }
+
+  .row.fourth {
+    padding: 0 0 40px 0;
+
+    .description {
+      margin-left: $this-custom-margin;
+      margin-top: 4%;
+
+      .logo-by {
+        margin-top: 30px;
+        opacity: 0.5;
+      }
+    }
+
+    .column-13 {
+      width: 67.5%
+    }
+  }
+}
