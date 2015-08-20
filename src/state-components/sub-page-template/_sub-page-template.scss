@@ -35,7 +35,7 @@
 ////////////////
 
 [ui-view="page-content"] {
-  @include transition-duration(0.25s);
+  @include transition-duration(0.3s);
 
   &.ng-enter.ng-enter-active, &.ng-leave.ng-leave-active {
     .header-index, 
