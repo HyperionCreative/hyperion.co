@@ -1,15 +1,14 @@
 <footer class="simple-footer">
-  <div class="text" ng-bind-html=":: str.globals.footerText"></div>
-  <!-- todo add social links -->
+  <div class="text" ng-bind-html=":: str.footer.text"></div>
   <ul class="social-links">
     <li class="social-link">
-      <a href="#" class="icon-twitter"></a>
+      <a class="icon-twitter" ng-href="{{:: str.footer.twitterHref }}"></a>
     </li>
     <li class="social-link">
-      <a href="#" class="icon-dribbble"></a>
+      <a class="icon-dribbble" ng-href="{{:: str.footer.dribbbleHref }}"></a>
     </li>
     <li class="social-link">
-      <a href="#" class="icon-behance"></a>
+      <a class="icon-behance" ng-href="{{:: str.footer.behanceHref }}"></a>
     </li>
   </ul>
 </footer>

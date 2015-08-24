@@ -6,8 +6,13 @@
     .run(['$rootScope', function ($rootScope) {
       $rootScope.str = {
         globals: {
-          phoneNumber: '+44 (0)1214-052-101',
-          footerText: '<p>See more projects on our <strong>Social Networks</strong></p><small>&copy; Copyright Hyperion 2015</small>'
+          phoneNumber: '+44 (0)1214-052-101'
+        },
+        footer: {
+          text: '<p>See more projects on our <strong>Social Networks</strong></p><small>&copy; Copyright Hyperion 2015</small>',
+          twitterHref: '//twitter.com/WeAreHyperion',
+          dribbbleHref: '//dribbble.com/hyperion',
+          behanceHref: '//www.behance.net/hyperioncreative'
         },
         contact: {
           navigationHamburgerAnchorText: 'Contact',
