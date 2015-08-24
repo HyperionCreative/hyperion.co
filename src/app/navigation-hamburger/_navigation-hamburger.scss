@@ -81,7 +81,11 @@
       // As the element is pulled to the right, if it's right on the right edge of the screen,
       // then it may cause an unnecessary scroll bar.
       // right: - $this-hamburger-icon-padding;
-      right: 0;
+      right: -20px;
+    }
+
+    .links .link:first-child {
+      padding-left: 40px;
     }
   }
 
@@ -116,11 +120,6 @@
 
     .link {
       @include transition-duration($this-min-transition-duration);
-
-      
-      &:first-child {
-        padding-left: 40px;
-      }
 
       @for $i from 1 through $this-links-count {
         &:nth-child(#{$i}) {
