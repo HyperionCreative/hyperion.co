@@ -5,6 +5,7 @@
 
   .portfolio-content {
     background-color: #ffffff;
+    @include box-shadow($normal-box-shadow);
     color: #9da2a5;
     // Separates this from the portfolio header
     margin-top: 1px;
