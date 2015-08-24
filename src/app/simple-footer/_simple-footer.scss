@@ -11,7 +11,7 @@
 
     p {
       color: rgba($dark-blue, 0.7);
-      margin-bottom: 3px;
+      margin-bottom: 3px !important;
     }
 
     small {
@@ -23,7 +23,33 @@
     color: rgba(#3c3c3b, 0.5);
     cursor: pointer;
     display: inline-block;
-    font-size: 17px;
     margin: 0 8px;
+    vertical-align: middle;
+
+    @include transition(color $rapid-transition-timing);
+
+    .icon-twitter {
+      font-size: 16px;
+      
+      :hover {
+        color: #4fabf1;
+      }
+    }
+
+    .icon-dribbble {
+      font-size: 17px;
+      
+      :hover {
+        color: #ea4c89;
+      }
+    }
+
+    .icon-behance {
+      font-size: 13px;
+      
+      :hover {
+        color: #055cff;
+      }
+    }
   }
 }
