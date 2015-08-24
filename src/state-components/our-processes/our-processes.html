@@ -1,31 +1,21 @@
 <section id="our-processes-page">
   <hyp-simple-header
-    name="Our Processes"
-    description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+    name="{{:: str.ourProcesses.header.title }}"
+    description="{{:: str.ourProcesses.header.description }}"
   ></hyp-simple-header>
-
-  <!-- todo depending on the desired end result, the strong tags may be replaced with h2 or h3. consider this -->
 
   <div class="processes-container container">
     <div class="process">
       <div class="illustration icon-pen-and-ruler"></div>
-      <div class="description">
-        <p><strong>Product Design.</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur.</p>
-      </div>
+      <div class="description" ng-bind-html=":: str.ourProcesses.firstColumn"></div>
     </div>
     <div class="process">
       <div class="illustration icon-layers"></div>
-      <div class="description">
-        <p><strong>Redesign Projects.</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur. Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-      </div>
+      <div class="description" ng-bind-html=":: str.ourProcesses.secondColumn"></div>
     </div>
     <div class="process">
       <div class="illustration icon-choice"></div>
-      <div class="description">
-        <p><strong>Consultation.</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore.</p>
-      </div>
+      <div class="description" ng-bind-html=":: str.ourProcesses.thirdColumn"></div>
     </div>
   </div>
 

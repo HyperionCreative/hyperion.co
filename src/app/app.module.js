@@ -33,6 +33,7 @@
       'app.portfolio-header',
       'app.simple-footer',
       'app.simple-header',
+      'app.strings',
 
       //////////////////////
       // State Components //

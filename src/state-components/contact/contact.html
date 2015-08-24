@@ -1,16 +1,13 @@
 <section id="contact-page">
   <hyp-simple-header
-    name="Get in Touch"
-    description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+    name="{{:: str.contact.header.title }}"
+    description="{{:: str.contact.header.description }}"
   ></hyp-simple-header>
 
   <div class="contact-container container">
     <div class="call-us">
       <span class="icon-phone"></span>
-      <span class="cell-phone-number">
-        <!-- todo scramble the telephone number -->
-        +44 (0)1214-052-101
-      </span>
+      <span class="cell-phone-number" ng-bind-html=":: str.globals.phoneNumber"></span>
     </div>
     <div class="separator">
       <div class="text">or</div>
