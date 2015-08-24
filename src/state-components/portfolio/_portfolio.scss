@@ -63,6 +63,7 @@
   $this-top-spacing: 25px;
   .project-navigation {
     color: rgba($dark-blue, 0.7);
+    display: block;
     float: right;
     font-size: 14px;
     margin-top: $this-top-spacing;
