@@ -13,19 +13,7 @@
       <div class="text">or</div>
       <div class="line"></div>
     </div>
-    <form>
-      <!-- todo make this form work! -->
-
-      <input type="text" placeholder="Your Name">
-      <input type="text" placeholder="How can we help?">
-      <input type="text" placeholder="Email address or Phone No.">
-      <input type="text" placeholder="Budget (optional)">
-      <input type="text" placeholder="Company (optional)">
-      <!-- todo add the email sender functionality -->
-      <div class="submit-button">
-        Press <strong>Enter</strong>
-      </div>
-    </form>
+    <hyp-contact-form on-submit="onSubmit(data);"></hyp-contact-form>
   </div>
 
   <hyp-simple-footer></hyp-simple-footer>

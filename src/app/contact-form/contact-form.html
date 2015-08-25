@@ -1,0 +1,28 @@
+<form ng-submit="tryToSubmit(contactForm);" novalidate class="contact-form">
+  <input 
+    ng-model="contactForm.name"
+    is-required-field
+    type="text" placeholder="Your Name">
+  <textarea 
+    ng-model="contactForm.help"
+    is-required-field
+    rows="1" placeholder="How can we help?" class="msd-elastic"></textarea>
+  <input 
+    ng-model="contactForm.contactBack"
+    is-required-field
+    type="text" placeholder="Email address or Phone No.">
+  <input 
+    ng-model="contactForm.budget"
+    type="text" placeholder="Budget (optional)">
+  <input 
+    ng-model="contactForm.company"
+    type="text" placeholder="Company (optional)">
+
+  <input type="submit" style="display: none;">
+
+  <div class="submit-button-container">
+    <div class="submit-button" ng-click="tryToSubmit(contactForm);">
+      Press <strong>Enter</strong><br>to Send
+    </div>
+  </div>
+</form>
