@@ -6,6 +6,7 @@
     .directive('hypContactForm', function () {
       return {
         link: function (scope, iElement) {
+          scope.isSubmitted = false;
           scope.tryToSubmit = tryToSubmit;
 
           ///////////////
@@ -79,14 +80,12 @@
 
             return toReturn;
           })();
-          // Needed in order to prevent multiple submissions
-          var isSubmitted = false;
 
           ///////////////
           // Functions //
           ///////////////
           function tryToSubmit(dataToSubmit) {
-            if (isSubmitted === false) {
+            if (scope.isSubmitted === false) {
               var everythingIsValid = true;
 
               for (var i = 0; i < requiredFields.length; i++) {
@@ -98,7 +97,7 @@
               }
 
               if (everythingIsValid) {
-                isSubmitted = true;
+                scope.isSubmitted = true;
 
                 scope.onSubmit({
                   data: dataToSubmit

@@ -1,12 +1,44 @@
-.contact-form .invalid-field {
-  background-image: url(../assets/images/contact/invalid-icon.png);
-  background-position: center right $input-horizontal-padding;
-  background-repeat: no-repeat;
-  background-size: image-width("assets/images/contact/invalid-icon.png") image-height("assets/images/contact/invalid-icon.png");
+.contact-form {
+  .invalid-field {
+    background-image: url(../assets/images/contact/invalid-icon.png);
+    background-position: center right $input-horizontal-padding;
+    background-repeat: no-repeat;
+    background-size: image-width("assets/images/contact/invalid-icon.png") image-height("assets/images/contact/invalid-icon.png");
 
-  border-color: #f07317;
+    border-color: #f07317;
 
-  @include input-placeholder {
-    color: rgba(#f07317, 0.5);
+    @include input-placeholder {
+      color: rgba(#f07317, 0.5);
+    }
+  }
+
+  .success {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+
+    background: #ffffff;
+    padding-top: 220px;
+    text-align: center;
+    z-index: 10;
+
+    .icon-valid-document {
+      color: #8f949a;
+      font-size: 145px;
+      margin-bottom: 12px;
+    }
+
+    .large {
+      color: #202a35;
+      font-family: $PierSans-Regular;
+      font-size: 15px;
+    }
+
+    .small {
+      color: #b1b1b1;
+    }
   }
 }
+

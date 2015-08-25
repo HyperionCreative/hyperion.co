@@ -3,6 +3,7 @@
     background: #ffffff;
     @include box-shadow($normal-box-shadow);
     padding-top: 50px;
+    position: relative;
 
     &.container {
       width: 600px;
