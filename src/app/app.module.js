@@ -15,6 +15,7 @@
       // Third party modules //
       ///////////////////////
 
+      'monospaced.elastic',
       'ui.router',
 
       ////////////////////
