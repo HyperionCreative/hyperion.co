@@ -3,20 +3,54 @@
 
   angular
     .module('app.fancy-slider')
-    .directive('hypFancySlider', ['$rootScope', '$state', '$window', 'PIXI', 'FancyAnimations', 'FancyBlur', 'FancyConfiguration', 'FancySliderInitializer', function ($rootScope, $state, $window, PIXI, Animations, Blur, Configuration, SliderInitializer) {
+    .directive('hypFancySlider', ['$rootScope', '$state', '$window', 'DEVICE_PIXEL_RATIO', 'PIXI', 'FancyAnimations', 'FancyBlur', 'FancyConfiguration', 'FancySliderInitializer', function ($rootScope, $state, $window, DEVICE_PIXEL_RATIO, PIXI, Animations, Blur, Configuration, SliderInitializer) {
       return {
         link: function (scope, iElement) {
           ///////////////
           // Variables //
           ///////////////
+          // This is limited to 2 as we don't have @3x resources.
+          var pixiResolution = (function () {
+            if (DEVICE_PIXEL_RATIO < 1) {
+              return 1;
+            }
+
+            if (DEVICE_PIXEL_RATIO > 2) {
+              return 2;
+            }
+
+            return DEVICE_PIXEL_RATIO;
+          })();
+
           var
             stage = new PIXI.Container(),
             // Changing this, from autoDetectRenderer to CanvasRenderer, increases the loading time. 
             // I'm not sure what's the performance impact. todo check this!
             renderer = new PIXI.autoDetectRenderer(Configuration.NATIVE_WIDTH, Configuration.NATIVE_HEIGHT, {
-              antialised: false,
-              transparent: true
+              autoResize: true,
+              transparent: true,
+              resolution: pixiResolution
             });
+          // Needed in order to scale back to the original size after applying pixiResolution.
+          renderer.resize(Configuration.NATIVE_WIDTH, Configuration.NATIVE_HEIGHT);
+
+          // https://code.google.com/p/chromium/issues/detail?id=445542
+          // Chrome, Safari and Opera have a limit of 4096 for drawingBufferWidth and drawingBufferHeight.
+          // This is a workaround.
+          (function () {
+            // Needed only for WebGl canvases
+            if (angular.isDefined(renderer.gl)) {
+              var
+                expectedWidth = Configuration.NATIVE_WIDTH * pixiResolution,
+                expectedHeight = Configuration.NATIVE_HEIGHT * pixiResolution;
+
+              var
+                widthRatio = renderer.gl.drawingBufferWidth / expectedWidth,
+                heightRatio = renderer.gl.drawingBufferHeight / expectedHeight;
+
+              stage.scale.set(widthRatio, heightRatio);
+            }
+          })();
 
           var
             FIRST_SLIDE = 0,
