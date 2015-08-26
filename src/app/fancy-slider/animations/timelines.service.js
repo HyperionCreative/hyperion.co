@@ -48,12 +48,10 @@
         timeline.fromTo(resource, duration / 1000, {
           x: fromPosition.x,
           y: fromPosition.y,
-          z: 0,
           rotation: fromPosition.rotation
         }, {
           x: toPosition.x,
           y: toPosition.y,
-          z: 0,
           rotation: toPosition.rotation,
 
           ease: ease

@@ -143,7 +143,6 @@
         function hideOrShow(resource, show) {
           TweenLite.to(resource, duration, {
             autoAlpha: show ? 1 : 0,
-            z: 0,
 
             ease: ease,
             onStart: function () {
