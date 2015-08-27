@@ -1,6 +1,6 @@
 #kartist-portfolio-page {
   $this-client-color: #5cc6eb;
-  $this-custom-margin: 7.5%;
+  $this-custom-margin: 70px;
 
   .portfolio-header .logo img {
     height: image-height("assets/images/portfolio/kartist/logo.png");
@@ -28,8 +28,18 @@
   .row.second {
     padding: 75px 0 65px 0;
 
+    .video-container {
+      width: image-width("assets/images/portfolio/kartist/imac-frame.png");
+
+      video {
+        right: 0;
+        top: 31px;
+      }
+    }
+
     .description {
       margin-left: $this-custom-margin;
+      width: 350px;
     }
   }
 
@@ -38,6 +48,7 @@
 
     .description {
       margin-left: $this-custom-margin;
+      width: 315px;
     }
   }
 
@@ -47,15 +58,12 @@
     .description {
       margin-left: $this-custom-margin;
       margin-top: 4%;
+      width: 212px;
 
       .logo-by {
         margin-top: 30px;
         opacity: 0.5;
       }
-    }
-
-    .column-13 {
-      width: 67.5%
     }
   }
 }
