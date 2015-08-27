@@ -51,7 +51,7 @@
         var index = registeredEventListeners.indexOf(fn);
 
         if (index !== -1) {
-          registeredEventListeners.splice(index, 1);
+          registeredEventListeners[index] = angular.noop;
         }
       }
 
@@ -64,9 +64,9 @@
         if (partialViewportSize.width !== viewportSize.width || partialViewportSize.height !== viewportSize.height) {
           viewportSize = partialViewportSize;
 
-          for (var i = 0; i < registeredEventListeners.length; i++) {
-            registeredEventListeners[i](viewportSize);
-          }
+          angular.forEach(registeredEventListeners, function (registeredEventListener) {
+            registeredEventListener(viewportSize);
+          });
         }
       }, RESIZE_TIMEOUT);
       angular.element($window).on('resize', resizeCallback);
