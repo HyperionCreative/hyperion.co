@@ -212,11 +212,6 @@
             blurSprites.top.width = Configuration.NATIVE_WIDTH;
             blurSprites.top.x = 0;
           }
-
-          // These is needed in order to render the bar changes if the window gets resized.
-          // todo reminder that the fancy blur module depends on this to render the new blurred
-          // background when the viewport size changes!
-          renderer.render(stage);
         });
       }
 

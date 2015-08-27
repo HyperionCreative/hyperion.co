@@ -3,7 +3,7 @@
 
   angular
     .module('app.fancy-slider')
-    .directive('hypFancySlider', ['$rootScope', '$state', '$window', 'DEVICE_PIXEL_RATIO', 'PIXI', 'FancyAnimations', 'FancyBlur', 'FancyConfiguration', 'FancySliderInitializer', function ($rootScope, $state, $window, DEVICE_PIXEL_RATIO, PIXI, Animations, Blur, Configuration, SliderInitializer) {
+    .directive('hypFancySlider', ['$rootScope', '$state', '$window', 'DEVICE_PIXEL_RATIO', 'PIXI', 'FancyAnimations', 'FancyBlur', 'FancyConfiguration', 'FancySliderInitializer', 'ViewportSize', function ($rootScope, $state, $window, DEVICE_PIXEL_RATIO, PIXI, Animations, Blur, Configuration, SliderInitializer, ViewportSize) {
       return {
         link: function (scope, iElement) {
           ///////////////
@@ -162,6 +162,11 @@
                   }
                 });
             })();
+
+            // Renders all the changes on resize
+            ViewportSize.onChange(function () {
+              renderer.render(stage);
+            });
           });
         },
         replace: true,
