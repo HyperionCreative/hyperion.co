@@ -28,12 +28,19 @@
     padding-bottom: 50px;
     padding-top: 85px;
 
-    & > img {
-      margin-right: -18px;
+    .video-container {
+      margin-right: 22px;
+      width: image-width("assets/images/portfolio/grow/ipad-and-iphone-frame.png");
+
+      video {
+        left: 253px;
+        top: 313px;
+      }
     }
 
     .description {
       margin-top: 5%;
+      width: 310px;
     }
   }
 }
