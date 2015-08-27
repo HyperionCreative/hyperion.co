@@ -1,8 +1,10 @@
 .portfolio-page {
+  // All portfolio pages are smaller than the rest.
   .container {
     width: 900px;
   }
 
+  // The main container
   .portfolio-content {
     background-color: #ffffff;
     @include box-shadow($normal-box-shadow);
@@ -14,24 +16,6 @@
   .row {
     @include legacy-pie-clearfix;
     display: block;
-
-    // Columns and Offsets
-    $this-columns-count: 20;
-    @for $i from 1 through $this-columns-count {
-      .column-#{$i} {
-        float: left;
-        display: block;
-        width: ($i * 100%) / $this-columns-count;
-      }
-
-      .offset-left-#{$i} {
-        margin-left: ($i * 100%) / $this-columns-count;
-      }
-
-      .offset-right-#{$i} {
-        margin-right: ($i * 100%) / $this-columns-count;
-      }
-    }
 
     // Layout elements
     .left {
@@ -57,6 +41,22 @@
       display: block;
       height: auto;
       width: auto;
+    }
+
+    .video-container {
+      position: relative;
+
+      img {
+        height: auto;
+        position: relative;
+        width: 100%;
+        z-index: 2;
+      }
+
+      video {
+        position: absolute;
+        z-index: 1;
+      }
     }
   }
 

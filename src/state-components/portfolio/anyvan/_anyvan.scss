@@ -28,8 +28,19 @@
     padding-bottom: 50px;
     padding-top: 25px;
 
+    .video-container {
+      margin: 0 10px 0 30px;
+      width: image-width("assets/images/portfolio/anyvan/iphone-frame.png");
+
+      video {
+        left: 58px;
+        top: 83px;
+      }
+    }
+
     .description {
       margin-top: 10%;
+      width: 320px;
     }
   }
 }
