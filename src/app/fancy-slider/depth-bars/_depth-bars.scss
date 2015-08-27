@@ -1,0 +1,27 @@
+// This invisible elemnts will catch the click event thus preventing the slider from changing.
+.depth-bars {
+  .depth-bar {
+    bottom: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 40px;
+    z-index: 2;
+
+    @media only screen and (max-width : 1920px) {
+      width: 30px;
+    }
+
+    @media only screen and (max-width : 1919px) {
+      display: none;
+    }
+
+    &.left {
+      left: 0;
+    }
+
+    &.right {
+      right: 0;
+    }
+  }
+}

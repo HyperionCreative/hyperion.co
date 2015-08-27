@@ -34,6 +34,8 @@
           // Needed in order to scale back to the original size after applying pixiResolution.
           renderer.resize(Configuration.NATIVE_WIDTH, Configuration.NATIVE_HEIGHT);
 
+          console.log(stage);
+
           // https://code.google.com/p/chromium/issues/detail?id=445542
           // Chrome, Safari and Opera have a limit of 4096 for drawingBufferWidth and drawingBufferHeight.
           // This is a workaround.
@@ -75,7 +77,7 @@
           iElement.attr('data-active-slide', currentSlide + 1);
 
           // Appends the canvas, thus initializing pixi.
-          angular.element(iElement[0].querySelector('.stage-container')).append(renderer.view);
+          angular.element(iElement[0].querySelector('.actual-stage-container')).append(renderer.view);
 
           // Everything is ready!
           SliderInitializer.init(stage, renderer, function () {

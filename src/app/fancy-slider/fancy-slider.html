@@ -1,4 +1,12 @@
 <div class="fancy-slider">
-  <div hyp-fancy-resizer ng-click="changeSlidesToRight();" class="stage-container"></div>
+  <div hyp-fancy-resizer class="stage-container">
+    <div 
+      ng-click="changeSlidesToRight();"
+      class="actual-stage-container"></div>
+    <div class="depth-bars">
+      <div class="depth-bar left"></div>
+      <div class="depth-bar right"></div>
+    </div>
+  </div>
   <hyp-fancy-slider-slide-description></hyp-fancy-slider-slide-description>
 </div>

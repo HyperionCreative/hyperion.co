@@ -212,6 +212,8 @@
             blurSprites.top.width = Configuration.NATIVE_WIDTH;
             blurSprites.top.x = 0;
           }
+
+          console.log(depthBars);
         });
       }
 
