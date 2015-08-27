@@ -94,6 +94,14 @@
         blurredBackgrounds[context][1] = new PIXI.Sprite(new PIXI.Texture.fromImage(blurResourcesUrl.secondSlide));
         blurredBackgrounds[context][2] = new PIXI.Sprite(new PIXI.Texture.fromImage(blurResourcesUrl.thirdSlide));
 
+        // Otherwise, the 1920 resources, may not cover the entire screen.
+        blurredBackgrounds[context][0].width = 2560;
+        blurredBackgrounds[context][1].width = 2560;
+        blurredBackgrounds[context][2].width = 2560;
+        blurredBackgrounds[context][0].height = 1440;
+        blurredBackgrounds[context][1].height = 1440;
+        blurredBackgrounds[context][2].height = 1440;
+
         blurredBackgroundsContainer[context].addChild(blurredBackgrounds[context][0]);
         blurredBackgroundsContainer[context].addChild(blurredBackgrounds[context][1]);
         blurredBackgroundsContainer[context].addChild(blurredBackgrounds[context][2]);
