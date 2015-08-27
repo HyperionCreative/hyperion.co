@@ -15,6 +15,7 @@
 @import "app/contact-form/contact-form";
 @import "app/fancy-slider/fancy-slider";
 @import "app/navigation-hamburger/navigation-hamburger";
+@import "app/on-horizontal-scroll/on-horizontal-scroll";
 @import "app/portfolio-header/portfolio-header";
 @import "app/simple-footer/simple-footer";
 @import "app/simple-header/simple-header";
@@ -35,9 +36,9 @@
 //////////////
 
 html {
-  // todo add this dynamically
-  // this is a cheap solution.
-  overflow-x: hidden;
+  overflow-x: auto;
+  // We want the vertical scrollbar to always be present on the screen.
+  // Otherwise the content may bounce when the scrollbar appears.
   overflow-y: scroll;
 }
 
@@ -82,7 +83,7 @@ html {
   min-height: 100%;
   position: relative;
 
-  min-width: 1024px;
+  min-width: $min-page-width;
 }
 
 body {

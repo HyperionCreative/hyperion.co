@@ -3,7 +3,7 @@
 
   angular
     .module('app.fancy-slider.resizer')
-    .directive('hypFancyResizer', ['CssVendorPrefixer', 'FancyConfiguration', 'FancyResizer', function (CssVendorPrefixer, Configuration, ResizerService) {
+    .directive('hypFancyResizer', ['TweenLite', 'FancyConfiguration', 'FancyResizer', function (TweenLite, Configuration, ResizerService) {
       return {
         link: function (scope, iElement) {
           // Sets the original size
@@ -17,7 +17,10 @@
               'margin-left': -(Configuration.NATIVE_WIDTH * proportion / 2) + 'px',
             });
 
-            iElement.css(CssVendorPrefixer.prefixProperty('transform', 'translate3d(0,0,0) scale(' + proportion + ',' + proportion + ')'));
+            // This is needed in order not to break the other transform properties.
+            TweenLite.to(iElement[0], 0, {
+              scale: proportion
+            });
           });
         },
         restrict: 'A'

@@ -31,6 +31,7 @@
 
       'app.fancy-slider',
       'app.navigation-hamburger',
+      'app.on-horizontal-scroll',
       'app.portfolio-header',
       'app.simple-footer',
       'app.simple-header',
