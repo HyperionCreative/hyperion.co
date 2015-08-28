@@ -18,10 +18,7 @@
       var
         RIGHT_ORDER = ['firstToSecond', 'secondToThird', 'thirdToFirst'],
         LEFT_ORDER = ['firstToThird', 'secondToFirst', 'thirdToSecond'];
-      var
-        NORMAL_SPEED = 1,
-        MAX_SPEED = 20,
-        SPEED_STEP = 0.3;
+      var NORMAL_SPEED = 1;
       var MAX_QUEUE_LENGTH = 2;
 
       ///////////////
@@ -115,22 +112,22 @@
       /////////////
       // Private //
       /////////////
-      function getTimelineSpeed() {
-        var toReturn = NORMAL_SPEED + (SPEED_STEP * timelineHandlersQueue.length);
+      function getTimelineSpeed(currentProgress) {
+        currentProgress *= 100;
 
-        if (toReturn > MAX_SPEED) {
-          toReturn = MAX_SPEED;
-        } else if (toReturn < NORMAL_SPEED) {
-          toReturn = NORMAL_SPEED;
-        }
+        currentProgress =
+          currentProgress < 30 ? 30 :
+          currentProgress > 100 ? 100 :
+          currentProgress;
 
-        return toReturn;
+        // The max speed is 1.85
+        return 1 + ((100 - currentProgress) * ((1.85 - 1) / 70));
       }
 
       function handleTimeline(timeline, specificOnComplete) {
         // Updates the global timeline speed. This is used by all the timelines
         // present in the queue.
-        timelineSpeed = getTimelineSpeed();
+        timelineSpeed = getTimelineSpeed(angular.isDefined(timelineHandlersQueue[0]) ? timelineHandlersQueue[0].getProgress() : 100);
 
         timelineHandlersQueue.push(new TimelineHandlers(timeline, function () {
           if (angular.isFunction(specificOnComplete)) {
