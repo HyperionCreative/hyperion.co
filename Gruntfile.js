@@ -453,6 +453,32 @@ module.exports = function (grunt) {
       unit: {
         configFile: 'test/karma.conf.js'
       }
+    },
+
+    ngtemplates: {
+      app: {
+        cwd: '<%= yeoman.app %>',
+        src: [
+          '**/*.html',
+          // Everything except for the main html file is a template which can be 
+          // added to templateCache.
+          '!index.html'
+        ],
+        dest: '<%= yeoman.app %>/app/ng-templates/ng-templates.run.js',
+        options: {
+          htmlmin: {
+            collapseBooleanAttributes: true,
+            collapseWhitespace: true,
+            removeAttributeQuotes: true,
+            removeComments: true,
+            removeEmptyAttributes: true,
+            removeRedundantAttributes: true,
+            removeScriptTypeAttributes: true,
+            removeStyleLinkTypeAttributes: true
+          },
+          module: 'HyperionApp'
+        }
+      }
     }
   });
 
@@ -467,6 +493,7 @@ module.exports = function (grunt) {
       'wiredep',
       'filesize',
       'filetransform',
+      'ngtemplates',
       'concurrent:server',
       'connect:livereload',
       'watch'
@@ -485,6 +512,7 @@ module.exports = function (grunt) {
     'karma'
   ]);
 
+  // todo Make this work
   grunt.registerTask('build', [
     'clean:dist',
     'wiredep',
