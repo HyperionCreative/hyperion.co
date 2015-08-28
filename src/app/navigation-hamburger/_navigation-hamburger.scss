@@ -19,7 +19,8 @@
   .icon-three-horizontal-bars {
     color: #7f7f7f;
     cursor: pointer;
-    font-size: 13px;
+    font-size: 11px;
+    // -1 is needed to center the icon
     line-height: $this-hamburger-icon-size;
     padding: $this-hamburger-icon-padding;
     position: absolute;
