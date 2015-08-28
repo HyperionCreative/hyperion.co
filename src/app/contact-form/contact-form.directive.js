@@ -55,13 +55,14 @@
               if (context.isValid()) {
                 context.markAsValid();
               } else {
-                context.markAsInvalid();
+                // As suggested by Cristian.
+                // context.markAsInvalid();
               }
             });
 
             // If a user pressed enter while focused on a empty input, the input will
             // become invalid. All these events are needed in order to mark it back as valid!
-            context.field.on('focus input change paste', function () {
+            context.field.on('input change paste', function () {
               context.markAsValid();
             });
           };
