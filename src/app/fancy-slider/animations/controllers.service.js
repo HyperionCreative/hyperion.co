@@ -1,6 +1,8 @@
 (function () {
   'use strict';
 
+  // This current animation is OKish.
+
   angular
     .module('app.fancy-slider.animations')
     .service('FancyAnimationsControllers', function () {

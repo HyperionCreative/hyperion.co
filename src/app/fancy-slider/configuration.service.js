@@ -1,13 +1,15 @@
 (function () {
   'use strict';
 
+  // This configuration animation is OKish.
+
   angular
     .module('app.fancy-slider')
     .service('FancyConfiguration', ['TweenEasings', function (TweenEasings) {
       // Animations
       this.ANIMATION_DURATION = 1300;
-      this.ANIMATION_EASING = TweenEasings.Power3.easeOut;
-      this.ANIMATION_THROW_IN_EASING = TweenEasings.Power4.easeOut;
+      this.ANIMATION_EASING = TweenEasings.Power3.easeInOut;
+      this.ANIMATION_THROW_IN_EASING = TweenEasings.Power3.easeInOut;
 
       // Blur Animations
       this.BLUR_ANIMATION_DURATION = 500;
