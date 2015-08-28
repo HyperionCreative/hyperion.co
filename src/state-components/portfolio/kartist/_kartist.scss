@@ -46,6 +46,10 @@
   .row.third {
     padding: 65px 0 45px 0;
 
+    img {
+      max-width: image-width("assets/images/portfolio/kartist/in-page-3.png");
+    }
+
     .description {
       margin-left: $this-custom-margin;
       width: 315px;
@@ -54,6 +58,10 @@
 
   .row.fourth {
     padding: 0 0 40px 0;
+
+    img {
+      max-width: image-width("assets/images/portfolio/kartist/in-page-4.jpg");
+    }
 
     .description {
       margin-left: $this-custom-margin;
