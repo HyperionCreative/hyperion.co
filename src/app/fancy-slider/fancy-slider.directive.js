@@ -34,8 +34,6 @@
           // Needed in order to scale back to the original size after applying pixiResolution.
           renderer.resize(Configuration.NATIVE_WIDTH, Configuration.NATIVE_HEIGHT);
 
-          console.log(stage);
-
           // https://code.google.com/p/chromium/issues/detail?id=445542
           // Chrome, Safari and Opera have a limit of 4096 for drawingBufferWidth and drawingBufferHeight.
           // This is a workaround.

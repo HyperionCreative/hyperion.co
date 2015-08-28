@@ -168,7 +168,7 @@
 
         this.getProgress = function () {
           return this.timeline.progress();
-        }
+        };
 
         this.setTimelineSpeed = function (speed) {
           this.timeline.timeScale(speed);

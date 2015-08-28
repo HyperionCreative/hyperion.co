@@ -39,14 +39,14 @@
         return blurSprites;
       }
 
-      function init(stage, renderer) {
+      function init(stage) {
         var deferred = $q.defer();
 
         AssetsDownloader.download(DepthBarsUrl.getAsArray(), function () {
           depthBars = createDepthBars();
           blurSprites = createBlurSprites();
 
-          onSliderResize(depthBars, blurSprites, stage, renderer);
+          onSliderResize(depthBars, blurSprites);
 
           // Adds the depth bars to the stage.
           angular.forEach(depthBars, function (depthBar) {
@@ -141,7 +141,7 @@
         };
       }
 
-      function onSliderResize(depthBars, blurSprites, stage, renderer) {
+      function onSliderResize(depthBars, blurSprites) {
         function handleProportionChange(parent, proportion) {
           parent.top.scale.y = 1 / proportion;
           parent.left.scale.x = 1 / proportion;
@@ -212,8 +212,6 @@
             blurSprites.top.width = Configuration.NATIVE_WIDTH;
             blurSprites.top.x = 0;
           }
-
-          console.log(depthBars);
         });
       }
 
