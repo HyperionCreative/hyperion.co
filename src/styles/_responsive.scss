@@ -1,16 +1,14 @@
 // They are wrapped inside the body tag to have a higher priority.
 // Otherwise these rules won't apply.
 body {
-  @media only screen and (max-width : $tablet-breakpoint) {
-    $this-container-width: 900px;
-
+  @media only screen and (max-width : 1920px) {
     .container,
     .fancy-slider .slide-description-container {
-      width: $this-container-width;
+      width: $small-container-width;
     }
 
     .fancy-slider .slide-description-container {
-      margin-left: - $this-container-width/ 2;
+      margin-left: - $small-container-width / 2;
     }
   }
 }

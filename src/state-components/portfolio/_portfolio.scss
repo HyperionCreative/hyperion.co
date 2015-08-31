@@ -1,7 +1,7 @@
 .portfolio-page {
   // All portfolio pages are smaller than the rest.
   .container {
-    width: 900px;
+    width: $small-container-width;
   }
 
   // The main container
