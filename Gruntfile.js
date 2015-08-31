@@ -493,7 +493,6 @@ module.exports = function (grunt) {
       'wiredep',
       'filesize',
       'filetransform',
-      'ngtemplates',
       'concurrent:server',
       'connect:livereload',
       'watch'
@@ -516,6 +515,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     'wiredep',
+    'ngtemplates',
     'useminPrepare',
     'concurrent:dist',
     'concat',
