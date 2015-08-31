@@ -47,8 +47,9 @@
         blurContainer.addChild(blurredBackgroundsContainer.large);
         // The depth bars
         blurContainer.addChild(getDepthBarsBlurSprites());
-        // The white overlay
-        blurContainer.addChild(getWhiteOverlay());
+        // The white overlay - no longer needed as the background images already
+        // contain the white overlay
+        // blurContainer.addChild(getWhiteOverlay());
 
         isInit = true;
       }
