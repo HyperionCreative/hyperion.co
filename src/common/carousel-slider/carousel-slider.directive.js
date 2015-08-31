@@ -29,8 +29,9 @@
       }
 
       function moveImagesInDirection(toLeave, toEnter, direction, onComplete) {
-        moveImageFromTo(toLeave, '0%', direction === 'left' ? '100%' : '-100%');
-        moveImageFromTo(toEnter, direction === 'left' ? '-100%' : '100%', '0%', onComplete);
+        // I've added 1% to simulate the images spacing
+        moveImageFromTo(toLeave, '0%', direction === 'left' ? '101%' : '-101%');
+        moveImageFromTo(toEnter, direction === 'left' ? '-101%' : '101%', '0%', onComplete);
       }
 
       function hideEverythingExceptFor(imagesContainer, exceptForIndex) {
