@@ -16,11 +16,6 @@
             iElement.css({
               'margin-left': -(Configuration.NATIVE_WIDTH * proportion / 2) + 'px',
             });
-
-            // This is needed in order not to break the other transform properties.
-            TweenLite.to(iElement[0], 0, {
-              scale: proportion
-            });
           });
         },
         restrict: 'A'

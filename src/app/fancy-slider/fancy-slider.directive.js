@@ -3,7 +3,7 @@
 
   angular
     .module('app.fancy-slider')
-    .directive('hypFancySlider', ['$rootScope', '$state', '$window', 'DEVICE_PIXEL_RATIO', 'PIXI', 'FancyAnimations', 'FancyBlur', 'FancyConfiguration', 'FancySliderInitializer', 'ViewportSize', function ($rootScope, $state, $window, DEVICE_PIXEL_RATIO, PIXI, Animations, Blur, Configuration, SliderInitializer, ViewportSize) {
+    .directive('hypFancySlider', ['$rootScope', '$state', '$window', 'DEVICE_PIXEL_RATIO', 'PIXI', 'FancyAnimations', 'FancyBlur', 'FancyConfiguration', 'FancyResizer', 'FancySliderInitializer', 'ViewportSize', function ($rootScope, $state, $window, DEVICE_PIXEL_RATIO, PIXI, Animations, Blur, Configuration, Resizer, SliderInitializer, ViewportSize) {
       return {
         link: function (scope, iElement) {
           ///////////////
@@ -167,6 +167,11 @@
             ViewportSize.onChange(function () {
               renderer.render(stage);
             });
+          });
+
+          // Resize the stage - maybe this will increase the performance?
+          Resizer.onProportionChange(function (proportion) {
+            stage.scale.set(proportion, proportion);
           });
         },
         replace: true,
