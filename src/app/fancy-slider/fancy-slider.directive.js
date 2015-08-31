@@ -37,6 +37,7 @@
           // https://code.google.com/p/chromium/issues/detail?id=445542
           // Chrome, Safari and Opera have a limit of 4096 for drawingBufferWidth and drawingBufferHeight.
           // This is a workaround.
+          var widthRatio = 1, heightRatio = 1;
           (function () {
             // Needed only for WebGl canvases
             if (angular.isDefined(renderer.gl)) {
@@ -44,9 +45,8 @@
                 expectedWidth = Configuration.NATIVE_WIDTH * pixiResolution,
                 expectedHeight = Configuration.NATIVE_HEIGHT * pixiResolution;
 
-              var
-                widthRatio = renderer.gl.drawingBufferWidth / expectedWidth,
-                heightRatio = renderer.gl.drawingBufferHeight / expectedHeight;
+              widthRatio = renderer.gl.drawingBufferWidth / expectedWidth;
+              heightRatio = renderer.gl.drawingBufferHeight / expectedHeight;
 
               stage.scale.set(widthRatio, heightRatio);
             }
@@ -171,7 +171,7 @@
 
           // Resize the stage - maybe this will increase the performance?
           Resizer.onProportionChange(function (proportion) {
-            stage.scale.set(proportion, proportion);
+            stage.scale.set(widthRatio * proportion, heightRatio * proportion);
           });
         },
         replace: true,
