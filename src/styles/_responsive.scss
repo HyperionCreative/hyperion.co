@@ -1,3 +1,13 @@
+html {
+  // We don't need a scrollbar as we know the min page width
+  overflow-x: hidden;
+
+  // This is the time to add the scrollbar!
+  @media only screen and (max-width: $min-page-width) {
+    overflow-x: auto;
+  }
+}
+
 // They are wrapped inside the body tag to have a higher priority.
 // Otherwise these rules won't apply.
 body {
