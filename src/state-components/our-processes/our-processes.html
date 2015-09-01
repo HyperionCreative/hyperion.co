@@ -1,23 +1,25 @@
-<section id="our-processes-page">
-  <hyp-simple-header
-    name="{{:: str.ourProcesses.header.title }}"
-    description="{{:: str.ourProcesses.header.description }}"
-  ></hyp-simple-header>
+<hyp-center-me>
+  <section id="our-processes-page">
+    <hyp-simple-header
+      name="{{:: str.ourProcesses.header.title }}"
+      description="{{:: str.ourProcesses.header.description }}"
+    ></hyp-simple-header>
 
-  <div class="processes-container container">
-    <div class="process">
-      <div class="illustration icon-pen-and-ruler"></div>
-      <div class="description" ng-bind-html=":: str.ourProcesses.firstColumn"></div>
+    <div class="processes-container container">
+      <div class="process">
+        <div class="illustration icon-pen-and-ruler"></div>
+        <div class="description" ng-bind-html=":: str.ourProcesses.firstColumn"></div>
+      </div>
+      <div class="process">
+        <div class="illustration icon-layers"></div>
+        <div class="description" ng-bind-html=":: str.ourProcesses.secondColumn"></div>
+      </div>
+      <div class="process">
+        <div class="illustration icon-choice"></div>
+        <div class="description" ng-bind-html=":: str.ourProcesses.thirdColumn"></div>
+      </div>
     </div>
-    <div class="process">
-      <div class="illustration icon-layers"></div>
-      <div class="description" ng-bind-html=":: str.ourProcesses.secondColumn"></div>
-    </div>
-    <div class="process">
-      <div class="illustration icon-choice"></div>
-      <div class="description" ng-bind-html=":: str.ourProcesses.thirdColumn"></div>
-    </div>
-  </div>
 
-  <hyp-simple-footer></hyp-simple-footer>
-</section>
+    <hyp-simple-footer></hyp-simple-footer>
+  </section>
+</hyp-center-me>

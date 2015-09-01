@@ -1,29 +1,31 @@
-<section id="portfolio-home-page">
-  <hyp-simple-header
-    name="{{:: str.portfolio.header.title }}"
-    description="{{:: str.portfolio.header.description }}"
-  ></hyp-simple-header>
+<hyp-center-me>
+  <section id="portfolio-home-page">
+    <hyp-simple-header
+      name="{{:: str.portfolio.header.title }}"
+      description="{{:: str.portfolio.header.description }}"
+    ></hyp-simple-header>
 
-  <div class="container">
-    <div class="covers">
-      <div class="column">
-        <a ui-sref="root.sub-page-template.portfolio.kartist" class="cover">
-          <img src="assets/images/portfolio/kartist/cover.jpg" alt="Kartist">
-        </a>
-        <a ui-sref="root.sub-page-template.portfolio.anyvan" class="cover">
-          <img src="assets/images/portfolio/anyvan/cover.jpg" alt="Anyvan - The delivery comparison website">
-        </a>
-      </div>
-      <div class="column">
-        <a ui-sref="root.sub-page-template.portfolio.quizkick" class="cover">
-          <img src="assets/images/portfolio/quizkick/cover.jpg" alt="Quizkick">
-        </a>
-        <a ui-sref="root.sub-page-template.portfolio.grow" class="cover">
-          <img src="assets/images/portfolio/grow/cover.jpg" alt="Grow with a CFO">
-        </a>
+    <div class="container">
+      <div class="covers">
+        <div class="column">
+          <a ui-sref="root.sub-page-template.portfolio.kartist" class="cover">
+            <img src="assets/images/portfolio/kartist/cover.jpg" alt="Kartist">
+          </a>
+          <a ui-sref="root.sub-page-template.portfolio.anyvan" class="cover">
+            <img src="assets/images/portfolio/anyvan/cover.jpg" alt="Anyvan - The delivery comparison website">
+          </a>
+        </div>
+        <div class="column">
+          <a ui-sref="root.sub-page-template.portfolio.quizkick" class="cover">
+            <img src="assets/images/portfolio/quizkick/cover.jpg" alt="Quizkick">
+          </a>
+          <a ui-sref="root.sub-page-template.portfolio.grow" class="cover">
+            <img src="assets/images/portfolio/grow/cover.jpg" alt="Grow with a CFO">
+          </a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <hyp-simple-footer></hyp-simple-footer>
-</section>
+    <hyp-simple-footer></hyp-simple-footer>
+  </section>
+</hyp-center-me>
