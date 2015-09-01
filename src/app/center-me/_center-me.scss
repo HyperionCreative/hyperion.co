@@ -1,0 +1,16 @@
+.center-me-container {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  & > table {
+    height: 100%;
+    width: 100%;
+
+    td.center-me-td {
+      vertical-align: middle;
+    }
+  }
+}

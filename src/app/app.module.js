@@ -29,6 +29,7 @@
       // Specific Modules //
       //////////////////////
 
+      'app.center-me',
       'app.fancy-slider',
       'app.navigation-hamburger',
       'app.on-horizontal-scroll',
