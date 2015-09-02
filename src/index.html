@@ -22,6 +22,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/outdated-browser/outdatedbrowser/outdatedbrowser.min.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -53,6 +54,7 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/outdated-browser/outdatedbrowser/outdatedbrowser.min.js"></script>
     <script src="bower_components/pixi/bin/pixi.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
@@ -184,6 +186,35 @@
       // todo remove this in production
       // https://github.com/mrdoob/stats.js/
       (function(){var script=document.createElement('script');script.onload=function(){var stats=new Stats();stats.domElement.style.cssText='position:fixed;left:0;top:0;z-index:10000';document.body.appendChild(stats.domElement);requestAnimationFrame(function loop(){stats.update();requestAnimationFrame(loop)});};script.src='//rawgit.com/mrdoob/stats.js/master/build/stats.min.js';document.head.appendChild(script);})();
+    </script>
+
+    <script>
+      (function () {
+        'use strict';
+
+        //event listener: DOM ready
+        function addLoadEvent(func) {
+          var oldonload = window.onload;
+          if (typeof window.onload != 'function') {
+            window.onload = func;
+          } else {
+            window.onload = function () {
+              if (oldonload) {
+                oldonload();
+              }
+              func();
+            }
+          }
+        }
+        //call plugin function after DOM ready
+        addLoadEvent(function () {
+          outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'borderImage'
+          })
+        });
+      })();
     </script>
 </body>
 </html>
