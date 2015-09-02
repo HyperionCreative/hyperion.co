@@ -37,7 +37,8 @@
           // https://code.google.com/p/chromium/issues/detail?id=445542
           // Chrome, Safari and Opera have a limit of 4096 for drawingBufferWidth and drawingBufferHeight.
           // This is a workaround.
-          var widthRatio = 1, heightRatio = 1;
+          var widthRatio = 1,
+            heightRatio = 1;
           (function () {
             // Needed only for WebGl canvases
             if (angular.isDefined(renderer.gl)) {
@@ -139,6 +140,8 @@
                       toRight();
                     } else if (event.keyCode === 37) {
                       toLeft();
+                    } else if (event.keyCode === 27) {
+                      $state.go('root.index');
                     }
                   });
                 },
