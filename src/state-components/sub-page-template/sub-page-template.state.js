@@ -9,7 +9,7 @@
           abstract: true,
           views: {
             'page-content@': {
-              controller: ['$rootScope', '$scope', function ($rootScope, $scope) {
+              controller: ['$document', '$rootScope', '$scope', function ($document, $rootScope, $scope) {
                 // Don't forget to change navigation-hamburger.html after you modify the items' order!
                 var navigationStates = [
                   'root.sub-page-template.expertise',
@@ -18,16 +18,20 @@
                   'root.sub-page-template.contact'
                 ];
 
-                $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState) {
+                $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState) {
                   var toStateIndex = navigationStates.indexOf(toState.name);
                   var fromStateIndex = navigationStates.indexOf(fromState.name);
 
                   var order = toStateIndex - fromStateIndex;
 
                   if (order > 0) {
-                    $scope.direction = 'right';
+                    angular.element($document[0].querySelector('.sub-page-template .slide-direction'))
+                      .removeClass('left')
+                      .addClass('right');
                   } else {
-                    $scope.direction = 'left';
+                    angular.element($document[0].querySelector('.sub-page-template .slide-direction'))
+                      .removeClass('right')
+                      .addClass('left');
                   }
                 });
               }],
