@@ -61,7 +61,11 @@
 
   &.ng-enter > .center-me-container {
     opacity: 0;
-    @include transform(translate3d($this-travel,0,0));
+    @include transform(translate3d(- $this-travel,0,0));
+
+    .right & {
+      @include transform(translate3d($this-travel,0,0));
+    }
   }
 
   &.ng-enter.ng-enter-active > .center-me-container {
@@ -76,7 +80,11 @@
 
   &.ng-leave.ng-leave-active > .center-me-container {
     opacity: 0;
-    @include transform(translate3d(- $this-travel,0,0));
+    @include transform(translate3d($this-travel,0,0));
+
+    .right & {
+      @include transform(translate3d(- $this-travel,0,0));
+    }
   }
 }
 
