@@ -8,7 +8,7 @@
   &.ng-leave.ng-leave-active {
     .header-index, 
     .sub-page-template > .navigation-hamburger,
-    .sub-page-template > .animation-container {
+    .sub-page-template > .top-level-animation-container {
       @include transition(transform $this-transition-duration ease-in-out, opacity $this-transition-duration ease-in-out);
     }
   }
@@ -18,7 +18,7 @@
     // They all fade out
     .header-index,
     .sub-page-template > .navigation-hamburger,
-    .sub-page-template > .animation-container {
+    .sub-page-template > .top-level-animation-container {
       opacity: 0;
     }
 
@@ -28,7 +28,7 @@
     }
 
     // It appears from the bottom of the page
-    .sub-page-template > .animation-container {
+    .sub-page-template > .top-level-animation-container {
       @include transform(translate3d(0,250px,0));
     }
   }
@@ -38,7 +38,7 @@
     // Everything goes back to normal!
     .header-index,
     .sub-page-template > .navigation-hamburger,
-    .sub-page-template > .animation-container {
+    .sub-page-template > .top-level-animation-container {
       opacity: 1;
       @include transform(translate3d(0,0,0));
     }
