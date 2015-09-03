@@ -7,7 +7,7 @@
     .config(['$stateProvider', function ($stateProvider) {
       $stateProvider
         .state('root.sub-page-template.portfolio', {
-          url: '/our-work',
+          url: '/portfolio',
           views: {
             'sub-page-content': {
               templateUrl: 'state-components/portfolio/portfolio.html'
