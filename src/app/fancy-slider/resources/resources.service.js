@@ -145,7 +145,7 @@
                 rotation: PIXI.PI_2 / (360 / 10)
               },
               macbook: {
-                x: -50,
+                x: -100,
                 scale: 1.27
               },
               watch: {
