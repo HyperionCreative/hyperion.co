@@ -76,15 +76,15 @@
         return container;
       }
 
-      function getWhiteOverlay() {
-        var graphics = new PIXI.Graphics();
+      // function getWhiteOverlay() {
+      //   var graphics = new PIXI.Graphics();
 
-        graphics.beginFill(0xFFFFFF, 0.8);
-        graphics.drawRect(0, 0, 2560, 1440);
-        graphics.endFill();
+      //   graphics.beginFill(0xFFFFFF, 0.8);
+      //   graphics.drawRect(0, 0, 2560, 1440);
+      //   graphics.endFill();
 
-        return graphics;
-      }
+      //   return graphics;
+      // }
 
       function populateBlurredBackgrounds(stageWidth) {
         var blurResourcesUrl = BlurResourcesUrl.get(stageWidth);

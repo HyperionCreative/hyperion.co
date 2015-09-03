@@ -9,7 +9,7 @@
           abstract: true,
           views: {
             'page-content@': {
-              controller: ['$document', '$rootScope', '$scope', function ($document, $rootScope, $scope) {
+              controller: ['$document', '$rootScope', function ($document, $rootScope) {
                 // Don't forget to change navigation-hamburger.html after you modify the items' order!
                 var navigationStates = [
                   'root.sub-page-template.expertise',
