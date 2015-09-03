@@ -11,15 +11,15 @@
           ///////////////
           // This is limited to 2 as we don't have @3x resources.
           var pixiResolution = (function () {
-            if (DEVICE_PIXEL_RATIO < 1) {
-              return 1;
+            var normalizedDevicePixelRatio = (DEVICE_PIXEL_RATIO < 1) ? 1 : (DEVICE_PIXEL_RATIO > 2) ? 2 : DEVICE_PIXEL_RATIO;
+
+            // The user browses the site using a high dpi laptop screen
+            if(angular.isDefined($window.screen) && $window.screen.width === 1440 && normalizedDevicePixelRatio === 2) {
+              // We reduce the dpi as this will increase the performance. Also the difference is not (that) noticeable!
+              normalizedDevicePixelRatio = 1.5;
             }
 
-            if (DEVICE_PIXEL_RATIO > 2) {
-              return 2;
-            }
-
-            return DEVICE_PIXEL_RATIO;
+            return normalizedDevicePixelRatio;
           })();
 
           var
