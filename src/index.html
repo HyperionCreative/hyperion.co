@@ -34,7 +34,11 @@
       }
     </style>
   </head>
-  <body ng-app="HyperionApp" ng-cloak hyp-on-horizontal-scroll>
+  <body ng-app="HyperionApp" hyp-on-horizontal-scroll>
+    <!-- Start of outdatedbrowser container -->
+    <div id="outdated"></div>
+    <!-- End of outdatedbrowser container -->
+
     <div ui-view="preloader"></div>
     <div ui-view="fancy-slider"></div>
     <div ui-view="page-content"></div>
@@ -137,11 +141,7 @@
 
       <script src="app/navigation-hamburger/navigation-hamburger.directive.js"></script>
 
-      <!-- 
-        todo uncomment this when building the app
-        
-        <script src="app/ng-templates/ng-templates.run.js"></script>
-      -->
+      <script src="app/ng-templates/ng-templates.run.js"></script>
 
       <script src="app/on-horizontal-scroll/on-horizontal-scroll.directive.js"></script>
 
@@ -211,7 +211,8 @@
           outdatedBrowser({
             bgColor: '#f25648',
             color: '#ffffff',
-            lowerThan: 'borderImage'
+            lowerThan: 'borderImage',
+            languagePath: 'otherwise it won\'t work -.-"'
           })
         });
       })();
