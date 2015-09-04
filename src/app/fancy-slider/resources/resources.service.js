@@ -86,10 +86,11 @@
 
         var secondSlide = (function () {
           var imac = new Resource(resourcesUrl.secondSlide.imac);
-          imac.addPosition('center', 1525, -150, 0);
+          imac.addPosition('center', 1665, -175, 0);
           imac.addPosition('left', -3000, 0, -10);
           imac.addPosition('right', 1500, 0, 5);
           imac.setZIndex(10);
+          imac.sprite.scale.set(1.29, 1.29);
 
           var iphone = new Resource(resourcesUrl.secondSlide.iphone);
           iphone.addPosition('center', 615, 136, 0);
