@@ -5,6 +5,7 @@
 @import "base";
 
 @import "buttons";
+@import "cursors";
 @import "forms";
 @import "icons";
 @import "responsive";
@@ -96,24 +97,3 @@ body {
   margin: 0 auto;
   width: $container-width;
 }
-
-////////////////////
-// Custom cursors //
-////////////////////
-// todo reminder that these don't work in Safari on OSX
-// Why? Only God knows!
-//.custom-cursor {
-//  &.arrow-right {
-//    cursor: 
-//      url('../assets/cursors/arrow-right.cur'),
-//      url('assets/cursors/arrow-right.cur'), 
-//      auto;
-//  }
-//
-//  &.close {
-//    cursor: 
-//      url('../assets/cursors/close.cur'),
-//      url('assets/cursors/close.cur'), 
-//      auto;
-//  }
-//}
