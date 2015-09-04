@@ -40,6 +40,20 @@
             description: '<p>This is perhaps the most valuable aspect of working with any creative agency - having a team of experts in the creative fields to look at things from a different angle and bring insightful ideas to the table. From picking the best suited technologies, to helping structure your product correctly, we\'re here to lend our expertise and bring your idea a little closer to success.</p>'
           }
         },
+        fancySliderDescription: {
+          firstSlide: {
+            projectName: 'Kartist',
+            description: 'The items floating about are from one of our most recent projects, Kartist. They aim to help shoppers everywhere manage their lists, find inspiration and connect with likeminded people.'
+          },
+          secondSlide: {
+            projectName: 'AnyVan',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil laboriosam ullam, ducimus optio, ipsum exercitationem nobis soluta molestias tempore magnam!'
+          },
+          thirdSlide: {
+            projectName: 'QuizKick',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti illum saepe animi atque sit ad dignissimos porro officiis. Aut odit pariatur optio assumenda sequi explicabo veniam!'
+          }
+        },
 
         ourProcesses: {
           navigationHamburgerAnchorText: ' Our Processes',

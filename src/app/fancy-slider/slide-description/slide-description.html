@@ -8,8 +8,20 @@
     <div class="overflow-container unblurred">
       <div class="translated-container">
         <div class="first-state">
-          <h3 class="title">Project: <span class="highlight">Kartist</span></h3>
-          <p>The items floating about are from one of our most recent projects, Kartist. They aim to help shoppers everywhere manage their lists, find inspiration and connect with likeminded people.</p>
+          <div class="actual-text">
+            <div class="first-slide">
+              <h3 class="title">Project: <span class="highlight" ng-bind-html=":: str.fancySliderDescription.firstSlide.projectName"></span></h3>
+              <p ng-bind-html=":: str.fancySliderDescription.firstSlide.description"></p>  
+            </div>
+            <div class="second-slide">
+              <h3 class="title">Project: <span class="highlight" ng-bind-html=":: str.fancySliderDescription.secondSlide.projectName"></span></h3>
+              <p ng-bind-html=":: str.fancySliderDescription.secondSlide.description"></p>  
+            </div>
+            <div class="third-slide">
+              <h3 class="title">Project: <span class="highlight" ng-bind-html=":: str.fancySliderDescription.thirdSlide.projectName"></span></h3>
+              <p ng-bind-html=":: str.fancySliderDescription.thirdSlide.description"></p>  
+            </div>
+          </div>
           <div class="our-clients-container">
             <div class="our-clients">Our Clients</div>
           </div>

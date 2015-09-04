@@ -27,7 +27,7 @@
       function init(_stage, _renderer, resources) {
         stage = _stage;
         renderer = _renderer;
-        
+
         timelines = {
           firstFromTheBottom: createVerticalTimeline(resources.firstSlide),
 
@@ -39,6 +39,43 @@
           thirdToSecond: createHorizontalTimeline(resources.thirdSlide, resources.secondSlide, false),
           secondToFirst: createHorizontalTimeline(resources.secondSlide, resources.firstSlide, false)
         };
+
+        // todo the code which changes the slide description
+        (function () {
+          function addSlideDescriptionToTimeline(timeline, resource, fromAlpha, toAlpha) {
+            timeline.fromTo(resource, Configuration.ANIMATION_DURATION / 1000, {
+              autoAlpha: fromAlpha
+            }, {
+              autoAlpha: toAlpha,
+              ease: Configuration.ANIMATION_EASING
+            }, 0);
+          }
+
+          function getSlideDescriptionText(selector) {
+            return document.querySelector('.slide-description .actual-text ' + selector);
+          }
+
+          // firstFromTheBottom
+          addSlideDescriptionToTimeline(timelines.firstFromTheBottom, getSlideDescriptionText('.first-slide'), 0, 1);
+          // firstToSecond
+          addSlideDescriptionToTimeline(timelines.firstToSecond, getSlideDescriptionText('.first-slide'), 1, 0);
+          addSlideDescriptionToTimeline(timelines.firstToSecond, getSlideDescriptionText('.second-slide'), 0, 1);
+          // secondToThird
+          addSlideDescriptionToTimeline(timelines.secondToThird, getSlideDescriptionText('.second-slide'), 1, 0);
+          addSlideDescriptionToTimeline(timelines.secondToThird, getSlideDescriptionText('.third-slide'), 0, 1);
+          // thirdToFirst
+          addSlideDescriptionToTimeline(timelines.thirdToFirst, getSlideDescriptionText('.third-slide'), 1, 0);
+          addSlideDescriptionToTimeline(timelines.thirdToFirst, getSlideDescriptionText('.first-slide'), 0, 1);
+          // firstToThird
+          addSlideDescriptionToTimeline(timelines.firstToThird, getSlideDescriptionText('.first-slide'), 1, 0);
+          addSlideDescriptionToTimeline(timelines.firstToThird, getSlideDescriptionText('.third-slide'), 0, 1);
+          // thirdToSecond
+          addSlideDescriptionToTimeline(timelines.thirdToSecond, getSlideDescriptionText('.third-slide'), 1, 0);
+          addSlideDescriptionToTimeline(timelines.thirdToSecond, getSlideDescriptionText('.second-slide'), 0, 1);
+          // secondToFirst
+          addSlideDescriptionToTimeline(timelines.secondToFirst, getSlideDescriptionText('.second-slide'), 1, 0);
+          addSlideDescriptionToTimeline(timelines.secondToFirst, getSlideDescriptionText('.first-slide'), 0, 1);
+        })();
       }
 
       /////////////
