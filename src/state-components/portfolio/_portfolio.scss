@@ -81,6 +81,10 @@
   .simple-footer {
     padding-top: $this-top-spacing;
     text-align: left;
+
+    .social-link:first-child {
+      margin-left: 0;
+    }
   }
 
   .carousel-slider {
