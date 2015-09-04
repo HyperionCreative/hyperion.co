@@ -6,7 +6,10 @@
 
   &.ng-enter.ng-enter-active, 
   &.ng-leave.ng-leave-active {
-    .header-index, 
+    .header-index {
+      @include transition(opacity ($this-transition-duration * 0.7) ease-in-out);
+    }
+
     .sub-page-template > .navigation-hamburger,
     .sub-page-template > .top-level-animation-container {
       @include transition(transform $this-transition-duration ease-in-out, opacity $this-transition-duration ease-in-out);
