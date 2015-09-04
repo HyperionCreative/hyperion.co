@@ -74,6 +74,7 @@
     background-color: $this-background;
     height: 100%;
     padding: 35px 115px 0 40px;
+    @include transition(transform 0.2s ease-in-out);
     width: 100% - $this-clients-to-date-width;
 
     .title {
@@ -86,17 +87,17 @@
         font-family: $PierSans-Regular;
       }
     }
+  }
 
-    .our-clients-container {
-      bottom: 0;
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: $this-clients-to-date-width;
+  .our-clients-container {
+    bottom: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: $this-clients-to-date-width;
 
-      // Needed to stay on top of clients to date
-      z-index: 10;
-    }
+    // Needed to stay on top of clients to date
+    z-index: 10;
 
     .our-clients {
       $this-our-clients-height: 30px;
@@ -136,7 +137,7 @@
         float: left;
         height: 100%;
         position: relative;
-        @include transition(background-color $this-transition, border-color $this-transition);
+        @include transition(background-color $this-transition, border-color $this-transition, transform 0.2s ease-in-out);
 
         &:first-child {
           border-left: 0;
@@ -231,13 +232,12 @@
   // States switch
   .translated-container {
     height: 100%;
-    @include transition(margin-top 0.2s ease-in-out);
     width: 100%;
   }
 
   .slide-description.mouse-entered {
-    .translated-container {
-      margin-top: - $fancy-slider-description-height;
+    .first-state, .second-state .client {
+      @include transform(translate3d(0,- $fancy-slider-description-height,0));
     }
   }
 
@@ -266,6 +266,12 @@
     .clients-to-date {
       opacity: 1;
     }
+  }
+
+  // Trick to fix the jumping background
+  .fancy-slider .slide-description-container .first-state {
+    height: 101%;
+    margin-bottom: -1px;
   }
 }
 
