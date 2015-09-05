@@ -14,7 +14,7 @@
             var normalizedDevicePixelRatio = (DEVICE_PIXEL_RATIO < 1) ? 1 : (DEVICE_PIXEL_RATIO > 2) ? 2 : DEVICE_PIXEL_RATIO;
 
             // The user browses the site using a high dpi laptop screen
-            if(angular.isDefined($window.screen) && $window.screen.width === 1440 && normalizedDevicePixelRatio === 2) {
+            if (angular.isDefined($window.screen) && $window.screen.width <= 1440 && normalizedDevicePixelRatio === 2) {
               // We reduce the dpi as this will increase the performance. Also the difference is not (that) noticeable!
               normalizedDevicePixelRatio = 1.5;
             }
@@ -24,7 +24,7 @@
 
           var
             stage = new PIXI.Container(),
-            // Changing this, from autoDetectRenderer to CanvasRenderer, increases the loading time. 
+            // Changing this, from autoDetectRenderer to CanvasRenderer, increases the loading time.
             // I'm not sure what's the performance impact. todo check this!
             renderer = new PIXI.autoDetectRenderer(Configuration.NATIVE_WIDTH, Configuration.NATIVE_HEIGHT, {
               autoResize: true,
@@ -63,7 +63,7 @@
           // Configuration //
           ///////////////////
           // Pixi constantly triggers RAF. We disable it as RAF will be triggered by TweenLite's ticker!
-          // 
+          //
           // todo in case of performance issues, this may be one of the culprits. I've read through
           // PIXI source code that some extra RAFs are needed in order to stabilize things.
           PIXI.ticker.shared.stop();
