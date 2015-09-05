@@ -29,6 +29,8 @@
       span {
         color: rgba(#202a35, 0.5);
         display: block;
+        // Otherwise its overwritten by icomoon
+        font-family: $HelveticaNeue-Roman;
         font-size: $normal-font-size;
         margin-top: 12px;
       }
@@ -54,7 +56,7 @@
         width: 100%;
       }
     }
-    
+
     &.design {
       .description {
         float: left;
