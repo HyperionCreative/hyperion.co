@@ -53,7 +53,7 @@
       position: absolute;
       right: 0;
       top: 0;
-      @include transition(width 0.15s ease-in-out);
+      // @include transition(width 0.15s ease-in-out);
       width: 0;
     }
   }
