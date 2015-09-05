@@ -99,7 +99,7 @@
 
 #portfolio-home-page {
   $this-margin: 8px;
-  
+
   @media only screen and (min-width : 1920px) {
     & > .container {
       width: 1100px;
@@ -129,10 +129,16 @@
       display: block;
       margin-bottom: $this-margin;
       opacity: 0.8;
+      overflow: hidden;
+      position: relative;
       @include transition(opacity $rapid-transition-timing);
 
       &:hover {
         opacity: 1;
+
+        .project-summary {
+          @include transform(translate3d(0,0,0));
+        }
       }
 
       img {
@@ -140,6 +146,27 @@
         display: block;
         height: auto;
         width: 100%;
+      }
+
+      .project-summary {
+        @include background-image(linear-gradient(rgba(#3c464e, 0), rgba(#3c464e, 1)));
+        bottom: 0;
+        color: #ffffff;
+        left: 0;
+        padding: 35px;
+        position: absolute;
+        right: 0;
+        @include transform(translate3d(0,100%,0));
+        @include transition(transform $rapid-transition-timing);
+
+        .project-title {
+          font-size: 22px;
+          margin-bottom: 10px;
+        }
+
+        p {
+          color: #d8dce0;
+        }
       }
     }
   }
