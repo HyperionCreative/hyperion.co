@@ -174,6 +174,8 @@
 
           // Resize the stage - maybe this will increase the performance?
           Resizer.onProportionChange(function (proportion) {
+            proportion = (proportion <= 1) ? proportion : 1;
+
             stage.scale.set(widthRatio * proportion, heightRatio * proportion);
           });
         },

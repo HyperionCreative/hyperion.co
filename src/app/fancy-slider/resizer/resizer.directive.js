@@ -16,6 +16,10 @@
             iElement.css({
               'margin-left': -(Configuration.NATIVE_WIDTH * proportion / 2) + 'px',
             });
+
+            TweenLite.to(iElement[0], 0, {
+              scale: (proportion >= 1) ? proportion : 1
+            });
           });
         },
         restrict: 'A'
