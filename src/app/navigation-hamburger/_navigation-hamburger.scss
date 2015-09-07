@@ -39,16 +39,18 @@
   }
 
   .link {
+    background-color: rgba(#ffffff, 0.01);
+    padding-right: 35px;
+
     color: #9ba0a3;
     display: inline-block;
     font-size: 14px;
     line-height: $this-height;
-    margin-right: 35px;
     opacity: 1;
     @include transition(opacity $rapid-transition-timing);
 
     &:last-child {
-      margin-right: 0;
+      padding-right: 0;
     }
 
     a {
