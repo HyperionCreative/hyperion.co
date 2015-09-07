@@ -1,7 +1,7 @@
 <section id="grow-portfolio-page" class="portfolio-page">
   <div class="container">
     <hyp-portfolio-header
-      description="We worked with <strong>Grow with a CFO</strong> in early 2015 to help them design their then upcoming iOS app. We handled the UI/UX as well as a bunch of other stuff."
+      description="{{:: str.portfolio.grow.header }}"
       client-logo-url="assets/images/portfolio/grow/logo.png"
       client-name="Grow with a CFO"
     ></hyp-portfolio-header>
@@ -22,11 +22,9 @@
           </video>
         </div>
         <div class="description left">
-          <h1 class="title">Grow with a CFO</h1>
-          <p>Whatever needed a static website to advertise their services and increase their credibility. They decided to make their services more accessible by producing a mobile application, for which we produced the interface, defined the experienced and worked closely with their development team to help implement it and shape the application. The resulting product was a friendly, easy to use app that would make AnyVan’s services even easier to benefit from. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
-          <!-- todo add href -->
-          <a class="button">Visit Site</a>
+          <h1 class="title" ng-bind-html=":: str.portfolio.grow.generic.title"></h1>
+          <div ng-bind-html=":: str.portfolio.grow.generic.description"></div>
+          <a class="button" href="http://growwithacfo.com/">Visit Site</a>
         </div>
       </div>
     </div>

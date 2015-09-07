@@ -1,7 +1,7 @@
 <section id="kartist-portfolio-page" class="portfolio-page">
   <div class="container">
     <hyp-portfolio-header
-      description="We worked with <strong>Kartist</strong> in early 2014 to help them design their then upcoming iOS app. We handled the UI/UX as well as a bunch of other stuff."
+      description="{{:: str.portfolio.kartist.header }}"
       client-logo-url="assets/images/portfolio/kartist/logo.png"
       client-name="Kartist"
     ></hyp-portfolio-header>
@@ -13,11 +13,12 @@
 
       <div class="second row">
         <div class="description left">
-          <h1 class="title">Kartist</h1>
-          <p>Whatever needed a static website to advertise their services and increase their credibility. They decided to make their services more accessible by producing a mobile application, for which we produced the interface, defined the experienced and worked closely with their development team to help implement it and shape the application. The resulting product was a friendly, easy to use app that would make AnyVan’s services even easier to benefit from. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-          <!-- todo add href -->
-          <a class="button">Visit Site</a>
+          <h1 class="title" ng-bind-html=":: str.portfolio.kartist.uiAndCode.title"></h1>
+          <div ng-bind-html=":: str.portfolio.kartist.uiAndCode.description"></div>
+          <!--
+            todo add the button when they finish working on the backend
+            <a class="button">Visit Site</a>
+          -->
         </div>
         <div class="video-container right">
           <img src="assets/images/portfolio/kartist/imac-frame.png" alt="Kartist">
@@ -37,18 +38,16 @@
       <div class="third row">
         <img src="assets/images/portfolio/kartist/in-page-3.png" alt="Kartist" class="left">
         <div class="description left">
-          <h1 class="title">Kartist</h1>
-          <p>Whatever needed a static website to advertise their services and increase their credibility. They decided to make their services more accessible by producing a mobile application, for which we produced the interface, defined the experienced and worked closely with their development team to help implement it and shape the application. The resulting product was a friendly, easy to use app that would make AnyVan’s services even easier to benefit from. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <p>We also developed the extensions, about which you can learn more on the Development Page.</p>
+          <h2 class="title" ng-bind-html=":: str.portfolio.kartist.mobileVersion.title"></h2>
+          <div ng-bind-html=":: str.portfolio.kartist.mobileVersion.description"></div>
         </div>
       </div>
 
       <div class="fourth row">
         <div class="description left">
-          <h1 class="title">The Logo</h1>
-          <p>Whatever needed a static website to advertise their services and increase their credibility. They decided to make their services more accessible by producing a mobile application, for which we produced the interface, defined the experienced and worked closely with their development team to help implement it and shape the application kartist whatever</p>
-          <!-- todo add href -->
-          <div class="logo-by">Logo by <a>Alicja Murphy</a></div>
+          <h2 class="title" ng-bind-html=":: str.portfolio.kartist.logo.title"></h2>
+          <div ng-bind-html=":: str.portfolio.kartist.logo.description"></div>
+          <div class="logo-by" ng-bind-html=":: str.portfolio.kartist.logo.url"></div>
         </div>
         <img src="assets/images/portfolio/kartist/in-page-4.jpg" alt="Kartist" class="right">
       </div>
