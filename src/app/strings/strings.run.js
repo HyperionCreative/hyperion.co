@@ -60,10 +60,9 @@
           },
 
           anyvan: {
-            fancySliderDescription: {
-              projectName: 'AnyVan',
-              description: 'We worked with AnyVan in early 2014 to help them design their then upcoming iOS app. We handled the UI and UX and work with their team to help them make it a reality.'
-            },
+            projectName: 'AnyVan',
+            summary: 'We worked with AnyVan in early 2014 to help them design their then upcoming iOS app. We handled the UI and UX and work with their team to help them make it a reality.',
+
             header: 'We worked with <strong>AnyVan</strong> in early 2014 to help them design their then upcoming iOS app. We handled the UI and UX and work with their team to help them make it a reality.',
             generic: {
               title: 'AnyVan',
@@ -71,10 +70,9 @@
             }
           },
           kartist: {
-            fancySliderDescription: {
-              projectName: 'Kartist',
-              description: 'The shots above are from one of our most recent projects, Kartist. Their app was intended to help shoppers everywhere manage their lists, find inspiration and connect with likeminded people.'
-            },
+            projectName: 'Kartist',
+            summary: 'The shots above are from one of our most recent projects, Kartist. Their app was intended to help shoppers everywhere manage their lists, find inspiration and connect with likeminded people.',
+
             header: 'We worked with <strong>Kartist</strong> in early 2015 - their platform aims to to help shoppers everywhere manage their lists, find inspiration and connect with likeminded people.',
             uiAndCode: {
               title: 'Useful UI + Good Code',
@@ -91,6 +89,8 @@
             }
           },
           grow: {
+            projectName: 'Grow with a CFO',
+            
             header: 'We worked with <strong>Grow with a CFO</strong> in 2015 to help them design their website and more easily showcase their services and processes.',
             generic: {
               title: 'Grow with a CFO',
@@ -98,10 +98,9 @@
             }
           },
           quizkick: {
-            fancySliderDescription: {
-              projectName: 'QuizKick',
-              description: 'QuizKick tried to create a game that would give football fans around the world a chance to prove their knowledge. We worked on the design and the back end of the system.'
-            },
+            projectName: 'QuizKick',
+            summary: 'QuizKick tried to create a game that would give football fans around the world a chance to prove their knowledge. We worked on the design and the back end of the system.',
+
             header: '<strong>QuizKick</strong> tried to create a game that would give football fans around the world a chance to prove their knowledge. We worked on the design and the back end of the system.',
             aim: {
               title: 'QuizKick',
