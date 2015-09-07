@@ -37,21 +37,21 @@
           consulting: {
             tabName: 'Consulting',
             title: 'Consulting',
-            description: '<p>This is perhaps the most valuable aspect of working with any creative agency - having a team of experts in the creative fields to look at things from a different angle and bring insightful ideas to the table. From picking the best suited technologies, to helping structure your product correctly, we\'re here to lend our expertise and bring your idea a little closer to success.</p>'
+            description: '<p>This is perhaps the most valuable aspect of working with any creative agency - having a team of creative experts to look at things from a different angle and bring insightful ideas to the table. From picking the best suited technologies, to helping structure your product correctly, and deciding what the most elegant and user friendly way of designing an UI is, we’re here to lend our expertise and bring your idea closer to success.</p>'
           }
         },
         fancySliderDescription: {
           firstSlide: {
             projectName: 'Kartist',
-            description: 'The items floating about are from one of our most recent projects, Kartist. They aim to help shoppers everywhere manage their lists, find inspiration and connect with likeminded people.'
+            description: 'The shots above are from one of our most recent projects, Kartist. Their app was intended to help shoppers everywhere manage their lists, find inspiration and connect with likeminded people.'
           },
           secondSlide: {
             projectName: 'AnyVan',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil laboriosam ullam, ducimus optio, ipsum exercitationem nobis soluta molestias tempore magnam!'
+            description: 'We worked with AnyVan in early 2014 to help them design their then upcoming iOS app. We handled the UI and UX and work with their team to help them make it a reality.'
           },
           thirdSlide: {
             projectName: 'QuizKick',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti illum saepe animi atque sit ad dignissimos porro officiis. Aut odit pariatur optio assumenda sequi explicabo veniam!'
+            description: 'QuizKick tried to create a game that would give football fans around the world a change to prove their knowledge. We worked on the design and the back end of the system.'
           }
         },
 
@@ -61,8 +61,8 @@
             title: 'Our Processes',
             description: 'While each project is unique, we do have established processes for tackling and organising various types of projects.'
           },
-          firstColumn: '<p><strong>Product Design. </strong>Building a successful app or site requires more than a great, well timed idea - it requires careful planning and execution. We\'re here to help with the latter.</p><p>We understand each project is unique so instead of rushing to the nearest template store, we are going to spend some time understanding who you are, what it is you are trying to do and who is the target market for your product. We will then ink out a basic structure for the product start planning its execution. From a front-end perspective, this usually involves defining the structure for each section or page, creating the designs and coding the interface up. As far as the back end is concerned, we will establish the logic early on, and develop the platform modularly.</p>',
-          secondColumn: '<p><strong>Redesign Projects. </strong>In order to create something that actually works, we need to understand not only the issues your company is trying to eliminate, but also the vision it was built on and your objectives. Once we understand that, we will be well positioned to start planning: how to overcome your company\'s pain points and create a site (or app) that will serve your goals. </p><p>After a plan is agreed on, we will get to the actual work, starting with the design stage - where we explore solutions and visual styles and define what the final product will look and feel like. We conclude the project with development, testing and finally, integration or deployment as is the case.</p>',
+          firstColumn: '<p><strong>Product Design. </strong>Building a successful app or site requires more than a great, well timed idea - it requires careful planning and execution. We\'re here to help with the latter.</p><p>We understand each project is unique so instead of rushing to the easiest solution, we are going to spend some time understanding who you are, what it is you are trying to do and who is the target market for your product. We will then ink out a basic structure for the product and start planning its execution. From a front-end perspective, this usually involves defining the structure for each section or page, creating the designs and coding the interface up. As far as the back end is concerned, we will establish the logic early on, and develop the platform modularly.</p>',
+          secondColumn: '<p><strong>Redesign Projects. </strong>In order to create something that actually works, we need to understand not only the issues your company is trying to overcome, but also your objectives and the vision the company was built on. Once we understand that, we will be well positioned to start planning: how to overcome your company\'s pain points and create a site or app that will efficiently serve your goals. </p><p>After a plan is agreed on, we will get to the actual work, starting with the design stage - where we explore solutions and visual styles and define what the final product will look and feel like. We conclude the project with development, testing and finally, integration or deployment, as is the case.</p>',
           thirdColumn: '<p><strong>Consultation. </strong>For consulting projects we\'re lending our ideas and expertise to companies in need of either fresh, objective ideas or a professional\'s opinion. Like product design or redesign projects, we will start by understanding the whole picture and what it is you are trying to achieve. We will then put our minds to work and issue a report with our assessment of the situation and our recommendations. We do not charge for this service.</p>'
         },
 
