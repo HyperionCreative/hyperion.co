@@ -10,7 +10,6 @@
     "angular-ui-router": "~0.2.15",
     "es5-shim": "^4.0.0",
     "json3": "^3.3.0",
-    "outdated-browser": "~1.1.1",
     "pixi": "~3.0.7"
   },
   "devDependencies": {

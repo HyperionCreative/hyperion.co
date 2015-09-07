@@ -1,0 +1,52 @@
+#outdated-browser {
+	background-color: #868d94;
+	color: #ffffff;
+	margin: 0 auto;
+
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+	z-index: 10000;
+
+	.outdated-browser-container {
+		height: 100%;
+		margin: auto;
+		width: 850px;
+	}
+
+	.outdated-browser-content {
+		text-align: left;
+	}
+
+	.margin-me {
+		margin: 20px 0 40px 0;
+	}
+
+	table {
+		height: 100%;
+		width: 100%;
+
+		td {
+			text-align: center;
+			vertical-align: middle;
+		}
+	}
+
+	h1 {
+		font-size: 37px;
+	}
+
+	p {
+		font-size: 17px;
+	}
+
+	img {
+		margin-bottom: 45px;
+	}
+
+	span {
+		text-decoration: underline;
+	}
+}

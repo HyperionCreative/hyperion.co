@@ -19,6 +19,9 @@
     <title>Hyperion | Creative Agency in Birmingham, UK</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="./assets/favicon/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/favicon/apple-touch-icon-114x114.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/favicon/apple-touch-icon-72x72.png">
@@ -40,14 +43,15 @@
     <meta name="msapplication-square150x150logo" content="./assets/favicon/mstile-150x150.png">
     <meta name="msapplication-wide310x150logo" content="./assets/favicon/mstile-310x150.png">
     <meta name="msapplication-square310x310logo" content="./assets/favicon/mstile-310x310.png">
+
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/outdated-browser/outdatedbrowser/outdatedbrowser.min.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+
     <!-- Start of fonts preloader -->
       <style>
         .preload-helv-lt { font-family: font-family: "HelveticaNeueLTStd-Lt"; }
@@ -91,9 +95,24 @@
       <div class="preload-icons"></div>
     <!-- End of fonts preloader -->
 
-    <!-- Start of outdatedbrowser container -->
-    <div id="outdated"></div>
-    <!-- End of outdatedbrowser container -->
+    <!--[if lte IE 9]>
+      <div id="outdated-browser">
+        <div class="outdated-browser-container">
+          <table>
+            <tr>
+              <td>
+                <div class="outdated-browser-content">
+                  <img src="assets/images/outdated-browser/outdated-browser.png" alt="Outdated browser" />
+                  <h1>Your browser is outdated</h1>
+                  <p class="margin-me">Unfortunately, because of the advanced technologies our website uses,<br>your browser is not supported. If you cannot upgrade, or use another browser,<br>we have a pretty good <span>mobile website</span>.</p>
+                  <p>www.hyperion.co</p>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    <![endif]-->
 
     <div ui-view="preloader"></div>
     <div ui-view="fancy-slider"></div>
@@ -114,7 +133,6 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="bower_components/outdated-browser/outdatedbrowser/outdatedbrowser.min.js"></script>
     <script src="bower_components/pixi/bin/pixi.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
@@ -246,36 +264,6 @@
       // todo remove this in production
       // https://github.com/mrdoob/stats.js/
       (function(){var script=document.createElement('script');script.onload=function(){var stats=new Stats();stats.domElement.style.cssText='position:fixed;left:0;top:0;z-index:10000';document.body.appendChild(stats.domElement);requestAnimationFrame(function loop(){stats.update();requestAnimationFrame(loop)});};script.src='//rawgit.com/mrdoob/stats.js/master/build/stats.min.js';document.head.appendChild(script);})();
-    </script>
-
-    <script>
-      (function () {
-        'use strict';
-
-        //event listener: DOM ready
-        function addLoadEvent(func) {
-          var oldonload = window.onload;
-          if (typeof window.onload != 'function') {
-            window.onload = func;
-          } else {
-            window.onload = function () {
-              if (oldonload) {
-                oldonload();
-              }
-              func();
-            }
-          }
-        }
-        //call plugin function after DOM ready
-        addLoadEvent(function () {
-          outdatedBrowser({
-            bgColor: '#f25648',
-            color: '#ffffff',
-            lowerThan: 'borderImage',
-            languagePath: 'otherwise it won\'t work -.-"'
-          })
-        });
-      })();
     </script>
 </body>
 </html>
