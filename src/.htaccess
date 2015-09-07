@@ -8,7 +8,7 @@
 # this logic there: http://httpd.apache.org/docs/current/howto/htaccess.html.
 
 # ##############################################################################
-# # High DPI Images                                                            #
+# # High DPI Images and Videos                                                 #
 # ##############################################################################
 
 <IfModule mod_rewrite.c>
@@ -16,10 +16,10 @@
     RewriteEngine on
     RewriteCond %{HTTP_COOKIE} HTTP_IS_RETINA [NC]
     RewriteCond %{REQUEST_FILENAME} !@2x
-    RewriteRule ^(.*)\.(gif|jpg|png)$ $1@2x.$2
+    RewriteRule ^(.*)\.(gif|jpg|png|mp4|webm)$ $1@2x.$2
     # if @2x isn't available fulfill the original request
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^(.*)@2x\.(gif|jpg|png)$ $1.$2
+    RewriteRule ^(.*)@2x\.(gif|jpg|png|mp4|webm)$ $1.$2
 </IfModule>
 
 
