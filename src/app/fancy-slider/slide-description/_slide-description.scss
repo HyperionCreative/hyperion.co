@@ -216,6 +216,7 @@
       width: $this-clients-to-date-width;
 
       .clients-to-date {
+        height: 100%;
         // This fixes an issues in IE: the positioned element inside this isn't
         // affected by the opacity property.
         position: relative;
