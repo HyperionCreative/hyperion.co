@@ -6,8 +6,8 @@
   angular
     .module('common.carousel-slider', [])
     .directive('hypCarouselSlider', ['$window', 'TweenEasings', 'TweenLite', function ($window, TweenEasings, TweenLite) {
-      var ANIMATION_DURATION = 475 / 1000;
-      var ANIMATION_EASING = TweenEasings.Power1.easeInOut;
+      var ANIMATION_DURATION = 600 / 1000;
+      var ANIMATION_EASING = TweenEasings.Sine.easeOut;
 
       function appendImages(appendTo, imagesUrl) {
         for (var i = 0; i < imagesUrl.length; i++) {
