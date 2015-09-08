@@ -9,13 +9,6 @@
   // As the hamburger icon is a square!
   min-width: $this-height;
 
-  @include transition(transform 0.25s ease-in-out, opacity 0.25s ease-in-out);
-
-  &.on-portfolio-item-page {
-    opacity: 0;
-    @include transform(translate3d(0,-125px,0));
-  }
-
   .menu-container {
     display: inline-block;
     height: 100%;

@@ -22,22 +22,16 @@
                   var toStateIndex = navigationStates.indexOf(toState.name);
                   var fromStateIndex = navigationStates.indexOf(fromState.name);
 
-                  if (toStateIndex === -1 || fromStateIndex === -1) {
+                  var order = toStateIndex - fromStateIndex;
+
+                  if (order > 0) {
                     angular.element($document[0].querySelector('.sub-page-template .slide-direction'))
                       .removeClass('left')
                       .addClass('right');
                   } else {
-                    var order = toStateIndex - fromStateIndex;
-
-                    if (order > 0) {
-                      angular.element($document[0].querySelector('.sub-page-template .slide-direction'))
-                        .removeClass('left')
-                        .addClass('right');
-                    } else {
-                      angular.element($document[0].querySelector('.sub-page-template .slide-direction'))
-                        .removeClass('right')
-                        .addClass('left');
-                    }
+                    angular.element($document[0].querySelector('.sub-page-template .slide-direction'))
+                      .removeClass('right')
+                      .addClass('left');
                   }
                 });
               }],
