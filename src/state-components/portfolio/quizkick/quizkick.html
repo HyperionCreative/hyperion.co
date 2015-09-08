@@ -1,28 +1,30 @@
-<section id="quizkick-portfolio-page" class="portfolio-page">
-  <div class="container">
-    <hyp-portfolio-header
-      description="{{:: str.portfolio.quizkick.header }}"
-      client-logo-url="assets/images/portfolio/quizkick/logo.png"
-      client-name="QuizKick"
-    ></hyp-portfolio-header>
+<hyp-center-me>
+  <section id="quizkick-portfolio-page" class="portfolio-page">
+    <div class="container">
+      <hyp-portfolio-header
+        description="{{:: str.portfolio.quizkick.header }}"
+        client-logo-url="assets/images/portfolio/quizkick/logo.png"
+        client-name="QuizKick"
+      ></hyp-portfolio-header>
 
-    <div class="portfolio-content">
-      <div class="row">
-        <img src="assets/images/portfolio/quizkick/1.jpg" alt="QuizKick">
-        <div class="description first">
-          <h1 class="title" ng-bind-html=":: str.portfolio.quizkick.aim.title"></h1>
-          <p ng-bind-html=":: str.portfolio.quizkick.aim.description"></p>
-        </div>
-        <div class="description second">
-          <h1 class="title" ng-bind-html=":: str.portfolio.quizkick.next.title"></h1>
-          <p ng-bind-html=":: str.portfolio.quizkick.next.description"></p>
-          <a class="button" href="http://www.hyperion.co/portfolio/animations-demo/quizkick/">Open Showcase</a>
+      <div class="portfolio-content">
+        <div class="row">
+          <img src="assets/images/portfolio/quizkick/1.jpg" alt="QuizKick">
+          <div class="description first">
+            <h1 class="title" ng-bind-html=":: str.portfolio.quizkick.aim.title"></h1>
+            <p ng-bind-html=":: str.portfolio.quizkick.aim.description"></p>
+          </div>
+          <div class="description second">
+            <h1 class="title" ng-bind-html=":: str.portfolio.quizkick.next.title"></h1>
+            <p ng-bind-html=":: str.portfolio.quizkick.next.description"></p>
+            <a class="button" href="http://www.hyperion.co/portfolio/animations-demo/quizkick/">Open Showcase</a>
+          </div>
         </div>
       </div>
+
+      <a ui-sref="root.sub-page-template.portfolio.anyvan" class="project-navigation">Next Project: <strong><span>AnyVan<span class="icon-arrow-right-pointy"></span></span></strong></a>
+
+      <hyp-simple-footer></hyp-simple-footer>
     </div>
-
-    <a ui-sref="root.sub-page-template.portfolio.anyvan" class="project-navigation">Next Project: <strong><span>AnyVan<span class="icon-arrow-right-pointy"></span></span></strong></a>
-
-    <hyp-simple-footer></hyp-simple-footer>
-  </div>
-</section>
+  </section>
+</hyp-center-me>

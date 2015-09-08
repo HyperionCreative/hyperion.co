@@ -1,36 +1,38 @@
-<section id="grow-portfolio-page" class="portfolio-page">
-  <div class="container">
-    <hyp-portfolio-header
-      description="{{:: str.portfolio.grow.header }}"
-      client-logo-url="assets/images/portfolio/grow/logo.png"
-      client-name="Grow with a CFO"
-    ></hyp-portfolio-header>
+<hyp-center-me>
+  <section id="grow-portfolio-page" class="portfolio-page">
+    <div class="container">
+      <hyp-portfolio-header
+        description="{{:: str.portfolio.grow.header }}"
+        client-logo-url="assets/images/portfolio/grow/logo.png"
+        client-name="Grow with a CFO"
+      ></hyp-portfolio-header>
 
-    <div class="portfolio-content">
-      <hyp-carousel-slider
-        arrows-background-color="#ffffff"
-        arrows-color="#b1d541"
-        images-url="['assets/images/portfolio/grow/slide-1.jpg', 'assets/images/portfolio/grow/slide-2.jpg']"
-        ></hyp-carousel-slider>
+      <div class="portfolio-content">
+        <hyp-carousel-slider
+          arrows-background-color="#ffffff"
+          arrows-color="#b1d541"
+          images-url="['assets/images/portfolio/grow/slide-1.jpg', 'assets/images/portfolio/grow/slide-2.jpg']"
+          ></hyp-carousel-slider>
 
-      <div class="first row">
-        <div class="video-container left">
-          <img src="assets/images/portfolio/grow/ipad-and-iphone-frame.png" alt="Grow with a CFO">
-          <video width="198" height="354" autoplay loop muted>
-            <source src="assets/videos/portfolio/grow/grow.mp4" type="video/mp4">
-            <source src="assets/videos/portfolio/grow/grow.webm" type="video/webm">
-          </video>
-        </div>
-        <div class="description left">
-          <h1 class="title" ng-bind-html=":: str.portfolio.grow.generic.title"></h1>
-          <div ng-bind-html=":: str.portfolio.grow.generic.description"></div>
-          <a class="button" href="http://growwithacfo.com/">Visit Site</a>
+        <div class="first row">
+          <div class="video-container left">
+            <img src="assets/images/portfolio/grow/ipad-and-iphone-frame.png" alt="Grow with a CFO">
+            <video width="198" height="354" autoplay loop muted>
+              <source src="assets/videos/portfolio/grow/grow.mp4" type="video/mp4">
+              <source src="assets/videos/portfolio/grow/grow.webm" type="video/webm">
+            </video>
+          </div>
+          <div class="description left">
+            <h1 class="title" ng-bind-html=":: str.portfolio.grow.generic.title"></h1>
+            <div ng-bind-html=":: str.portfolio.grow.generic.description"></div>
+            <a class="button" href="http://growwithacfo.com/">Visit Site</a>
+          </div>
         </div>
       </div>
+
+      <a ui-sref="root.sub-page-template.portfolio.kartist" class="project-navigation">Next Project: <strong><span>Kartist<span class="icon-arrow-right-pointy"></span></span></strong></a>
+
+      <hyp-simple-footer></hyp-simple-footer>
     </div>
-
-    <a ui-sref="root.sub-page-template.portfolio.kartist" class="project-navigation">Next Project: <strong><span>Kartist<span class="icon-arrow-right-pointy"></span></span></strong></a>
-
-    <hyp-simple-footer></hyp-simple-footer>
-  </div>
-</section>
+  </section>
+</hyp-center-me>
