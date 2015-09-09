@@ -37,6 +37,7 @@
       'app.simple-footer',
       'app.simple-header',
       'app.strings',
+      'app.view-animations',
 
       //////////////////////
       // State Components //

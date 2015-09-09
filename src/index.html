@@ -122,7 +122,7 @@
 
     <div ui-view="preloader"></div>
     <div ui-view="fancy-slider"></div>
-    <div ui-view="page-content"></div>
+    <div ui-view="page-content" class="top-level-view-animation"></div>
 
     <!-- build:js(.) scripts/oldieshim.js -->
     <!--[if lt IE 9]>
@@ -157,6 +157,7 @@
 
       <script src="common/gsap-lite/CSSPlugin.min.js"></script>
       <script src="common/gsap-lite/EasePack.min.js"></script>
+      <script src="common/gsap-lite/ScrollToPlugin.min.js"></script>
       <script src="common/gsap-lite/TimelineLite.min.js"></script>
       <script src="common/gsap-lite/TweenLite.min.js"></script>
       <script src="common/gsap-lite/gsap-lite.module.js"></script>
@@ -235,6 +236,10 @@
       <script src="app/simple-header/simple-header.directive.js"></script>
 
       <script src="app/strings/strings.run.js"></script>
+
+      <script src="app/view-animations/view-animations.module.js"></script>
+      <script src="app/view-animations/top-level-view.animation.js"></script>
+      <script src="app/view-animations/sub-page-view.animation.js"></script>
     <!-- end of specific files -->
 
     <!-- start of state components files -->
