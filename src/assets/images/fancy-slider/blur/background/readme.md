@@ -1,0 +1,1 @@
+Notice that the images are twice as small as they should be. This will give  an increase in performance and its barely noticeable.
