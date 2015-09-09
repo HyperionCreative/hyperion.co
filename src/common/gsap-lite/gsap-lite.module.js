@@ -8,6 +8,7 @@
     .constant('TweenLite', TweenLite)
     .constant('TweenTimelineLite', TimelineLite)
     .constant('TweenEasings', {
+      Linear: Power0.easeNone,
       Power1: Power1,
       Power2: Power2,
       Power3: Power3,
