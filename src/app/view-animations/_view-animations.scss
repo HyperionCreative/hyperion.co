@@ -1,18 +1,16 @@
 // Top level ui-view
 [ui-view="page-content"] {
-  $this-transition-duration: 0.25s;
+  @include transition-duration($top-view-animation-duration + $safe-animation-delay);
 
-  @include transition-duration($this-transition-duration + 0.05);
-
-  &.ng-enter.ng-enter-active, 
+  &.ng-enter.ng-enter-active,
   &.ng-leave.ng-leave-active {
     .header-index {
-      @include transition(opacity ($this-transition-duration * 0.7) ease-in-out);
+      @include transition(opacity ($top-view-animation-duration * 0.7) ease-in-out);
     }
 
-    .sub-page-template > .navigation-hamburger,
-    .sub-page-template > .top-level-animation-container {
-      @include transition(transform $this-transition-duration ease-in-out, opacity $this-transition-duration ease-in-out);
+    .sub-page-template .navigation-hamburger,
+    .sub-page-template .top-level-animation-container {
+      @include transition(transform $top-view-animation-duration ease-in-out, opacity $top-view-animation-duration ease-in-out);
     }
   }
 
@@ -20,19 +18,19 @@
   &.ng-leave.ng-leave-active {
     // They all fade out
     .header-index,
-    .sub-page-template > .navigation-hamburger,
-    .sub-page-template > .top-level-animation-container {
+    .sub-page-template .navigation-hamburger,
+    .sub-page-template .top-level-animation-container {
       opacity: 0;
     }
 
     // It appears from the top of the page
-    .sub-page-template > .navigation-hamburger {
-      @include transform(translate3d(0,-125px,0));
+    .sub-page-template .navigation-hamburger {
+      @include transform(translate3d(0,-$sub-page-nav-hamburger-travel,0));
     }
 
     // It appears from the bottom of the page
-    .sub-page-template > .top-level-animation-container {
-      @include transform(translate3d(0,250px,0));
+    .sub-page-template .top-level-animation-container {
+      @include transform(translate3d(0,$sub-page-content-vertical-travel,0));
     }
   }
 
@@ -40,8 +38,8 @@
   &.ng-enter.ng-enter-active {
     // Everything goes back to normal!
     .header-index,
-    .sub-page-template > .navigation-hamburger,
-    .sub-page-template > .top-level-animation-container {
+    .sub-page-template .navigation-hamburger,
+    .sub-page-template .top-level-animation-container {
       opacity: 1;
       @include transform(translate3d(0,0,0));
     }
@@ -50,24 +48,22 @@
 
 // The sub page ui-view
 [ui-view="sub-page-content"] {
-  $this-transition-duration: 0.35s;
-  $this-travel: 625px;
-  
-  @include transition-duration($this-transition-duration + 0.05);
+  @include transition-duration($sub-page-animation-duration + $safe-animation-delay);
 
-  &.ng-enter.ng-enter-active, 
+  // The left/right slide animation
+  &.ng-enter.ng-enter-active,
   &.ng-leave.ng-leave-active {
     & > .center-me-container {
-      @include transition(transform $this-transition-duration ease-in-out, opacity $this-transition-duration ease-in-out);
+      @include transition(transform $sub-page-animation-duration ease-in-out, opacity $sub-page-animation-duration ease-in-out);
     }
   }
 
   &.ng-enter > .center-me-container {
     opacity: 0;
-    @include transform(translate3d(- $this-travel,0,0));
+    @include transform(translate3d(- $sub-page-content-horizontal-travel,0,0));
 
     .right & {
-      @include transform(translate3d($this-travel,0,0));
+      @include transform(translate3d($sub-page-content-horizontal-travel,0,0));
     }
   }
 
@@ -83,11 +79,37 @@
 
   &.ng-leave.ng-leave-active > .center-me-container {
     opacity: 0;
-    @include transform(translate3d($this-travel,0,0));
+    @include transform(translate3d($sub-page-content-horizontal-travel,0,0));
 
     .right & {
-      @include transform(translate3d(- $this-travel,0,0));
+      @include transform(translate3d(- $sub-page-content-horizontal-travel,0,0));
     }
   }
 }
 
+// Components
+// Navigation Hamburger custom animation on portfolio project
+.sub-page-template .navigation-hamburger {
+  // When we don't want to trigger the animation
+  body.hide-sub-page-navigation-hamburger & {
+    display: none;
+  }
+
+  &.fade-up-add.fade-up-add-active,
+  &.fade-up-remove.fade-up-remove-active {
+    @include transition(transform $sub-page-animation-duration ease-in-out, opacity $sub-page-animation-duration ease-in-out);
+  }
+
+  &.fade-up-add,
+  &.fade-up-remove.fade-up-remove-active {
+    opacity: 1 !important;
+    @include transform(translate3d(0, 0, 0) !important);
+  }
+
+  &.fade-up,
+  &.fade-up-add.fade-up-add-active,
+  &.fade-up-remove {
+    opacity: 0 !important;
+    @include transform(translate3d(0, -$sub-page-nav-hamburger-travel, 0) !important);
+  }
+}

@@ -38,6 +38,8 @@ module.exports = function (config) {
       'bower_components/angular-ui-router/release/angular-ui-router.js',
       'bower_components/json3/lib/json3.js',
       'bower_components/pixi/bin/pixi.js',
+      'bower_components/raf.js/raf.js',
+      'bower_components/smoothscroll/dist/smoothscroll.js',
       // endbower
       'bower_components/angular-mocks/angular-mocks.js',
 

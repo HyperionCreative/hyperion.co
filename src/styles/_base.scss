@@ -46,6 +46,18 @@ $rapid-transition-timing: 0.1s ease-in-out;
 $medium-transition-timing: 0.2s ease-in-out;
 $slow-transition-timing: 0.3s ease-in-out;
 
+/////////////////////
+// View Animations //
+/////////////////////
+
+$top-view-animation-duration: 0.25s;
+$sub-page-animation-duration: 0.35s;
+$safe-animation-delay: 0.05s;
+
+$sub-page-nav-hamburger-travel: 125px;
+$sub-page-content-vertical-travel: 250px;
+$sub-page-content-horizontal-travel: 625px;
+
 ////////////
 // Colors //
 ////////////
