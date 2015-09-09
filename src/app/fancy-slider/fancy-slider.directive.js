@@ -66,7 +66,11 @@
           //
           // todo in case of performance issues, this may be one of the culprits. I've read through
           // PIXI source code that some extra RAFs are needed in order to stabilize things.
+          PIXI.ticker.autoStart = false;
           PIXI.ticker.shared.stop();
+
+          // Destroy InteractionManager as we're not using it.
+          renderer.plugins.interaction.destroy();
 
           ///////////////
           // Run block //
