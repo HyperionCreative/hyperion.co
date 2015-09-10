@@ -61,9 +61,11 @@
 
           anyvan: {
             projectName: 'AnyVan',
-            summary: 'We worked with AnyVan in early 2014 to help them design their then upcoming iOS app. We handled the UI and UX and work with their team to help them make it a reality.',
+            sliderDescription: 'We worked with AnyVan in early 2014 to help them design their then upcoming iOS app. We handled the UI and UX and work with their team to help them make it a reality.',
 
             header: 'We worked with <strong>AnyVan</strong> in early 2014 to help them design their then upcoming iOS app. We handled the UI and UX and work with their team to help them make it a reality.',
+            coverDescription: 'We worked with AnyVan in early 2014 to help them design their then upcoming iOS app. We handled the UI and UX and work with their team to help them make it a reality.',
+
             generic: {
               title: 'AnyVan',
               description: '<p>Anyvan’s organisational approach to providing on-demand cargo transport services is, in our opinion, deserving of all the awards it received and definitely a step in the right direction towards a cleaner, more efficient industry. By offering transport companies the opportunity to profit from the unused space in their trucks, they are not only reducing the number of unnecessary trips, but also benefiting customers who need a more affordable means of moving items across great distances.</p><p>They decided to make their services more accessible by launching a mobile app, for which we produced the interface, defined the experienced and worked closely with their development team to help implement it and shape the application. The resulting product was a friendly, easy to use app that would make AnyVan’s services even easier to benefit from.</p>'
@@ -71,9 +73,11 @@
           },
           kartist: {
             projectName: 'Kartist',
-            summary: 'The shots above are from one of our most recent projects, Kartist. Their app was intended to help shoppers everywhere manage their lists, find inspiration and connect with likeminded people.',
+            sliderDescription: 'The shots above are from one of our most recent projects, Kartist. Their app was intended to help shoppers everywhere manage their lists, find inspiration and connect with likeminded people.',
 
             header: 'We worked with <strong>Kartist</strong> in early 2015 - their platform aims to to help shoppers everywhere manage their lists, find inspiration and connect with likeminded people.',
+            coverDescription: 'We worked with Kartist in early 2015 - their platform aims to to help shoppers everywhere manage their lists, find inspiration and connect with likeminded people.',
+
             uiAndCode: {
               title: 'Useful UI + Good Code',
               description: '<p>For this project we handled Kartist’s UI, coded the front end and created their browser extensions. We wanted, as with most projects, to create something that will make sense to their target audience - an interface that is logically organised and effortless to use, but also beautiful. When coupled with good code, we are confident Kartist’s experience will be an enjoyable one.</p><p>The screen to the left demonstrates how users are prompted to sign up or login. Instead of using a more intrusive solution, we decided to gently nudge the logo every 5 seconds until the user hovers over it to learn where the sign up panel is. We believe this way, users are will not feel forced to sign up.</p>'
@@ -90,8 +94,10 @@
           },
           grow: {
             projectName: 'Grow with a CFO',
-            
+
             header: 'We worked with <strong>Grow with a CFO</strong> in 2015 to help them design their website and more easily showcase their services and processes.',
+            coverDescription: 'We worked with Grow with a CFO in 2015 to help them design their website and more easily showcase their services and processes.',
+
             generic: {
               title: 'Grow with a CFO',
               description: '<p>Grow with a CFO - a financial consulting firm, needed a website to showcase their services, explain who they are and how they work. Our objective was to create a site that is adequate and would help them achieve their goals and expand their firm. After several weeks on the project, we believe we achieved that.</p><p>Our client reported the site has been performing well since it launched earlier this year and that they are quite happy with the results.</p>'
@@ -99,9 +105,11 @@
           },
           quizkick: {
             projectName: 'QuizKick',
-            summary: 'QuizKick tried to create a game that would give football fans around the world a chance to prove their knowledge. We worked on the design and the back end of the system.',
+            sliderDescription: 'QuizKick tried to create a game that would give football fans around the world a chance to prove their knowledge. We worked on the design and the back end of the system.',
 
             header: '<strong>QuizKick</strong> tried to create a game that would give football fans around the world a chance to prove their knowledge. We worked on the design and the back end of the system.',
+            coverDescription: 'QuizKick tried to create a game that would give football fans around the world a chance to prove their knowledge. We worked on the design and the back end of the system.',
+
             aim: {
               title: 'QuizKick',
               description: 'Aiming to become a means for football fans around the world to prove their knowledge and challenge the very best players, QuizKick makes use of a well crafted experience and quality aesthetics to become more than just another quiz game.'
