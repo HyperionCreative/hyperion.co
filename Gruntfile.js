@@ -346,6 +346,8 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>',
           dest: '<%= yeoman.dist %>',
           src: [
+            '**/*.{webm,mp4,ogv}',
+            '**/*.{png,jpg,jpeg,gif,svg}',
             '*.{ico,png,txt}',
             '.htaccess',
             '**/*.html',
@@ -377,8 +379,8 @@ module.exports = function (grunt) {
       ],
       dist: [
         'compass:dist',
-        'imagemin',
-        'svgmin'
+        // 'imagemin',
+        // 'svgmin'
       ]
     },
 
@@ -460,7 +462,7 @@ module.exports = function (grunt) {
         cwd: '<%= yeoman.app %>',
         src: [
           '**/*.html',
-          // Everything except for the main html file is a template which can be 
+          // Everything except for the main html file is a template which can be
           // added to templateCache.
           '!index.html'
         ],
@@ -472,7 +474,7 @@ module.exports = function (grunt) {
             prefix += '(function () {\'use strict\';angular.module(\'' + module + '\')';
             prefix += '.run([\'$templateCache\', function($templateCache) {';
 
-            var suffix = ''; 
+            var suffix = '';
             suffix += '}]);})();';
             suffix += '\r\n\r\n/* jshint ignore:end */';
 
@@ -527,6 +529,8 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     'wiredep',
+    'filesize',
+    'filetransform',
     'ngtemplates',
     'useminPrepare',
     'concurrent:dist',
@@ -534,9 +538,9 @@ module.exports = function (grunt) {
     'copy:dist',
     'cssmin',
     'uglify',
-    'filerev',
+    // 'filerev',
     'usemin',
-    'htmlmin'
+    // 'htmlmin'
   ]);
 
   grunt.registerTask('default', [
