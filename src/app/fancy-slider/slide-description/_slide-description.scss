@@ -285,42 +285,44 @@
 //////////////////
 
 #slide-description-blur-overlay {
-  bottom: -47px;
-  display: none;
-  left: -47px;
-  opacity: 0;
-  position: absolute;
-  right: -47px;
-  top: -47px;
-  z-index: 10;
+  // A friendly reminder that the required assets (edge/middle) are inside
+  // an archive!
+  // bottom: -47px;
+  display: none !important;
+  // left: -47px;
+  // opacity: 0;
+  // position: absolute;
+  // right: -47px;
+  // top: -47px;
+  // z-index: 10;
 
-  .edge {
-    // This is a right corner
-    background: url(../assets/images/fancy-slider/blur/slide-description-sprites/edge.png) no-repeat;
-    @include background-size(contain);
-    height: 100%;
-    position: absolute;
-    top: 0;
-    width: image-width("assets/images/fancy-slider/blur/slide-description-sprites/edge.png");
+  // .edge {
+  //   // This is a right corner
+  //   background: url(../assets/images/fancy-slider/blur/slide-description-sprites/edge.png) no-repeat;
+  //   @include background-size(contain);
+  //   height: 100%;
+  //   position: absolute;
+  //   top: 0;
+  //   width: image-width("assets/images/fancy-slider/blur/slide-description-sprites/edge.png");
 
-    &.left {
-      background-position: left;
-      left: 0;
-    }
+  //   &.left {
+  //     background-position: left;
+  //     left: 0;
+  //   }
 
-    &.right {
-      right: 0;
-      @include transform(rotateY(180deg));
-    }
-  }
+  //   &.right {
+  //     right: 0;
+  //     @include transform(rotateY(180deg));
+  //   }
+  // }
 
-  .middle {
-    background: url(../assets/images/fancy-slider/blur/slide-description-sprites/middle.png) repeat-x;
-    @include background-size(100px 100%);
-    bottom: 0;
-    left: image-width("assets/images/fancy-slider/blur/slide-description-sprites/edge.png");
-    position: absolute;
-    right: image-width("assets/images/fancy-slider/blur/slide-description-sprites/edge.png");
-    top: 0;
-  }
+  // .middle {
+  //   background: url(../assets/images/fancy-slider/blur/slide-description-sprites/middle.png) repeat-x;
+  //   @include background-size(100px 100%);
+  //   bottom: 0;
+  //   left: image-width("assets/images/fancy-slider/blur/slide-description-sprites/edge.png");
+  //   position: absolute;
+  //   right: image-width("assets/images/fancy-slider/blur/slide-description-sprites/edge.png");
+  //   top: 0;
+  // }
 }

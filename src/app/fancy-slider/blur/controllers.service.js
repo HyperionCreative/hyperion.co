@@ -84,9 +84,9 @@
             // Show only the current slide blurred background
             blurredBackgrounds[context][currentSlide].alpha = 1;
 
-            // todo fix this - this fails in real world scenarios as all the images are cached 
-            // but the htmls aren't. the description will be downloaded after fancy slider is ready, 
-            // thus causing querySelector to return null. 
+            // todo fix this - this fails in real world scenarios as all the images are cached
+            // but the htmls aren't. the description will be downloaded after fancy slider is ready,
+            // thus causing querySelector to return null.
             try {
               blurSlideDescription(toBlur, duration, Configuration.BLUR_ANIMATION_EASING);
             } catch (err) {
@@ -129,15 +129,15 @@
 
       function blurSlideDescription(toBlur, duration, ease) {
         var
-          normal = document.querySelector('.fancy-slider .slide-description-container .slide-description .overflow-container'),
-          blurred = document.querySelector('#slide-description-blur-overlay');
+          normal = document.querySelector('.fancy-slider .slide-description-container .slide-description .overflow-container');
+          // blurred = document.querySelector('#slide-description-blur-overlay')
 
         if (toBlur) {
           hideOrShow(normal, false);
-          hideOrShow(blurred, true);
+          // hideOrShow(blurred, true);
         } else {
           hideOrShow(normal, true);
-          hideOrShow(blurred, false);
+          // hideOrShow(blurred, false);
         }
 
         function hideOrShow(resource, show) {
