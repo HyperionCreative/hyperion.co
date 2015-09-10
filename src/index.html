@@ -73,6 +73,18 @@
         .preload-icons { font-family: "hyperion-icons"; }
       </style>
     <!-- End of fonts preloader -->
+    <!-- Start of important images preloader -->
+      <style>
+        .preload-cover-anyvan { background-image: url(assets/images/portfolio/anyvan/cover.jpg); }
+        .preload-cover-grow { background-image: url(assets/images/portfolio/grow/cover.jpg); }
+        .preload-cover-kartist { background-image: url(assets/images/portfolio/kartist/cover.jpg); }
+        .preload-cover-quizkick { background-image: url(assets/images/portfolio/quizkick/cover.jpg); }
+
+        .preload-poster-anyvan { background-image: url(assets/videos/portfolio/anyvan/anyvan-poster.jpg); }
+        .preload-poster-grow { background-image: url(assets/videos/portfolio/grow/grow-poster.jpg); }
+        .preload-poster-kartist { background-image: url(assets/videos/portfolio/kartist/kartist-poster.jpg); }
+      </style>
+    <!-- End of important images preloader -->
 
     <!--[if lte IE 9]>
       <link rel="stylesheet" href="styles/outdated-browser.css">
@@ -81,6 +93,7 @@
   <body ng-app="HyperionApp" hyp-on-horizontal-scroll>
     <!-- Start of fonts preloader -->
       <div>
+        <!-- Without &nbsp; the font won't be preloaded! -->
         <div class="preload-helv-lt">&nbsp;</div>
         <div class="preload-helv-roman">&nbsp;</div>
         <div class="preload-helv-md">&nbsp;</div>
@@ -100,6 +113,18 @@
         <div class="preload-icons">&nbsp;</div>
       </div>
     <!-- End of fonts preloader -->
+    <!-- Start of important images preloader -->
+      <div>
+        <div class="preload-cover-anyvan"></div>
+        <div class="preload-cover-grow"></div>
+        <div class="preload-cover-kartist"></div>
+        <div class="preload-cover-quizkick"></div>
+
+        <div class="preload-poster-anyvan"></div>
+        <div class="preload-poster-grow"></div>
+        <div class="preload-poster-kartist"></div>
+      </div>
+    <!-- End of important images preloader -->
 
     <!--[if lte IE 9]>
       <div id="outdated-browser">
