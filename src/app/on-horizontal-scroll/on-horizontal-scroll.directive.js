@@ -33,8 +33,6 @@
 
               // This is needed to make sure everything is ready for action
               if (slider.length === 1 && header.length === 1) {
-                console.log(lastScrollX);
-
                 TweenLite.to([slider[0], header[0], slideDescription[0]], 0, {
                   x: -lastScrollX
                 });

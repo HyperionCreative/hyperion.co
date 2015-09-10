@@ -122,7 +122,6 @@
         (function () {
           if (listenerForProjectTransition === false) {
             listenerForProjectTransition = true;
-            console.log('listner init');
 
             $animate.on('enter', $document[0].body, function (element, phase) {
               if (nagivationType === 'fromProjectToProject') {
