@@ -47,7 +47,7 @@
     font-size: 14px;
     line-height: $this-height;
     opacity: 1;
-    @include transition(opacity $rapid-transition-timing);
+    @include transform(translate(0,0));
 
     &:last-child {
       padding-right: 0;
@@ -106,7 +106,7 @@
     $this-max-transition-duration: 0.3s;
     $this-min-transition-duration: 0.2s;
     // todo change this when adding/removing links
-    $this-links-count: 4;
+    $this-links-count: 5;
 
     // This is added so simple-hoverable knows the transition value
     @include transition-duration($this-max-transition-duration);
