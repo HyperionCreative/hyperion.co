@@ -12,14 +12,14 @@
             <img src="assets/images/portfolio/kartist/cover.jpg" alt="{{:: str.portfolio.kartist.projectName}}">
             <div class="project-summary">
               <h2 class="project-title" ng-bind-html=":: str.portfolio.kartist.projectName"></h2>
-              <p ng-bind-html=":: str.portfolio.kartist.coverDescription"></p>
+              <p ng-bind=":: str.portfolio.kartist.coverDescription" data-ellipsis data-ellipsis-symbol="{{:: ' [...]' }}"></p>
             </div>
           </a>
           <a ui-sref="root.sub-page-template.portfolio.anyvan" class="cover">
             <img src="assets/images/portfolio/anyvan/cover.jpg" alt="{{:: str.portfolio.anyvan.projectName}}">
             <div class="project-summary">
               <h2 class="project-title" ng-bind-html=":: str.portfolio.anyvan.projectName"></h2>
-              <p ng-bind-html=":: str.portfolio.anyvan.coverDescription"></p>
+              <p ng-bind=":: str.portfolio.anyvan.coverDescription" data-ellipsis data-ellipsis-symbol="{{:: ' [...]' }}"></p>
             </div>
           </a>
         </div>
@@ -28,14 +28,14 @@
             <img src="assets/images/portfolio/quizkick/cover.jpg" alt="{{:: str.portfolio.quizkick.projectName}}">
             <div class="project-summary">
               <h2 class="project-title" ng-bind-html=":: str.portfolio.quizkick.projectName"></h2>
-              <p ng-bind-html=":: str.portfolio.quizkick.coverDescription"></p>
+              <p ng-bind=":: str.portfolio.quizkick.coverDescription" data-ellipsis data-ellipsis-symbol="{{:: ' [...]' }}"></p>
             </div>
           </a>
           <a ui-sref="root.sub-page-template.portfolio.grow" class="cover">
             <img src="assets/images/portfolio/grow/cover.jpg" alt="{{:: str.portfolio.grow.projectName}}">
             <div class="project-summary">
               <h2 class="project-title" ng-bind-html=":: str.portfolio.grow.projectName"></h2>
-              <p ng-bind-html=":: str.portfolio.grow.coverDescription"></p>
+              <p ng-bind=":: str.portfolio.grow.coverDescription" data-ellipsis data-ellipsis-symbol="{{:: ' [...]' }}"></p>
             </div>
           </a>
         </div>

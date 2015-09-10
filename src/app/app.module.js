@@ -15,6 +15,7 @@
       // Third party modules //
       ///////////////////////
 
+      'dibari.angular-ellipsis',
       'monospaced.elastic',
       'ui.router',
 
