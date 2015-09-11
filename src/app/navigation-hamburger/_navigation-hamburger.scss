@@ -56,7 +56,7 @@
     a {
       cursor: pointer;
       opacity: 0.6;
-      padding: 10px 0;
+      padding: 22px 0;
       @include transition(opacity $rapid-transition-timing);
 
       &:hover {
