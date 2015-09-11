@@ -168,6 +168,11 @@
           color: #d8dce0;
           max-height: 2rem;
           overflow: hidden;
+
+          // The ellipsis
+          & > span > span {
+            color: #b1b5ba;
+          }
         }
       }
     }
