@@ -115,6 +115,18 @@
                 .addClass('fade-up');
               $animate.removeClass(navigationHamburger, 'fade-up');
             }
+          } else {
+            // Going to the index page
+
+            if(navigationHamburger !== null) {
+              // Otherwise it will blink
+              navigationHamburger.css({
+                display: 'none'
+              });
+            }
+
+            angular.element($document[0].body)
+              .removeClass('hide-sub-page-navigation-hamburger');
           }
         })();
 
