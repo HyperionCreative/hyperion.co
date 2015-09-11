@@ -35,14 +35,7 @@
     }
   }
 
-  .images-container img {
-    position: absolute;
-    left: 0;
-    top: 0;
-
-    // todo this is a reminder that the images may stretch if their proportion
-    // isn't equal with the carousel's proportion.
+  .images-container {
     height: 100%;
-    width: 100%;
   }
 }
