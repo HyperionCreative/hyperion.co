@@ -23,7 +23,7 @@
             imageScaleMode: 'fill',
             keyboardNavEnabled: true,
             loop: false,
-            transitionSpeed: 600,
+            transitionSpeed: 400,
             sliderDrag: false
           }).data('royalSlider');
 
