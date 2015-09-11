@@ -346,19 +346,27 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>',
           dest: '<%= yeoman.dist %>',
           src: [
-            '**/*.{webm,mp4,ogg}',
-            '**/*.{png,jpg,jpeg,gif,svg}',
-            '*.{ico,png,txt}',
             '.htaccess',
-            '**/*.html',
-            'assets/icons/as-fonts/**/*',
-            'assets/webfonts/**/*'
+            'robots.txt',
+
+            // We don't need the html templates as they're added to ngtemplates
+            'index.html',
+
+            'assets/**/*'
           ]
         }, {
           expand: true,
           cwd: '.tmp/assets/images',
           dest: '<%= yeoman.dist %>/assets/images',
           src: ['generated/*']
+        }, {
+          expand: true,
+          dot: true,
+          cwd: '.tmp/styles/',
+          dest: '<%= yeoman.dist %>/styles/',
+          src: [
+            'outdated-browser.css'
+          ]
         }]
       },
       // styles: {
