@@ -46,7 +46,7 @@
       }
 
       function fromProject(toStateName, fromStateName) {
-        return TOP_LEVEL_SUB_PAGES.indexOf(toStateName) !== -1 && fromStateName.indexOf(PORTFOLIO_PROJECT_DETECTOR) === 0;
+        return toStateName.indexOf(PORTFOLIO_PROJECT_DETECTOR) !== 0 && fromStateName.indexOf(PORTFOLIO_PROJECT_DETECTOR) === 0;
       }
 
       ///////////////
@@ -101,32 +101,35 @@
           var navigationHamburger = $document[0].body.querySelector('.sub-page-template .navigation-hamburger');
           if (nagivationType === 'toProject') {
             if (navigationHamburger === null) {
+              // This covers the case when the first page a user visits is the
+              // a project page.
+
               angular.element($document[0].body)
                 .addClass('hide-sub-page-navigation-hamburger');
             } else {
+              // The navigation hamburger is presend so we simply fade up the element.
+
               $animate.addClass(navigationHamburger, 'fade-up');
             }
           } else if (nagivationType === 'fromProject') {
             if (navigationHamburger !== null) {
+              // I'm sure that there will always be a navigation hamburger present.
+              // This is mostly a safety check.
+
+              // We make sure the element has the needed class in order to prepare
+              // it for the animation.
+              angular.element(navigationHamburger)
+                .addClass('fade-up');
+
+              // We make sure the element is displayed.
               angular.element($document[0].body)
                 .removeClass('hide-sub-page-navigation-hamburger');
 
-              angular.element(navigationHamburger)
-                .addClass('fade-up');
-              $animate.removeClass(navigationHamburger, 'fade-up');
+              if (toState.name !== 'root.index') {
+                // Only perform the animation if we're not going to the index page!
+                $animate.removeClass(navigationHamburger, 'fade-up');
+              }
             }
-          } else {
-            // Going to the index page
-
-            if(navigationHamburger !== null) {
-              // Otherwise it will blink
-              navigationHamburger.css({
-                display: 'none'
-              });
-            }
-
-            angular.element($document[0].body)
-              .removeClass('hide-sub-page-navigation-hamburger');
           }
         })();
 
@@ -150,7 +153,7 @@
                       'margin-top': '0px'
                     });
 
-                  $window.scrollTo(0,0);
+                  $window.scrollTo(0, 0);
                 }
               }
             });
