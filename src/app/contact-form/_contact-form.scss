@@ -1,7 +1,7 @@
 .contact-form {
   .invalid-field {
     $this-error-color: #f07317;
-    
+
     background-image: url(../assets/images/contact/invalid-icon.png);
     background-position: center right $input-horizontal-padding;
     background-repeat: no-repeat;
@@ -29,18 +29,19 @@
     .icon-valid-document {
       color: #8f949a;
       font-size: 145px;
-      margin-bottom: 12px;
+      margin-bottom: 30px;
     }
 
     .large {
       color: #202a35;
       font-family: $PierSans-Regular;
-      font-size: 15px;
+      font-size: 18px;
+      margin-bottom: 5px;
     }
 
     .small {
       color: #b1b1b1;
+      font-size: 14px;
     }
   }
 }
-

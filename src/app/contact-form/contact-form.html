@@ -1,20 +1,20 @@
 <form ng-submit="tryToSubmit(contactForm);" novalidate class="contact-form">
-  <input 
+  <input
     ng-model="contactForm.name"
     is-required-field
     type="text" placeholder="Your Name">
-  <textarea 
+  <textarea
     ng-model="contactForm.help"
     is-required-field
     rows="1" placeholder="How can we help?" class="msd-elastic"></textarea>
-  <input 
+  <input
     ng-model="contactForm.contactBack"
     is-required-field
     type="text" placeholder="Email address or Phone No.">
-  <input 
+  <input
     ng-model="contactForm.budget"
     type="text" placeholder="Budget (optional)">
-  <input 
+  <input
     ng-model="contactForm.company"
     type="text" placeholder="Company (optional)">
 
@@ -28,6 +28,6 @@
 
   <div class="success" ng-show="isSubmitted">
     <div class="icon-valid-document"></div>
-    <p><span class="large">Your message was successfully sent.</span><br><span class="small">We’ll get back to you within 24h.</span></p>
+    <p class="large">Your message was successfully sent.</p><p class="small">We’ll get back to you within 24h.</p>
   </div>
 </form>
