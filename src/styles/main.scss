@@ -90,7 +90,7 @@ html {
 }
 
 body {
-  min-height: 500px;
+  min-height: $min-page-height;
 }
 
 .container {
