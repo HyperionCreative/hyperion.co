@@ -1,81 +1,121 @@
 #preloader {
-  $this-hello-height: 35px;
-  $this-hello-margin: 30px;
-  $this-loading-bar-height: 2px;
-  $this-loading-bar-margin: 15px;
-  $this-progress-height: 18px;
-
   background: #ffffff;
   bottom: 0;
   left: 0;
+  min-height: $min-page-height;
   position: fixed;
   right: 0;
   text-align: center;
   top: 0;
   z-index: $preloader-z-index;
 
-  .preloader-container {
-    // This works as the top half is bigger than the bottom half
-    $this-top-half: $this-hello-height + $this-hello-margin;
-
-    bottom: 0;
-    height: 2 * $this-top-half + $this-loading-bar-height;
-    left: 0;
-    margin: auto;
+  @media only screen and (max-height: $min-page-height) {
+    // So the content becomes scrollable!
     position: absolute;
+  }
+
+  .knob-and-logo-container {
+    height: 66%;
+
+    position: absolute;
+    left: 0;
     right: 0;
     top: 0;
-    width: 60%;
   }
 
-  .hello {
-    color: $dark-blue;
-    font-family: $HelveticaNeue-Bold;
-    font-size: $this-hello-height;
-    margin-bottom: $this-hello-margin;
+  .text-container {
+    height: 33%;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
 
-  .loading-bar-container {
-    background: #e8f2f6;
-    @include border-radius($this-loading-bar-height);
-    height: $this-loading-bar-height;
-    margin-bottom: 15px;
-    position: relative;
-    width: 100%;
+  .knob-and-logo {
+    height: 200px;
+    width: 200px;
 
-    .loading-bar {
-      background: $bright-blue;
-      @include border-radius($this-loading-bar-height);
-      bottom: 0;
-      height: 100%;
-      left: 0;
+    margin: -100px 0 0 -100px;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    .big-logo {
+      height: 84px;
+      width: 56px;
+
       margin: auto;
+
       position: absolute;
+      bottom: 0;
+      left: 0;
       right: 0;
       top: 0;
-      // @include transition(width 0.15s ease-in-out);
-      width: 0;
     }
   }
 
-  .progress {
-    color: rgba($dark-blue, 0.5);
-    font-size: $this-progress-height;
+  .text {
+    text-align: center;
+
+    height: 48px;
+    width: 100%;
+
+    margin: auto;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+
+    .hello {
+      color: #868d94;
+      font-family: $MuseoSans-300;
+      font-size: 30px;
+    }
+
+    .website {
+      color: #d2d4d7;
+      font-size: 18px;
+    }
   }
 }
 
 // AngularJS Animate
 
 #preloader {
-  @include transition(opacity 0.5s ease-in-out);
+  $this-transition-duration: 0.25s;
+  $this-transition-delay: 0.5s;
+
+  @include transition(opacity $this-transition-duration ease-in-out);
+  @include transition-delay($this-transition-delay);
+
+  .knob-and-logo {
+    @include transition(opacity $this-transition-duration ease-in-out, transform $this-transition-duration ease-in-out);
+    @include transition-delay($this-transition-delay);
+  }
 
   &.ng-enter,
   &.ng-leave.ng-leave-active {
-    opacity:0;
+    .knob-and-logo {
+      @include transform(translate3d(0,0,0) scale(1.2,1.2));
+    }
+
+    & {
+      opacity: 0;
+    }
   }
 
   &.ng-leave,
   &.ng-enter.ng-enter-active {
-    opacity:1;
+    .knob-and-logo {
+      @include transform(translate3d(0,0,0) scale(1,1));
+    }
+
+    & {
+      opacity: 1;
+    }
   }
 }

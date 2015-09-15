@@ -1,9 +1,16 @@
 <div id="preloader" ng-if="showPreloader">
-  <div class="preloader-container">
-    <div class="hello" hyp-greetings></div>
-    <div class="loading-bar-container">
-      <div class="loading-bar" style="width: {{ preloaderProgress | number : 0 }}%;"></div>
+  <div class="opaque-background"></div>
+
+  <div class="knob-and-logo-container">
+    <div class="knob-and-logo">
+      <img src="assets/images/logo.svg" alt="Hyperion Creative Agency Logo" class="big-logo">
+      <hyp-jquery-knob value="preloaderProgress"></hyp-jquery-knob>
     </div>
-    <div class="progress">Loading {{ preloaderProgress | number : 0 }}%</div>
+  </div>
+  <div class="text-container">
+    <div class="text">
+      <div class="hello" hyp-greetings></div>
+      <div class="website">www.hyperion.co</div>
+    </div>
   </div>
 </div>
