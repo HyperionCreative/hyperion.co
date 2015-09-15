@@ -39,11 +39,11 @@
         statesName: statesName
       };
 
-      $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState) {
+      $rootScope.$on('$stateChangeSuccess', function (event, toState) {
         var currentStateName = NAME_DICTIONARY[toState.name];
 
         if (!angular.isString(currentStateName)) {
-          currentStateName = 'Lost in Time and Space!'
+          currentStateName = 'Lost in Time and Space!';
         }
 
         statesName.push(currentStateName);
