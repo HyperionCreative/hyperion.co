@@ -34,6 +34,7 @@
       'app.center-me',
       'app.fancy-slider',
       'app.navigation-hamburger',
+      'app.navigation-tracker',
       'app.on-horizontal-scroll',
       'app.portfolio-header',
       'app.simple-footer',
