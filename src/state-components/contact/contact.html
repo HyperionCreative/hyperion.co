@@ -1,22 +1,24 @@
 <hyp-center-me>
   <section id="contact-page">
-    <hyp-simple-header
-      name="{{:: str.contact.header.title }}"
-      description="{{:: str.contact.header.description }}"
-    ></hyp-simple-header>
+    <div class="container custom-cursor normal">
+      <hyp-simple-header
+        name="{{:: str.contact.header.title }}"
+        description="{{:: str.contact.header.description }}"
+      ></hyp-simple-header>
 
-    <div class="contact-container container">
-      <div class="call-us">
-        <span class="icon-phone"></span>
-        <span class="cell-phone-number" ng-bind-html=":: str.globals.phoneNumber"></span>
+      <div class="contact-container">
+        <div class="call-us">
+          <span class="icon-phone"></span>
+          <span class="cell-phone-number" ng-bind-html=":: str.globals.phoneNumber"></span>
+        </div>
+        <div class="separator">
+          <div class="text">or</div>
+          <div class="line"></div>
+        </div>
+        <hyp-contact-form on-submit="onSubmit(data);"></hyp-contact-form>
       </div>
-      <div class="separator">
-        <div class="text">or</div>
-        <div class="line"></div>
-      </div>
-      <hyp-contact-form on-submit="onSubmit(data);"></hyp-contact-form>
+
+      <hyp-simple-footer></hyp-simple-footer>
     </div>
-
-    <hyp-simple-footer></hyp-simple-footer>
   </section>
 </hyp-center-me>

@@ -1,13 +1,13 @@
 #contact-page {
+  & > .container {
+    width: 600px;
+  }
+
   .contact-container {
     background: #ffffff;
     @include box-shadow($normal-box-shadow);
     padding-top: 50px;
     position: relative;
-
-    &.container {
-      width: 600px;
-    }
 
     .call-us {
       color: #9fa1a5;

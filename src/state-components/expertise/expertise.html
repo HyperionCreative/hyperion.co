@@ -1,11 +1,11 @@
 <hyp-center-me>
   <section id="expertise-page">
-    <hyp-simple-header
-      name="{{:: str.expertise.header.title }}"
-      description="{{:: str.expertise.header.description }}"
-    ></hyp-simple-header>
+    <div class="container custom-cursor normal">
+      <hyp-simple-header
+        name="{{:: str.expertise.header.title }}"
+        description="{{:: str.expertise.header.description }}"
+      ></hyp-simple-header>
 
-    <div class="container">
       <div id="expertise-tabs">
         <div class="tab">
           <a
@@ -33,8 +33,8 @@
         </div>
       </div>
       <div ui-view="expertise"></div>
-    </div>
 
-    <hyp-simple-footer></hyp-simple-footer>
+      <hyp-simple-footer></hyp-simple-footer>
+    </div>
   </section>
 </hyp-center-me>
