@@ -1,15 +1,12 @@
 @font-face {
   font-family: "hyperion-icons";
-  src:url("../assets/icons/as-fonts/hyperion-icons.eot?-gcia1a");
-  src:url("../assets/icons/as-fonts/hyperion-icons.eot?#iefix-gcia1a") format("embedded-opentype"),
-    url("../assets/icons/as-fonts/hyperion-icons.ttf?-gcia1a") format("truetype"),
-    url("../assets/icons/as-fonts/hyperion-icons.woff?-gcia1a") format("woff"),
-    url("../assets/icons/as-fonts/hyperion-icons.svg?-gcia1a#hyperion-icons") format("svg");
+  src: url("../assets/icons/as-fonts/hyperion-icons.eot");
+  src: url("../assets/icons/as-fonts/hyperion-icons.eot#iefix") format("embedded-opentype"), url("../assets/icons/as-fonts/hyperion-icons.ttf") format("truetype"), url("../assets/icons/as-fonts/hyperion-icons.woff") format("woff"), url("../assets/icons/as-fonts/hyperion-icons.svg#hyperion-icons") format("svg");
   font-weight: normal;
   font-style: normal;
 }
-
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"],
+[class*=" icon-"] {
   font-family: "hyperion-icons";
   speak: none;
   font-style: normal;
@@ -22,7 +19,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 .icon-broken-link:before {
   content: "\e619";
 }
