@@ -41,3 +41,10 @@
     }
   }
 }
+
+// Set the correct cursor where appropriate
+body.custom-cursors-ie-fix #portfolio-home-page .project-summary {
+  .project-title, p {
+    cursor: pointer;
+  }
+}
