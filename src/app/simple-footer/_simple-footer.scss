@@ -2,6 +2,11 @@
   padding: 50px 0 25px 0;
   text-align: center;
 
+  &.small {
+    margin: 0 auto;
+    width: 300px;
+  }
+
   .text, .social-links {
     display: block;
   }
@@ -30,7 +35,7 @@
 
     .icon-twitter {
       font-size: 16px;
-      
+
       &:hover {
         color: #4fabf1;
       }
@@ -38,7 +43,7 @@
 
     .icon-dribbble {
       font-size: 17px;
-      
+
       &:hover {
         color: #ea4c89;
       }
@@ -46,7 +51,7 @@
 
     .icon-behance {
       font-size: 13px;
-      
+
       &:hover {
         color: #055cff;
       }
