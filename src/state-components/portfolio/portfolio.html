@@ -1,12 +1,13 @@
 <hyp-center-me>
   <section id="portfolio-home-page">
-    <div class="container custom-cursor normal">
+    <div class="container">
       <hyp-simple-header
         name="{{:: str.portfolio.header.title }}"
         description="{{:: str.portfolio.header.description }}"
+        class="custom-cursor normal"
       ></hyp-simple-header>
 
-      <div class="covers">
+      <div class="covers custom-cursor normal">
         <div class="column">
           <a ui-sref="root.sub-page-template.portfolio.kartist" class="cover">
             <img src="assets/images/portfolio/kartist/cover.jpg" alt="{{:: str.portfolio.kartist.projectName}}">
@@ -41,7 +42,7 @@
         </div>
       </div>
 
-      <hyp-simple-footer></hyp-simple-footer>
+      <hyp-simple-footer class="small custom-cursor normal"></hyp-simple-footer>
     </div>
   </section>
 </hyp-center-me>

@@ -1,12 +1,13 @@
 <hyp-center-me>
   <section id="expertise-page">
-    <div class="container custom-cursor normal">
+    <div class="container">
       <hyp-simple-header
         name="{{:: str.expertise.header.title }}"
         description="{{:: str.expertise.header.description }}"
+        class="custom-cursor normal"
       ></hyp-simple-header>
 
-      <div id="expertise-tabs">
+      <div id="expertise-tabs" class="custom-cursor normal">
         <div class="tab">
           <a
             ui-sref="root.sub-page-template.expertise.design"
@@ -34,7 +35,7 @@
       </div>
       <div ui-view="expertise"></div>
 
-      <hyp-simple-footer></hyp-simple-footer>
+      <hyp-simple-footer class="small custom-cursor normal"></hyp-simple-footer>
     </div>
   </section>
 </hyp-center-me>

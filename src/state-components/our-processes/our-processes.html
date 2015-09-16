@@ -1,12 +1,13 @@
 <hyp-center-me>
   <section id="our-processes-page">
-    <div class="container custom-cursor normal">
+    <div class="container">
       <hyp-simple-header
         name="{{:: str.ourProcesses.header.title }}"
         description="{{:: str.ourProcesses.header.description }}"
+        class="custom-cursor normal"
       ></hyp-simple-header>
 
-      <div class="processes-container">
+      <div class="processes-container custom-cursor normal">
         <div class="process">
           <div class="illustration icon-pen-and-ruler"></div>
           <div class="description" ng-bind-html=":: str.ourProcesses.firstColumn"></div>
@@ -21,7 +22,7 @@
         </div>
       </div>
 
-      <hyp-simple-footer></hyp-simple-footer>
+      <hyp-simple-footer class="small custom-cursor normal"></hyp-simple-footer>
     </div>
   </section>
 </hyp-center-me>
