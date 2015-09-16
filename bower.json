@@ -13,7 +13,8 @@
     "jquery": "~2.1.4",
     "json3": "^3.3.0",
     "pixi": "~3.0.7",
-    "smoothscroll": "~0.1.0"
+    "smoothscroll": "~0.1.0",
+    "ua-parser-js": "~0.7.9"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.0",

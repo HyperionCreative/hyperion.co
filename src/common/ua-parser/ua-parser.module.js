@@ -3,7 +3,8 @@
 
   /* jshint ignore:start */
 
-  var PARSED_UA = detect.parse(navigator.userAgent);
+  var parser = new UAParser();
+  var PARSED_UA = parser.getResult();
 
   angular
     .module('common.ua-parser', [])

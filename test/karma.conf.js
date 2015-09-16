@@ -41,6 +41,7 @@ module.exports = function (config) {
       'bower_components/pixi/bin/pixi.js',
       'bower_components/raf.js/raf.js',
       'bower_components/smoothscroll/dist/smoothscroll.js',
+      'bower_components/ua-parser-js/src/ua-parser.js',
       // endbower
       'bower_components/angular-mocks/angular-mocks.js',
 
