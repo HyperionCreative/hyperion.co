@@ -38,8 +38,8 @@
     }
 
     // Spinner
-    @keyframes spinner {
-      to {
+    @include keyframes(spinner) {
+      100% {
         @include transform(translate3d(0,0,0) rotate(360deg));
       }
     }
