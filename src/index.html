@@ -83,12 +83,20 @@
         .preload-poster-anyvan { background-image: url(assets/videos/portfolio/anyvan/anyvan-poster.jpg); }
         .preload-poster-grow { background-image: url(assets/videos/portfolio/grow/grow-poster.jpg); }
         .preload-poster-kartist { background-image: url(assets/videos/portfolio/kartist/kartist-poster.jpg); }
+
+        .preload-logo { background-image: url(assets/images/logo.svg); }
       </style>
     <!-- End of important images preloader -->
 
     <!--[if lte IE 9]>
       <link rel="stylesheet" href="styles/outdated-browser.css">
     <![endif]-->
+
+    <style>
+      [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+      }
+    </style>
   </head>
   <body ng-app="HyperionApp" hyp-on-horizontal-scroll>
     <!-- Start of fonts preloader -->
@@ -123,6 +131,8 @@
         <div class="preload-poster-anyvan"></div>
         <div class="preload-poster-grow"></div>
         <div class="preload-poster-kartist"></div>
+
+        <div class="preload-logo"></div>
       </div>
     <!-- End of important images preloader -->
 

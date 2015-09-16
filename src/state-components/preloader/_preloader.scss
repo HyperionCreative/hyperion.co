@@ -18,7 +18,7 @@
     height: 200px;
     width: 200px;
 
-    margin: -100px 0 0 -100px;
+    margin: -160px 0 0 -100px;
 
     position: absolute;
     left: 50%;
@@ -35,6 +35,35 @@
       left: 0;
       right: 0;
       top: 0;
+    }
+
+    // Spinner
+    @keyframes spinner {
+      to {
+        @include transform(translate3d(0,0,0) rotate(360deg));
+      }
+    }
+
+    .spinner {
+      min-width: 200px;
+      min-height: 200px;
+    }
+
+    .spinner:before {
+      content: 'Loading...';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 200px;
+    }
+
+    .spinner:not(:required):before {
+      content: '';
+      border-radius: 50%;
+      border: 3px solid #edf7fa;
+      border-top-color: #a3d7e6;
+      @include animation(spinner 0.8s linear infinite);
     }
   }
 
@@ -55,11 +84,12 @@
       color: #868d94;
       font-family: $MuseoSans-300;
       font-size: 30px;
+      margin-bottom: 2px;
     }
 
     .website {
-      color: #d2d4d7;
-      font-size: 18px;
+      color: #c7cacc;
+      font-size: 16px;
     }
   }
 }
@@ -67,15 +97,12 @@
 // AngularJS Animate
 
 #preloader {
-  $this-transition-duration: 0.25s;
-  $this-transition-delay: 0.5s;
+  $this-transition-duration: 0.5s;
 
-  @include transition(opacity $this-transition-duration ease-in-out);
-  @include transition-delay($this-transition-delay);
+  @include transition(opacity $this-transition-duration ease);
 
   .knob-and-logo {
-    @include transition(opacity $this-transition-duration ease-in-out, transform $this-transition-duration ease-in-out);
-    @include transition-delay($this-transition-delay);
+    @include transition(opacity $this-transition-duration ease, transform $this-transition-duration ease);
   }
 
   &.ng-enter,
