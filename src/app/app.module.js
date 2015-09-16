@@ -25,6 +25,7 @@
 
       'common.carousel-slider',
       'common.simple-hoverable',
+      'common.ua-parser',
 
       //////////////////////
       // Specific Modules //
