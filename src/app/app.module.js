@@ -24,7 +24,6 @@
       ////////////////////
 
       'common.carousel-slider',
-      'common.jquery-knob',
       'common.simple-hoverable',
 
       //////////////////////
