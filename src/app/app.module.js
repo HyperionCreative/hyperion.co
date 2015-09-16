@@ -32,6 +32,7 @@
       //////////////////////
 
       'app.center-me',
+      'app.custom-cursors',
       'app.fancy-slider',
       'app.navigation-hamburger',
       'app.navigation-tracker',
