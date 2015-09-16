@@ -22,19 +22,22 @@
   }
 
   &.normal {
-    // All of these rules as needed in order for IE to work properly.
-    // Without them, the inheritance is buggy, and sometimes, hovering
-    // over text, IE will use the close cursor. Meh...
+    cursor: auto;
 
-    cursor: default;
+    body.custom-cursors-ie-fix & {
+      // All of these rules as needed in order for IE to work properly.
+      // Without them, the inheritance is buggy, and sometimes, hovering
+      // over text, IE will use the close cursor. Meh...
+      cursor: default;
 
-    & > * {
-      cursor: auto;
-    }
+      & > * {
+        cursor: auto;
+      }
 
-    h1, h2, h3, h4, h5, h6,
-    p, input, textarea {
-      cursor: text;
+      h1, h2, h3, h4, h5, h6,
+      p, input, textarea {
+        cursor: text;
+      }
     }
   }
 }

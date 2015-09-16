@@ -3,7 +3,16 @@
 
   angular
     .module('app.custom-cursors', [])
-    .run(['$rootScope', '$state', function ($rootScope, $state) {
+    .run(['$document', '$rootScope', '$state', 'PARSED_UA', function ($document, $rootScope, $state, PARSED_UA) {
+      try {
+        if (PARSED_UA.browser.name === 'IE' || PARSED_UA.browser.name === 'Edge') {
+          angular.element($document[0].body)
+            .addClass('custom-cursors-ie-fix');
+        }
+      } catch (err) {
+        // Only God can help the poor user's soul!
+      }
+
       $rootScope.closeSubPage = function (event) {
         var targetElement = angular.element(event.target);
 
