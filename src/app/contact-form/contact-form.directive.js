@@ -3,7 +3,7 @@
 
   angular
     .module('app.contact-form', [])
-    .directive('hypContactForm', function () {
+    .directive('hypContactForm', ['$window', function ($window) {
       return {
         link: function (scope, iElement) {
           scope.isSubmitted = false;
@@ -106,6 +106,16 @@
               }
             }
           }
+
+          ///////////////
+          // Run block //
+          ///////////////
+          angular.element($window).on('keydown', function (event) {
+            // Enter
+            if (event.keyCode === 13) {
+              tryToSubmit(scope.contactForm);
+            }
+          });
         },
         replace: true,
         restrict: 'E',
@@ -114,5 +124,5 @@
         },
         templateUrl: 'app/contact-form/contact-form.html'
       };
-    });
+    }]);
 })();

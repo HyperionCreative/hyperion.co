@@ -358,7 +358,9 @@ module.exports = function (grunt) {
             // We don't need the html templates as they're added to ngtemplates
             'index.html',
 
-            'assets/**/*'
+            'assets/**/*',
+
+            'php/**/*'
           ]
         }, {
           expand: true,
