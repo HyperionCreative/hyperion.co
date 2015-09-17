@@ -507,6 +507,25 @@ module.exports = function (grunt) {
           module: 'HyperionApp'
         }
       }
+    },
+
+    cwebp: {
+      // Without expand and cwd cwebp won't work!
+      files: {
+        expand: true,
+        cwd: '<%= yeoman.app %>',
+        src: 'assets/**/*.{jpg,png}',
+        dest: '<%= yeoman.dist %>'
+      },
+      // There's a problem with cwebp. It doesn't work with empty attributes like -lossless;
+      // This should be added at line 33, right before "args.push(options[key]);", inside the cwebp.js file
+      // "if (options[key] !== undefined)"
+      options: {
+        q: 85,
+        m: 6,
+
+        mt: undefined
+      }
     }
   });
 
@@ -543,8 +562,15 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     'wiredep',
+
     'filesize',
     'filetransform',
+
+    // Notice how this is added after 'filesize'!
+    // Since the webp images are served from the server, the preloder module
+    // still thinks that the images are jpg/png. Everything works as expected!
+    'cwebp',
+
     'ngtemplates',
     'useminPrepare',
     'concurrent:dist',

@@ -14,12 +14,28 @@
 <IfModule mod_rewrite.c>
     Options -MultiViews
     RewriteEngine on
+
     RewriteCond %{HTTP_COOKIE} HTTP_IS_RETINA [NC]
     RewriteCond %{REQUEST_FILENAME} !@2x
-    RewriteRule ^(.*)\.(gif|jpg|png|mp4|webm|ogg)$ $1@2x.$2
+    RewriteRule ^(.*)\.(gif|jpg|jpeg|png|webp|mp4|webm|ogg)$ $1@2x.$2
+
     # if @2x isn't available fulfill the original request
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^(.*)@2x\.(gif|jpg|png|mp4|webm|ogg)$ $1.$2
+    RewriteRule ^(.*)@2x\.(gif|jpg|jpeg|png|webp|mp4|webm|ogg)$ $1.$2
+</IfModule>
+
+
+# ##############################################################################
+# # WebP Images Redirect                                                       #
+# ##############################################################################
+
+<IfModule mod_rewrite.c>
+    Options -MultiViews
+    RewriteEngine on
+
+    # add a safety check to see if the file exists?
+    RewriteCond %{HTTP_COOKIE} WEBP_IS_SUPPORTED [NC]
+    RewriteRule ^(.*)\.(jpg|jpeg|png)$ $1.webp
 </IfModule>
 
 
@@ -488,8 +504,10 @@ FileETag None
   # Media
     ExpiresByType audio/ogg                             "access plus 1 month"
     ExpiresByType image/gif                             "access plus 1 month"
+    ExpiresByType image/jpg                             "access plus 1 month"
     ExpiresByType image/jpeg                            "access plus 1 month"
     ExpiresByType image/png                             "access plus 1 month"
+    ExpiresByType image/webp                            "access plus 1 month"
     ExpiresByType video/mp4                             "access plus 1 month"
     ExpiresByType video/ogg                             "access plus 1 month"
     ExpiresByType video/webm                            "access plus 1 month"

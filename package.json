@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "dependencies": {},
   "devDependencies": {
+    "cwebp-bin": "^3.0.0",
     "grunt": "^0.4.1",
     "grunt-angular-templates": "^0.5.7",
     "grunt-autoprefixer": "^0.7.3",
@@ -18,6 +19,7 @@
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-uglify": "^0.4.0",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-cwebp": "^1.0.0",
     "grunt-filerev": "^0.2.1",
     "grunt-filesize": "0.0.7",
     "grunt-filetransform": "^0.1.2",
