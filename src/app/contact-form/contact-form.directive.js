@@ -110,11 +110,16 @@
           ///////////////
           // Run block //
           ///////////////
-          angular.element($window).on('keydown', function (event) {
-            // Enter
+          function onEnter(event) {
             if (event.keyCode === 13) {
               tryToSubmit(scope.contactForm);
             }
+          }
+
+          angular.element($window).on('keydown', onEnter);
+
+          iElement.on('$destroy', function () {
+            angular.element($window).off('keydown', onEnter);
           });
         },
         replace: true,
