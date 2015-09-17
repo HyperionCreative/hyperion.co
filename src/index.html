@@ -1,20 +1,41 @@
 <!doctype html>
 <html>
   <head>
+    <!--
+      Start of Retina Script
+      Read more at: http://shauninman.com/tmp/retina/
+    -->
     <script>
       (function () {
         'use strict';
 
-        // Read more at: http://shauninman.com/tmp/retina/
-
         if ((window.devicePixelRatio === undefined ? 1 : window.devicePixelRatio) > 1) {
           document.cookie = 'HTTP_IS_RETINA=1;path=/';
         } else {
-          // This deletes the cookie. Mostly useful in the development stage.
           document.cookie = 'HTTP_IS_RETINA=1;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT';
         }
       })();
     </script>
+    <!-- End of Retina Script -->
+
+    <!-- Start of WebP Images Script -->
+    <script>
+      (function () {
+        'use strict';
+
+        !function(e,n,A){function o(e,n){return typeof e===n}function a(){var e,n,A,a,t,i,r;for(var l in s){if(e=[],n=s[l],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(A=0;A<n.options.aliases.length;A++)e.push(n.options.aliases[A].toLowerCase());for(a=o(n.fn,"function")?n.fn():n.fn,t=0;t<e.length;t++)i=e[t],r=i.split("."),1===r.length?Modernizr[r[0]]=a:(!Modernizr[r[0]]||Modernizr[r[0]]instanceof Boolean||(Modernizr[r[0]]=new Boolean(Modernizr[r[0]])),Modernizr[r[0]][r[1]]=a),f.push((a?"":"no-")+r.join("-"))}}function t(e){var n=u.className,A=Modernizr._config.classPrefix||"";if(c&&(n=n.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+A+"no-js(\\s|$)");n=n.replace(o,"$1"+A+"js$2")}Modernizr._config.enableClasses&&(n+=" "+A+e.join(" "+A),c?u.className.baseVal=n:u.className=n)}function i(e,n){if("object"==typeof e)for(var A in e)l(e,A)&&i(A,e[A]);else{e=e.toLowerCase();var o=e.split("."),a=Modernizr[o[0]];if(2==o.length&&(a=a[o[1]]),"undefined"!=typeof a)return Modernizr;n="function"==typeof n?n():n,1==o.length?Modernizr[o[0]]=n:(!Modernizr[o[0]]||Modernizr[o[0]]instanceof Boolean||(Modernizr[o[0]]=new Boolean(Modernizr[o[0]])),Modernizr[o[0]][o[1]]=n),t([(n&&0!=n?"":"no-")+o.join("-")]),Modernizr._trigger(e,n)}return Modernizr}var s=[],r={_version:"3.0.0-alpha.4",_config:{classPrefix:"",enableClasses:!1,enableJSClass:!1,usePrefixes:!0},_q:[],on:function(e,n){var A=this;setTimeout(function(){n(A[e])},0)},addTest:function(e,n,A){s.push({name:e,fn:n,options:A})},addAsyncTest:function(e){s.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=r,Modernizr=new Modernizr;var l,f=[];!function(){var e={}.hasOwnProperty;l=o(e,"undefined")||o(e.call,"undefined")?function(e,n){return n in e&&o(e.constructor.prototype[n],"undefined")}:function(n,A){return e.call(n,A)}}();var u=n.documentElement,c="svg"===u.nodeName.toLowerCase();r._l={},r.on=function(e,n){this._l[e]||(this._l[e]=[]),this._l[e].push(n),Modernizr.hasOwnProperty(e)&&setTimeout(function(){Modernizr._trigger(e,Modernizr[e])},0)},r._trigger=function(e,n){if(this._l[e]){var A=this._l[e];setTimeout(function(){var e,o;for(e=0;e<A.length;e++)(o=A[e])(n)},0),delete this._l[e]}},Modernizr._q.push(function(){r.addTest=i}),Modernizr.addAsyncTest(function(){function e(e,n,A){function o(n){var o=n&&"load"===n.type?1==a.width:!1,t="webp"===e;i(e,t?new Boolean(o):o),A&&A(n)}var a=new Image;a.onerror=o,a.onload=o,a.src=n}var n=[{uri:"data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",name:"webp"},{uri:"data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",name:"webp.alpha"},{uri:"data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",name:"webp.animation"},{uri:"data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",name:"webp.lossless"}],A=n.shift();e(A.name,A.uri,function(A){if(A&&"load"===A.type)for(var o=0;o<n.length;o++)e(n[o].name,n[o].uri)})}),a(),delete r.addTest,delete r.addAsyncTest;for(var p=0;p<Modernizr._q.length;p++)Modernizr._q[p]();e.Modernizr=Modernizr}(window,document);
+
+        Modernizr.on('webp', function (result) {
+          if (result.alpha === true) {
+            document.cookie = 'WEBP_IS_SUPPORTED=1;path=/';
+          } else {
+            document.cookie = 'WEBP_IS_SUPPORTED=1;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT';
+          }
+        });
+      })();
+    </script>
+    <!-- End of WebP Images Script -->
+
     <meta charset="utf-8">
     <title>Hyperion | Creative Agency in Birmingham, UK</title>
     <meta name="description" content="">
@@ -269,7 +290,7 @@
       <script src="app/navigation-tracker/navigation-tracker.run.js"></script>
 
       <!--
-        todo todo uncomment this when building the app
+        I don't know how, but this is included in the build process. Hooray!
 
         <script src="app/ng-templates/ng-templates.run.js"></script>
       -->
@@ -315,17 +336,19 @@
     <!-- end of state components files -->
     <!-- endbuild -->
 
+    <!--
+      Start of the FPS Meter
+      https://github.com/mrdoob/stats.js/
+
+      todo remove this in production
+    -->
     <script>
-      // todo remove this in production
-      // https://github.com/mrdoob/stats.js/
-      // stats.js - http://github.com/mrdoob/stats.js
       var Stats=function(){function f(a,e,b){a=document.createElement(a);a.id=e;a.style.cssText=b;return a}function l(a,e,b){var c=f("div",a,"padding:0 0 3px 3px;text-align:left;background:"+b),d=f("div",a+"Text","font-family:Helvetica,Arial,sans-serif;font-size:9px;font-weight:bold;line-height:15px;color:"+e);d.innerHTML=a.toUpperCase();c.appendChild(d);a=f("div",a+"Graph","width:74px;height:30px;background:"+e);c.appendChild(a);for(e=0;74>e;e++)a.appendChild(f("span","","width:1px;height:30px;float:left;opacity:0.9;background:"+b));return c}function m(a){for(var b=c.children,d=0;d<b.length;d++)b[d].style.display=d===a?"block":"none";n=a}function p(a,b){a.appendChild(a.firstChild).style.height=Math.min(30,30-30*b)+"px"}var q=self.performance&&self.performance.now?self.performance.now.bind(performance):Date.now,k=q(),r=k,t=0,n=0,c=f("div","stats","width:80px;opacity:0.9;cursor:pointer");c.addEventListener("mousedown",function(a){a.preventDefault();m(++n%c.children.length)},!1);var d=0,u=Infinity,v=0,b=l("fps","#0ff","#002"),A=b.children[0],B=b.children[1];c.appendChild(b);var g=0,w=Infinity,x=0,b=l("ms","#0f0","#020"),C=b.children[0],D=b.children[1];c.appendChild(b);if(self.performance&&self.performance.memory){var h=0,y=Infinity,z=0,b=l("mb","#f08","#201"),E=b.children[0],F=b.children[1];c.appendChild(b)}m(n);return{REVISION:14,domElement:c,setMode:m,begin:function(){k=q()},end:function(){var a=q();g=a-k;w=Math.min(w,g);x=Math.max(x,g);C.textContent=(g|0)+" MS ("+(w|0)+"-"+(x|0)+")";p(D,g/200);t++;if(a>r+1E3&&(d=Math.round(1E3*t/(a-r)),u=Math.min(u,d),v=Math.max(v,d),A.textContent=d+" FPS ("+u+"-"+v+")",p(B,d/100),r=a,t=0,void 0!==h)){var b=performance.memory.usedJSHeapSize,c=performance.memory.jsHeapSizeLimit;h=Math.round(9.54E-7*b);y=Math.min(y,h);z=Math.max(z,h);E.textContent=h+" MB ("+y+"-"+z+")";p(F,b/c)}return a},update:function(){k=this.end()}}};"object"===typeof module&&(module.exports=Stats);
 
       var stats = new Stats();
       stats.setMode(0);
 
-      // align top-left
-      stats.domElement.style.position = 'absolute';
+      stats.domElement.style.position = 'fixed';
       stats.domElement.style.left = '0px';
       stats.domElement.style.top = '0px';
 
@@ -340,5 +363,6 @@
 
       requestAnimationFrame(update);
     </script>
+    <!-- End of the FPS Meter -->
 </body>
 </html>
