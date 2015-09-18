@@ -1,10 +1,14 @@
 (function () {
   'use strict';
 
-  // This configuration animation is OKish.
-
   angular
     .module('app.fancy-slider')
+    // todo research this - sometimes it works, sometimes it doesn't
+    // .run(['PARSED_UA', 'TweenLite', function (PARSED_UA, TweenLite) {
+    //   if (PARSED_UA.os.name === 'Mac OS' && (PARSED_UA.browser.name === 'Firefox' || PARSED_UA.browser.name === 'Mozilla')) {
+    //     TweenLite.ticker.useRAF(false);
+    //   }
+    // }])
     .service('FancyConfiguration', ['TweenEasings', function (TweenEasings) {
       // Animations
       this.ANIMATION_DURATION = 1300;
