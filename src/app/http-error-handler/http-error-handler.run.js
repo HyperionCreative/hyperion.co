@@ -13,7 +13,7 @@
       // Functions //
       ///////////////
       function isFromAnUnknownURL() {
-        var fromUrl = $location.url();
+        var fromUrl = $location.path();
         var states = $state.get();
         var isKnown = false;
 
