@@ -9,8 +9,6 @@
 
         if ((window.devicePixelRatio === undefined ? 1 : window.devicePixelRatio) > 1) {
           document.cookie = 'HTTP_IS_RETINA=1;path=/';
-        } else {
-          document.cookie = 'HTTP_IS_RETINA=1;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT';
         }
       })();
 
@@ -23,8 +21,6 @@
         Modernizr.on('webp', function (result) {
           if (result.alpha === true) {
             document.cookie = 'WEBP_IS_SUPPORTED=1;path=/';
-          } else {
-            document.cookie = 'WEBP_IS_SUPPORTED=1;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT';
           }
         });
       })();
