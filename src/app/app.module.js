@@ -34,6 +34,7 @@
       'app.center-me',
       'app.custom-cursors',
       'app.fancy-slider',
+      'app.http-error-handler',
       'app.navigation-hamburger',
       'app.navigation-tracker',
       'app.on-horizontal-scroll',

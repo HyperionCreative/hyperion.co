@@ -1,0 +1,48 @@
+.http-error {
+  position: fixed;
+  right: 70px;
+  top: 100px;
+
+  @media only screen and (max-width : 1919px) {
+    // As the lateral depth bars are not visible!
+    right: 40px;
+  }
+
+  background-color: rgba(#ffffff, 0.9);
+  @include border-radius(8px);
+  color: #879198;
+  display: inline-block;
+  min-width: 395px;
+  padding: 20px 25px;
+  white-space: nowrap;
+  z-index: $http-error-z-index;
+
+  @include legacy-pie-clearfix;
+
+  .name-and-code {
+    font-size: 15px;
+    margin-bottom: 3px;
+
+    strong {
+      color: #2c3942;
+    }
+  }
+
+  .icon-broken-link {
+    float: right;
+    font-size: 32px;
+  }
+
+  // The fade out animation
+  @include transition(opacity 0.3s ease-in-out, transform 0.3s ease-in-out);
+
+  &.ng-leave {
+    opacity: 1;
+    @include transform(translate3d(0,0,0));
+
+    &.ng-leave-active {
+      opacity: 0;
+      @include transform(translate3d(750px,0,0));
+    }
+  }
+}

@@ -170,6 +170,8 @@
       </div>
     <![endif]-->
 
+    <hyp-http-error ng-cloak ng-if="httpError.show" code="httpError.code" message="httpError.message" name="httpError.name"></hyp-http-error>
+
     <div ui-view="preloader"></div>
     <div ui-view="fancy-slider"></div>
     <div ui-view="page-content"></div>
@@ -278,6 +280,9 @@
 
         <script src="app/fancy-slider/slide-description/slide-description.directive.js"></script>
       <!-- end of fancy slider -->
+
+      <script src="app/http-error-handler/http-error-handler.run.js"></script>
+      <script src="app/http-error-handler/http-error.directive.js"></script>
 
       <script src="app/navigation-hamburger/navigation-hamburger.directive.js"></script>
 
