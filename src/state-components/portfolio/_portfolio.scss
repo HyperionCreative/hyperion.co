@@ -131,7 +131,7 @@
       opacity: 0.8;
       overflow: hidden;
       position: relative;
-      @include transition(opacity 0.3s ease-in-out);
+      @include transition(opacity 0.25s ease-in-out);
 
       &:hover {
         opacity: 1;
@@ -157,7 +157,7 @@
         position: absolute;
         right: 0;
         @include transform(translate3d(0,100%,0));
-        @include transition(transform 0.3s ease-in-out);
+        @include transition(transform 0.25s ease-in-out);
 
         .project-title {
           font-size: 22px;
