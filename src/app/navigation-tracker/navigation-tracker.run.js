@@ -3,7 +3,7 @@
 
   angular
     .module('app.navigation-tracker', [])
-    .run(['$rootScope', '$state', '$window', function ($rootScope, $state, $window) {
+    .run(['$rootScope', '$window', function ($rootScope, $window) {
       ///////////////
       // Constants //
       ///////////////
