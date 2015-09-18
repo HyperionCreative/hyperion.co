@@ -313,13 +313,13 @@ AddDefaultCharset utf-8
 # read: http://html5rocks.com/en/tutorials/security/content-security-policy (or
 # see the specification: http://w3.org/TR/CSP).
 
-# todo remove the last sha256 as that's the one for the fps counter!
-<IfModule mod_headers.c>
-  Header set Content-Security-Policy "script-src 'self' 'sha256-cOJ9SNKBmhRmRU2P6hZ0Ox1_j0AjO7UiforMRVRwJ2g=' 'sha256-VHrUtsaaGrsVNGldP5KoN4NBTcWmcVtoXf-apuOXcVU='; object-src 'self'"
-  <FilesMatch "\.(appcache|crx|css|eot|gif|htc|ico|jpe?g|js|m4a|m4v|manifest|mp4|oex|oga|ogg|ogv|otf|pdf|png|safariextz|svg|svgz|ttf|vcf|webapp|webm|webp|woff|xml|xpi)$">
-      Header unset Content-Security-Policy
-  </FilesMatch>
-</IfModule>
+# This doesn't work properly in IE Edge -.-
+# <IfModule mod_headers.c>
+#   Header set Content-Security-Policy "script-src 'self' 'sha256-Qrzo6hQ4wwX5HEysInxKPDaVLeVePPOOk4TzdTkpPTE=' 'sha256-U2W-o8Qn4pDuDjegkC54zcA3l9aFqZs5qtS3PnEPWKQ='; object-src 'self'"
+#   <FilesMatch "\.(appcache|crx|css|eot|gif|htc|ico|jpe?g|js|m4a|m4v|manifest|mp4|oex|oga|ogg|ogv|otf|pdf|png|safariextz|svg|svgz|ttf|vcf|webapp|webm|webp|woff|xml|xpi)$">
+#       Header unset Content-Security-Policy
+#   </FilesMatch>
+# </IfModule>
 
 # ------------------------------------------------------------------------------
 # | File access                                                                |
