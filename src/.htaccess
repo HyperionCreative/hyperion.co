@@ -254,6 +254,8 @@ AddDefaultCharset utf-8
 # | Suppressing / Forcing the "www." at the beginning of URLs                  |
 # ------------------------------------------------------------------------------
 
+# Enable option 2 and disable option 1
+
 # The same content should never be available under two different URLs especially
 # not with and without "www." at the beginning. This can cause SEO problems
 # (duplicate content), therefore, you should choose one of the alternatives and
