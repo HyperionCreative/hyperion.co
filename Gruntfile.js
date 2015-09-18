@@ -322,9 +322,9 @@ module.exports = function (grunt) {
     htmlmin: {
       dist: {
         options: {
+          minifyJS: true,
           removeCommentsFromCDATA: true,
-          removeOptionalTags: true,
-
+          
           collapseBooleanAttributes: true,
           collapseWhitespace: true,
           removeAttributeQuotes: true,
@@ -560,7 +560,6 @@ module.exports = function (grunt) {
     'karma'
   ]);
 
-  // todo Make this work
   grunt.registerTask('build', [
     'clean:dist',
     'wiredep',
@@ -573,6 +572,20 @@ module.exports = function (grunt) {
     // still thinks that the images are jpg/png. Everything works as expected!
     'cwebp',
 
+    'ngtemplates',
+    'useminPrepare',
+    'concurrent:dist',
+    'concat',
+    'copy:dist',
+    'cssmin',
+    'uglify',
+    // 'filerev',
+    'usemin',
+    'htmlmin'
+  ]);
+
+  grunt.registerTask('fastbuild', [
+    'clean:dist',
     'ngtemplates',
     'useminPrepare',
     'concurrent:dist',
