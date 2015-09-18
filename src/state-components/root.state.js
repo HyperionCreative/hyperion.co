@@ -3,7 +3,7 @@
 
   angular
     .module('state.state-components')
-    .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+    .config(['$locationProvider', '$stateProvider', '$urlRouterProvider', function ($locationProvider, $stateProvider, $urlRouterProvider) {
       $stateProvider
         .state('root', {
           abstract: true,
@@ -20,5 +20,7 @@
         });
 
       $urlRouterProvider.otherwise('/');
+
+      /*@@@ $locationProvider.html5Mode(true); @@@*/
     }]);
 })();

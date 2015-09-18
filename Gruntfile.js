@@ -324,7 +324,7 @@ module.exports = function (grunt) {
         options: {
           minifyJS: true,
           removeCommentsFromCDATA: true,
-          
+
           collapseBooleanAttributes: true,
           collapseWhitespace: true,
           removeAttributeQuotes: true,
@@ -354,6 +354,7 @@ module.exports = function (grunt) {
           src: [
             '.htaccess',
             'robots.txt',
+            'favicon.ico',
 
             // We don't need the html templates as they're added to ngtemplates
             'index.html',
@@ -528,6 +529,25 @@ module.exports = function (grunt) {
 
         mt: undefined
       }
+    },
+
+    replace: {
+      index: {
+        src: '<%= yeoman.dist %>/index.html',
+        dest: '<%= yeoman.dist %>/index.html',
+        replacements: [{
+          from: /\<\!\-\-\@\@\@(.+)\@\@\@\-\-\>/gmi,
+          to: '$1'
+        }]
+      },
+      scripts: {
+        src: '.tmp/concat/scripts/scripts.js',
+        dest: '.tmp/concat/scripts/scripts.js',
+        replacements: [{
+          from: /\/\*\@\@\@(.+)\@\@\@\*\//gmi,
+          to: '$1'
+        }]
+      }
     }
   });
 
@@ -577,6 +597,7 @@ module.exports = function (grunt) {
     'concurrent:dist',
     'concat',
     'copy:dist',
+    'replace',
     'cssmin',
     'uglify',
     // 'filerev',
@@ -591,6 +612,7 @@ module.exports = function (grunt) {
     'concurrent:dist',
     'concat',
     'copy:dist',
+    'replace',
     'cssmin',
     'uglify',
     // 'filerev',
