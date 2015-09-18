@@ -96,8 +96,6 @@
     .icon-three-horizontal-bars {
       left: 50%;
       margin-left: - $this-height / 2;
-      // Otherwise the hover effect will fell strange
-      padding-bottom: 5px;
     }
   }
 
@@ -162,7 +160,7 @@
   &.center {
     .menu-container.mouse-entered {
       .icon-three-horizontal-bars {
-        @include transform(translate(0, 0 - $this-translate-travel));
+        @include transform(translate(0, 0 - 1.5 * $this-translate-travel));
       }
     }
   }
