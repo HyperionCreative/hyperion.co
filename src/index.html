@@ -15,6 +15,8 @@
 
         if ((window.devicePixelRatio === undefined ? 1 : window.devicePixelRatio) > 1) {
           document.cookie = 'HTTP_IS_RETINA=1;path=/';
+        } else {
+          document.cookie = 'HTTP_IS_RETINA=1;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT';
         }
       })();
 
@@ -27,6 +29,8 @@
         Modernizr.on('webp', function (result) {
           if (result.alpha === true) {
             document.cookie = 'WEBP_IS_SUPPORTED=1;path=/';
+          } else {
+            document.cookie = 'WEBP_IS_SUPPORTED=1;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT';
           }
         });
       })();
@@ -298,11 +302,7 @@
 
       <script src="app/navigation-tracker/navigation-tracker.run.js"></script>
 
-      <!--
-        I don't know how, but this is included in the build process. Hooray!
-
-        <script src="app/ng-templates/ng-templates.run.js"></script>
-      -->
+      <!--@@@ <script src="app/ng-templates/ng-templates.run.js"></script> @@@-->
 
       <script src="app/on-horizontal-scroll/on-horizontal-scroll.directive.js"></script>
 
