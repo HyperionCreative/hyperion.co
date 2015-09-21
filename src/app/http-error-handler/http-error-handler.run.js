@@ -18,7 +18,7 @@
         var isKnown = false;
 
         for (var i = 0; i < states.length; i++) {
-          if (states[i].url === fromUrl) {
+          if (angular.isString(states[i].url) && fromUrl.indexOf(states[i].url) === fromUrl.length - states[i].url.length) {
             isKnown = true;
           }
         }
