@@ -83,6 +83,7 @@
             header: 'We worked with <strong>Kartist</strong> in early 2015 - their platform aims to to help shoppers everywhere manage their lists, find inspiration and connect with likeminded people.',
             coverDescription: 'We worked with Kartist in early 2015 - their platform aims to to help shoppers everywhere manage their lists, find inspiration and connect with likeminded people.',
 
+            // design
             uiAndCode: {
               title: 'Useful UI + Good Code',
               description: '<p>For this project we handled Kartist’s UI, coded the front end and created their browser extensions. We wanted, as with most projects, to create something that will make sense to their target audience - an interface that is logically organised and effortless to use, but also beautiful. When coupled with good code, we are confident Kartist’s experience will be an enjoyable one.</p><p>The screen to the left demonstrates how users are prompted to sign up or login. Instead of using a more intrusive solution, we decided to gently nudge the logo every 5 seconds until the user hovers over it to learn where the sign up panel is. We believe this way, users are will not feel forced to sign up.</p>'
@@ -95,6 +96,24 @@
               title: 'The Logo',
               description: '<p>For their logo, we worked with Alicja Murphy - a very talented Australian designer. Although we initially explored more abstract concepts, we decided a simple, yet expressive lettermark will be the most memorable choice, and will best represent what Kartist is about.</p>',
               url: 'Logo by <a href="http://www.alicjamurphy.com">Alicja Murphy</a>'
+            },
+
+            // development
+            theStart: {
+              title: 'Starting on the Right Foot',
+              description: 'For this project, we have been tasked with building the front end of Kartist, and have worked closely with their internal back-end team to ensure we are always on the same page, and the final product works as expected. We worked with their team to put together a plan that would allow us to develop the project modularly and ensure each component could be developed independently. This afforded us a great degree of flexibility, while maintaining compatibility with the back-end team\'s work/components.'
+            },
+            performance: {
+              title: 'Performance',
+              description: '<p>One of our key objectives was to create an experience that is fluid and consistent across devices; because of this, performance and stability were crucial.</p><p>We used user interaction prediction to cache the resources we anticipated were going to be the most requested and thus reduced load times between pages.  We also used AngularJS\'s one time binding to deal with large collections of items and ended up reducing the no. of watchers, which considerably reduced the CPU load.</p>'
+            },
+            browserExtensions: {
+              title: 'Browser Extensions',
+              description: '<p>We also developed the browser extensions Kartist\'s users use to add items to a Kart, manage lists or edit their accounts. The extensions rely on custom scrapers we developed for each supported site.<p>'
+            },
+            theEnd: {
+              title: 'Testing & Delivery',
+              description: '<p>With the code and API being well documented, we tested each AngularJS component and the whole interface to make sure everything works as expected and our work is compatible with the back-end of the app, then handed over the deliverables and control to the GitHub repository.</p>'
             }
           },
           grow: {
