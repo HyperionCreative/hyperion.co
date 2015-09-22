@@ -25,56 +25,100 @@
     background: $this-client-color;
   }
 
-  .row.second {
-    padding: 75px 0 65px 0;
+  .design {
+    .row.second {
+      padding: 75px 0 65px 0;
 
-    .video-container {
-      width: image-width("assets/images/portfolio/kartist/imac-frame.png");
+      .video-container {
+        width: image-width("assets/images/portfolio/kartist/imac-frame.png");
 
-      video {
-        right: 0;
-        top: 31px;
+        video {
+          right: 0;
+          top: 31px;
+        }
+      }
+
+      .description {
+        margin-left: $this-custom-margin;
+        width: 350px;
       }
     }
 
-    .description {
-      margin-left: $this-custom-margin;
-      width: 350px;
-    }
-  }
+    .row.third {
+      padding: 65px 0 45px 0;
 
-  .row.third {
-    padding: 65px 0 45px 0;
+      img {
+        max-width: image-width("assets/images/portfolio/kartist/in-page-3.jpg");
+      }
 
-    img {
-      max-width: image-width("assets/images/portfolio/kartist/in-page-3.jpg");
-    }
-
-    .description {
-      margin-left: $this-custom-margin;
-      width: 315px;
-    }
-  }
-
-  .row.fourth {
-    padding: 0 0 40px 0;
-
-    img {
-      max-width: image-width("assets/images/portfolio/kartist/in-page-4.jpg");
+      .description {
+        margin-left: $this-custom-margin;
+        width: 315px;
+      }
     }
 
-    .description {
-      margin-left: $this-custom-margin;
-      margin-top: 4%;
-      width: 212px;
+    .row.fourth {
+      padding: 0 0 40px 0;
 
-      .logo-by {
-        margin-top: 30px;
-        opacity: 0.5;
+      img {
+        max-width: image-width("assets/images/portfolio/kartist/in-page-4.jpg");
+      }
 
-        a {
-          text-decoration: underline;
+      .description {
+        margin-left: $this-custom-margin;
+        margin-top: 4%;
+        width: 212px;
+
+        .logo-by {
+          margin-top: 30px;
+          opacity: 0.5;
+
+          a {
+            text-decoration: underline;
+          }
         }
+      }
+    }
+  }
+
+  .development {
+    $this-smaller-custom-margin: $this-custom-margin * 0.7;
+
+    .row {
+      .half-of-row {
+        float: left;
+        width: 50%;
+      }
+
+      &.first, &.third, &.fifth {
+        padding: $this-custom-margin $this-custom-margin $this-smaller-custom-margin $this-custom-margin;
+      }
+
+      &.third {
+        padding-bottom: 0;
+        padding-top: 0;
+
+        .half-of-row {
+          padding-bottom: $this-smaller-custom-margin;
+          padding-top: $this-custom-margin;
+
+          &:first-child {
+            border-right: 1px solid #e7e8ea;
+            padding-right: $this-custom-margin;
+          }
+
+          &:last-child {
+            padding-left: $this-custom-margin;
+          }
+        }
+      }
+
+      &.fourth .half-of-row:first-child {
+        border-right: 1px solid #ffffff;
+      }
+
+      &.fifth {
+        padding-bottom: $this-custom-margin;
       }
     }
   }

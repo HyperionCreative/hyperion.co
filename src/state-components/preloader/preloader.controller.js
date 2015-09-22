@@ -35,6 +35,8 @@
         Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/kartist/slide-1.jpg');
         Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/kartist/slide-2.jpg');
         Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/kartist/slide-3.jpg');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/kartist/dev-left.jpg');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/kartist/dev-right.jpg');
 
         Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/quizkick/logo.png');
         Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/quizkick/1.jpg');
