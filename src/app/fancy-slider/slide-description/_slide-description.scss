@@ -2,8 +2,6 @@
 // Custom behaviour for each slide //
 /////////////////////////////////////
 
-// todo don't forget to add .fancy-slider[data-active-slide="#{$slide}"]
-
 @mixin slides-description-custom-opacity($slide, $opacity-list) {
   $index: 1;
 
@@ -183,7 +181,7 @@
         background-position: center;
         background-repeat: no-repeat;
 
-        // todo reminder to delete this when actual links are added in the html
+        // I don't see any harm in it!
         cursor: pointer;
 
         display: block;

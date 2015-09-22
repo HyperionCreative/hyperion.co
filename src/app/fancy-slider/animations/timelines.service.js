@@ -40,7 +40,6 @@
           secondToFirst: createHorizontalTimeline(resources.secondSlide, resources.firstSlide, false)
         };
 
-        // todo the code which changes the slide description
         (function () {
           function addSlideDescriptionToTimeline(timeline, resource, fromAlpha, toAlpha) {
             timeline.fromTo(resource, Configuration.ANIMATION_DURATION / 1000, {
