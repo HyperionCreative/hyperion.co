@@ -18,6 +18,9 @@
         var isKnown = false;
 
         for (var i = 0; i < states.length; i++) {
+          // Since states[i].url only contain the specific state url (for example,
+          // /design for root.sub-page-template.expertise.design), this may
+          // misbehave.
           if (angular.isString(states[i].url) && fromUrl.indexOf(states[i].url) === fromUrl.length - states[i].url.length) {
             isKnown = true;
           }
