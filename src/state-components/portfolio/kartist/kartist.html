@@ -7,57 +7,7 @@
         client-name="Kartist"
       ></hyp-portfolio-header>
 
-      <div class="portfolio-content">
-        <div class="first row">
-          <img src="assets/images/portfolio/kartist/in-page-1.jpg" alt="Kartist">
-        </div>
-
-        <div class="second row">
-          <div class="description left">
-            <h1 class="title" ng-bind-html=":: str.portfolio.kartist.uiAndCode.title"></h1>
-            <div ng-bind-html=":: str.portfolio.kartist.uiAndCode.description"></div>
-            <!--
-              todo add the button when they finish working on the backend
-              <a class="button">Visit Site</a>
-            -->
-          </div>
-          <div class="video-container right">
-            <img src="assets/images/portfolio/kartist/imac-frame.png" alt="Kartist">
-            <video width="388" height="405" autoplay loop muted poster="assets/videos/portfolio/kartist/kartist-poster.jpg">
-              <source src="assets/videos/portfolio/kartist/kartist.mp4" type="video/mp4">
-              <source src="assets/videos/portfolio/kartist/kartist.webm" type="video/webm">
-              <source src="assets/videos/portfolio/kartist/kartist.ogg" type="video/ogg">
-            </video>
-          </div>
-        </div>
-
-        <hyp-carousel-slider
-          arrows-background-color="#ffffff"
-          arrows-color="#5cc6eb"
-          images-url="['assets/images/portfolio/kartist/slide-1.jpg', 'assets/images/portfolio/kartist/slide-2.jpg', 'assets/images/portfolio/kartist/slide-3.jpg']"
-          ></hyp-carousel-slider>
-
-        <div class="third row">
-          <img src="assets/images/portfolio/kartist/in-page-3.jpg" alt="Kartist" class="left">
-          <div class="description left">
-            <h2 class="title" ng-bind-html=":: str.portfolio.kartist.mobileVersion.title"></h2>
-            <div ng-bind-html=":: str.portfolio.kartist.mobileVersion.description"></div>
-          </div>
-        </div>
-
-        <div class="fourth row">
-          <div class="description left">
-            <h2 class="title" ng-bind-html=":: str.portfolio.kartist.logo.title"></h2>
-            <div ng-bind-html=":: str.portfolio.kartist.logo.description"></div>
-            <div class="logo-by" ng-bind-html=":: str.portfolio.kartist.logo.url"></div>
-          </div>
-          <img src="assets/images/portfolio/kartist/in-page-4.jpg" alt="Kartist" class="right">
-        </div>
-      </div>
-
-      <a ui-sref="root.sub-page-template.portfolio.quizkick" class="project-navigation">Next Project: <strong><span>QuizKick<span class="icon-arrow-right-pointy"></span></span></strong></a>
-
-      <hyp-simple-footer></hyp-simple-footer>
+      <div ui-view="kartist-category"></div>
     </div>
   </section>
 </hyp-center-me>
