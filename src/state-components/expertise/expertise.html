@@ -21,7 +21,7 @@
             ui-sref="root.sub-page-template.expertise.development"
             ng-class="{active: activeTab == 'root.sub-page-template.expertise.development'}"
             class="actual-content icon-development">
-            <span>Development</span>
+            <span ng-bind-html=":: str.expertise.development.tabName"></span>
           </a>
         </div>
         <div class="tab">

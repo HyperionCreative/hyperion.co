@@ -34,6 +34,11 @@
             title: 'UI/UX',
             description: '<p>While there are many factors at work behind the interfaces people love, we would sum it up as follows: a good interface is one that makes sense to the people using it. One that is adequate, beautiful, logical and empathetic towards the user. We also believe technology should be simple and improve our lives in natural, almost invisible ways.</p><p>To achieve this, we look at the whole picture and try to plan ahead as clearly as possible - when every detail has its place and purpose, creativity and function come naturally.</p>'
           },
+          development: {
+            tabName: 'Development',
+            title: 'Development',
+            description: '<p>For every application, UI and UX are just the tip of the iceberg; it\'s the code that breathes life into the app and makes everything tick. Because of this, writing good code is of paramount importance and we believe it comes down to this:</p><p>Great code takes careful planning and requires an extensive knowledge of the tools at our disposal; it must be well documented and modular, so that the product\'s structure is always clear, and components can be developed in a timely and cost efficient manner. It must perform well across a wide range of devices and be well crafted. What\'s more, we do limit ourselves by using templates or ready-made frameworks - we build sites and apps from the ground up, which affords us the freedom to not only create the great experience your users expect, but also ensure the project is flexible enough to not fall apart when new features are needed.</p>'
+          },
           consulting: {
             tabName: 'Consulting',
             title: 'Consulting',

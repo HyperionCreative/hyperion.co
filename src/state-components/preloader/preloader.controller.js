@@ -12,6 +12,7 @@
         Preloader.addToQueue('the-rest-of-the-images', 'assets/images/contact/invalid-icon.png');
 
         Preloader.addToQueue('the-rest-of-the-images', 'assets/images/expertise/consulting.jpg');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/expertise/development.jpg');
         Preloader.addToQueue('the-rest-of-the-images', 'assets/images/expertise/ui-ux.jpg');
 
         Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/anyvan/logo.png');
