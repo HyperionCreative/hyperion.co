@@ -1,6 +1,10 @@
 (function () {
   'use strict';
 
+  // todo this is buggy. I should change the detection mechanism. It fails for
+  // http://www.hyperion.co/portfolio/design which is not a valid state; and for
+  // other cases.
+
   angular
     .module('app.http-error-handler', [])
     .run(['$location', '$rootScope', '$state', '$timeout', function ($location, $rootScope, $state, $timeout) {
