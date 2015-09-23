@@ -231,11 +231,11 @@ module.exports = function (grunt) {
     filerev: {
       dist: {
         src: [
-          '<%= yeoman.dist %>/scripts/{,*/}*.js',
-          '<%= yeoman.dist %>/styles/{,*/}*.css',
-          '<%= yeoman.dist %>/**/*.{png,jpg,jpeg,gif,webp,svg}',
-          '<%= yeoman.dist %>/assets/icons/as-fonts/**/*.{eot,svg,ttf,woff,woff2}',
-          '<%= yeoman.dist %>/assets/webfonts/**/*.{eot,svg,ttf,woff,woff2}'
+          '<%= yeoman.dist %>/**/*.js',
+          '<%= yeoman.dist %>/**/*.css',
+          '<%= yeoman.dist %>/**/*.css',
+          '<%= yeoman.dist %>/assets/icons/as-fonts/**/*',
+          '<%= yeoman.dist %>/assets/webfonts/**/*'
         ]
       }
     },
@@ -337,7 +337,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>',
-          src: ['index.html'],
+          src: ['*.html'],
           dest: '<%= yeoman.dist %>'
         }]
       }
@@ -357,7 +357,7 @@ module.exports = function (grunt) {
             'favicon.ico',
 
             // We don't need the html templates as they're added to ngtemplates
-            'index.html',
+            '*.html',
 
             'assets/**/*',
 
@@ -600,7 +600,7 @@ module.exports = function (grunt) {
     'replace',
     'cssmin',
     'uglify',
-    // 'filerev',
+    'filerev',
     'usemin',
     'htmlmin'
   ]);
@@ -615,7 +615,7 @@ module.exports = function (grunt) {
     'replace',
     'cssmin',
     'uglify',
-    // 'filerev',
+    'filerev',
     'usemin',
     'htmlmin'
   ]);
