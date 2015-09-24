@@ -6,6 +6,7 @@
 
 @import "buttons";
 @import "forms";
+@import "generics";
 @import "icons";
 @import "responsive";
 @import "webfonts";
@@ -36,47 +37,6 @@
 // bower:scss
 // endbower
 
-//////////////
-// Generics //
-//////////////
-
-html {
-  // We want the vertical scrollbar to always be present on the screen.
-  // Otherwise the content may bounce when the scrollbar appears.
-  overflow-y: scroll;
-}
-
-
-body {
-  font-family: $HelveticaNeue-Roman;
-  font-size: $normal-font-size;
-  -moz-font-feature-settings: "liga", "kern";
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-p {
-  line-height: $normal-line-height;
-}
-
-strong {
-  font-family: $HelveticaNeue-Bold;
-}
-
-///////////////////////////
-// Border box everything //
-///////////////////////////
-
-*, *:after, *:before {
-  @include box-sizing(border-box);
-}
-
 ////////////////
 // Containers //
 ////////////////
@@ -86,6 +46,10 @@ html {
   // and the fancy slider.
   min-height: 100%;
   position: relative;
+
+  // We want the vertical scrollbar to always be present on the screen.
+  // Otherwise the content may bounce when the scrollbar appears.
+  overflow-y: scroll;
 
   min-width: $min-page-width;
 }
