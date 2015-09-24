@@ -38,3 +38,28 @@ $medium-screens-breakpoint: 768px;
 ////////////////////
 
 @import "state-components-mobile/index/index";
+
+////////////////
+// Containers //
+////////////////
+
+.container {
+  display: block;
+  margin: 0 auto;
+
+  @include small-screens {
+    max-width: 280px;
+    width: 87.5%;
+  }
+
+  @include medium-screens {
+    max-width: 350px;
+    width: 85%;
+  }
+
+  @include large-screens {
+    max-width: 520px;
+    width: 67.5%;
+  }
+}
+
