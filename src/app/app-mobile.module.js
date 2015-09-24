@@ -20,6 +20,12 @@
       // Common modules //
       ////////////////////
 
-      'common.greeter'
+      'common.greeter',
+
+      //////////////////////
+      // State Components //
+      //////////////////////
+
+      'state.state-components'
     ]);
 })();

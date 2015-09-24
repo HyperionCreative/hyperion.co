@@ -1,0 +1,23 @@
+.cover {
+  background-position: center;
+  background-repeat: no-repeat;
+  @include background-size(cover);
+
+  position: relative;
+  width: 100%;
+
+  @include small-screens {
+    background-image: url(../assets/images/mobile/cover-small.jpg);
+    height: 206px;
+  }
+
+  @include medium-screens {
+    background-image: url(../assets/images/mobile/cover-medium.jpg);
+    height: 266px;
+  }
+
+  @include large-screens {
+    background-image: url(../assets/images/mobile/cover-large.jpg);
+    height: 400px;
+  }
+}

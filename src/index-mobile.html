@@ -84,7 +84,7 @@
     </style>
   </head>
   <body ng-app="HyperionMobileApp" ng-cloak>
-
+    <div ui-view></div>
 
     <!-- build:js(.) scripts/vendor-mobile.js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -100,6 +100,13 @@
     <!-- start of common files -->
       <script src="common/greeter/greetings.directive.js"></script>
     <!-- end of common files -->
+
+    <!-- start of state components files -->
+      <script src="state-components-mobile/state-components.module.js"></script>
+      <script src="state-components-mobile/state-components.config.js"></script>
+
+      <script src="state-components-mobile/index/index.state.js"></script>
+    <!-- end of state components files -->
     <!-- endbuild -->
   </body>
 </html>

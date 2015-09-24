@@ -38,9 +38,11 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/app/**/*.js',
           '<%= yeoman.app %>/common/**/*.js',
           '<%= yeoman.app %>/state-components/**/*.js',
+          '<%= yeoman.app %>/state-components-mobile/**/*.js',
           '!<%= yeoman.app %>/app/**/*.spec.js',
           '!<%= yeoman.app %>/common/**/*.spec.js',
-          '!<%= yeoman.app %>/state-components/**/*.spec.js'
+          '!<%= yeoman.app %>/state-components/**/*.spec.js',
+          '!<%= yeoman.app %>/state-components-mobile/**/*.spec.js',
         ],
         tasks: ['newer:jshint:all'],
         options: {
@@ -51,7 +53,8 @@ module.exports = function (grunt) {
         files: [
           '<%= yeoman.app %>/app/**/*.spec.js',
           '<%= yeoman.app %>/common/**/*.spec.js',
-          '<%= yeoman.app %>/state-components/**/*.spec.js'
+          '<%= yeoman.app %>/state-components/**/*.spec.js',
+          '<%= yeoman.app %>/state-components-mobile/**/*.spec.js',
         ],
         tasks: ['newer:jshint:test']
       },
@@ -60,6 +63,7 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/app/**/*.{scss,sass}',
           '<%= yeoman.app %>/common/**/*.{scss,sass}',
           '<%= yeoman.app %>/state-components/**/*.{scss,sass}',
+          '<%= yeoman.app %>/state-components-mobile/**/*.{scss,sass}',
           '<%= yeoman.app %>/styles/**/*.{scss,sass}'
         ],
         tasks: ['compass:server']
@@ -138,9 +142,11 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/app/**/*.js',
           '<%= yeoman.app %>/common/**/*.js',
           '<%= yeoman.app %>/state-components/**/*.js',
+          '<%= yeoman.app %>/state-components-mobile/**/*.js',
           '!<%= yeoman.app %>/app/**/*.spec.js',
           '!<%= yeoman.app %>/common/**/*.spec.js',
-          '!<%= yeoman.app %>/state-components/**/*.spec.js'
+          '!<%= yeoman.app %>/state-components/**/*.spec.js',
+          '!<%= yeoman.app %>/state-components-mobile/**/*.spec.js'
         ]
       },
       test: {
@@ -150,7 +156,8 @@ module.exports = function (grunt) {
         src: [
           '<%= yeoman.app %>/app/**/*.spec.js',
           '<%= yeoman.app %>/common/**/*.spec.js',
-          '<%= yeoman.app %>/state-components/**/*.spec.js'
+          '<%= yeoman.app %>/state-components/**/*.spec.js',
+          '<%= yeoman.app %>/state-components-mobile/**/*.spec.js',
         ]
       }
     },
