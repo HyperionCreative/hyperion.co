@@ -6,3 +6,29 @@
 
 @import "generics";
 @import "webfonts";
+
+////////////////////////
+// Responsive Helpers //
+////////////////////////
+
+$small-screens-breakpoint: 320px;
+$medium-screens-breakpoint: 768px;
+
+@mixin small-screens {
+  @media only screen and (max-width : $small-screens-breakpoint) {
+    @content;
+  }
+}
+
+@mixin medium-screens {
+  @media only screen and (min-width : $small-screens-breakpoint + 1px) and (max-width : $medium-screens-breakpoint - 1px) {
+    @content;
+  }
+}
+
+@mixin large-screens {
+  @media only screen and (min-width : $medium-screens-breakpoint) {
+    @content;
+  }
+}
+
