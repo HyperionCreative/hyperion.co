@@ -2,129 +2,104 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <base href="http://stage.hyperion.co/2.5.5.3/">
+    <!-- todo change this in production with the actual url -->
+    <!--@@@ <base href="http://stage.hyperion.co/2.5.5.3/"> @@@-->
 
     <title>Hyperion | Creative Agency in Birmingham, UK</title>
 
+    <script>
+      // Retina Script
+      // Read more at: http://shauninman.com/tmp/retina/
+      (function () {
+        'use strict';
+
+        if ((window.devicePixelRatio === undefined ? 1 : window.devicePixelRatio) > 1) {
+          document.cookie = 'HTTP_IS_RETINA=1;path=/';
+        } else {
+          document.cookie = 'HTTP_IS_RETINA=1;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT';
+        }
+      })();
+
+      // WebP Images Script
+      (function () {
+        'use strict';
+
+        !function(e,n,A){function o(e,n){return typeof e===n}function a(){var e,n,A,a,t,i,r;for(var l in s){if(e=[],n=s[l],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(A=0;A<n.options.aliases.length;A++)e.push(n.options.aliases[A].toLowerCase());for(a=o(n.fn,"function")?n.fn():n.fn,t=0;t<e.length;t++)i=e[t],r=i.split("."),1===r.length?Modernizr[r[0]]=a:(!Modernizr[r[0]]||Modernizr[r[0]]instanceof Boolean||(Modernizr[r[0]]=new Boolean(Modernizr[r[0]])),Modernizr[r[0]][r[1]]=a),f.push((a?"":"no-")+r.join("-"))}}function t(e){var n=u.className,A=Modernizr._config.classPrefix||"";if(c&&(n=n.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+A+"no-js(\\s|$)");n=n.replace(o,"$1"+A+"js$2")}Modernizr._config.enableClasses&&(n+=" "+A+e.join(" "+A),c?u.className.baseVal=n:u.className=n)}function i(e,n){if("object"==typeof e)for(var A in e)l(e,A)&&i(A,e[A]);else{e=e.toLowerCase();var o=e.split("."),a=Modernizr[o[0]];if(2==o.length&&(a=a[o[1]]),"undefined"!=typeof a)return Modernizr;n="function"==typeof n?n():n,1==o.length?Modernizr[o[0]]=n:(!Modernizr[o[0]]||Modernizr[o[0]]instanceof Boolean||(Modernizr[o[0]]=new Boolean(Modernizr[o[0]])),Modernizr[o[0]][o[1]]=n),t([(n&&0!=n?"":"no-")+o.join("-")]),Modernizr._trigger(e,n)}return Modernizr}var s=[],r={_version:"3.0.0-alpha.4",_config:{classPrefix:"",enableClasses:!1,enableJSClass:!1,usePrefixes:!0},_q:[],on:function(e,n){var A=this;setTimeout(function(){n(A[e])},0)},addTest:function(e,n,A){s.push({name:e,fn:n,options:A})},addAsyncTest:function(e){s.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=r,Modernizr=new Modernizr;var l,f=[];!function(){var e={}.hasOwnProperty;l=o(e,"undefined")||o(e.call,"undefined")?function(e,n){return n in e&&o(e.constructor.prototype[n],"undefined")}:function(n,A){return e.call(n,A)}}();var u=n.documentElement,c="svg"===u.nodeName.toLowerCase();r._l={},r.on=function(e,n){this._l[e]||(this._l[e]=[]),this._l[e].push(n),Modernizr.hasOwnProperty(e)&&setTimeout(function(){Modernizr._trigger(e,Modernizr[e])},0)},r._trigger=function(e,n){if(this._l[e]){var A=this._l[e];setTimeout(function(){var e,o;for(e=0;e<A.length;e++)(o=A[e])(n)},0),delete this._l[e]}},Modernizr._q.push(function(){r.addTest=i}),Modernizr.addAsyncTest(function(){function e(e,n,A){function o(n){var o=n&&"load"===n.type?1==a.width:!1,t="webp"===e;i(e,t?new Boolean(o):o),A&&A(n)}var a=new Image;a.onerror=o,a.onload=o,a.src=n}var n=[{uri:"data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",name:"webp"},{uri:"data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",name:"webp.alpha"},{uri:"data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",name:"webp.animation"},{uri:"data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",name:"webp.lossless"}],A=n.shift();e(A.name,A.uri,function(A){if(A&&"load"===A.type)for(var o=0;o<n.length;o++)e(n[o].name,n[o].uri)})}),a(),delete r.addTest,delete r.addAsyncTest;for(var p=0;p<Modernizr._q.length;p++)Modernizr._q[p]();e.Modernizr=Modernizr}(window,document);
+
+        Modernizr.on('webp', function (result) {
+          if (result.alpha === true) {
+            document.cookie = 'WEBP_IS_SUPPORTED=1;path=/';
+          } else {
+            document.cookie = 'WEBP_IS_SUPPORTED=1;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT';
+          }
+        });
+      })();
+    </script>
+
+    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
+    <!-- Start of Open Graph -->
+      <meta property="og:title" content="Hyperion">
+
+      <!-- todo remember that this url must be absolute -->
+      <meta property="og:image" content="http://www.hyperion.co/assets/favicon/mstile-150x150.png">
+
+      <meta property="og:site_name" content="Hyperion"/>
+      <meta property="og:description" content="Creative Agency in Birmingham, UK">
+    <!-- End of Open Graph -->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="./assets/favicon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="./assets/favicon/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="./assets/favicon/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="./assets/favicon/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="./assets/favicon/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="./assets/favicon/apple-touch-icon-180x180.png">
     <link rel="icon" type="image/png" href="./assets/favicon/favicon-196x196.png" sizes="196x196">
     <link rel="icon" type="image/png" href="./assets/favicon/favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/png" href="./assets/favicon/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="./assets/favicon/favicon-16x16.png" sizes="16x16">
     <link rel="icon" type="image/png" href="./assets/favicon/favicon-128.png" sizes="128x128">
+    <meta name="application-name" content="Hyperion | Creative Agency in Birmingham, UK">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="./assets/favicon/mstile-144x144.png">
+    <meta name="msapplication-square70x70logo" content="./assets/favicon/mstile-70x70.png">
+    <meta name="msapplication-square150x150logo" content="./assets/favicon/mstile-150x150.png">
+    <meta name="msapplication-wide310x150logo" content="./assets/favicon/mstile-310x150.png">
+    <meta name="msapplication-square310x310logo" content="./assets/favicon/mstile-310x310.png">
+
+    <!-- build:css(.tmp) styles/main-mobile.css -->
+      <link rel="stylesheet" href="styles/main-mobile.css">
+    <!-- endbuild -->
 
     <style>
-      /* http://meyerweb.com/eric/tools/css/reset/
-         v2.0 | 20110126
-         License: none (public domain)
-      */
-
-      html, body, div, span, applet, object, iframe,
-      h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-      a, abbr, acronym, address, big, cite, code,
-      del, dfn, em, img, ins, kbd, q, s, samp,
-      small, strike, strong, sub, sup, tt, var,
-      b, u, i, center,
-      dl, dt, dd, ol, ul, li,
-      fieldset, form, label, legend,
-      table, caption, tbody, tfoot, thead, tr, th, td,
-      article, aside, canvas, details, embed,
-      figure, figcaption, footer, header, hgroup,
-      menu, nav, output, ruby, section, summary,
-      time, mark, audio, video {
-      	margin: 0;
-      	padding: 0;
-      	border: 0;
-      	font-size: 100%;
-      	font: inherit;
-      	vertical-align: baseline;
-      }
-      /* HTML5 display-role reset for older browsers */
-      article, aside, details, figcaption, figure,
-      footer, header, hgroup, menu, nav, section {
-      	display: block;
-      }
-      body {
-      	line-height: 1;
-      }
-      ol, ul {
-      	list-style: none;
-      }
-      blockquote, q {
-      	quotes: none;
-      }
-      blockquote:before, blockquote:after,
-      q:before, q:after {
-      	content: '';
-      	content: none;
-      }
-      table {
-      	border-collapse: collapse;
-      	border-spacing: 0;
-      }
-
-      html, body {
-        margin: 0;
-      }
-
-      img {
-        border: 0;
-        display: block;
-        height: auto;
-        width: 100%;
-      }
-
-      .text {
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-
-        height: 100%;
-        width: 80%;
-
-        margin: auto;
-      }
-
-      table {
-        height: 100%;
-        width: 100%;
-      }
-
-      td {
-        vertical-align: middle;
-        text-align: center;
-      }
-
-      h1, h2 {
-        color: #ffffff;
-        font-family: sans-serif;
-        line-height: 1.25;
-      }
-
-      h1 {
-        font-size: 22px;
-      }
-
-      h2 {
-        font-size: 13px;
-        margin-top: 15px;
+      [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
       }
     </style>
   </head>
-  <body>
-    <img src="./assets/mobile/temp.jpg" alt="Temporary unavailable">
-    <div class="text">
-      <table>
-        <tr>
-          <td>
-            <h1>Our Mobile Site is still being tested. Please check back next week.</h1>
-            <h2>www.hyperion.co</h2>
-          </td>
-        </tr>
-      </table>
-    </div>
+  <body ng-app="HyperionMobileApp" ng-cloak>
+
+
+    <!-- build:js(.) scripts/vendor-mobile.js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,src}) scripts/scripts-mobile.js -->
+    <script src="app/app-mobile.module.js"></script>
+
+    <!-- start of common files -->
+      <script src="common/greeter/greetings.directive.js"></script>
+    <!-- end of common files -->
+    <!-- endbuild -->
   </body>
 </html>
