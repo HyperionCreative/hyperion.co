@@ -2,22 +2,80 @@
   background-position: center;
   background-repeat: no-repeat;
   @include background-size(cover);
-
+  color: #ffffff;
   position: relative;
+  text-align: center;
   width: 100%;
+
+  .welcome {
+    font-family: $MuseoSans-500;
+    font-style: italic;
+    line-height: 1.25em;
+    margin-bottom: 0.5em;
+
+    strong {
+      font-family: $MuseoSans-700;
+    }
+  }
+
+  .location {
+    color: #acb4ba;
+  }
 
   @include small-screens {
     background-image: url(../assets/images/mobile/cover-small.jpg);
     height: 206px;
+
+    .big-logo {
+      font-size: 50px;
+      padding-bottom: 12px;
+      padding-top: 35px;
+    }
+
+    .welcome {
+      font-size: 19px;
+    }
+
+    .location {
+      font-size: 13px;
+    }
   }
 
   @include medium-screens {
     background-image: url(../assets/images/mobile/cover-medium.jpg);
     height: 266px;
+
+    .big-logo {
+      font-size: 58px;
+      padding-bottom: 28px;
+      padding-top: 48px;
+    }
+
+    .welcome {
+      font-size: 20px;
+    }
+
+    .location {
+      font-size: 14px;
+    }
   }
 
   @include large-screens {
     background-image: url(../assets/images/mobile/cover-large.jpg);
     height: 400px;
+
+    .big-logo {
+      font-size: 60px;
+      padding-bottom: 45px;
+      padding-top: 100px;
+    }
+
+    .welcome {
+      font-size: 27px;
+    }
+
+    .location {
+      font-size: 17px;
+    }
   }
 }
