@@ -1,4 +1,4 @@
-.cover {
+#index-page .cover {
   background-position: center;
   background-repeat: no-repeat;
   @include background-size(cover);
@@ -76,6 +76,90 @@
 
     .location {
       font-size: 17px;
+    }
+  }
+}
+
+#index-page .tabs {
+  $this-border: 1px solid #dadcdd;
+  $this-tabs-count: 3;
+
+  border-bottom: $this-border;
+  color: #bfc5c9;
+  @include legacy-pie-clearfix;
+  text-align: center;
+  width: 100%;
+
+  // A quick way to set all icons height!
+  @mixin this-icons-size-fixer($size, $first-icon-size, $second-icon-size, $third-icon-size) {
+    .tab-icon {
+      height: $size;
+
+      &:before {
+        line-height: $size;
+        vertical-align: middle;
+      }
+    }
+
+    .tab:nth-child(1) > .tab-icon {
+      font-size: $first-icon-size;
+    }
+
+    .tab:nth-child(2) > .tab-icon {
+      font-size: $second-icon-size;
+    }
+
+    .tab:nth-child(3) > .tab-icon {
+      font-size: $third-icon-size;
+    }
+  }
+
+  .tab {
+    border-right: $this-border;
+    float: left;
+    width: 100% / $this-tabs-count;
+
+    &:last-child {
+      border-right: 0;
+    }
+  }
+
+  @include small-screens {
+    @include this-icons-size-fixer(25px, 25px, 17px, 17px);
+
+    .tab {
+      padding: 20px 0 15px 0;
+    }
+
+    .tab-text {
+      font-size: 12px;
+      margin-top: 0.7em;
+    }
+  }
+
+  @include medium-screens {
+    @include this-icons-size-fixer(27px, 27px, 19px, 19px);
+
+    .tab {
+      padding: 25px 0 15px 0;
+    }
+
+    .tab-text {
+      font-size: 13px;
+      margin-top: 0.9em;
+    }
+  }
+
+  @include large-screens {
+    @include this-icons-size-fixer(32px, 32px, 22px, 22px);
+
+    .tab {
+      padding: 30px 0 20px 0;
+    }
+
+    .tab-text {
+      font-size: 15px;
+      margin-top: 1em;
     }
   }
 }
