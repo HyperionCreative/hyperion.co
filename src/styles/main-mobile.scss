@@ -63,3 +63,39 @@ $medium-screens-breakpoint: 768px;
   }
 }
 
+//////////////////
+// Text related //
+//////////////////
+
+$mobile-only-font-size: 14px;
+
+body, p {
+  font-size: $mobile-only-font-size;
+}
+
+.title {
+  color: #79d0ea;
+  font-family: $MuseoSans-500;
+  // The 1.25 is the default line-height. Since is em, I can not do px * em
+  margin-bottom: $mobile-only-font-size * 1.25;
+
+  @include small-screens {
+    font-size: 20px;
+  }
+
+  @include medium-screens {
+    font-size: 22px;
+  }
+
+  @include large-screens {
+    font-size: 24px;
+  }
+}
+
+p {
+  color: #b5babd;
+
+  &:not(:last-child) {
+    margin-bottom: 1em;
+  }
+}

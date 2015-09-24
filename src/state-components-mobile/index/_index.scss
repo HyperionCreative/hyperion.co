@@ -124,6 +124,10 @@
     }
   }
 
+  .tab-text {
+    font-family: $MuseoSans-500;
+  }
+
   @include small-screens {
     @include this-icons-size-fixer(25px, 25px, 17px, 17px);
 
@@ -161,5 +165,19 @@
       font-size: 15px;
       margin-top: 1em;
     }
+  }
+}
+
+#index-page .expertise {
+  @include small-screens {
+    padding: 35px 0 55px 0;
+  }
+
+  @include medium-screens {
+    padding: 40px 0 60px 0;
+  }
+
+  @include large-screens {
+    padding: 45px 0 65px 0;
   }
 }
