@@ -19,6 +19,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-hyperion-logo:before {
+  content: "\e61a";
+}
 .icon-broken-link:before {
   content: "\e619";
 }
