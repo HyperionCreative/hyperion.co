@@ -180,3 +180,25 @@
     padding: 45px 0 65px 0;
   }
 }
+
+#index-page .our-work-slider {
+  height: 235px;
+
+  @include large-screens {
+    height: 345px;
+  }
+
+  .full-width-slider {
+    height: 100%;
+  }
+
+  // Royal Slider customization
+  .rsSlide {
+    @include transition(opacity 0.1s ease-in-out);
+    opacity: 0.5;
+
+    &.rsActiveSlide {
+      opacity: 1;
+    }
+  }
+}

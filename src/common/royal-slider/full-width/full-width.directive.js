@@ -6,6 +6,7 @@
   angular
     .module('common.full-width-slider', [])
     .directive('hypFullWidthSlider', function () {
+      // todo change this to add a minimum of images. For example 10.
       // This is used to duplicate the images. As Royal Slider doesn't append
       // the next element until the transition has started, a user may see a
       // white space if he drags the slider far enough! This fixes this.

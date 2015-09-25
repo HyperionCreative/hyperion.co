@@ -15,6 +15,8 @@
 // Responsive Helpers //
 ////////////////////////
 
+// todo remember that these are in direct dependency with a function defined in
+// state-components-mobile/index/index.controller.js
 $small-screens-breakpoint: 320px;
 $medium-screens-breakpoint: 768px;
 
@@ -46,6 +48,8 @@ $medium-screens-breakpoint: 768px;
 // Containers //
 ////////////////
 
+// todo remember that this is in direct dependency with a function defined in
+// state-components-mobile/index/index.controller.js
 .container {
   display: block;
   margin: 0 auto;

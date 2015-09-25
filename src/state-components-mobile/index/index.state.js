@@ -8,6 +8,7 @@
           url: '/',
           views: {
             '@': {
+              controller: 'IndexCtrl',
               templateUrl: 'state-components-mobile/index/index.html'
             }
           }
