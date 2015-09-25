@@ -21,6 +21,7 @@
       ////////////////////
 
       'common.greeter',
+      'common.full-width-slider',
 
       //////////////////////
       // State Components //
