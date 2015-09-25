@@ -13,7 +13,6 @@
 
       function appendImages(appendTo, imagesUrl) {
         for (var i = 0; i < IMAGES_DUPLICATION_MULTIPLIER * imagesUrl.length; i++) {
-          console.log(i % imagesUrl.length)
           appendTo.append('<img src="' + imagesUrl[i % imagesUrl.length] + '">');
         }
       }
