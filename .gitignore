@@ -7,3 +7,4 @@ bower_components
 src/common/preloader/preloadable-files.constant.js
 diagrams/~$module-status.xlsx
 src/app/ng-templates/ng-templates.run.js
+src/app/ng-templates/ng-templates-mobile.run.js
