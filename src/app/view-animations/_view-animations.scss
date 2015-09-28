@@ -58,6 +58,13 @@
     }
   }
 
+  &.ng-enter.ng-enter-active > .center-me-container {
+    .right & {
+      // So the new page, the one which comes from the right, is on top!
+      z-index: 10;
+    }
+  }
+
   &.ng-enter > .center-me-container {
     opacity: 0;
     @include transform(translate3d(- $sub-page-content-horizontal-travel,0,0));
