@@ -6,6 +6,7 @@
     .run(['$rootScope', function ($rootScope) {
       $rootScope.str = {
         globals: {
+          simplePhoneNumber: '0121 405 2101',
           phoneNumber: '+44 (0)1214-052-101'
         },
         footer: {
