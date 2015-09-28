@@ -1,5 +1,6 @@
 <footer class="simple-footer">
-  <div class="text" ng-bind-html=":: str.footer.text"></div>
+  <div class="text" ng-show=":: customFooterText" ng-bind-html=":: footerText"></div>
+  <div class="text" ng-show=":: !customFooterText" ng-bind-html=":: str.footer.text"></div>
   <ul class="social-links">
     <li class="social-link">
       <a class="icon-twitter" ng-href="{{:: str.footer.twitterHref }}" target="_blank"></a>
