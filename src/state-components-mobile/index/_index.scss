@@ -128,7 +128,12 @@
   }
 
   @include small-screens {
-    @include this-icons-size-fixer(25px, 25px, 17px, 17px);
+    @include this-icons-size-fixer(25px, 25px, 17px, 12px);
+
+    // Centers the fancy phone
+    .tab-icon.icon-fancy-phone-outline {
+      padding-top: 2px;
+    }
 
     .tab {
       padding: 20px 0 15px 0;
@@ -141,7 +146,12 @@
   }
 
   @include medium-screens {
-    @include this-icons-size-fixer(27px, 27px, 19px, 19px);
+    @include this-icons-size-fixer(27px, 27px, 19px, 14px);
+
+    // Centers the fancy phone
+    .tab-icon.icon-fancy-phone-outline {
+      padding-top: 3px;
+    }
 
     .tab {
       padding: 25px 0 15px 0;
