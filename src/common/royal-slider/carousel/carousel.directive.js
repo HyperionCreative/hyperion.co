@@ -20,6 +20,7 @@
           var rsi = imagesContainer.royalSlider({
             arrowsNav: false,
             controlNavigation: 'none',
+            fadeinLoadedSlide: false,
             imageScaleMode: 'fill',
             keyboardNavEnabled: true,
             loop: false,
