@@ -202,3 +202,48 @@
     }
   }
 }
+
+#index-page .simple-footer-container {
+  border-bottom: 1px solid #ecedef;
+  line-height: 50px;
+  @include legacy-pie-clearfix;
+  width: 100%;
+
+  .simple-footer {
+    padding: 0;
+
+    .text {
+      float: left;
+      margin-bottom: 0;
+
+      & > p {
+        display: none;
+        margin-bottom: 0 !important;
+
+        &.large {
+          @include large-screens {
+            display: inline-block;
+          }
+        }
+
+        &.medium-and-small {
+          @include small-screens {
+            display: inline-block;
+          }
+
+          @include medium-screens {
+            display: inline-block;
+          }
+        }
+      }
+
+      & > small {
+        display: none;
+      }
+    }
+
+    .social-links {
+      float: right;
+    }
+  }
+}

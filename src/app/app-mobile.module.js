@@ -24,6 +24,13 @@
       'common.full-width-slider',
 
       //////////////////////
+      // Specific Modules //
+      //////////////////////
+
+      'app.simple-footer',
+      'app.strings',
+
+      //////////////////////
       // State Components //
       //////////////////////
 
