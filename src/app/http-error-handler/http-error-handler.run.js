@@ -53,7 +53,7 @@
 
           $timeout(function () {
             $rootScope.httpError.show = false;
-          }, 2500);
+          }, 5000);
         }
       });
     }]);
