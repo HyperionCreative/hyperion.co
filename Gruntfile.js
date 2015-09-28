@@ -242,7 +242,8 @@ module.exports = function (grunt) {
           '<%= yeoman.dist %>/**/*.css',
           '<%= yeoman.dist %>/**/*.css',
           '<%= yeoman.dist %>/assets/icons/as-fonts/**/*',
-          '<%= yeoman.dist %>/assets/webfonts/**/*'
+          '<%= yeoman.dist %>/assets/webfonts/**/*',
+          '!<%= yeoman.dist %>/portfolio/animations-demo/quizkick/**/*'
         ]
       }
     },
@@ -344,7 +345,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>',
-          src: ['*.html'],
+          src: ['*.html', 'portfolio/animations-demo/quizkick/index.html'],
           dest: '<%= yeoman.dist %>'
         }]
       }
@@ -367,6 +368,9 @@ module.exports = function (grunt) {
             '*.html',
 
             'assets/**/*',
+
+            // Quizkick
+            'portfolio/**/*',
 
             'php/**/*'
           ]
@@ -521,10 +525,16 @@ module.exports = function (grunt) {
 
     cwebp: {
       // Without expand and cwd cwebp won't work!
-      files: {
+      hyperion: {
         expand: true,
         cwd: '<%= yeoman.app %>',
         src: 'assets/**/*.{jpg,png}',
+        dest: '<%= yeoman.dist %>'
+      },
+      quizkick: {
+        expand: true,
+        cwd: '<%= yeoman.app %>',
+        src: 'portfolio/animations-demo/quizkick/**/*.{jpg,png}',
         dest: '<%= yeoman.dist %>'
       },
       // There's a problem with cwebp. It doesn't work with empty attributes like -lossless;
