@@ -40,6 +40,22 @@ $medium-screens-breakpoint: 768px;
   }
 }
 
+.large-only {
+  @include small-screens {
+    display: none !important;
+  }
+
+  @include medium-screens {
+    display: none !important;
+  }
+}
+
+.small-and-medium-only {
+  @include large-screens {
+    display: none !important;
+  }
+}
+
 ////////////////////
 // States Imports //
 ////////////////////

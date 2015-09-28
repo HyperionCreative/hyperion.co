@@ -217,24 +217,8 @@
       margin-bottom: 0;
 
       & > p {
-        display: none;
+        display: inline-block;
         margin-bottom: 0 !important;
-
-        &.large {
-          @include large-screens {
-            display: inline-block;
-          }
-        }
-
-        &.medium-and-small {
-          @include small-screens {
-            display: inline-block;
-          }
-
-          @include medium-screens {
-            display: inline-block;
-          }
-        }
       }
 
       & > small {
@@ -245,5 +229,19 @@
     .social-links {
       float: right;
     }
+  }
+}
+
+#index-page .get-in-touch {
+  @include small-screens {
+    padding: 35px 0 20px 0;
+  }
+
+  @include medium-screens {
+    padding: 40px 0 30px 0;
+  }
+
+  @include large-screens {
+    padding: 45px 0 25px 0;
   }
 }

@@ -8,7 +8,7 @@
       // Exports //
       /////////////
       $scope.onInit = onInit;
-      $scope.footerText = '<p class="medium-and-small">More on <strong>Social Sites</strong></p><p class="large">See more projects on our <strong>Social Networks</strong></p>';
+      $scope.footerText = '<p class="small-and-medium-only">More on <strong>Social Sites</strong></p><p class="large-only">See more projects on our <strong>Social Networks</strong></p>';
 
       ////////////
       // Public //
