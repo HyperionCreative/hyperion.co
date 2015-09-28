@@ -205,8 +205,8 @@
 
 #index-page .simple-footer-container {
   border-bottom: 1px solid #ecedef;
-  line-height: 50px;
   @include legacy-pie-clearfix;
+  padding: 17px 0 13px 0;
   width: 100%;
 
   .simple-footer {
