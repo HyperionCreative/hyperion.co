@@ -7,7 +7,13 @@
       $rootScope.str = {
         globals: {
           simplePhoneNumber: '0121 405 2101',
-          phoneNumber: '+44 (0)1214-052-101'
+          phoneNumber: '+44 (0)1214-052-101',
+          // This is not the address on which the contact form sends its emails.
+          // That email address is defined in php/email-sender.php
+          //
+          // This one is used on mobile devices by the mail app when a user wants
+          // to send us an email.
+          contactEmail: 'contact@hyperion.co'
         },
         footer: {
           text: '<p>See more projects on our <strong>Social Networks</strong></p><small>&copy; Copyright Hyperion 2015</small>',

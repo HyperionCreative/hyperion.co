@@ -265,7 +265,7 @@
   // Font-size and icon-size correction
   font-size: 15px;
 
-  .icon-phone-outline { font-size: 12px; }
+  .icon-fancy-phone-outline { font-size: 12px; }
   .icon-mail { font-size: 17px; }
   .icon-message-bubble { font-size: 19px; }
 
@@ -279,6 +279,7 @@
       @include legacy-pie-clearfix;
       padding: 15px 0;
 
+      // By default, this is for apple devices!
       .contact-method {
         display: block;
         float: left;
@@ -310,6 +311,26 @@
         &.message-us {
           text-align: right;
           width: 25%;
+        }
+      }
+
+      &.is-non-apple-device .contact-method {
+        &.call-us, &.mail-us {
+          text-align: center;
+          width: 50%;
+        }
+
+        &.call-us {
+          padding-right: 25px;
+        }
+
+        &.mail-us {
+          border-right: 0;
+          padding-left: 25px;
+        }
+
+        &.message-us {
+          display: none;
         }
       }
     }

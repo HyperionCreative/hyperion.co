@@ -3,10 +3,11 @@
 
   angular
     .module('state.index')
-    .controller('IndexCtrl', ['$scope', '$window', function ($scope, $window) {
+    .controller('IndexCtrl', ['$scope', '$window', 'PARSED_UA', function ($scope, $window, PARSED_UA) {
       /////////////
       // Exports //
       /////////////
+      $scope.isAppleDevice = PARSED_UA.device.vendor === 'Apple';
       $scope.onInit = onInit;
       $scope.footerText = '<p class="small-and-medium-only">More on <strong>Social Sites</strong></p><p class="large-only">See more projects on our <strong>Social Networks</strong></p>';
 

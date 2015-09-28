@@ -53,36 +53,30 @@
     <p>If you have any questions or would like to talk to us about a project, please don’t hesitate to get in touch - we will get back to you within 24h.</p>
   </div>
 
-  <!-- todo add the adequate links for both contact methods -->
   <div class="contact-methods">
     <div class="large-only">
       <!-- This is shown by default -->
-      <div class="normal-state" ng-show="!showPhoneNumberState">
+      <div class="normal-state" ng-class=":: isAppleDevice ? 'is-apple-device' : 'is-non-apple-device'" ng-show="!showPhoneNumberState">
         <div class="container">
-          <!-- todo in the psd there's a new icon. change it -->
-          <a class="contact-method call-us" ng-click="showPhoneNumberState = true;"><span class="icon-phone-outline"></span><span>Call Us</span></a>
-          <a href="#" class="contact-method mail-us"><span class="icon-mail"></span><span>Send us an Email</span></a>
-          <!-- todo change this with sms on non ios devices -->
-          <a href="#" class="contact-method message-us"><span class="icon-message-bubble"></span><span>iMessage</span></a>
+          <a class="contact-method call-us" ng-click="showPhoneNumberState = true;"><span class="icon-fancy-phone-outline"></span><span>Call Us</span></a>
+          <a ng-href="{{:: 'mailto:' + str.globals.contactEmail }}" class="contact-method mail-us"><span class="icon-mail"></span><span>Send us an Email</span></a>
+          <a ng-href="{{:: 'sms:' + str.globals.phoneNumber }}" class="contact-method message-us"><span class="icon-message-bubble"></span><span>iMessage</span></a>
         </div>
       </div>
       <!-- This is shown when the user clicks on "Call Us" -->
       <div class="container" ng-show="showPhoneNumberState">
-        <!-- todo add phone number prefix for non uk users (-.-)" -->
-        <div class="phone-number-state">{{ :: str.globals.simplePhoneNumber }}<span class="icon-close" ng-click="showPhoneNumberState = false;"></span></div>
+        <div class="phone-number-state">{{ :: str.globals.phoneNumber }}<span class="icon-close" ng-click="showPhoneNumberState = false;"></span></div>
       </div>
     </div>
     <div class="small-and-medium-only">
-      <!-- todo in the psd there's a new icon. change it -->
       <div class="contact-method call-us">
-        <a href="#" class="container"><span>Call Us</span><span class="icon-phone-outline"></span></a>
+        <a ng-href="{{:: 'tel:' + str.globals.phoneNumber }}" class="container"><span>Call Us</span><span class="icon-fancy-phone-outline"></span></a>
       </div>
       <div class="contact-method mail-us">
-        <a href="#" class="container"><span>Send us an Email</span><span class="icon-mail"></span></a>
+        <a ng-href="{{:: 'mailto:' + str.globals.contactEmail }}" class="container"><span>Send us an Email</span><span class="icon-mail"></span></a>
       </div>
-      <!-- todo change this with sms on non ios devices -->
       <div class="contact-method message-us">
-        <a href="#" class="container"><span>iMessage</span><span class="icon-message-bubble"></span></a>
+        <a ng-href="{{:: 'sms:' + str.globals.phoneNumber }}" class="container"><span>{{:: isAppleDevice ? 'iMessage' : 'SMS' }}</span><span class="icon-message-bubble"></span></a>
       </div>
     </div>
   </div>
