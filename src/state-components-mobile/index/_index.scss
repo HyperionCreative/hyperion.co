@@ -415,6 +415,8 @@
   .small-and-medium-only {
     .contact-method {
       border-bottom: $this-border;
+      // Needed to align everyting vertically
+      line-height: 19px; // The size of the largest icon, icon-message-bubble;
 
       &:first-child {
         border-top: $this-border;
@@ -433,6 +435,8 @@
       // The icon
       & > span:last-child {
         float: right;
+        // Needed to align everyting vertically
+        line-height: 19px; // The size of the largest icon, icon-message-bubble;
 
         width: 33px; // The cellphone's width since it's the largest
         text-align: center; // So the icons are aligned with each other!
