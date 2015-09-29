@@ -3,7 +3,7 @@
 
   angular
     .module('common.preloader')
-    .service('Preloader', ['$rootScope', 'PRELOADABLE_FILES', function ($rootScope, PRELOADABLE_FILES) {
+    .service('Preloader', ['$document', '$rootScope', 'PRELOADABLE_FILES', function ($document, $rootScope, PRELOADABLE_FILES) {
       this.addToQueue = addToQueue;
       this.getProgress = getProgress;
       this.getTotalProgress = getTotalProgress;
@@ -18,6 +18,7 @@
       // Variables //
       ///////////////
       var queues = {};
+      var appendLoadedImagesTo = angular.element($document[0].body);
 
       ////////////
       // Public //
@@ -92,11 +93,16 @@
                   }
                 });
 
+                // Appends the image to the body in order for the browser to
+                // trully cache it.
+                (function () {
+                  appendLoadedImagesTo
+                    .append('<img src="' + path + '" style="display: none;">');
+                })();
+
                 next();
               };
 
-              // Atm we treat the onError fn the same as the onLoad.
-              // todo should we change this?
               image.onerror = function () {
                 // Needed as we're outside of angular's scope
                 $rootScope.$evalAsync(function () {
