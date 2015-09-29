@@ -104,8 +104,7 @@ body, p {
 .title {
   color: #79d0ea;
   font-family: $MuseoSans-500;
-  // The 1.25 is the default line-height. Since is em, I can not do px * em
-  margin-bottom: $mobile-only-font-size * 1.25;
+  margin-bottom: 18px;
 
   @include small-screens {
     font-size: 20px;
