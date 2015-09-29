@@ -102,7 +102,7 @@
             logo: {
               title: 'The Logo',
               description: '<p>For their logo, we worked with Alicja Murphy - a very talented Australian designer. Although we initially explored more abstract concepts, we decided a simple, yet expressive lettermark will be the most memorable choice, and will best represent what Kartist is about.</p>',
-              url: 'Logo by <a href="http://www.alicjamurphy.com">Alicja Murphy</a>'
+              url: 'Logo by <a href="http://www.alicjamurphy.com" target="_blank">Alicja Murphy</a>'
             },
 
             // development
