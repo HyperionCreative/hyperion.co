@@ -335,6 +335,7 @@ module.exports = function (grunt) {
 
           collapseBooleanAttributes: true,
           collapseWhitespace: true,
+          conservativeCollapse: true,
           removeAttributeQuotes: true,
           removeComments: true,
           removeEmptyAttributes: true,
@@ -503,6 +504,7 @@ module.exports = function (grunt) {
           htmlmin: {
             collapseBooleanAttributes: true,
             collapseWhitespace: true,
+            conservativeCollapse: true,
             removeAttributeQuotes: true,
             removeComments: true,
             removeEmptyAttributes: true,
@@ -583,6 +585,14 @@ module.exports = function (grunt) {
       index: {
         src: '<%= yeoman.dist %>/index.html',
         dest: '<%= yeoman.dist %>/index.html',
+        replacements: [{
+          from: /\<\!\-\-\@\@\@(.+)\@\@\@\-\-\>/gmi,
+          to: '$1'
+        }]
+      },
+      indexMobile: {
+        src: '<%= yeoman.dist %>/index-mobile.html',
+        dest: '<%= yeoman.dist %>/index-mobile.html',
         replacements: [{
           from: /\<\!\-\-\@\@\@(.+)\@\@\@\-\-\>/gmi,
           to: '$1'
