@@ -9,7 +9,7 @@
       /////////////
       $scope.isAppleDevice = PARSED_UA.device.vendor === 'Apple';
       $scope.onInit = onInit;
-      $scope.footerText = '<p class="small-and-medium-only">More on <strong>Social Sites</strong></p><p class="large-only">See more projects on our <strong>Social Networks</strong></p>';
+      $scope.footerText = '<p class="small-and-medium-only"><span class="normal-content">More on <strong>Social Sites</strong></span><span class="special-content">More projects on our <strong>Social Networks</strong></span></p><p class="large-only">Find more projects on our <strong>Social Networks</strong></p>';
 
       ////////////
       // Public //
