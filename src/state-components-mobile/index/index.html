@@ -60,7 +60,7 @@
         <div class="container">
           <a class="contact-method call-us" ng-click="showPhoneNumberState = true;"><span class="icon-fancy-phone-outline"></span><span>Call Us</span></a>
           <a ng-href="{{:: 'mailto:' + str.globals.contactEmail }}" class="contact-method mail-us"><span class="icon-mail"></span><span>Send us an Email</span></a>
-          <a ng-href="{{:: 'sms:' + str.globals.phoneNumber }}" class="contact-method message-us"><span class="icon-message-bubble"></span><span>iMessage</span></a>
+          <a ng-href="{{:: 'sms:' + str.globals.personalPhoneNumber }}" class="contact-method message-us"><span class="icon-message-bubble"></span><span>iMessage</span></a>
         </div>
       </div>
       <!-- This is shown when the user clicks on "Call Us" -->
@@ -76,7 +76,7 @@
         <a ng-href="{{:: 'mailto:' + str.globals.contactEmail }}" class="container"><span>Send us an Email</span><span class="icon-mail"></span></a>
       </div>
       <div class="contact-method message-us">
-        <a ng-href="{{:: 'sms:' + str.globals.phoneNumber }}" class="container"><span>{{:: isAppleDevice ? 'iMessage' : 'SMS' }}</span><span class="icon-message-bubble"></span></a>
+        <a ng-href="{{:: 'sms:' + str.globals.personalPhoneNumber }}" class="container"><span>{{:: isAppleDevice ? 'iMessage' : 'SMS' }}</span><span class="icon-message-bubble"></span></a>
       </div>
     </div>
   </div>
