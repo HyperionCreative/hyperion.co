@@ -33,7 +33,7 @@
             imageScaleMode: 'fill',
             keyboardNavEnabled: false,
             loop: true,
-            navigateByClick: false,
+            navigateByClick: true,
             numImagesToPreload: 8,
             sliderDrag: true,
             sliderTouch: true,
