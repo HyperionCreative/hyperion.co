@@ -1,10 +1,6 @@
 (function () {
   'use strict';
 
-  // todo this is buggy. I should change the detection mechanism. It fails for
-  // http://www.hyperion.co/portfolio/design which is not a valid state; and for
-  // other cases.
-
   angular
     .module('app.http-error-handler', [])
     .run(['$location', '$rootScope', '$state', '$timeout', function ($location, $rootScope, $state, $timeout) {
@@ -17,20 +13,28 @@
       // Functions //
       ///////////////
       function isFromAnUnknownURL() {
-        var fromUrl = $location.path();
+        var absUrl = $location.absUrl();
+        var path = $location.path();
+
+        var host = absUrl.replace(new RegExp(path + '$'), '');
         var states = $state.get();
-        var isKnown = false;
 
         for (var i = 0; i < states.length; i++) {
-          // Since states[i].url only contain the specific state url (for example,
-          // /design for root.sub-page-template.expertise.design), this may
-          // misbehave.
-          if (angular.isString(states[i].url) && fromUrl.indexOf(states[i].url) === fromUrl.length - states[i].url.length) {
-            isKnown = true;
+          var stateAbsUrl = $state.href(states[i].name, {}, {
+            absolute: true
+          });
+
+          if (angular.isString(stateAbsUrl)) {
+            var statePath = stateAbsUrl.replace(new RegExp('^' + host), '');
+            if (statePath === path) {
+              // It has found the state!
+              return false;
+            }
           }
         }
 
-        return !isKnown;
+        // If it gets here then it hasn't found the state with the current path!
+        return true;
       }
 
       //////////////
@@ -38,8 +42,7 @@
       //////////////
       show404 = isFromAnUnknownURL();
 
-      // This is more of a hack! Sometimes the http error may blink. This way
-      // we make sure to initialize the
+      // This is more of a hack! Sometimes the http error may blink.
       $rootScope.$on('fancy-slider.ready', function () {
         // This only runs once!
         if (show404) {
