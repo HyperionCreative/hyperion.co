@@ -19,6 +19,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-arrow-right-thin:before {
+  content: "\e61c";
+}
+.icon-arrow-left-thin:before {
+  content: "\e61d";
+}
 .icon-fancy-phone-outline:before {
   content: "\e61b";
 }
