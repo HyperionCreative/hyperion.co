@@ -5,6 +5,7 @@
     .module('state.state-components', [
       'ui.router',
 
-      'state.index'
+      'state.index',
+      'state.portfolio'
     ]);
 })();

@@ -1,0 +1,128 @@
+@import "anyvan/anyvan";
+@import "grow/grow";
+@import "kartist/kartist";
+@import "quizkick/quizkick";
+
+// Sticky footer trick
+// Needed by #portfolio-navigator
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  // Figure this out. At the moment, the portfolio content may overlap the 
+  // navigator.
+  // margin-bottom: ???px;
+}
+
+#portfolio-navigator {
+  $this-border: 1px solid #eeeff1;
+
+  ///////////////////
+  // Sticky footer //
+  ///////////////////
+  & {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  /////////////////////
+  // Default options //
+  /////////////////////
+  & {
+    border-top: $this-border;
+    color: #9da2a5;
+    @include legacy-pie-clearfix;
+    font-style: italic;
+
+    & > a {
+      display: block;
+      float: left;
+      @include legacy-pie-clearfix;
+      position: relative;
+      width: 50%;
+    }
+
+    .prev {
+      .arrow { float: left; }
+      .text-container { float: right; text-align: right; }
+    }
+
+    .next {
+      .arrow { float: right; }
+      .text-container { float: left; text-align: left; }
+    }
+
+    .nav-helper {
+      font-family: $PierSans-Regular;
+    }
+  }
+
+  //////////////////////
+  // Specific options //
+  //////////////////////
+  & {
+    // Text ellipsis
+    .text-container {
+      white-space: nowrap;
+      width: 85%;
+
+      .project-name {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+      }
+    }
+
+    // Alignment
+    a {
+      padding-bottom: 25px;
+      padding-top: 28px;
+
+      @include large-screens { padding-bottom: 33px; padding-top: 36px; }
+
+      &.prev {
+        border-right: $this-border;
+        padding-right: 10%;
+        padding-left: 8.25%;
+
+        @include small-screens { padding-right: 8.5%; }
+        @include large-screens { padding-right: 6%; }
+      }
+
+      &.next {
+        padding-right: 8.25%;
+        padding-left: 10%;
+
+        @include small-screens { padding-left: 8.5%; }
+        @include large-screens { padding-left: 6%; }
+
+        .text-container {
+          // This compensates for the italic font thus making the prev and next
+          // containers to appear aligned
+          margin-left: -3px;
+        }
+      }
+    }
+
+    .arrow {
+      font-size: 28px;
+    }
+
+    .nav-helper {
+      font-size: 13px;
+      margin-top: -2px;
+      margin-bottom: 3px;
+    }
+
+    .project-name {
+      font-size: 15px;
+    }
+  }
+}

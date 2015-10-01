@@ -1,0 +1,28 @@
+<div class="portfolio-container">
+  <div ui-view="portfolio-page"></div>
+
+  <div id="portfolio-navigator">
+    <a ng-href="{{getStateUrl(prev.href)}}" class="prev">
+      <div class="arrow icon-arrow-left-thin"></div>
+      <div class="text-container">
+        <div class="nav-helper">
+          <span class="small-only">Previous</span>
+          <span class="medium-only">Prev. Project</span>
+          <span class="large-only">Previous Project</span>
+        </div>
+        <strong class="project-name">{{ prev.name }}</strong>
+      </div>
+    </a>
+    <a ng-href="{{getStateUrl(next.href)}}" class="next">
+      <div class="arrow icon-arrow-right-thin"></div>
+      <div class="text-container">
+        <div class="nav-helper">
+          <span class="small-only">Next</span>
+          <span class="medium-only">Next Project</span>
+          <span class="large-only">Next Project</span>
+        </div>
+        <strong class="project-name">{{ next.name }}</strong>
+      </div>
+    </a>
+  </div>
+</div>
