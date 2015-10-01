@@ -10,13 +10,15 @@
 
   overflow: hidden;
 
+  // Force GPU Rendering
+  @include transform(translate3d(0,0,0));
+
   .stage-container {
     left: 50%;
     position: absolute;
     top: 0;
-    
+
     // The gradient background was moved here in order to scale with the canvas.
     @include background-image(radial-gradient(#b6e0eb 0%, #9ad3e4 100%));
-    @include transform-origin(0, 0);
   }
 }

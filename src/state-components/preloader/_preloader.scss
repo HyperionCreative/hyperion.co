@@ -9,6 +9,9 @@
   top: 0;
   z-index: $preloader-z-index;
 
+  // Force GPU Rendering
+  @include transform(translate3d(0,0,0));
+
   @media only screen and (max-height: $min-page-height) {
     // So the content becomes scrollable!
     position: absolute;
