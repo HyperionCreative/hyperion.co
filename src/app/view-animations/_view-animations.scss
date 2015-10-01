@@ -1,3 +1,13 @@
+// Performance hacks
+[ui-view="page-content"] .sub-page-template,
+.portfolio-page .container {
+  @include transform(translate3d(0,0,0));
+}
+
+.portfolio-page .container {
+  overflow: hidden;
+}
+
 // Top level ui-view
 [ui-view="page-content"] {
   @include transition-duration($top-view-animation-duration + $safe-animation-delay);

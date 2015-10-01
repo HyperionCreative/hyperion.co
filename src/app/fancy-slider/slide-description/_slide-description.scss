@@ -233,7 +233,8 @@
   // Animation //
   ///////////////
 
-  .overflow-container {
+  & {
+    // Force GPU Rendering
     @include transform(translate3d(0,0,0));
   }
 
