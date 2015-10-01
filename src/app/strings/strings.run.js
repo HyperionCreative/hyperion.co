@@ -87,8 +87,8 @@
             projectName: 'Kartist',
             sliderDescription: 'The shots above are from one of our most recent projects, Kartist. Their app was intended to help shoppers everywhere manage their lists, find inspiration and connect with likeminded people.',
 
-            header: 'We worked with <strong>Kartist</strong> in early 2015 - their platform aims to to help shoppers everywhere manage their lists, find inspiration and connect with likeminded people.',
-            coverDescription: 'We worked with Kartist in early 2015 - their platform aims to to help shoppers everywhere manage their lists, find inspiration and connect with likeminded people.',
+            header: 'We worked with <strong>Kartist</strong> in early 2015 - their platform aims to help shoppers everywhere manage their lists, find inspiration and connect with likeminded people.',
+            coverDescription: 'We worked with Kartist in early 2015 - their platform aims to help shoppers everywhere manage their lists, find inspiration and connect with likeminded people.',
 
             // design
             uiAndCode: {
