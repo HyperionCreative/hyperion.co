@@ -12,6 +12,6 @@
               templateUrl: 'state-components-mobile/portfolio/kartist/kartist.html'
             }
           }
-        })
+        });
     }])
 })();
