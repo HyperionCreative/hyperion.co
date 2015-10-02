@@ -17,11 +17,11 @@
   .row .description {
     color: rgba($this-client-color, 0.85);
     position: absolute;
-    left: 55px;
+    left: 100px;
     width: 315px;
 
     &.first {
-      top: 830px;
+      top: 815px;
 
       .title {
         text-transform: uppercase;
@@ -30,6 +30,7 @@
 
     &.second {
       bottom: 75px;
+      width: 360px;
     }
   }
 
