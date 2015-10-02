@@ -21,7 +21,7 @@
       }, {
         href: 'portfolio.grow',
         imageSrc: 'assets/images/portfolio/grow/logo.png',
-        name: 'Grow with a CFO'
+        name: 'Grow'
       }];
 
       $scope.getStateUrl = $state.href;
