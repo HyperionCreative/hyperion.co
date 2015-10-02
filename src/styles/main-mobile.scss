@@ -104,20 +104,9 @@ body, p {
 
 .title {
   color: #79d0ea;
-  font-family: $MuseoSans-500;
-  margin-bottom: 18px;
-
-  @include small-screens {
-    font-size: 20px;
-  }
-
-  @include medium-screens {
-    font-size: 22px;
-  }
-
-  @include large-screens {
-    font-size: 24px;
-  }
+  font-family: $MuseoSans-300;
+  font-size: 25px;
+  margin-bottom: 12px;
 }
 
 p {
