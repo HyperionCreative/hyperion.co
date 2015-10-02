@@ -605,6 +605,14 @@ module.exports = function (grunt) {
           from: /\/\*\@\@\@(.+)\@\@\@\*\//gmi,
           to: '$1'
         }]
+      },
+      scriptsMobile: {
+        src: '.tmp/concat/scripts/scripts-mobile.js',
+        dest: '.tmp/concat/scripts/scripts-mobile.js',
+        replacements: [{
+          from: /\/\*\@\@\@(.+)\@\@\@\*\//gmi,
+          to: '$1'
+        }]
       }
     }
   });
