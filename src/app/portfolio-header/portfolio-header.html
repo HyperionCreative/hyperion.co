@@ -1,9 +1,12 @@
 <header class="portfolio-header">
   <table>
     <tr>
-      <td class="back-arrow">
+      <td class="back-arrow" ng-if="!isMobile">
         <a ng-if="!goToIndex" ui-sref="root.sub-page-template.portfolio" class="icon-arrow-left-fancy"></a>
         <a ng-if="goToIndex" ui-sref="root.index" class="icon-arrow-left-fancy"></a>
+      </td>
+      <td class="back-arrow" ng-if="isMobile">
+        <a ui-sref="index" class="icon-arrow-left-fancy"></a>
       </td>
       <td class="description">
         <p ng-bind-html="description"></p>

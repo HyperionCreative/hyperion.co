@@ -27,7 +27,9 @@
         scope: {
           description: '@',
           clientLogoUrl: '@',
-          clientName: '@'
+          clientName: '@',
+
+          isMobile: '=?'
         },
         replace: true,
         restrict: 'E',
