@@ -3,13 +3,19 @@
 
   angular
     .module('state.index')
-    .controller('IndexCtrl', ['$scope', '$window', 'PARSED_UA', function ($scope, $window, PARSED_UA) {
+    .controller('IndexCtrl', ['$scope', '$state', '$window', 'PARSED_UA', function ($scope, $state, $window, PARSED_UA) {
       /////////////
       // Exports //
       /////////////
       $scope.isAppleDevice = PARSED_UA.device.vendor === 'Apple';
       $scope.onInit = onInit;
       $scope.footerText = '<p class="small-and-medium-only"><span class="normal-content">More on <strong>Social Sites</strong></span><span class="special-content">More projects on our <strong>Social Networks</strong></span></p><p class="large-only">Find more projects on our <strong>Social Networks</strong></p>';
+      $scope.slidesHtml = [
+        getSlide('assets/images/mobile/index-portfolio-slider/kartist.jpg', $state.href('portfolio.kartist')),
+        getSlide('assets/images/mobile/index-portfolio-slider/quizkick.jpg', $state.href('portfolio.quizkick')),
+        getSlide('assets/images/mobile/index-portfolio-slider/grow.jpg', $state.href('portfolio.grow')),
+        getSlide('assets/images/mobile/index-portfolio-slider/anyvan.jpg', $state.href('portfolio.anyvan')),
+      ];
 
       ////////////
       // Public //
@@ -41,6 +47,10 @@
       /////////////
       // Private //
       /////////////
+      function getSlide(imageUrl, href) {
+        return '<a class="rsContent" href="' + href + '"><img src="' + imageUrl + '" class="rsImg"></a>';
+      }
+
       function getViewportWidth() {
         return Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
       }
