@@ -31,7 +31,12 @@
         autoScaleSliderWidth: 587,
         autoScaleSliderHeight: 391,
         navigateByClick: false,
-        slidesSpacing: 0,
+        slidesSpacing: 8,
+        autoPlay: {
+          enabled: true,
+          stopAtAction: true,
+          delay: 3000
+        },
         visibleNearby: {
           enabled: false
         }

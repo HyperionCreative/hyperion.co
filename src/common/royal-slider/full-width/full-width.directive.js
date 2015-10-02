@@ -47,8 +47,8 @@
         sliderTouch: true,
         slidesSpacing: 5,
 
-        // I don't know why, but this doesn't seem to work with drag enabled
-        transitionSpeed: 200,
+        // This doesn't affect the drag animation.
+        transitionSpeed: 600,
 
         visibleNearby: {
           enabled: true,
