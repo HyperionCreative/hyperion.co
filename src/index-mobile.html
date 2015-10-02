@@ -77,6 +77,38 @@
       <link rel="stylesheet" href="styles/main-mobile.css">
     <!-- endbuild -->
 
+    <!-- Start of fonts preloader -->
+      <style>
+        .preload-helv-lt { font-family: "HelveticaNeueLTStd-Lt"; }
+        .preload-helv-roman { font-family: "HelveticaNeueLTStd-Roman"; }
+        .preload-helv-md { font-family: "HelveticaNeueLTStd-Md"; }
+        .preload-helv-bd { font-family: "HelveticaNeueLTStd-Bd"; }
+
+        .preload-museo-300 { font-family: "MuseoSans-300"; }
+        .preload-museo-500 { font-family: "MuseoSans-500"; }
+        .preload-museo-700 { font-family: "MuseoSans-700"; }
+
+        .preload-pier-sans { font-family: "pier_sansregular"; }
+
+        .preload-bender-bold { font-family: "benderbold"; }
+
+        .preload-rosario-regular { font-family: "rosarioregular"; }
+        .preload-rosario-bold { font-family: "rosariobold"; }
+
+        .preload-icons { font-family: "hyperion-icons"; }
+      </style>
+    <!-- End of fonts preloader -->
+    <!-- Start of important images preloader -->
+      <style>
+        .preload-logo-anyvan { background-image: url(assets/images/portfolio/anyvan/logo.png); }
+        .preload-logo-grow { background-image: url(assets/images/portfolio/grow/logo.png); }
+        .preload-logo-kartist { background-image: url(assets/images/portfolio/kartist/logo.png); }
+        .preload-logo-quizkick { background-image: url(assets/images/portfolio/quizkick/logo.png); }
+
+        .preload-logo { background-image: url(assets/images/logo.svg); }
+      </style>
+    <!-- End of important images preloader -->
+
     <style>
       [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
         display: none !important;
@@ -84,6 +116,41 @@
     </style>
   </head>
   <body ng-app="HyperionMobileApp" ng-cloak>
+    <div style="opacity: 0; visibility: hidden; position: absolute; z-index: -999;">
+      <!-- Start of fonts preloader -->
+        <div>
+          <!-- Without &nbsp; the font won't be preloaded! -->
+          <div class="preload-helv-lt">&nbsp;</div>
+          <div class="preload-helv-roman">&nbsp;</div>
+          <div class="preload-helv-md">&nbsp;</div>
+          <div class="preload-helv-bd">&nbsp;</div>
+
+          <div class="preload-museo-300">&nbsp;</div>
+          <div class="preload-museo-500">&nbsp;</div>
+          <div class="preload-museo-700">&nbsp;</div>
+
+          <div class="preload-pier-sans">&nbsp;</div>
+
+          <div class="preload-bender-bold">&nbsp;</div>
+
+          <div class="preload-rosario-regular">&nbsp;</div>
+          <div class="preload-rosario-bold">&nbsp;</div>
+
+          <div class="preload-icons">&nbsp;</div>
+        </div>
+      <!-- End of fonts preloader -->
+      <!-- Start of important images preloader -->
+        <div>
+          <div class="preload-logo-anyvan"></div>
+          <div class="preload-logo-grow"></div>
+          <div class="preload-logo-kartist"></div>
+          <div class="preload-logo-quizkick"></div>
+
+          <div class="preload-logo"></div>
+        </div>
+      <!-- End of important images preloader -->
+    </div>
+
     <div ui-view></div>
 
     <!-- build:js(.) scripts/vendor-mobile.js -->
