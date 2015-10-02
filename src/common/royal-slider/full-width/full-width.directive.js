@@ -6,50 +6,70 @@
   angular
     .module('common.full-width-slider', [])
     .directive('hypFullWidthSlider', function () {
-      // todo change this to add a minimum of images. For example 10.
-      // This is used to duplicate the images. As Royal Slider doesn't append
+      var MIN_SLIDES_COUNT = 12;
+      // This is used to multiply the slides. As Royal Slider doesn't append
       // the next element until the transition has started, a user may see a
       // white space if he drags the slider far enough! This fixes this.
-      var IMAGES_DUPLICATION_MULTIPLIER = 3;
+      function multiplyArrayContent(toMultiply, minLength, fn) {
+        var multiplier = 1;
+        if (toMultiply.length < minLength) {
+          multiplier = Math.ceil(minLength / toMultiply.length);
+        }
 
-      function appendImages(appendTo, imagesUrl) {
-        for (var i = 0; i < IMAGES_DUPLICATION_MULTIPLIER * imagesUrl.length; i++) {
-          appendTo.append('<img src="' + imagesUrl[i % imagesUrl.length] + '">');
+        for (var i = 0; i < multiplier * toMultiply.length; i++) {
+          fn(toMultiply[i % toMultiply.length]);
         }
       }
 
+      function appendImages(appendTo, imagesUrl) {
+        multiplyArrayContent(imagesUrl, MIN_SLIDES_COUNT, function (imageUrl) {
+          appendTo.append('<img src="' + imageUrl + '">');
+        });
+      }
+
+      function appendslidesHtml(appendTo, slidesHtml) {
+        multiplyArrayContent(slidesHtml, MIN_SLIDES_COUNT, function (slide) {
+          appendTo.append(slide);
+        });
+      }
+
+      // The default options
+      var defaultRsiOptions = {
+        addActiveClass: true,
+        arrowsNav: false,
+        controlNavigation: 'none',
+        imageScaleMode: 'fill',
+        keyboardNavEnabled: false,
+        loop: true,
+        navigateByClick: true,
+        numImagesToPreload: 8,
+        sliderDrag: true,
+        sliderTouch: true,
+        slidesSpacing: 5,
+
+        // I don't know why, but this doesn't seem to work with drag enabled
+        transitionSpeed: 200,
+
+        visibleNearby: {
+          enabled: true,
+          // As this is set to 1, the slider will look "like a normal slider".
+          centerArea: 1,
+          center: true,
+          navigateByCenterClick: false
+        }
+      };
+
       return {
         link: function (scope, iElement) {
-          var transitionSpeed = parseInt(scope.transitionSpeed);
-          transitionSpeed = isFinite(transitionSpeed) ? transitionSpeed : 200;
+          var sliderContainer = angular.element(iElement[0].querySelector('.actual-slider-container'));
 
-          var imagesContainer = angular.element(iElement[0].querySelector('.images-container'));
-          appendImages(imagesContainer, scope.imagesUrl);
+          if (angular.isArray(scope.imagesUrl)) {
+            appendImages(sliderContainer, scope.imagesUrl);
+          } else {
+            appendslidesHtml(sliderContainer, scope.slidesHtml);
+          }
 
-          var rsi = imagesContainer.royalSlider({
-            addActiveClass: true,
-            arrowsNav: false,
-            controlNavigation: 'none',
-            imageScaleMode: 'fill',
-            keyboardNavEnabled: false,
-            loop: true,
-            navigateByClick: true,
-            numImagesToPreload: 8,
-            sliderDrag: true,
-            sliderTouch: true,
-            slidesSpacing: 5,
-
-            // I don't know why, but this doesn't seem to work with drag enabled
-            transitionSpeed: transitionSpeed,
-
-            visibleNearby: {
-              enabled: true,
-              // As this is set to 1, the slider will look "like a normal slider".
-              centerArea: 1,
-              center: true,
-              navigateByCenterClick: false
-            }
-          }).data('royalSlider');
+          var rsi = sliderContainer.royalSlider(angular.isObject(scope.rsiOptions) ? angular.extend(angular.copy(defaultRsiOptions), scope.rsiOptions) : defaultRsiOptions).data('royalSlider');
 
           // Exports the royal slider instance
           scope.onInit({
@@ -59,8 +79,11 @@
         replace: true,
         restrict: 'E',
         scope: {
-          imagesUrl: '=',
-          transitionSpeed: '@',
+          imagesUrl: '=?',
+          slidesHtml: '=?',
+
+          rsiOptions: '=?',
+
           onInit: '&'
         },
         templateUrl: 'common/royal-slider/full-width/full-width.html'
