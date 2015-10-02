@@ -21,14 +21,14 @@
         }
       }
 
-      function appendImages(appendTo, imagesUrl) {
-        multiplyArrayContent(imagesUrl, MIN_SLIDES_COUNT, function (imageUrl) {
+      function appendImages(appendTo, imagesUrl, multiplyCount) {
+        multiplyArrayContent(imagesUrl, angular.isNumber(multiplyCount) ? multiplyCount : MIN_SLIDES_COUNT, function (imageUrl) {
           appendTo.append('<img src="' + imageUrl + '">');
         });
       }
 
-      function appendslidesHtml(appendTo, slidesHtml) {
-        multiplyArrayContent(slidesHtml, MIN_SLIDES_COUNT, function (slide) {
+      function appendslidesHtml(appendTo, slidesHtml, multiplyCount) {
+        multiplyArrayContent(slidesHtml, angular.isNumber(multiplyCount) ? multiplyCount : MIN_SLIDES_COUNT, function (slide) {
           appendTo.append(slide);
         });
       }
@@ -62,11 +62,13 @@
       return {
         link: function (scope, iElement) {
           var sliderContainer = angular.element(iElement[0].querySelector('.actual-slider-container'));
+          var multiplyCount = parseInt(scope.multiplyCount);
+          multiplyCount = multiplyCount >= 1 ? multiplyCount : null;
 
           if (angular.isArray(scope.imagesUrl)) {
-            appendImages(sliderContainer, scope.imagesUrl);
+            appendImages(sliderContainer, scope.imagesUrl, multiplyCount);
           } else {
-            appendslidesHtml(sliderContainer, scope.slidesHtml);
+            appendslidesHtml(sliderContainer, scope.slidesHtml, multiplyCount);
           }
 
           var rsi = sliderContainer.royalSlider(angular.isObject(scope.rsiOptions) ? angular.extend(angular.copy(defaultRsiOptions), scope.rsiOptions) : defaultRsiOptions).data('royalSlider');
@@ -83,6 +85,8 @@
           slidesHtml: '=?',
 
           rsiOptions: '=?',
+
+          multiplyCount: '@',
 
           onInit: '&'
         },
