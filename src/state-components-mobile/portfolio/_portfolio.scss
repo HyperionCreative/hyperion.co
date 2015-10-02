@@ -3,32 +3,93 @@
 @import "kartist/kartist";
 @import "quizkick/quizkick";
 
-// Sticky footer trick
-// Needed by #portfolio-navigator
+///////////////////
+// Mobile Header //
+///////////////////
+#mobile-portfolio-header {
+  table {
+    height: 85px;
+    width: 100%;
+
+    .our-logo, .client-logo { vertical-align: middle; }
+    .our-logo { width: 67.5%; }
+    .client-logo { border-left: 1px solid #eeeeee; text-align: center; width: 32.5%; }
+  }
+
+  .our-logo {
+    color: #adb0b3;
+    font-family: $Rosario-Regular;
+    font-size: 15px;
+    padding-left: 3%;
+
+    a, a > span, div {
+      display: inline-block;
+      height: 35px;
+      line-height: 35px;
+      vertical-align: middle;
+    }
+
+    a {
+      padding: 0 17px;
+      opacity: 0.85;
+
+      span {
+        color: #dbdddf;
+        font-size: 17px;
+        vertical-align: top;
+      }
+
+      img {
+        height: 100%;
+        margin-left: 6px;
+        padding: 5px 0;
+        width: auto;
+      }
+    }
+
+    div {
+      border-left: 1px solid #d6d7d9;
+      padding-left: 13px;
+    }
+
+    strong {
+      font-family: $Rosario-Bold;
+    }
+  }
+
+  .client-logo {
+    img {
+      height: auto;
+      width: 52.5%;
+    }
+  }
+}
+
+///////////////////
+// Sticky Footer //
+///////////////////
 html {
   min-height: 100%;
   position: relative;
 }
 
-body {
-  // Figure this out. At the moment, the portfolio content may overlap the 
-  // navigator.
-  // margin-bottom: ???px;
+#portfolio-navigator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
 }
 
+#kartist-portfolio-page {
+  padding-bottom: 80px;
+}
+
+///////////////////////
+// Footer Navigation //
+///////////////////////
 #portfolio-navigator {
   $this-border: 1px solid #eeeff1;
-
-  ///////////////////
-  // Sticky footer //
-  ///////////////////
-  & {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-  }
 
   /////////////////////
   // Default options //
@@ -124,5 +185,16 @@ body {
     .project-name {
       font-size: 15px;
     }
+  }
+}
+
+//////////////
+// Generics //
+//////////////
+.portfolio-page .mobile-description {
+  padding: 30px 30px 20px 30px;
+
+  p {
+    margin-bottom: 1em;
   }
 }

@@ -1,4 +1,21 @@
 <div class="portfolio-container">
+  <div id="mobile-portfolio-header" class="small-and-medium-only">
+    <table>
+      <tr>
+        <td class="our-logo">
+          <a ui-sref="index">
+            <span class="icon-arrow-left-thin"></span>
+            <img class="text" src="assets/images/logo.svg" alt="Hyperion Creative Agency Logo">
+          </a>
+          <div class="text"><span class="medium-only">We are </span><strong>Hyperion</strong></div>
+        </td>
+        <td class="client-logo">
+          <img ng-src="{{ current.imageSrc }}" alt="{{ current.name }}">
+        </td>
+      </tr>
+    </table>
+  </div>
+
   <div ui-view="portfolio-page"></div>
 
   <div id="portfolio-navigator">
