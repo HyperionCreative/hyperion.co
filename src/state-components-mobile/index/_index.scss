@@ -1,4 +1,18 @@
-#index-page .cover {
+.index-cover {
+  @include small-screens {
+    background-image: url(../assets/images/mobile/index-cover/small.jpg);
+  }
+
+  @include medium-screens {
+    background-image: url(../assets/images/mobile/index-cover/medium.jpg);
+  }
+
+  @include large-screens {
+    background-image: url(../assets/images/mobile/index-cover/large.jpg);
+  }
+}
+
+#index-page .index-cover {
   background-position: center;
   background-repeat: no-repeat;
   @include background-size(cover);
@@ -23,7 +37,6 @@
   }
 
   @include small-screens {
-    background-image: url(../assets/images/mobile/index-cover/small.jpg);
     height: 206px;
 
     .big-logo {
@@ -42,7 +55,6 @@
   }
 
   @include medium-screens {
-    background-image: url(../assets/images/mobile/index-cover/medium.jpg);
     height: 266px;
 
     .big-logo {
@@ -61,7 +73,6 @@
   }
 
   @include large-screens {
-    background-image: url(../assets/images/mobile/index-cover/large.jpg);
     height: 400px;
 
     .big-logo {

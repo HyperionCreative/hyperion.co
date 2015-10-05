@@ -105,6 +105,11 @@
         .preload-logo-kartist { background-image: url(assets/images/portfolio/kartist/logo.png); }
         .preload-logo-quizkick { background-image: url(assets/images/portfolio/quizkick/logo.png); }
 
+        .preload-cover-anyvan { background-image: url(assets/images/mobile/index-portfolio-slider/anyvan.jpg)}
+        .preload-cover-grow { background-image: url(assets/images/mobile/index-portfolio-slider/grow.jpg)}
+        .preload-cover-kartist { background-image: url(assets/images/mobile/index-portfolio-slider/kartist.jpg)}
+        .preload-cover-quizkick { background-image: url(assets/images/mobile/index-portfolio-slider/quizkick.jpg)}
+
         .preload-logo { background-image: url(assets/images/logo.svg); }
       </style>
     <!-- End of important images preloader -->
@@ -146,9 +151,42 @@
           <div class="preload-logo-kartist"></div>
           <div class="preload-logo-quizkick"></div>
 
+          <div class="preload-cover-anyvan"></div>
+          <div class="preload-cover-grow"></div>
+          <div class="preload-cover-kartist"></div>
+          <div class="preload-cover-quizkick"></div>
+
+          <div class="index-cover"></div>
+
           <div class="preload-logo"></div>
         </div>
       <!-- End of important images preloader -->
+      <!-- Start of conditional preloader -->
+      <div ng-if="isOnLargeScreen" style="display: none;">
+        <img ng-src="assets/videos/portfolio/anyvan/anyvan-static.jpg">
+        <img ng-src="assets/images/portfolio/anyvan/slide-1.jpg">
+        <img ng-src="assets/images/portfolio/anyvan/slide-2.jpg">
+        <img ng-src="assets/images/portfolio/anyvan/slide-3.jpg">
+        <img ng-src="assets/images/portfolio/anyvan/slide-4.jpg">
+
+        <img ng-src="assets/videos/portfolio/grow/grow-static.jpg">
+        <img ng-src="assets/images/portfolio/grow/slide-1.jpg">
+        <img ng-src="assets/images/portfolio/grow/slide-2.jpg">
+
+        <img ng-src="assets/videos/portfolio/kartist/kartist-static.jpg">
+        <img ng-src="assets/images/portfolio/kartist/in-page-1.jpg">
+        <img ng-src="assets/images/portfolio/kartist/in-page-3.jpg">
+        <img ng-src="assets/images/portfolio/kartist/in-page-4.jpg">
+        <img ng-src="assets/images/portfolio/kartist/slide-1.jpg">
+        <img ng-src="assets/images/portfolio/kartist/slide-2.jpg">
+        <img ng-src="assets/images/portfolio/kartist/slide-3.jpg">
+        <img ng-src="assets/images/expertise/development.jpg">
+        <img ng-src="assets/images/portfolio/kartist/dev-left.jpg">
+        <img ng-src="assets/images/portfolio/kartist/dev-right.jpg">
+
+        <img ng-src="assets/images/portfolio/quizkick/1.jpg">
+      </div>
+      <!-- End of conditional preloader -->
     </div>
 
     <div ui-view></div>
