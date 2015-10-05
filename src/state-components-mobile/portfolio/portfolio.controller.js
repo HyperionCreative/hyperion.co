@@ -3,7 +3,7 @@
 
   angular
     .module('state.portfolio')
-    .controller('PortfolioCtrl', ['$scope', '$state', '$window', function ($scope, $state, $window) {
+    .controller('PortfolioCtrl', ['$rootScope', '$scope', '$state', '$window', function ($rootScope, $scope, $state, $window) {
       ///////////////
       // Constants //
       ///////////////
@@ -52,12 +52,16 @@
         autoPlay: {
           enabled: true,
           stopAtAction: true,
-          delay: 5000
+          delay: $rootScope.isOnLargeScreen ? 3000 : 5000
         },
         visibleNearby: {
           enabled: false
         }
       };
+
+      if ($rootScope.isOnLargeScreen) {
+        PORTFOLIO_RSI_OPTIONS.autoScaleSlider = false;
+      }
 
       /////////////////////
       // $scope bindings //
