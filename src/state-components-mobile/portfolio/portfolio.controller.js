@@ -50,7 +50,6 @@
       $scope.getStateUrl = $state.href;
       $scope.portfolioRsiOptions = PORTFOLIO_RSI_OPTIONS;
       $scope.scrollToTop = scrollToTop;
-      $scope.isOnLargeScreen = isOnLargeScreen();
 
       ///////////////
       // Run block //
@@ -72,25 +71,11 @@
         scrollToTop();
       });
 
-      angular.element($window).on('resize', function () {
-        var tempIsOnLargeScreen = isOnLargeScreen();
-
-        if ($scope.isOnLargeScreen !== tempIsOnLargeScreen) {
-          $scope.$evalAsync(function () {
-            $scope.isOnLargeScreen = tempIsOnLargeScreen;
-          });
-        }
-      });
-
       ///////////////
       // Functions //
       ///////////////
       function scrollToTop() {
         $window.scrollTo(0, 0);
-      }
-
-      function isOnLargeScreen() {
-        return Math.max(document.documentElement.clientWidth, window.innerWidth || 0) >= 768;
       }
     }]);
 })();
