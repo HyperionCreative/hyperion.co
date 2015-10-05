@@ -257,6 +257,15 @@ html {
     .one-pixel-line {
       background-color: rgba(#eeeeef, 0.98);
     }
+
+    .description p {
+      font-size: 13px;
+      max-width: 450px;
+    }
+
+    .logo {
+      width: 190px;
+    }
   }
 
   // Copied from the main site... such shame -.-
