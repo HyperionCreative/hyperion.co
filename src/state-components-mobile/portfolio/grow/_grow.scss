@@ -1,7 +1,27 @@
+@import "state-components/portfolio/grow/grow";
+
 #grow-portfolio-page {
   $this-client-color: #b1d541;
 
   .title {
     color: $this-client-color;
+  }
+}
+
+#grow-portfolio-page .large-only {
+  .full-width-slider {
+    height: 512px;
+    width: 100%;
+  }
+  
+  .first.row {
+    .video-container {
+      margin-right: 30px;
+      width: 424px;
+    }
+
+    .description {
+      width: 263px;
+    }
   }
 }

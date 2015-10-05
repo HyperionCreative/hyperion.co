@@ -1,7 +1,23 @@
+@import "state-components/portfolio/quizkick/quizkick";
+
 #quizkick-portfolio-page {
   $this-client-color: #ed442d;
 
   .title {
     color: $this-client-color;
+
+    @include large-screens {
+      color: #dddddd;
+    }
+  }
+}
+
+#quizkick-portfolio-page .large-only {
+  .row .description {
+    left: 85px;
+  }
+
+  .row .description.first {
+    top: 710px;
   }
 }

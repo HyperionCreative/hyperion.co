@@ -1,7 +1,27 @@
+@import "state-components/portfolio/anyvan/anyvan";
+
 #anyvan-portfolio-page {
   $this-client-color: #41a5dd;
 
   .title {
     color: $this-client-color;
+  }
+}
+
+#anyvan-portfolio-page .large-only {
+  .full-width-slider {
+    height: 512px;
+    width: 100%;
+  }
+
+  .first.row  {
+    .video-container {
+      margin: 50px 58px 0 30px;
+      width: 340px;
+    }
+
+    .description {
+      width: 275px;
+    }
   }
 }

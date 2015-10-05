@@ -80,10 +80,11 @@ html {
   width: 100%;
 }
 
-#anyvan-portfolio-page { padding-bottom: 80px; }
-#grow-portfolio-page { padding-bottom: 80px; }
-#kartist-portfolio-page { padding-bottom: 80px; }
-#quizkick-portfolio-page { padding-bottom: 80px; }
+.portfolio-page {
+  @include small-screens { padding-bottom: 80px; }
+  @include medium-screens { padding-bottom: 80px; }
+  @include large-screens { padding-bottom: 98px; }
+}
 
 ///////////////////////
 // Footer Navigation //
@@ -200,5 +201,103 @@ html {
 
   p {
     margin-bottom: 1em;
+  }
+}
+
+/////////////
+// Tablets //
+/////////////
+
+#portfolio-navigator {
+  @include large-screens {
+    background: #ffffff;
+    @include box-shadow($normal-box-shadow);
+    left: 50%;
+    margin-left: -384px;
+    right: auto;
+    width: 768px;
+    z-index: 1000;
+  }
+}
+
+.portfolio-page .large-only {
+  &:before {
+    content: "";
+
+    position: fixed;
+    bottom: -500px;
+    left: -500px;
+    right: -500px;
+    top: -500px;
+
+    background-color: #eaeff2;
+    z-index: 1;
+  }
+
+  .container {
+    max-width: 768px;
+    position: relative;
+    width: 768px;
+    z-index: 2;
+  }
+
+  .portfolio-header {
+    // @include box-shadow($normal-box-shadow);
+    position: fixed;
+    top: 0;
+    left: 50%;
+    margin-left: -384px;
+    width: 768px;
+    z-index: 1000;
+
+    .back-arrow, .description, .logo {
+      background-color: rgba(#ffffff, 0.98);
+    }
+
+    .one-pixel-line {
+      background-color: rgba(#eeeeef, 0.98);
+    }
+  }
+
+  // Copied from the main site... such shame -.-
+  .portfolio-content {
+    background-color: #ffffff;
+    @include box-shadow($normal-box-shadow);
+    color: #9da2a5;
+    // Separates this from the portfolio header
+    overflow: hidden;
+    padding-top: 95px; // The portfolio-header's height
+  }
+
+  .row {
+    @include legacy-pie-clearfix;
+    display: block;
+
+    // Layout elements
+    .left {
+      float: left;
+    }
+
+    .right {
+      float: right;
+    }
+
+    // Items
+    .title {
+      font-family: $MuseoSans-300;
+      font-size: 25px;
+      margin-bottom: 1em;
+    }
+
+    p {
+      margin-bottom: 1em;
+    }
+
+    img {
+      display: block;
+      height: auto;
+      max-width: 100%;
+      width: auto;
+    }
   }
 }

@@ -1,7 +1,52 @@
+@import "state-components/portfolio/kartist/kartist";
+
 #kartist-portfolio-page {
   $this-client-color: #5cc6eb;
 
   .title {
     color: $this-client-color;
+  }
+}
+
+#kartist-portfolio-page .large-only .design {
+  .full-width-slider {
+    height: 512px;
+    width: 100%;
+  }
+
+  .row.second {
+    padding: 45px 0 65px 0;
+
+    .description {
+      width: 290px;
+    }
+
+    .video-container {
+      margin-right: -70px;
+      width: 418px;
+    }
+  }
+
+  .row.third {
+    padding: 50px 0 45px 0;
+
+    img {
+      max-width: 385px;
+    }
+
+    .description {
+      margin-left: 45px;
+      width: 280px;
+    }
+  }
+
+  .row.fourth {
+    .description {
+      width: 200px;
+    }
+
+    img {
+      max-width: 465px;
+    }
   }
 }

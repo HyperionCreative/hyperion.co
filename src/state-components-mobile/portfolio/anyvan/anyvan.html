@@ -16,4 +16,34 @@
         <div ng-bind-html=":: str.mobile.grow"></div>
       </div>
   </div>
+  <div class="large-only">
+    <div class="container">
+      <hyp-portfolio-header
+        description="{{:: str.portfolio.anyvan.header }}"
+        client-logo-url="assets/images/portfolio/anyvan/logo.png"
+        client-name="AnyVan"
+        is-mobile="true"
+      ></hyp-portfolio-header>
+
+      <div class="portfolio-content">
+        <hyp-full-width-slider
+          images-url="['assets/images/portfolio/anyvan/slide-1.jpg', 'assets/images/portfolio/anyvan/slide-2.jpg', 'assets/images/portfolio/anyvan/slide-3.jpg', 'assets/images/portfolio/anyvan/slide-4.jpg']"
+
+          rsi-options="portfolioRsiOptions"
+          multiply-count="1"
+          ></hyp-full-width-slider>
+
+        <div class="first row">
+          <div class="video-container left">
+            <img src="assets/videos/portfolio/anyvan/anyvan-static.jpg" alt="AnyVan">
+          </div>
+          <div class="description left">
+            <h1 class="title" ng-bind-html=":: str.portfolio.anyvan.generic.title"></h1>
+            <div ng-bind-html=":: str.portfolio.anyvan.generic.description"></div>
+            <a class="button" href="http://www.anyvan.com/" target="_blank">Visit Site</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

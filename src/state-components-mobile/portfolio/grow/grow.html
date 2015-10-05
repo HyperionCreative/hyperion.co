@@ -15,4 +15,34 @@
         <div ng-bind-html=":: str.mobile.grow"></div>
       </div>
   </div>
+  <div class="large-only">
+    <div class="container">
+      <div class="portfolio-content">
+        <hyp-portfolio-header
+          description="{{:: str.portfolio.grow.header }}"
+          client-logo-url="assets/images/portfolio/grow/logo.png"
+          client-name="Grow with a CFO"
+          is-mobile="true"
+        ></hyp-portfolio-header>
+
+        <hyp-full-width-slider
+          images-url="['assets/images/portfolio/grow/slide-1.jpg', 'assets/images/portfolio/grow/slide-2.jpg']"
+
+          rsi-options="portfolioRsiOptions"
+          multiply-count="1"
+          ></hyp-full-width-slider>
+
+        <div class="first row">
+          <div class="video-container left">
+            <img src="assets/videos/portfolio/grow/grow-static.jpg" alt="Grow with a CFO">
+          </div>
+          <div class="description left">
+            <h1 class="title" ng-bind-html=":: str.portfolio.grow.generic.title"></h1>
+            <div ng-bind-html=":: str.portfolio.grow.generic.description"></div>
+            <a class="button" href="http://growwithacfo.com/" target="_blank">Visit Site</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
