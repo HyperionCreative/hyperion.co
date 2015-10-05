@@ -18,6 +18,7 @@
     padding: 45px 0 65px 0;
 
     .description {
+      margin-top: 15px;
       width: 290px;
     }
 
@@ -48,5 +49,11 @@
     img {
       max-width: 465px;
     }
+  }
+}
+
+#kartist-portfolio-page .large-only .development {
+  .row.first {
+    padding-top: 60px;
   }
 }
