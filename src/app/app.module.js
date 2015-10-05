@@ -9,7 +9,7 @@
 
       'ngAnimate',
       'ngSanitize',
-      'ngTouch',
+      // 'ngTouch',
 
       ///////////////////////
       // Third party modules //
