@@ -27,7 +27,7 @@
           <span class="medium-only">Prev. Project</span>
           <span class="large-only">Previous Project</span>
         </div>
-        <strong class="project-name">{{ prev.name }}</strong>
+        <strong class="project-name">{{ prev.name }}<span ng-if="prev.name === 'Grow'" class="large-only"> with a CFO</span></strong>
       </div>
     </a>
     <a ng-href="{{getStateUrl(next.href)}}" class="next">
@@ -38,7 +38,7 @@
           <span class="medium-only">Next Project</span>
           <span class="large-only">Next Project</span>
         </div>
-        <strong class="project-name">{{ next.name }}</strong>
+        <strong class="project-name">{{ next.name }}<span ng-if="next.name === 'Grow'" class="large-only"> with a CFO</span></strong>
       </div>
     </a>
   </div>
