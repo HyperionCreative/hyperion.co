@@ -218,6 +218,11 @@
     @include transition(opacity 0.1s ease-in-out);
     opacity: 0.5;
 
+    &:not(.rsActiveSlide) a {
+      // This will disable the link's href. THe navigation by click will still work :D
+      pointer-events: none;
+    }
+
     &.rsActiveSlide {
       opacity: 1;
     }
