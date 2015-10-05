@@ -1,6 +1,6 @@
 <section id="quizkick-portfolio-page" class="portfolio-page">
   <div class="small-and-medium-only">
-    <div class="small-and-medium-only">
+    <div class="small-and-medium-only" ng-if="!isOnLargeScreen">
       <hyp-full-width-slider
         images-url="[
           'assets/images/mobile/portfolio-slider/quizkick/01.jpg',
@@ -17,7 +17,7 @@
         </div>
     </div>
   </div>
-  <div class="large-only">
+  <div class="large-only" ng-if="isOnLargeScreen">
     <div class="container">
       <hyp-portfolio-header
         description="{{:: str.portfolio.quizkick.tabletHeader }}"
@@ -28,7 +28,7 @@
 
       <div class="portfolio-content">
         <div class="row">
-          <img src="assets/images/portfolio/quizkick/1.jpg" alt="QuizKick">
+          <img ng-src="assets/images/portfolio/quizkick/1.jpg" alt="QuizKick">
           <div class="description first">
             <h1 class="title" ng-bind-html=":: str.portfolio.quizkick.aim.title"></h1>
             <p ng-bind-html=":: str.portfolio.quizkick.aim.description"></p>

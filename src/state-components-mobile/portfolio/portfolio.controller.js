@@ -4,9 +4,11 @@
   angular
     .module('state.portfolio')
     .controller('PortfolioCtrl', ['$scope', '$state', '$window', function ($scope, $state, $window) {
-      // The order of these matters.
-      // The href is the state name.
-      var navigationOrder = [{
+      ///////////////
+      // Constants //
+      ///////////////
+      // The order of these matters. The href is the state name.
+      var NAVIGATION_ORDER = [{
         href: 'portfolio.kartist',
         imageSrc: 'assets/images/portfolio/kartist/logo.png',
         name: 'Kartist'
@@ -24,10 +26,7 @@
         name: 'Grow'
       }];
 
-      $scope.getStateUrl = $state.href;
-      $scope.scrollToTop = scrollToTop;
-
-      $scope.portfolioRsiOptions = {
+      var PORTFOLIO_RSI_OPTIONS = {
         autoScaleSlider: true,
         autoScaleSliderWidth: 587,
         autoScaleSliderHeight: 391,
@@ -45,24 +44,53 @@
         }
       };
 
+      /////////////////////
+      // $scope bindings //
+      /////////////////////
+      $scope.getStateUrl = $state.href;
+      $scope.portfolioRsiOptions = PORTFOLIO_RSI_OPTIONS;
+      $scope.scrollToTop = scrollToTop;
+      $scope.isOnLargeScreen = isOnLargeScreen();
+
+      ///////////////
+      // Run block //
+      ///////////////
       $scope.$on('$stateChangeSuccess', function (event, toState) {
         // Sets the navigation order in place
-        for (var i = 0; i < navigationOrder.length; i++) {
-          if (navigationOrder[i].href === toState.name) {
-            $scope.current = navigationOrder[i];
+        for (var i = 0; i < NAVIGATION_ORDER.length; i++) {
+          if (NAVIGATION_ORDER[i].href === toState.name) {
+            $scope.current = NAVIGATION_ORDER[i];
 
-            $scope.prev = navigationOrder[i - 1 < 0 ? navigationOrder.length - 1 : i - 1];
-            $scope.next = navigationOrder[(i + 1) % navigationOrder.length];
+            $scope.prev = NAVIGATION_ORDER[i - 1 < 0 ? NAVIGATION_ORDER.length - 1 : i - 1];
+            $scope.next = NAVIGATION_ORDER[(i + 1) % NAVIGATION_ORDER.length];
 
             break;
           }
         }
 
+        // Scrolls to the top
         scrollToTop();
       });
 
+      angular.element($window).on('resize', function () {
+        var tempIsOnLargeScreen = isOnLargeScreen();
+
+        if ($scope.isOnLargeScreen !== tempIsOnLargeScreen) {
+          $scope.$evalAsync(function () {
+            $scope.isOnLargeScreen = tempIsOnLargeScreen;
+          });
+        }
+      });
+
+      ///////////////
+      // Functions //
+      ///////////////
       function scrollToTop() {
         $window.scrollTo(0, 0);
+      }
+
+      function isOnLargeScreen() {
+        return Math.max(document.documentElement.clientWidth, window.innerWidth || 0) >= 768;
       }
     }]);
 })();

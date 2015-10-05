@@ -1,5 +1,5 @@
 <section id="kartist-portfolio-page" class="portfolio-page">
-  <div class="small-and-medium-only">
+  <div class="small-and-medium-only" ng-if="!isOnLargeScreen">
     <hyp-full-width-slider
       images-url="[
         'assets/images/mobile/portfolio-slider/kartist/01.jpg',
@@ -19,7 +19,7 @@
         <div ng-bind-html=":: str.mobile.kartist"></div>
       </div>
   </div>
-  <div class="large-only">
+  <div class="large-only" ng-if="isOnLargeScreen">
     <div class="container">
       <hyp-portfolio-header
         description="{{:: str.portfolio.kartist.tabletHeader }}"
@@ -30,7 +30,7 @@
 
       <div class="portfolio-content design" ng-show="!showDevSection">
         <div class="first row">
-          <img src="assets/images/portfolio/kartist/in-page-1.jpg" alt="Kartist">
+          <img ng-src="assets/images/portfolio/kartist/in-page-1.jpg" alt="Kartist">
         </div>
 
         <div class="second row">
@@ -40,7 +40,7 @@
             <a class="button" ng-click="showDevSection = true; scrollToTop();">About Coding</a>
           </div>
           <div class="video-container right">
-            <img src="assets/videos/portfolio/kartist/kartist-static.jpg" alt="Kartist">
+            <img ng-src="assets/videos/portfolio/kartist/kartist-static.jpg" alt="Kartist">
           </div>
         </div>
 
@@ -52,7 +52,7 @@
           ></hyp-full-width-slider>
 
         <div class="third row">
-          <img src="assets/images/portfolio/kartist/in-page-3.jpg" alt="Kartist" class="left">
+          <img ng-src="assets/images/portfolio/kartist/in-page-3.jpg" alt="Kartist" class="left">
           <div class="description left">
             <h2 class="title" ng-bind-html=":: str.portfolio.kartist.mobileVersion.title"></h2>
             <div ng-bind-html=":: str.portfolio.kartist.mobileVersion.description"></div>
@@ -65,7 +65,7 @@
             <div ng-bind-html=":: str.portfolio.kartist.logo.description"></div>
             <div class="logo-by" ng-bind-html=":: str.portfolio.kartist.logo.url"></div>
           </div>
-          <img src="assets/images/portfolio/kartist/in-page-4.jpg" alt="Kartist" class="right">
+          <img ng-src="assets/images/portfolio/kartist/in-page-4.jpg" alt="Kartist" class="right">
         </div>
       </div>
 
@@ -75,7 +75,7 @@
           <p ng-bind-html=":: str.portfolio.kartist.theStart.description"></p>
         </div>
         <div class="second row">
-          <img src="assets/images/expertise/development.jpg" alt="Kartist">
+          <img ng-src="assets/images/expertise/development.jpg" alt="Kartist">
         </div>
         <div class="third row">
           <div class="half-of-row">
@@ -88,8 +88,8 @@
           </div>
         </div>
         <div class="fourth row">
-          <img class="half-of-row" src="assets/images/portfolio/kartist/dev-left.jpg" alt="Performance">
-          <img class="half-of-row" src="assets/images/portfolio/kartist/dev-right.jpg" alt="Browser Extensions">
+          <img class="half-of-row" ng-src="assets/images/portfolio/kartist/dev-left.jpg" alt="Performance">
+          <img class="half-of-row" ng-src="assets/images/portfolio/kartist/dev-right.jpg" alt="Browser Extensions">
         </div>
         <div class="fifth row">
           <h3 class="title" ng-bind-html=":: str.portfolio.kartist.theEnd.title"></h3>

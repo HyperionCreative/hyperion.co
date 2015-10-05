@@ -1,5 +1,5 @@
 <section id="anyvan-portfolio-page" class="portfolio-page">
-  <div class="small-and-medium-only">
+  <div class="small-and-medium-only" ng-if="!isOnLargeScreen">
     <hyp-full-width-slider
       images-url="[
         'assets/images/mobile/portfolio-slider/anyvan/01.jpg',
@@ -16,7 +16,7 @@
         <div ng-bind-html=":: str.mobile.grow"></div>
       </div>
   </div>
-  <div class="large-only">
+  <div class="large-only" ng-if="isOnLargeScreen">
     <div class="container">
       <hyp-portfolio-header
         description="{{:: str.portfolio.anyvan.tabletHeader }}"
@@ -35,7 +35,7 @@
 
         <div class="first row">
           <div class="video-container left">
-            <img src="assets/videos/portfolio/anyvan/anyvan-static.jpg" alt="AnyVan">
+            <img ng-src="assets/videos/portfolio/anyvan/anyvan-static.jpg" alt="AnyVan">
           </div>
           <div class="description left">
             <h1 class="title" ng-bind-html=":: str.portfolio.anyvan.generic.title"></h1>
