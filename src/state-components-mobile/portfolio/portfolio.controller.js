@@ -3,7 +3,7 @@
 
   angular
     .module('state.portfolio')
-    .controller('PortfolioCtrl', ['$scope', '$state', function ($scope, $state) {
+    .controller('PortfolioCtrl', ['$scope', '$state', '$window', function ($scope, $state, $window) {
       // The order of these matters.
       // The href is the state name.
       var navigationOrder = [{
@@ -25,6 +25,7 @@
       }];
 
       $scope.getStateUrl = $state.href;
+      $scope.scrollToTop = scrollToTop;
 
       $scope.portfolioRsiOptions = {
         autoScaleSlider: true,
@@ -45,6 +46,7 @@
       };
 
       $scope.$on('$stateChangeSuccess', function (event, toState) {
+        // Sets the navigation order in place
         for (var i = 0; i < navigationOrder.length; i++) {
           if (navigationOrder[i].href === toState.name) {
             $scope.current = navigationOrder[i];
@@ -55,6 +57,12 @@
             break;
           }
         }
+
+        scrollToTop();
       });
+
+      function scrollToTop() {
+        $window.scrollTo(0, 0);
+      }
     }]);
 })();

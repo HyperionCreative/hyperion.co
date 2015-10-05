@@ -37,7 +37,7 @@
           <div class="description left">
             <h1 class="title" ng-bind-html=":: str.portfolio.kartist.uiAndCode.title"></h1>
             <div ng-bind-html=":: str.portfolio.kartist.uiAndCode.description"></div>
-            <a class="button" ng-click="showDevSection = true;">About Coding</a>
+            <a class="button" ng-click="showDevSection = true; scrollToTop();">About Coding</a>
           </div>
           <div class="video-container right">
             <img src="assets/videos/portfolio/kartist/kartist-static.jpg" alt="Kartist">
@@ -94,7 +94,7 @@
         <div class="fifth row">
           <h3 class="title" ng-bind-html=":: str.portfolio.kartist.theEnd.title"></h3>
           <div ng-bind-html=":: str.portfolio.kartist.theEnd.description"></div>
-          <a class="button" ng-click="showDevSection = false;">About Design</a>
+          <a class="button" ng-click="showDevSection = false; scrollToTop();">About Design</a>
         </div>
       </div>
     </div>
