@@ -11,18 +11,33 @@
       var NAVIGATION_ORDER = [{
         href: 'portfolio.kartist',
         imageSrc: 'assets/images/portfolio/kartist/logo.png',
+        imageStyle: {
+          'margin-top': '2px',
+          'width': '58%'
+        },
         name: 'Kartist'
       }, {
         href: 'portfolio.quizkick',
         imageSrc: 'assets/images/portfolio/quizkick/logo.png',
+        imageStyle: {
+          'margin-top': '2px',
+          'width': '62%'
+        },
         name: 'QuizKick'
       }, {
         href: 'portfolio.anyvan',
         imageSrc: 'assets/images/portfolio/anyvan/logo.png',
+        imageStyle: {
+          'margin-top': '1px',
+          'width': '65%'
+        },
         name: 'AnyVan'
       }, {
         href: 'portfolio.grow',
         imageSrc: 'assets/images/portfolio/grow/logo.png',
+        imageStyle: {
+          'width': '70%'
+        },
         name: 'Grow'
       }];
 

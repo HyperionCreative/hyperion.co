@@ -6,6 +6,10 @@
   .title {
     color: $this-client-color;
   }
+
+  .large-only .portfolio-header .logo {
+    padding-top: 4px;
+  }
 }
 
 #kartist-portfolio-page .large-only .design {

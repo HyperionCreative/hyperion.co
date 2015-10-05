@@ -10,6 +10,14 @@
       color: #dddddd;
     }
   }
+
+  .large-only .portfolio-header .logo {
+    padding-top: 2px;
+
+    img {
+      max-width: 110px;
+    }
+  }
 }
 
 #quizkick-portfolio-page .large-only {

@@ -6,6 +6,10 @@
   .title {
     color: $this-client-color;
   }
+
+  .large-only .portfolio-header .logo {
+    padding-bottom: 2px;
+  }
 }
 
 #grow-portfolio-page .large-only {
@@ -13,7 +17,7 @@
     height: 512px;
     width: 100%;
   }
-  
+
   .first.row {
     .video-container {
       margin-right: 30px;

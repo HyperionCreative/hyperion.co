@@ -6,6 +6,10 @@
   .title {
     color: $this-client-color;
   }
+
+  .large-only .portfolio-header .logo {
+    padding-top: 2px;
+  }
 }
 
 #anyvan-portfolio-page .large-only {
