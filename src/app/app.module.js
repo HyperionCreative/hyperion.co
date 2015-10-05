@@ -23,6 +23,7 @@
       ////////////////////
 
       'common.carousel-slider',
+      'common.google-analytics',
       'common.simple-hoverable',
       'common.ua-parser',
 
