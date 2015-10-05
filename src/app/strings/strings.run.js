@@ -64,6 +64,8 @@
           thirdColumn: '<p><strong>Consultation. </strong>For consulting projects we\'re lending our ideas and expertise to companies in need of either fresh, objective ideas or a professional\'s opinion. Like product design or redesign projects, we will start by understanding the whole picture and what it is you are trying to achieve. We will then put our minds to work and issue a report with our assessment of the situation and our recommendations. We do not charge for this service.</p>'
         },
 
+        // Be careful when editing coverDescription as it may break the ellipsis. Make sure to check the portfolio page to make sure
+        // the ellipsis is still there.
         portfolio: {
           navigationHamburgerAnchorText: 'Our Work',
           header: {
@@ -75,8 +77,8 @@
             projectName: 'AnyVan',
             sliderDescription: 'We worked with AnyVan in early 2014 to help them design their then upcoming iOS app. We handled the UI and UX and work with their team to help them make it a reality.',
 
-            header: 'We worked with <strong>AnyVan</strong> in early 2014 to help them design their then upcoming iOS app. We handled the UI and UX and work with their team to help them make it a reality.',
-            coverDescription: 'We worked with AnyVan in early 2014 to help them design their then upcoming iOS app. We handled the UI and UX and work with their team to help them make it a reality.',
+            header: 'We worked with <strong>AnyVan</strong> in early 2014 to help them design their then upcoming iOS app. We handled the UI and UX and worked with their team to help them make it a reality.',
+            coverDescription: 'We worked with AnyVan in early 2014 to help them design their then upcoming iOS app. We handled the UI and UX and<span class="large"> worked with their team to help them</span><span class="ellipsis"> [...]</span>',
 
             generic: {
               title: 'AnyVan',
@@ -88,7 +90,7 @@
             sliderDescription: 'The shots above are from one of our most recent projects, Kartist. Their app was intended to help shoppers everywhere manage their lists, find inspiration and connect with likeminded people.',
 
             header: 'We worked with <strong>Kartist</strong> in early 2015 - their platform aims to help shoppers everywhere manage their lists, find inspiration and connect with likeminded people.',
-            coverDescription: 'We worked with Kartist in early 2015 - their platform aims to help shoppers everywhere manage their lists, find inspiration and connect with likeminded people.',
+            coverDescription: 'We worked with Kartist in early 2015 - their platform aims to to help shoppers everywhere manage their lists, find inspiration<span class="large"> and connect with likeminded</span><span class="ellipsis"> [...]</span>',
 
             // design
             uiAndCode: {
@@ -127,7 +129,7 @@
             projectName: 'Grow with a CFO',
 
             header: 'We worked with <strong>Grow with a CFO</strong> in 2015 to help them design their website and more easily showcase their services and processes.',
-            coverDescription: 'We worked with Grow with a CFO in 2015 to help them design their website and more easily showcase their services and processes.',
+            coverDescription: 'We worked with Grow with a CFO in 2015 to help them design their website and more easily showcase their services and<span class="large"> processes.</span><span class="ellipsis only-on-small"> [...]</span>',
 
             generic: {
               title: 'Grow with a CFO',
@@ -139,7 +141,7 @@
             sliderDescription: 'QuizKick tried to create a game that would give football fans around the world a chance to prove their knowledge. We worked on the design and the back end of the system.',
 
             header: '<strong>QuizKick</strong> tried to create a game that would give football fans around the world a chance to prove their knowledge. We worked on the design and the back end of the system.',
-            coverDescription: 'QuizKick tried to create a game that would give football fans around the world a chance to prove their knowledge. We worked on the design and the back end of the system.',
+            coverDescription: 'QuizKick tried to create a game that would give football fans around the world a chance to prove their knowledge. We<span class="large"> worked on the design and the back end</span><span class="ellipsis"> [...]</span>',
 
             aim: {
               title: 'QuizKick',

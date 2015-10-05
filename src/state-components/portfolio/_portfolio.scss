@@ -163,16 +163,30 @@
           font-size: 22px;
           margin-bottom: 10px;
         }
+      }
+    }
 
-        p {
-          color: #d8dce0;
-          max-height: 2rem;
-          overflow: hidden;
+    // The ellipsis
+    p {
+      color: #d8dce0;
+      max-height: 2rem;
+      overflow: hidden;
 
-          // The ellipsis
-          & > span > span {
-            color: #b1b5ba;
-          }
+      .ellipsis {
+        color: #b1b5ba;
+      }
+
+      .only-on-small {
+        display: none;
+        
+        @media only screen and (max-width : 1920px) {
+          display: inline;
+        }
+      }
+
+      .large {
+        @media only screen and (max-width : 1920px) {
+          display: none;
         }
       }
     }
