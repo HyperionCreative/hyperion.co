@@ -28,6 +28,7 @@
       // Specific Modules //
       //////////////////////
 
+      'app.portfolio-header',
       'app.simple-footer',
       'app.strings',
 
