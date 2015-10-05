@@ -12,7 +12,7 @@
         href: 'portfolio.kartist',
         imageSrc: 'assets/images/portfolio/kartist/logo.png',
         imageStyle: {
-          'margin-top': '2px',
+          'margin-top': '4px',
           'width': '58%'
         },
         name: 'Kartist'
@@ -20,7 +20,7 @@
         href: 'portfolio.quizkick',
         imageSrc: 'assets/images/portfolio/quizkick/logo.png',
         imageStyle: {
-          'margin-top': '2px',
+          'margin-top': '4px',
           'width': '62%'
         },
         name: 'QuizKick'
@@ -28,7 +28,7 @@
         href: 'portfolio.anyvan',
         imageSrc: 'assets/images/portfolio/anyvan/logo.png',
         imageStyle: {
-          'margin-top': '1px',
+          'margin-top': '3px',
           'width': '65%'
         },
         name: 'AnyVan'
