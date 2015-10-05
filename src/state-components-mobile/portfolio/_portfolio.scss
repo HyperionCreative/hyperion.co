@@ -138,8 +138,14 @@ html {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        width: 100%;
       }
+    }
+
+    // Needed otherwise overflow hidden will cut some pixels from the right side
+    // of the italic font!
+    .prev .text-container .project-name {
+      margin-right: -2px;
+      padding-right: 2px;
     }
 
     // Alignment
