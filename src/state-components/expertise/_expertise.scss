@@ -10,6 +10,7 @@
 
       .actual-content {
         background-color: rgba(#ffffff, 0.8);
+        @include box-shadow($normal-box-shadow);
         color: #b7babe;
         cursor: pointer;
         display: block;
