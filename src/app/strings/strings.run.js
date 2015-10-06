@@ -141,7 +141,7 @@
           },
           quizkick: {
             projectName: 'QuizKick',
-            sliderDescription: 'QuizKick tried to create a game that would give football fans around the world a <strong>chance</strong> to prove their knowledge. We worked on the design and the back end of the system.',
+            sliderDescription: 'QuizKick tried to create a game that would give football fans around the world a chance to prove their knowledge. We worked on the design and the back end of the system.',
 
             header: '<strong>QuizKick</strong> tried to create a game that would give football fans around the world a chance to prove their knowledge. We worked on the design and the back end of the system.',
             tabletHeader: '<strong>QuizKick</strong> wanted to create a game for football fans around the world could prove their knowledge & skills. We worked on the UI and the back end.',
