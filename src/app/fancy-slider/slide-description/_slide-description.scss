@@ -36,7 +36,7 @@
   width: $container-width;
 
   @media only screen and (max-width : 1920px) {
-    bottom: 45px;
+    bottom: 65px;
   }
 
   .slide-description {
@@ -55,7 +55,7 @@
     .actual-text {
       position: relative;
 
-      & > div {
+      & > a {
         opacity: 0;
         position: absolute;
         left: 0;
