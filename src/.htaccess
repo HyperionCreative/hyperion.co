@@ -24,7 +24,20 @@
     # in a continuous redirect loop!
     DirectorySlash Off
 
+    # Don't strip the "/" when accessing /static-pages
+    RewriteCond %{REQUEST_URI}  !static-pages
     RewriteRule ^(.*)/$ /$1 [R=301,L]
+
+
+# ##############################################################################
+# # SEO                                                                        #
+# ##############################################################################
+
+  # Redirect the crawlers to their html snapshots
+
+  RewriteCond %{HTTP_USER_AGENT} Googlebot|bingbot|Googlebot-Mobile|Yahoo|YahooSeeker|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora\ link\ preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator [NC]
+  RewriteCond %{REQUEST_URI} !static-pages
+  RewriteRule ^ static-pages%{REQUEST_URI}/index.html [L]
 
 
 # ##############################################################################
@@ -55,8 +68,9 @@
 # # Pretty URLS (remove #) and mobile redirect                                 #
 # ##############################################################################
 
-  # Don't rewrite files
-  RewriteCond %{REQUEST_FILENAME} -f
+  # Don't rewrite files and the static-pages folder
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_URI} static-pages
   RewriteRule ^ - [L]
 
   # Check if the client is a mobile device
