@@ -6,8 +6,9 @@
     .run(['$rootScope', function ($rootScope) {
       $rootScope.str = {
         globals: {
-          personalPhoneNumber: '+44 (0)7598-461-151',
-          phoneNumber: '+44 (0)1214-052-101',
+          personalPhoneNumber: '+44 7598-461-151',
+          desktopNumber: '+44 (0)1214-052-101',
+          phoneNumber: '+44 1214-052-101',
           // This is not the address on which the contact form sends its emails.
           // That email address is defined in php/email-sender.php
           //
