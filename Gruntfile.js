@@ -346,7 +346,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>',
-          src: ['*.html', 'portfolio/animations-demo/quizkick/index.html'],
+          src: ['*.html', 'portfolio/animations-demo/quizkick/index.html', 'static-pages/**/*.html'],
           dest: '<%= yeoman.dist %>'
         }]
       }
@@ -364,6 +364,7 @@ module.exports = function (grunt) {
             '.htaccess',
             'robots.txt',
             'favicon.ico',
+            'sitemap.xml',
 
             // We don't need the html templates as they're added to ngtemplates
             '*.html',
@@ -372,6 +373,9 @@ module.exports = function (grunt) {
 
             // Quizkick
             'portfolio/**/*',
+
+            // The static html pages
+            'static-pages/**/*.html',
 
             'php/**/*'
           ]
@@ -527,6 +531,8 @@ module.exports = function (grunt) {
 
             // disregard all quizkick related files
             '!portfolio/animations-demo/quizkick/**/*.html',
+            // disregard all static html seo files
+            '!static-pages/**/*.html',
 
             // Everything except for the main html files
             '!index.html',
@@ -545,6 +551,9 @@ module.exports = function (grunt) {
 
             // disregard all quizkick related files
             '!portfolio/animations-demo/quizkick/**/*.html',
+
+            // disregard all static html seo files
+            '!static-pages/**/*.html',
 
             // Everything except for the main html files
             '!index.html',
