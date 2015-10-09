@@ -5,6 +5,9 @@
     .config(['$stateProvider', function ($stateProvider) {
       $stateProvider
         .state('root.sub-page-template.portfolio.quizkick', {
+          data: {
+            pageTitle: 'QuizKick | Hyperion'
+          },
           url: '/quizkick',
           views: {
             'sub-page-content@root.sub-page-template': {

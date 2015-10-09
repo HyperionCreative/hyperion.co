@@ -26,6 +26,9 @@
           }
         })
         .state('root.sub-page-template.expertise.consulting', {
+          data: {
+            pageTitle: 'Consulting Expertise | Hyperion'
+          },
           url: '/consulting',
           views: {
             'expertise': {
@@ -34,6 +37,9 @@
           }
         })
         .state('root.sub-page-template.expertise.design', {
+          data: {
+            pageTitle: 'Design Expertise | Hyperion'
+          },
           url: '/design',
           views: {
             'expertise': {
@@ -42,6 +48,9 @@
           }
         })
         .state('root.sub-page-template.expertise.development', {
+          data: {
+            pageTitle: 'Development Expertise | Hyperion'
+          },
           url: '/development',
           views: {
             'expertise': {

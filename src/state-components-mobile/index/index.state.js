@@ -5,6 +5,9 @@
     .config(['$stateProvider', function ($stateProvider) {
       $stateProvider
         .state('index', {
+          data: {
+            pageTitle: 'Hyperion | Creative Agency in Birmingham, UK'
+          },
           url: '/',
           views: {
             '@': {

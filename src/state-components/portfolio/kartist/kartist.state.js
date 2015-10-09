@@ -12,6 +12,9 @@
           url: '/kartist'
         })
         .state('root.sub-page-template.portfolio.kartist-design', {
+          data: {
+            pageTitle: 'Kartist Design | Hyperion'
+          },
           url: '/kartist/design',
           views: {
             'sub-page-content@root.sub-page-template': {
@@ -20,6 +23,9 @@
           }
         })
         .state('root.sub-page-template.portfolio.kartist-development', {
+          data: {
+            pageTitle: 'Kartist Development | Hyperion'
+          },
           url: '/kartist/development',
           views: {
             'sub-page-content@root.sub-page-template': {

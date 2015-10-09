@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="HyperionMobileApp">
   <head>
     <meta charset="utf-8">
     <!-- todo change this in production with the actual url -->
     <!--@@@ <base href="http://www.hyperion.co/"> @@@-->
 
-    <title>Hyperion | Creative Agency in Birmingham, UK</title>
+    <title hyp-simple-page-title>Hyperion | Creative Agency in Birmingham, UK</title>
 
     <script>
       // Retina Script
@@ -118,7 +118,7 @@
       }
     </style>
   </head>
-  <body ng-app="HyperionMobileApp" ng-cloak>
+  <body ng-cloak>
     <div style="opacity: 0; visibility: hidden; position: absolute; z-index: -999;">
       <!-- Start of fonts preloader -->
         <div>
@@ -209,6 +209,8 @@
 
       <script src="common/royal-slider/jquery.royalslider.min.js"></script>
       <script src="common/royal-slider/full-width/full-width.directive.js"></script>
+
+      <script src="common/simple-page-title/simple-page-title.directive.js"></script>
 
       <script src="common/ua-parser/ua-parser.module.js"></script>
     <!-- end of common files -->

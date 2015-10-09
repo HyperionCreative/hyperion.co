@@ -8,6 +8,9 @@
     .config(['$stateProvider', function ($stateProvider) {
       $stateProvider
         .state('root.sub-page-template.contact', {
+          data: {
+            pageTitle: 'Get in Touch | Hyperion'
+          },
           url: '/contact',
           views: {
             'sub-page-content': {

@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="HyperionApp">
   <head>
     <meta charset="utf-8">
     <!-- todo change this in production with the actual url -->
     <!--@@@ <base href="http://www.hyperion.co/"> @@@-->
 
-    <title>Hyperion | Creative Agency in Birmingham, UK</title>
+    <title hyp-simple-page-title>Hyperion | Creative Agency in Birmingham, UK</title>
 
     <script>
       // Retina Script
@@ -125,7 +125,7 @@
       }
     </style>
   </head>
-  <body ng-app="HyperionApp" hyp-on-horizontal-scroll>
+  <body hyp-on-horizontal-scroll>
     <!-- Start of fonts preloader -->
       <div>
         <!-- Without &nbsp; the font won't be preloaded! -->
@@ -244,6 +244,8 @@
 
       <script src="common/simple-hoverable/simple-hoverable.module.js"></script>
       <script src="common/simple-hoverable/simple-hoverable.directive.js"></script>
+
+      <script src="common/simple-page-title/simple-page-title.directive.js"></script>
 
       <script src="common/ua-parser/ua-parser.module.js"></script>
 

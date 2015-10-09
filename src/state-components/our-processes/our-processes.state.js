@@ -7,6 +7,9 @@
     .config(['$stateProvider', function ($stateProvider) {
       $stateProvider
         .state('root.sub-page-template.our-processes', {
+          data: {
+            pageTitle: 'Our Processes | Hyperion'
+          },
           url: '/our-processes',
           views: {
             'sub-page-content': {

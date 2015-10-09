@@ -23,6 +23,7 @@
       'common.google-analytics',
       'common.greeter',
       'common.full-width-slider',
+      'common.simple-page-title',
       'common.ua-parser',
 
       //////////////////////
