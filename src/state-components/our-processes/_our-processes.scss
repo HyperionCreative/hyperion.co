@@ -1,4 +1,8 @@
 #our-processes-page {
+  .container {
+    width: 1000px;
+  }
+  
   .processes-container {
     @include legacy-pie-clearfix;
   }
