@@ -15,22 +15,6 @@
     position: relative;
   }
 
-  // The hamburger icon
-  .icon-three-horizontal-bars {
-    color: #7f7f7f;
-    cursor: pointer;
-    font-size: 11px;
-    // -1 is needed to center the icon
-    line-height: $this-hamburger-icon-size;
-    padding: $this-hamburger-icon-padding;
-    position: absolute;
-    top: 0;
-
-    &:before {
-      vertical-align: middle;
-    }
-  }
-
   .links {
     display: inline-block;
     // This is needed to stay on top of the hambuger icon (.icon-three-horizontal-bars)
@@ -40,7 +24,7 @@
 
   .link {
     background-color: rgba(#ffffff, 0.01);
-    padding-right: 15px;
+    padding-right: 5px;
 
     color: #9ba0a3;
     display: inline-block;
@@ -87,8 +71,14 @@
       right: -20px;
     }
 
-    .links .link:first-child {
-      padding-left: 40px;
+    .links .link {
+      &:first-child {
+        padding-left: 40px;
+      }
+
+      &:last-child {
+        margin-right: -10px;
+      }
     }
   }
 
