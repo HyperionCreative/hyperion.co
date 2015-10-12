@@ -30,17 +30,6 @@
 
 
 # ##############################################################################
-# # SEO                                                                        #
-# ##############################################################################
-
-  # Redirect the crawlers to their html snapshots
-
-  RewriteCond %{HTTP_USER_AGENT} Googlebot|bingbot|Googlebot-Mobile|Yahoo|YahooSeeker|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora\ link\ preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator [NC]
-  RewriteCond %{REQUEST_URI} !static-pages
-  RewriteRule ^ static-pages%{REQUEST_URI}/index.html [L]
-
-
-# ##############################################################################
 # # High DPI Images and Videos                                                 #
 # ##############################################################################
 
@@ -72,6 +61,11 @@
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_URI} static-pages
   RewriteRule ^ - [L]
+
+  # SEO - Redirect the crawlers to their html snapshots
+  RewriteCond %{HTTP_USER_AGENT} Googlebot|bingbot|Googlebot-Mobile|Yahoo|YahooSeeker|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora\ link\ preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator [NC]
+  RewriteCond %{REQUEST_URI} !static-pages
+  RewriteRule ^ static-pages%{REQUEST_URI}/index.html [L]
 
   # Check if the client is a mobile device
   RewriteCond %{HTTP_USER_AGENT} "android|blackberry|iemobile|iphone|ipod|#opera mobile|palmos|webos|symbian|midp|wap|phone|pocket|mobile|pda|psp|tablet" [NC]
