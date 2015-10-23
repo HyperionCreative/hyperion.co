@@ -5,7 +5,7 @@
     .module('app.navigation-hamburger', [
       'common.simple-hoverable'
     ])
-    .directive('hypNavigationHamburger', ['$rootScope', '$state', function ($rootScope, $state) {
+    .directive('hypNavigationHamburger', ['$compile', '$rootScope', '$state', function ($compile, $rootScope, $state) {
       var currentState = {
         name: $state.current.name
       };
@@ -15,8 +15,18 @@
       });
 
       return {
-        link: function (scope) {
+        link: function (scope, iElement, iAttrs) {
           scope.currentState = currentState;
+
+          var menuContainer = angular.element(iElement[0].querySelector('.menu-container'));
+          if (angular.isUndefined(iAttrs.alwaysShowLinks)) {
+            menuContainer.attr('hyp-simple-hoverable', '');
+            menuContainer.attr('on-mouseenter', '.icon-three-horizontal-bars');
+
+            $compile(menuContainer)(scope);
+          } else {
+            menuContainer.addClass('mouse-entered');
+          }
         },
         replace: true,
         restrict: 'E',
