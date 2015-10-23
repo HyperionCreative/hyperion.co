@@ -24,6 +24,11 @@ body {
     .navigation-hamburger .link a {
       padding-left: 12px;
       padding-right: 12px;
+
+      &.active:before {
+        left: 12px;
+        right: 12px;
+      }
     }
   }
 }

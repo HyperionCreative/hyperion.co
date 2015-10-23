@@ -57,10 +57,27 @@
       cursor: pointer;
       opacity: 0.6;
       padding: 22px 14px;
+      position: relative;
       @include transition(opacity $rapid-transition-timing);
 
       &:hover {
         opacity: 1;
+      }
+
+      &.active {
+        opacity: 1;
+
+        &:before {
+          content: "";
+
+          background: #9ba0a3;
+          height: 1px;
+
+          position: absolute;
+          bottom: 17px;
+          left: 14px;
+          right: 14px;
+        }
       }
     }
   }
