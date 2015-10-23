@@ -20,5 +20,10 @@ body {
     .fancy-slider .slide-description-container {
       margin-left: - $small-container-width / 2;
     }
+
+    .navigation-hamburger .link a {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
   }
 }

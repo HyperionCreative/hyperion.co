@@ -56,7 +56,7 @@
     a {
       cursor: pointer;
       opacity: 0.6;
-      padding: 22px 10px;
+      padding: 22px 14px;
       @include transition(opacity $rapid-transition-timing);
 
       &:hover {
@@ -89,6 +89,10 @@
 
     .links .link:first-child {
       padding-left: 40px;
+    }
+
+    .links .link:last-child a {
+      padding-right: 0;
     }
   }
 
