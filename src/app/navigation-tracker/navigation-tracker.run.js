@@ -16,7 +16,7 @@
         'root.sub-page-template.expertise.design': 'Design Expertise',
         'root.sub-page-template.expertise.development': 'Development Expertise',
 
-        'root.sub-page-template.our-processes': 'Our Processes',
+        'root.sub-page-template.justification': 'Justification',
 
         'root.sub-page-template.portfolio': 'Our Work',
         'root.sub-page-template.portfolio.anyvan': 'AnyVan',

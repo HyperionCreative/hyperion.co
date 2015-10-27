@@ -1,0 +1,28 @@
+<hyp-center-me>
+  <section id="justification-page">
+    <div class="container">
+      <hyp-simple-header
+        name="{{:: str.justification.header.title }}"
+        description="{{:: str.justification.header.description }}"
+        class="custom-cursor normal"
+      ></hyp-simple-header>
+
+      <div class="processes-container custom-cursor normal">
+        <div class="process">
+          <div class="illustration icon-ok-sign"></div>
+          <div class="description" ng-bind-html=":: str.justification.firstColumn"></div>
+        </div>
+        <div class="process">
+          <div class="illustration icon-pen-and-ruler"></div>
+          <div class="description"><p><span ng-bind-html=":: str.justification.secondColumn"></span><span> More on this on the <a ui-sref="root.sub-page-template.expertise">Expertise Page</a>.</span></p></div>
+        </div>
+        <div class="process">
+          <div class="illustration icon-checkered"></div>
+          <div class="description" ng-bind-html=":: str.justification.thirdColumn"></div>
+        </div>
+      </div>
+
+      <hyp-simple-footer class="small custom-cursor normal"></hyp-simple-footer>
+    </div>
+  </section>
+</hyp-center-me>

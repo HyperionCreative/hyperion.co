@@ -1,19 +1,19 @@
 (function () {
   'use strict';
   angular
-    .module('state.our-processes', [
+    .module('state.justification', [
       'state.sub-page-template'
     ])
     .config(['$stateProvider', function ($stateProvider) {
       $stateProvider
-        .state('root.sub-page-template.our-processes', {
+        .state('root.sub-page-template.justification', {
           data: {
-            pageTitle: 'Our Processes | Hyperion'
+            pageTitle: 'Justification | Hyperion'
           },
-          url: '/our-processes',
+          url: '/justification',
           views: {
             'sub-page-content': {
-              templateUrl: 'state-components/our-processes/our-processes.html'
+              templateUrl: 'state-components/justification/justification.html'
             }
           }
         });

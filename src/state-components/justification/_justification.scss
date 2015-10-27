@@ -1,8 +1,8 @@
-#our-processes-page {
+#justification-page {
   .container {
     width: 1000px;
   }
-  
+
   .processes-container {
     @include legacy-pie-clearfix;
   }
@@ -13,6 +13,10 @@
     float: left;
     margin-right: 1.4%;
     width: 32.4%;
+
+    a {
+      text-decoration: underline;
+    }
 
     &:last-child {
       margin-right: 0;

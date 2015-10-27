@@ -8,7 +8,7 @@
       'state.contact',
       'state.expertise',
       'state.fancy-slider',
-      'state.our-processes',
+      'state.justification',
       'state.portfolio',
       'state.preloader'
     ]);

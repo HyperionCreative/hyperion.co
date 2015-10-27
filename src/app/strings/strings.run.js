@@ -54,15 +54,15 @@
           }
         },
 
-        ourProcesses: {
-          navigationHamburgerAnchorText: ' Our Processes',
+        justification: {
+          navigationHamburgerAnchorText: ' Justification',
           header: {
-            title: 'Our Processes',
-            description: 'While each project is unique, we do have established processes to ensure a clear direction is always established and understood.'
+            title: 'Why Hyperion',
+            description: 'Here are some of the reasons our clients have chosen us in the past, and why we believe you should do the same.'
           },
-          firstColumn: '<p><strong>Product Design. </strong>Building a successful app or site requires more than a great idea, it requires careful planning and execution. We\'re here to help with the latter two.</p><p>We understand each project is unique so instead of jumping to the easiest solution, we are going to spend some time understanding who you are, what it is you are trying to achieve and who is the target market for your product. We will then ink out a basic structure for the product and start planning its execution. From a front-end perspective, this usually involves defining the structure for each section or page, creating the designs and coding the interface up. As far as the back end is concerned, we will establish the logic early on, and develop the platform modularly.</p>',
-          secondColumn: '<p><strong>Redesign. </strong>In order to create something that actually works, we need to understand not only the issues your company is trying to overcome, but also your objectives and the vision the company was built on. Once we understand that, we will be well positioned to start planning: how to overcome your company\'s pain points and create a product that will efficiently serve your goals.</p><p>After a plan is agreed on, we will get to the actual work, starting with the design stage - where we explore solutions and visual styles and define what the final product will look and feel like. We conclude the project with development, testing and finally, integration or deployment, as is the case.</p>',
-          thirdColumn: '<p><strong>Consultation. </strong>For consulting projects we\'re lending our ideas and expertise to companies in need of either fresh, objective ideas or a professional\'s opinion. Like product design or redesign projects, we will start by understanding the whole picture and what it is you are trying to achieve. We will get to work and provide our assessment of the situation and the actions we believe will solve the problem.</p>'
+          firstColumn: '<p><strong>(Plain) Honesty. </strong>We care about the projects we get involved in and we are not going to be afraid to tell you when we think you’re wrong and there’s a better way. We are also not going to shy away from admitting if one of us is in the wrong; what ultimately matters is that a great and useful product results from our collaboration.</p>',
+          secondColumn: '<strong>The Expertise. </strong>The primary focuses of our team are UI/UX, web design and development; We try to design and develop products that people can make sense of and will actually enjoy using. We want to get your message across in an elegant and efficient manner.',
+          thirdColumn: '<p><strong>Fresh, Bold Ideas. </strong>While there is beauty in standardisation and similarity, and the product’s functionality should always be a core concern, we place equal value on experimentation and fresh, daring ideas.</p>'
         },
 
         // Be careful when editing coverDescription as it may break the ellipsis. Make sure to check the portfolio page to make sure
