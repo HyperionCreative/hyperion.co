@@ -6,7 +6,7 @@
       $stateProvider
         .state('index', {
           data: {
-            pageTitle: 'Hyperion | Creative Agency in Birmingham, UK'
+            pageTitle: 'Hyperion | Creative Studio in Birmingham, UK'
           },
           url: '/',
           views: {
