@@ -55,7 +55,7 @@
         },
 
         justification: {
-          navigationHamburgerAnchorText: ' Why Us',
+          navigationHamburgerAnchorText: ' Justification',
           header: {
             title: 'Why Hyperion',
             description: 'Here are some of the reasons our clients have chosen us in the past, and why we believe you should do the same.'
@@ -68,7 +68,7 @@
         // Be careful when editing coverDescription as it may break the ellipsis. Make sure to check the portfolio page to make sure
         // the ellipsis is still there.
         portfolio: {
-          navigationHamburgerAnchorText: 'Portfolio',
+          navigationHamburgerAnchorText: 'Our Work',
           header: {
             title: 'Our Work',
             description: 'These are some of our most recent projects, that we can talk about. Click on each preview to learn more about the work we did.'
