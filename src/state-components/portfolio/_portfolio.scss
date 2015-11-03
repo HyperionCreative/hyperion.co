@@ -157,7 +157,7 @@
         position: absolute;
         right: 0;
         @include transform(translate3d(0,100%,0));
-        @include transition(transform 0.25s ease-in-out);
+        @include transition(transform 0.2s ease-in-out);
 
         .project-title {
           font-size: 22px;
@@ -178,7 +178,7 @@
 
       .only-on-small {
         display: none;
-        
+
         @media only screen and (max-width : 1920px) {
           display: inline;
         }
