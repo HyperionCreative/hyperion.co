@@ -20,15 +20,5 @@ body {
     .fancy-slider .slide-description-container {
       margin-left: - $small-container-width / 2;
     }
-
-    .navigation-hamburger .link a {
-      padding-left: 10px;
-      padding-right: 10px;
-
-      &.active:before {
-        left: 10px;
-        right: 10px;
-      }
-    }
   }
 }
