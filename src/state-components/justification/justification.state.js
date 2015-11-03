@@ -8,9 +8,9 @@
       $stateProvider
         .state('root.sub-page-template.justification', {
           data: {
-            pageTitle: 'Justification | Hyperion'
+            pageTitle: 'Why Hyperion | Hyperion'
           },
-          url: '/justification',
+          url: '/why-hyperion',
           views: {
             'sub-page-content': {
               templateUrl: 'state-components/justification/justification.html'
