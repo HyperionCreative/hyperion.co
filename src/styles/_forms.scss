@@ -21,6 +21,8 @@ input, textarea {
   }
 
   &:focus {
+    border-color: #60656b;
+
     // Hide the placeholder on focus
     @include input-placeholder {
       opacity: 0;
