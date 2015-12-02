@@ -70,7 +70,7 @@
         portfolio: {
           navigationHamburgerAnchorText: 'Our Work',
           header: {
-            title: 'Our Work',
+            title: 'Selected Projects',
             description: 'These are some of our most recent projects, that we can talk about. Click on each preview to learn more about the work we did.'
           },
 
