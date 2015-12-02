@@ -6,6 +6,9 @@
   Options -MultiViews
   RewriteEngine On
 
+  # todo Fix this as it's more of a hack!
+  DirectoryIndex nothing.html
+
   # ------------------------------------------------------------------------------
   # | Forcing the "www." at the beginning of URLs                                |
   # ------------------------------------------------------------------------------
