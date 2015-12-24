@@ -12,7 +12,7 @@
       $stateProvider
       // This state acts as a redirect
         .state('root.sub-page-template.expertise', {
-          url: '/expertise',
+          url: '/about',
           views: {
             'sub-page-content': {
               // This highlights the current open tab

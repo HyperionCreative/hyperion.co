@@ -32,9 +32,9 @@
         },
 
         expertise: {
-          navigationHamburgerAnchorText: 'Expertise',
+          navigationHamburgerAnchorText: 'About',
           header: {
-            title: 'Expertise',
+            title: 'About Us',
             description: 'As a creative studio, with only a small team - for now, our job is to help bring your ideas to life. We organise, we create and we solve problems.'
           },
           design: {
@@ -55,7 +55,7 @@
         },
 
         justification: {
-          navigationHamburgerAnchorText: ' Justification',
+          navigationHamburgerAnchorText: 'Why Us',
           header: {
             title: 'Why Hyperion',
             description: 'Here are some of the reasons our clients have chosen us in the past, and why we believe you should do the same.'
@@ -68,7 +68,7 @@
         // Be careful when editing coverDescription as it may break the ellipsis. Make sure to check the portfolio page to make sure
         // the ellipsis is still there.
         portfolio: {
-          navigationHamburgerAnchorText: 'Our Work',
+          navigationHamburgerAnchorText: 'Portfolio',
           header: {
             title: 'Selected Projects',
             description: 'These are some of our most recent projects, that we can talk about. Click on each preview to learn more about the work we did.'
