@@ -23,6 +23,17 @@
   </url>
 
   <url>
+    <loc>http://www.hyperion.co/ask/app-redesign/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>http://www.hyperion.co/ask/site-redesign/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
     <loc>http://www.hyperion.co/justification</loc>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
