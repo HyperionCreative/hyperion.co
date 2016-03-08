@@ -151,6 +151,10 @@
           top: 50%;
           @include transition(background-color $this-transition);
           width: 1px;
+
+          body.high-dpi-device.chrome.windows & {
+            background-color: transparent !important;
+          }
         }
 
         &:hover {
