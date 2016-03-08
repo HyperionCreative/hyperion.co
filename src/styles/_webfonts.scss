@@ -51,22 +51,73 @@
 
 // todo this is only for the development stage
 // sometimes this loads very slow thus slowing the whole page.. talk with myfonts
-// @import url("//hello.myfonts.net/count/2e0886");
+// @import url("//hello.myfonts.net/count/3040e7");
 
 ///////////////
 // Helvetica //
 ///////////////
 
-@font-face {font-family: "HelveticaNeueLTStd-Bd";src: url("../assets/webfonts/2E0886_4_0.eot");src: url("../assets/webfonts/2E0886_4_0.eot?#iefix") format("embedded-opentype"),url("../assets/webfonts/2E0886_4_0.woff2") format("woff2"),url("../assets/webfonts/2E0886_4_0.woff") format("woff"),url("../assets/webfonts/2E0886_4_0.ttf") format("truetype");}
-@font-face {font-family: "HelveticaNeueLTStd-Roman";src: url("../assets/webfonts/2E0886_5_0.eot");src: url("../assets/webfonts/2E0886_5_0.eot?#iefix") format("embedded-opentype"),url("../assets/webfonts/2E0886_5_0.woff2") format("woff2"),url("../assets/webfonts/2E0886_5_0.woff") format("woff"),url("../assets/webfonts/2E0886_5_0.ttf") format("truetype");}
+@font-face {
+  font-family: "HelveticaNeueLTStd-Bd";
+  src: url("../assets/webfonts/3040EA_3_0.eot");
+  src: url("../assets/webfonts/3040EA_3_0.eot?#iefix") format("embedded-opentype"),
+       url("../assets/webfonts/3040EA_3_0.woff2") format("woff2"),
+       url("../assets/webfonts/3040EA_3_0.woff") format("woff"),
+       url("../assets/webfonts/3040EA_3_0.ttf") format("truetype"),
+       url("../assets/webfonts/3040EA_3_0.svg#wf") format("svg");
+ font-style: normal;
+ font-weight: normal;
+}
+
+@font-face {
+  font-family: "HelveticaNeueLTStd-Roman";
+  src: url("../assets/webfonts/3040EA_4_0.eot");
+  src: url("../assets/webfonts/3040EA_4_0.eot?#iefix") format("embedded-opentype"),
+       url("../assets/webfonts/3040EA_4_0.woff2") format("woff2"),
+       url("../assets/webfonts/3040EA_4_0.woff") format("woff"),
+       url("../assets/webfonts/3040EA_4_0.ttf") format("truetype"),
+       url("../assets/webfonts/3040EA_4_0.svg#wf") format("svg");
+  font-style: normal;
+  font-weight: normal;
+}
 
 ///////////////
 // MuseoSans //
 ///////////////
 
-@font-face {font-family: "MuseoSans-700";src: url("../assets/webfonts/2E0886_0_0.eot");src: url("../assets/webfonts/2E0886_0_0.eot?#iefix") format("embedded-opentype"),url("../assets/webfonts/2E0886_0_0.woff2") format("woff2"),url("../assets/webfonts/2E0886_0_0.woff") format("woff"),url("../assets/webfonts/2E0886_0_0.ttf") format("truetype");}
-@font-face {font-family: "MuseoSans-300";src: url("../assets/webfonts/2E0886_1_0.eot");src: url("../assets/webfonts/2E0886_1_0.eot?#iefix") format("embedded-opentype"),url("../assets/webfonts/2E0886_1_0.woff2") format("woff2"),url("../assets/webfonts/2E0886_1_0.woff") format("woff"),url("../assets/webfonts/2E0886_1_0.ttf") format("truetype");}
-@font-face {font-family: "MuseoSans-500";src: url("../assets/webfonts/2E0886_2_0.eot");src: url("../assets/webfonts/2E0886_2_0.eot?#iefix") format("embedded-opentype"),url("../assets/webfonts/2E0886_2_0.woff2") format("woff2"),url("../assets/webfonts/2E0886_2_0.woff") format("woff"),url("../assets/webfonts/2E0886_2_0.ttf") format("truetype");}
+@font-face {
+  font-family: "MuseoSans-700";
+  src: url("../assets/webfonts/3040EA_0_0.eot");
+  src: url("../assets/webfonts/3040EA_0_0.eot?#iefix") format("embedded-opentype"),
+       url("../assets/webfonts/3040EA_0_0.woff2") format("woff2"),
+       url("../assets/webfonts/3040EA_0_0.woff") format("woff"),
+       url("../assets/webfonts/3040EA_0_0.ttf") format("truetype"),
+       url("../assets/webfonts/3040EA_0_0.svg#wf") format("svg");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "MuseoSans-300";
+  src: url("../assets/webfonts/3040EA_1_0.eot");
+  src: url("../assets/webfonts/3040EA_1_0.eot?#iefix") format("embedded-opentype"),
+       url("../assets/webfonts/3040EA_1_0.woff2") format("woff2"),
+       url("../assets/webfonts/3040EA_1_0.woff") format("woff"),
+       url("../assets/webfonts/3040EA_1_0.ttf") format("truetype"),
+       url("../assets/webfonts/3040EA_1_0.svg#wf") format("svg");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "MuseoSans-500";
+  src: url("../assets/webfonts/3040EA_2_0.eot");
+  src: url("../assets/webfonts/3040EA_2_0.eot?#iefix") format("embedded-opentype"),
+       url("../assets/webfonts/3040EA_2_0.woff2") format("woff2"),
+       url("../assets/webfonts/3040EA_2_0.woff") format("woff"),
+       url("../assets/webfonts/3040EA_2_0.ttf") format("truetype"),
+       url("../assets/webfonts/3040EA_2_0.svg#wf") format("svg");
+  font-style: normal;
+  font-weight: normal;
+}
 
 //////////////
 // PierSans //
