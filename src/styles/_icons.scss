@@ -19,6 +19,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-speech-bubbles:before {
+    content: "\e903";
+}
 .icon-three-dots:before {
   content: "\e902";
 }
