@@ -1,6 +1,8 @@
 (function () {
   'use strict';
 
+  // FIXME with the updated gsap libraries the flower pot jumps around.
+
   angular
     .module('app.fancy-slider', [
       'app.fancy-slider.animations',
