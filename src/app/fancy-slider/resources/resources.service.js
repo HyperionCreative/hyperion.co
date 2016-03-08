@@ -49,18 +49,21 @@
 
         var firstSlide = (function () {
           var flowerPot = new Resource(resourcesUrl.firstSlide.flowerPot);
-          flowerPot.addPosition('center', 1710, 380, 0);
-          flowerPot.addPosition('bottom', 0, 1440, 30);
-          flowerPot.addPosition('left', -3500, 100, -10);
-          flowerPot.addPosition('right', 1440, 0, 30);
+          flowerPot.addPosition('center', 1910, 380, 0);
+          flowerPot.addPosition('bottom', 200, 1440, 30);
+          flowerPot.addPosition('left', -3200, 100, -10);
+          // Y is set to 1 in order to fix a bug with gsap
+          flowerPot.addPosition('right', 1640, 1, 30);
           flowerPot.setZIndex(45);
+          flowerPot.sprite.children[0].rotation = PIXI.PI_2 / (360 / 10);
 
           var macbook = new Resource(resourcesUrl.firstSlide.macbook);
-          macbook.addPosition('center', 530, 27, 0);
-          macbook.addPosition('bottom', 0, 2880, 45);
-          macbook.addPosition('left', -2750, 0, -10);
-          macbook.addPosition('right', 2000, 0, 20);
+          macbook.addPosition('center', 630, 167, 0);
+          macbook.addPosition('bottom', 100, 2880, 45);
+          macbook.addPosition('left', -2650, 0, -10);
+          macbook.addPosition('right', 2100, 0, 20);
           macbook.setZIndex(40);
+          macbook.sprite.scale.set(1.27, 1.27);
 
           var sketchbook = new Resource(resourcesUrl.firstSlide.sketchbook);
           sketchbook.addPosition('center', 16, 354, 0);
@@ -69,18 +72,18 @@
           sketchbook.addPosition('right', 2560, 0, 20);
           sketchbook.setZIndex(10);
 
-          var watch = new Resource(resourcesUrl.firstSlide.watch);
-          watch.addPosition('center', 1017, 965, 0);
-          watch.addPosition('bottom', 0, 2160, -30);
-          watch.addPosition('left', -1920, 0, -20);
-          watch.addPosition('right', 1920, 0, 20);
-          watch.setZIndex(5);
+          // var watch = new Resource(resourcesUrl.firstSlide.watch);
+          // watch.addPosition('center', 1017, 965, 0);
+          // watch.addPosition('bottom', 0, 2160, -30);
+          // watch.addPosition('left', -1920, 0, -20);
+          // watch.addPosition('right', 1920, 0, 20);
+          // watch.setZIndex(5);
 
           return {
             flowerPot: flowerPot,
             macbook: macbook,
             sketchbook: sketchbook,
-            watch: watch
+            // watch: watch
           };
         })();
 
@@ -140,19 +143,19 @@
         (function () {
           // Under or equal 1920 transformation
           var transformations = {
-            firstSlide: {
-              flowerPot: {
-                x: 200,
-                rotation: PIXI.PI_2 / (360 / 10)
-              },
-              macbook: {
-                x: -100,
-                scale: 1.27
-              },
-              watch: {
-                visible: false
-              }
-            },
+            // firstSlide: {
+            //   flowerPot: {
+            //     x: 200,
+            //     rotation: PIXI.PI_2 / (360 / 10)
+            //   },
+            //   macbook: {
+            //     x: -100,
+            //     scale: 1.27
+            //   },
+            //   watch: {
+            //     visible: false
+            //   }
+            // },
             secondSlide: {
               iphone: {
                 scale: 1.1,

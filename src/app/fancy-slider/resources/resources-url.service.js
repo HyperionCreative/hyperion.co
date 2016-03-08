@@ -21,7 +21,7 @@
           flowerPot: getResourceUrl('slide-1', 'flower-pot'),
           macbook: getResourceUrl('slide-1', 'macbook'),
           sketchbook: getResourceUrl('slide-1', 'sketchbook'),
-          watch: getResourceUrl('slide-1', 'watch')
+          // watch: getResourceUrl('slide-1', 'watch')
         },
         secondSlide: {
           imac: getResourceUrl('slide-2', 'imac'),
