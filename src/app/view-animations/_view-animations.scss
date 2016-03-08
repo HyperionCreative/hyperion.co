@@ -4,9 +4,10 @@
   @include transform(translate3d(0,0,0));
 }
 
-.portfolio-page .container {
-  overflow: hidden;
-}
+// This breaks the shadow
+// .portfolio-page .container {
+//   overflow: hidden;
+// }
 
 // Top level ui-view
 [ui-view="page-content"] {
