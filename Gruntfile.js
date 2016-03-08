@@ -591,6 +591,14 @@ module.exports = function (grunt) {
     },
 
     replace: {
+      htaccess: {
+        src: '<%= yeoman.dist %>/htaccess.html',
+        dest: '<%= yeoman.dist %>/htaccess.html',
+        replacements: [{
+          from: /\#\@\@\@(.+)\@\@\@\#>/gmi,
+          to: '$1'
+        }]
+      },
       index: {
         src: '<%= yeoman.dist %>/index.html',
         dest: '<%= yeoman.dist %>/index.html',
@@ -687,7 +695,7 @@ module.exports = function (grunt) {
     'concurrent:dist',
     'concat',
     'copy:dist',
-    'replace',
+    // 'replace',
     'cssmin',
     'uglify',
     'filerev',
