@@ -6,18 +6,16 @@
   &.arrow-right {
    cursor:
      url('../assets/cursors/arrow-right.cur'),
-     // Not needed as the whole custom cursor thingy doesn't work as expected
-     // in IE 10
-     // url('assets/cursors/arrow-right.cur'),
+     // This fixes the cursors on IE
+     url('assets/cursors/arrow-right.cur'),
      auto;
   }
 
   &.close {
    cursor:
      url('../assets/cursors/close.cur'),
-     // Not needed as the whole custom cursor thingy doesn't work as expected
-     // in IE 10
-     // url('assets/cursors/close.cur'),
+     // This fixes the cursors on IE
+     url('assets/cursors/close.cur'),
      auto;
   }
 
