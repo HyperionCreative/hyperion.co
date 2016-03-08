@@ -3,23 +3,7 @@
 
   angular
     .module('app.custom-cursors', [])
-    .run(['$document', '$rootScope', '$state', 'IS_RETINA', 'PARSED_UA', function ($document, $rootScope, $state, IS_RETINA, PARSED_UA) {
-      try {
-        if (IS_RETINA && PARSED_UA.os.name === 'Windows' && !(PARSED_UA.browser.name === 'IE' || PARSED_UA.browser.name === 'Edge')) {
-          angular
-            .element($document[0].body)
-            .addClass('on-high-dpi-windows');
-        }
-
-        if (PARSED_UA.browser.name === 'IE' || PARSED_UA.browser.name === 'Edge') {
-          angular
-            .element($document[0].body)
-            .addClass('custom-cursors-ie-fix');
-        }
-      } catch (err) {
-        // Only God can help the poor user's soul!
-      }
-
+    .run(['$rootScope', '$state', function ($rootScope, $state) {
       $rootScope.closeSubPage = function (event) {
         var targetElement = angular.element(event.target);
 

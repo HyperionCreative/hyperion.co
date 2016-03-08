@@ -21,13 +21,23 @@
      auto;
   }
 
-  body.on-high-dpi-windows & {
+  body.high-dpi-device.windows:not(.chrome) & {
     &.arrow-right {
-     cursor: url('../assets/cursors/arrow-right@2x.png') 60 22, auto;
+     cursor:
+       url('../assets/cursors/arrow-right@2x.cur'),
+       // Not needed as the whole custom cursor thingy doesn't work as expected
+       // in IE 10
+       // url('assets/cursors/arrow-right.cur'),
+       auto;
     }
 
     &.close {
-     cursor: url('../assets/cursors/close@2x.png') 18 18, auto;
+     cursor:
+       url('../assets/cursors/close@2x.cur'),
+       // Not needed as the whole custom cursor thingy doesn't work as expected
+       // in IE 10
+       // url('assets/cursors/close.cur'),
+       auto;
     }
   }
 
