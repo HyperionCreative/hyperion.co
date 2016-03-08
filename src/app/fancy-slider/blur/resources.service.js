@@ -103,6 +103,11 @@
         blurredBackgrounds[context][1].height = 1440;
         blurredBackgrounds[context][2].height = 1440;
 
+        // Otherwise they may be placed on top of the current blurred image
+        blurredBackgrounds[context][0].alpha = 0;
+        blurredBackgrounds[context][1].alpha = 0;
+        blurredBackgrounds[context][2].alpha = 0;
+
         blurredBackgroundsContainer[context].addChild(blurredBackgrounds[context][0]);
         blurredBackgroundsContainer[context].addChild(blurredBackgrounds[context][1]);
         blurredBackgroundsContainer[context].addChild(blurredBackgrounds[context][2]);
