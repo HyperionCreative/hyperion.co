@@ -4,38 +4,59 @@
 
 .custom-cursor {
   &.arrow-right {
-   cursor:
-     url('../assets/cursors/arrow-right.cur'),
-     // This fixes the cursors on IE
-     url('assets/cursors/arrow-right.cur'),
-     auto;
+   cursor: url('../assets/cursors/arrow-right.cur'), auto;
   }
 
   &.close {
-   cursor:
-     url('../assets/cursors/close.cur'),
-     // This fixes the cursors on IE
-     url('assets/cursors/close.cur'),
-     auto;
+   cursor: url('../assets/cursors/close.cur'), auto;
   }
 
   body.high-dpi-device.windows:not(.chrome) & {
     &.arrow-right {
-     cursor:
-       url('../assets/cursors/arrow-right@2x.cur'),
-       // Not needed as the whole custom cursor thingy doesn't work as expected
-       // in IE 10
-       // url('assets/cursors/arrow-right.cur'),
-       auto;
+     cursor: url('../assets/cursors/arrow-right@2x.cur'), auto;
     }
 
     &.close {
-     cursor:
-       url('../assets/cursors/close@2x.cur'),
-       // Not needed as the whole custom cursor thingy doesn't work as expected
-       // in IE 10
-       // url('assets/cursors/close.cur'),
-       auto;
+     cursor: url('../assets/cursors/close@2x.cur'), auto;
+    }
+  }
+
+  // IE special rules (so we don't get a 404 on "normal" borwsers)
+  & {
+    body.windows.ie & {
+      &.arrow-right {
+       cursor:
+         url('../assets/cursors/arrow-right.cur'),
+         // This fixes the cursors on IE
+         url('assets/cursors/arrow-right.cur'),
+         auto;
+      }
+
+      &.close {
+       cursor:
+         url('../assets/cursors/close.cur'),
+         // This fixes the cursors on IE
+         url('assets/cursors/close.cur'),
+         auto;
+      }
+    }
+
+    body.high-dpi-device.windows.ie & {
+      &.arrow-right {
+       cursor:
+         url('../assets/cursors/arrow-right@2x.cur'),
+         // This fixes the cursors on IE
+         url('assets/cursors/arrow-right@2x.cur'),
+         auto;
+      }
+
+      &.close {
+       cursor:
+         url('../assets/cursors/close@2x.cur'),
+         // This fixes the cursors on IE
+         url('assets/cursors/close@2x.cur'),
+         auto;
+      }
     }
   }
 
