@@ -595,7 +595,7 @@ module.exports = function (grunt) {
         src: '<%= yeoman.dist %>/index.html',
         dest: '<%= yeoman.dist %>/index.html',
         replacements: [{
-          from: /\<\!\-\-\@\@\@(.+)\@\@\@\-\-\>/gmi,
+          from: /<\!\-\-\@\@\@(.+)\@\@\@\-\-\>/gmi,
           to: '$1'
         }]
       },
@@ -603,7 +603,7 @@ module.exports = function (grunt) {
         src: '<%= yeoman.dist %>/index-mobile.html',
         dest: '<%= yeoman.dist %>/index-mobile.html',
         replacements: [{
-          from: /\<\!\-\-\@\@\@(.+)\@\@\@\-\-\>/gmi,
+          from: /<\!\-\-\@\@\@(.+)\@\@\@\-\-\>/gmi,
           to: '$1'
         }]
       },

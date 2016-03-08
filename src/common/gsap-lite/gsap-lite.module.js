@@ -1,20 +1,16 @@
 (function () {
   'use strict';
 
-  /* jshint ignore:start */
-
   angular
     .module('common.gsap-lite', [])
-    .constant('TweenLite', TweenLite)
-    .constant('TweenTimelineLite', TimelineLite)
+    .constant('TweenLite', window.TweenLite)
+    .constant('TweenTimelineLite', window.TimelineLite)
     .constant('TweenEasings', {
-      Linear: Power0.easeNone,
-      Power1: Power1,
-      Power2: Power2,
-      Power3: Power3,
-      Power4: Power4,
-      Sine: Sine
+      Linear: window.Power0.easeNone,
+      Power1: window.Power1,
+      Power2: window.Power2,
+      Power3: window.Power3,
+      Power4: window.Power4,
+      Sine: window.Sine
     });
-
-  /* jshint ignore:end */
 })();
