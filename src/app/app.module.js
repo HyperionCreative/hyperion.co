@@ -51,4 +51,11 @@
 
       'state.state-components'
     ]);
+  /* jshint ignore:start */
+  angular
+    .module('HyperionApp')
+    .config(['$compileProvider', function ($compileProvider) {
+      /*@@@ $compileProvider.debugInfoEnabled(false); @@@*/
+    }]);
+  /* jshint ignore:end */
 })();

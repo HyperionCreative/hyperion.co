@@ -43,5 +43,7 @@
     .config(['$compileProvider', function ($compileProvider) {
       // I've included "sms" to the whitelist regexp
       $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|tel|sms|file):/);
+
+      /*@@@ $compileProvider.debugInfoEnabled(false); @@@*/
     }]);
 })();
