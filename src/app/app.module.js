@@ -32,6 +32,7 @@
       // Specific Modules //
       //////////////////////
 
+      'app.browser-targeting',
       'app.center-me',
       'app.custom-cursors',
       'app.fancy-slider',
