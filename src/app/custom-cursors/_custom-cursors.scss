@@ -21,6 +21,16 @@
      auto;
   }
 
+  body.on-high-dpi-windows & {
+    &.arrow-right {
+     cursor: url('../assets/cursors/arrow-right@2x.png') 60 22, auto;
+    }
+
+    &.close {
+     cursor: url('../assets/cursors/close@2x.png') 18 18, auto;
+    }
+  }
+
   &.normal {
     cursor: auto;
 
