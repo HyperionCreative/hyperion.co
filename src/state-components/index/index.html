@@ -1,9 +1,14 @@
 <div class="header-index">
   <div class="container">
-    <header class="header-index-container">
+    <header class="header-index-container"
+      ng-init="headerText = 'We are <strong>Hyperion</strong>'">
       <div class="logo">
-        <img src="assets/images/logo.svg" alt="Hyperion Creative Studio Logo">
-        <span>We are <strong>Hyperion</strong></span>
+        <div class="actual-logo-container"
+          ng-mouseenter="headerText = 'Welcome'"
+          ng-mouseleave="headerText = 'We are <strong>Hyperion</strong>'">
+          <img src="assets/images/logo.svg" alt="Hyperion Creative Studio Logo">
+          <span ng-bind-html="headerText"></span>
+        </div>
       </div>
       <hyp-navigation-hamburger always-show-links class="right"></hyp-navigation-hamburger>
     </header>

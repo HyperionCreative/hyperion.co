@@ -21,6 +21,14 @@
   .logo  {
     cursor: default;
     width: 99%;
+
+    .actual-logo-container {
+      width: 160px;
+    }
+
+    strong {
+      line-height: 1;
+    }
   }
 
   .navigation-hamburger {
