@@ -184,9 +184,14 @@
 
       background: #ffffff;
       display: block;
+      font-family: $SourceSansPro-Regular;
       font-size: 14px;
       line-height: $this-description-height;
       padding: 0 25px 0 20px;
+
+      strong {
+        font-family: $SourceSansPro-Bold;
+      }
 
       &__number {
         color: #b5b9b9;
