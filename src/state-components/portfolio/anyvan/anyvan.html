@@ -4,7 +4,7 @@
       <hyp-portfolio-header
         description="{{:: str.portfolio.anyvan.header }}"
         client-logo-url="assets/images/portfolio/anyvan/logo.png"
-        client-name="AnyVan"
+        client-name="{{:: str.portfolio.anyvan.projectName}}"
       ></hyp-portfolio-header>
 
       <div class="portfolio-content">
@@ -30,7 +30,7 @@
         </div>
       </div>
 
-      <a ui-sref="root.sub-page-template.portfolio.grow" class="project-navigation">Next Project: <strong><span>Grow with a CFO<span class="icon-arrow-right-pointy"></span></span></strong></a>
+      <a ui-sref="root.sub-page-template.portfolio.kartist" class="project-navigation">Next Project: <strong><span>{{:: str.portfolio.kartist.projectName}}<span class="icon-arrow-right-pointy"></span></span></strong></a>
 
       <hyp-simple-footer></hyp-simple-footer>
     </div>

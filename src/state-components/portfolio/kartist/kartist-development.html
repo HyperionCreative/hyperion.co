@@ -4,7 +4,7 @@
       <hyp-portfolio-header
         description="{{:: str.portfolio.kartist.header }}"
         client-logo-url="assets/images/portfolio/kartist/logo.png"
-        client-name="Kartist"
+        client-name="{{:: str.portfolio.kartist.projectName}}"
       ></hyp-portfolio-header>
 
       <div class="portfolio-content development">
@@ -36,7 +36,7 @@
         </div>
       </div>
 
-      <a ui-sref="root.sub-page-template.portfolio.quizkick" class="project-navigation">Next Project: <strong><span>QuizKick<span class="icon-arrow-right-pointy"></span></span></strong></a>
+      <a ui-sref="root.sub-page-template.portfolio.grow" class="project-navigation">Next Project: <strong><span>{{:: str.portfolio.grow.projectName}}<span class="icon-arrow-right-pointy"></span></span></strong></a>
 
       <hyp-simple-footer></hyp-simple-footer>
 

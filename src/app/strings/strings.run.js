@@ -76,6 +76,7 @@
 
           anyvan: {
             projectName: 'AnyVan',
+            field: 'Mobile UI',
             sliderDescription: 'We worked with AnyVan in early 2014 to help them design their then upcoming iOS app. We handled the UI and UX and worked with their team to help them make it a reality.',
 
             header: 'We worked with <strong>AnyVan</strong> in early 2014 to help them design their then upcoming iOS app. We handled the UI and UX and worked with their team to help them make it a reality.',
@@ -89,6 +90,7 @@
           },
           kartist: {
             projectName: 'Kartist',
+            field: 'UI/UX + Front-end Coding',
             sliderDescription: 'The shots above are from one of our most recent projects, Kartist. Their app is intended to help shoppers everywhere manage their lists, find inspiration and connect with likeminded people.',
 
             header: 'We worked with <strong>Kartist</strong> in early 2015 - their platform aims to help shoppers everywhere manage their lists, find inspiration and connect with likeminded people.',
@@ -130,6 +132,7 @@
           },
           grow: {
             projectName: 'Grow with a CFO',
+            field: 'Website Design',
 
             header: 'We worked with <strong>Grow with a CFO</strong> in 2015 to help them design their website and more easily showcase their services and processes.',
             tabletHeader: 'We worked with <strong>Grow with a CFO</strong> in 2015 to help them design their website and more easily showcase their services and processes.',
@@ -142,6 +145,7 @@
           },
           quizkick: {
             projectName: 'QuizKick',
+            field: 'UI/UX + Back End',
             sliderDescription: 'QuizKick tried to create a game that would give football fans around the world a chance to prove their knowledge. We worked on the design and the back end of the system.',
 
             header: '<strong>QuizKick</strong> tried to create a game that would give football fans around the world a chance to prove their knowledge. We worked on the design and the back end of the system.',
@@ -156,6 +160,10 @@
               title: 'Next Up',
               description: 'QuizKick will be available for download soon. In the meantime you can see more of it, including awesome animations and concepts, by visiting our showcase.'
             }
+          },
+          webfaction: {
+            projectName: 'Webfaction',
+            field: 'UI/UX + Front-end Coding'
           }
         },
 
