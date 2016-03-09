@@ -7,37 +7,35 @@
         class="custom-cursor normal"
       ></hyp-simple-header>
 
-      <div class="covers custom-cursor normal">
-        <div class="column">
-          <a ui-sref="root.sub-page-template.portfolio.kartist" class="cover">
-            <img src="assets/images/portfolio/kartist/cover.jpg" alt="{{:: str.portfolio.kartist.projectName}}">
-            <div class="project-summary">
-              <h2 class="project-title" ng-bind-html=":: str.portfolio.kartist.projectName"></h2>
-              <p ng-bind-html=":: str.portfolio.kartist.coverDescription"></p>
-            </div>
+      <div class="custom-cursor normal">
+        <div class="row">
+          <!-- TODO add ui sref -->
+          <a class="project-block project-block--large">
+            <!-- TODO add alt -->
+            <img src="assets/images/portfolio/webfaction/cover.png" alt="WebFaction" class="project-image project-image--webfaction">
+            <p class="project-description"><span class="project-description__number">01.</span><span class="project-description__name-and-field"><strong>Webfaction:</strong> UI/UX + Front-end Coding</span></p>
           </a>
-          <a ui-sref="root.sub-page-template.portfolio.anyvan" class="cover">
-            <img src="assets/images/portfolio/anyvan/cover.jpg" alt="{{:: str.portfolio.anyvan.projectName}}">
-            <div class="project-summary">
-              <h2 class="project-title" ng-bind-html=":: str.portfolio.anyvan.projectName"></h2>
-              <p ng-bind-html=":: str.portfolio.anyvan.coverDescription"></p>
-            </div>
+          <a ui-sref="root.sub-page-template.portfolio.quizkick"
+            class="project-block project-block--medium">
+            <img src="assets/images/portfolio/quizkick/cover.png" alt="{{:: str.portfolio.quizkick.projectName}}" class="project-image project-image--quizkick">
+            <p class="project-description"><span class="project-description__number">02.</span><span class="project-description__name-and-field"><strong>QuizKick:</strong> UI/UX + Back End</span></p>
           </a>
         </div>
-        <div class="column">
-          <a ui-sref="root.sub-page-template.portfolio.quizkick" class="cover">
-            <img src="assets/images/portfolio/quizkick/cover.jpg" alt="{{:: str.portfolio.quizkick.projectName}}">
-            <div class="project-summary">
-              <h2 class="project-title" ng-bind-html=":: str.portfolio.quizkick.projectName"></h2>
-              <p ng-bind-html=":: str.portfolio.quizkick.coverDescription"></p>
-            </div>
+        <div class="row">
+          <a class="project-block project-block--small"
+            ui-sref="root.sub-page-template.portfolio.anyvan">
+            <img src="assets/images/portfolio/anyvan/cover.png" alt="{{:: str.portfolio.anyvan.projectName}}" class="project-image project-image--anyvan">
+            <p class="project-description"><span class="project-description__number">03.</span><span class="project-description__name-and-field"><strong>AnyVan:</strong> Mobile UI</span></p>
           </a>
-          <a ui-sref="root.sub-page-template.portfolio.grow" class="cover">
-            <img src="assets/images/portfolio/grow/cover.jpg" alt="{{:: str.portfolio.grow.projectName}}">
-            <div class="project-summary">
-              <h2 class="project-title" ng-bind-html=":: str.portfolio.grow.projectName"></h2>
-              <p ng-bind-html=":: str.portfolio.grow.coverDescription"></p>
-            </div>
+          <a class="project-block project-block--small"
+            ui-sref="root.sub-page-template.portfolio.kartist">
+            <img src="assets/images/portfolio/kartist/cover.png" alt="{{:: str.portfolio.kartist.projectName}}" class="project-image project-image--kartist">
+            <p class="project-description"><span class="project-description__number">04.</span><span class="project-description__name-and-field"><strong>Kartist:</strong> UI/UX + Front-end Coding</span></p>
+          </a>
+          <a class="project-block project-block--small"
+            ui-sref="root.sub-page-template.portfolio.grow">
+            <img src="assets/images/portfolio/grow/cover.png" alt="{{:: str.portfolio.grow.projectName}}" class="project-image project-image--grow">
+            <p class="project-description"><span class="project-description__number">05.</span><span class="project-description__name-and-field"><strong>Grow with a CFO:</strong> Website Design</span></p>
           </a>
         </div>
       </div>

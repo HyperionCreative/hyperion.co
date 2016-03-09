@@ -98,96 +98,104 @@
 @import "quizkick/quizkick";
 
 #portfolio-home-page {
-  $this-margin: 8px;
+  & > .container {
+    width: 1100px;
+  }
 
-  @media only screen and (min-width : 1920px) {
-    & > .container {
-      width: 1100px;
+  .row {
+    @include legacy-pie-clearfix;
+
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 
-  // todo remember this: don't change the covers size individually!
-  // they all work together as a group. there's no css to keep them
-  // in place. resizing a cover may break the layout.
-  .covers {
-    @include legacy-pie-clearfix;
+  .project-block {
+    $this-description-height: 45px;
 
-    .column {
-      float: left;
-      width: 50%;
+    background-color: #cbcfd3;
+    @include border-radius(5px);
+    @include box-shadow($normal-box-shadow);
+    float: left;
+    margin-right: 10px;
+    overflow: hidden;
+    padding-bottom: $this-description-height;
+    position: relative;
 
-      &:first-child {
-        padding-right: $this-margin / 2;
-      }
-
-      &:last-child {
-        padding-left: $this-margin / 2;
-      }
+    &:last-child {
+      margin-right: 0;
     }
 
-    .cover {
+    &--large {
+      height: 495px;
+      width: 700px;
+    }
+
+    &--medium {
+      height: 495px;
+      width: 390px;
+    }
+
+    &--small {
+      height: 270px;
+      width: 360px;
+    }
+
+    .project-image {
+      height: auto;
       display: block;
-      margin-bottom: $this-margin;
-      opacity: 0.8;
-      overflow: hidden;
-      position: relative;
-      @include transition(opacity 0.25s ease-in-out);
+      margin: 0 auto;
 
-      &:hover {
-        opacity: 1;
-
-        .project-summary {
-          @include transform(translate3d(0,0,0));
-        }
+      &--webfaction {
+        margin: 32px 0 0 0;
+        width: image-width("assets/images/portfolio/webfaction/cover.png");
       }
 
-      img {
-        // This way it will strech to fit its container
-        display: block;
-        height: auto;
-        width: 100%;
+      &--quizkick {
+        margin-top: 82px;
+        width: image-width("assets/images/portfolio/quizkick/cover.png");
       }
 
-      .project-summary {
-        @include background-image(linear-gradient(rgba(#3c464e, 0), rgba(#3c464e, 1)));
-        bottom: 0;
-        color: #ffffff;
-        left: 0;
-        padding: 35px;
-        position: absolute;
-        right: 0;
-        @include transform(translate3d(0,100%,0));
-        @include transition(transform 0.2s ease-in-out);
+      &--anyvan {
+        margin-top: 12px;
+        width: image-width("assets/images/portfolio/anyvan/cover.png");
+      }
 
-        .project-title {
-          font-size: 22px;
-          margin-bottom: 10px;
-        }
+      &--kartist {
+        margin: 0;
+        width: image-width("assets/images/portfolio/kartist/cover.png");
+      }
+
+      &--grow {
+        margin-top: 21px;
+        width: image-width("assets/images/portfolio/grow/cover.png");
       }
     }
 
-    // The ellipsis
-    p {
-      color: #d8dce0;
-      max-height: 2rem;
-      overflow: hidden;
+    .project-description {
+      @include legacy-pie-clearfix;
 
-      .ellipsis {
-        color: #b1b5ba;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      background: #ffffff;
+      display: block;
+      font-size: 14px;
+      line-height: $this-description-height;
+      padding: 0 25px 0 20px;
+
+      &__number {
+        color: #b5b9b9;
+        float: left;
       }
 
-      .only-on-small {
-        display: none;
-
-        @media only screen and (max-width : 1920px) {
-          display: inline;
-        }
-      }
-
-      .large {
-        @media only screen and (max-width : 1920px) {
-          display: none;
-        }
+      &__name-and-field {
+        color: #7e8385;
+        float: right;
       }
     }
   }
