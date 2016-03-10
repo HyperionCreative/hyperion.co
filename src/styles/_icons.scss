@@ -19,6 +19,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-error:before {
+    content: "\e904";
+}
 .icon-speech-bubbles:before {
     content: "\e903";
 }
