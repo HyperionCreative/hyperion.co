@@ -1,83 +1,37 @@
 #contact-page {
+  $this-horizontal-padding: 40px;
+
   & > .container {
-    width: 600px;
+    width: 585px;
   }
 
   .contact-container {
     background: #ffffff;
     @include box-shadow($normal-box-shadow);
-    padding-top: 50px;
+    padding-top: 54px;
     position: relative;
 
-    .call-us {
-      color: #9fa1a5;
-      font-family: $PierSans-Regular;
+    .call-us-or-complete-form {
       font-size: 15px;
-      margin-bottom: 40px;
-      text-align: center;
+      line-height: $normal-line-height;
+      padding: 0 $this-horizontal-padding;
 
-      .icon-phone {
-        display: inline-block;
-        opacity: 0.5;
-        padding-right: 5px;
-        @include transform(scale(0.7,0.7));
-        vertical-align: top;
-      }
-    }
+      .call-us {
+        color: #9fa1a5;
 
-    .separator {
-      position: relative;
-      text-align: center;
-
-      .text {
-        background: #ffffff;
-        color: rgba(#9fa1a5, 0.5);
-        display: inline-block;
-        font-size: 15px;
-        position: relative;
-        width: 65px;
-        z-index: 2;
+        .cell-phone-number {
+          color: #64686e;
+          font-family: $PierSans-Regular;
+        }
       }
 
-      .line {
-        background: rgba(#202a35, 0.1);
-        bottom: 0;
-        display: block;
-        height: 1px;
-        left: 0;
-        margin: auto;
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 100%;
-        z-index: 1;
+      .or-complete-form {
+        color: #c9ced5;
       }
     }
 
     form {
-      @include legacy-pie-clearfix;
-      padding: 43px 50px 40px 50px;
-
-      .msd-elastic {
-        // This prevents a bug with angular-elastic
-        min-height: 56px;
-      }
-
-      .submit-button-container {
-        text-align: right;
-
-        .submit-button {
-          color: rgba(#93999a, 0.5);
-          cursor: pointer;
-          display: inline-block;
-          font-size: 15px;
-          margin: 0 0 23px 0;
-
-          strong {
-            text-transform: uppercase;
-          }
-        }
-      }
+      padding: 30px $this-horizontal-padding 5px $this-horizontal-padding;
     }
   }
 }

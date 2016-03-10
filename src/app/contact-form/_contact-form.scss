@@ -1,4 +1,40 @@
-.contact-form {
+form.contact-form {
+  & > .input-container,
+  & > input {
+    margin-bottom: 35px;
+  }
+
+  .input-container {
+    position: relative;
+
+    input {
+      position: relative;
+      z-index: 3;
+    }
+
+    .input-validation-message {
+      font-size: 0;
+      margin-top: -9px;
+      position: absolute;
+      right: 0;
+      vertical-align: middle;
+      top: 50%;
+      white-space: nowrap;
+      z-index: 2;
+
+      .icon-error {
+        color: #f43864;
+        font-size: 13px;
+        padding-right: 5px;
+      }
+
+      .validation-message {
+        color: #faaebb;
+        font-size: 15px;
+      }
+    }
+  }
+
   .invalid-field {
     $this-error-color: #f07317;
 
@@ -14,6 +50,22 @@
     }
   }
 
+  .submit-button-container {
+    text-align: right;
+
+    .submit-button {
+      color: rgba(#93999a, 0.5);
+      cursor: pointer;
+      display: inline-block;
+      font-size: 15px;
+      margin: 0 0 23px 0;
+
+      strong {
+        text-transform: uppercase;
+      }
+    }
+  }
+
   .success {
     @include transition(opacity 0.2s ease-in-out);
 
@@ -24,7 +76,6 @@
     top: 0;
 
     background: #ffffff;
-    padding-top: 220px;
     text-align: center;
     z-index: 10;
 
@@ -36,13 +87,6 @@
         opacity: 1;
       }
     }
-
-    .icon-valid-document {
-      color: #8f949a;
-      font-size: 145px;
-      margin-bottom: 30px;
-    }
-
     .large {
       color: #202a35;
       font-family: $PierSans-Regular;
@@ -53,6 +97,17 @@
     .small {
       color: #b1b1b1;
       font-size: 14px;
+    }
+
+    .success-content {
+      display: block;
+      left: 0;
+      // NOTE hardcoded value to vertically align this
+      margin-top: -22px;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 100%;
     }
   }
 }

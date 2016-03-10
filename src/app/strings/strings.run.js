@@ -27,7 +27,7 @@
           navigationHamburgerAnchorText: 'Contact',
           header: {
             title: 'Get in Touch',
-            description: 'If you have any questions or would like to talk to us about a project, please either call or use the form below - we will get back to you within 24h.'
+            description: 'We are always interested in new and exciting projects to work on and great people to meet.<br>Tell us your story and how we can help.'
           }
         },
 

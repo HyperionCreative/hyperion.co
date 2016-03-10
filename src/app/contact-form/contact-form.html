@@ -1,31 +1,61 @@
-<form ng-submit="tryToSubmit(contactForm);" novalidate class="contact-form">
-  <input
-    ng-model="contactForm.name"
-    is-required-field
-    type="text" placeholder="Your Name">
-  <textarea
-    ng-model="contactForm.help"
-    is-required-field
-    rows="1" placeholder="How can we help?" class="msd-elastic"></textarea>
-  <input
-    ng-model="contactForm.contactBack"
-    is-required-field
-    type="text" placeholder="Email address or Phone No.">
-  <input
-    ng-model="contactForm.budget"
-    type="text" placeholder="Budget (optional)">
-  <input
-    ng-model="contactForm.company"
-    type="text" placeholder="Company (optional)">
+<form novalidate class="contact-form"
+  name="contactFormCtrl"
+  ng-submit="tryToSubmit(contactForm, contactFormCtrl);">
+  <div class="input-container">
+    <input type="text" placeholder="Your Name"
+      name="name"
+      ng-model="contactForm.name"
+      required>
+    <div class="input-validation-message"
+      ng-show="contactFormCtrl.name.$error.required && contactFormCtrl.$submitted">
+      <span class="icon-error"></span>
+      <span class="validation-message">This field is Required</span>
+    </div>
+  </div>
 
-  <input type="submit" style="display: none;">
+  <div class="input-container">
+    <input type="email" placeholder="Email address"
+      name="email"
+      ng-model="contactForm.contactBack"
+      required>
+    <div class="input-validation-message"
+      ng-show="contactFormCtrl.email.$error.email && contactFormCtrl.$submitted">
+      <span class="icon-error"></span>
+      <span class="validation-message">This email is Invalid</span>
+    </div>
+    <div class="input-validation-message"
+      ng-show="!contactFormCtrl.email.$error.email && contactFormCtrl.email.$error.required && contactFormCtrl.$submitted">
+      <span class="icon-error"></span>
+      <span class="validation-message">This field is Required</span>
+    </div>
+  </div>
+
+  <div class="input-container">
+    <textarea rows="1" placeholder="How can we help?" class="msd-elastic"
+      name="help"
+      ng-model="contactForm.help"
+      required></textarea>
+    <div class="input-validation-message"
+      ng-show="contactFormCtrl.help.$error.required && (contactFormCtrl.$submitted || contactFormCtrl.help.$touched)">
+      <span class="icon-error"></span>
+      <span class="validation-message">This field is Required</span>
+    </div>
+  </div>
+
+  <input type="text" placeholder="Budget (optional)"
+    ng-model="contactForm.budget">
+  <input type="text" placeholder="Company (optional)"
+    ng-model="contactForm.company">
+
+  <input type="submit" class="ng-hide" style="display: none;">
 
   <div class="submit-button-container">
-    <div class="submit-button" ng-click="tryToSubmit(contactForm);">Press <strong>Enter</strong> to Send</div>
+    <div class="submit-button" ng-click="contactFormCtrl.$setSubmitted(); tryToSubmit(contactForm, contactFormCtrl);">Press <strong>Enter</strong> to Send</div>
   </div>
 
   <div class="success" ng-show="isSubmitted">
-    <div class="icon-valid-document"></div>
-    <p class="large">Your message was successfully sent.</p><p class="small">We’ll get back to you within 24h.</p>
+    <div class="success-content">
+      <p class="large">Your message was successfully sent.</p><p class="small">We’ll get back to you within 24h.</p>
+    </div>
   </div>
 </form>

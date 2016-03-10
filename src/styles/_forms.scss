@@ -4,17 +4,23 @@ input, textarea {
   @include reset-focus;
 
   background: transparent;
-  border: 1px solid #ccd1d7;
+  border-bottom: 1px solid #ccd1d7;
   color: $input-focused-color;
   display: block;
 
   // Needed as textarea has its own font style
   font-family: $input-font-family;
   font-size: $input-font-size;
+  line-height: $inputs-line-height-as-px;
 
-  padding: 18px $input-horizontal-padding;
+  padding: 12px 0;
   width: 100%;
 
+  &.ng-invalid {
+    .ng-submitted & {
+      border-color: #f43864;
+    }
+  }
 
   @include input-placeholder {
     color: $input-unfocused-color;
@@ -27,10 +33,6 @@ input, textarea {
     @include input-placeholder {
       opacity: 0;
     }
-  }
-
-  &:not(:last-child) {
-    margin-bottom: 25px;
   }
 }
 
