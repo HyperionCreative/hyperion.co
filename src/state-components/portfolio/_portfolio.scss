@@ -59,6 +59,38 @@
         z-index: 1;
       }
     }
+
+    ul.navigation-tabs {
+      border-bottom: 1px solid #ebeced;
+      @include legacy-pie-clearfix;
+      margin-top: 90px;
+      width: 100%;
+
+      & > li {
+        color: #697078;
+        cursor: pointer;
+        float: left;
+        font-size: 16px;
+        line-height: 50px;
+        margin-right: 40px;
+        opacity: 0.5;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &.active {
+          cursor: auto;
+          font-weight: $HelveticaNeue-Bold;
+          opacity: 1;
+        }
+
+        &.visit-website {
+          float: right;
+          margin-right: 0;
+        }
+      }
+    }
   }
 
   $this-top-spacing: 25px;

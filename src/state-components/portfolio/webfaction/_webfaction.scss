@@ -1,3 +1,80 @@
 #webfaction-portfolio-page {
+  $this-client-color: #697079;
 
+  .portfolio-header .logo img {
+    height: image-height("assets/images/portfolio/webfaction/logo.png");
+    width: image-width("assets/images/portfolio/webfaction/logo.png");
+  }
+
+  .row {
+    .title, .sub-title, .button {
+      color: $this-client-color;
+    }
+
+    .sub-title {
+      font-size: $medium-font-size;
+      text-transform: uppercase;
+    }
+  }
+
+  .carousel-slider {
+    height: 600px;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .webfaction-container {
+    margin: 0 auto;
+    width: 760px;
+  }
+
+  .row {
+    &.fresh-new-look {
+      img {
+        margin-top: 50px;
+        width: image-width("assets/images/portfolio/webfaction/01.jpg");
+      }
+
+      .description {
+        margin: 126px 0 0 -45px;
+        width: 235px;
+      }
+    }
+
+    &.technical-yet-aesthetic {
+      img {
+        margin: 40px 0 82px 0;
+        width: image-width("assets/images/portfolio/webfaction/03.jpg");
+      }
+
+      .description {
+        margin: 120px 0 0 -15px;
+        width: 345px;
+      }
+    }
+
+    &.getting-started {
+      margin-top: 38px;
+
+      img.old-interface {
+        margin: 25px 0;
+      }
+
+      img.proposed-concepts {
+        margin-top: 25px;
+      }
+    }
+
+    &.the-design {
+      margin-top: 47px;
+
+      img.new-interface {
+        margin-top: 25px;
+      }
+    }
+
+    &.the-code {
+      margin-top: 47px;
+    }
+  }
 }

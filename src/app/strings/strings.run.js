@@ -159,7 +159,35 @@
           },
           webfaction: {
             projectName: 'Webfaction',
-            field: 'UI/UX + Front-end Coding'
+            field: 'UI/UX + Front-end Coding',
+
+            header: '<strong>Webfaction</strong> is our hosting provider and we worked with them in late 2015 to create a simpler, more intuitive control panel for their platform and a new website to reflect this.',
+            // TODO Change this if needed
+            tabletHeader: '<strong>Webfaction</strong> is our hosting provider and we worked with them in late 2015 to create a simpler, more intuitive control panel for their platform and a new website to reflect this.',
+
+            freshNewLook: {
+              title: 'A Fresh new Look',
+              description: '<p>Webfaction has been our hosting provider ever since we started in 2012 and while we couldn’t be happier with their services and support, the interface of their control panel was a complicated mess that confused most of their users.</p><p>They agreed to work with us and refresh their CP and website and have since reported their users find it a lot easier to find their way around and achieve even the more complicated tasks. We simplified and logically organised everything from how you create a new website, add an email address, manage your plan or get support.<p>'
+            },
+
+            technicalYetAesthetic: {
+              title: 'Technical yet Aesthetic',
+              description: '<p>The main objectives of this redesign was to simplify the most confusing aspects of Webfaction’s interface, organise everything logically and bring  the style up to speed.</p><p>Since the main audience is developers and people with a reasonable technical expertise, we wanted to create an interface that is simple and technical enough to make them feel at home, but beautiful enough to provide an enjoyable experience. We recreated processes from the ground up, re-arranged most sections and introduced a bright new colour scheme.</p><p>The result is a vibrant interface that welcomes new and existing users alike and streamlines all the tasks a user might do.</p>'
+            },
+
+            gettingStarted: {
+              title: 'I. Getting started',
+              description: '<p>We started this redesign project like most of our other projects, by getting to know the client, their business and the problems they are looking to solve. This was handled via a conference between us and their founder.</p><p>With a clear picture of what we’re working with in mind, we looked at ways to restructure the control panel, better explain how to use each section, and make sure users have a simple yet enjoyable experience.</p><p>For example, to create a website with the old interface users had to go to Domains/Websites, click on Domains, link a new domain, click on Apps, create a new app, then go to websites and create a new website with the domain and app you just added. Users also had to figure out this process on their own.</p>',
+              descriptionTwo: 'We summarised our ideas for how the new interface should work through a series of wireframes and ran this by the client to make sure we are on the same page before moving forward.'
+            },
+            theDesign: {
+              title: 'II. The Design',
+              description: '<p>After agreeing on the latest details of the UI’s structure, we moved on to the design stage. We created screens for every page and every state of the interface, every nook and cranny for both desktop and mobile devices.</p><p>Continuing the example of the process for creating websites, we unified it into a single page withsequential steps, and clear explinations for how each step works and how it all comes together.</p>'
+            },
+            theCode: {
+              title: 'III. The Code',
+              description: '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>'
+            }
           }
         },
 
