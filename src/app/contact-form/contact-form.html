@@ -36,7 +36,7 @@
       ng-model="contactForm.help"
       required></textarea>
     <div class="input-validation-message"
-      ng-show="contactFormCtrl.help.$error.required && (contactFormCtrl.$submitted || contactFormCtrl.help.$touched)">
+      ng-show="contactFormCtrl.help.$error.required && contactFormCtrl.$submitted">
       <span class="icon-error"></span>
       <span class="validation-message">This field is Required</span>
     </div>
