@@ -80,7 +80,8 @@
 
         &.active {
           cursor: auto;
-          font-weight: $HelveticaNeue-Bold;
+          // TODO should we enable this?
+          // font-family: $HelveticaNeue-Bold;
           opacity: 1;
         }
 
