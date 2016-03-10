@@ -81,7 +81,6 @@
 
             header: 'We worked with <strong>AnyVan</strong> in early 2014 to help them design their then upcoming iOS app. We handled the UI and UX and worked with their team to help them make it a reality.',
             tabletHeader: 'We worked with <strong>AnyVan</strong> in early 2014 to help them design their then upcoming iOS app. We handled the UI/UX and helped them implement it.',
-            coverDescription: 'We worked with AnyVan in early 2014 to help them design their then upcoming iOS app. We handled the UI and UX and<span class="large"> worked with their team to help them</span><span class="ellipsis"> [...]</span>',
 
             generic: {
               title: 'AnyVan',
@@ -95,7 +94,6 @@
 
             header: 'We worked with <strong>Kartist</strong> in early 2015 - their platform aims to help shoppers everywhere manage their lists, find inspiration and connect with likeminded people.',
             tabletHeader: 'We worked with <strong>Kartist</strong> in early 2015 - their platform aims to help shoppers manage their lists, find inspiration and connect with likeminded people.',
-            coverDescription: 'We worked with Kartist in early 2015 - their platform aims to to help shoppers everywhere manage their lists, find inspiration<span class="large"> and connect with likeminded</span><span class="ellipsis"> [...]</span>',
 
             // design
             uiAndCode: {
@@ -136,7 +134,6 @@
 
             header: 'We worked with <strong>Grow with a CFO</strong> in 2015 to help them design their website and more easily showcase their services and processes.',
             tabletHeader: 'We worked with <strong>Grow with a CFO</strong> in 2015 to help them design their website and more easily showcase their services and processes.',
-            coverDescription: 'We worked with Grow with a CFO in 2015 to help them design their website and more easily showcase their services and<span class="large"> processes.</span><span class="ellipsis only-on-small"> [...]</span>',
 
             generic: {
               title: 'Grow with a CFO',
@@ -150,7 +147,6 @@
 
             header: '<strong>QuizKick</strong> tried to create a game that would give football fans around the world a chance to prove their knowledge. We worked on the design and the back end of the system.',
             tabletHeader: '<strong>QuizKick</strong> wanted to create a game for football fans around the world could prove their knowledge & skills. We worked on the UI and the back end.',
-            coverDescription: 'QuizKick tried to create a game that would give football fans around the world a chance to prove their knowledge. We<span class="large"> worked on the design and the back end</span><span class="ellipsis"> [...]</span>',
 
             aim: {
               title: 'QuizKick',
