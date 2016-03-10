@@ -63,7 +63,6 @@
     ul.navigation-tabs {
       border-bottom: 1px solid #ebeced;
       @include legacy-pie-clearfix;
-      margin-top: 90px;
       width: 100%;
 
       & > li {

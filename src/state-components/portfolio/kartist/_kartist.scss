@@ -12,6 +12,11 @@
     width: 100%;
   }
 
+  .kartist-container {
+    margin: 0 auto;
+    width: 760px;
+  }
+
   .row .title, .row .button {
     color: $this-client-color;
   }
@@ -23,6 +28,10 @@
 
   .row .button:hover {
     background: $this-client-color;
+  }
+
+  .row ul.navigation-tabs {
+    margin-top: 30px;
   }
 
   .design {
