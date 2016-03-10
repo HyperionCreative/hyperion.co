@@ -66,20 +66,20 @@
 
       &.active {
         opacity: 1;
-
-        &:before {
-          content: "";
-
-          background: #dce1e3;
-          height: 1px;
-
-          position: absolute;
-          bottom: 17px;
-          left: 10px;
-          right: 10px;
-        }
       }
     }
+  }
+
+  &.center .link a.active:before {
+    content: "";
+
+    background: #dce1e3;
+    height: 1px;
+
+    position: absolute;
+    bottom: 17px;
+    left: 10px;
+    right: 10px;
   }
 
   // Different style options
