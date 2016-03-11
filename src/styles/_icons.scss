@@ -19,6 +19,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-arrow-down-fancy:before {
+    content: "\e905";
+}
 .icon-error:before {
     content: "\e904";
 }
