@@ -1,478 +1,74 @@
-.index-cover {
-  @include small-screens {
-    background-image: url(../assets/images/mobile/index-cover/small.jpg);
-  }
+#index-page .introduction {
+  min-height: 100vh;
+  padding: 45px 12px;
+  position: relative;
 
-  @include medium-screens {
-    background-image: url(../assets/images/mobile/index-cover/medium.jpg);
+  @include small-screens {
+    padding-left: 0;
+    padding-right: 0;
   }
 
   @include large-screens {
-    background-image: url(../assets/images/mobile/index-cover/large.jpg);
+    padding: 20vh 0 0 0;
+
+    &__text {
+      margin-bottom: 15vh !important;
+    }
   }
-}
 
-#index-page .index-cover {
-  background-position: center;
-  background-repeat: no-repeat;
-  @include background-size(cover);
-  color: #ffffff;
-  position: relative;
-  text-align: center;
-  width: 100%;
-
-  .welcome {
-    font-family: $MuseoSans-500;
-    font-style: italic;
-    line-height: 1.25em;
-    margin-bottom: 0.5em;
+  &__welcome {
+    color: #474f51;
+    font-family: $SourceSansPro-Regular;
+    font-size: 30px;
+    margin-bottom: 15px;
+    line-height: 1.15;
 
     strong {
-      font-family: $MuseoSans-700;
+      font-family: $SourceSansPro-Bold;
+    }
+
+    @include large-screens {
+      font-size: 35px;
+
+      &--we-are {
+        font-size: 30px;
+      }
     }
   }
 
-  .location {
-    color: #acb4ba;
+  &__location {
+    color: #909b9e;
+    font-size: 17px;
   }
 
-  @include small-screens {
-    height: 206px;
-
-    .big-logo {
-      font-size: 45px;
-      padding-bottom: 12px;
-      padding-top: 35px;
-    }
-
-    .welcome {
-      font-size: 19px;
-    }
-
-    .location {
-      font-size: 13px;
-    }
+  &__text {
+    color: #a5a9ac;
+    font-size: 15px;
+    margin-top: 40px;
   }
 
-  @include medium-screens {
-    height: 266px;
-
-    .big-logo {
-      font-size: 55px;
-      padding-bottom: 28px;
-      padding-top: 48px;
-    }
-
-    .welcome {
-      font-size: 20px;
-    }
-
-    .location {
-      font-size: 14px;
-    }
-  }
-
-  @include large-screens {
-    height: 400px;
-
-    .big-logo {
-      font-size: 60px;
-      padding-bottom: 45px;
-      padding-top: 100px;
-    }
-
-    .welcome {
+  &__scroll-down {
+    &__icon {
+      color: #474f51;
       font-size: 27px;
     }
 
-    .location {
-      font-size: 17px;
-    }
-  }
-}
-
-#index-page .tabs {
-  $this-border: 1px solid #ecedef;
-  $this-tabs-count: 3;
-
-  border-bottom: $this-border;
-  color: #bfc5c9;
-  @include legacy-pie-clearfix;
-  text-align: center;
-  width: 100%;
-
-  // A quick way to set all icons height!
-  @mixin this-icons-size-fixer($size, $first-icon-size, $second-icon-size, $third-icon-size) {
-    .tab-icon {
-      height: $size;
-
-      &:before {
-        line-height: $size;
-      }
-    }
-
-    .tab:nth-child(1) > .tab-icon {
-      font-size: $first-icon-size;
-    }
-
-    .tab:nth-child(2) > .tab-icon {
-      font-size: $second-icon-size;
-    }
-
-    .tab:nth-child(3) > .tab-icon {
-      font-size: $third-icon-size;
+    &__text {
+      color: rgba(#b5babd, 0.6);
+      margin-top: 20px;
     }
   }
 
-  .tab {
-    border-right: $this-border;
-    float: left;
-    width: 100% / $this-tabs-count;
-
-    &:last-child {
-      border-right: 0;
-    }
-  }
-
-  .tab-text {
-    font-family: $MuseoSans-500;
-  }
-
-  @include small-screens {
-    @include this-icons-size-fixer(25px, 25px, 17px, 12px);
-
-    // Centers the fancy phone
-    .tab-icon.icon-fancy-phone-outline {
-      padding-top: 2px;
-    }
-
-    .tab {
-      padding: 14px 0 14px 0;
-    }
-
-    .tab-text {
-      font-size: 12px;
-      margin-top: 6px;
-    }
-  }
-
-  @include medium-screens {
-    @include this-icons-size-fixer(27px, 27px, 19px, 14px);
-
-    // Centers the fancy phone
-    .tab-icon.icon-fancy-phone-outline {
-      padding-top: 3px;
-    }
-
-    .tab {
-      padding: 17px 0 15px 0;
-    }
-
-    .tab-text {
-      font-size: 13px;
-      margin-top: 9px;
-    }
-  }
-
-  @include large-screens {
-    @include this-icons-size-fixer(32px, 32px, 22px, 22px);
-
-    .tab {
-      padding: 30px 0 20px 0;
-    }
-
-    .tab-text {
-      font-size: 15px;
-      margin-top: 1em;
-    }
-  }
-}
-
-#index-page .expertise {
-  @include small-screens {
-    padding: 35px 0 55px 0;
-  }
-
-  @include medium-screens {
-    padding: 40px 0 60px 0;
-  }
-
-  @include large-screens {
-    padding: 45px 0 65px 0;
-  }
-}
-
-#index-page .our-work-slider {
-  height: 235px;
-
-  @include large-screens {
-    height: 345px;
-  }
-
-  .full-width-slider {
-    height: 100%;
-  }
-
-  // Royal Slider customization
-  .rsSlide {
-    @include transition(opacity 0.1s ease-in-out);
-    opacity: 0.5;
-
-    &:not(.rsActiveSlide) a {
-      // This will disable the link's href. THe navigation by click will still work :D
-      pointer-events: none;
-    }
-
-    &.rsActiveSlide {
-      opacity: 1;
-    }
-  }
-}
-
-#index-page .simple-footer-container {
-  border-bottom: 1px solid #f2f2f4;
-  @include legacy-pie-clearfix;
-  padding: 17px 0 13px 0;
-  width: 100%;
-
-  .simple-footer {
-    padding: 0;
-
-    .text {
-      float: left;
-      margin-bottom: 0;
-
-      & > p {
-        color: #7d8185;
-        display: inline-block;
-        font-size: 13px;
-        margin-bottom: 0 !important;
-
-        &.small-and-medium-only {
-          font-size: 12px;
-
-          .special-content {
-            display: none;
-          }
-
-          @media only screen and (min-width : 400px) and (max-width : $medium-screens-breakpoint - 1px) {
-            .special-content {
-              display: block;
-            }
-
-            .normal-content {
-              display: none;
-            }
-          }
-        }
-      }
-
-      & > small {
-        display: none;
-      }
-    }
-
-    .social-links {
-      float: right;
-
-      .social-link:last-child {
-        margin-right: 0;
-      }
-
-      @include small-screens {
-        .social-link {
-          margin: 0 15px 0 0;
-
-          .icon-twitter { font-size: 15px; }
-          .icon-dribbble { font-size: 16px; }
-          .icon-behance { font-size: 12px; }
-        }
-      }
-
-      @include medium-screens {
-        .social-link {
-          margin: 0 17px 0 0;
-
-          .icon-twitter { font-size: 15px; }
-          .icon-dribbble { font-size: 16px; }
-          .icon-behance { font-size: 12px; }
-        }
-      }
-
-      @include large-screens {
-        .social-link {
-          margin: 0 21px 0 0;
-        }
-      }
-    }
-  }
-}
-
-#index-page .get-in-touch {
-  @include small-screens {
-    padding: 35px 0 20px 0;
-  }
-
-  @include medium-screens {
-    padding: 40px 0 30px 0;
-  }
-
-  @include large-screens {
-    padding: 45px 0 25px 0;
-  }
-}
-
-#index-page .contact-methods {
-  $this-border: 1px solid #f2f2f4;
-
-  color: #bfc5c9;
-  font-family: $MuseoSans-500;
-
-  // Font-size and icon-size correction
-  font-size: 15px;
-
-  .icon-fancy-phone-outline { font-size: 12px; }
-  .icon-mail { font-size: 17px; }
-  .icon-message-bubble { font-size: 19px; }
-
-  .large-only {
-    .normal-state, .phone-number-state {
-      border-bottom: $this-border;
-      border-top: $this-border;
-    }
-
-    .normal-state {
-      @include legacy-pie-clearfix;
-      padding: 15px 0;
-
-      // By default, this is for apple devices!
-      .contact-method {
-        display: block;
-        float: left;
-        line-height: 30px;
-
-        // Both icon and text
-        & > span {
-          display: inline-block;
-          vertical-align: middle;
-
-          // The icon
-          &:first-child {
-            padding-right: 10px;
-          }
-        }
-
-        &.call-us {
-          text-align: left;
-          width: 25%;
-        }
-
-        &.mail-us {
-          border-left: $this-border;
-          border-right: $this-border;
-          text-align: center;
-          width: 50%;
-        }
-
-        &.message-us {
-          text-align: right;
-          width: 25%;
-        }
-      }
-
-      &.is-non-apple-device .contact-method {
-        &.call-us, &.mail-us {
-          text-align: center;
-          width: 50%;
-        }
-
-        &.call-us {
-          padding-right: 25px;
-        }
-
-        &.mail-us {
-          border-right: 0;
-          padding-left: 25px;
-        }
-
-        &.message-us {
-          display: none;
-        }
-      }
-    }
-
-    .phone-number-state {
-      color: #7d8185;
-      font-family: $Rosario-Regular;
-      font-size: 50px;
-      font-style: italic;
-      padding: 10px 0 25px 0;
-      position: relative;
-
-      .icon-close {
-        $this-size: 15px;
-
-        bottom: 0;
-        color: #d4d8db;
-        font-size: $this-size;
-        height: $this-size;
-        margin: auto;
-        position: absolute;
-        right: 20px;
-        top: 0;
-      }
-    }
-  }
-
-  .small-and-medium-only {
-    .contact-method {
-      border-bottom: $this-border;
-      // Needed to align everyting vertically
-      line-height: 19px; // The size of the largest icon, icon-message-bubble;
-
-      &:first-child {
-        border-top: $this-border;
-      }
-    }
-
-    a.container {
-      @include legacy-pie-clearfix;
-      padding: 20px 0;
-
-      // The text
-      & > span:first-child {
-        float: left;
-      }
-
-      // The icon
-      & > span:last-child {
-        float: right;
-        // Needed to align everyting vertically
-        line-height: 19px; // The size of the largest icon, icon-message-bubble;
-
-        width: 33px; // The cellphone's width since it's the largest
-        text-align: center; // So the icons are aligned with each other!
-      }
-    }
-  }
-}
-
-#index-page .footer-index {
-  color: #a8b3bd;
-  padding: 50px 0 15px 0;
-
-  .line {
-    background: #e9ebed;
+  &__separator {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    right: 0;
+
+    background: #d1d3d3;
+    display: block;
     height: 1px;
-    width: 100px;
-  }
-
-  .text {
-    font-size: 13px;
-    line-height: 36px;
-  }
-
-  strong {
-    font-style: italic;
+    margin: 0 auto;
+    width: 25px;
   }
 }
