@@ -9,6 +9,7 @@
   }
 
   @include large-screens {
+    max-width: 500px;
     padding: 20vh 0 0 0;
 
     &__text {
@@ -174,6 +175,67 @@
     &__name-and-field {
       color: #7e8385;
       float: right;
+    }
+  }
+}
+
+#index-page .footer {
+  $this-blue-color: #488dec;
+
+  @include legacy-pie-clearfix;
+
+  a.index-button {
+    background: $this-blue-color;
+    color: #ffffff;
+    display: block;
+    text-align: center;
+  }
+
+  &.small-and-medium-only {
+    a.index-button {
+      float: left;
+      font-family: $SourceSansPro-Regular;
+      font-size: 17px;
+      line-height: 65px;
+      position: relative;
+      width: 50%;
+    }
+
+    a:first-child:after {
+      content: "";
+
+      display: block;
+      position: absolute;
+      margin-top: -18px;
+      right: 0;
+      top: 50%;
+
+      background: #7faff2;
+      height: 36px;
+      width: 1px;
+    }
+  }
+
+  &.large-only {
+    padding: 30px 40px;
+
+    .simple-footer {
+      color: rgba(#202a35, 0.7);
+      float: left;
+      padding: 0;
+      text-align: left;
+
+      .social-link {
+        margin: 0 16px 0 0;  
+      }
+    }
+
+    a.index-button {
+      float: right;
+      font-family: $HelveticaNeue-Roman;
+      font-size: 14px;
+      line-height: 50px;
+      width: 175px;
     }
   }
 }

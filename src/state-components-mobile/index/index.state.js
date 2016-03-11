@@ -1,7 +1,9 @@
 (function () {
   'use strict';
   angular
-    .module('state.index', [])
+    .module('state.index', [
+      'app.simple-footer'
+    ])
     .config(['$stateProvider', function ($stateProvider) {
       $stateProvider
         .state('index', {
@@ -11,7 +13,6 @@
           url: '/',
           views: {
             '@': {
-              controller: 'IndexCtrl',
               templateUrl: 'state-components-mobile/index/index.html'
             }
           }

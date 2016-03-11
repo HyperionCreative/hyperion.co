@@ -39,4 +39,15 @@
       <p class="portfolio-project__description container"><span class="portfolio-project__description__number">05.</span><span class="portfolio-project__description__name-and-field"><strong>{{:: str.portfolio.grow.projectName}}:</strong> {{:: str.portfolio.grow.field}}</span></p>
     </a>
   </div>
+
+  <div class="footer small-and-medium-only">
+    <a ng-href="{{:: 'tel:' + str.globals.phoneNumber }}" class="index-button">Call Us</a>
+    <a ng-href="{{:: 'mailto:' + str.globals.contactEmail + '?subject=Hello' }}" class="index-button">Email Us</a>
+  </div>
+
+  <div class="footer large-only">
+    <hyp-simple-footer footer-text="'Find more projects on our <strong>Social Networks</strong>'"></hyp-simple-footer>
+
+    <a ng-href="{{:: 'mailto:' + str.globals.contactEmail + '?subject=Hello' }}" class="index-button">Get in Touch</a>
+  </div>
 </div>
