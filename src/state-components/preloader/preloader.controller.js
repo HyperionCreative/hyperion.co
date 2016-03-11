@@ -43,16 +43,53 @@
 
         Preloader.start('the-rest-of-the-images');
 
-        $scope.showPreloader = false;
+        // Using $evalAsync we're sure that the "final" percentage will be shown
+        $rootScope.$evalAsync(function(){
+          $scope.showPreloader = false;
+        });
       });
 
       var preloaderListener = $scope.$watch(function () {
         return Preloader.getTotalProgress('fancy-slider');
       }, function (newValue) {
-        $scope.preloaderProgress = newValue;
+        $scope.preloaderProgress = (function () {
+          if (newValue <= 0) { return 'zero'; }
+          if (newValue <= 5) { return 'five'; }
+          if (newValue <= 10) { return 'ten'; }
+          if (newValue <= 15) { return 'fifteen'; }
+          if (newValue <= 20) { return 'twenty'; }
+          if (newValue <= 25) { return 'twenty five'; }
+          if (newValue <= 30) { return 'thirty'; }
+          if (newValue <= 35) { return 'thirty five'; }
+          if (newValue <= 40) { return 'forty'; }
+          if (newValue <= 45) { return 'forty five'; }
+          if (newValue <= 50) { return 'fifty'; }
+          if (newValue <= 55) { return 'fifty five'; }
+          if (newValue <= 60) { return 'sixty'; }
+          if (newValue <= 65) { return 'sixty five'; }
+          if (newValue <= 70) { return 'seventy'; }
+          if (newValue <= 75) { return 'seventy five'; }
+          if (newValue <= 80) { return 'eighty'; }
+          if (newValue <= 85) { return 'eighty five'; }
+          if (newValue <= 90) { return 'ninety'; }
+          if (newValue <= 95) { return 'ninety five'; }
+          if (newValue <= 100) { return 'one hundred'; }
+
+
+          // if (newValue < 25) {
+          //   return 'twenty five';
+          // } else if (newValue < 50) {
+          //   return 'fifty';
+          // } else if (newValue < 75) {
+          //   return 'seventy five';
+          // } else {
+          //   return 'one hundred';
+          // }
+        })();
 
         if (newValue === 100) {
           // Unregisters the (night) watch
+
           preloaderListener();
         }
       });

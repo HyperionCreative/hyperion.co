@@ -1,11 +1,10 @@
 #preloader {
-  background: #ffffff;
+  background: #e6e8e9;
   bottom: 0;
   left: 0;
   min-height: $min-page-height;
   position: fixed;
   right: 0;
-  text-align: center;
   top: 0;
   z-index: $preloader-z-index;
 
@@ -17,116 +16,41 @@
     position: absolute;
   }
 
-  .knob-and-logo {
-    height: 200px;
-    width: 200px;
-
-    margin: -160px 0 0 -100px;
-
+  & > p {
     position: absolute;
-    left: 50%;
+    left: 13.5%;
+    margin-top: -70px;
     top: 50%;
 
-    .big-logo {
-      height: 84px;
-      width: 56px;
+    color: #717982;
+    font-size: 42px;
+    line-height: 1;
+    text-transform: uppercase;
 
-      margin: auto;
-
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      top: 0;
-    }
-
-    // Spinner
-    @include keyframes(spinner) {
-      100% {
-        @include transform(translate3d(0,0,0) rotate(360deg));
-      }
-    }
-
-    .spinner {
-      min-width: 200px;
-      min-height: 200px;
-    }
-
-    .spinner:before {
-      content: 'Loading...';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 200px;
-      height: 200px;
-    }
-
-    .spinner:not(:required):before {
-      content: '';
-      border-radius: 50%;
-      border: 3px solid #edf7fa;
-      border-top-color: #a3d7e6;
-      @include animation(spinner 0.8s linear infinite);
+    strong {
+      font-size: 56px;
     }
   }
 
-  .text {
-    text-align: center;
-
-    height: 48px;
-    width: 100%;
-
-    margin: auto;
-
+  & > img {
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 80%;
+    right: 10%;
+    top: -75px;
 
-    .hello {
-      color: #868d94;
-      font-family: $MuseoSans-300;
-      font-size: 30px;
-      margin-bottom: 2px;
-    }
-
-    .website {
-      color: #c7cacc;
-      font-size: 16px;
-    }
+    height: 117.5%;
+    opacity: 0.05;
+    width: auto;
   }
 }
 
 // AngularJS Animate
-
 #preloader {
   $this-transition-duration: 0.5s;
 
   @include transition(opacity $this-transition-duration ease);
 
-  .knob-and-logo {
-    @include transition(opacity $this-transition-duration ease, transform $this-transition-duration ease);
-  }
-
   &.ng-enter,
   &.ng-leave.ng-leave-active {
-    .knob-and-logo {
-      @include transform(translate3d(0,0,0) scale(1.2,1.2));
-    }
-
-    & {
-      opacity: 0;
-    }
-  }
-
-  &.ng-leave,
-  &.ng-enter.ng-enter-active {
-    .knob-and-logo {
-      @include transform(translate3d(0,0,0) scale(1,1));
-    }
-
-    & {
-      opacity: 1;
-    }
+    opacity: 0;
   }
 }
