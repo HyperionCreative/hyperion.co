@@ -19,6 +19,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-arrow-right-squarish:before {
+    content: "\e906";
+}
 .icon-arrow-down-fancy:before {
     content: "\e905";
 }
