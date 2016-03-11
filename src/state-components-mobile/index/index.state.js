@@ -1,5 +1,8 @@
 (function () {
   'use strict';
+
+  var playAnimation = true;
+
   angular
     .module('state.index', [
       'app.simple-footer'
@@ -13,6 +16,19 @@
           url: '/',
           views: {
             '@': {
+              controller: ['$document', function ($document) {
+                if (playAnimation) {
+                  playAnimation = false;
+
+                  var animContainer = $document[0].querySelector('.introduction .animation-container');
+                  animContainer = angular.element(animContainer);
+
+                  animContainer.addClass('animation-init');
+                  setTimeout(function(){
+                    animContainer.addClass('animation-start');  
+                  });
+                }
+              }],
               templateUrl: 'state-components-mobile/index/index.html'
             }
           }
