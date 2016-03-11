@@ -61,7 +61,15 @@
     }])
     .run(['$rootScope', '$state', function ($rootScope, $state) {
       $rootScope.$on('$stateChangeStart',
-        function (event, toState) {
+        function (event, toState, toParams, fromState) {
+          // Clicking from an about sub-page on the about link in the hamburger menu
+          // doesn't do anything.
+          if (toState.name === 'root.sub-page-template.expertise' && fromState.name.match(/root\.sub\-page\-template\.expertise\./) !== null) {
+            event.preventDefault();
+
+            return;
+          }
+
           if (toState.name === 'root.sub-page-template.expertise') {
             event.preventDefault();
 
