@@ -19,7 +19,7 @@
   & > p {
     position: absolute;
     left: 13.5%;
-    margin-top: -70px;
+    margin-top: -63px;
     top: 50%;
 
     color: #717982;
@@ -27,8 +27,18 @@
     line-height: 1;
     text-transform: uppercase;
 
+    img {
+      display: block;
+      height: 22px;
+      width: auto;
+    }
+
     strong {
-      font-size: 56px;
+      display: block;
+      line-height: 1;
+      font-size: 40px;
+      height: 40px;
+      margin: 8px 0 10px 0;
     }
   }
 
