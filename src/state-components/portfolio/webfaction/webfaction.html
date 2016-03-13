@@ -20,14 +20,14 @@
           <ul class="navigation-tabs" ng-init="vm.activeTab = 'the-results'">
             <li ng-class="{active: vm.activeTab === 'the-results'}" ng-click="vm.activeTab = 'the-results'">The Results</li>
             <li ng-class="{active: vm.activeTab === 'the-process'}" ng-click="vm.activeTab = 'the-process'">The Process</li>
-            <li class="visit-website">Visit their Site</li>
+            <li class="visit-website"><a href="https://www.webfaction.com/" target="_blank">Visit their Site</a></li>
           </ul>
         </div>
 
         <div ng-show="vm.activeTab === 'the-results'">
           <hyp-carousel-slider
             arrows-background-color="#ffffff"
-            arrows-color="#5cc6eb"
+            arrows-color="#697079"
             images-url="['assets/images/portfolio/webfaction/02-1.jpg', 'assets/images/portfolio/webfaction/02-2.jpg', 'assets/images/portfolio/webfaction/02-3.jpg', 'assets/images/portfolio/webfaction/02-4.jpg', 'assets/images/portfolio/webfaction/02-5.jpg']"
             ></hyp-carousel-slider>
 
@@ -61,8 +61,8 @@
               <p class="sub-title" ng-bind=":: str.portfolio.webfaction.theDesign.title"></p>
               <div ng-bind-html=":: str.portfolio.webfaction.theDesign.description"></div>
             </div>
-            
-            <img src="assets/images/portfolio/webfaction/04.jpg" alt="The new interface of the Webfaction control panel" class="new-interface">
+
+            <img src="assets/images/portfolio/webfaction/06.jpg" alt="The new interface of the Webfaction control panel" class="new-interface">
           </div>
 
           <div class="row the-code">
