@@ -147,6 +147,7 @@
 
   .project-block {
     $this-description-height: 45px;
+    $this-transition: 0.1s ease-in-out;
 
     background-color: #cbcfd3;
     @include border-radius(5px);
@@ -156,6 +157,24 @@
     overflow: hidden;
     padding-bottom: $this-description-height;
     position: relative;
+
+    @include transform(translateZ(0));
+
+    &:hover {
+      .project-image {
+        @include transform(scale(1.03) translateZ(0));
+      }
+
+      .project-description {
+        &__name-and-field {
+          @include transform(translate3d(0,0,0));
+        }
+
+        &__icon {
+          opacity: 0.5;
+        }
+      }
+    }
 
     &:last-child {
       margin-right: 0;
@@ -181,29 +200,35 @@
       display: block;
       margin: 0 auto;
 
-      &--webfaction {
-        margin: 32px 0 0 0;
-        width: image-width("assets/images/portfolio/webfaction/cover.png");
-      }
+      @include transform(scale(1.0) translateZ(0));
+      @include transition(transform $this-transition);
 
-      &--quizkick {
-        margin-top: 82px;
-        width: image-width("assets/images/portfolio/quizkick/cover.png");
-      }
+      // All these values are hardcoded
+      & {
+        &--webfaction {
+          margin: 32px 0 0 0;
+          width: 585px;
+        }
 
-      &--anyvan {
-        margin-top: 12px;
-        width: image-width("assets/images/portfolio/anyvan/cover.png");
-      }
+        &--quizkick {
+          margin-top: 82px;
+          width: 332px;
+        }
 
-      &--kartist {
-        margin: 0;
-        width: image-width("assets/images/portfolio/kartist/cover.png");
-      }
+        &--anyvan {
+          margin-top: 12px;
+          width: 222px;
+        }
 
-      &--grow {
-        margin-top: 21px;
-        width: image-width("assets/images/portfolio/grow/cover.png");
+        &--kartist {
+          margin: 0;
+          width: 345px;
+        }
+
+        &--grow {
+          margin-top: 20px;
+          width: 301px;
+        }
       }
     }
 
@@ -234,6 +259,17 @@
       &__name-and-field {
         color: #7e8385;
         float: right;
+
+        @include transform(translate3d(19px,0,0));
+        @include transition(transform $this-transition);
+      }
+
+      &__icon {
+        font-size: 11px;
+        opacity: 0;
+        padding-left: 7px;
+
+        @include transition(opacity $this-transition);
       }
     }
   }
