@@ -79,6 +79,10 @@
 
     &.the-code {
       margin-top: 47px;
+
+      p a {
+        text-decoration: underline;
+      }
     }
   }
 }

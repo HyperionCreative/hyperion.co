@@ -161,13 +161,13 @@
             projectName: 'Webfaction',
             field: 'UI/UX + Front-end Coding',
 
-            header: '<strong>Webfaction</strong> is our hosting provider and we worked with them in late 2015 to create a simpler, more intuitive control panel for their platform and a new website to reflect this.',
+            header: '<strong>Webfaction</strong> is our hosting provider and we worked with them in late 2015 to create a simpler, more intuitive control panel for their platform.',
             // TODO Change this if needed
-            tabletHeader: '<strong>Webfaction</strong> is our hosting provider and we worked with them in late 2015 to create a simpler, more intuitive control panel for their platform and a new website to reflect this.',
+            tabletHeader: '<strong>Webfaction</strong> is our hosting provider and we worked with them in late 2015 to create a simpler, more intuitive control panel for their platform.',
 
             freshNewLook: {
               title: 'A Fresh new Look',
-              description: '<p>Webfaction has been our hosting provider ever since we started in 2012 and while we couldn’t be happier with their services and support, the interface of their control panel was a complicated mess that confused most of their users.</p><p>They agreed to work with us and refresh their CP and website and have since reported their users find it a lot easier to find their way around and achieve even the more complicated tasks. We simplified and logically organised everything from how you create a new website, add an email address, manage your plan or get support.<p>'
+              description: '<p>Webfaction has been our hosting provider ever since we started in 2012 and while we couldn’t be happier with their services and support, the interface of their control panel was a complicated mess that confused most of their users.</p><p>They agreed to work with us and refresh their CP and have since reported, from early tests, that their users considered it a lot easier to find their way around and achieve even the more complicated tasks. We simplified and logically organised everything from how you create a new website, add an email address, manage your plan or get support.<p>'
             },
 
             technicalYetAesthetic: {
@@ -186,7 +186,7 @@
             },
             theCode: {
               title: 'III. The Code',
-              description: '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>'
+              description: '<p>In order to maintain the agility we needed throughout the project and keep everything thoroughly organised, we decided to use a modular approach. Throughout the coding stage, Webfaction’s team was going to work on creating a new API to link their back-end to the interface.</p><p>We kicked this stage off by defining the architecture and making a plan. Once we had the interface’s structure defined, we started creating the modules - starting with the core ones.</p><p>We finished the interface before Webfaction completed the new API, so we put together a quick prototype to allow for the interface to be tested - you can find it <a href="http://stage.hyperion.co/webfaction/#/websites" target="_blank">here</a>.</p>'
             }
           }
         },
