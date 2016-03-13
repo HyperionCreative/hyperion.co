@@ -25,8 +25,8 @@
 
                   animContainer.addClass('animation-init');
                   setTimeout(function(){
-                    animContainer.addClass('animation-start');  
-                  });
+                    animContainer.addClass('animation-start');
+                  }, 250);
                 }
               }],
               templateUrl: 'state-components-mobile/index/index.html'
