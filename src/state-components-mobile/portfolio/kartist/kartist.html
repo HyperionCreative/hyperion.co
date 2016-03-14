@@ -28,73 +28,80 @@
         is-mobile="true"
       ></hyp-portfolio-header>
 
-      <div class="portfolio-content design" ng-show="!showDevSection">
+      <div class="portfolio-content">
         <div class="first row">
-          <img ng-src="assets/images/portfolio/kartist/in-page-1.jpg" alt="Kartist">
+          <img src="assets/images/portfolio/kartist/in-page-1.jpg" alt="Kartist">
         </div>
 
-        <div class="second row">
-          <div class="description left">
-            <h1 class="title" ng-bind-html=":: str.portfolio.kartist.uiAndCode.title"></h1>
-            <div ng-bind-html=":: str.portfolio.kartist.uiAndCode.description"></div>
-            <a class="button" ng-click="showDevSection = true; scrollToTop();">About Coding</a>
+        <div class="row kartist-container">
+          <ul class="navigation-tabs" ng-init="vm.activeTab = 'the-design'">
+            <li ng-class="{active: vm.activeTab === 'the-design'}" ng-click="vm.activeTab = 'the-design'">The Design</li>
+            <li ng-class="{active: vm.activeTab === 'the-code'}" ng-click="vm.activeTab = 'the-code'">The Code</li>
+          </ul>
+        </div>
+
+        <div ng-show="vm.activeTab === 'the-design'" class="design">
+          <div class="second row">
+            <div class="description left">
+              <h1 class="title" ng-bind-html=":: str.portfolio.kartist.uiAndCode.title"></h1>
+              <div ng-bind-html=":: str.portfolio.kartist.uiAndCode.description"></div>
+            </div>
+            <div class="video-container right">
+              <img ng-src="assets/videos/portfolio/kartist/kartist-static.jpg" alt="Kartist">
+            </div>
           </div>
-          <div class="video-container right">
-            <img ng-src="assets/videos/portfolio/kartist/kartist-static.jpg" alt="Kartist">
+
+          <hyp-full-width-slider
+            images-url="['assets/images/portfolio/kartist/slide-1.jpg', 'assets/images/portfolio/kartist/slide-2.jpg', 'assets/images/portfolio/kartist/slide-3.jpg']"
+
+            rsi-options="portfolioRsiOptions"
+            multiply-count="1"
+            ></hyp-full-width-slider>
+
+          <div class="third row">
+            <img src="assets/images/portfolio/kartist/in-page-3.jpg" alt="Kartist" class="left">
+            <div class="description left">
+              <h2 class="title" ng-bind-html=":: str.portfolio.kartist.mobileVersion.title"></h2>
+              <div ng-bind-html=":: str.portfolio.kartist.mobileVersion.description"></div>
+            </div>
+          </div>
+
+          <div class="fourth row">
+            <div class="description left">
+              <h2 class="title" ng-bind-html=":: str.portfolio.kartist.logo.title"></h2>
+              <div ng-bind-html=":: str.portfolio.kartist.logo.description"></div>
+              <div class="logo-by" ng-bind-html=":: str.portfolio.kartist.logo.url"></div>
+            </div>
+            <img src="assets/images/portfolio/kartist/in-page-4.jpg" alt="Kartist" class="right">
           </div>
         </div>
 
-        <hyp-full-width-slider
-          images-url="['assets/images/portfolio/kartist/slide-1.jpg', 'assets/images/portfolio/kartist/slide-2.jpg', 'assets/images/portfolio/kartist/slide-3.jpg']"
-
-          rsi-options="portfolioRsiOptions"
-          multiply-count="1"
-          ></hyp-full-width-slider>
-
-        <div class="third row">
-          <img ng-src="assets/images/portfolio/kartist/in-page-3.jpg" alt="Kartist" class="left">
-          <div class="description left">
-            <h2 class="title" ng-bind-html=":: str.portfolio.kartist.mobileVersion.title"></h2>
-            <div ng-bind-html=":: str.portfolio.kartist.mobileVersion.description"></div>
+        <div ng-show="vm.activeTab === 'the-code'" class="development">
+          <div class="first row">
+            <h1 class="title" ng-bind-html=":: str.portfolio.kartist.theStart.title"></h1>
+            <p ng-bind-html=":: str.portfolio.kartist.theStart.description"></p>
           </div>
-        </div>
-
-        <div class="fourth row">
-          <div class="description left">
-            <h2 class="title" ng-bind-html=":: str.portfolio.kartist.logo.title"></h2>
-            <div ng-bind-html=":: str.portfolio.kartist.logo.description"></div>
-            <div class="logo-by" ng-bind-html=":: str.portfolio.kartist.logo.url"></div>
+          <div class="second row">
+            <img src="assets/images/expertise/development.jpg" alt="Kartist">
           </div>
-          <img ng-src="assets/images/portfolio/kartist/in-page-4.jpg" alt="Kartist" class="right">
-        </div>
-      </div>
-
-      <div class="portfolio-content development" ng-show="showDevSection">
-        <div class="first row">
-          <h1 class="title" ng-bind-html=":: str.portfolio.kartist.theStart.title"></h1>
-          <p ng-bind-html=":: str.portfolio.kartist.theStart.description"></p>
-        </div>
-        <div class="second row">
-          <img ng-src="assets/images/expertise/development.jpg" alt="Kartist">
-        </div>
-        <div class="third row">
-          <div class="half-of-row">
-            <h2 class="title" ng-bind-html=":: str.portfolio.kartist.performance.title"></h2>
-            <div ng-bind-html=":: str.portfolio.kartist.performance.description"></div>
+          <div class="third row">
+            <div class="half-of-row">
+              <h2 class="title" ng-bind-html=":: str.portfolio.kartist.performance.title"></h2>
+              <div ng-bind-html=":: str.portfolio.kartist.performance.description"></div>
+            </div>
+            <div class="half-of-row">
+              <h3 class="title" ng-bind-html=":: str.portfolio.kartist.browserExtensions.title"></h3>
+              <div ng-bind-html=":: str.portfolio.kartist.browserExtensions.description"></div>
+            </div>
           </div>
-          <div class="half-of-row">
-            <h3 class="title" ng-bind-html=":: str.portfolio.kartist.browserExtensions.title"></h3>
-            <div ng-bind-html=":: str.portfolio.kartist.browserExtensions.description"></div>
+          <div class="fourth row">
+            <img class="half-of-row" src="assets/images/portfolio/kartist/dev-left.jpg" alt="Performance">
+            <img class="half-of-row" src="assets/images/portfolio/kartist/dev-right.jpg" alt="Browser Extensions">
           </div>
-        </div>
-        <div class="fourth row">
-          <img class="half-of-row" ng-src="assets/images/portfolio/kartist/dev-left.jpg" alt="Performance">
-          <img class="half-of-row" ng-src="assets/images/portfolio/kartist/dev-right.jpg" alt="Browser Extensions">
-        </div>
-        <div class="fifth row">
-          <h3 class="title" ng-bind-html=":: str.portfolio.kartist.theEnd.title"></h3>
-          <div ng-bind-html=":: str.portfolio.kartist.theEnd.description"></div>
-          <a class="button" ng-click="showDevSection = false; scrollToTop();">About Design</a>
+          <div class="fifth row">
+            <h3 class="title" ng-bind-html=":: str.portfolio.kartist.theEnd.title"></h3>
+            <div ng-bind-html=":: str.portfolio.kartist.theEnd.description"></div>
+          </div>
         </div>
       </div>
     </div>

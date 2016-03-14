@@ -1,5 +1,9 @@
 @import "state-components/portfolio/kartist/kartist";
 
+#kartist-portfolio-page .kartist-container {
+  width: 628px;
+}
+
 #kartist-portfolio-page {
   $this-client-color: #5cc6eb;
 
