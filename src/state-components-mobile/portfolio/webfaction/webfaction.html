@@ -1,0 +1,106 @@
+<section id="webfaction-portfolio-page" class="portfolio-page">
+  <div class="small-and-medium-only" ng-if="!isOnLargeScreen">
+    <hyp-full-width-slider
+      images-url="[
+        'assets/images/mobile/portfolio-slider/webfaction/02-1.jpg',
+        'assets/images/mobile/portfolio-slider/webfaction/02-2.jpg',
+        'assets/images/mobile/portfolio-slider/webfaction/02-3.jpg',
+        'assets/images/mobile/portfolio-slider/webfaction/07.jpg',
+        'assets/images/mobile/portfolio-slider/webfaction/02-4.jpg',
+        'assets/images/mobile/portfolio-slider/webfaction/02-5.jpg',
+      ]"
+
+      rsi-options="portfolioRsiOptions"
+      multiply-count="1"
+      ></hyp-full-width-slider>
+      <div class="mobile-description">
+        <div class="row">
+          <h1 class="title">Webfaction</h1>
+        </div>
+        <div ng-bind-html=":: str.mobile.webfaction"></div>
+      </div>
+  </div>
+  <div class="large-only" ng-if="isOnLargeScreen">
+    <div class="container">
+      <div class="portfolio-content">
+        <hyp-portfolio-header
+          description="{{:: str.portfolio.webfaction.header }}"
+          client-logo-url="assets/images/portfolio/webfaction/logo.png"
+          client-name="{{:: str.portfolio.webfaction.projectName }}"
+          is-mobile="true"
+        ></hyp-portfolio-header>
+
+        <div>
+          <div class="row fresh-new-look">
+            <img src="assets/images/portfolio/webfaction/01.jpg" alt="Webfaction - A Fresh new Look">
+            <div class="description webfaction-container">
+              <h1 class="title" ng-bind-html=":: str.portfolio.webfaction.freshNewLook.title"></h1>
+              <div ng-bind-html=":: str.portfolio.webfaction.freshNewLook.description"></div>
+            </div>
+          </div>
+
+          <div class="row webfaction-container">
+            <ul class="navigation-tabs" ng-init="vm.activeTab = 'the-results'">
+              <li ng-class="{active: vm.activeTab === 'the-results'}" ng-click="vm.activeTab = 'the-results'">The Results</li>
+              <li ng-class="{active: vm.activeTab === 'the-process'}" ng-click="vm.activeTab = 'the-process'">The Process</li>
+              <li class="visit-website">Visit their Site</li>
+            </ul>
+          </div>
+
+          <div ng-show="vm.activeTab === 'the-results'">
+            <hyp-full-width-slider
+              class="carousel-slider tablets"
+              images-url="['assets/images/portfolio/webfaction/02-1.jpg', 'assets/images/portfolio/webfaction/02-2.jpg', 'assets/images/portfolio/webfaction/02-3.jpg', 'assets/images/portfolio/webfaction/02-4.jpg', 'assets/images/portfolio/webfaction/02-5.jpg']"
+
+              rsi-options="portfolioRsiOptions"
+              multiply-count="1"
+              ></hyp-full-width-slider>
+
+            <div class="row technical-yet-aesthetic">
+              <img src="assets/images/portfolio/webfaction/03.jpg" alt="Webfaction - Technical yet Aesthetic" class="left">
+              <div class="description left">
+                <h3 class="title" ng-bind-html=":: str.portfolio.webfaction.technicalYetAesthetic.title"></h3>
+                <div ng-bind-html=":: str.portfolio.webfaction.technicalYetAesthetic.description"></div>
+              </div>
+            </div>
+          </div>
+
+          <div ng-show="vm.activeTab === 'the-process'">
+            <div class="row getting-started">
+              <div class="webfaction-container">
+                <p class="sub-title" ng-bind=":: str.portfolio.webfaction.gettingStarted.title"></p>
+                <div ng-bind-html=":: str.portfolio.webfaction.gettingStarted.description"></div>
+              </div>
+
+              <img src="assets/images/portfolio/webfaction/04.jpg" alt="The old interface of the Webfaction control panel" class="old-interface">
+
+              <div class="webfaction-container">
+                <div ng-bind=":: str.portfolio.webfaction.gettingStarted.descriptionTwo"></div>
+              </div>
+
+              <img src="assets/images/portfolio/webfaction/05.jpg" alt="Our proposed concepts of the Webfaction control panel" class="proposed-concepts">
+            </div>
+
+            <div class="row the-design">
+              <div class="webfaction-container">
+                <p class="sub-title" ng-bind=":: str.portfolio.webfaction.theDesign.title"></p>
+                <div ng-bind-html=":: str.portfolio.webfaction.theDesign.description"></div>
+              </div>
+
+              <img src="assets/images/portfolio/webfaction/04.jpg" alt="The new interface of the Webfaction control panel" class="new-interface">
+            </div>
+
+            <div class="row the-code">
+              <div class="webfaction-container">
+                <p class="sub-title" ng-bind=":: str.portfolio.webfaction.theCode.title"></p>
+                <div ng-bind-html=":: str.portfolio.webfaction.theCode.description"></div>
+                <!-- TODO remove this abomination -->
+                <p><br><br><br><br><br><br><br><br><br><br></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

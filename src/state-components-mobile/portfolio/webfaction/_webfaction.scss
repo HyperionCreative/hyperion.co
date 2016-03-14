@@ -1,0 +1,83 @@
+#webfaction-portfolio-page {
+  $this-client-color: #697079;
+
+  .portfolio-header .logo img {
+    height: image-height("assets/images/portfolio/webfaction/logo.png");
+    width: image-width("assets/images/portfolio/webfaction/logo.png");
+  }
+
+  .row {
+    .title, .sub-title, .button {
+      color: $this-client-color;
+    }
+
+    .sub-title {
+      font-size: $medium-font-size;
+      text-transform: uppercase;
+    }
+
+    ul.navigation-tabs {
+      margin-top: 40px;
+    }
+  }
+
+  .carousel-slider.tablets {
+    height: 512px;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .webfaction-container {
+    margin: 0 auto;
+    width: 85%;
+  }
+
+  .row {
+    &.fresh-new-look {
+      img {
+        margin-top: 50px;
+        width: image-width("assets/images/portfolio/webfaction/01.jpg");
+      }
+
+      .description {
+        margin-top: 55px;
+      }
+    }
+
+    &.technical-yet-aesthetic {
+      img {
+        margin: 40px 0 70px -65px;
+        width: image-width("assets/images/portfolio/webfaction/03.jpg");
+      }
+
+      .description {
+        margin: 120px 0 0 -15px;
+        width: 290px;
+      }
+    }
+
+    &.getting-started {
+      margin-top: 38px;
+
+      img.old-interface {
+        margin: 25px 0;
+      }
+
+      img.proposed-concepts {
+        margin-top: 25px;
+      }
+    }
+
+    &.the-design {
+      margin-top: 47px;
+
+      img.new-interface {
+        margin-top: 25px;
+      }
+    }
+
+    &.the-code {
+      margin-top: 47px;
+    }
+  }
+}

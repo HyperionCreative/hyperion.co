@@ -9,6 +9,13 @@
       ///////////////
       // The order of these matters. The href is the state name.
       var NAVIGATION_ORDER = [{
+        href: 'portfolio.webfaction',
+        imageSrc: 'assets/images/portfolio/webfaction/logo.png',
+        imageStyle: {
+          'width': '62.5%'
+        },
+        name: 'Webfaction'
+      }, {
         href: 'portfolio.kartist',
         imageSrc: 'assets/images/portfolio/kartist/logo.png',
         imageStyle: {
@@ -17,14 +24,6 @@
         },
         name: 'Kartist'
       }, {
-        href: 'portfolio.quizkick',
-        imageSrc: 'assets/images/portfolio/quizkick/logo.png',
-        imageStyle: {
-          'margin-top': '4px',
-          'width': '62%'
-        },
-        name: 'QuizKick'
-      }, {
         href: 'portfolio.anyvan',
         imageSrc: 'assets/images/portfolio/anyvan/logo.png',
         imageStyle: {
@@ -32,6 +31,14 @@
           'width': '65%'
         },
         name: 'AnyVan'
+      }, {
+        href: 'portfolio.quizkick',
+        imageSrc: 'assets/images/portfolio/quizkick/logo.png',
+        imageStyle: {
+          'margin-top': '4px',
+          'width': '62%'
+        },
+        name: 'QuizKick'
       }, {
         href: 'portfolio.grow',
         imageSrc: 'assets/images/portfolio/grow/logo.png',

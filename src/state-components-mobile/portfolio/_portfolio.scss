@@ -2,6 +2,7 @@
 @import "grow/grow";
 @import "kartist/kartist";
 @import "quizkick/quizkick";
+@import "webfaction/webfaction";
 
 ///////////////////
 // Mobile Header //
@@ -67,6 +68,7 @@
 ///////////////////
 // Sticky Footer //
 ///////////////////
+// TODO remove this on large screens
 html {
   min-height: 100%;
   position: relative;
@@ -84,6 +86,41 @@ html {
   @include small-screens { padding-bottom: 80px; }
   @include medium-screens { padding-bottom: 80px; }
   @include large-screens { padding-bottom: 98px; }
+}
+
+////////////////////
+// Portfolio Tabs //
+////////////////////
+ul.navigation-tabs {
+  border-bottom: 1px solid #ebeced;
+  @include legacy-pie-clearfix;
+  width: 100%;
+
+  & > li {
+    color: #697078;
+    cursor: pointer;
+    float: left;
+    font-size: 16px;
+    line-height: 50px;
+    margin-right: 40px;
+    opacity: 0.5;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.active {
+      cursor: auto;
+      // TODO should we enable this?
+      // font-family: $HelveticaNeue-Bold;
+      opacity: 1;
+    }
+
+    &.visit-website {
+      float: right;
+      margin-right: 0;
+    }
+  }
 }
 
 ///////////////////////
