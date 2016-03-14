@@ -27,7 +27,11 @@
         })
         .state('root.sub-page-template.expertise.consulting', {
           data: {
-            pageTitle: 'Consulting Expertise | Hyperion'
+            page: {
+              title: 'Consulting Expertise | Hyperion',
+              description: 'As a design consulting firm, with only a small team - for now, our job is to help bring your ideas to life. We organise, we create and we solve problems.',
+              keywords: 'team, experience, consultation, professional, ideas, advice, design, technologies, angular, jquery, wordpress, UI, hyperion, hyperion creative'
+            }
           },
           url: '/consulting',
           views: {
@@ -38,7 +42,11 @@
         })
         .state('root.sub-page-template.expertise.design', {
           data: {
-            pageTitle: 'Design Expertise | Hyperion'
+            page: {
+              title: 'Design Expertise | Hyperion',
+              description: 'As a design consulting firm, with only a small team - for now, our job is to help bring your ideas to life. We organise, we create and we solve problems.',
+              keywords: 'graphic design birmingham, web design studio birmingham, design consulting firm birmingham, web design birmingham, website design birmingham, design studio birmingham, team, experience, UI/UX, user interface, design, adequate, minimalist, professional, beautiful'
+            }
           },
           url: '/design',
           views: {
@@ -49,7 +57,11 @@
         })
         .state('root.sub-page-template.expertise.development', {
           data: {
-            pageTitle: 'Development Expertise | Hyperion'
+            page: {
+              title: 'Development Expertise | Hyperion',
+              description: 'As a design consulting firm, with only a small team - for now, our job is to help bring your ideas to life. We organise, we create and we solve problems.',
+              keywords: 'digital studio birmingham, birmingham development, web development birmingham, team, experience, development, code, modular, angular, angularjs, jquery, cost efficient, experience'
+            }
           },
           url: '/development',
           views: {

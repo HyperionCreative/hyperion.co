@@ -9,7 +9,11 @@
       $stateProvider
         .state('root.sub-page-template.contact', {
           data: {
-            pageTitle: 'Get in Touch | Hyperion'
+            page: {
+              title: 'Get in Touch | Hyperion',
+              description: 'We are always interested in new and exciting projects to work on and great people to meet. Tell us your story and how we can help.',
+              keywords: 'contact, phone number, call, email, get in touch, hyperion, hyperion creative'
+            }
           },
           url: '/contact',
           views: {

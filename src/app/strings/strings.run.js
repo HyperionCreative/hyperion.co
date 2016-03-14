@@ -35,7 +35,7 @@
           navigationHamburgerAnchorText: 'About',
           header: {
             title: 'About Us',
-            description: 'As a creative studio, with only a small team - for now, our job is to help bring your ideas to life. We organise, we create and we solve problems.'
+            description: 'As a design consulting firm, with only a small team - for now, our job is to help bring your ideas to life. We organise, we create and we solve problems.'
           },
           design: {
             tabName: 'Design',

@@ -6,7 +6,11 @@
       $stateProvider
         .state('root.index', {
           data: {
-            pageTitle: 'Hyperion | Creative Studio in Birmingham, UK'
+            page: {
+              title: 'Hyperion | Design Consulting Firm in Birmingham, UK',
+              description: 'A design consulting firm specialising in UI/UX, Web Design and Development',
+              keywords: 'graphic design birmingham, web design studio birmingham, design consulting firm birmingham, web design birmingham, website design birmingham, design studio birmingham, birmingham development, digital studio birmingham, digital studio birmingham, web development birmingham, digital studio, design consulting firm'
+            }
           },
           url: '/',
           views: {

@@ -25,7 +25,7 @@
       'common.carousel-slider',
       'common.google-analytics',
       'common.simple-hoverable',
-      'common.simple-page-title',
+      'common.seo-tags',
       'common.ua-parser',
 
       //////////////////////
