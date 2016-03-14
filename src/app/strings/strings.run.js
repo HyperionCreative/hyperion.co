@@ -40,7 +40,7 @@
           design: {
             tabName: 'Design',
             title: 'UI/UX',
-            description: '<p>While there are many factors at work behind the interfaces people love, we would sum it up as follows: a good interface is one that makes sense to the people using it. One that is adequate, beautiful, logical and empathetic towards the user. We also believe technology should be simple and improve people\'s lives in natural, almost invisible ways.</p><p>To achieve this, we look at the whole picture and try to plan ahead as clearly as possible - when every detail has its place and purpose, creativity and function come together naturally.</p>'
+            description: '<p>We believe good design should make sense to the people using it, that it should be adequate, beautiful, logical and empathetic towards the user. We see technology as a catalyst for change, improving people\'s lives in increasingly natural and almost invisible ways. To design products that meet these standards, we try to look at the whole picture, make sense of the problem we are trying to solve and plan accordingly - when every detail has its place and purpose, creativity and function come together naturally.</p>'
           },
           development: {
             tabName: 'Development',
@@ -50,7 +50,7 @@
           consulting: {
             tabName: 'Consulting',
             title: 'Consulting',
-            description: '<p>This is perhaps the most valuable aspect of working with any creative studio - having a team of creative experts to look at things from a different angle and bring insightful ideas to the table. From picking the best suited technologies, to helping structure your product correctly, and deciding what the most elegant and user friendly way of designing an UI is, we\'re here to lend our expertise and bring your idea closer to success.</p>'
+            description: '<p>When you work with a creative team, you will get more than their technical abilities, you will get their ideas and expertices. From picking the best suited technologies, to helping structure your product correctly, and deciding what the most elegant and user friendly way of designing an UI is, having a team of experts bring their insight to the table can make all the difference between a successful project and a failure.</p>'
           }
         },
 
