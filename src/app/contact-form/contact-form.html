@@ -1,6 +1,5 @@
 <form novalidate class="contact-form"
-  name="contactFormCtrl"
-  ng-submit="tryToSubmit(contactForm, contactFormCtrl);">
+  name="contactFormCtrl">
   <div class="input-container">
     <input type="text" placeholder="Your Name"
       name="name"
@@ -50,7 +49,7 @@
   <input type="submit" class="ng-hide" style="display: none;">
 
   <div class="submit-button-container">
-    <div class="submit-button" ng-click="contactFormCtrl.$setSubmitted(); tryToSubmit(contactForm, contactFormCtrl);">Press <strong>Enter</strong> to Send</div>
+    <div class="submit-button" ng-click="tryToSubmit();">Press <strong>Enter</strong> to Send</div>
   </div>
 
   <div class="success" ng-show="isSubmitted">
