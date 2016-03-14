@@ -162,7 +162,6 @@
             field: 'UI/UX + Front-end Coding',
 
             header: '<strong>Webfaction</strong> is our hosting provider and we worked with them in late 2015 to create a simpler, more intuitive control panel for their platform.',
-            // TODO Change this if needed
             tabletHeader: '<strong>Webfaction</strong> is our hosting provider and we worked with them in late 2015 to create a simpler, more intuitive control panel for their platform.',
 
             freshNewLook: {

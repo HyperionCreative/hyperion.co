@@ -52,14 +52,14 @@
   </url>
 
   <url>
-    <loc>http://www.hyperion.co/portfolio/kartist/design</loc>
+    <loc>http://www.hyperion.co/portfolio/webfaction</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>http://www.hyperion.co/portfolio/kartist/development</loc>
+    <loc>http://www.hyperion.co/portfolio/kartist</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>http://www.hyperion.co/portfolio/quizkick</loc>
@@ -74,6 +74,6 @@
   <url>
     <loc>http://www.hyperion.co/portfolio/grow</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
+    <priority>0.50</priority>
   </url>
 </urlset>
