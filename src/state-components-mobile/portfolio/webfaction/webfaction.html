@@ -1,6 +1,7 @@
 <section id="webfaction-portfolio-page" class="portfolio-page">
   <div class="small-and-medium-only" ng-if="!isOnLargeScreen">
     <hyp-full-width-slider
+    
       images-url="[
         'assets/images/mobile/portfolio-slider/webfaction/02-1.jpg',
         'assets/images/mobile/portfolio-slider/webfaction/02-2.jpg',
@@ -49,6 +50,9 @@
 
           <div ng-show="vm.activeTab === 'the-results'">
             <hyp-full-width-slider
+              arrows-background-color="#ffffff"
+              arrows-color="#697079"
+
               class="carousel-slider tablets"
               images-url="['assets/images/portfolio/webfaction/02-1.jpg', 'assets/images/portfolio/webfaction/02-2.jpg', 'assets/images/portfolio/webfaction/02-3.jpg', 'assets/images/portfolio/webfaction/02-4.jpg', 'assets/images/portfolio/webfaction/02-5.jpg']"
 

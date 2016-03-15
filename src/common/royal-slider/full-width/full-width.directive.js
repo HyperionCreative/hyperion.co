@@ -73,6 +73,19 @@
 
           var rsi = sliderContainer.royalSlider(angular.isObject(scope.rsiOptions) ? angular.extend(angular.copy(defaultRsiOptions), scope.rsiOptions) : defaultRsiOptions).data('royalSlider');
 
+          // Bind the controls to the arrows
+          angular.element(iElement[0].querySelector('.controls .icon-arrow-left'))
+            .on('click', function () {
+              rsi.prev();
+            });
+
+          angular.element(iElement[0].querySelector('.controls .icon-arrow-right'))
+            .on('click', function () {
+              rsi.next();
+            });
+
+          scope.showNavigationArrows = angular.isString(scope.arrowsBackgroundColor) && angular.isString(scope.arrowsColor);
+
           // Exports the royal slider instance
           scope.onInit({
             rsi: rsi
@@ -81,6 +94,9 @@
         replace: true,
         restrict: 'E',
         scope: {
+          arrowsBackgroundColor: '@',
+          arrowsColor: '@',
+
           imagesUrl: '=?',
           slidesHtml: '=?',
 
