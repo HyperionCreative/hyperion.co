@@ -71,7 +71,7 @@
         float: left;
         font-size: 16px;
         line-height: 50px;
-        margin-right: 40px;
+        margin-right: 30px;
         opacity: 0.5;
 
         &:last-child {
@@ -166,12 +166,9 @@
       }
 
       .project-description {
-        &__name-and-field {
-          @include transform(translate3d(0,0,0));
-        }
-
         &__icon {
           opacity: 0.5;
+          @include transform(translate3d(0,0,0));
         }
       }
     }
@@ -259,17 +256,16 @@
       &__name-and-field {
         color: #7e8385;
         float: right;
-
-        @include transform(translate3d(19px,0,0));
-        @include transition(transform $this-transition);
       }
 
       &__icon {
+        display: inline-block;
         font-size: 11px;
         opacity: 0;
-        padding-left: 7px;
+        padding-right: 7px;
 
-        @include transition(opacity $this-transition);
+        @include transform(translate3d(-19px,0,0));
+        @include transition(opacity $this-transition, transform $this-transition);
       }
     }
   }
