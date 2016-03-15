@@ -137,7 +137,7 @@
 
             generic: {
               title: 'Grow with a CFO',
-              description: '<p>Grow with a CFO - a financial consulting firm, needed a website to showcase their services, explain who they are and how they work. Our objective was to create a site that is adequate and would help them achieve their goals and expand their firm. After several weeks on the project, we believe we achieved that.</p><p>Unfortunately, Grow with a CFO only used the website we created for about half a year before creating a new Wordpress site themselves.</p>'
+              description: '<p>Grow with a CFO - a financial consulting firm, needed a website to showcase their services, explain who they are and how they work. Our objective was to create a site that is adequate and would help them achieve their goals and expand their firm. After several weeks on the project, we believe we achieved that.</p><p>Our client reported the site has been performing well since it launched earlier this year and that they are quite happy with the results.</p><p>Unfortunately, Grow with a CFO only used the website we created for about half a year before creating a new Wordpress site themselves.</p>'
             }
           },
           quizkick: {
@@ -185,7 +185,7 @@
             },
             theCode: {
               title: 'III. The Code',
-              description: '<p>In order to maintain the agility we needed throughout the project and keep everything thoroughly organised, we decided to use a modular approach. Throughout the coding stage, Webfaction’s team was going to work on creating a new API to link their back-end to the interface.</p><p>We kicked this stage off by defining the architecture and making a plan. Once we had the interface’s structure defined, we started creating the modules - starting with the core ones.</p><p>We finished the interface before Webfaction completed the new API, so we put together a quick prototype to allow for the interface to be tested - you can find it <a href="http://stage.hyperion.co/webfaction/#/websites" target="_blank">here</a>.</p>'
+              description: '<p>In order to maintain the agility we needed throughout the project and keep everything thoroughly organised, we decided to use a modular approach. Throughout the coding stage, Webfaction’s team was going to work on creating a new API to link their back-end to the interface.</p><p>We kicked this stage off by defining the architecture and making a plan. Once we had the interface’s structure defined, we started creating the modules - starting with the core ones.</p><p>We finished the interface before Webfaction completed the new API, and will link it when they are done.</p>'
             }
           }
         },

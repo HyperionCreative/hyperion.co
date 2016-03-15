@@ -9,8 +9,7 @@
             page: {
               title: 'Webfaction | Hyperion',
               description: 'Webfaction is our hosting provider and we worked with them in late 2015 to create a simpler, more intuitive control panel for their platform.',
-              // TODO add keywords
-              keywords: ''
+              keywords: 'hyperion, hyperion creative, webfaction, hosting, host, interface, dashboard, front end, angular, angular js, design, clean'
             }
           },
           url: '/webfaction',
