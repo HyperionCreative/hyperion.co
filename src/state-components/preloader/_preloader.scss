@@ -21,7 +21,7 @@
     height: 200px;
     width: 200px;
 
-    margin: -160px 0 0 -100px;
+    margin: -100px 0 0 -100px;
 
     position: absolute;
     left: 50%;
@@ -67,32 +67,6 @@
       border: 3px solid #edf7fa;
       border-top-color: #a3d7e6;
       @include animation(spinner 0.8s linear infinite);
-    }
-  }
-
-  .text {
-    text-align: center;
-
-    height: 48px;
-    width: 100%;
-
-    margin: auto;
-
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 80%;
-
-    .hello {
-      color: #868d94;
-      font-family: $MuseoSans-300;
-      font-size: 30px;
-      margin-bottom: 2px;
-    }
-
-    .website {
-      color: #c7cacc;
-      font-size: 16px;
     }
   }
 }
