@@ -16,7 +16,7 @@
     position: absolute;
   }
 
-  & > .text {
+  & > p {
     position: absolute;
     left: 13.5%;
     margin-top: -63px;
@@ -31,11 +31,6 @@
       display: block;
       height: 22px;
       width: auto;
-
-      &.large {
-        height: 29px;
-        margin: 15px 0;
-      }
     }
 
     strong {

@@ -1,9 +1,4 @@
 <div id="preloader" ng-if="showPreloader" ng-cloak>
-  <div class="text">
-    <img src="assets/images/preloader/this-site-is.svg" alt="This site is">
-    <img ng-src="assets/images/preloader/progress-{{ preloaderProgress }}.svg" alt="Progress" class="large">
-    <img src="assets/images/preloader/percentage-loaded.svg" alt="Percentage Loaded">
-  </div>
-
+  <p><img src="assets/images/this-site-is.svg" alt="This site is"><strong ng-bind="preloaderProgress">zero</strong><img src="assets/images/percentage-loaded.svg" alt="Percentage Loaded"></p>
   <img src="assets/images/logo.svg" alt="Hyperion Logo">
 </div>
