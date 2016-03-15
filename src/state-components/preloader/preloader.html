@@ -1,4 +1,16 @@
 <div id="preloader" ng-if="showPreloader" ng-cloak>
-  <p>The site is<br><strong ng-bind="preloaderProgress">zero</strong><br>PERCENT LOADED</p>
-  <img src="assets/images/logo.svg" alt="Hyperion Logo">
+  <div class="opaque-background"></div>
+
+  <div class="knob-and-logo-container">
+    <div class="knob-and-logo">
+      <img src="assets/images/logo.svg" alt="Hyperion Creative Studio Logo" class="big-logo">
+      <div class="spinner"></div>
+    </div>
+  </div>
+  <div class="text-container">
+    <div class="text">
+      <div class="hello" hyp-greetings></div>
+      <div class="website">www.hyperion.co</div>
+    </div>
+  </div>
 </div>
