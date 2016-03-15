@@ -164,13 +164,6 @@
       .project-image {
         @include transform(scale(1.03) translateZ(0));
       }
-
-      .project-description {
-        &__icon {
-          opacity: 0.5;
-          @include transform(translate3d(0,0,0));
-        }
-      }
     }
 
     &:last-child {
@@ -256,16 +249,6 @@
       &__name-and-field {
         color: #7e8385;
         float: right;
-      }
-
-      &__icon {
-        display: inline-block;
-        font-size: 11px;
-        opacity: 0;
-        padding-right: 7px;
-
-        @include transform(translate3d(-19px,0,0));
-        @include transition(opacity $this-transition, transform $this-transition);
       }
     }
   }
