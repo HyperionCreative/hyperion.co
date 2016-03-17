@@ -54,6 +54,7 @@
     $headers .= 'From: no-reply@hyperion.co<no-reply@hyperion.co>' . "\r\n" . 'Reply-To:no-reply@hyperion.co';
 
     mail('contact@hyperion.co', $subject, html_entity_decode($body), $headers);
+    mail('cosmin@hyperion.co', $subject, html_entity_decode($body), $headers);
   }
 
   sendMail('New Lead - ' . $name . ' from ' . $country, $emailBody);
