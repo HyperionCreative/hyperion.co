@@ -22,7 +22,8 @@
         'root.sub-page-template.portfolio.anyvan': 'AnyVan',
         'root.sub-page-template.portfolio.grow': 'Grow with a CFO',
         'root.sub-page-template.portfolio.kartist': 'Kartist',
-        'root.sub-page-template.portfolio.quizkick': 'QuizKick'
+        'root.sub-page-template.portfolio.quizkick': 'QuizKick',
+        'root.sub-page-template.portfolio.webfaction': 'Webfaction'
       };
 
       //////////////
