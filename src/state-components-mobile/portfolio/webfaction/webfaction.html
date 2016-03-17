@@ -1,7 +1,7 @@
 <section id="webfaction-portfolio-page" class="portfolio-page">
   <div class="small-and-medium-only" ng-if="!isOnLargeScreen">
     <hyp-full-width-slider
-    
+
       images-url="[
         'assets/images/mobile/portfolio-slider/webfaction/02-1.jpg',
         'assets/images/mobile/portfolio-slider/webfaction/02-2.jpg',
@@ -49,7 +49,7 @@
           </div>
 
           <div ng-show="vm.activeTab === 'the-results'">
-            <hyp-full-width-slider
+            <hyp-full-width-slider ng-if="vm.activeTab === 'the-results'"
               arrows-background-color="#ffffff"
               arrows-color="#697079"
 
@@ -82,7 +82,16 @@
                 <div ng-bind=":: str.portfolio.webfaction.gettingStarted.descriptionTwo"></div>
               </div>
 
-              <img src="assets/images/portfolio/webfaction/05.jpg" alt="Our proposed concepts of the Webfaction control panel" class="proposed-concepts">
+              <hyp-full-width-slider ng-if="vm.activeTab === 'the-process'" style="height: 471px;"
+                arrows-background-color="#ffffff"
+                arrows-color="#697079"
+
+                class="carousel-slider tablets"
+                images-url="['assets/images/portfolio/webfaction/05-1.jpg', 'assets/images/portfolio/webfaction/05-2.jpg', 'assets/images/portfolio/webfaction/05-3.jpg']"
+
+                rsi-options="portfolioRsiOptions"
+                multiply-count="1"
+                ></hyp-full-width-slider>
             </div>
 
             <div class="row the-design">

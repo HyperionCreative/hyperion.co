@@ -5,7 +5,7 @@
 
   angular
     .module('common.full-width-slider', [])
-    .directive('hypFullWidthSlider', function () {
+    .directive('hypFullWidthSlider', ['$timeout', function ($timeout) {
       var MIN_SLIDES_COUNT = 12;
       // This is used to multiply the slides. As Royal Slider doesn't append
       // the next element until the transition has started, a user may see a
@@ -71,25 +71,27 @@
             appendslidesHtml(sliderContainer, scope.slidesHtml, multiplyCount);
           }
 
-          var rsi = sliderContainer.royalSlider(angular.isObject(scope.rsiOptions) ? angular.extend(angular.copy(defaultRsiOptions), scope.rsiOptions) : defaultRsiOptions).data('royalSlider');
+          $timeout(function () {
+            var rsi = sliderContainer.royalSlider(angular.isObject(scope.rsiOptions) ? angular.extend(angular.copy(defaultRsiOptions), scope.rsiOptions) : defaultRsiOptions).data('royalSlider');
 
-          // Bind the controls to the arrows
-          angular.element(iElement[0].querySelector('.controls .icon-arrow-left'))
-            .on('click', function () {
-              rsi.prev();
+            // Bind the controls to the arrows
+            angular.element(iElement[0].querySelector('.controls .icon-arrow-left'))
+              .on('click', function () {
+                rsi.prev();
+              });
+
+            angular.element(iElement[0].querySelector('.controls .icon-arrow-right'))
+              .on('click', function () {
+                rsi.next();
+              });
+
+            scope.showNavigationArrows = angular.isString(scope.arrowsBackgroundColor) && angular.isString(scope.arrowsColor);
+
+            // Exports the royal slider instance
+            scope.onInit({
+              rsi: rsi
             });
-
-          angular.element(iElement[0].querySelector('.controls .icon-arrow-right'))
-            .on('click', function () {
-              rsi.next();
-            });
-
-          scope.showNavigationArrows = angular.isString(scope.arrowsBackgroundColor) && angular.isString(scope.arrowsColor);
-
-          // Exports the royal slider instance
-          scope.onInit({
-            rsi: rsi
-          });
+          }, 10);
         },
         replace: true,
         restrict: 'E',
@@ -108,5 +110,5 @@
         },
         templateUrl: 'common/royal-slider/full-width/full-width.html'
       };
-    });
+    }]);
 })();

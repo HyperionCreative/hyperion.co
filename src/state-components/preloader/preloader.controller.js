@@ -38,6 +38,21 @@
         Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/kartist/dev-left.jpg');
         Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/kartist/dev-right.jpg');
 
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/webfaction/logo.png');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/webfaction/01.jpg');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/webfaction/02-1.jpg');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/webfaction/02-2.jpg');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/webfaction/02-3.jpg');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/webfaction/02-4.jpg');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/webfaction/02-5.jpg');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/webfaction/03.jpg');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/webfaction/04.jpg');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/webfaction/05-1.jpg');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/webfaction/05-2.jpg');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/webfaction/05-3.jpg');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/webfaction/06.jpg');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/webfaction/08.jpg');
+
         Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/quizkick/logo.png');
         Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/quizkick/1.jpg');
 

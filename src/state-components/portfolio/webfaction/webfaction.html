@@ -25,7 +25,7 @@
         </div>
 
         <div ng-show="vm.activeTab === 'the-results'">
-          <hyp-carousel-slider
+          <hyp-carousel-slider ng-if="vm.activeTab === 'the-results'"
             arrows-background-color="#ffffff"
             arrows-color="#697079"
             images-url="['assets/images/portfolio/webfaction/02-1.jpg', 'assets/images/portfolio/webfaction/02-2.jpg', 'assets/images/portfolio/webfaction/02-3.jpg', 'assets/images/portfolio/webfaction/02-4.jpg', 'assets/images/portfolio/webfaction/02-5.jpg']"
@@ -53,7 +53,11 @@
               <div ng-bind=":: str.portfolio.webfaction.gettingStarted.descriptionTwo"></div>
             </div>
 
-            <img src="assets/images/portfolio/webfaction/05.jpg" alt="Our proposed concepts of the Webfaction control panel" class="proposed-concepts">
+            <hyp-carousel-slider ng-if="vm.activeTab === 'the-process'" style="height: 553px;"
+              arrows-background-color="#ffffff"
+              arrows-color="#697079"
+              images-url="['assets/images/portfolio/webfaction/05-1.jpg', 'assets/images/portfolio/webfaction/05-2.jpg', 'assets/images/portfolio/webfaction/05-3.jpg']"
+              ></hyp-carousel-slider>
           </div>
 
           <div class="row the-design">
