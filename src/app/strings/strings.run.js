@@ -68,7 +68,7 @@
         // Be careful when editing coverDescription as it may break the ellipsis. Make sure to check the portfolio page to make sure
         // the ellipsis is still there.
         portfolio: {
-          navigationHamburgerAnchorText: 'Portfolio',
+          navigationHamburgerAnchorText: 'Projects',
           header: {
             title: 'Selected Projects',
             description: 'These are some of our most recent projects, that we can talk about. Click on each preview to learn more about the work we did.'
