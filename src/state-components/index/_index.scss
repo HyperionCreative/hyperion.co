@@ -29,7 +29,7 @@
 
   // The logo style
   .logo {
-    color: #adb0b3;
+    color: rgba(#868d95, 0.8);
     font-family: $Rosario-Regular;
     font-size: 15px;
 
@@ -45,7 +45,7 @@
     }
 
     span {
-      border-left: 1px solid #d6d7d9;
+      border-left: 1px solid rgba(#868d95, 0.3);;
       line-height: 35px;
       margin-left: 17px;
       padding-left: 13px;
