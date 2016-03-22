@@ -592,10 +592,10 @@ module.exports = function (grunt) {
 
     replace: {
       htaccess: {
-        src: '<%= yeoman.dist %>/htaccess.html',
-        dest: '<%= yeoman.dist %>/htaccess.html',
+        src: '<%= yeoman.dist %>/.htaccess',
+        dest: '<%= yeoman.dist %>/.htaccess',
         replacements: [{
-          from: /\#\@\@\@(.+)\@\@\@\#>/gmi,
+          from: /\#\@\@\@(.+)\@\@\@\#/gmi,
           to: '$1'
         }]
       },
