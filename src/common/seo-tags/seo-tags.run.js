@@ -19,13 +19,13 @@
           }
 
           if (angular.isString(toState.data.page.description) && toState.data.page.description.length > 0) {
-            pageDescription.attr('description', toState.data.page.description);
+            pageDescription.attr('content', toState.data.page.description);
           } else {
             console.warn(toState.name + ' is missing the page description property');
           }
 
           if (angular.isString(toState.data.page.keywords) && toState.data.page.keywords.length > 0) {
-            pageKeywords.attr('keywords', toState.data.page.keywords);
+            pageKeywords.attr('content', toState.data.page.keywords);
           } else {
             console.warn(toState.name + ' is missing the page keywords property');
           }
