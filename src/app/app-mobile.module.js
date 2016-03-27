@@ -24,7 +24,6 @@
       'common.greeter',
       'common.full-width-slider',
       'common.seo-tags',
-      'common.ua-parser',
 
       //////////////////////
       // Specific Modules //
