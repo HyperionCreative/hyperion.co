@@ -70,8 +70,8 @@
         portfolio: {
           navigationHamburgerAnchorText: 'Projects',
           header: {
-            title: 'Selected Projects',
-            description: 'These are some of our most recent projects, that we can talk about. Click on each preview to learn more about the work we did.'
+            title: '<h2>Selected Projects</h2>',
+            description: '<h1 style="display: inline-block;">Here are some of the most recent projects we can talk about.</h1> Click on each preview to learn more about the work we did and our approaches.'
           },
 
           anyvan: {

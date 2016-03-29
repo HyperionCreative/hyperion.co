@@ -9,9 +9,9 @@
         .state('root.sub-page-template.portfolio', {
           data: {
             page: {
-              title: 'Our Work - Hyperion',
-              description: 'These are some of our most recent projects, that we can talk about. Click on each preview to learn more about the work we did.',
-              keywords: 'hyperion, hyperion creative, projects, work'
+              title: 'Projects - Hyperion',
+              description: 'View case studies on some of our UI and web design projects and learn more about our approaches.',
+              keywords: 'hyperion, projects, portfolio, clients'
             }
           },
           url: '/portfolio',
