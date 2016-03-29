@@ -502,7 +502,7 @@ module.exports = function (grunt) {
 
             return contents;
           },
-          reduce: function (results, options) {
+          reduce: function (results) {
             return results[0].contents;
           }
         },
