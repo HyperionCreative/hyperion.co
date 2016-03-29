@@ -33,7 +33,7 @@
     font-family: $Rosario-Regular;
     font-size: 15px;
 
-    img, span {
+    img, h1 {
       display: inline-block;
       vertical-align: middle;
     }
@@ -44,15 +44,15 @@
       width: auto;
     }
 
-    span {
+    h1 {
       border-left: 1px solid rgba(#868d95, 0.3);;
       line-height: 35px;
       margin-left: 17px;
       padding-left: 13px;
-    }
 
-    strong {
-      font-family: $Rosario-Bold;
+      span {
+        font-family: $Rosario-Bold;
+      }
     }
   }
 }
