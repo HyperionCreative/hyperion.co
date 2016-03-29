@@ -39,14 +39,24 @@
     .description {
       background: #ffffff;
       padding: 48px 50px;
+      @include legacy-pie-clearfix;
     }
 
-    strong {
+    &__title {
       color: #000000;
+      float: left;
+      font-family: $HelveticaNeue-Bold;
+      line-height: $normal-line-height;
+      margin-right: 4px;
+      margin-top: -1px; // This vertically aligns the title with the paragraph
     }
 
-    p:not(:last-child) {
-      margin-bottom: $normal-line-height;
+    p {
+      line-height: $normal-line-height;
+
+      &:not(:last-child) {
+        margin-bottom: $normal-line-height;
+      }
     }
   }
 }
