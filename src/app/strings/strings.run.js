@@ -32,14 +32,14 @@
         },
 
         expertise: {
-          navigationHamburgerAnchorText: 'About',
+          navigationHamburgerAnchorText: 'Services',
           header: {
-            title: 'About Us',
-            description: 'As a design consulting firm, with only a small team - for now, our job is to help bring your ideas to life. We organise, we create and we solve problems.'
+            title: '<h3>Our Services</h3>',
+            description: '<h2>As a design consulting firm, with only a small team for now, our job is to help bring your ideas to life. We organise, we create and we solve problems.</h2>'
           },
           design: {
             tabName: 'Design',
-            title: 'UI/UX',
+            title: 'UI / Web',
             description: '<p>We believe good design should make sense to the people using it, that it should be adequate, beautiful, logical and empathetic towards the user. We see technology as a catalyst for change, improving people\'s lives in increasingly natural and almost invisible ways. To design products that meet these standards, we try to look at the whole picture, make sense of the problem we are trying to solve and plan accordingly - when every detail has its place and purpose, creativity and function come together naturally.</p>'
           },
           development: {
