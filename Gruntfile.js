@@ -275,7 +275,18 @@ module.exports = function (grunt) {
         assetsDirs: [
           '<%= yeoman.dist %>',
           '<%= yeoman.dist %>/assets'
-        ]
+        ],
+        blockReplacements: {
+          js: function (block) {
+            var jsAttrs = '';
+
+            if (block.dest === 'scripts/all-mobile-scripts.js') {
+              jsAttrs = 'async defer';
+            }
+
+            return '<script ' + jsAttrs + ' src="' + block.dest + '"><\/script>';
+          }
+        }
       }
     },
 
@@ -624,8 +635,8 @@ module.exports = function (grunt) {
         }]
       },
       scriptsMobile: {
-        src: '.tmp/concat/scripts/scripts-mobile.js',
-        dest: '.tmp/concat/scripts/scripts-mobile.js',
+        src: '.tmp/concat/scripts/all-mobile-scripts.js',
+        dest: '.tmp/concat/scripts/all-mobile-scripts.js',
         replacements: [{
           from: /\/\*\@\@\@(.+)\@\@\@\*\//gmi,
           to: '$1'
