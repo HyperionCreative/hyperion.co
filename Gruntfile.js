@@ -604,39 +604,31 @@ module.exports = function (grunt) {
     replace: {
       htaccess: {
         src: '<%= yeoman.dist %>/.htaccess',
-        dest: '<%= yeoman.dist %>/.htaccess',
+        overwrite: true,
         replacements: [{
           from: /\#\@\@\@(.+)\@\@\@\#/gmi,
           to: '$1'
         }]
       },
-      index: {
-        src: '<%= yeoman.dist %>/index.html',
-        dest: '<%= yeoman.dist %>/index.html',
+      html: {
+        src: '<%= yeoman.dist %>/*.html',
+        overwrite: true,
         replacements: [{
-          from: /<\!\-\-\@\@\@(.+)\@\@\@\-\-\>/gmi,
-          to: '$1'
-        }]
-      },
-      indexMobile: {
-        src: '<%= yeoman.dist %>/index-mobile.html',
-        dest: '<%= yeoman.dist %>/index-mobile.html',
-        replacements: [{
-          from: /<\!\-\-\@\@\@(.+)\@\@\@\-\-\>/gmi,
+          from: /<\!\-\-\@\@\@(.+)\@\@\@\-\->/gmi,
           to: '$1'
         }]
       },
       scripts: {
-        src: '.tmp/concat/scripts/scripts.js',
-        dest: '.tmp/concat/scripts/scripts.js',
+        src: '.tmp/concat/scripts/*.js',
+        overwrite: true,
         replacements: [{
           from: /\/\*\@\@\@(.+)\@\@\@\*\//gmi,
           to: '$1'
         }]
       },
-      scriptsMobile: {
-        src: '.tmp/concat/scripts/all-mobile-scripts.js',
-        dest: '.tmp/concat/scripts/all-mobile-scripts.js',
+      styles: {
+        src: '.tmp/styles/*.css',
+        overwrite: true,
         replacements: [{
           from: /\/\*\@\@\@(.+)\@\@\@\*\//gmi,
           to: '$1'
@@ -706,7 +698,7 @@ module.exports = function (grunt) {
     'concurrent:dist',
     'concat',
     'copy:dist',
-    // 'replace',
+    'replace',
     'cssmin',
     'uglify',
     'filerev',
