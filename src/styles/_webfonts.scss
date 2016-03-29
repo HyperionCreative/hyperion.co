@@ -46,7 +46,8 @@
 
 
 /* @import must be at top of file, otherwise CSS will not work - o'rly?*/
-/*@@@ @import url("//hello.myfonts.net/count/309d05"); @@@*/
+// This is done via an async script in index.html / index-mobile.html
+// @import url("//hello.myfonts.net/count/309d05");
 
 ///////////////
 // Helvetica //
