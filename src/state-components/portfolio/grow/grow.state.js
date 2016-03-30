@@ -8,8 +8,8 @@
           data: {
             page: {
               title: 'Grow with a CFO - Hyperion',
-              description: 'We worked with Grow with a CFO in 2015 to help them design their website and more easily showcase their services and processes.',
-              keywords: 'grow with a cfo, grow, financial, financial consulting, services, website, site, web design, responsive, code, html, css'
+              description: 'Learn more about the website we developed for Grow with a CFO.',
+              keywords: 'hyperion, grow with a cfo, grow, financial, financial consulting, services, website, site, web design, responsive, code, html, css'
             }
           },
           url: '/grow',

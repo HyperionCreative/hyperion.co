@@ -9,8 +9,8 @@
           data: {
             page: {
               title: 'AnyVan - Hyperion',
-              description: 'We worked with AnyVan in early 2014 to help them design their then upcoming iOS app. We handled the UI and UX and worked with their team to help them make it a reality.',
-              keywords: 'anyvan, transport, company, design, mobile app, application, iOS, ui, interface'
+              description: 'You can learn more about the mobile interface we created for AnyVan.',
+              keywords: 'hyperion, anyvan, transport, company, design, mobile app, application, iOS, ui, interface'
             }
           },
           url: '/anyvan',

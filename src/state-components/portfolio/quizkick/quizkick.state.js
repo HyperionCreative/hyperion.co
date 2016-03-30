@@ -8,8 +8,8 @@
           data: {
             page: {
               title: 'QuizKick - Hyperion',
-              description: 'QuizKick tried to create a game that would give football fans around the world a chance to prove their knowledge. We worked on the design and the back end of the system.',
-              keywords: 'quizkick, football, quiz, game, design, interface, back-end, development, download, animations, showcase'
+              description: 'Find more details about the interface we designed for QuizKick.',
+              keywords: 'hyperion, quizkick, football, quiz, game, design, interface, back-end, development, motion'
             }
           },
           url: '/quizkick',

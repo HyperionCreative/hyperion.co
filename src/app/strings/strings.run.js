@@ -79,8 +79,8 @@
             field: 'Mobile UI',
             sliderDescription: 'We worked with AnyVan in early 2014 to help them design their then upcoming iOS app. We handled the UI and UX and worked with their team to help them make it a reality.',
 
-            header: 'We worked with <strong>AnyVan</strong> in early 2014 to help them design their then upcoming iOS app. We handled the UI and UX and worked with their team to help them make it a reality.',
-            tabletHeader: 'We worked with <strong>AnyVan</strong> in early 2014 to help them design their then upcoming iOS app. We handled the UI/UX and helped them implement it.',
+            header: '<h2>We worked with <strong>AnyVan</strong> in early 2014 to help them design their then upcoming iOS app. We handled the UI and UX and worked with their team to help them make it a reality.</h2>',
+            tabletHeader: '<h2>We worked with <strong>AnyVan</strong> in early 2014 to help them design their then upcoming iOS app. We handled the UI/UX and helped them implement it.</h2>',
 
             generic: {
               title: 'AnyVan',
@@ -92,8 +92,8 @@
             field: 'UI/UX + Front-end Coding',
             sliderDescription: 'The shots above are from one of our most recent projects, Kartist. Their app is intended to help shoppers everywhere manage their lists, find inspiration and connect with like-minded people.',
 
-            header: 'We worked with <strong>Kartist</strong> in early 2015 - their platform aims to help shoppers everywhere manage their lists, find inspiration and connect with like-minded people.',
-            tabletHeader: 'We worked with <strong>Kartist</strong> in early 2015 - their platform aims to help shoppers manage their lists, find inspiration and connect with like-minded people.',
+            header: '<h2>We worked with <strong>Kartist</strong> in early 2015 - their platform aims to help shoppers everywhere manage their lists, find inspiration and connect with like-minded people.</h2>',
+            tabletHeader: '<h2>We worked with <strong>Kartist</strong> in early 2015 - their platform aims to help shoppers manage their lists, find inspiration and connect with like-minded people.</h2>',
 
             // design
             uiAndCode: {
@@ -132,8 +132,8 @@
             projectName: 'Grow with a CFO',
             field: 'Website Design',
 
-            header: 'We worked with <strong>Grow with a CFO</strong> in 2015 to help them design their website and more easily showcase their services and processes.',
-            tabletHeader: 'We worked with <strong>Grow with a CFO</strong> in 2015 to help them design their website and more easily showcase their services and processes.',
+            header: '<h2>We worked with <strong>Grow with a CFO</strong> in 2015 to help them design their website and more easily showcase their services and processes.</h2>',
+            tabletHeader: '<h2>We worked with <strong>Grow with a CFO</strong> in 2015 to help them design their website and more easily showcase their services and processes.</h2>',
 
             generic: {
               title: 'Grow with a CFO',
@@ -145,8 +145,8 @@
             field: 'UI/UX + Back End',
             sliderDescription: 'QuizKick tried to create a game that would give football fans around the world a chance to prove their knowledge. We worked on the design and the back end of the system.',
 
-            header: '<strong>QuizKick</strong> tried to create a game that would give football fans around the world a chance to prove their knowledge. We worked on the design and the back end of the system.',
-            tabletHeader: '<strong>QuizKick</strong> wanted to create a game for football fans around the world could prove their knowledge & skills. We worked on the UI and the back end.',
+            header: '<h2><strong>QuizKick</strong> tried to create a game that would give football fans around the world a chance to prove their knowledge. We worked on the design and the back end of the system.</h2>',
+            tabletHeader: '<h2><strong>QuizKick</strong> wanted to create a game for football fans around the world could prove their knowledge & skills. We worked on the UI and the back end.</h2>',
 
             aim: {
               title: 'QuizKick',
@@ -161,8 +161,8 @@
             projectName: 'Webfaction',
             field: 'UI/UX + Front-end Coding',
 
-            header: '<strong>Webfaction</strong> is our hosting provider and we worked with them in late 2015 to create a simpler, more intuitive control panel for their platform.',
-            tabletHeader: '<strong>Webfaction</strong> is our hosting provider and we worked with them in late 2015 to create a simpler, more intuitive control panel for their platform.',
+            header: '<h2><strong>Webfaction</strong> is our hosting provider and we worked with them in late 2015 to create a simpler, more intuitive control panel for their platform.</h2>',
+            tabletHeader: '<h2><strong>Webfaction</strong> is our hosting provider and we worked with them in late 2015 to create a simpler, more intuitive control panel for their platform.</h2>',
 
             freshNewLook: {
               title: 'A Fresh new Look',

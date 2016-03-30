@@ -39,8 +39,11 @@
     }
   }
 
-  .description p {
-    max-width: 525px;
+  .description {
+    h2, p {
+      line-height: $normal-line-height;
+      max-width: 525px;
+    }
   }
 
   .logo {
