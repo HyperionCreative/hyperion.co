@@ -7,17 +7,17 @@
   </url>
 
   <url>
-    <loc>http://www.hyperion.co/about/design</loc>
+    <loc>http://www.hyperion.co/services/design</loc>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>http://www.hyperion.co/about/development</loc>
+    <loc>http://www.hyperion.co/services/development</loc>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>http://www.hyperion.co/about/consulting</loc>
+    <loc>http://www.hyperion.co/services/consulting</loc>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
