@@ -27,6 +27,8 @@
     # in a continuous redirect loop!
     DirectorySlash Off
 
+    RewriteRule ^(.*)/$ /$1 [R=301,L]
+
 
 # ##############################################################################
 # # High DPI Images and Videos                                                 #
