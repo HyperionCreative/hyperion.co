@@ -7,7 +7,7 @@
       $stateProvider
         .state('portfolio.anyvan', {
           data: {
-            page: {
+            simpleSeo: {
               title: 'AnyVan - Hyperion',
               description: 'You can learn more about the mobile interface we created for AnyVan.',
               keywords: 'hyperion, anyvan, transport, company, design, mobile app, application, iOS, ui, interface'

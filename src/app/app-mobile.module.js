@@ -23,7 +23,7 @@
       /*@@@ 'common.google-analytics', @@@*/
       'common.greeter',
       'common.full-width-slider',
-      'common.seo-tags',
+      'common.simple-seo',
 
       //////////////////////
       // Specific Modules //

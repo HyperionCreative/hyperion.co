@@ -27,7 +27,7 @@
         })
         .state('root.sub-page-template.expertise.consulting', {
           data: {
-            page: {
+            simpleSeo: {
               title: 'Birmingham Design Consulting - Hyperion',
               description: 'We can help your business understand design and ensure it works to help achieve your goals.',
               keywords: 'design consulting, design consultant'
@@ -42,7 +42,7 @@
         })
         .state('root.sub-page-template.expertise.design', {
           data: {
-            page: {
+            simpleSeo: {
               title: 'Birmingham Design Services - Hyperion',
               description: 'We offer high quality UI, design, and web design services to clients in Birmingham and across the UK',
               keywords: 'ui, design, web design, services, birmingham'
@@ -57,7 +57,7 @@
         })
         .state('root.sub-page-template.expertise.development', {
           data: {
-            page: {
+            simpleSeo: {
               title: 'Birmingham Web Development - Hyperion',
               description: 'At Hyperion, a Birmingham based design firm, we specialise in front-end and web development.',
               keywords: 'front-end development, website development, web development'

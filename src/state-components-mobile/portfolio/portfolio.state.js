@@ -7,7 +7,7 @@
         .state('portfolio', {
           abstract: true,
           data: {
-            page: {
+            simpleSeo: {
               title: 'Our Work - Hyperion',
               description: 'These are some of our most recent projects, that we can talk about. Click on each preview to learn more about the work we did.',
               keywords: 'hyperion, hyperion creative, projects, work'

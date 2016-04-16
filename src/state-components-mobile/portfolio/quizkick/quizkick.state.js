@@ -7,7 +7,7 @@
       $stateProvider
         .state('portfolio.quizkick', {
           data: {
-            page: {
+            simpleSeo: {
               title: 'QuizKick - Hyperion',
               description: 'Find more details about the interface we designed for QuizKick.',
               keywords: 'hyperion, quizkick, football, quiz, game, design, interface, back-end, development, motion'
