@@ -27,8 +27,8 @@ module.exports = function (config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'bower_components/jquery/dist/jquery.js',
       // bower:js
+      'bower_components/jquery/dist/jquery.js',
       'bower_components/es5-shim/es5-shim.js',
       'bower_components/angular/angular.js',
       'bower_components/angular-animate/angular-animate.js',
@@ -50,17 +50,17 @@ module.exports = function (config) {
       'src/common/**/*.module.js',
       'src/common/**/*.js',
 
-      'src/app/**/*.module.js',
-      'src/app/**/*.js',
-
-      'src/state-components/**/*.module.js',
-      'src/state-components/**/*.js',
+      // 'src/app/**/*.module.js',
+      // 'src/app/**/*.js',
+      //
+      // 'src/state-components/**/*.module.js',
+      // 'src/state-components/**/*.js',
 
       // All the directives' templates.
       // todo rename the templates to <name>.tpl.html ?
-      'src/app/**/*.html',
-      'src/common/**/*.html',
-      'src/state-components/**/*.html',
+      // 'src/app/**/*.html',
+      // 'src/common/**/*.html',
+      // 'src/state-components/**/*.html',
 
       'src/**/*.spec.js'
     ],
@@ -80,12 +80,21 @@ module.exports = function (config) {
     // - PhantomJS
     // - IE (only Windows)
     browsers: [
-      'PhantomJS'
+      'PhantomJS',
+
+      'Chrome',
+      'Firefox',
+      'IE'
     ],
 
     // Which plugins to enable
     plugins: [
       'karma-phantomjs-launcher',
+
+      'karma-chrome-launcher',
+      'karma-firefox-launcher',
+      'karma-ie-launcher',
+
       'karma-jasmine',
 
       'karma-ng-html2js-preprocessor'

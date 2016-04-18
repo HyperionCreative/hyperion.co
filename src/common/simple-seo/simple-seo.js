@@ -3,7 +3,7 @@
 
   angular
     .module('common.simple-seo', [])
-    .run(['$document', '$rootScope', function ($document, $rootScope) {
+    .service('simpleSeoService', ['$document', function ($document) {
       ///////////////
       // Variables //
       ///////////////
@@ -15,16 +15,42 @@
         return createMetaTag('keywords');
       });
 
-      ///////////////
-      // Run block //
-      ///////////////
-      $rootScope.$on('$stateChangeSuccess', function (event, toState) {
-        updateSeoTags(angular.isDefined(toState.data) && angular.isObject(toState.data.simpleSeo) ? toState.data.simpleSeo : {});
+      //////////////
+      // Bindings //
+      //////////////
+      Object.defineProperty(this, 'title', {
+        get: function () {
+          return pageTitle.text();
+        },
+        set: function (value) {
+          pageTitle.text(angular.isString(value) ? value : '');
+        },
+        enumerable: true
       });
 
-      ///////////////
-      // Functions //
-      ///////////////
+      Object.defineProperty(this, 'description', {
+        get: function () {
+          return pageDescription.attr('content');
+        },
+        set: function (value) {
+          pageDescription.attr('content', angular.isString(value) ? value : '');
+        },
+        enumerable: true
+      });
+
+      Object.defineProperty(this, 'keywords', {
+        get: function () {
+          return pageKeywords.attr('content');
+        },
+        set: function (value) {
+          pageKeywords.attr('content', angular.isString(value) ? value : '');
+        },
+        enumerable: true
+      });
+
+      ///////////////////////
+      // Private functions //
+      ///////////////////////
       function getSeoTag(selector, createElementFn) {
         var toReturn = $document[0].querySelector(selector);
 
@@ -47,11 +73,22 @@
 
         return metaTagToCreate;
       }
+    }])
+    .run(['$rootScope', 'simpleSeoService', function ($rootScope, simpleSeoService) {
+      ///////////////
+      // Run block //
+      ///////////////
+      $rootScope.$on('$stateChangeSuccess', function (event, toState) {
+        updateSeoTags(angular.isDefined(toState.data) && angular.isObject(toState.data.simpleSeo) ? toState.data.simpleSeo : {});
+      });
 
+      ///////////////
+      // Functions //
+      ///////////////
       function updateSeoTags(seoTags) {
-        pageTitle.text(angular.isString(seoTags.title) ? seoTags.title : '');
-        pageDescription.attr('content', angular.isString(seoTags.description) ? seoTags.description : '');
-        pageKeywords.attr('content', angular.isString(seoTags.keywords) ? seoTags.keywords : '');
+        simpleSeoService.title = seoTags.title;
+        simpleSeoService.description = seoTags.description;
+        simpleSeoService.keywords = seoTags.keywords;
       }
     }]);
 })();
