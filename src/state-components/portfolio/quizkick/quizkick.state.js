@@ -6,11 +6,9 @@
       $stateProvider
         .state('root.sub-page-template.portfolio.quizkick', {
           data: {
-            simpleSeo: {
-              title: 'QuizKick - Hyperion',
-              description: 'Find more details about the interface we designed for QuizKick.',
-              keywords: 'hyperion, quizkick, football, quiz, game, design, interface, back-end, development, motion'
-            }
+            simpleSeoTitle: 'QuizKick - Hyperion',
+            simpleSeoDescription: 'Find more details about the interface we designed for QuizKick.',
+            simpleSeoKeywords: 'hyperion, quizkick, football, quiz, game, design, interface, back-end, development, motion'
           },
           url: '/quizkick',
           views: {

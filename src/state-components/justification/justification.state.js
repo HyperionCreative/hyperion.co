@@ -8,11 +8,9 @@
       $stateProvider
         .state('root.sub-page-template.justification', {
           data: {
-            simpleSeo: {
-              title: 'Why work with us - Hyperion',
-              description: 'We believe our expertise, experience and ideas can help make any project a successful one.',
-              keywords: 'design process, development process, software development process, process, product design, redesign, consultation'
-            }
+            simpleSeoTitle: 'Why work with us - Hyperion',
+            simpleSeoDescription: 'We believe our expertise, experience and ideas can help make any project a successful one.',
+            simpleSeoKeywords: 'design process, development process, software development process, process, product design, redesign, consultation'
           },
           url: '/justification',
           views: {

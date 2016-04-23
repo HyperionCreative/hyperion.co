@@ -8,11 +8,9 @@
       $stateProvider
         .state('root.sub-page-template.portfolio', {
           data: {
-            simpleSeo: {
-              title: 'Projects - Hyperion',
-              description: 'View case studies on some of our UI and web design projects and learn more about our approaches.',
-              keywords: 'hyperion, projects, portfolio, clients'
-            }
+            simpleSeoTitle: 'Projects - Hyperion',
+            simpleSeoDescription: 'View case studies on some of our UI and web design projects and learn more about our approaches.',
+            simpleSeoKeywords: 'hyperion, projects, portfolio, clients'
           },
           url: '/portfolio',
           views: {

@@ -2,7 +2,9 @@
   'use strict';
 
   angular
-    .module('common.simple-seo', [])
+    .module('common.simple-seo', [
+      'ui.router'
+    ])
     .service('simpleSeoService', ['$document', function ($document) {
       ///////////////
       // Variables //
@@ -79,16 +81,11 @@
       // Run block //
       ///////////////
       $rootScope.$on('$stateChangeSuccess', function (event, toState) {
-        updateSeoTags(angular.isDefined(toState.data) && angular.isObject(toState.data.simpleSeo) ? toState.data.simpleSeo : {});
+        if (angular.isDefined(toState.data)) {
+          simpleSeoService.title = toState.data.simpleSeoTitle;
+          simpleSeoService.description = toState.data.simpleSeoDescription;
+          simpleSeoService.keywords = toState.data.simpleSeoKeywords;
+        }
       });
-
-      ///////////////
-      // Functions //
-      ///////////////
-      function updateSeoTags(seoTags) {
-        simpleSeoService.title = seoTags.title;
-        simpleSeoService.description = seoTags.description;
-        simpleSeoService.keywords = seoTags.keywords;
-      }
     }]);
 })();

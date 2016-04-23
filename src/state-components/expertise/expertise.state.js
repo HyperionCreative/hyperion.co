@@ -27,11 +27,9 @@
         })
         .state('root.sub-page-template.expertise.consulting', {
           data: {
-            simpleSeo: {
-              title: 'Birmingham Design Consulting - Hyperion',
-              description: 'We can help your business understand design and ensure it works to help achieve your goals.',
-              keywords: 'design consulting, design consultant'
-            }
+            simpleSeoTitle: 'Birmingham Design Consulting - Hyperion',
+            simpleSeoDescription: 'We can help your business understand design and ensure it works to help achieve your goals.',
+            simpleSeoKeywords: 'design consulting, design consultant'
           },
           url: '/consulting',
           views: {
@@ -42,11 +40,9 @@
         })
         .state('root.sub-page-template.expertise.design', {
           data: {
-            simpleSeo: {
-              title: 'Birmingham Design Services - Hyperion',
-              description: 'We offer high quality UI, design, and web design services to clients in Birmingham and across the UK',
-              keywords: 'ui, design, web design, services, birmingham'
-            }
+            simpleSeoTitle: 'Birmingham Design Services - Hyperion',
+            simpleSeoDescription: 'We offer high quality UI, design, and web design services to clients in Birmingham and across the UK',
+            simpleSeoKeywords: 'ui, design, web design, services, birmingham'
           },
           url: '/design',
           views: {
@@ -57,11 +53,9 @@
         })
         .state('root.sub-page-template.expertise.development', {
           data: {
-            simpleSeo: {
-              title: 'Birmingham Web Development - Hyperion',
-              description: 'At Hyperion, a Birmingham based design firm, we specialise in front-end and web development.',
-              keywords: 'front-end development, website development, web development'
-            }
+            simpleSeoTitle: 'Birmingham Web Development - Hyperion',
+            simpleSeoDescription: 'At Hyperion, a Birmingham based design firm, we specialise in front-end and web development.',
+            simpleSeoKeywords: 'front-end development, website development, web development'
           },
           url: '/development',
           views: {

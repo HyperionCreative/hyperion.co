@@ -7,11 +7,9 @@
       $stateProvider
         .state('portfolio.grow', {
           data: {
-            simpleSeo: {
-              title: 'Grow with a CFO - Hyperion',
-              description: 'Learn more about the website we developed for Grow with a CFO.',
-              keywords: 'hyperion, grow with a cfo, grow, financial, financial consulting, services, website, site, web design, responsive, code, html, css'
-            }
+            simpleSeoTitle: 'Grow with a CFO - Hyperion',
+            simpleSeoDescription: 'Learn more about the website we developed for Grow with a CFO.',
+            simpleSeoKeywords: 'hyperion, grow with a cfo, grow, financial, financial consulting, services, website, site, web design, responsive, code, html, css'
           },
           url: '/grow',
           views: {

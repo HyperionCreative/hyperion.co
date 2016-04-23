@@ -6,11 +6,9 @@
       $stateProvider
         .state('portfolio.webfaction', {
           data: {
-            simpleSeo: {
-              title: 'Webfaction - Hyperion',
-              description: 'This is a case study of a redesign project we did for Webfaction, our hosting provider.',
-              keywords: 'hyperion, webfaction, hosting, host, interface, dashboard, front end, angular, angularjs, design, clean'
-            }
+            simpleSeoTitle: 'Webfaction - Hyperion',
+            simpleSeoDescription: 'This is a case study of a redesign project we did for Webfaction, our hosting provider.',
+            simpleSeoKeywords: 'hyperion, webfaction, hosting, host, interface, dashboard, front end, angular, angularjs, design, clean'
           },
           url: '/webfaction',
           views: {

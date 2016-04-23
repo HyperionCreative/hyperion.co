@@ -9,11 +9,9 @@
       $stateProvider
         .state('root.sub-page-template.contact', {
           data: {
-            simpleSeo: {
-              title: 'Contact - Hyperion',
-              description: 'Use this page to find information about how to contact us.',
-              keywords: 'contact, phone number, call, email, get in touch, hyperion'
-            }
+            simpleSeoTitle: 'Contact - Hyperion',
+            simpleSeoDescription: 'Use this page to find information about how to contact us.',
+            simpleSeoKeywords: 'contact, phone number, call, email, get in touch, hyperion'
           },
           url: '/contact',
           views: {
