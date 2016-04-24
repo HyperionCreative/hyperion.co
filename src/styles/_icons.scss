@@ -19,6 +19,15 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-linkedin:before {
+    content: "\e907";
+}
+.icon-stackoverflow:before {
+    content: "\e908";
+}
+.icon-git:before {
+    content: "\e909";
+}
 .icon-arrow-right-squarish:before {
     content: "\e906";
 }
