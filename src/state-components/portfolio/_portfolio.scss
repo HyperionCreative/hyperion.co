@@ -101,6 +101,10 @@
     font-size: 14px;
     margin-top: $this-top-spacing;
 
+    &:hover {
+      text-decoration: underline;
+    }
+
     .icon-arrow-right-pointy {
       display: inline-block;
       font-size: 12px;
