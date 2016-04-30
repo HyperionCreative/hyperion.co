@@ -76,4 +76,15 @@
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
   </url>
+
+  <url>
+    <loc>http://www.hyperion.co/team/cosmin</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>http://www.hyperion.co/team/cristian</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
 </urlset>

@@ -10,6 +10,7 @@
       'state.fancy-slider',
       'state.justification',
       'state.portfolio',
-      'state.preloader'
+      'state.preloader',
+      'state.team'
     ]);
 })();
