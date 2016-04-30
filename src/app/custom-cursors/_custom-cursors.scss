@@ -3,6 +3,10 @@
 ////////////////////
 
 .custom-cursor {
+  &.arrow-left {
+   cursor: url('../assets/cursors/arrow-left.cur'), auto;
+  }
+
   &.arrow-right {
    cursor: url('../assets/cursors/arrow-right.cur'), auto;
   }
@@ -12,6 +16,10 @@
   }
 
   body.high-dpi-device.windows:not(.chrome) & {
+    &.arrow-left {
+     cursor: url('../assets/cursors/arrow-left@2x.cur'), auto;
+    }
+
     &.arrow-right {
      cursor: url('../assets/cursors/arrow-right@2x.cur'), auto;
     }
@@ -24,6 +32,14 @@
   // IE special rules (so we don't get a 404 on "normal" borwsers)
   & {
     body.windows.ie & {
+      &.arrow-left {
+       cursor:
+         url('../assets/cursors/arrow-left.cur'),
+         // This fixes the cursors on IE
+         url('assets/cursors/arrow-left.cur'),
+         auto;
+      }
+
       &.arrow-right {
        cursor:
          url('../assets/cursors/arrow-right.cur'),
@@ -42,6 +58,14 @@
     }
 
     body.high-dpi-device.windows.ie & {
+      &.arrow-left {
+       cursor:
+         url('../assets/cursors/arrow-left@2x.cur'),
+         // This fixes the cursors on IE
+         url('assets/cursors/arrow-left@2x.cur'),
+         auto;
+      }
+
       &.arrow-right {
        cursor:
          url('../assets/cursors/arrow-right@2x.cur'),

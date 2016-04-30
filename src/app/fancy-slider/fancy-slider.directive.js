@@ -138,6 +138,10 @@
                     scope.changeSlidesToRight = toRight;
                   });
 
+                  scope.$evalAsync(function () {
+                    scope.changeSlidesToLeft = toLeft;
+                  });
+
                   // todo Shouldn't we debounce this?
                   angular.element($window).on('keydown', function (event) {
                     if (event.keyCode === 39) {
