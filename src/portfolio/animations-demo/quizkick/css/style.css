@@ -5,7 +5,7 @@
 ::-moz-selection {color:white;background:#FF7335;}
 
 html, body {
-	font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,sans-serif; 
+	font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,sans-serif;
 	font-size: 0;
 	height: 100%;
 	line-height: 1;
@@ -14,7 +14,7 @@ html, body {
 }
 
 body.is-safari {
-	font-family: "HelveticaNeue-Roman","Helvetica Neue Roman","Helvetica Neue",Helvetica,sans-serif; 
+	font-family: "HelveticaNeue-Roman","Helvetica Neue Roman","Helvetica Neue",Helvetica,sans-serif;
 }
 
 .container {
@@ -70,7 +70,7 @@ html, body,
 	display: none;
 }
 
-/* Slider Setup 
+/* Slider Setup
 ================================================== */
 
 #quizkick-showcase,
@@ -130,7 +130,7 @@ html, body,
 	background-image: url("../img/right-arrow.png");
 }
 
-/* Slider Controls 
+/* Slider Controls
 ================================================== */
 
 .controls {
@@ -177,7 +177,7 @@ html, body,
 .control,
 .control:after {
 	display: inline-block;
-	vertical-align: middle;	
+	vertical-align: middle;
 }
 
 .control.active {
@@ -214,6 +214,7 @@ html, body,
 
 #replay {
 	background: url("../img/reply-button.png") no-repeat center;
+	background-size: contain;
 	bottom: 30px;
 	cursor: pointer;
 	display: none;
