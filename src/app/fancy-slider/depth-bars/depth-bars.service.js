@@ -176,7 +176,7 @@
 
         // This recalculates the containers' position on each resize
         ViewportSize.onChange(function (size) {
-          if (size.width >= 1920) {
+          if (size.width >= 1440) {
             var
               proportion = SliderResizer.getProportion(),
               currentStageWidth = Configuration.NATIVE_WIDTH * proportion,
@@ -189,7 +189,7 @@
             setLateralOffset(depthBars, currentLateralOffset);
             setLateralOffset(blurSprites, currentLateralOffset);
 
-            if (size.width === 1920) {
+            if (size.width <= 1919) {
               // Substracts 10px to make the bars 30px wide
               substractLateralOffset(depthBars, proportion, 10);
               substractLateralOffset(blurSprites, proportion, 10);
