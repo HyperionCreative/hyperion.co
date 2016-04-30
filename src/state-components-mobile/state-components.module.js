@@ -6,6 +6,7 @@
       'ui.router',
 
       'state.index',
-      'state.portfolio'
+      'state.portfolio',
+      'state.team'
     ]);
 })();

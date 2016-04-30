@@ -36,6 +36,12 @@ $medium-screens-breakpoint: 768px;
   }
 }
 
+@mixin small-and-medium-screens {
+  @media only screen and (max-width : $medium-screens-breakpoint - 1px) {
+    @content;
+  }
+}
+
 @mixin large-screens {
   @media only screen and (min-width : $medium-screens-breakpoint) {
     @content;
@@ -67,6 +73,7 @@ $medium-screens-breakpoint: 768px;
 
 @import "state-components-mobile/index/index";
 @import "state-components-mobile/portfolio/portfolio";
+@import "state-components-mobile/team/team";
 
 ////////////////
 // Containers //
