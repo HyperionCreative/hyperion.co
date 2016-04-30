@@ -19,7 +19,7 @@
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-uglify": "^0.4.0",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-cwebp": "^1.0.0",
+    "grunt-cwebp": "0.1.7",
     "grunt-filerev": "^0.2.1",
     "grunt-filesize": "0.0.7",
     "grunt-filetransform": "^0.1.2",
