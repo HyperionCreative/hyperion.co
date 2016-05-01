@@ -22,22 +22,5 @@
     @include background-image(radial-gradient(#b6e0eb 0%, #9ad3e4 100%));
     // Needed by the resize module
     @include transform-origin(0, 0);
-
-    .change-slide {
-      bottom: 0;
-      position: absolute;
-      top: 0;
-      @include user-select(none);
-      width: 50%;
-
-
-      &--to-left {
-        left: 0;
-      }
-
-      &--to-right {
-        right: 0;
-      }
-    }
   }
 }
