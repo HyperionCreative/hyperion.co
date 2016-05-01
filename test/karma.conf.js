@@ -42,6 +42,7 @@ module.exports = function (config) {
       'bower_components/smoothscroll/dist/smoothscroll.js',
       'bower_components/ua-parser-js/src/ua-parser.js',
       'bower_components/gsap/src/uncompressed/TweenMax.js',
+      'bower_components/angular-simple-seo/simple-seo.js',
       // endbower
       'bower_components/angular-mocks/angular-mocks.js',
 
