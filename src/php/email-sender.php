@@ -58,15 +58,14 @@ $emailBody = sprintf(
 ////////////////////
 // Send the email //
 ////////////////////
-function sendMail($subject, $body)
+function sendMail($subject, $body, $contactBack)
 {
     $headers = "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-    // TODO add reply to original address
-    $headers .= 'From: no-reply@hyperion.co<no-reply@hyperion.co>' . "\r\n" . 'Reply-To:no-reply@hyperion.co';
+    $headers .= "From: no-reply@hyperion.co<no-reply@hyperion.co>\r\nReply-To: $contactBack";
 
     mail('contact@hyperion.co', $subject, html_entity_decode($body), $headers);
     mail('cosmin@hyperion.co', $subject, html_entity_decode($body), $headers);
 }
 
-sendMail('New Lead - ' . $name . ' from ' . $country, $emailBody);
+sendMail('New Lead - ' . $name . ' from ' . $country, $emailBody, $contactBack);
