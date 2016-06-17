@@ -19,7 +19,7 @@
     top: 0;
 
     // The gradient background was moved here in order to scale with the canvas.
-    @include background-image(radial-gradient(#b6e0eb 0%, #9ad3e4 100%));
+    @include background-image(radial-gradient(#c5f3ff 0, #9bdbf6 100%));
     // Needed by the resize module
     @include transform-origin(0, 0);
   }
