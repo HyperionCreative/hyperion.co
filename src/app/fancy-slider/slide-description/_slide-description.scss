@@ -45,6 +45,10 @@
     position: relative;
     width: 100%;
 
+    p {
+      line-height: $small-line-height;
+    }
+
     .overflow-container {
       @include box-shadow($normal-box-shadow);
       height: 100%;
