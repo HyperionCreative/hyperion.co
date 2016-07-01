@@ -107,8 +107,22 @@
       padding-left: 40px;
     }
 
-    .links .link:last-child a {
-      padding-right: 0;
+    .hire-us {
+      @extend .button;
+
+      $this-color: #4c8fe9;
+
+      border-color: $this-color;
+      @include border-radius(0);
+      color: $this-color;
+      margin: 0 0 -10px 5px;
+      padding: 7px 0;
+      text-transform: uppercase;
+      width: 105px;
+
+      &:hover {
+        background: $this-color;
+      }
     }
   }
 
