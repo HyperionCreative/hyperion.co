@@ -58,12 +58,13 @@
         justification: {
           navigationHamburgerAnchorText: 'Why Us',
           header: {
-            title: '<h1>Why Hyperion</h1>',
+            title: '<h1>Why chose Hyperion</h1>',
             description: '<h3>Here are some of the reasons our clients have chosen us in the past, and why we think you should do the same.</h3>'
           },
-          firstColumn: '<h2 class="process__title">We are objective focused. </h2><p>Our goal is to create work that helps solve your problems and achieve your goals not win awards or simply be beautiful but ultimately useless. This means that we\'ll have a lot of questions and will need to understand your company before we can get to work, but the results will be worth it.</p>',
-          secondColumn: '<h2 class="process__title">The Expertise. </h2><p>The primary focuses of our team are UI/UX, web design and development; We try to design and develop products that people can make sense of and will actually enjoy using. We want to get your message across in an elegant and efficient manner.</p>',
-          thirdColumn: '<h2 class="process__title">Fresh, Bold Ideas. </h2><p>While there is beauty in standardisation and similarity, and the product’s functionality should always be a core concern, we place equal value on experimentation and fresh, daring ideas.</p>'
+          // TODO add the new layout here
+          // firstColumn: '<h2 class="process__title">We are objective focused. </h2><p>Our goal is to create work that helps solve your problems and achieve your goals not win awards or simply be beautiful but ultimately useless. This means that we\'ll have a lot of questions and will need to understand your company before we can get to work, but the results will be worth it.</p>',
+          // secondColumn: '<h2 class="process__title">The Expertise. </h2><p>The primary focuses of our team are UI/UX, web design and development; We try to design and develop products that people can make sense of and will actually enjoy using. We want to get your message across in an elegant and efficient manner.</p>',
+          // thirdColumn: '<h2 class="process__title">Fresh, Bold Ideas. </h2><p>While there is beauty in standardisation and similarity, and the product’s functionality should always be a core concern, we place equal value on experimentation and fresh, daring ideas.</p>'
         },
 
         // Be careful when editing coverDescription as it may break the ellipsis. Make sure to check the portfolio page to make sure

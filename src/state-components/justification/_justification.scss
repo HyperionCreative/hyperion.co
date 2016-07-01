@@ -1,61 +1,86 @@
 #justification-page {
+  $this-blue-color: #202a35;
+  $this-text-color: #80868a;
+
   .container {
     width: 1000px;
   }
 
-  .processes-container {
-    @include legacy-pie-clearfix;
+  .justification-container {
+    background: #ffffff;
+    @include box-shadow($normal-box-shadow);
+    padding: 105px 138px;
+
+    p {
+      line-height: $small-line-height;
+      font-size: 15px;
+    }
+
+    & > header {
+      p {
+        color: $this-text-color;
+      }
+    }
   }
 
-  .process {
-    @include box-shadow($normal-box-shadow);
-    color: #93a2ad;
-    float: left;
-    margin-right: 1.4%;
-    width: 32.4%;
+  .very-big-title {
+    color: $this-blue-color;
+    font-family: $SourceSansPro-Regular;
+    font-size: 35px;
+    line-height: 1.1;
+    margin-bottom: 25px;
 
-    a {
-      text-decoration: underline;
+    strong {
+      font-family: $SourceSansPro-Bold;
+      font-size: 37px;
     }
+  }
 
-    &:last-child {
-      margin-right: 0;
-    }
+  .reasons {
+    border-top: 1px solid #e8e9ea;
+    display: block;
+    @include legacy-pie-clearfix;
+    margin-top: 46px;
+    padding-top: 47px;
 
-    .illustration {
-      background: rgba(#ffffff, 0.8);
-      color: #505a65;
-      font-size: 40px;
-      margin-bottom: 1px;
-      text-align: center;
+    li {
+      float: left;
+      height: 160px;
+      padding-left: 30px;
+      width: 50%;
 
-      &:before {
-        // This is needed to be placed on the icon
-        // otherwise browsers will mess this up.
-        line-height: 100px;
+      &:nth-child(odd) {
+        padding-left: 0;
+        padding-right: 30px;
       }
     }
 
-    .description {
-      background: #ffffff;
-      padding: 48px 50px;
-      @include legacy-pie-clearfix;
-    }
-
-    &__title {
-      color: #000000;
-      float: left;
-      font-family: $HelveticaNeue-Bold;
-      line-height: $normal-line-height;
-      margin-right: 4px;
-      margin-top: -1px; // This vertically aligns the title with the paragraph
+    .big-title {
+      color: rgba($this-blue-color, 0.5);
+      font-size: 27px;
+      font-family: $FF-DIn-Condensed-Bold;
+      margin-bottom: 20px;
     }
 
     p {
-      line-height: $normal-line-height;
+      color: rgba($this-text-color, 0.5);
+    }
+  }
 
-      &:not(:last-child) {
-        margin-bottom: $normal-line-height;
+  .buttons-and-cta {
+    .button {
+      $this-color: #4c8fe9;
+
+      border-color: $this-color;
+      @include border-radius(0);
+      color: $this-color;
+      margin: 0;
+      padding: 7px 0;
+      text-transform: uppercase;
+      width: 110px;
+
+      &:hover {
+        background: $this-color;
       }
     }
   }

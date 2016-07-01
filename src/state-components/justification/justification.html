@@ -7,18 +7,31 @@
         class="custom-cursor normal"
       ></hyp-simple-header>
 
-      <div class="processes-container custom-cursor normal">
-        <div class="process">
-          <div class="illustration icon-checkered"></div>
-          <div class="description" ng-bind-html=":: str.justification.thirdColumn"></div>
-        </div>
-        <div class="process">
-          <div class="illustration icon-pen-and-ruler"></div>
-          <div class="description"><div ng-bind-html=":: str.justification.secondColumn"></div><div> More on this on the <a ui-sref="root.sub-page-template.expertise">Expertise Page</a>.</div></div>
-        </div>
-        <div class="process">
-          <div class="illustration icon-ok-sign"></div>
-          <div class="description" ng-bind-html=":: str.justification.firstColumn"></div>
+      <div class="justification-container custom-cursor normal">
+        <header>
+          <h1 class="very-big-title">We are a design firm specialising in<br><strong>UI/UX, web design and development.</strong></h1>
+          <p>We work with companies from all industries and of all sizes, with one goal: to help them solve their problems and achieve their objectives. Here are a few reasons we think you'll like working with us:</p>
+        </header>
+        <ul class="reasons">
+          <li>
+            <h3 class="big-title">01. Your goals are our goals</h3>
+            <p>We are not in this to win awards or create beautiful but pointless things, but rather to solve problems and do work that helps our clients reach their goals.</p>
+          </li>
+          <li>
+            <h3 class="big-title">02. We’re highly Organised</h3>
+            <p>We understand that for us to create work that hits the mark, we must have a clear understanding of the whole picture, and communicate that clearly to everyone involved.</p>
+          </li>
+          <li>
+            <h3 class="big-title">03. We understand aesthetics</h3>
+            <p>While our main task is to create something that helps achieve your objectives, we understand that doing so eleganntly and aesthetically is equally important.</p>
+          </li>
+          <li>
+            <h3 class="big-title">04. We go the extra mile</h3>
+            <p>We are a new team and have yet to establish a reputation, and we would like to start on the right foot so we will do our utmost best to make sure our clients leave feeling impressed, and with one or two fewer things to worry about.</p>
+          </li>
+        </ul>
+        <div class="buttons-and-cta">
+          <a ui-sref="root.sub-page-template.contact" class="button">Hire us</a>
         </div>
       </div>
 
