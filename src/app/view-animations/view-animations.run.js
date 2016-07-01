@@ -11,10 +11,10 @@
       ///////////////
       // Don't forget to change navigation-hamburger.html after you modify the items' order!
       var TOP_LEVEL_SUB_PAGES = [
-        'root.sub-page-template.expertise',
-        'root.sub-page-template.expertise.consulting',
-        'root.sub-page-template.expertise.design',
-        'root.sub-page-template.expertise.development',
+        // 'root.sub-page-template.expertise',
+        // 'root.sub-page-template.expertise.consulting',
+        // 'root.sub-page-template.expertise.design',
+        // 'root.sub-page-template.expertise.development',
 
         'root.sub-page-template.justification',
         'root.sub-page-template.portfolio',
