@@ -1,8 +1,9 @@
 <form novalidate class="contact-form"
   name="contactFormCtrl">
   <div class="input-container">
-    <input type="text" placeholder="Your Name"
-      name="name"
+    <label for="cf-name">Your name</label>
+    <input type="text"
+      id="cf-name" name="name"
       ng-model="contactForm.name"
       required>
     <div class="input-validation-message"
@@ -13,8 +14,9 @@
   </div>
 
   <div class="input-container">
-    <input type="email" placeholder="Email address"
-      name="email"
+    <label for="cf-email">Email address</label>
+    <input type="email"
+      id="cf-email" name="email"
       ng-model="contactForm.contactBack"
       required>
     <div class="input-validation-message"
@@ -30,8 +32,9 @@
   </div>
 
   <div class="input-container">
-    <textarea rows="1" placeholder="How can we help?" class="msd-elastic"
-      name="help"
+    <label for="cf-help">How can we help</label>
+    <textarea rows="6" class="pseudo-input msd-elastic"
+      id="cf-help" name="help"
       ng-model="contactForm.help"
       required></textarea>
     <div class="input-validation-message"
@@ -44,7 +47,7 @@
   <input type="submit" class="ng-hide" style="display: none;">
 
   <div class="submit-button-container">
-    <div class="submit-button" ng-click="tryToSubmit();">Press <strong>Enter</strong> to Send</div>
+    <div class="button submit-button" ng-click="tryToSubmit();">Send</div>
   </div>
 
   <div class="success" ng-show="isSubmitted">

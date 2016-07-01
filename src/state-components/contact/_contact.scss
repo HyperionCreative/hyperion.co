@@ -12,26 +12,22 @@
     position: relative;
 
     .call-us-or-complete-form {
-      font-size: 15px;
+      font-size: $medium-font-size;
       line-height: $normal-line-height;
       padding: 0 $this-horizontal-padding;
 
       .call-us {
-        color: #9fa1a5;
+        color: #697078;
 
         .cell-phone-number {
-          color: #64686e;
-          font-family: $PierSans-Regular;
+          color: #4c8fe9;
+          font-family: $HelveticaNeue-Bold;
         }
-      }
-
-      .or-complete-form {
-        color: #c9ced5;
       }
     }
 
     form {
-      padding: 30px $this-horizontal-padding 5px $this-horizontal-padding;
+      padding: 45px $this-horizontal-padding 5px $this-horizontal-padding;
     }
   }
 }
