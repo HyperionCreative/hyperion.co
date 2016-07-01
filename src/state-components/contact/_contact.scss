@@ -1,14 +1,14 @@
 #contact-page {
-  $this-horizontal-padding: 40px;
+  $this-horizontal-padding: 45px;
 
   & > .container {
-    width: 550px;
+    width: 585px;
   }
 
   .contact-container {
     background: #ffffff;
     @include box-shadow($normal-box-shadow);
-    padding-top: 54px;
+    padding-top: 65px;
     position: relative;
 
     .call-us-or-complete-form {

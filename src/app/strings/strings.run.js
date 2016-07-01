@@ -26,7 +26,7 @@
         contact: {
           navigationHamburgerAnchorText: 'Contact',
           header: {
-            title: '<h1>Contact<h1>',
+            title: '<h1>Tell Us More<h1>',
             description: '<h2>We are always interested in new and exciting projects to work on. Whether you need help with a project or would like to start a conversation, we’d love to hear from you.</h2>'
           }
         },

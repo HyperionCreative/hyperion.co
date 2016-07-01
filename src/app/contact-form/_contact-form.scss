@@ -79,18 +79,15 @@ form.contact-form {
     text-align: center;
 
     .submit-button {
-      border-color: #4c8fe9;
-      color: #4c8fe9;
-      cursor: pointer;
-      display: inline-block;
-      font-size: 15px;
+      $this-color: #4c8fe9;
+
+      border-color: $this-color;
+      color: $this-color;
       margin: 0 0 23px 0;
-      opacity: 0.75;
       width: 120px;
 
       &:hover {
-        color: #4c8fe9 !important;
-        opacity: 1;
+        background: $this-color;
       }
     }
   }
