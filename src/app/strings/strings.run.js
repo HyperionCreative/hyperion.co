@@ -31,28 +31,29 @@
           }
         },
 
-        expertise: {
-          navigationHamburgerAnchorText: 'Services',
-          header: {
-            title: '<h3>Our Services</h3>',
-            description: '<h2>As a design consulting firm, with only a small team for now, our job is to help bring your ideas to life. We organise, we create and we solve problems.</h2>'
-          },
-          design: {
-            tabName: 'Design',
-            title: 'UI / Web',
-            description: '<p>We believe good design should make sense to the people using it, that it should be adequate, beautiful, logical and empathetic towards the user. We see technology as a catalyst for change, improving people\'s lives in increasingly natural and almost invisible ways. To design products that meet these standards, we try to look at the whole picture, make sense of the problem we are trying to solve and plan accordingly - when every detail has its place and purpose, creativity and function come together naturally.</p>'
-          },
-          development: {
-            tabName: 'Development',
-            title: 'Development',
-            description: '<p>For every application, UI and UX are just the tip of the iceberg; it\'s the code that breathes life into an app and makes everything tick. Because of this, writing <strong>good code</strong> is of paramount importance and we believe it comes down to this:</p><p>Great code takes careful planning and requires an extensive knowledge of the tools at our disposal; it must be well documented and modular, so that the product\'s structure is always clear, and components can be developed in a timely and cost efficient manner. It must perform well across a wide range of devices and be well-crafted. What\'s more, we do not limit ourselves by using templates or ready-made frameworks - we build sites and apps from the ground up, which affords us the freedom to not only create the great experience your users expect, but also ensure the project is flexible enough to not fall apart when new features are needed.</p>'
-          },
-          consulting: {
-            tabName: 'Consulting',
-            title: 'Consulting',
-            description: '<p>When you work with a creative team, you will get more than their technical abilities, you will get their ideas and expertise. From picking the best-suited technologies, to helping structure your product correctly, and deciding what the most elegant and user-friendly way of designing a UI is, having a team of experts bring their insight to the table can make all the difference between a successful project and a failure.</p>'
-          }
-        },
+        // DEPRECATED
+        // expertise: {
+        //   navigationHamburgerAnchorText: 'Services',
+        //   header: {
+        //     title: '<h3>Our Services</h3>',
+        //     description: '<h2>As a design consulting firm, with only a small team for now, our job is to help bring your ideas to life. We organise, we create and we solve problems.</h2>'
+        //   },
+        //   design: {
+        //     tabName: 'Design',
+        //     title: 'UI / Web',
+        //     description: '<p>We believe good design should make sense to the people using it, that it should be adequate, beautiful, logical and empathetic towards the user. We see technology as a catalyst for change, improving people\'s lives in increasingly natural and almost invisible ways. To design products that meet these standards, we try to look at the whole picture, make sense of the problem we are trying to solve and plan accordingly - when every detail has its place and purpose, creativity and function come together naturally.</p>'
+        //   },
+        //   development: {
+        //     tabName: 'Development',
+        //     title: 'Development',
+        //     description: '<p>For every application, UI and UX are just the tip of the iceberg; it\'s the code that breathes life into an app and makes everything tick. Because of this, writing <strong>good code</strong> is of paramount importance and we believe it comes down to this:</p><p>Great code takes careful planning and requires an extensive knowledge of the tools at our disposal; it must be well documented and modular, so that the product\'s structure is always clear, and components can be developed in a timely and cost efficient manner. It must perform well across a wide range of devices and be well-crafted. What\'s more, we do not limit ourselves by using templates or ready-made frameworks - we build sites and apps from the ground up, which affords us the freedom to not only create the great experience your users expect, but also ensure the project is flexible enough to not fall apart when new features are needed.</p>'
+        //   },
+        //   consulting: {
+        //     tabName: 'Consulting',
+        //     title: 'Consulting',
+        //     description: '<p>When you work with a creative team, you will get more than their technical abilities, you will get their ideas and expertise. From picking the best-suited technologies, to helping structure your product correctly, and deciding what the most elegant and user-friendly way of designing a UI is, having a team of experts bring their insight to the table can make all the difference between a successful project and a failure.</p>'
+        //   }
+        // },
 
         justification: {
           navigationHamburgerAnchorText: 'Why Us',
