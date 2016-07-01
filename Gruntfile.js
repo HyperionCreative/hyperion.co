@@ -650,10 +650,17 @@ module.exports = function (grunt) {
           from: /\/\*\@\@\@(.+)\@\@\@\*\//gmi,
           to: '$1'
         }]
+      },
+      htmlStage: {
+        src: '<%= yeoman.dist %>/*.html',
+        overwrite: true,
+        replacements: [{
+          from: /<\!\-\-\@\@\_\_\@\@(.+)\@\@\_\_\@\@\-\->/gmi,
+          to: '$1'
+        }]
       }
     }
   });
-
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
@@ -684,31 +691,43 @@ module.exports = function (grunt) {
     'karma'
   ]);
 
-  grunt.registerTask('build', [
-    'clean:dist',
-    'wiredep',
+  grunt.registerTask('build', function (target) {
+    var tasks = [
+      'clean:dist',
+      'wiredep',
 
-    'filesize',
-    'filetransform:preloadableFiles',
+      'filesize',
+      'filetransform:preloadableFiles',
 
-    // Notice how this is added after 'filesize'!
-    // Since the webp images are served from the server, the preloder module
-    // still thinks that the images are jpg/png. Everything works as expected!
-    'cwebp',
+      // Notice how this is added after 'filesize'!
+      // Since the webp images are served from the server, the preloder module
+      // still thinks that the images are jpg/png. Everything works as expected!
+      'cwebp',
 
-    'ngtemplates',
-    'useminPrepare',
-    'concurrent:dist',
-    'concat',
-    'copy:dist',
-    'replace',
-    'cssmin',
-    'uglify',
-    'filetransform:indexMobile',
-    'filerev',
-    'usemin',
-    'htmlmin'
-  ]);
+      'ngtemplates',
+      'useminPrepare',
+      'concurrent:dist',
+      'concat',
+      'copy:dist',
+      'replace',
+      'cssmin',
+      'uglify',
+      'filetransform:indexMobile',
+      'filerev',
+      'usemin',
+      'htmlmin'
+    ];
+
+    var indexOfReplace = tasks.indexOf('replace');
+    if (target === 'stage') {
+      tasks[indexOfReplace] = 'replace:htmlStage';
+    } else {
+      tasks.splice(indexOfReplace + 1, 0, 'replace:htaccess', 'replace:html', 'replace:scripts', 'replace:styles');
+      tasks.splice(indexOfReplace, 1);
+    }
+
+    grunt.task.run(tasks);
+  });
 
   grunt.registerTask('fastbuild', [
     'clean:dist',
