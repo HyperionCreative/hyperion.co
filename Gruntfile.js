@@ -722,9 +722,12 @@ module.exports = function (grunt) {
     var indexOfReplace = tasks.indexOf('replace');
     if (target === 'stage') {
       tasks[indexOfReplace] = 'replace:htmlStage';
-    } else {
+    } else if (target === 'prod') {
       tasks.splice(indexOfReplace + 1, 0, 'replace:htaccess', 'replace:html', 'replace:scripts', 'replace:styles');
       tasks.splice(indexOfReplace, 1);
+    } else {
+      grunt.log.warn('The `build` task requires a target: `stage` or `prod`');
+      return;
     }
 
     grunt.task.run(tasks);
