@@ -58,16 +58,6 @@ module.exports = function (grunt) {
         ],
         tasks: ['newer:jshint:test']
       },
-      compass: {
-        files: [
-          '<%= yeoman.app %>/app/**/*.{scss,sass}',
-          '<%= yeoman.app %>/common/**/*.{scss,sass}',
-          '<%= yeoman.app %>/state-components/**/*.{scss,sass}',
-          '<%= yeoman.app %>/state-components-mobile/**/*.{scss,sass}',
-          '<%= yeoman.app %>/styles/**/*.{scss,sass}'
-        ],
-        tasks: ['compass:server']
-      },
       gruntfile: {
         files: ['Gruntfile.js']
       },
@@ -230,7 +220,15 @@ module.exports = function (grunt) {
       },
       server: {
         options: {
-          debugInfo: true
+          debugInfo: true,
+          sourcemap: true,
+          watch: true
+        }
+      },
+      oneOff: {
+        options: {
+          force: true,
+          sourcemap: true
         }
       }
     },
@@ -416,11 +414,14 @@ module.exports = function (grunt) {
 
     // Run some tasks in parallel to speed up the build process
     concurrent: {
-      server: [
-        'compass:server'
-      ],
+      server: {
+        tasks: ['compass:server', 'watch'],
+        options: {
+          logConcurrentOutput: true
+        }
+      },
       test: [
-        'compass'
+        'compass:oneOff'
       ],
       dist: [
         'compass:dist',
@@ -672,9 +673,9 @@ module.exports = function (grunt) {
       'wiredep',
       'filesize',
       'filetransform:preloadableFiles',
-      'concurrent:server',
+      'compass:oneOff',
       'connect:livereload',
-      'watch'
+      'concurrent:server'
     ]);
   });
 
