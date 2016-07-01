@@ -157,6 +157,7 @@
     @include border-radius(5px);
     @include box-shadow($normal-box-shadow);
     float: left;
+    height: 270px;
     margin-right: 10px;
     overflow: hidden;
     padding-bottom: $this-description-height;
@@ -174,19 +175,20 @@
       margin-right: 0;
     }
 
-    &--large {
+    &--tall {
       height: 495px;
+    }
+
+    &--large {
       width: 700px;
     }
 
     &--medium {
-      height: 495px;
       width: 390px;
     }
 
     &--small {
-      height: 270px;
-      width: 360px;
+      width: 345px;
     }
 
     .project-image {
