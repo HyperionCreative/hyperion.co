@@ -1,4 +1,5 @@
 <?php
+
 $json_message = json_decode(file_get_contents('php://input'));
 
 /////////////////////
@@ -24,20 +25,20 @@ $country = isset($json_message->userLocation->country) ? $json_message->userLoca
 // Format the email //
 //////////////////////
 $emailBody = sprintf(
-    '<div style="color: #868d94; font-size: 13px;">' .
-    '<div>' .
-    '<span style="color: #202a35; font-size: 20px; font-weight: bold;">%1$s</span>' .
-    '</div>' .
-    '<br><br>' .
-    '<div>%2$s</div>' .
-    '<br>' .
-    '<br><br>' .
-    '<div>' .
-    '<a style="color: #868d94; font-size: 13px; font-weight: bold;">%3$s</a>' . '<span> &#62; </span>' . '<span>%4$s</span>' .
-    '</div>' .
-    '<div>' .
-    '<a style="color: #868d94; font-size: 13px;">%5$s</a>' . '<span> &#45; </span>' . '<span>%6$s, %7$s</span>' .
-    '</div>' .
+    '<div style="color: #868d94; font-size: 13px;">'.
+    '<div>'.
+    '<span style="color: #202a35; font-size: 20px; font-weight: bold;">%1$s</span>'.
+    '</div>'.
+    '<br><br>'.
+    '<div>%2$s</div>'.
+    '<br>'.
+    '<br><br>'.
+    '<div>'.
+    '<a style="color: #868d94; font-size: 13px; font-weight: bold;">%3$s</a>'.'<span> &#62; </span>'.'<span>%4$s</span>'.
+    '</div>'.
+    '<div>'.
+    '<a style="color: #868d94; font-size: 13px;">%5$s</a>'.'<span> &#45; </span>'.'<span>%6$s, %7$s</span>'.
+    '</div>'.
     '</div>',
     /* %1$s */
     $name,
@@ -68,4 +69,4 @@ function sendMail($subject, $body, $contactBack)
     mail('cosmin@hyperion.co', $subject, html_entity_decode($body), $headers);
 }
 
-sendMail('New Lead - ' . $name . ' from ' . $country, $emailBody, $contactBack);
+sendMail('New Lead - '.$name.' from '.$country, $emailBody, $contactBack);

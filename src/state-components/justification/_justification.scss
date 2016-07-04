@@ -57,8 +57,8 @@
     }
 
     .big-title {
-      color: rgba($this-blue-color, 0.5);
-      font-size: 27px;
+      color: rgba($this-blue-color, 0.45);
+      font-size: 30px;
       font-family: $FF-DIn-Condensed-Bold;
       margin-bottom: 20px;
     }
@@ -69,12 +69,16 @@
   }
 
   .buttons-and-cta {
+    @include legacy-pie-clearfix;
+    margin-top: 50px;
+
     .button {
       $this-color: #4c8fe9;
 
       border-color: $this-color;
       @include border-radius(0);
       color: $this-color;
+      float: left;
       margin: 0;
       padding: 7px 0;
       text-transform: uppercase;
@@ -82,6 +86,18 @@
 
       &:hover {
         background: $this-color;
+      }
+    }
+
+    .get-as-pdf {
+      color: rgba(#80868a, 0.5);
+      float: right;
+      font-size: 15px;
+      line-height: 30px;
+      text-decoration: underline;
+
+      &:hover {
+        color: rgba(#80868a, 0.75);
       }
     }
   }
