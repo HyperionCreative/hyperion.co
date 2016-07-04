@@ -25,13 +25,14 @@
 
   .very-big-title {
     color: $this-blue-color;
-    font-family: $SourceSansPro-Regular;
+    font-family: $SourceSansPro;
     font-size: 35px;
     line-height: 1.1;
     margin-bottom: 25px;
 
     strong {
-      font-family: $SourceSansPro-Bold;
+      font-family: $SourceSansPro;
+      font-weight: 600;
       font-size: 37px;
     }
   }

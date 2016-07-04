@@ -70,13 +70,14 @@
 
   &__welcome {
     color: #474f51;
-    font-family: $SourceSansPro-Regular;
+    font-family: $SourceSansPro;
     font-size: 30px;
     margin-bottom: 15px;
     line-height: 1.15;
 
     strong {
-      font-family: $SourceSansPro-Bold;
+      font-family: $SourceSansPro;
+      font-weight: 700;
     }
 
     @include large-screens {
@@ -206,7 +207,7 @@
 
     background: #ffffff;
     display: block;
-    font-family: $SourceSansPro-Regular;
+    font-family: $SourceSansPro;
     font-size: 14px;
     line-height: 45px;
 
@@ -215,7 +216,8 @@
     }
 
     strong {
-      font-family: $SourceSansPro-Bold;
+      font-family: $SourceSansPro;
+      font-weight: 700;
     }
 
     &__number {
@@ -245,7 +247,7 @@
   &.small-and-medium-only {
     a.index-button {
       float: left;
-      font-family: $SourceSansPro-Regular;
+      font-family: $SourceSansPro;
       font-size: 17px;
       line-height: 65px;
       position: relative;
