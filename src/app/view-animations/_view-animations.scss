@@ -20,7 +20,8 @@
     }
 
     .sub-page-template .navigation-hamburger,
-    .sub-page-template .top-level-animation-container {
+    .sub-page-template .top-level-animation-container,
+    .page-like:before {
       @include transition(transform $top-view-animation-duration ease-in-out, opacity $top-view-animation-duration ease-in-out);
     }
   }
@@ -29,9 +30,14 @@
   &.ng-leave.ng-leave-active {
     // They all fade out
     .header-index,
+    .page-like:before,
     .sub-page-template .navigation-hamburger,
     .sub-page-template .top-level-animation-container {
       opacity: 0;
+    }
+
+    .page-like:before {
+      @include transform(rotateZ(0deg));
     }
 
     // It appears from the top of the page
@@ -49,10 +55,15 @@
   &.ng-enter.ng-enter-active {
     // Everything goes back to normal!
     .header-index,
+    .page-like:before,
     .sub-page-template .navigation-hamburger,
     .sub-page-template .top-level-animation-container {
       opacity: 1;
       @include transform(translate3d(0,0,0));
+    }
+
+    .page-like:before {
+      @include transform(rotateZ(-4deg));
     }
   }
 }
