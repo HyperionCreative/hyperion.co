@@ -78,7 +78,7 @@
 
           anyvan: {
             projectName: 'AnyVan',
-            field: 'Mobile UI',
+            field: 'Mobile App Design',
             sliderDescription: 'We worked with AnyVan in early 2014 to help them design their then upcoming iOS app. We handled the UI and UX and worked with their team to help them make it a reality.',
 
             header: '<h2>We worked with <strong>AnyVan</strong> in early 2014 to help them design their then upcoming iOS app. We handled the UI and UX and worked with their team to help them make it a reality.</h2>',
@@ -91,7 +91,7 @@
           },
           kartist: {
             projectName: 'Kartist',
-            field: 'UI/UX + Front-end Coding',
+            field: 'Web App Interface',
             sliderDescription: 'The shots above are from one of our most recent projects, Kartist. Their app is intended to help shoppers everywhere manage their lists, find inspiration and connect with like-minded people.',
 
             header: '<h2>We worked with <strong>Kartist</strong> in early 2015 - their platform aims to help shoppers everywhere manage their lists, find inspiration and connect with like-minded people.</h2>',
@@ -144,7 +144,7 @@
           },
           quizkick: {
             projectName: 'QuizKick',
-            field: 'UI/UX + Back End',
+            field: 'Mobile App Design',
             sliderDescription: 'QuizKick tried to create a game that would give football fans around the world a chance to prove their knowledge. We worked on the design and the back end of the system.',
 
             header: '<h2><strong>QuizKick</strong> tried to create a game that would give football fans around the world a chance to prove their knowledge. We worked on the design and the back end of the system.</h2>',
@@ -161,7 +161,7 @@
           },
           webfaction: {
             projectName: 'Webfaction',
-            field: 'UI/UX + Front-end Coding',
+            field: 'Interface Redesign',
 
             header: '<h2><strong>Webfaction</strong> is our hosting provider and we worked with them in late 2015 to create a simpler, more intuitive control panel for their platform.</h2>',
             tabletHeader: '<h2><strong>Webfaction</strong> is our hosting provider and we worked with them in late 2015 to create a simpler, more intuitive control panel for their platform.</h2>',
