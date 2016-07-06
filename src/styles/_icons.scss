@@ -5,8 +5,7 @@
   font-weight: normal;
   font-style: normal;
 }
-[class^="icon-"],
-[class*=" icon-"] {
+%has-an-icon {
   font-family: "hyperion-icons";
   speak: none;
   font-style: normal;
@@ -18,6 +17,16 @@
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+$icon--text-hire-us: "\e90a";
+
+[class^="icon-"],
+[class*=" icon-"] {
+  @extend %has-an-icon;
+}
+
+.icon-text-hire-us:before {
+    content: $icon--text-hire-us;
 }
 .icon-linkedin:before {
     content: "\e907";

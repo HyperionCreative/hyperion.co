@@ -90,13 +90,20 @@
       @include border-radius(0);
       color: $this-color;
       float: left;
+      font-size: 0;
       margin: 0;
-      padding: 7px 0;
+      padding: 8px 0;
       text-transform: uppercase;
       width: 110px;
 
       &:hover {
         background: $this-color;
+      }
+
+      @extend %has-an-icon;
+      &:before {
+        content: $icon--text-hire-us;
+        font-size: 12px;
       }
     }
 
