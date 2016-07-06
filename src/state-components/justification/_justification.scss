@@ -38,15 +38,26 @@
   }
 
   .reasons {
-    border-top: 1px solid #e8e9ea;
     display: block;
     @include legacy-pie-clearfix;
-    margin-top: 46px;
-    padding-top: 47px;
+    margin-top: 61px;
+    padding-top: 33px;
+    position: relative;
+
+    &:before {
+      background: #e8e9ea;
+      content: "";
+      display: block;
+      height: 1px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 130px;
+    }
 
     li {
       float: left;
-      height: 160px;
+      height: 170px;
       padding-left: 30px;
       width: 50%;
 
@@ -58,7 +69,7 @@
 
     .big-title {
       color: rgba($this-blue-color, 0.45);
-      font-size: 30px;
+      font-size: 29px;
       font-family: $FF-DIn-Condensed-Bold;
       margin-bottom: 20px;
     }
