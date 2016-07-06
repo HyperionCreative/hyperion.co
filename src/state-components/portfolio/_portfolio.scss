@@ -151,7 +151,7 @@
 
   .project-block {
     $this-description-height: 45px;
-    $this-transition: 0.1s ease-in-out;
+    $this-transition: 0.15s ease-in-out;
 
     background-color: #cbcfd3;
     @include border-radius(5px);
@@ -162,13 +162,15 @@
     overflow: hidden;
     padding-bottom: $this-description-height;
     position: relative;
+    z-index: 2;
 
     @include transform(translateZ(0));
+    @include transition(box-shadow $this-transition, transform $this-transition, z-index $this-transition);
 
     &:hover {
-      .project-image {
-        @include transform(scale(1.03) translateZ(0));
-      }
+      @include box-shadow(10px 10px 38px 0px rgba(0,0,0,0.4));
+      @include transform(scale(1.06) translateZ(0));
+      z-index: 3;
     }
 
     &:last-child {
@@ -196,8 +198,7 @@
       display: block;
       margin: 0 auto;
 
-      @include transform(scale(1.0) translateZ(0));
-      @include transition(transform $this-transition);
+      @include transform(translateZ(0));
 
       // All these values are hardcoded
       & {
