@@ -92,7 +92,7 @@
       float: left;
       font-size: 0;
       margin: 0;
-      padding: 8px 0;
+      padding: 9px 0;
       text-transform: uppercase;
       width: 110px;
 
@@ -103,7 +103,7 @@
       @extend %has-an-icon;
       &:before {
         content: $icon--text-hire-us;
-        font-size: 12px;
+        font-size: 10px;
       }
     }
 
