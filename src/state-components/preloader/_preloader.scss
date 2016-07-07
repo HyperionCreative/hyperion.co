@@ -64,8 +64,8 @@
     .spinner:not(:required):before {
       content: '';
       border-radius: 50%;
-      border: 3px solid #edf7fa;
-      border-top-color: #a3d7e6;
+      border: 3px solid rgba(#91dcf1, 0.25);
+      border-top-color: #91dcf1;
       @include animation(spinner 0.8s linear infinite);
     }
   }
