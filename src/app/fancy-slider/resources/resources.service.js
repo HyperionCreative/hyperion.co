@@ -51,7 +51,7 @@
           var flowerPot = new Resource(resourcesUrl.firstSlide.flowerPot);
           flowerPot.addPosition('center', 1910, 380, 0);
           flowerPot.addPosition('bottom', 200, 1440, 30);
-          flowerPot.addPosition('left', -3200, 100, -10);
+          flowerPot.addPosition('left', -3200, -20, 10);
           // Y is set to 1 in order to fix a bug with gsap
           flowerPot.addPosition('right', 1640, 1, 30);
           flowerPot.setZIndex(45);
@@ -61,14 +61,14 @@
           macbook.addPosition('center', 630, 167, 0);
           macbook.addPosition('bottom', 100, 2880, 45);
           macbook.addPosition('left', -2650, 0, -10);
-          macbook.addPosition('right', 2100, 0, 20);
+          macbook.addPosition('right', 2100, 0, 10);
           macbook.setZIndex(40);
           macbook.sprite.scale.set(1.27, 1.27);
 
           var sketchbook = new Resource(resourcesUrl.firstSlide.sketchbook);
           sketchbook.addPosition('center', 16, 354, 0);
           sketchbook.addPosition('bottom', 0, 3600, 60);
-          sketchbook.addPosition('left', -1000, 0, -20);
+          sketchbook.addPosition('left', -3000, 0, -20);
           sketchbook.addPosition('right', 2560, 0, 20);
           sketchbook.setZIndex(10);
 
@@ -97,13 +97,13 @@
 
           var iphone = new Resource(resourcesUrl.secondSlide.iphone);
           iphone.addPosition('center', 615, 136, 0);
-          iphone.addPosition('left', -2000, 0, -15);
+          iphone.addPosition('left', -2500, 0, 8);
           iphone.addPosition('right', 1920, 0, 15);
           iphone.setZIndex(35);
 
           var sketchpad = new Resource(resourcesUrl.secondSlide.sketchpad);
           sketchpad.addPosition('center', -5, 268, 0);
-          sketchpad.addPosition('left', -1000, 0, -20);
+          sketchpad.addPosition('left', -2000, 0, -20);
           sketchpad.addPosition('right', 2800, 0, 20);
           sketchpad.setZIndex(15);
 
