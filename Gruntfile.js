@@ -504,7 +504,8 @@ module.exports = function (grunt) {
             return contents;
           },
           reduce: function (results) {
-            return results[0].contents;
+            // As the style is placed inside the html, we remove all "../" in front of "assets"
+            return results[0].contents.replace(/\.\.\/assets/gmi, 'assets');
           }
         },
         src: '<%= yeoman.dist %>/index-mobile.html',
