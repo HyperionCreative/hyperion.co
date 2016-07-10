@@ -126,75 +126,8 @@
   }
 }
 
-#index-page .portfolio-projects {
-  @include large-screens {
-    $this-spacing: 3px;
-
-    @include legacy-pie-clearfix;
-
-    .portfolio-project {
-      position: relative;
-
-      &:before {
-        $this-size: 16px;
-
-        content: "";
-
-        border: 1px solid transparent;
-        border-left: 0;
-        border-top: 0;
-        display: block;
-        height: $this-size;
-        width: $this-size;
-
-        position: absolute;
-        bottom: 6px;
-        right: 6px;
-      }
-    }
-
-    .portfolio-project--webfaction {
-      margin-bottom: 3px * 2;
-
-      &:before {
-        border-color: rgba(#474f51, 0.7);
-      }
-    }
-
-    .portfolio-project--anyvan,
-    .portfolio-project--quizkick {
-      float: left;
-      width: 50%;
-    }
-
-    .portfolio-project--anyvan {
-      padding-right: 3px;
-
-      &:before {
-        border-color: rgba(#474f51, 0.7);
-        right: 9px;
-      }
-    }
-
-    .portfolio-project--quizkick {
-      padding-left: 3px;
-
-      &:before {
-        border-color: rgba(#ffffff, 0.5);
-      }
-    }
-  }
-}
-
 #index-page .portfolio-project {
   display: block;
-
-  @include large-screens {
-    &--kartist,
-    &--grow {
-      display: none;
-    }
-  }
 
   &__image {
     display: block;
@@ -211,8 +144,12 @@
     font-size: 14px;
     line-height: 45px;
 
-    @include large-screens {
-      display: none;
+    &.container {
+      @include large-screens {
+        max-width: 768px;
+        padding: 0 35px;
+        width: 100%;
+      }
     }
 
     strong {
