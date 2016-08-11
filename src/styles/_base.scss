@@ -117,3 +117,27 @@ $sub-page-template-z-index: 3500;
 $http-error-z-index: 3750;
 
 $preloader-z-index: 10000;
+
+///////////////
+// Page like //
+///////////////
+
+%page-like {
+  position: relative;
+  z-index: 3;
+}
+
+%page-like-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: -2;
+
+  background: #ffffff;
+  opacity: 0.7;
+
+  @include box-shadow($normal-box-shadow);
+  @include transform(rotateZ(-4deg));
+}
