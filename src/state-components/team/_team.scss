@@ -5,14 +5,25 @@
   }
 
   .team-member {
-    background: #ffffff;
     @include box-shadow($normal-box-shadow);
     display: inline-block;
     font-size: $normal-font-size;
-    margin: 0 8px;
+    margin: 0 26px;
     text-align: center;
     vertical-align: top;
     width: 325px;
+
+    @extend %page-like;
+
+    & > .page-like-bg {
+      @extend %page-like-bg;
+
+      opacity: 0.5;
+    }
+
+    &__container {
+      background: #ffffff;
+    }
 
     &__picture {
       display: block;
@@ -40,8 +51,8 @@
 
     &__specialization {
       font-size: 11px;
-      margin: 18px 0 40px 0;
-      padding: 20px 40px 0 40px;
+      margin-top: 18px;
+      padding: 20px 40px 40px 40px;
       position: relative;
 
       &:before {
@@ -78,27 +89,47 @@
       }
     }
 
-    &__social-links {
-      $this-count: 3;
+    // Social links
+    & {
+      @mixin social-links($count) {
+        .team-member__social-links {
+          $this-border: #efefef;
 
-      border-top: 1px solid #d0d0d1;
-      @include legacy-pie-clearfix;
+          border-top: 1px solid $this-border;
+          @include legacy-pie-clearfix;
 
-      li {
-        border-right: 1px solid #d0d0d1;
-        float: left;
-        width: 100% / $this-count;
+          li {
+            border-right: 1px solid $this-border;
+            float: left;
+            width: 100% / $count;
 
-        &:last-child {
-          border-right: 0;
+            &:last-child {
+              border-right: 0;
+            }
+          }
         }
+      }
 
+      &.team-member__cristian {
+        @include social-links(2);
+      }
+
+      &.team-member__cosmin {
+        @include social-links(3);
+      }
+
+      &__social-links {
         a {
+          background: #ffffff;
           color: #9fa7af;
           display: block;
           font-size: 15px;
           line-height: 45px;
           text-align: center;
+
+          &:hover {
+            opacity: 0.8;
+          }
 
           &.icon-git {
             font-size: 20px;

@@ -8,7 +8,6 @@
     .config(['$stateProvider', function ($stateProvider) {
       $stateProvider
         .state('root.sub-page-template.team', {
-          abstract: true,
           url: '/team',
           views: {
             'sub-page-content': {
