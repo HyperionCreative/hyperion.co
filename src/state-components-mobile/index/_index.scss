@@ -141,13 +141,13 @@
     background: #ffffff;
     display: block;
     font-family: $SourceSansPro;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 45px;
 
     &.container {
       @include large-screens {
-        max-width: 768px;
-        padding: 0 35px;
+        max-width: none;
+        padding: 0 40px;
         width: 100%;
       }
     }
@@ -207,7 +207,9 @@
   }
 
   &.large-only {
-    padding: 30px 40px;
+    border-top: 1px solid #eeeeef;
+    margin: 30px 40px 0 40px;
+    padding: 25px 0 37px 0;
 
     .simple-footer {
       color: rgba(#202a35, 0.7);
