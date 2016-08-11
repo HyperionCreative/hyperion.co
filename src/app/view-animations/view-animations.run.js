@@ -18,6 +18,7 @@
 
         'root.sub-page-template.justification',
         'root.sub-page-template.portfolio',
+        'root.sub-page-template.team',
         'root.sub-page-template.contact'
       ];
       var PORTFOLIO_PROJECT_DETECTOR = 'root.sub-page-template.portfolio.';
