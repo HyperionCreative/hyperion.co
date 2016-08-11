@@ -9,7 +9,7 @@
   .justification-container {
     background: #ffffff;
     @include box-shadow($normal-box-shadow);
-    padding: 105px 138px;
+    padding: 105px 136px 70px 136px;
 
     p {
       line-height: 1.3;
@@ -40,26 +40,18 @@
   .reasons {
     display: block;
     @include legacy-pie-clearfix;
-    margin-top: 61px;
-    padding-top: 33px;
+    margin-top: 75px;
     position: relative;
-
-    &:before {
-      background: #e8e9ea;
-      content: "";
-      display: block;
-      height: 1px;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 130px;
-    }
 
     li {
       float: left;
-      height: 170px;
+      height: 235px;
       padding-left: 30px;
       width: 50%;
+
+      &.reason--small {
+        height: 145px;
+      }
 
       &:nth-child(odd) {
         padding-left: 0;
@@ -67,11 +59,21 @@
       }
     }
 
+    .reason__hover-zone:hover {
+      .big-title {
+        color: rgba($this-blue-color, 1);
+      }
+
+      p {
+        color: rgba($this-text-color, 1);
+      }
+    }
+
     .big-title {
-      color: rgba($this-blue-color, 0.45);
+      color: rgba($this-blue-color, 0.5);
       font-size: 29px;
       font-family: $FF-DIn-Condensed-Bold;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     p {
