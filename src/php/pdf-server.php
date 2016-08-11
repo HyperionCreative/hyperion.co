@@ -2,7 +2,7 @@
 
 header('Content-Type: application/octet-stream');
 
-$file = '../assets/pdf/choose-hyperion.pdf';
+$file = '../assets/pdf/work-with-hyperion.pdf';
 header('Content-Disposition: attachment; filename='.urlencode('choose-hyperion.pdf'));
 header('Content-Type: application/octet-stream');
 header('Content-Type: application/download');
