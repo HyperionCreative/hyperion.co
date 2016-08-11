@@ -8,6 +8,11 @@
     .config(['$stateProvider', function ($stateProvider) {
       $stateProvider
         .state('root.sub-page-template.team', {
+          data: {
+            simpleSeoTitle: 'Our Team - Hyperion',
+            simpleSeoDescription: 'We are a two man design consulting firm. Our UI/UX designer is Cristian Moisei and our lead developer is Cosmin Ababei.',
+            simpleSeoKeywords: 'team, hyperion, cosmin ababei, cristian moisei'
+          },
           url: '/team',
           views: {
             'sub-page-content': {
