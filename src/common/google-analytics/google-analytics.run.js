@@ -31,7 +31,7 @@
 
         $rootScope.$on('$stateChangeSuccess', function () {
           ga('send', 'pageview', {
-            page: $location.absUrl()
+            page: $location.path()
           });
         });
       }
