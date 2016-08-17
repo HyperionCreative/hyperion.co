@@ -36,7 +36,7 @@
         //   navigationHamburgerAnchorText: 'Services',
         //   header: {
         //     title: '<h3>Our Services</h3>',
-        //     description: '<h2>As a design consulting firm, with only a small team for now, our job is to help bring your ideas to life. We organise, we create and we solve problems.</h2>'
+        //     description: '<h2>As a product design team, with only a small team for now, our job is to help bring your ideas to life. We organise, we create and we solve problems.</h2>'
         //   },
         //   design: {
         //     tabName: 'Design',

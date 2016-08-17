@@ -10,7 +10,7 @@
         .state('root.sub-page-template.team', {
           data: {
             simpleSeoTitle: 'Our Team - Hyperion',
-            simpleSeoDescription: 'We are a two man design consulting firm. Our UI/UX designer is Cristian Moisei and our lead developer is Cosmin Ababei.',
+            simpleSeoDescription: 'We are a two man product design team. Our UI/UX designer is Cristian Moisei and our lead developer is Cosmin Ababei.',
             simpleSeoKeywords: 'team, hyperion, cosmin ababei, cristian moisei'
           },
           url: '/team',
