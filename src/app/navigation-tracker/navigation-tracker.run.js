@@ -12,18 +12,16 @@
 
         'root.sub-page-template.contact': 'Contact',
 
-        'root.sub-page-template.expertise.consulting': 'Consulting Expertise',
-        'root.sub-page-template.expertise.design': 'Design Expertise',
-        'root.sub-page-template.expertise.development': 'Development Expertise',
-
-        'root.sub-page-template.justification': 'Justification',
-
         'root.sub-page-template.portfolio': 'Our Work',
         'root.sub-page-template.portfolio.anyvan': 'AnyVan',
         'root.sub-page-template.portfolio.grow': 'Grow with a CFO',
         'root.sub-page-template.portfolio.kartist': 'Kartist',
         'root.sub-page-template.portfolio.quizkick': 'QuizKick',
-        'root.sub-page-template.portfolio.webfaction': 'Webfaction'
+        'root.sub-page-template.portfolio.webfaction': 'Webfaction',
+
+        'root.sub-page-template.team': 'Our Team',
+
+        'root.sub-page-template.justification': 'Justification'
       };
 
       //////////////
