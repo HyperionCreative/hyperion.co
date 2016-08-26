@@ -10,7 +10,7 @@
         .state('root.sub-page-template.team', {
           data: {
             simpleSeoTitle: 'Our Team - Hyperion',
-            simpleSeoDescription: 'We are a two man product design team. Our UI/UX designer is Cristian Moisei and our lead developer is Cosmin Ababei.',
+            simpleSeoDescription: 'We are a two man product design team. Our UI/UX designer is Cristian Moisei and our web developer is Cosmin Ababei.',
             simpleSeoKeywords: 'team, hyperion, cosmin ababei, cristian moisei'
           },
           url: '/team',
@@ -22,8 +22,8 @@
         })
         .state('root.sub-page-template.team.cosmin', {
           data: {
-            simpleSeoTitle: 'Cosmin Ababei - Lead front-end Developer at Hyperion',
-            simpleSeoDescription: 'Learn more about Cosmin Ababei, the Lead front-end Developer of Hyperion.',
+            simpleSeoTitle: 'Cosmin Ababei - Web Developer at Hyperion',
+            simpleSeoDescription: 'Learn more about Cosmin Ababei, the Web Developer at Hyperion.',
             simpleSeoKeywords: 'freelance website developer birmingham uk, front end developer birmingham uk, angular developer birmingham uk, web developer birmingham uk'
           },
           url: '/cosmin',
