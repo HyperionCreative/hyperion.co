@@ -10,6 +10,7 @@
     background: #ffffff;
     @include box-shadow($normal-box-shadow);
     padding: 105px 136px 70px 136px;
+    position: relative;
 
     p {
       line-height: 1.3;
@@ -83,7 +84,7 @@
 
   .buttons-and-cta {
     @include legacy-pie-clearfix;
-    margin-top: 50px;
+    margin-top: 80px;
 
     .button {
       $this-color: #4c8fe9;
@@ -109,11 +110,20 @@
       }
     }
 
+    .clutch-logo {
+      height: 40px;
+      float: right;
+      margin-top: -5px;
+      width: auto;
+    }
+
     .get-as-pdf {
       color: rgba(#80868a, 0.5);
-      float: right;
       font-size: 15px;
       line-height: 30px;
+      position: absolute;
+      right: 35px;
+      top: 30px;
       text-decoration: underline;
 
       &:hover {
