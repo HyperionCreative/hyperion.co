@@ -24,7 +24,9 @@ $icon--text-hire-us: "\e90a";
 [class*=" icon-"] {
   @extend %has-an-icon;
 }
-
+.icon-consultation:before {
+  content: "\e90b";
+}
 .icon-text-hire-us:before {
     content: $icon--text-hire-us;
 }
