@@ -74,14 +74,17 @@
         margin-right: 30px;
         opacity: 0.5;
 
+        &:hover {
+          opacity: 0.6;
+        }
+
         &:last-child {
           margin-right: 0;
         }
 
         &.active {
           cursor: auto;
-          // TODO should we enable this?
-          // font-family: $HelveticaNeue-Bold;
+          font-family: $HelveticaNeue-Bold;
           opacity: 1;
         }
 
@@ -129,7 +132,8 @@
 }
 
 @import "anyvan/anyvan";
-@import "grow/grow";
+@import "company-mood/company-mood";
+//@import "grow/grow";
 @import "kartist/kartist";
 @import "quizkick/quizkick";
 @import "webfaction/webfaction";
@@ -168,7 +172,7 @@
     @include transition(box-shadow $this-transition, transform $this-transition, z-index $this-transition);
 
     &:hover {
-      @include box-shadow(10px 10px 38px 0px rgba(0,0,0,0.4));
+      @include box-shadow(10px 10px 38px 0px rgba(0, 0, 0, 0.4));
       @include transform(scale(1.06) translateZ(0));
       z-index: 3;
     }
@@ -222,9 +226,9 @@
           width: 345px;
         }
 
-        &--grow {
-          margin-top: 20px;
-          width: 301px;
+        &--company-mood {
+          margin-top: 18px;
+          width: image-width("assets/images/portfolio/company-mood/cover.jpg");
         }
       }
     }

@@ -1,0 +1,147 @@
+#company-mood-portfolio-page {
+  $this-client-color: #596b84;
+  $this-container-width: 760px;
+
+  .portfolio-header .logo img {
+    height: image-height("assets/images/portfolio/company-mood/logo.png");
+    width: image-width("assets/images/portfolio/company-mood/logo.png");
+  }
+
+  .carousel-slider {
+    height: 600px;
+    width: 100%;
+  }
+
+  .company-mood-container {
+    margin: 0 auto;
+    width: $this-container-width;
+  }
+
+  ul.navigation-tabs {
+    margin: 40px 0 60px 0;
+  }
+
+  .row {
+    & {
+      .title, .button {
+        color: $this-client-color;
+        margin-bottom: 20px;
+      }
+
+      .title.title--fancy {
+        color: #dfe1e4;
+        font-family: $FF-DIn-Condensed-Bold;
+        font-size: 30px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+      }
+
+      .title.title--sub {
+        color: #697078;
+        font-family: $HelveticaNeue-Roman;
+        font-size: 14px;
+        text-transform: uppercase;
+      }
+
+      .button {
+        border-color: $this-client-color;
+        margin-top: 1em;
+
+        &:hover {
+          background: $this-client-color;
+        }
+      }
+
+      p {
+        line-height: $small-line-height;
+      }
+    }
+
+    &.first {
+      .big-text {
+        height: image-height("assets/images/portfolio/company-mood/home.jpg");
+        position: relative;
+        width: $this-container-width - image-width("assets/images/portfolio/company-mood/home.jpg");
+
+        p {
+          font-size: $medium-font-size;
+        }
+
+        .big-text-container {
+          border-bottom: 1px solid #f4f4f5;
+          left: 0;
+          padding-bottom: 5px;
+          padding-right: 35px;
+          position: absolute;
+          width: 100%;
+
+          &.introduction {
+            top: 100px;
+          }
+
+          &.how-it-works {
+            top: 445px;
+          }
+
+          &.advantages {
+            top: 729px;
+          }
+
+          &.testimonials {
+            top: 902px;
+          }
+
+          &.footer {
+            bottom: 0;
+          }
+        }
+      }
+
+      .big-image {
+        position: relative;
+        width: image-width("assets/images/portfolio/company-mood/home.jpg");
+        z-index: 5;
+      }
+    }
+
+    &.second {
+      margin-top: 115px;
+      padding-bottom: 85px;
+
+      p {
+        font-size: $medium-font-size;
+      }
+
+      img {
+        margin-top: 32px;
+      }
+    }
+
+    &.third {
+      margin-top: -10px;
+
+      .left {
+        max-width: image-width("assets/images/portfolio/company-mood/questions.jpg");
+      }
+
+      .right {
+        margin-top: 205px;
+        width: 298px;
+      }
+    }
+
+    &.fourth,
+    &.fifth,
+    &.sixth {
+      margin-top: 98px;
+
+      img {
+        margin-top: 35px;
+      }
+    }
+
+    &.sixth {
+      padding-bottom: 95px;
+    }
+  }
+}

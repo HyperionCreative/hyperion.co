@@ -40,12 +40,12 @@
         },
         name: 'QuizKick'
       }, {
-        href: 'portfolio.grow',
-        imageSrc: 'assets/images/portfolio/grow/logo.png',
+        href: 'portfolio.companyMood',
+        imageSrc: 'assets/images/portfolio/company-mood/logo.png',
         imageStyle: {
           'width': '70%'
         },
-        name: 'Grow'
+        name: 'Company Mood'
       }];
 
       var PORTFOLIO_RSI_OPTIONS = {

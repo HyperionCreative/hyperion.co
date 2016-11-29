@@ -89,6 +89,18 @@
               description: '<p>Anyvan\'s organisational approach to providing on-demand cargo transport services is, in our opinion, deserving of all the awards it received and definitely a step in the right direction towards a cleaner, more efficient industry. By offering transport companies the opportunity to profit from the unused space in their trucks, they are not only reducing the number of unnecessary trips, but also benefiting customers who need a more affordable means of moving items across great distances.</p><p>They decided to make their services more accessible by launching a mobile app, for which we produced the interface, defined the experienced and worked closely with their development team to help implement it and shape the application. The resulting product was a friendly, easy to use app that would make AnyVan\'s services even easier to benefit from.</p>'
             }
           },
+          companyMood: {
+            projectName: 'Company Mood',
+            field: 'Website Design',
+
+            header: '<h2>We worked with <strong>Company Mood</strong> in late 2016 and gave their website a fresh new look that better explains the advantages of their product to their audience.</h2>',
+            tabletHeader: '<h2>We worked with <strong>Company Mood</strong> in late 2016 and gave their website a fresh new look that better explains the advantages of their product to their audience.</h2>',
+
+            // generic: {
+            //   title: 'Company Mood',
+            //   description: '<p>Grow with a CFO - a financial consulting firm, needed a website to showcase their services, explain who they are and how they work. Our objective was to create a site that is adequate and would help them achieve their goals and expand their firm. After several weeks on the project, we believe we achieved that.</p><p>Our client reported the site has been performing well since it launched earlier this year and that they are quite happy with the results.</p><p>Unfortunately, Grow with a CFO only used the website we created for about half a year before creating a new Wordpress site themselves.</p>'
+            // }
+          },
           kartist: {
             projectName: 'Kartist',
             field: 'Web App Interface',

@@ -1,0 +1,43 @@
+@import "state-components/portfolio/company-mood/company-mood";
+
+#company-mood-portfolio-page {
+  .portfolio-header .logo img {
+    height: auto;
+    width: 140px;
+  }
+
+  .company-mood-container {
+    margin: 0 auto;
+    width: 85%;
+  }
+
+  .row {
+    &.first {
+      position: relative;
+
+      .big-text {
+        height: auto;
+        position: static;
+        width: 40%;
+
+        .big-text-container {
+          width: 40%;
+        }
+      }
+
+      .big-image {
+        width: 60%;
+      }
+    }
+
+    &.third {
+      .left {
+        width: 55%;
+      }
+
+      .right {
+        width: 37.5%;
+      }
+    }
+  }
+}

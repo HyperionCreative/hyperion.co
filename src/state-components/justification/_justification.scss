@@ -60,25 +60,15 @@
       }
     }
 
-    .reason__hover-zone:hover {
-      .big-title {
-        color: rgba($this-blue-color, 1);
-      }
-
-      p {
-        color: rgba($this-text-color, 1);
-      }
-    }
-
     .big-title {
-      color: rgba($this-blue-color, 0.5);
+      color: $this-blue-color;
       font-size: 29px;
       font-family: $FF-DIn-Condensed-Bold;
       margin-bottom: 16px;
     }
 
     p {
-      color: rgba($this-text-color, 0.6);
+      color: $this-text-color;
     }
   }
 

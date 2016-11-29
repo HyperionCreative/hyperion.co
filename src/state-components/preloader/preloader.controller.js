@@ -22,10 +22,18 @@
         Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/anyvan/slide-3.jpg');
         Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/anyvan/slide-4.jpg');
 
-        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/grow/logo.png');
-        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/grow/ipad-and-iphone-frame.png');
-        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/grow/slide-1.jpg');
-        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/grow/slide-2.jpg');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/company-mood/logo.png');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/company-mood/devices.jpg');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/company-mood/features.jpg');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/company-mood/home.jpg');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/company-mood/images.jpg');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/company-mood/pages.jpg');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/company-mood/questions.jpg');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/company-mood/wireframes.jpg');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/company-mood/slide-1.jpg');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/company-mood/slide-2.jpg');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/company-mood/slide-3.jpg');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/company-mood/slide-4.jpg');
 
         Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/kartist/logo.png');
         Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/kartist/imac-frame.png');
