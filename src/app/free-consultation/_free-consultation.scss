@@ -1,0 +1,86 @@
+#free-consultation {
+  $this-position: 40px;
+
+  @include border-radius(5px);
+  bottom: $this-position;
+  color: #ffffff;
+  font-family: $Rosario-Regular;
+  font-size: 18px;
+  height: 135px;
+  line-height: $small-line-height;
+  overflow: hidden;
+  position: fixed;
+  right: $this-position;
+  width: 375px;
+  z-index: $free-consultation-z-index;
+
+  &:hover {
+    .free-consultation-container {
+      &.first-state {
+        opacity: 0;
+      }
+
+      &.second-state {
+        opacity: 1;
+      }
+    }
+  }
+
+
+  .free-consultation-container {
+    $this-background-color: #697079;
+
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    &.first-state {
+      @include align-items(center);
+      background-color: $this-background-color;
+      @include display-flex;
+      height: 100%;
+      opacity: 1;
+      padding: 0 35px;
+      width: 100%;
+
+      .icon-consultation {
+        color: rgba(#ffffff, 0.3);
+        font-size: 49px;
+        padding-right: 35px;
+      }
+
+      strong {
+        display: block;
+        font-family: $Rosario-Bold;
+      }
+    }
+
+    &.second-state {
+      @include display-flex;
+      height: 100%;
+      opacity: 0;
+      width: 100%;
+
+      .possible-answers {
+        @include align-items(center);
+        background-color: rgba($this-background-color, 0.5);
+        cursor: pointer;
+        @include display-flex;
+        @include justify-content(center);
+        height: 100%;
+        text-align: center;
+        width: 50%;
+
+        &:hover {
+          background-color: rgba($this-background-color, 1);
+        }
+
+        &:first-child {
+          margin-right: 1px;
+        }
+      }
+    }
+  }
+}

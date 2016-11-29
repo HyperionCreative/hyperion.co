@@ -1,0 +1,16 @@
+<div>
+  <div ng-if="!vm.alwaysHide">
+    <div ng-if="vm.showConsultationPopup" id="free-consultation">
+      <div class="free-consultation-container first-state">
+        <span class="icon-consultation"></span>
+        <h2>Psst! We're offering <strong>1 Hour of Consulting for free</strong> if you need it.</h2>
+      </div>
+      <div class="free-consultation-container second-state">
+        <a ng-click="vm.soundsGood();"
+          class="possible-answers" href="http://www.hyperion.co/ask/consultation" target="_blank">Sounds Good</a>
+        <div ng-click="vm.noThanks();"
+          class="possible-answers">No Thanks</div>
+      </div>
+    </div>
+  </div>
+</div>
