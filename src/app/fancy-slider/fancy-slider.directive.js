@@ -84,6 +84,8 @@
 
           // Everything is ready!
           SliderInitializer.init(stage, renderer, function () {
+            /*@@@ window.ga('send', 'event', 'Homepage Slider', 'Is init'); @@@*/
+
             // Variables
             var
               animationsControllers = Animations.getControllers(),
@@ -108,12 +110,14 @@
             function toLeft() {
               if (!Blur.isBlurring() && !Blur.isBlurred() && animationsControllers.toLeft(currentSlide)) {
                 changeCurrentSlideVar(-1);
+                /*@@@ window.ga('send', 'event', 'Homepage Slider', 'Change to left'); @@@*/
               }
             }
 
             function toRight() {
               if (!Blur.isBlurring() && !Blur.isBlurred() && animationsControllers.toRight(currentSlide)) {
                 changeCurrentSlideVar(1);
+                /*@@@ window.ga('send', 'event', 'Homepage Slider', 'Change to right'); @@@*/
               }
             }
 
