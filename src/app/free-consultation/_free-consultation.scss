@@ -1,86 +1,62 @@
 #free-consultation {
-  $this-position: 40px;
+  $this-position: 30px;
 
-  @include border-radius(5px);
+  background: rgba(#4c8fe9, 0.95);
+  @include border-radius(4px);
   bottom: $this-position;
   color: #ffffff;
   font-family: $Rosario-Regular;
-  font-size: 18px;
-  height: 135px;
+  font-size: 14px;
+  height: auto;
   line-height: $small-line-height;
   overflow: hidden;
+  padding: 26px 30px 22px 30px;
   position: fixed;
   right: $this-position;
-  width: 375px;
+  @include transition(transform ease-in-out 0.25s);
+  @include transform(translate3d(0, 0, 0));
+  width: 330px;
   z-index: $free-consultation-z-index;
 
-  &:hover {
-    .free-consultation-container {
-      &.first-state {
-        opacity: 0;
-      }
+  &.ng-enter {
+    @include transform(translate3d(0, 200%, 0));
 
-      &.second-state {
-        opacity: 1;
-      }
+    &.ng-enter-active {
+      @include transform(translate3d(0, 0, 0));
     }
   }
 
+  &.ng-leave {
+    @include transform(translate3d(0, 0, 0));
 
-  .free-consultation-container {
-    $this-background-color: #697079;
+    &.ng-leave-active {
+      @include transform(translate3d(0, 200%, 0));
+    }
+  }
 
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
+  h2 {
+    line-height: 1.3;
+    margin-bottom: 10px;
 
-    &.first-state {
-      @include align-items(center);
-      background-color: $this-background-color;
-      @include display-flex;
-      height: 100%;
-      opacity: 1;
-      padding: 0 35px;
-      width: 100%;
-
-      .icon-consultation {
-        color: rgba(#ffffff, 0.3);
-        font-size: 49px;
-        padding-right: 35px;
-      }
-
-      strong {
-        display: block;
-        font-family: $Rosario-Bold;
-      }
+    span {
+      text-transform: uppercase;
     }
 
-    &.second-state {
-      @include display-flex;
-      height: 100%;
-      opacity: 0;
-      width: 100%;
+    strong {
+      display: block;
+      font-size: 18px;
+      font-family: $Rosario-Bold;
+    }
+  }
 
-      .possible-answers {
-        @include align-items(center);
-        background-color: rgba($this-background-color, 0.5);
-        cursor: pointer;
-        @include display-flex;
-        @include justify-content(center);
-        height: 100%;
-        text-align: center;
-        width: 50%;
+  .possible-answers {
+    color: #9fc3f3;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 25px;
 
-        &:hover {
-          background-color: rgba($this-background-color, 1);
-        }
-
-        &:first-child {
-          margin-right: 1px;
-        }
-      }
+    &:hover {
+      color: #b8d2f5;
     }
   }
 }
