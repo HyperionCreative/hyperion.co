@@ -2,4 +2,4 @@
 
 User-agent: *
 
-Sitemap: http://www.hyperion.co/sitemap.xml
+Sitemap: https://www.hyperion.co/sitemap.xml

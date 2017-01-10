@@ -8,11 +8,11 @@
 
       $http({
         method: 'GET',
-        url: 'http://ip-api.com/json'
+        url: 'https://freegeoip.net/json/'
       }).then(function (response) {
         userLocation = {
           city: response.data.city,
-          country: response.data.country
+          country: response.data.country_name
         };
       });
 

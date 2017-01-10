@@ -1,78 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
-    <loc>http://www.hyperion.co</loc>
+    <loc>https://www.hyperion.co</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>http://www.hyperion.co/ask/app-redesign/</loc>
+    <loc>https://www.hyperion.co/ask/app-redesign/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.35</priority>
   </url>
   <url>
-    <loc>http://www.hyperion.co/ask/site-redesign/</loc>
+    <loc>https://www.hyperion.co/ask/site-redesign/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.35</priority>
   </url>
 
   <url>
-    <loc>http://www.hyperion.co/why-us</loc>
+    <loc>https://www.hyperion.co/why-us</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>http://www.hyperion.co/contact</loc>
+    <loc>https://www.hyperion.co/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.25</priority>
   </url>
 
   <url>
-    <loc>http://www.hyperion.co/portfolio</loc>
+    <loc>https://www.hyperion.co/portfolio</loc>
     <changefreq>monthly</changefreq>
     <priority>0.45</priority>
   </url>
 
   <url>
-    <loc>http://www.hyperion.co/portfolio/webfaction</loc>
+    <loc>https://www.hyperion.co/portfolio/webfaction</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>http://www.hyperion.co/portfolio/kartist</loc>
+    <loc>https://www.hyperion.co/portfolio/kartist</loc>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>http://www.hyperion.co/portfolio/quizkick</loc>
+    <loc>https://www.hyperion.co/portfolio/quizkick</loc>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>http://www.hyperion.co/portfolio/anyvan</loc>
+    <loc>https://www.hyperion.co/portfolio/anyvan</loc>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
-    <loc>http://www.hyperion.co/portfolio/company-mood</loc>
+    <loc>https://www.hyperion.co/portfolio/company-mood</loc>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
 
   <url>
-    <loc>http://www.hyperion.co/team</loc>
+    <loc>https://www.hyperion.co/team</loc>
     <changefreq>monthly</changefreq>
     <priority>0.10</priority>
   </url>
   <url>
-    <loc>http://www.hyperion.co/team/cosmin</loc>
+    <loc>https://www.hyperion.co/team/cosmin</loc>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
   </url>
   <url>
-    <loc>http://www.hyperion.co/team/cristian</loc>
+    <loc>https://www.hyperion.co/team/cristian</loc>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
   </url>

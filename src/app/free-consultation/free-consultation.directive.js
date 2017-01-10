@@ -46,7 +46,7 @@
             setCookie();
             vm.alwaysHide = true;
             setTimeout(function () {
-              window.open('http://www.hyperion.co/ask/consultation');
+              window.open('https://www.hyperion.co/ask/consultation');
             }, 30);
           };
 
@@ -70,17 +70,19 @@
             }
           }, 10000);
 
-          $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState) {
-            if (toState.name === 'root.sub-page-template.contact') {
-              tryToShowOnContact();
-            } else if (toState.name.match('root.sub-page-template.portfolio')) {
-              if (fromState.name.match('root.sub-page-template.portfolio')) {
-                // No need to restart the portfolio timer!
-              } else {
-                tryToShowOnPortfolio();
+          if (!vm.alwaysHide) {
+            $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState) {
+              if (toState.name === 'root.sub-page-template.contact') {
+                tryToShowOnContact();
+              } else if (toState.name.match('root.sub-page-template.portfolio')) {
+                if (fromState.name.match('root.sub-page-template.portfolio')) {
+                  // No need to restart the portfolio timer!
+                } else {
+                  tryToShowOnPortfolio();
+                }
               }
-            }
-          });
+            });
+          }
         }],
         controllerAs: 'vm',
         replace: true,
