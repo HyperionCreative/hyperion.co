@@ -1,9 +1,9 @@
-#anyvan-portfolio-page {
+#pleo-portfolio-page {
   $this-client-color: #41a5dd;
 
   .portfolio-header .logo img {
-    height: image-height("assets/images/portfolio/anyvan/logo.png");
-    width: image-width("assets/images/portfolio/anyvan/logo.png");
+    height: image-height("assets/images/portfolio/pleo/logo.png");
+    width: image-width("assets/images/portfolio/pleo/logo.png");
   }
 
   .carousel-slider {
@@ -30,7 +30,7 @@
 
     .video-container {
       margin: 0 10px 0 30px;
-      width: image-width("assets/images/portfolio/anyvan/iphone-frame.png");
+      width: image-width("assets/images/portfolio/pleo/iphone-frame.png");
 
       video {
         left: 58px;

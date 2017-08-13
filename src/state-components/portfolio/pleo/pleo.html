@@ -1,0 +1,38 @@
+<hyp-center-me>
+  <section id="pleo-portfolio-page" class="portfolio-page">
+    <div class="container custom-cursor normal">
+      <hyp-portfolio-header
+        description="{{:: str.portfolio.pleo.header }}"
+        client-logo-url="assets/images/portfolio/pleo/logo.png"
+        client-name="{{:: str.portfolio.pleo.projectName}}"
+      ></hyp-portfolio-header>
+
+      <div class="portfolio-content">
+        <hyp-carousel-slider
+          arrows-background-color="#9ba6b5"
+          arrows-color="#ffffff"
+          images-url="['assets/images/portfolio/pleo/slide-1.jpg', 'assets/images/portfolio/pleo/slide-2.jpg', 'assets/images/portfolio/pleo/slide-3.jpg', 'assets/images/portfolio/pleo/slide-4.jpg']"
+          ></hyp-carousel-slider>
+
+        <div class="first row">
+          <div class="video-container left">
+            <img src="assets/images/portfolio/pleo/iphone-frame.png" alt="pleo">
+            <video width="284" height="504" autoplay loop muted poster="assets/videos/portfolio/pleo/pleo-poster.jpg">
+              <source src="assets/videos/portfolio/pleo/pleo.mp4" type="video/mp4">
+              <source src="assets/videos/portfolio/pleo/pleo.webm" type="video/webm">
+            </video>
+          </div>
+          <div class="description left">
+            <h1 class="title" ng-bind-html=":: str.portfolio.pleo.generic.title"></h1>
+            <div ng-bind-html=":: str.portfolio.pleo.generic.description"></div>
+            <a class="button" href="http://www.pleo.com/" target="_blank">Visit Site</a>
+          </div>
+        </div>
+      </div>
+
+      <a ui-sref="root.sub-page-template.portfolio.kartist" class="project-navigation">Next Project: <strong><span>{{:: str.portfolio.kartist.projectName}}<span class="icon-arrow-right-pointy"></span></span></strong></a>
+
+      <hyp-simple-footer></hyp-simple-footer>
+    </div>
+  </section>
+</hyp-center-me>

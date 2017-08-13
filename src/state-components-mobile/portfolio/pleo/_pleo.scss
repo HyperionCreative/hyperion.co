@@ -1,6 +1,6 @@
-@import "state-components/portfolio/anyvan/anyvan";
+@import "state-components/portfolio/pleo/pleo";
 
-#anyvan-portfolio-page {
+#pleo-portfolio-page {
   $this-client-color: #41a5dd;
 
   .title {
@@ -12,7 +12,7 @@
   }
 }
 
-#anyvan-portfolio-page .large-only {
+#pleo-portfolio-page .large-only {
   .full-width-slider {
     height: 512px;
     width: 100%;

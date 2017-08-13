@@ -24,13 +24,13 @@
         },
         name: 'Kartist'
       }, {
-        href: 'portfolio.anyvan',
-        imageSrc: 'assets/images/portfolio/anyvan/logo.png',
+        href: 'portfolio.pleo',
+        imageSrc: 'assets/images/portfolio/pleo/logo.png',
         imageStyle: {
           'margin-top': '3px',
           'width': '65%'
         },
-        name: 'AnyVan'
+        name: 'pleo'
       }, {
         href: 'portfolio.quizkick',
         imageSrc: 'assets/images/portfolio/quizkick/logo.png',
