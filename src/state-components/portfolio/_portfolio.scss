@@ -158,7 +158,7 @@
     $this-transition: 0.15s ease-in-out;
 
     background-color: #cbcfd3;
-    @include border-radius(5px);
+    @include border-radius(7px);
     @include box-shadow($normal-box-shadow);
     float: left;
     height: 270px;

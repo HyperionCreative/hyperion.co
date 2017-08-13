@@ -11,6 +11,16 @@
     width: 100%;
   }
 
+  .video-container {
+      margin: 0 10px 0 30px;
+      width: image-width("assets/images/portfolio/pleo/iphone-frame.png");
+
+      video {
+        left: 58px;
+        top: 83px;
+      }
+    }
+
   .row .title, .row .button {
     color: $this-client-color;
   }
