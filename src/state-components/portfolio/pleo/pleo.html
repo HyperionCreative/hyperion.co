@@ -1,4 +1,29 @@
 <hyp-center-me>
+  <style>
+
+.portfolio-centred-text{
+    text-align: center;
+    width: 600px;
+    margin-left:auto;
+    margin-right: auto;
+    padding-bottom: 50px;
+}
+
+#pleo-portfolio-page .first.row{
+  padding-top: 60px;
+}
+
+#pleo-portfolio-page .title{
+  color: #e6467c !important;
+}
+
+#pleo{
+  font-weight: bold !important;
+  font-size: 15px !important;
+  color: #e6467c !important;
+}
+
+  </style>
   <section id="pleo-portfolio-page" class="portfolio-page">
     <div class="container custom-cursor normal">
       <hyp-portfolio-header
@@ -11,23 +36,26 @@
         <hyp-carousel-slider
           arrows-background-color="#9ba6b5"
           arrows-color="#ffffff"
-          images-url="['assets/images/portfolio/pleo/slide-1.jpg', 'assets/images/portfolio/pleo/slide-2.jpg', 'assets/images/portfolio/pleo/slide-3.jpg', 'assets/images/portfolio/pleo/slide-4.jpg']"
+          images-url="['assets/images/portfolio/pleo/slide-1.jpg', 'assets/images/portfolio/pleo/slide-2.jpg', 'assets/images/portfolio/pleo/slide-3.jpg']"
           ></hyp-carousel-slider>
 
         <div class="first row">
           <div class="video-container left">
-            <img src="assets/images/portfolio/pleo/iphone-frame.png" alt="pleo">
-            <video width="284" height="504" autoplay loop muted poster="assets/videos/portfolio/pleo/pleo-poster.jpg">
-              <source src="assets/videos/portfolio/pleo/pleo.mp4" type="video/mp4">
-              <source src="assets/videos/portfolio/pleo/pleo.webm" type="video/webm">
-            </video>
+            <img src="assets/images/portfolio/pleo/iphone.jpg" alt="pleo">
           </div>
           <div class="description left">
             <h1 class="title" ng-bind-html=":: str.portfolio.pleo.generic.title"></h1>
             <div ng-bind-html=":: str.portfolio.pleo.generic.description"></div>
-            <a class="button" href="http://www.pleo.com/" target="_blank">Visit Site</a>
+            <p>More on their website:</p>
+            <a href="http://www.pleo.com/" target="_blank">www.pleo.com</a>
           </div>
         </div>
+
+        <div class="second row">
+          <img src="assets/images/portfolio/pleo/overview.jpg" alt="pleo-overview">
+          <p class="portfolio-centred-text">While the core functionality of the app is relatively simple, the logic behind it is not and we tried numerous concepts before settling on one we think would meet all the project’s requirements and provide a delightful experience to pleo’s users.</p>
+        </div>
+
       </div>
 
       <a ui-sref="root.sub-page-template.portfolio.kartist" class="project-navigation">Next Project: <strong><span>{{:: str.portfolio.kartist.projectName}}<span class="icon-arrow-right-pointy"></span></span></strong></a>

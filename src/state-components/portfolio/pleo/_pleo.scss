@@ -1,5 +1,5 @@
 #pleo-portfolio-page {
-  $this-client-color: #41a5dd;
+  $this-client-color: #e6467c;
 
   .portfolio-header .logo img {
     height: image-height("assets/images/portfolio/pleo/logo.png");
@@ -15,28 +15,9 @@
     color: $this-client-color;
   }
 
-  .row .button {
-    border-color: $this-client-color;
-    margin-top: 1em;
-  }
-
-  .row .button:hover {
-    background: $this-client-color;
-  }
-
   .first.row {
     padding-bottom: 50px;
     padding-top: 25px;
-
-    .video-container {
-      margin: 0 10px 0 30px;
-      width: image-width("assets/images/portfolio/pleo/iphone-frame.png");
-
-      video {
-        left: 58px;
-        top: 83px;
-      }
-    }
 
     .description {
       margin-top: 10%;

@@ -79,14 +79,14 @@
           pleo: {
             projectName: 'pleo',
             field: 'Mobile App Design',
-            sliderDescription: 'We worked with pleo in early 2014 to help them design their then upcoming iOS app. We handled the UI and UX and worked with their team to help them make it a reality.',
+            sliderDescription: 'pleo is a fintech startup that we worked with in early 2016 to design the interface and user experience of their iOS app.',
 
-            header: '<h2>We worked with <strong>pleo</strong> in early 2014 to help them design their then upcoming iOS app. We handled the UI/UX and helped their them make the app a reality.</h2>',
-            tabletHeader: '<h2>We worked with <strong>pleo</strong> in early 2014 to help them design their then upcoming iOS app. We handled the UI/UX and helped them implement it.</h2>',
+            header: '<h2><strong>pleo</strong> is a fintech startup that we worked with in early 2016 to design the interface and user experience of their iOS app.</h2>',
+            tabletHeader: '<h2><strong>pleo</strong> is a fintech startup that we worked with in early 2016 to design the interface and user experience of their iOS app.</h2>',
 
             generic: {
-              title: 'pleo',
-              description: '<p>pleo\'s organisational approach to providing on-demand cargo transport services is, in our opinion, deserving of all the awards it received and definitely a step in the right direction towards a cleaner, more efficient industry. By offering transport companies the opportunity to profit from the unused space in their trucks, they are not only reducing the number of unnecessary trips, but also benefiting customers who need a more affordable means of moving items across great distances.</p><p>They decided to make their services more accessible by launching a mobile app, for which we produced the interface, defined the experienced and worked closely with their development team to help implement it and shape the application. The resulting product was a friendly, easy to use app that would make pleo\'s services even easier to benefit from.</p>'
+              title: 'Dead Simple UX',
+              description: '<p><span id="pleo">pleo</span> is a Danish fin-tech company that uses a card + app system to automate expense management for all of a company\'s employees. Instead of spending money out of their own pockets or sharing a card, pleo\'s solution proposes that every employee is given their own card, which automatically logs all transactions and links with the mobile app, which enables them to snap pictures of receipts and keep an eye on their expenses.</p><p>The goal of this project was to design an iOS app whose main function would be to prompt users after they made a transaction with their pleo card to photograph the receipt. It also had to provide a list of transactions, card and profile management options as well as security features like cancelling a card.</p><p>The product, on one hand, had to be so accessible so that any employee inside a company could use it, while on the other hand providing a fast and reliable experience that users would actually want to scan all their receipts and the product would have value to their employer.</p>'
             }
           },
           companyMood: {
@@ -189,16 +189,16 @@
             },
 
             gettingStarted: {
-              title: 'I. Getting started',
-              description: '<p>We started this redesign project like most of our other projects, by getting to know the client, their business and the problems they are looking to solve. This was handled via a conference between us and their founder.</p><p>With a clear picture of what we’re working with in mind, we looked at ways to restructure the control panel, better explain how to use each section, and make sure users have a simple yet enjoyable experience.</p><p>For example, to create a website with the old interface users had to go to Domains/Websites, click on Domains, link a new domain, click on Apps, create a new app, then go to websites and create a new website with the domain and app you just added. Users also had to figure out this process on their own.</p>',
+              title: 'Getting Started',
+              description: '<p>We started the project by getting to know the client, their business and the problems they are looking to solve. We spoke to people on their team, discussed the most common concerns users have and analysed the data they stored.</p><p>We started the project by getting to know the client, their business and the problems they are looking to solve. We spoke to people on their team, discussed the most common concerns users have and analysed the data they stored.</p><p><italic>For example, to create a website with the old interface users had to go to Domains/Websites, click on Domains, link a new domain, click on Apps, create a new app, then go to websites and create a new website with the domain and app you just added. To make matters worse, users had to figure out this process on their own.</italic></p>',
               descriptionTwo: 'We summarised our ideas for how the new interface should work through a series of wireframes and ran this by the client to make sure we are on the same page before moving forward.'
             },
             theDesign: {
-              title: 'II. The Design',
+              title: 'The Design',
               description: '<p>After agreeing on the latest details of the UI’s structure, we moved on to the design stage. We created screens for every page and every state of the interface, every nook and cranny for both desktop and mobile devices.</p><p>Continuing the example of the process for creating websites, we unified it into a single page withsequential steps, and clear explinations for how each step works and how it all comes together.</p>'
             },
             theCode: {
-              title: 'III. The Code',
+              title: 'The Code',
               description: '<p>In order to maintain the agility we needed throughout the project and keep everything thoroughly organised, we decided to use a modular approach. Throughout the coding stage, Webfaction’s team was going to work on creating a new API to link their back-end to the interface.</p><p>We kicked this stage off by defining the architecture and making a plan. Once we had the interface’s structure defined, we started creating the modules - starting with the core ones.</p><p>We finished the interface before Webfaction completed the new API, and will link it when they are done.</p>'
             }
           }
