@@ -17,7 +17,7 @@
           contactEmail: 'contact@hyperion.co'
         },
         footer: {
-          text: '<p>More projects on our <strong>Social Networks</strong></p><small>&copy; Copyright Hyperion 2015</small>',
+          text: '<p>More projects on our <strong>Social Networks</strong></p>',
           twitterHref: '//twitter.com/WeAreHyperion',
           dribbbleHref: '//dribbble.com/hyperion',
           behanceHref: '//www.behance.net/hyperioncreative'
