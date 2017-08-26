@@ -49,6 +49,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
+    "build:prod": "grunt build:prod",
     "dev": "grunt serve"
   }
 }
