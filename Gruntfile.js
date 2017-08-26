@@ -195,61 +195,41 @@ module.exports = function (grunt) {
       }
     },
 
-
-    // Such code reuse, much efficiency!
-    // I don't know why it doesn't automatically rename the files to css -.-
-    sass: {
+    // Compiles Sass to CSS and generates necessary files if requested
+    compass: {
       options: {
-        includePaths: ['node_modules', 'src']
+        sassDir: '<%= yeoman.app %>/',
+        cssDir: '.tmp',
+        generatedImagesDir: '.tmp/images/generated',
+        imagesDir: '<%= yeoman.app %>',
+        javascriptsDir: '<%= yeoman.app %>',
+        fontsDir: '<%= yeoman.app %>/assets/webfonts',
+        importPath: './bower_components',
+        httpImagesPath: '/assets/images',
+        httpGeneratedImagesPath: '/assets/images/generated',
+        httpFontsPath: '/assets/webfonts',
+        relativeAssets: false,
+        assetCacheBuster: false,
+        raw: 'Sass::Script::Number.precision = 10\n'
       },
-
       dist: {
         options: {
-          debugInfo: true,
-          outputStyle: 'compressed',
-          sourcemap: false,
-          watch: false
-        },
-
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>',
-          src: '**/*.scss',
-          dest: '.tmp',
-          ext: '.css'
-        }]
+          generatedImagesDir: '<%= yeoman.dist %>/assets/images/generated',
+          outputStyle: 'compressed'
+        }
       },
-
-      oneOff: {
-        options: {
-          debugInfo: true,
-          sourcemap: true,
-          watch: false
-        },
-
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>',
-          src: '**/*.scss',
-          dest: '.tmp',
-          ext: '.css'
-        }]
-      },
-
       server: {
         options: {
           debugInfo: true,
           sourcemap: true,
           watch: true
-        },
-
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>',
-          src: '**/*.scss',
-          dest: '.tmp',
-          ext: '.css'
-        }]
+        }
+      },
+      oneOff: {
+        options: {
+          force: true,
+          sourcemap: true
+        }
       }
     },
 
@@ -435,16 +415,16 @@ module.exports = function (grunt) {
     // Run some tasks in parallel to speed up the build process
     concurrent: {
       server: {
-        tasks: ['sass:server', 'watch'],
+        tasks: ['compass:server', 'watch'],
         options: {
           logConcurrentOutput: true
         }
       },
       test: [
-        'sass:oneOff'
+        'compass:oneOff'
       ],
       dist: [
-        'sass:dist',
+        'compass:dist',
         // 'imagemin',
         // 'svgmin'
       ]
@@ -694,7 +674,7 @@ module.exports = function (grunt) {
       'wiredep',
       'filesize',
       'filetransform:preloadableFiles',
-      'sass:oneOff',
+      'compass:oneOff',
       'connect:livereload',
       'concurrent:server'
     ]);
