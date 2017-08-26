@@ -1,0 +1,58 @@
+<section id="pleo-portfolio-page" class="portfolio-page">
+  <div class="small-and-medium-only" ng-if="!isOnLargeScreen">
+    <hyp-full-width-slider
+      images-url="[
+        'assets/images/mobile/portfolio-slider/pleo/01.jpg',
+        'assets/images/mobile/portfolio-slider/pleo/02.jpg',
+        'assets/images/mobile/portfolio-slider/pleo/03.jpg',
+        'assets/images/mobile/portfolio-slider/pleo/04.jpg'
+      ]"
+
+      rsi-options="portfolioRsiOptions"
+      multiply-count="1"
+    ></hyp-full-width-slider>
+    <div class="mobile-description">
+      <h1 class="title" ng-bind-html=":: str.portfolio.pleo.generic.title"></h1>
+      <div ng-bind-html=":: str.portfolio.pleo.generic.description"></div>
+    </div>
+  </div>
+  <div class="large-only" ng-if="isOnLargeScreen">
+    <div class="container">
+      <hyp-portfolio-header
+        description="{{:: str.portfolio.pleo.header }}"
+        client-logo-url="assets/images/portfolio/pleo/logo.png"
+        client-name="{{:: str.portfolio.pleo.projectName}}"
+        is-mobile="true"
+      ></hyp-portfolio-header>
+
+      <div class="portfolio-content">
+        <hyp-full-width-slider
+          arrows-background-color="rgba(32, 42, 53, 0.2)"
+          arrows-color="#ffffff"
+
+          images-url="['assets/images/portfolio/pleo/slide-1.jpg', 'assets/images/portfolio/pleo/slide-2.jpg', 'assets/images/portfolio/pleo/slide-3.jpg']"
+
+          rsi-options="portfolioRsiOptions"
+          multiply-count="1"
+        ></hyp-full-width-slider>
+
+        <div class="first row">
+          <div class="video-container left">
+            <img src="assets/images/portfolio/pleo/iphone.jpg" alt="pleo">
+          </div>
+          <div class="description left">
+            <h1 class="title" ng-bind-html=":: str.portfolio.pleo.generic.title"></h1>
+            <div ng-bind-html=":: str.portfolio.pleo.generic.description"></div>
+            <p style="margin-bottom: 4px !important;">More on their website:</p>
+            <a id="pleo-website" href="http://www.pleo.io/" target="_blank"><strong>www.pleo.io</strong></a>
+          </div>
+        </div>
+        <div class="second row">
+          <img src="assets/images/portfolio/pleo/overview.jpg" alt="pleo-overview">
+          <p class="portfolio-centred-text">While the core functionality of the app is relatively simple, the logic behind it is not and we tried numerous concepts before settling on one we think would meet all the project’s requirements and provide a delightful experience to pleo’s users.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

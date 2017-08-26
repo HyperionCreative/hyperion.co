@@ -35,6 +35,15 @@
     text-decoration: underline;
   }
 
+  .description,
+  .mobile-description {
+    p span:first-child {
+      color: #e7477b;
+      font-size: 15px;
+      font-weight: bold;
+    }
+  }
+
   .first.row {
     padding-bottom: 50px;
     padding-top: 70px;
@@ -42,12 +51,6 @@
     .description {
       margin-top: 50px;
       width: 320px;
-
-      p span:first-child {
-        color: #e7477b;
-        font-size: 15px;
-        font-weight: bold;
-      }
     }
   }
 }
