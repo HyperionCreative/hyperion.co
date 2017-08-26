@@ -13,9 +13,9 @@
               <h3 class="title">Project 01: <span class="highlight" ng-bind-html=":: str.portfolio.kartist.projectName"></span></h3>
               <p ng-bind-html=":: str.portfolio.kartist.sliderDescription"></p>
             </a>
-            <a class="second-slide">
-              <h3 class="title">Project 02: <span class="highlight">AnyVan</span></h3>
-              <p>We worked with AnyVan in early 2014 to help them design their then upcoming iOS app. We handled the UI and UX and worked with their team to help them make it a reality.</p>
+            <a ui-sref="root.sub-page-template.portfolio.anyvan" class="second-slide">
+              <h3 class="title">Project 02: <span class="highlight" ng-bind-html=":: str.portfolio.anyvan.projectName"></span></h3>
+              <p ng-bind-html=":: str.portfolio.anyvan.sliderDescription"></p>
             </a>
             <a ui-sref="root.sub-page-template.portfolio.quizkick" class="third-slide">
               <h3 class="title">Project 03: <span class="highlight" ng-bind-html=":: str.portfolio.quizkick.projectName"></span></h3>
@@ -29,7 +29,7 @@
         <div class="second-state">
           <ul class="mixed-content">
             <li class="client">
-              <a class="pleo" ui-sref="root.sub-page-template.portfolio.pleo"></a>
+              <a class="anyvan" ui-sref="root.sub-page-template.portfolio.anyvan"></a>
               <div class="fake-border"></div>
             </li>
             <li class="client">

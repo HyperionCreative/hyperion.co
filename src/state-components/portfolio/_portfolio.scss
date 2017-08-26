@@ -131,7 +131,7 @@
   }
 }
 
-@import "pleo/pleo";
+@import "anyvan/anyvan";
 @import "company-mood/company-mood";
 //@import "grow/grow";
 @import "kartist/kartist";
@@ -158,7 +158,7 @@
     $this-transition: 0.15s ease-in-out;
 
     background-color: #cbcfd3;
-    @include border-radius(7px);
+    @include border-radius(5px);
     @include box-shadow($normal-box-shadow);
     float: left;
     height: 270px;
@@ -216,7 +216,7 @@
           width: 332px;
         }
 
-        &--pleo {
+        &--anyvan {
           margin-top: 12px;
           width: 222px;
         }

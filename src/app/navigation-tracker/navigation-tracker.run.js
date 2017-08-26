@@ -13,7 +13,7 @@
         'root.sub-page-template.contact': 'Contact',
 
         'root.sub-page-template.portfolio': 'Our Work',
-        'root.sub-page-template.portfolio.pleo': 'pleo',
+        'root.sub-page-template.portfolio.anyvan': 'AnyVan',
         'root.sub-page-template.portfolio.companyMood': 'Company Mood',
         'root.sub-page-template.portfolio.kartist': 'Kartist',
         'root.sub-page-template.portfolio.quizkick': 'QuizKick',

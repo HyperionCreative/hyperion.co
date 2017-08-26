@@ -15,12 +15,12 @@
         Preloader.addToQueue('the-rest-of-the-images', 'assets/images/expertise/development.jpg');
         Preloader.addToQueue('the-rest-of-the-images', 'assets/images/expertise/ui-ux.jpg');
 
-        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/pleo/logo.png');
-        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/pleo/iphone-frame.png');
-        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/pleo/slide-1.jpg');
-        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/pleo/slide-2.jpg');
-        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/pleo/slide-3.jpg');
-        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/pleo/slide-4.jpg');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/anyvan/logo.png');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/anyvan/iphone-frame.png');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/anyvan/slide-1.jpg');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/anyvan/slide-2.jpg');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/anyvan/slide-3.jpg');
+        Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/anyvan/slide-4.jpg');
 
         Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/company-mood/logo.png');
         Preloader.addToQueue('the-rest-of-the-images', 'assets/images/portfolio/company-mood/devices.jpg');

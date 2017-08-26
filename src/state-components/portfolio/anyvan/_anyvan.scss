@@ -1,0 +1,46 @@
+#anyvan-portfolio-page {
+  $this-client-color: #41a5dd;
+
+  .portfolio-header .logo img {
+    height: image-height("assets/images/portfolio/anyvan/logo.png");
+    width: image-width("assets/images/portfolio/anyvan/logo.png");
+  }
+
+  .carousel-slider {
+    height: 700px;
+    width: 100%;
+  }
+
+  .row .title, .row .button {
+    color: $this-client-color;
+  }
+
+  .row .button {
+    border-color: $this-client-color;
+    margin-top: 1em;
+  }
+
+  .row .button:hover {
+    background: $this-client-color;
+  }
+
+  .first.row {
+    padding-bottom: 50px;
+    padding-top: 25px;
+
+    .video-container {
+      margin: 0 10px 0 30px;
+      width: image-width("assets/images/portfolio/anyvan/iphone-frame.png");
+
+      video {
+        left: 58px;
+        top: 83px;
+      }
+    }
+
+    .description {
+      margin-top: 10%;
+      width: 320px;
+    }
+  }
+}

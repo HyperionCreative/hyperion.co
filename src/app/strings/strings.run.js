@@ -7,8 +7,8 @@
       $rootScope.str = {
         globals: {
           personalPhoneNumber: '+44 7598-461-151',
-          desktopNumber: '+44 7598-461-151',
-          phoneNumber: '+44 7598-461-151',
+          desktopNumber: '+44 (0)1214-052-101',
+          phoneNumber: '+44 1214-052-101',
           // This is not the address on which the contact form sends its emails.
           // That email address is defined in php/email-sender.php
           //
@@ -17,7 +17,7 @@
           contactEmail: 'contact@hyperion.co'
         },
         footer: {
-          text: '<p>More projects on our <strong>Social Networks</strong></p>',
+          text: '<p>More projects on our <strong>Social Networks</strong></p><small>&copy; Copyright Hyperion 2015</small>',
           twitterHref: '//twitter.com/WeAreHyperion',
           dribbbleHref: '//dribbble.com/hyperion',
           behanceHref: '//www.behance.net/hyperioncreative'
@@ -76,17 +76,17 @@
             description: '<h1 style="display: inline-block;">Here are some of the most recent projects we can talk about.</h1> Click on each preview to learn more about the work we did and our approaches.'
           },
 
-          pleo: {
-            projectName: 'pleo',
+          anyvan: {
+            projectName: 'AnyVan',
             field: 'Mobile App Design',
-            sliderDescription: 'pleo is a fintech startup that we worked with in early 2016 to design the interface and user experience of their iOS app.',
+            sliderDescription: 'We worked with AnyVan in early 2014 to help them design their then upcoming iOS app. We handled the UI and UX and worked with their team to help them make it a reality.',
 
-            header: '<h2><strong>pleo</strong> is a fintech startup that we worked with in early 2016 to design the interface and user experience of their iOS app.</h2>',
-            tabletHeader: '<h2><strong>pleo</strong> is a fintech startup that we worked with in early 2016 to design the interface and user experience of their iOS app.</h2>',
+            header: '<h2>We worked with <strong>AnyVan</strong> in early 2014 to help them design their then upcoming iOS app. We handled the UI/UX and helped their them make the app a reality.</h2>',
+            tabletHeader: '<h2>We worked with <strong>AnyVan</strong> in early 2014 to help them design their then upcoming iOS app. We handled the UI/UX and helped them implement it.</h2>',
 
             generic: {
-              title: 'Dead Simple UX',
-              description: '<p><span id="pleo">pleo</span> is a Danish fin-tech company that uses a card + app system to automate expense management for all of a company\'s employees. Instead of spending money out of their own pockets or sharing a card, pleo\'s solution proposes that every employee is given their own card, which automatically logs all transactions and links with the mobile app, which enables them to snap pictures of receipts and keep an eye on their expenses.</p><p>The goal of this project was to design an iOS app whose main function would be to prompt users after they made a transaction with their pleo card to photograph the receipt. It also had to provide a list of transactions, card and profile management options as well as security features like cancelling a card.</p><p>The product, on one hand, had to be so accessible so that any employee inside a company could use it, while on the other hand providing a fast and reliable experience that users would actually want to scan all their receipts and the product would have value to their employer.</p>'
+              title: 'AnyVan',
+              description: '<p>Anyvan\'s organisational approach to providing on-demand cargo transport services is, in our opinion, deserving of all the awards it received and definitely a step in the right direction towards a cleaner, more efficient industry. By offering transport companies the opportunity to profit from the unused space in their trucks, they are not only reducing the number of unnecessary trips, but also benefiting customers who need a more affordable means of moving items across great distances.</p><p>They decided to make their services more accessible by launching a mobile app, for which we produced the interface, defined the experienced and worked closely with their development team to help implement it and shape the application. The resulting product was a friendly, easy to use app that would make AnyVan\'s services even easier to benefit from.</p>'
             }
           },
           companyMood: {
@@ -111,8 +111,8 @@
 
             // design
             uiAndCode: {
-              title: 'Easy to use UI + <br> Performant Code',
-              description: '<p>For this project, we handled Kartist\'s UI and UX, coded the front-end and created their browser extensions. We wanted, as with most projects, to create a product that will make sense to their target audience - an interface that is logically organised and effortless to use, but also beautiful. Since we also handled the front-end development, we could make sure the whole interface runs like a well-oiled machine and we are confident Kartist\'s experience will be an enjoyable one.</p><p><italic>The screen to the left demonstrates how users are prompted to register. Since registration is not mandatory, we decided to use a less intrusive solution and gently nudge the logo every 5 seconds until the user hovers over it to learn where the registration panel is. We believe this way, users are will not feel forced to sign-up.</italic></p>'
+              title: 'Useful UI + Good Code',
+              description: '<p>For this project, we handled Kartist\'s UI, coded the front end and created their browser extensions. We wanted, as with most projects, to create something that will make sense to their target audience - an interface that is logically organised and effortless to use, but also beautiful. When coupled with good code, we are confident Kartist\'s experience will be an enjoyable one.</p><p>The screen to the left demonstrates how users are prompted to sign-up or login. Instead of using a more intrusive solution, we decided to gently nudge the logo every 5 seconds until the user hovers over it to learn where the sign-up panel is. We believe this way, users are will not feel forced to sign-up.</p>'
             },
             mobileVersion: {
               title: 'The Mobile Version',
@@ -189,16 +189,16 @@
             },
 
             gettingStarted: {
-              title: 'Getting Started',
-              description: '<p>We started the project by getting to know the client, their business and the problems they are looking to solve. We spoke to people on their team, discussed the most common concerns users have and analysed the data they stored.</p><p>We started the project by getting to know the client, their business and the problems they are looking to solve. We spoke to people on their team, discussed the most common concerns users have and analysed the data they stored.</p><p><italic>For example, to create a website with the old interface users had to go to Domains/Websites, click on Domains, link a new domain, click on Apps, create a new app, then go to websites and create a new website with the domain and app you just added. To make matters worse, users had to figure out this process on their own.</italic></p>',
+              title: 'I. Getting started',
+              description: '<p>We started this redesign project like most of our other projects, by getting to know the client, their business and the problems they are looking to solve. This was handled via a conference between us and their founder.</p><p>With a clear picture of what we’re working with in mind, we looked at ways to restructure the control panel, better explain how to use each section, and make sure users have a simple yet enjoyable experience.</p><p>For example, to create a website with the old interface users had to go to Domains/Websites, click on Domains, link a new domain, click on Apps, create a new app, then go to websites and create a new website with the domain and app you just added. Users also had to figure out this process on their own.</p>',
               descriptionTwo: 'We summarised our ideas for how the new interface should work through a series of wireframes and ran this by the client to make sure we are on the same page before moving forward.'
             },
             theDesign: {
-              title: 'The Design',
+              title: 'II. The Design',
               description: '<p>After agreeing on the latest details of the UI’s structure, we moved on to the design stage. We created screens for every page and every state of the interface, every nook and cranny for both desktop and mobile devices.</p><p>Continuing the example of the process for creating websites, we unified it into a single page withsequential steps, and clear explinations for how each step works and how it all comes together.</p>'
             },
             theCode: {
-              title: 'The Code',
+              title: 'III. The Code',
               description: '<p>In order to maintain the agility we needed throughout the project and keep everything thoroughly organised, we decided to use a modular approach. Throughout the coding stage, Webfaction’s team was going to work on creating a new API to link their back-end to the interface.</p><p>We kicked this stage off by defining the architecture and making a plan. Once we had the interface’s structure defined, we started creating the modules - starting with the core ones.</p><p>We finished the interface before Webfaction completed the new API, and will link it when they are done.</p>'
             }
           }
@@ -208,7 +208,7 @@
           introduction: '<p>We believe good design should make sense to the people using it, that it should be adequate, beautiful, logical and empathetic towards the user. We see technology as a catalyst for change, improving people\'s lives in increasingly natural and almost invisible ways. To design products that meet these standards, we try to look at the whole picture, make sense of the problem we are trying to solve and plan accordingly - when every detail has its place and purpose, creativity and function come together naturally.</p><p>We also believe UI and UX, are just the tip of the iceberg, and it’s the code that breathes life into an app and makes everything tick. It is because of this that writing good code and making the most of available technologies is of paramount importance.</p>',
           kartist: '<p>We worked with <strong>Kartist</strong> in early 2015 - their platform aims to help shoppers everywhere manage their lists, find inspiration and connect with like-minded people.</p><p>For this project, we handled Kartist\'s UI, coded the front end and created their browser extensions. We wanted, as with most projects, to create something that will make sense to their target audience - an interface that is logically organised and effortless to use, but also beautiful. When coupled with good code, we are confident Kartist\'s experience will be an enjoyable one.</p><p>Kartist will not initially be developing native apps, so we had to make sure the mobile site was perfect.</p>',
           quizkick: '<p><strong>QuizKick</strong> tried to create a game that would give football fans around the world a chance to prove their knowledge. We worked on the design and the back end of the system.</p><p>Aiming to become a means for football fans around the world to prove their knowledge and challenge the very best players, QuizKick makes use of a well-crafted experience and quality aesthetics to become more than just another quiz game.</p><p>QuizKick will be available for download soon. In the meantime, you can see more of it, including awesome animations and concepts, by visiting our showcase.</p>',
-          pleo: '<p>pleo is a Danish fin-tech company that uses a card + app system to automate expense management for all of a company\'s employees. Instead of spending money out of their own pockets or sharing a card, pleo\'s solution proposes that every employee is given their own card, which automatically logs all transactions and links with the mobile app, which enables them to snap pictures of receipts and keep an eye on their expenses.</p><p>The goal of this project was to design an iOS app whose main function would be to prompt users after they made a transaction with their pleo card to photograph the receipt. It also had to provide a list of transactions, card and profile management options as well as security features like cancelling a card.</p><p>The product, on one hand, had to be so accessible so that any employee inside a company could use it, while on the other hand providing a fast and reliable experience that users would actually want to scan all their receipts and the product would have value to their employer.</p>',
+          anyvan: '<p>We worked with <strong>AnyVan</strong> in early 2014 to help them design their then upcoming iOS app. We handled the UI and UX and worked with their team to help them make it a reality.</p><p>Anyvan\'s organisational approach to providing on-demand cargo transport services is, in our opinion, deserving of all the awards it received and definitely a step in the right direction towards a cleaner, more efficient industry. By offering transport companies the opportunity to profit from the unused space in their trucks, they are not only reducing the number of unnecessary trips, but also benefiting customers who need a more affordable means of moving items across great distances.</p><p>They decided to make their services more accessible by launching a mobile app, for which we produced the interface, defined the experienced and worked closely with their development team to help implement it and shape the application. The resulting product was a friendly, easy to use app that would make AnyVan\'s services even easier to benefit from.</p>',
           grow: '<p>We worked with Grow with a CFO in 2015 to help them design their website and more easily showcase their services and processes.</p><p>Grow with a CFO - a financial consulting firm, needed a website to showcase their services, explain who they are and how they work. Our objective was to create a site that is adequate and would help them achieve their goals and expand their firm. After several weeks on the project, we believe we achieved that.</p><p>Unfortunately, Grow with a CFO only used the website we created for about half a year before creating a new Wordpress site themselves.</p>',
           webfaction: '<p>Webfaction has been our hosting provider ever since we started in 2012 and while we couldn’t be happier with their services and support, the interface of their control panel was a complicated mess that confused most of their users.</p><p>They agreed to work with us and refresh their CP and website and have since reported their users find it a lot easier to find their way around and achieve even the more complicated tasks. We simplified and logically organised everything from how you create a new website, add an email address, manage your plan or get support.</p>'
         }
