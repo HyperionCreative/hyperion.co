@@ -44,7 +44,7 @@ module.exports = function (grunt) {
           '!<%= yeoman.app %>/state-components/**/*.spec.js',
           '!<%= yeoman.app %>/state-components-mobile/**/*.spec.js',
         ],
-        tasks: ['newer:jshint:all'],
+        // tasks: ['newer:jshint:all'],
         options: {
           livereload: '<%= connect.options.livereload %>'
         }
@@ -56,7 +56,7 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/state-components/**/*.spec.js',
           '<%= yeoman.app %>/state-components-mobile/**/*.spec.js',
         ],
-        tasks: ['newer:jshint:test']
+        // tasks: ['newer:jshint:test']
       },
       gruntfile: {
         files: ['Gruntfile.js']
