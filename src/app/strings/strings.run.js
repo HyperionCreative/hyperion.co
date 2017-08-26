@@ -189,16 +189,16 @@
             },
 
             gettingStarted: {
-              title: 'I. Getting started',
-              description: '<p>We started this redesign project like most of our other projects, by getting to know the client, their business and the problems they are looking to solve. This was handled via a conference between us and their founder.</p><p>With a clear picture of what we’re working with in mind, we looked at ways to restructure the control panel, better explain how to use each section, and make sure users have a simple yet enjoyable experience.</p><p>For example, to create a website with the old interface users had to go to Domains/Websites, click on Domains, link a new domain, click on Apps, create a new app, then go to websites and create a new website with the domain and app you just added. Users also had to figure out this process on their own.</p>',
+              title: 'Getting started',
+              description: '<p>We started the project by getting to know the client, their business and the problems they are looking to solve. We spoke to people on their team, discussed the most common concerns users have and analysed the data they stored.</p><p>We concluded the interface was plagued by several problems, chief among which were illogical navigation and poorly thought out and necessarily complex user flows and unintuitive terminology. Furthermore, the design was not built around the most commonly used features and would hide the pieces of information users needed most often under obscure menus.</p><p><em>For example, to create a website with the old interface users had to go to Domains/Websites, click on Domains, link a new domain, click on Apps, create a new app, then go to websites and create a new website with the domain and app you just added. To make matters worse, users had to figure out this process on their own.</em></p>',
               descriptionTwo: 'We summarised our ideas for how the new interface should work through a series of wireframes and ran this by the client to make sure we are on the same page before moving forward.'
             },
             theDesign: {
-              title: 'II. The Design',
+              title: 'The Design',
               description: '<p>After agreeing on the latest details of the UI’s structure, we moved on to the design stage. We created screens for every page and every state of the interface, every nook and cranny for both desktop and mobile devices.</p><p>Continuing the example of the process for creating websites, we unified it into a single page withsequential steps, and clear explinations for how each step works and how it all comes together.</p>'
             },
             theCode: {
-              title: 'III. The Code',
+              title: 'The Code',
               description: '<p>In order to maintain the agility we needed throughout the project and keep everything thoroughly organised, we decided to use a modular approach. Throughout the coding stage, Webfaction’s team was going to work on creating a new API to link their back-end to the interface.</p><p>We kicked this stage off by defining the architecture and making a plan. Once we had the interface’s structure defined, we started creating the modules - starting with the core ones.</p><p>We finished the interface before Webfaction completed the new API, and will link it when they are done.</p>'
             }
           }
