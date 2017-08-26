@@ -53,6 +53,11 @@
   <url>
     <loc>https://www.hyperion.co/portfolio/anyvan</loc>
     <changefreq>monthly</changefreq>
+    <priority>0.20</priority>
+  </url>
+  <url>
+    <loc>https://www.hyperion.co/portfolio/pleo</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>

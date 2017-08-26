@@ -1,0 +1,53 @@
+#pleo-portfolio-page {
+  $this-client-color: #e6467c;
+
+  .portfolio-header .logo img {
+    height: image-height("assets/images/portfolio/pleo/logo.png");
+    width: image-width("assets/images/portfolio/pleo/logo.png");
+  }
+
+  .carousel-slider {
+    height: 700px;
+    width: 100%;
+  }
+
+  .video-container {
+    margin: 0 10px 0 30px;
+
+    video {
+      left: 58px;
+      top: 83px;
+    }
+  }
+
+  .portfolio-centred-text {
+    margin: 0 auto;
+    padding-bottom: 50px;
+    text-align: center;
+    width: 600px;
+  }
+
+  .title, .button {
+    color: $this-client-color;
+  }
+
+  #pleo-website:hover {
+    text-decoration: underline;
+  }
+
+  .first.row {
+    padding-bottom: 50px;
+    padding-top: 70px;
+
+    .description {
+      margin-top: 50px;
+      width: 320px;
+
+      p span:first-child {
+        color: #e7477b;
+        font-size: 15px;
+        font-weight: bold;
+      }
+    }
+  }
+}
