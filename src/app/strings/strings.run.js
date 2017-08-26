@@ -111,8 +111,8 @@
 
             // design
             uiAndCode: {
-              title: 'Useful UI + Good Code',
-              description: '<p>For this project, we handled Kartist\'s UI, coded the front end and created their browser extensions. We wanted, as with most projects, to create something that will make sense to their target audience - an interface that is logically organised and effortless to use, but also beautiful. When coupled with good code, we are confident Kartist\'s experience will be an enjoyable one.</p><p>The screen to the left demonstrates how users are prompted to sign-up or login. Instead of using a more intrusive solution, we decided to gently nudge the logo every 5 seconds until the user hovers over it to learn where the sign-up panel is. We believe this way, users are will not feel forced to sign-up.</p>'
+              title: 'Easy to use UI + <br> Performant Code',
+              description: '<p>For this project, we handled Kartist\'s UI and UX, coded the front-end and created their browser extensions. We wanted, as with most projects, to create a product that will make sense to their target audience - an interface that is logically organised and effortless to use, but also beautiful. Since we also handled the front-end development, we could make sure the whole interface runs like a well-oiled machine and we are confident Kartist\'s experience will be an enjoyable one.</p><p><em>The screen to the left demonstrates how users are prompted to register. Since registration is not mandatory, we decided to use a less intrusive solution and gently nudge the logo every 5 seconds until the user hovers over it to learn where the registration panel is. We believe this way, users are will not feel forced to sign-up.</em></p>'
             },
             mobileVersion: {
               title: 'The Mobile Version',
