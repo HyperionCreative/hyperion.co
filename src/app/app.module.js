@@ -36,7 +36,7 @@
       'app.center-me',
       'app.custom-cursors',
       'app.fancy-slider',
-      'app.free-consultation',
+      // 'app.free-consultation',
       'app.http-error-handler',
       'app.navigation-hamburger',
       'app.navigation-tracker',
