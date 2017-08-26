@@ -6,7 +6,7 @@
       $stateProvider
         .state('portfolio.pleo', {
           data: {
-            simpleSeoTitle: 'Pleo - Hyperion',
+            simpleSeoTitle: 'pleo - Hyperion',
             simpleSeoDescription: 'You can learn more about the mobile interface we created for pleo.',
             simpleSeoKeywords: 'hyperion, pleo, transport, company, design, mobile app, application, iOS, ui, interface'
           },

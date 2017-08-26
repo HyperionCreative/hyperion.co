@@ -30,7 +30,7 @@
           'margin-top': '7px',
           'width': '55%'
         },
-        name: 'Pleo'
+        name: 'pleo'
       }, {
         href: 'portfolio.quizkick',
         imageSrc: 'assets/images/portfolio/quizkick/logo.png',
