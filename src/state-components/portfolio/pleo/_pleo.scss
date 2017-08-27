@@ -13,11 +13,7 @@
 
   .video-container {
     margin: 0 10px 0 30px;
-
-    video {
-      left: 58px;
-      top: 83px;
-    }
+    max-width: image-width("assets/images/portfolio/pleo/iphone.jpg");
   }
 
   .portfolio-centred-text {
