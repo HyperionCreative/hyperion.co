@@ -17,10 +17,7 @@
           contactEmail: 'contact@hyperion.co'
         },
         footer: {
-          text: '<p>More projects on our <strong>Social Networks</strong></p>',
-          twitterHref: '//twitter.com/WeAreHyperion',
-          dribbbleHref: '//dribbble.com/hyperion',
-          behanceHref: '//www.behance.net/hyperioncreative'
+          text: '<p>More projects on <a href="www.behance.net/hyperioncreative">Behance</a>',
         },
 
         contact: {
