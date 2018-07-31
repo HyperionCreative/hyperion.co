@@ -20,7 +20,6 @@
       // Common modules //
       ////////////////////
 
-      /*@@@ 'common.google-analytics', @@@*/
       'common.greeter',
       'common.full-width-slider',
       'common.simple-seo',
