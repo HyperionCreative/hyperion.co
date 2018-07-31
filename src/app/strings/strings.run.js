@@ -17,10 +17,7 @@
           contactEmail: 'contact@hyperion.co'
         },
         footer: {
-          text: '<p>More projects on our <strong>Social Networks</strong></p>',
-          twitterHref: '//twitter.com/WeAreHyperion',
-          dribbbleHref: '//dribbble.com/hyperion',
-          behanceHref: '//www.behance.net/hyperioncreative'
+          text: '<p>More projects on <a href="www.behance.net/hyperioncreative">Behance</a>',
         },
 
         contact: {
@@ -151,7 +148,7 @@
             tabletHeader: '<h2><strong>pleo</strong> is a fintech startup that we worked with in early 2016 to design the interface and user experience of their iOS app.</h2>',
 
             generic: {
-              title: 'Dead Simple UX',
+              title: 'Clear and Simple UX',
               description: '<p><span>pleo</span> is a Danish fin-tech company that uses a card + app system to automate expense management for all of a company\'s employees. Instead of spending money out of their own pockets or sharing a card, pleo\'s solution proposes that every employee is given their own card, which automatically logs all transactions and links with the mobile app, which enables them to snap pictures of receipts and keep an eye on their expenses.</p><p>The goal of this project was to design an iOS app whose main function would be to prompt users after they made a transaction with their pleo card to photograph the receipt. It also had to provide a list of transactions, card and profile management options as well as security features like cancelling a card.</p><p>The product, on one hand, had to be so accessible so that any employee inside a company could use it, while on the other hand providing a fast and reliable experience that users would actually want to scan all their receipts and the product would have value to their employer.</p>'
             }
           },

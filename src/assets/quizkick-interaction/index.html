@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>QuizKick Concepts | Hyperion</title>
+
+	<script>
+		// Retina Script
+		// Read more at: http://shauninman.com/tmp/retina/
+		(function () {
+			'use strict';
+
+			if ((window.devicePixelRatio === undefined ? 1 : window.devicePixelRatio) > 1) {
+				document.cookie = 'HTTP_IS_RETINA=1;path=/';
+			} else {
+				document.cookie = 'HTTP_IS_RETINA=1;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT';
+			}
+		})();
+
+		// WebP Images Script
+		(function () {
+			'use strict';
+
+			!function(e,n,A){function o(e,n){return typeof e===n}function a(){var e,n,A,a,t,i,r;for(var l in s){if(e=[],n=s[l],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(A=0;A<n.options.aliases.length;A++)e.push(n.options.aliases[A].toLowerCase());for(a=o(n.fn,"function")?n.fn():n.fn,t=0;t<e.length;t++)i=e[t],r=i.split("."),1===r.length?Modernizr[r[0]]=a:(!Modernizr[r[0]]||Modernizr[r[0]]instanceof Boolean||(Modernizr[r[0]]=new Boolean(Modernizr[r[0]])),Modernizr[r[0]][r[1]]=a),f.push((a?"":"no-")+r.join("-"))}}function t(e){var n=u.className,A=Modernizr._config.classPrefix||"";if(c&&(n=n.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+A+"no-js(\\s|$)");n=n.replace(o,"$1"+A+"js$2")}Modernizr._config.enableClasses&&(n+=" "+A+e.join(" "+A),c?u.className.baseVal=n:u.className=n)}function i(e,n){if("object"==typeof e)for(var A in e)l(e,A)&&i(A,e[A]);else{e=e.toLowerCase();var o=e.split("."),a=Modernizr[o[0]];if(2==o.length&&(a=a[o[1]]),"undefined"!=typeof a)return Modernizr;n="function"==typeof n?n():n,1==o.length?Modernizr[o[0]]=n:(!Modernizr[o[0]]||Modernizr[o[0]]instanceof Boolean||(Modernizr[o[0]]=new Boolean(Modernizr[o[0]])),Modernizr[o[0]][o[1]]=n),t([(n&&0!=n?"":"no-")+o.join("-")]),Modernizr._trigger(e,n)}return Modernizr}var s=[],r={_version:"3.0.0-alpha.4",_config:{classPrefix:"",enableClasses:!1,enableJSClass:!1,usePrefixes:!0},_q:[],on:function(e,n){var A=this;setTimeout(function(){n(A[e])},0)},addTest:function(e,n,A){s.push({name:e,fn:n,options:A})},addAsyncTest:function(e){s.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=r,Modernizr=new Modernizr;var l,f=[];!function(){var e={}.hasOwnProperty;l=o(e,"undefined")||o(e.call,"undefined")?function(e,n){return n in e&&o(e.constructor.prototype[n],"undefined")}:function(n,A){return e.call(n,A)}}();var u=n.documentElement,c="svg"===u.nodeName.toLowerCase();r._l={},r.on=function(e,n){this._l[e]||(this._l[e]=[]),this._l[e].push(n),Modernizr.hasOwnProperty(e)&&setTimeout(function(){Modernizr._trigger(e,Modernizr[e])},0)},r._trigger=function(e,n){if(this._l[e]){var A=this._l[e];setTimeout(function(){var e,o;for(e=0;e<A.length;e++)(o=A[e])(n)},0),delete this._l[e]}},Modernizr._q.push(function(){r.addTest=i}),Modernizr.addAsyncTest(function(){function e(e,n,A){function o(n){var o=n&&"load"===n.type?1==a.width:!1,t="webp"===e;i(e,t?new Boolean(o):o),A&&A(n)}var a=new Image;a.onerror=o,a.onload=o,a.src=n}var n=[{uri:"data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",name:"webp"},{uri:"data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",name:"webp.alpha"},{uri:"data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",name:"webp.animation"},{uri:"data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",name:"webp.lossless"}],A=n.shift();e(A.name,A.uri,function(A){if(A&&"load"===A.type)for(var o=0;o<n.length;o++)e(n[o].name,n[o].uri)})}),a(),delete r.addTest,delete r.addAsyncTest;for(var p=0;p<Modernizr._q.length;p++)Modernizr._q[p]();e.Modernizr=Modernizr}(window,document);
+
+			Modernizr.on('webp', function (result) {
+				if (result.alpha === true) {
+					document.cookie = 'WEBP_IS_SUPPORTED=1;path=/';
+				} else {
+					document.cookie = 'WEBP_IS_SUPPORTED=1;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT';
+				}
+			});
+		})();
+	</script>
+
+	<script src="./plugins/pace/pace.min.js"></script>
+
+	<!-- build:css(.tmp) styles/main-quizkick.css -->
+		<link rel="stylesheet" href="./css/reset.css">
+
+		<link rel="stylesheet" href="./plugins/royalslider/royalslider.css">
+		<link rel="stylesheet" href="./plugins/pace/pace.css">
+
+		<link rel="stylesheet" href="./css/style.css">
+	<!-- endbuild -->
+</head>
+<body>
+	<div id="loading">
+		<div class="texty-text">Loading</div>
+		<small>&copy; Copyright Hyperion 2014 | All Right Reserved</small>
+	</div>
+	<div id="quizkick-showcase" class="royalSlider">
+		<div class="rsContent slide1">
+			<div>
+				<script src="https://fast.wistia.com/embed/medias/cohje1nbtd.jsonp" async></script>
+				<script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+				<div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
+					<div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
+						<div class="wistia_embed wistia_async_cohje1nbtd seo=false videoFoam=true qualityMin=720" style="height:100%;position:relative;width:100%">&nbsp </div>
+					</div>
+				</div>
+				<!-- <video autoplay="true" poster="./img/main-video-poster.jpg">
+					<source src="./video/1.mp4" type="video/mp4">
+					<source src="./video/1.webm" type="video/webm">
+				</video>
+				<div id="replay"></div> -->
+			</div>
+		</div>
+		<div class="rsContent slide2">
+			<div class="container">
+				<div class="iphone-video-container">
+					<video loop>
+						<source src="./video/2-1.mp4" type="video/mp4">
+						<source src="./video/2-1.webm" type="video/webm">
+					</video>
+					<svg>
+						<path fill="transparent" d="M359.3,51.3c0,0,1.9-50.9-53.2-50.9s-161,0-216.1,0S36.7,51.3,36.7,51.3v579.3c0,0-1.9,50.9,53.2,50.9s161,0,216.1,0s53.2-50.9,53.2-50.9V51.3z">
+					</svg>
+				</div>
+				<div class="iphone-video-container">
+					<video loop>
+						<source src="./video/2-2.mp4" type="video/mp4">
+						<source src="./video/2-2.webm" type="video/webm">
+					</video>
+					<svg>
+						<path fill="transparent" d="M359.3,51.3c0,0,1.9-50.9-53.2-50.9s-161,0-216.1,0S36.7,51.3,36.7,51.3v579.3c0,0-1.9,50.9,53.2,50.9s161,0,216.1,0s53.2-50.9,53.2-50.9V51.3z">
+					</svg>
+				</div>
+				<div class="iphone-video-container">
+					<video loop>
+						<source src="./video/2-3.mp4" type="video/mp4">
+						<source src="./video/2-3.webm" type="video/webm">
+					</video>
+					<svg>
+						<path fill="transparent" d="M359.3,51.3c0,0,1.9-50.9-53.2-50.9s-161,0-216.1,0S36.7,51.3,36.7,51.3v579.3c0,0-1.9,50.9,53.2,50.9s161,0,216.1,0s53.2-50.9,53.2-50.9V51.3z">
+					</svg>
+				</div>
+				<div class="hover-instruction">Hover over a clip to <strong>Play it</strong></div>
+			</div>
+		</div>
+		<div class="rsContent slide3">
+			<div class="container">
+				<div class="picture-container">
+					<h1 class="title"><strong>QuizKick</strong> is launching soon</h1>
+					<p>We are glad you are interested in our work and would welcome any questions you might have. Additionally, to see more of our work and learn about the things we stand for, please visit our website.</p>
+					<a href="http://www.hyperion.co/portfolio/quizkick">Back to Project Page</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="quizkick-controls" class="controls">
+		<div class="control active" data-to-slide="0">Overview</div>
+		<div class="control" data-to-slide="1">More Concepts</div>
+		<div class="control" data-to-slide="2">Project Info</div>
+	</div>
+
+	<!-- build:js({.tmp,src}) scripts/scripts-quizkick.js -->
+		<script src="./js/jquery-2.1.1.min.js"></script>
+		<script src="./plugins/royalslider/jquery.royalslider.min.js"></script>
+		<script src="./js/script.js"></script>
+	<!-- endbuild -->
+
+	<script>
+		$(document).ready(function($) {
+			if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0){
+				$("body").addClass("is-safari");
+			}
+
+			$('#quizkick-showcase').royalSlider({
+				arrowsNav: false,
+				autoScaleSlider: false,
+				controlNavigation: 'none',
+				imageScaleMode: 'none',
+				keyboardNavEnabled: true,
+				navigateByClick: false,
+				slidesSpacing: 0,
+				sliderDrag: false,
+				sliderTouch: true,
+				transitionSpeed: 400,
+				transitionType: 'fade'
+			});
+
+			preloadImg1 = new Image();
+			preloadImg1.src = "./img/iphone-video-container.png";
+
+			preloadImg2 = new Image();
+			preloadImg2.src = "./img/slide3-preview.png";
+		});
+	</script>
+</body>
+</html>
