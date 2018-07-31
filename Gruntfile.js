@@ -616,7 +616,6 @@ module.exports = function (grunt) {
         q: 85,
         m: 6,
 
-        mt: undefined
       }
     },
 
