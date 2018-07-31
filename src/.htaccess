@@ -23,8 +23,8 @@
   # | Forces "https"                                                             |
   # ------------------------------------------------------------------------------
 
-    RewriteCond %{ENV:HTTPS} !on
-    RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  #  RewriteCond %{ENV:HTTPS} !on
+  #  RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
   # ------------------------------------------------------------------------------
   # | Removing the "/" at the end of URLs as it breaks ui router                 |

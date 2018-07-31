@@ -14,10 +14,10 @@
           //
           // This one is used on mobile devices by the mail app when a user wants
           // to send us an email.
-          contactEmail: 'contact@hyperion.co'
+          contactEmail: 'no-contact@hyperion.co'
         },
         footer: {
-          text: '<p>More projects on <a href="www.behance.net/hyperioncreative">Behance</a>',
+          text: '<p>More projects on',
         },
 
         contact: {

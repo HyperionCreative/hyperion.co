@@ -2,14 +2,10 @@
   <div class="text" ng-show=":: customFooterText" ng-bind-html=":: footerText"></div>
   <div class="text" ng-show=":: !customFooterText" ng-bind-html=":: str.footer.text"></div>
   <ul class="social-links">
-    <li class="social-link">
-      <a class="icon-dribbble" ng-href="{{:: str.footer.dribbbleHref }}" target="_blank" rel="nofollow"></a>
-    </li>
-    <li class="social-link">
-      <a class="icon-behance" ng-href="{{:: str.footer.behanceHref }}" target="_blank" rel="nofollow"></a>
-    </li>
-    <li class="social-link">
-      <a class="icon-twitter" ng-href="{{:: str.footer.twitterHref }}" target="_blank" rel="nofollow"></a>
-    </li>
+    <div class="social-link">
+      <a class="behance" ng-href="{{:: str.footer.behanceHref }}" target="_blank" rel="nofollow">
+          <img src="../assets/icons/behance.svg" height="14" onmouseover="this.src='../assets/icons/behance-hover.svg';" onmouseout="this.src='../assets/icons/behance.svg';">
+      </a>
+    </div>
   </ul>
 </footer>
