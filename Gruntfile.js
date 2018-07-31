@@ -714,7 +714,7 @@ module.exports = function (grunt) {
       'replace',
       'cssmin',
       'uglify',
-      'filetransform:indexMobile',
+      // 'filetransform:indexMobile',
       'filerev',
       'usemin',
       'htmlmin'
